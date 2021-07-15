@@ -1,1 +1,6 @@
+# Excude these files from repo
+#
 .DS_store
+.Rhistory
+.RData
+.swp
