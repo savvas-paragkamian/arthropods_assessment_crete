@@ -1,6 +1,15 @@
 # Excude these files from repo
 #
-.DS_Store
-.Rhistory
-.RData
-.swp
+*.DS_Store
+*.Rhistory
+*.RData
+*.swp
+
+*.csv
+*.tsv
+*.xlsx
+plots/
+literature/
+
+literature/
+data/
