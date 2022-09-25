@@ -45,7 +45,7 @@ coordinates(locations_shp)<-~ logD+latD
 proj4string(locations_shp) <- CRS("+proj=longlat +datum=WGS84")
 
 
-hellenic_borders_shp <- rgdal::readOGR(dsn="/Users/savvas/Documents/spatial_data/hellenic_borders",layer="hellenic_borders",verbose=TRUE)
+hellenic_borders_shp <- rgdal::readOGR(dsn="~//Documents/spatial_data/hellenic_borders",layer="hellenic_borders",verbose=TRUE)
 
 proj4string(hellenic_borders_shp) <- CRS("+proj=longlat +datum=WGS84") 
 
