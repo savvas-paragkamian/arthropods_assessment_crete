@@ -4,7 +4,9 @@ library(tidyverse)
 library(readxl)
 library(rredlist)
 library(taxize)
-library(rgdal)
+library(sf)
+library(units)
+#library(rgdal)
 library(ConR)
 library(vegan)
 
@@ -34,6 +36,8 @@ arthropods_kriti_endemic <- readxl::read_excel("../data/arthropoda_crete_nhmc_fo
     dplyr::select(-Ergasia)
 
 # Spatial data
+
+## Occurrence data
 locations <- arthropods_kriti_endemic %>% 
     dplyr::select(subspeciesname,latD, logD, Order) %>% 
     filter(latD<38, logD<30) %>%
@@ -44,7 +48,17 @@ locations_shp <- locations %>% dplyr::select(!Order) %>% relocate(latD,logD,subs
 coordinates(locations_shp)<-~ logD+latD
 proj4string(locations_shp) <- CRS("+proj=longlat +datum=WGS84")
 
+## Shapefiles
 
+periphereies_shp <- sf::st_read("~/Documents/spatial_data/periphereies/periphereies.shp")
+
+#### crete is the 12th region in this shapefile
+#### https://geodata.gov.gr/en/dataset/28121643-d977-48eb-a8ca-a6fac6b4af6d/resource/7c80a2c1-93b7-4814-9fc4-245e775acaa6/download/periphereies.zip
+
+crete_shp <- periphereies_shp[12,]
+
+
+#####
 hellenic_borders_shp <- rgdal::readOGR(dsn="~//Documents/spatial_data/hellenic_borders",layer="hellenic_borders",verbose=TRUE)
 
 proj4string(hellenic_borders_shp) <- CRS("+proj=longlat +datum=WGS84") 
