@@ -12,42 +12,32 @@ library(vegan)
 
 #arthropods <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx")
 ## remove Opiliones because the dataset has some errors that are under review.
-arthropods_kriti <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx") %>% 
+#arthropods_kriti <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx") %>% 
+#    filter(Order!="Opiliones") %>% 
+#    dplyr::select(-Ergasia)
+
+
+# Endemic species occurrences in Crete
+arthropods_kriti_endemic <- readxl::read_excel("../data/Data-ENDEMICS.xlsx") %>% 
     filter(Order!="Opiliones") %>% 
     dplyr::select(-Ergasia)
 
-# Spatial data
-locations_all <- arthropods_kriti %>% 
-    dplyr::select(subspeciesname,latD, logD, Order) %>% 
-    filter(latD<38, logD<30) %>%
-    na.omit() %>%
-    mutate(id=seq(1:nrow(.)))
+species_wo_coords <- arthropods_kriti_endemic[which(is.na(arthropods_kriti_endemic$latD)),]
 
-locations_shp_all <- locations_all %>% 
-    dplyr::select(!Order) %>% 
-    relocate(latD,logD,subspeciesname)
+## Sanity check on coordinates
+print(paste0("there are ", nrow(species_wo_coords)," rows without coordinates"))
 
-coordinates(locations_shp_all)<-~ logD+latD
-proj4string(locations_shp_all) <- CRS("+proj=longlat +datum=WGS84")
-
-## endemic
-arthropods_kriti_endemic <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx", sheet="Endemics") %>% 
-    filter(Order!="Opiliones") %>% 
-    dplyr::select(-Ergasia)
-
-# Spatial data
-
-## Occurrence data
 locations <- arthropods_kriti_endemic %>% 
     dplyr::select(subspeciesname,latD, logD, Order) %>% 
     filter(latD<38, logD<30) %>%
-    na.omit() %>%
-    mutate(id=seq(1:nrow(.)))
+    na.omit()
 
-locations_shp <- locations %>% dplyr::select(!Order) %>% relocate(latD,logD,subspeciesname)
-coordinates(locations_shp)<-~ logD+latD
-proj4string(locations_shp) <- CRS("+proj=longlat +datum=WGS84")
+locations_shp <- st_as_sf(locations,
+                          coords=c("logD", "latD"),
+                          remove=TRUE,
+                          crs="WGS84")
 
+# Spatial data
 ## Shapefiles
 
 periphereies_shp <- sf::st_read("~/Documents/spatial_data/periphereies/periphereies.shp")
@@ -57,7 +47,11 @@ periphereies_shp <- sf::st_read("~/Documents/spatial_data/periphereies/periphere
 
 crete_shp <- periphereies_shp[12,]
 
+g <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(locations_shp, mapping=aes())
 
+ggsave("../plots/points.png", plot=g, device="png")
 #####
 hellenic_borders_shp <- rgdal::readOGR(dsn="~//Documents/spatial_data/hellenic_borders",layer="hellenic_borders",verbose=TRUE)
 
