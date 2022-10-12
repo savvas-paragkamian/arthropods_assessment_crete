@@ -45,42 +45,58 @@ periphereies_shp <- sf::st_read("~/Documents/spatial_data/periphereies/periphere
 #### crete is the 12th region in this shapefile
 #### https://geodata.gov.gr/en/dataset/28121643-d977-48eb-a8ca-a6fac6b4af6d/resource/7c80a2c1-93b7-4814-9fc4-245e775acaa6/download/periphereies.zip
 
-crete_shp <- periphereies_shp[12,]
+crete_shp <- periphereies_shp[12,] %>% st_transform(., "WGS84")
+
+## here we calculate the area of each polygon of the region of Crete
+## and subsequently we keep only the largest polygon e.g. Crete island only.
+
+crete_polygon <- st_cast(crete_shp, "POLYGON") %>% 
+    mutate(area_m2=as.numeric(st_area(.))) %>%
+    filter(area_m2==max(area_m2))
+
+locations_inland <- st_join(locations_shp, crete_polygon, left=F)
 
 g <- ggplot() +
-    geom_sf(crete_shp, mapping=aes()) +
-    geom_sf(locations_shp, mapping=aes())
+    geom_sf(crete_polygon, mapping=aes()) +
+    geom_sf(locations_inland, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
+#    geom_sf(locations_shp, mapping=aes(),color="red", alpha=0.2, size=0.1) +
+    coord_sf(crs="WGS84") +
+    theme_bw()
 
-ggsave("../plots/points.png", plot=g, device="png")
+ggsave("../plots/crete-occurrences.png", plot=g, device="png")
+
+### which points are inside Crete
+
+
 #####
-hellenic_borders_shp <- rgdal::readOGR(dsn="~//Documents/spatial_data/hellenic_borders",layer="hellenic_borders",verbose=TRUE)
-
-proj4string(hellenic_borders_shp) <- CRS("+proj=longlat +datum=WGS84") 
-
-#CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")  # this is WGS84
-
-hellenic_borders_df <- broom::tidy(hellenic_borders_shp)
-bbox_hellenic_borders <- hellenic_borders_shp@bbox
-bbox_hellenic_borders_lat <- bbox_hellenic_borders
-
-
-map_greece_plot_lines <- ggplot()+
-  geom_polygon(data = hellenic_borders_df,aes(x=long, y=lat,group = group),lwd=0.12,color="black")+
-  geom_point(data = locations,aes(x=logD, y=latD,color=Order),size = 0.2)+
-  labs(x="Longitude",y="Latitude")+
-#  scale_fill_manual(values = c("chartreuse3","purple","cyan3","chocolate2"),labels = c("Natura2000 v30 SCI", "Natura2000 v30 SPA", "Natura2000 v30 SCISPA","Wildlife Refuge"),name="Protected areas")+
-#  scale_color_manual(name="", values = c("Caves"="red"))+
-  scale_x_continuous(breaks = seq(23,27,0.5),limits = c(23,27))+
-  scale_y_continuous(breaks = seq(34,36,0.5),limits = c(34,37))+
-  coord_map(xlim = c(23,27), ylim = c(34,37))+
-  theme_bw()+
-  theme(panel.grid.minor = element_blank(), panel.grid.major = element_blank(),legend.position = c(0.87, 0.73),legend.text = element_text(size=9),legend.title = element_text(size=10))
-#geom_text(data = sisquoc, aes(label = paste("  ", as.character(name), sep="")), angle = 60, hjust = 0, color = "yellow")
-    
-ggsave("map_greece_plot_lines.png", plot = map_greece_plot_lines, device = "png",width = 30,height = 30,units = "cm",dpi = 300 ,path = "../plots/")
-
-
-
+#hellenic_borders_shp <- rgdal::readOGR(dsn="~//Documents/spatial_data/hellenic_borders",layer="hellenic_borders",verbose=TRUE)
+#
+#proj4string(hellenic_borders_shp) <- CRS("+proj=longlat +datum=WGS84") 
+#
+##CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")  # this is WGS84
+#
+#hellenic_borders_df <- broom::tidy(hellenic_borders_shp)
+#bbox_hellenic_borders <- hellenic_borders_shp@bbox
+#bbox_hellenic_borders_lat <- bbox_hellenic_borders
+#
+#
+#map_greece_plot_lines <- ggplot()+
+#  geom_polygon(data = hellenic_borders_df,aes(x=long, y=lat,group = group),lwd=0.12,color="black")+
+#  geom_point(data = locations,aes(x=logD, y=latD,color=Order),size = 0.2)+
+#  labs(x="Longitude",y="Latitude")+
+##  scale_fill_manual(values = c("chartreuse3","purple","cyan3","chocolate2"),labels = c("Natura2000 v30 SCI", "Natura2000 v30 SPA", "Natura2000 v30 SCISPA","Wildlife Refuge"),name="Protected areas")+
+##  scale_color_manual(name="", values = c("Caves"="red"))+
+#  scale_x_continuous(breaks = seq(23,27,0.5),limits = c(23,27))+
+#  scale_y_continuous(breaks = seq(34,36,0.5),limits = c(34,37))+
+#  coord_map(xlim = c(23,27), ylim = c(34,37))+
+#  theme_bw()+
+#  theme(panel.grid.minor = element_blank(), panel.grid.major = element_blank(),legend.position = c(0.87, 0.73),legend.text = element_text(size=9),legend.title = element_text(size=10))
+##geom_text(data = sisquoc, aes(label = paste("  ", as.character(name), sep="")), angle = 60, hjust = 0, color = "yellow")
+#    
+#ggsave("map_greece_plot_lines.png", plot = map_greece_plot_lines, device = "png",width = 30,height = 30,units = "cm",dpi = 300 ,path = "../plots/")
+#
+#
+#
 ### eoo
 # Run once on 19/11/2021
 #EOO <- EOO.computing(locations_shp, country_map=hellenic_borders_shp, export_shp=T,write_shp=T)
