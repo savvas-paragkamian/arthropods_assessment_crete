@@ -16,8 +16,8 @@ library(vegan)
 #    filter(Order!="Opiliones") %>% 
 #    dplyr::select(-Ergasia)
 
-
-# Endemic species occurrences in Crete
+# Load Data
+## Endemic species occurrences in Crete
 arthropods_kriti_endemic <- readxl::read_excel("../data/Data-ENDEMICS.xlsx") %>% 
     filter(Order!="Opiliones") %>% 
     dplyr::select(-Ergasia)
@@ -27,18 +27,17 @@ species_wo_coords <- arthropods_kriti_endemic[which(is.na(arthropods_kriti_endem
 ## Sanity check on coordinates
 print(paste0("there are ", nrow(species_wo_coords)," rows without coordinates"))
 
-locations <- arthropods_kriti_endemic %>% 
+arthropods_occurrences <- arthropods_kriti_endemic %>% 
     dplyr::select(subspeciesname,latD, logD, Order) %>% 
     filter(latD<38, logD<30) %>%
     na.omit()
 
-locations_shp <- st_as_sf(locations,
+locations_shp <- st_as_sf(arthropods_occurrences,
                           coords=c("logD", "latD"),
                           remove=TRUE,
                           crs="WGS84")
 
-# Spatial data
-## Shapefiles
+## Crete Spatial data
 
 periphereies_shp <- sf::st_read("~/Documents/spatial_data/periphereies/periphereies.shp")
 
@@ -56,115 +55,76 @@ crete_polygon <- st_cast(crete_shp, "POLYGON") %>%
 
 locations_inland <- st_join(locations_shp, crete_polygon, left=F)
 
+## EEA reference grid
+## https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2
+##
+
+grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") %>%
+    st_transform(., crs="WGS84")
+
+### keep grid that overlaps with Crete
+crete_grid10m <- st_join(grid_10km, crete_polygon, left=F)
+
+## Here is Crete with all the sampling points
+##
 g <- ggplot() +
     geom_sf(crete_polygon, mapping=aes()) +
     geom_sf(locations_inland, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
-#    geom_sf(locations_shp, mapping=aes(),color="red", alpha=0.2, size=0.1) +
+    geom_sf(crete_grid10m, mapping=aes(),color="red", alpha=0.2, size=0.1) +
     coord_sf(crs="WGS84") +
     theme_bw()
 
 ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 
-### which points are inside Crete
+# Processing
 
+## EOO
+## Data transformation for ConR package
 
-#####
-#hellenic_borders_shp <- rgdal::readOGR(dsn="~//Documents/spatial_data/hellenic_borders",layer="hellenic_borders",verbose=TRUE)
-#
-#proj4string(hellenic_borders_shp) <- CRS("+proj=longlat +datum=WGS84") 
-#
-##CRS("+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs")  # this is WGS84
-#
-#hellenic_borders_df <- broom::tidy(hellenic_borders_shp)
-#bbox_hellenic_borders <- hellenic_borders_shp@bbox
-#bbox_hellenic_borders_lat <- bbox_hellenic_borders
-#
-#
-#map_greece_plot_lines <- ggplot()+
-#  geom_polygon(data = hellenic_borders_df,aes(x=long, y=lat,group = group),lwd=0.12,color="black")+
-#  geom_point(data = locations,aes(x=logD, y=latD,color=Order),size = 0.2)+
-#  labs(x="Longitude",y="Latitude")+
-##  scale_fill_manual(values = c("chartreuse3","purple","cyan3","chocolate2"),labels = c("Natura2000 v30 SCI", "Natura2000 v30 SPA", "Natura2000 v30 SCISPA","Wildlife Refuge"),name="Protected areas")+
-##  scale_color_manual(name="", values = c("Caves"="red"))+
-#  scale_x_continuous(breaks = seq(23,27,0.5),limits = c(23,27))+
-#  scale_y_continuous(breaks = seq(34,36,0.5),limits = c(34,37))+
-#  coord_map(xlim = c(23,27), ylim = c(34,37))+
-#  theme_bw()+
-#  theme(panel.grid.minor = element_blank(), panel.grid.major = element_blank(),legend.position = c(0.87, 0.73),legend.text = element_text(size=9),legend.title = element_text(size=10))
-##geom_text(data = sisquoc, aes(label = paste("  ", as.character(name), sep="")), angle = 60, hjust = 0, color = "yellow")
-#    
-#ggsave("map_greece_plot_lines.png", plot = map_greece_plot_lines, device = "png",width = 30,height = 30,units = "cm",dpi = 300 ,path = "../plots/")
-#
-#
-#
-### eoo
-# Run once on 19/11/2021
-#EOO <- EOO.computing(locations_shp, country_map=hellenic_borders_shp, export_shp=T,write_shp=T)
+locations_inland_df <- arthropods_occurrences %>%
+    dplyr::rename(ddlon=logD, ddlat=latD, tax=subspeciesname) %>% 
+    dplyr::select(-Order) %>%
+    relocate(ddlat,ddlon, tax)
 
-eoo_results <- read_delim("../data/EOO.results.csv", delim=",", col_names=T)
+crete_spatial <- as(crete_polygon, "Spatial")
 
-Acanthopetalum_minotauri <- locations %>% filter(subspeciesname=="Carabus banoni")
+### calculations
 
-Acanthopetalum_minotauri_plot <- ggplot()+
-  geom_polygon(data = hellenic_borders_df,aes(x=long, y=lat,group = group),lwd=0.12,color="black")+
-  geom_point(data = Acanthopetalum_minotauri ,aes(x=logD, y=latD,color=Order),size = 0.2)+
-  labs(x="Longitude",y="Latitude")+
-#  scale_fill_manual(values = c("chartreuse3","purple","cyan3","chocolate2"),labels = c("Natura2000 v30 SCI", "Natura2000 v30 SPA", "Natura2000 v30 SCISPA","Wildlife Refuge"),name="Protected areas")+
-#  scale_color_manual(name="", values = c("Caves"="red"))+
-  scale_x_continuous(breaks = seq(23,27,0.5),limits = c(23,27))+
-  scale_y_continuous(breaks = seq(34,36,0.5),limits = c(34,37))+
-  coord_map(xlim = c(23,27), ylim = c(34,37))+
-  theme_bw()+
-  theme(panel.grid.minor = element_blank(), panel.grid.major = element_blank(),legend.position = c(0.87, 0.73),legend.text = element_text(size=9),legend.title = element_text(size=10))
-#geom_text(data = sisquoc, aes(label = paste("  ", as.character(name), sep="")), angle = 60, hjust = 0, color = "yellow")
-    
-ggsave("Carabus_banoni.png", plot = Acanthopetalum_minotauri_plot, device = "png",width = 30,height = 30,units = "cm",dpi = 300 ,path = "../plots/")
+eoo_results_list <- EOO.computing(locations_inland_df, country_map=crete_spatial, export_shp=T,write_shp=T)
 
+eoo_results <- read_delim("EOO.results.csv", delim=",", col_names=T)
 
-### Carabus banoni_EOO_poly
-###
+## AOO
+## see for bootstrap
+AOO_endemic <- AOO.computing(locations_inland_df,Cell_size_AOO =2 )
 
-carabus_banoni_shp <- rgdal::readOGR(dsn="../shapesIUCN/",layer="Carabus banoni_EOO_poly",verbose=TRUE)
+AOO_endemic_df <- tibble(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
 
-proj4string(carabus_banoni_shp) <- CRS("+proj=longlat +datum=WGS84") 
+## Preliminary Automated Conservation Assessments (PACA)
 
-carabus_banoni <- broom::tidy(carabus_banoni_shp)
-bbox_carabus_banoni <- carabus_banoni_shp@bbox
-bbox_carabus_banoni_lat <- bbox_carabus_banoni
-carabus_banoni_points <- locations %>% filter(subspeciesname=="Carabus banoni")
+endemic_species <- arthropods_occurrences %>% 
+    group_by(subspeciesname,Order) %>% 
+    summarize(n_locations=n()) %>% 
+    ungroup() %>%
+    left_join(AOO_endemic_df, by=c("subspeciesname"="subspeciesname")) %>%
+    left_join(eoo_results, by=c("subspeciesname"="...1")) %>% 
+    mutate(Potentially_VU=if_else(n_locations<10 & (EOO<20000 | AOO<2000),TRUE,FALSE)) %>%
+    mutate(Potentially_EN=if_else(n_locations<5 & (EOO<5000 | AOO<500),TRUE,FALSE)) %>%
+    mutate(Potentially_CR=if_else(n_locations==1 & (EOO<500 | AOO<10),TRUE,FALSE)) %>%
+    ungroup() %>%
+    mutate(potential_status=if_else(Potentially_CR=="TRUE","Potentially_CR", if_else(Potentially_EN=="TRUE","Potentially_EN",if_else(Potentially_VU=="TRUE","Potentially_VU","FALSE"))))
 
-carabus_banoni_plot <- ggplot()+
-  geom_polygon(data = hellenic_borders_df,aes(x=long, y=lat,group = group),lwd=0.12,color="black")+
-  geom_polygon(data = carabus_banoni,aes(x=long, y=lat,group = group),alpha=0.5,lwd=0.12,color="orange")+
-  geom_point(data = carabus_banoni_points,aes(x=logD, y=latD,color=Order),size = 0.2)+
-  labs(x="Longitude",y="Latitude")+
-#  scale_fill_manual(values = c("chartreuse3","purple","cyan3","chocolate2"),labels = c("Natura2000 v30 SCI", "Natura2000 v30 SPA", "Natura2000 v30 SCISPA","Wildlife Refuge"),name="Protected areas")+
-#  scale_color_manual(name="", values = c("Caves"="red"))+
-  scale_x_continuous(breaks = seq(23,27,0.5),limits = c(23,27))+
-  scale_y_continuous(breaks = seq(34,36,0.5),limits = c(34,37))+
-  coord_map(xlim = c(23,27), ylim = c(34,37))+
-  theme_bw()+
-  theme(panel.grid.minor = element_blank(), panel.grid.major = element_blank(),legend.position = c(0.87, 0.73),legend.text = element_text(size=9),legend.title = element_text(size=10))
-#geom_text(data = sisquoc, aes(label = paste("  ", as.character(name), sep="")), angle = 60, hjust = 0, color = "yellow")
-    
-ggsave("Carabus_banoni.png", plot = carabus_banoni_plot, device = "png",width = 30,height = 30,units = "cm",dpi = 300 ,path = "../plots/")
+write_delim(endemic_species, "../data/endemic_species_iucn.tsv", delim="\t") 
 
+endemic_species_threatened <- endemic_species %>% filter(potential_status!="FALSE") 
 
+write_delim(endemic_species_threatened, "../data/endemic_species_threatened.tsv", delim="\t") 
 
-## Grid 10km
+endemic_species_cr <- endemic_species %>% filter(potential_status=="Potentially_CR") 
 
-grid_10km <- rgdal::readOGR(dsn="../data/Greece_shapefile/",layer="gr_10km", verbose=T, p4s="EPSG:3035")
+write_delim(endemic_species_cr, "../data/endemic_species_cr.tsv", delim="\t") 
 
-#proj4string(grid_10km) <- CRS("EPSG:6258") # this is the EEA reference grid crs.
-# see here https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2 
-grid_10km.wgs <- spTransform(grid_10km, CRS=CRS("+proj=longlat +datum=WGS84"))
-
-grid_10km_df <- broom::tidy(grid_10km.wgs)
-
-grid_10km.wgs_data <- grid_10km.wgs@data %>% 
-        mutate(id=as.character(seq(0,nrow(.)-1))) %>%
-        left_join(grid_10km_df, by=c("id"="id"))
-### all species grid overlap
+## Raster analysis
 
 over_grid_10k_all <- sp::over( x = locations_shp_all , y = grid_10km.wgs , fn = NULL)
 
@@ -326,34 +286,6 @@ map_greece_plot_grid_10_top <- ggplot()+
 ggsave("map_greece_plot_grid_10_top.png", plot =map_greece_plot_grid_10_top, device = "png",width = 30,height = 30,units = "cm",dpi = 300 ,path = "../plots/")
 
 
-
-## AOO
-##
-## see for bootstrap
-AOO_endemic <- AOO.computing(locations_shp,Cell_size_AOO =2 )
-
-AOO_endemic_df <- data.frame(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
-
-endemic_species <- locations %>% 
-    group_by(subspeciesname,Order) %>% 
-    summarize(n_locations=n()) %>% 
-    left_join(AOO_endemic_df, by=c("subspeciesname"="subspeciesname")) %>%
-    left_join(eoo_results, by=c("subspeciesname"="X1")) %>% 
-    mutate(Potentially_VU=if_else(n_locations<10 & (EOO<20000 | AOO<2000),TRUE,FALSE)) %>%
-    mutate(Potentially_EN=if_else(n_locations<5 & (EOO<5000 | AOO<500),TRUE,FALSE)) %>%
-    mutate(Potentially_CR=if_else(n_locations==1 & (EOO<500 | AOO<10),TRUE,FALSE)) %>%
-    ungroup() %>%
-    mutate(potential_status=if_else(Potentially_CR=="TRUE","Potentially_CR", if_else(Potentially_EN=="TRUE","Potentially_EN",if_else(Potentially_VU=="TRUE","Potentially_VU","FALSE"))))
-
-write_delim(endemic_species, "../data/endemic_species_iucn.tsv", delim="\t") 
-
-endemic_species_threatened <- endemic_species %>% filter(potential_status!="FALSE") 
-
-write_delim(endemic_species_threatened, "../data/endemic_species_threatened.tsv", delim="\t") 
-
-endemic_species_cr <- endemic_species %>% filter(potential_status=="Potentially_CR") 
-
-write_delim(endemic_species_cr, "../data/endemic_species_cr.tsv", delim="\t") 
 
 ### Threatened maps
 
