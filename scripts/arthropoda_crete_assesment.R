@@ -126,28 +126,25 @@ write_delim(endemic_species_cr, "../data/endemic_species_cr.tsv", delim="\t")
 
 ## Raster analysis
 
-over_grid_10k_all <- sp::over( x = locations_shp_all , y = grid_10km.wgs , fn = NULL)
+occurrencies_grid_10k <- st_join( x = locations_inland, y = crete_grid10m, left=F)
+grid_10k_species <- st_join( x = crete_grid10m, y = locations_inland, left=F)
 
-species_over_grid_all <- over_grid_10k_all %>%
-    mutate(id=seq(1:nrow(.))) %>% 
-    left_join(locations_all, by=c("id"="id")) %>% 
-    distinct(CELLCODE,subspeciesname) %>%
+grid_10k_species_s <- grid_10k_species %>% 
+    distinct(CELLCODE, subspeciesname,geometry) %>%
     group_by(CELLCODE) %>%
-    summarize(total_species=n())
+    summarize(species=n())
 
+g2 <- ggplot() +
+    geom_sf(crete_polygon, mapping=aes()) +
+    geom_sf(locations_inland, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
+    geom_sf(crete_grid10m, mapping=aes(),color="red", alpha=0.2, size=0.1) +
+    geom_sf(grid_10k_species_s, mapping=aes(fill=species), alpha=0.8, size=0.1) +
+    scale_fill_gradient(low = "white", high = "black")+
+    coord_sf(crs="WGS84") +
+    theme_bw()
 
-grid_10km_species_data_all <- grid_10km.wgs_data %>%
-    left_join(species_over_grid_all, by=c("CELLCODE"="CELLCODE"))
+ggsave("../plots/crete-over-occurrences.png", plot=g2, device="png")
 
-### Endemics grid overlap
-over_grid_10k <- sp::over( x = locations_shp , y = grid_10km.wgs , fn = NULL)
-
-species_over_grid <- over_grid_10k %>%
-    mutate(id=seq(1:nrow(.))) %>% 
-    left_join(locations, by=c("id"="id")) %>% 
-    distinct(CELLCODE,subspeciesname) %>%
-    group_by(CELLCODE) %>%
-    summarize(endemic_species=n())
 
 grid_10km_species_data <- grid_10km.wgs_data %>%
     left_join(species_over_grid, by=c("CELLCODE"="CELLCODE")) %>%
