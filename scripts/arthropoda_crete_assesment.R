@@ -10,6 +10,7 @@ library(units)
 library(ConR)
 library(vegan)
 
+source("species_assessment_functions.R")
 #arthropods <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx")
 ## remove Opiliones because the dataset has some errors that are under review.
 #arthropods_kriti <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx") %>% 
@@ -86,13 +87,23 @@ locations_inland_df <- arthropods_occurrences %>%
     dplyr::select(-Order) %>%
     relocate(ddlat,ddlon, tax)
 
-crete_spatial <- as(crete_polygon, "Spatial")
+crete_spatial <- as(st_geometry(crete_polygon),"Spatial")  
 
 ### calculations
 
-eoo_results_list <- EOO.computing(locations_inland_df, country_map=crete_spatial, export_shp=T,write_shp=T)
+#eoo_results_list <- EOO.computing(locations_inland_df, 
+#                                  country_map=crete_spatial, 
+#                                  exclude.area=T,
+#                                  export_shp=T,
+#                                  write_shp=T)
+
+eoo_calculation(locations_inland, crete_polygon)
+
+eoo_results <- EOO.computing(locations_inland_df,export_shp=T, write_shp=T)
 
 eoo_results <- read_delim("EOO.results.csv", delim=",", col_names=T)
+
+test_eoo <- st_convex_hull(st_union(Acanthopetalum_minotauri))
 
 ## AOO
 ## see for bootstrap
@@ -145,6 +156,7 @@ g2 <- ggplot() +
 
 ggsave("../plots/crete-over-occurrences.png", plot=g2, device="png")
 
+### Hot spots
 
 grid_10km_species_data <- grid_10km.wgs_data %>%
     left_join(species_over_grid, by=c("CELLCODE"="CELLCODE")) %>%
