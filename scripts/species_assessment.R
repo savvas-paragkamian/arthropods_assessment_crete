@@ -11,11 +11,6 @@ library(ConR)
 library(vegan)
 
 source("species_assessment_functions.R")
-#arthropods <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx")
-## remove Opiliones because the dataset has some errors that are under review.
-#arthropods_kriti <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx") %>% 
-#    filter(Order!="Opiliones") %>% 
-#    dplyr::select(-Ergasia)
 
 # Load Data
 ## Endemic species occurrences in Crete
@@ -54,7 +49,12 @@ crete_polygon <- st_cast(crete_shp, "POLYGON") %>%
     mutate(area_m2=as.numeric(st_area(.))) %>%
     filter(area_m2==max(area_m2))
 
+# There is a difference in the points of the following objects
+# some occurrences fall in the sea and others are on the peripheral
+# islands of Crete.
 locations_inland <- st_join(locations_shp, crete_polygon, left=F)
+locations_out <- st_difference(locations_shp, crete_polygon)
+
 
 ## EEA reference grid
 ## https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2
@@ -71,6 +71,7 @@ crete_grid10m <- st_join(grid_10km, crete_polygon, left=F)
 g <- ggplot() +
     geom_sf(crete_polygon, mapping=aes()) +
     geom_sf(locations_inland, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
+    geom_sf(locations_out, mapping=aes(),color="red", size=0.1, alpha=0.2) +
     geom_sf(crete_grid10m, mapping=aes(),color="red", alpha=0.2, size=0.1) +
     coord_sf(crs="WGS84") +
     theme_bw()
@@ -80,30 +81,8 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 # Processing
 
 ## EOO
-## Data transformation for ConR package
 
-locations_inland_df <- arthropods_occurrences %>%
-    dplyr::rename(ddlon=logD, ddlat=latD, tax=subspeciesname) %>% 
-    dplyr::select(-Order) %>%
-    relocate(ddlat,ddlon, tax)
-
-crete_spatial <- as(st_geometry(crete_polygon),"Spatial")  
-
-### calculations
-
-#eoo_results_list <- EOO.computing(locations_inland_df, 
-#                                  country_map=crete_spatial, 
-#                                  exclude.area=T,
-#                                  export_shp=T,
-#                                  write_shp=T)
-
-eoo_calculation(locations_inland, crete_polygon)
-
-eoo_results <- EOO.computing(locations_inland_df,export_shp=T, write_shp=T)
-
-eoo_results <- read_delim("EOO.results.csv", delim=",", col_names=T)
-
-test_eoo <- st_convex_hull(st_union(Acanthopetalum_minotauri))
+eoo_results <- eoo_calculation(locations_inland, crete_polygon,TRUE)
 
 ## AOO
 ## see for bootstrap
@@ -113,10 +92,12 @@ AOO_endemic_df <- tibble(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.
 
 ## Preliminary Automated Conservation Assessments (PACA)
 
-endemic_species <- arthropods_occurrences %>% 
+endemic_species <- locations_inland %>% 
+    st_drop_geometry() %>%
     group_by(subspeciesname,Order) %>% 
     summarize(n_locations=n()) %>% 
     ungroup() %>%
+    left_join(eoo_results, by=c("subspeciesname"="subspeciesname"))
     left_join(AOO_endemic_df, by=c("subspeciesname"="subspeciesname")) %>%
     left_join(eoo_results, by=c("subspeciesname"="...1")) %>% 
     mutate(Potentially_VU=if_else(n_locations<10 & (EOO<20000 | AOO<2000),TRUE,FALSE)) %>%
