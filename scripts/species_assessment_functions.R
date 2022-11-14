@@ -4,20 +4,20 @@ eoo_calculation <- function(occurrences,land_area) {
     
     species <- unique(occurrences$subspeciesname)
 
-    for(s in species){
+    for(s in seq_along(species)){
 
         n_occurrences <- occurrences %>%
-            filter(subspeciesname==s)
+            filter(subspeciesname==species[s])
         
         rows <- nrow(n_occurrences)
     
         if (rows <=3 ){
 
-            print(paste0(s, " has ", rows, 
+            print(paste0(species[s], " has ", rows, 
                          " occurrences. Moving to the next taxon"))
             next
         } else { 
-            print(paste0(s, " has ", rows, " occurrences. Proceeding with 
+            print(paste0(species[s], " has ", rows, " occurrences. Proceeding with 
                          calculations"))
             # union the points of each species
             # and then calculate the convex hull of the points of 
