@@ -56,6 +56,15 @@ locations_inland <- st_join(locations_shp, crete_polygon, left=F)
 locations_out <- st_difference(locations_shp, crete_polygon)
 
 
+# return the coordinates to a dataframe format
+
+locations_inland_df <- locations_inland %>%
+    mutate(ddlon = unlist(map(locations_inland$geometry,1)),
+           ddlat = unlist(map(locations_inland$geometry,2))) %>%
+    st_drop_geometry() %>% 
+    dplyr::rename(tax=subspeciesname) %>%
+    dplyr::select(ddlat, ddlon, tax)
+
 ## EEA reference grid
 ## https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2
 ##
@@ -63,8 +72,14 @@ locations_out <- st_difference(locations_shp, crete_polygon)
 grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") %>%
     st_transform(., crs="WGS84")
 
+#grid_iucn <- sf::st_read(dsn="~/Downloads/AOOGrid_10x10kmshp/AOOGrid_10x10km.shp") %>% 
+    st_transform(., crs="WGS84")
+
+## make a new grid using the st_make_grid
+gr <- st_make_grid(crete_polygon,cellsize = 0.1)   
 ### keep grid that overlaps with Crete
 crete_grid10m <- st_join(grid_10km, crete_polygon, left=F)
+#crete_iucn_grid10m <- st_join(grid_iucn, crete_polygon, left=F)
 
 ## Here is Crete with all the sampling points
 ##
@@ -73,6 +88,7 @@ g <- ggplot() +
     geom_sf(locations_inland, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
     geom_sf(locations_out, mapping=aes(),color="red", size=0.1, alpha=0.2) +
     geom_sf(crete_grid10m, mapping=aes(),color="red", alpha=0.2, size=0.1) +
+    geom_sf(gr, mapping=aes(),color="orange", alpha=0.2, size=0.1) +
     coord_sf(crs="WGS84") +
     theme_bw()
 
@@ -97,12 +113,11 @@ endemic_species <- locations_inland %>%
     group_by(subspeciesname,Order) %>% 
     summarize(n_locations=n()) %>% 
     ungroup() %>%
-    left_join(eoo_results, by=c("subspeciesname"="subspeciesname"))
+    left_join(eoo_results, by=c("subspeciesname"="subspeciesname")) %>%
     left_join(AOO_endemic_df, by=c("subspeciesname"="subspeciesname")) %>%
-    left_join(eoo_results, by=c("subspeciesname"="...1")) %>% 
-    mutate(Potentially_VU=if_else(n_locations<10 & (EOO<20000 | AOO<2000),TRUE,FALSE)) %>%
-    mutate(Potentially_EN=if_else(n_locations<5 & (EOO<5000 | AOO<500),TRUE,FALSE)) %>%
-    mutate(Potentially_CR=if_else(n_locations==1 & (EOO<500 | AOO<10),TRUE,FALSE)) %>%
+    mutate(Potentially_VU=if_else(n_locations<10 & (area_convex<20000 | AOO<2000),TRUE,FALSE)) %>%
+    mutate(Potentially_EN=if_else(n_locations<5 & (area_convex<5000 | AOO<500),TRUE,FALSE)) %>%
+    mutate(Potentially_CR=if_else(n_locations==1 & (area_convex<500 | AOO<10),TRUE,FALSE)) %>%
     ungroup() %>%
     mutate(potential_status=if_else(Potentially_CR=="TRUE","Potentially_CR", if_else(Potentially_EN=="TRUE","Potentially_EN",if_else(Potentially_VU=="TRUE","Potentially_VU","FALSE"))))
 
