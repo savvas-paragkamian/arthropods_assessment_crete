@@ -38,8 +38,11 @@ eoo_calculation <- function(occurrences,land_area, plots) {
         }
     }
 
-    calculations <- data.frame(calculations)
+    calculations <- as_tibble(calculations)
     colnames(calculations) <- c("subspeciesname", "occurrences","area_convex", "area_land" )
+    calculations$occurrences <- as.numeric(calculations$occurrences)
+    calculations$area_convex <- as.numeric(calculations$area_convex)
+    calculations$area_land <- as.numeric(calculations$area_land)
     return(calculations)
 }
 

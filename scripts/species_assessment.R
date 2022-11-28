@@ -73,7 +73,7 @@ grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") %>%
     st_transform(., crs="WGS84")
 
 #grid_iucn <- sf::st_read(dsn="~/Downloads/AOOGrid_10x10kmshp/AOOGrid_10x10km.shp") %>% 
-    st_transform(., crs="WGS84")
+#    st_transform(., crs="WGS84")
 
 ## make a new grid using the st_make_grid
 gr <- st_make_grid(crete_polygon,cellsize = 0.1)   
@@ -98,7 +98,14 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 
 ## EOO
 
-eoo_results <- eoo_calculation(locations_inland, crete_polygon,TRUE)
+eoo_results <- eoo_calculation(locations_inland, crete_polygon,FALSE)
+
+## Use square km as unit of EOO
+eoo_results <- eoo_results %>% mutate(
+                                      area_convex_km = ifelse(is.na(area_convex)==F,
+                                                               area_convex/1000000, area_convex), 
+                                      area_land_km = ifelse(is.na(area_land)==F,
+                                                           area_land/1000000, area_land))
 
 ## AOO
 ## see for bootstrap
