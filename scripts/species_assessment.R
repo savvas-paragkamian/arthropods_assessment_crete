@@ -35,13 +35,33 @@ locations_shp <- st_as_sf(arthropods_occurrences,
 
 ## Crete Spatial data
 
-periphereies_shp <- sf::st_read("~/Documents/spatial_data/periphereies/periphereies.shp")
+# not run
+#periphereies_shp <- sf::st_read("~/Documents/spatial_data/periphereies/periphereies.shp")
 
 #### crete is the 12th region in this shapefile
 #### https://geodata.gov.gr/en/dataset/28121643-d977-48eb-a8ca-a6fac6b4af6d/resource/7c80a2c1-93b7-4814-9fc4-245e775acaa6/download/periphereies.zip
+#
+#crete_shp <- periphereies_shp[12,] %>% st_transform(., "WGS84")
+#
+#st_write(crete_shp,"../data/crete/crete.shp",
+#         layer_options = "ENCODING=UTF-8", delete_layer = TRUE)
 
-crete_shp <- periphereies_shp[12,] %>% st_transform(., "WGS84")
+crete_shp <- sf::st_read("../data/crete/crete.shp")
 
+### Natura2000
+
+# natura2000 shapefile downloaded from here https://www.eea.europa.eu/data-and-maps/data/natura-13 
+#natura2000 <- sf::st_read("~/Downloads/Natura2000_end2021_Shapefile/Natura2000_end2021_epsg3035.shp") 
+#                   %>% st_transform(., "WGS84")
+#
+#natura_crete <- st_crop(natura2000,
+#                        y=st_bbox(c(xmin=23,ymin=34,xmax=27,ymax=36),
+#                                  crs="WGS84"))
+#
+#st_write(natura_crete,"../data/natura2000/natura2000_crete.shp",
+#         layer_options = "ENCODING=UTF-8", delete_layer = TRUE)
+
+natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 ## here we calculate the area of each polygon of the region of Crete
 ## and subsequently we keep only the largest polygon e.g. Crete island only.
 
@@ -54,7 +74,6 @@ crete_polygon <- st_cast(crete_shp, "POLYGON") %>%
 # islands of Crete.
 locations_inland <- st_join(locations_shp, crete_polygon, left=F)
 locations_out <- st_difference(locations_shp, crete_polygon)
-
 
 # return the coordinates to a dataframe format
 
@@ -97,7 +116,9 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 # Processing
 
 ## EOO
-
+# eoo_calculation is a custom function that takes 3 inputs.
+# the location shapefile, the polygon and a TRUE/FALSE value to 
+# export or not to plot
 eoo_results <- eoo_calculation(locations_inland, crete_polygon,FALSE)
 
 ## Use square km as unit of EOO
