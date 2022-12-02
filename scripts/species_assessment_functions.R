@@ -5,56 +5,36 @@ eoo_calculation <- function(occurrences,land_area, plots) {
 # eoo_calculation is a custom function that takes 3 inputs.
 # the location shapefile, the polygon and a TRUE/FALSE value to 
 # export or not to plot
-    species <- unique(st_drop_geometry(occurrences)[,1])
-    calculations <- matrix(ncol=4,nrow=length(species))
+    species <- occurrences %>% st_drop_geometry() %>%
+        dplyr::select(subspeciesname) %>% 
+        distinct() %>%
+        pull()
+
+    calculations <- list(list())
 
     for(s in seq_along(species)){
 
-        calculations[s,1] <- species[s]
         n_occurrences <- occurrences %>%
             filter(subspeciesname==species[s])
+
+        calculations[[s]] <- eoo_single(n_occurrences, land_area, plots )
         
-        rows <- nrow(n_occurrences)
-        calculations[s,2] <- rows
-    
-        if (rows < 3){
-            # the EOO is not suitable below 3 occurrences of a taxon
-
-            print(paste0(species[s], " has ", rows, 
-                         " occurrences. Moving to the next taxon"))
-            calculations[s,3] <- NA
-            calculations[s,4] <- NA
-            next
-        } else { 
-            print(paste0(species[s], " has ", rows, " occurrences. Proceeding with calculations"))
-            # union the points of each species
-            # and then calculate the convex hull of the points of 
-            # each species
-            species_convex <- st_convex_hull(st_union(n_occurrences))
-            species_convex_land <- st_intersection(species_convex,land_area)
-            calculations[s,3] <- st_area(species_convex)
-            calculations[s,4] <- st_area(species_convex_land)
-
-            if (plots==TRUE){
-                g_species(n_occurrences,species_convex, land_area)
-
-            }
-        }
     }
 
-    calculations <- as_tibble(calculations)
-    colnames(calculations) <- c("subspeciesname", "occurrences","area_convex", "area_convex_overlap" )
-    calculations$occurrences <- as.numeric(calculations$occurrences)
-    calculations$area_convex <- as.numeric(calculations$area_convex)
-    calculations$area_land <- as.numeric(calculations$area_land)
-    return(calculations)
+    calculations_df <- as.data.frame(do.call(rbind, calculations)) 
+    return(calculations_df)
 }
 
 eoo_single <- function(taxon_occurrences,overlap_area, plots) {
     
     rows <- nrow(taxon_occurrences)
-    species <- unique(st_drop_geometry(ss)[,1])
+    species <- taxon_occurrences %>% st_drop_geometry() %>%
+        dplyr::select(subspeciesname) %>% 
+        distinct() %>%
+        pull()
+
     calculations <- list()
+    calculations[1] <- species
     calculations[2] <- rows
 
     if (length(species) > 1){
@@ -70,9 +50,6 @@ eoo_single <- function(taxon_occurrences,overlap_area, plots) {
         # union the points of each species
         # and then calculate the convex hull of the points of 
         # each species
-        
-        calculations[1] <- species
-
         species_convex <- st_convex_hull(st_union(taxon_occurrences))
         species_convex_overlap <- st_intersection(species_convex,overlap_area)
         print(st_area(species_convex))
@@ -82,9 +59,8 @@ eoo_single <- function(taxon_occurrences,overlap_area, plots) {
         if (plots==TRUE){
             g_species(taxon_occurrences,species_convex, overlap_area)
         }
-        return(calculations)
     }
-
+    return(calculations)
 }
 
 g_species <- function(occurrences,convex, land_area){
