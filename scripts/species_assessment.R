@@ -62,6 +62,9 @@ crete_shp <- sf::st_read("../data/crete/crete.shp")
 #         layer_options = "ENCODING=UTF-8", delete_layer = TRUE)
 
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
+
+natura_crete_land <- st_intersection(natura_crete, crete_shp)
+
 ## here we calculate the area of each polygon of the region of Crete
 ## and subsequently we keep only the largest polygon e.g. Crete island only.
 
@@ -72,6 +75,7 @@ crete_polygon <- st_cast(crete_shp, "POLYGON") %>%
 # There is a difference in the points of the following objects
 # some occurrences fall in the sea and others are on the peripheral
 # islands of Crete.
+
 locations_inland <- st_join(locations_shp, crete_polygon, left=F)
 locations_out <- st_difference(locations_shp, crete_polygon)
 
@@ -121,9 +125,10 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 # export or not to plot
 eoo_results <- eoo_calculation(locations_inland, crete_polygon,FALSE)
 
+eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land, TRUE, "natura")
+
 ## Use square km as unit of EOO
-eoo_results <- eoo_results %>% mutate(
-                                      area_convex_km = ifelse(is.na(area_convex)==F,
+eoo_results <- eoo_results %>% mutate(area_convex_km = ifelse(is.na(area_convex)==F,
                                                                area_convex/1000000, area_convex), 
                                       area_land_km = ifelse(is.na(area_land)==F,
                                                            area_land/1000000, area_land))
@@ -147,7 +152,12 @@ endemic_species <- locations_inland %>%
     mutate(Potentially_EN=if_else(n_locations<5 & (area_convex<5000 | AOO<500),TRUE,FALSE)) %>%
     mutate(Potentially_CR=if_else(n_locations==1 & (area_convex<500 | AOO<10),TRUE,FALSE)) %>%
     ungroup() %>%
-    mutate(potential_status=if_else(Potentially_CR=="TRUE","Potentially_CR", if_else(Potentially_EN=="TRUE","Potentially_EN",if_else(Potentially_VU=="TRUE","Potentially_VU","FALSE"))))
+    mutate(potential_status=if_else(
+                                    Potentially_CR=="TRUE","Potentially_CR", 
+                                    if_else(
+                                            Potentially_EN=="TRUE","Potentially_EN",
+                                            if_else(
+                                                    Potentially_VU=="TRUE","Potentially_VU","FALSE"))))
 
 write_delim(endemic_species, "../data/endemic_species_iucn.tsv", delim="\t") 
 

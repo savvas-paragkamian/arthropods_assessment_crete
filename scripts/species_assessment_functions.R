@@ -1,6 +1,6 @@
 #!/usr/bin/Rscript
 
-eoo_calculation <- function(occurrences,land_area, plots) {
+eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefix) {
     
 # eoo_calculation is a custom function that takes 3 inputs.
 # the location shapefile, the polygon and a TRUE/FALSE value to 
@@ -17,7 +17,7 @@ eoo_calculation <- function(occurrences,land_area, plots) {
         n_occurrences <- occurrences %>%
             filter(subspeciesname==species[s])
 
-        calculations[[s]] <- eoo_single(n_occurrences, land_area, plots )
+        calculations[[s]] <- eoo_single(n_occurrences,baseline_map, overlap_area, plots, prefix)
         
     }
 
@@ -25,8 +25,15 @@ eoo_calculation <- function(occurrences,land_area, plots) {
     return(calculations_df)
 }
 
-eoo_single <- function(taxon_occurrences,overlap_area, plots) {
+#eoo_protected <- function(taxon_occurrences,overlap_area, plots) {
+#
+#    calculations <- eoo_calculation(taxon_occurrences,overlap_area, plots)
+#
+#}
+
+eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, prefix) {
     
+    prefix <- as.character(prefix)
     rows <- nrow(taxon_occurrences)
     species <- taxon_occurrences %>% st_drop_geometry() %>%
         dplyr::select(subspeciesname) %>% 
@@ -34,7 +41,8 @@ eoo_single <- function(taxon_occurrences,overlap_area, plots) {
         pull()
 
     calculations <- list()
-    calculations[1] <- species
+    print(as.character(species))
+    calculations[1] <- as.character(species)
     calculations[2] <- rows
 
     if (length(species) > 1){
@@ -57,20 +65,31 @@ eoo_single <- function(taxon_occurrences,overlap_area, plots) {
         calculations[4] <- st_area(species_convex_overlap)
         
         if (plots==TRUE){
-            g_species(taxon_occurrences,species_convex, overlap_area)
+            g <- g_species(taxon_occurrences,species_convex, baseline_map)
+            
+            if (is(baseline_map, "sf")==TRUE){
+        
+                g <- g + 
+                    geom_sf(overlap_area, mapping=aes(),color="green", alpha=0.2, size=0.2)
+        
+            }
+
+            ggsave(paste0("../plots/polygons/",prefix, "_", as.character(species),".png"), plot=g, device="png")
+
         }
     }
+
     return(calculations)
 }
 
-g_species <- function(occurrences,convex, land_area){
+g_species <- function(occurrences,convex, baseline_map){
     
 #    convex <- st_convex_hull(st_union(occurrences))
     name <- unique(as.character(occurrences$subspeciesname))
     name_ <- gsub(" ", "_", name)
 
     g <- ggplot() +
-        geom_sf(land_area, mapping=aes()) +
+        geom_sf(baseline_map, mapping=aes()) +
         geom_sf(occurrences, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
         geom_sf(convex, mapping=aes(),color="red", alpha=0.2, size=0.1) +
         coord_sf(crs="WGS84") +
@@ -78,6 +97,6 @@ g_species <- function(occurrences,convex, land_area){
         theme_bw()+
         theme(plot.title = element_text(face = "italic"))
     
-    ggsave(paste0("../plots/polygons/",name_,"_convex.png"), plot=g, device="png")
+        return(g)
 
 }
