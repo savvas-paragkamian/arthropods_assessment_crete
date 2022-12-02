@@ -123,7 +123,7 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 # eoo_calculation is a custom function that takes 3 inputs.
 # the location shapefile, the polygon and a TRUE/FALSE value to 
 # export or not to plot
-eoo_results <- eoo_calculation(locations_inland, crete_polygon,FALSE)
+eoo_results <- eoo_calculation(locations_inland, crete_polygon,"nothing",FALSE, "EOO")
 
 eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land, TRUE, "natura")
 

@@ -59,10 +59,29 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
         # and then calculate the convex hull of the points of 
         # each species
         species_convex <- st_convex_hull(st_union(taxon_occurrences))
-        species_convex_overlap <- st_intersection(species_convex,overlap_area)
         print(st_area(species_convex))
-        calculations[3] <- st_area(species_convex)
-        calculations[4] <- st_area(species_convex_overlap)
+
+        # here we check whether the EOO of a species forms a polygon.
+        # There are some rare cases that it forms a line. When that
+        # happens the overlap cannot be calculated.
+
+        if (st_geometry_type(species_convex)!="POLYGON"){
+            calculations[3] <- 0
+            calculations[4] <- 0
+
+        } else {
+            
+            calculations[3] <- st_area(species_convex)
+
+            if (is(overlap_area, "sf")==TRUE){
+
+                species_convex_overlap <- st_intersection(species_convex,overlap_area)
+                calculations[4] <- st_area(species_convex_overlap)
+
+            } else {
+                calculations[4] <- NA
+            }
+        }
         
         if (plots==TRUE){
             g <- g_species(taxon_occurrences,species_convex, baseline_map)
