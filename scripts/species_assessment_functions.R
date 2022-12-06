@@ -21,8 +21,8 @@ eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefi
         
     }
 
-    calculations_df <- as.data.frame(do.call(rbind, calculations)) 
-    return(calculations_df)
+    #calculations_df <- as.data.frame(do.call(rbind, calculations)) 
+    return(calculations)
 }
 
 #eoo_protected <- function(taxon_occurrences,overlap_area, plots) {
@@ -42,8 +42,8 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
 
     calculations <- list()
     print(as.character(species))
-    calculations[1] <- as.character(species)
-    calculations[2] <- rows
+    calculations[[1]] <- as.character(species)
+    calculations[[2]] <- rows
 
     if (length(species) > 1){
         print(paste0(" has more than one taxon."))
@@ -51,8 +51,8 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
     } else if (rows < 3){
         print(paste0(species, " has ", rows, 
                          " occurrences. Moving to the next taxon"))
-        calculations[3] <- NA
-        calculations[4] <- NA
+        calculations[[3]] <- NA
+        calculations[[4]] <- NA
 
     } else {
         # union the points of each species
@@ -66,20 +66,20 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
         # happens the overlap cannot be calculated.
 
         if (st_geometry_type(species_convex)!="POLYGON"){
-            calculations[3] <- 0
-            calculations[4] <- 0
+            calculations[[3]] <- 0
+            calculations[[4]] <- 0
 
         } else {
             
-            calculations[3] <- st_area(species_convex)
+            calculations[[3]] <- st_area(species_convex)
 
             if (is(overlap_area, "sf")==TRUE){
 
                 species_convex_overlap <- st_intersection(species_convex,overlap_area)
-                calculations[4] <- st_area(species_convex_overlap)
+                calculations[[4]] <- st_area(species_convex_overlap)
 
             } else {
-                calculations[4] <- NA
+                calculations[[4]] <- NA
             }
         }
         
@@ -117,5 +117,14 @@ g_species <- function(occurrences,convex, baseline_map){
         theme(plot.title = element_text(face = "italic"))
     
         return(g)
+
+}
+
+convert_ll_df <- function(list_of_l_of_l){
+    
+    list_of_l <- lapply(list_of_l_of_l, unlist)
+    df <- data.frame(do.call(rbind, list_of_l))
+
+    return(df)
 
 }

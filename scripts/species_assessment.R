@@ -125,7 +125,26 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 # export or not to plot
 eoo_results <- eoo_calculation(locations_inland, crete_polygon,"nothing",FALSE, "EOO")
 
+eoo_results_df <- convert_ll_df(eoo_results) %>% as_tibble() 
+colnames(eoo_results_df) <- c("subspeciesname", "n_locations", "eoo", "land_eoo")
+
+eoo_results_df$n_locations <- as.numeric(eoo_results_df$n_locations)
+eoo_results_df$eoo <- as.numeric(eoo_results_df$eoo)
+eoo_results_df$land_eoo <- as.numeric(eoo_results_df$land_eoo)
+
+write.table(eoo_results_df, file="../data/eoo_resuls.tsv", sep="\t")
+
+### Natura overlap with eoo of species
 eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land, TRUE, "natura")
+
+eoo_natura_df <- convert_ll_df(eoo_natura) %>% as_tibble()
+
+colnames(eoo_natura_df) <- c("subspeciesname", "n_locations", "eoo", "natura_eoo")
+
+eoo_natura_df$n_locations <- as.numeric(eoo_natura_df$n_locations)
+eoo_natura_df$eoo <- as.numeric(eoo_natura_df$eoo)
+eoo_natura_df$natura_eoo <- as.numeric(eoo_natura_df$natura_eoo)
+write.table(eoo_natura_df, file="../data/eoo_natura.tsv", sep="\t")
 
 ## Use square km as unit of EOO
 eoo_results <- eoo_results %>% mutate(area_convex_km = ifelse(is.na(area_convex)==F,
