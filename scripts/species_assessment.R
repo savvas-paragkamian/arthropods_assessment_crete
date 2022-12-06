@@ -154,9 +154,15 @@ eoo_results <- eoo_results %>% mutate(area_convex_km = ifelse(is.na(area_convex)
 
 ## AOO
 ## see for bootstrap
-AOO_endemic <- AOO.computing(locations_inland_df,Cell_size_AOO =2 )
+AOO_endemic <- AOO.computing(locations_inland_df,Cell_size_AOO = 2, nbe.rep.rast.AOO=1000, export_shp = T)
+# in AOO.computing when export_shp is T a list is returned.
 
-AOO_endemic_df <- tibble(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
+if (is.list(AOO_endemic)) {
+    AOO_endemic_df <- data.frame(AOO= AOO_endemic[[1]]) %>% rownames_to_column(var="subspeciesname")
+} else {
+    AOO_endemic_df <- tibble(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
+}
+
 
 ## Preliminary Automated Conservation Assessments (PACA)
 

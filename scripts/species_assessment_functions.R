@@ -1,5 +1,50 @@
 #!/usr/bin/Rscript
 
+aoo_overlap <- function(aoo_shp, baseline_map, overlap_area, plots){
+
+    aoo <- aoo_shp[[2]]
+    species_aoo <- list()
+    overlap_area_c <- st_combine(overlap_area)
+
+    for (a in seq_along(aoo)){
+        
+        name <- names(aoo[a])
+        aoo_sf <- st_as_sf(aoo[[a]])
+        aoo_area <- sum(st_area(aoo_sf))
+        print(aoo_area)
+        # Calculate the overlap with protected area
+
+        aoo_overlap <- st_intersection(aoo_sf,overlap_area_c)
+
+        aoo_overlap_area <- sum(st_area(aoo_overlap))
+        print(aoo_overlap_area)
+        species_row <- cbind(name, aoo_area, aoo_overlap_area_c)
+
+        species_aoo[[a]]<- species_row
+
+    }
+
+    species_aoo_df <- as_tibble(do.call(rbind, species_aoo)) 
+
+
+
+    if (plots){
+        g <- g_species(taxon_occurrences,species_convex, baseline_map)
+        
+        if (is(baseline_map, "sf")==TRUE){
+        
+            g <- g + 
+                geom_sf(overlap_area, mapping=aes(),color="green", alpha=0.2, size=0.2)
+        
+        }
+        
+        ggsave(paste0("../plots/aoo/",prefix, "_", as.character(species),".png"), plot=g, device="png")
+
+    }
+
+    return(species_aoo_df)
+}
+
 eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefix) {
     
 # eoo_calculation is a custom function that takes 3 inputs.
