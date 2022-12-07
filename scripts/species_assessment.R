@@ -65,6 +65,10 @@ natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 
 natura_crete_land <- st_intersection(natura_crete, crete_shp)
 
+# split the SPA SCI
+
+natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
+
 ## here we calculate the area of each polygon of the region of Crete
 ## and subsequently we keep only the largest polygon e.g. Crete island only.
 
@@ -110,8 +114,9 @@ g <- ggplot() +
     geom_sf(crete_polygon, mapping=aes()) +
     geom_sf(locations_inland, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
     geom_sf(locations_out, mapping=aes(),color="red", size=0.1, alpha=0.2) +
-    geom_sf(crete_grid10m, mapping=aes(),color="red", alpha=0.2, size=0.1) +
-    geom_sf(gr, mapping=aes(),color="orange", alpha=0.2, size=0.1) +
+#    geom_sf(crete_grid10m, mapping=aes(),color="red", alpha=0.2, size=0.1) +
+    geom_sf(natura_crete_land, mapping=aes(fill=SITETYPE, color=SITETYPE), alpha=0.2, size=0.1) +
+#    geom_sf(gr, mapping=aes(),color="orange", alpha=0.2, size=0.1) +
     coord_sf(crs="WGS84") +
     theme_bw()
 
@@ -163,7 +168,9 @@ if (is.list(AOO_endemic)) {
     AOO_endemic_df <- tibble(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
 }
 
-
+# This function returns a tibble with the calculations as well a figure for each species.
+#
+aoo_overlap_natura_sci <- aoo_overlap(AOO_endemic,crete_shp, natura_crete_land_sci, TRUE)
 ## Preliminary Automated Conservation Assessments (PACA)
 
 endemic_species <- locations_inland %>% 
