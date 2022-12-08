@@ -12,13 +12,14 @@ aoo_overlap <- function(aoo_shp, baseline_map, overlap_area, plots){
         
         species <- names(aoo[a])
         aoo_sf <- st_as_sf(aoo[[a]])
-        aoo_area <- sum(st_area(aoo_sf))
+        # area units transform to km^2
+        aoo_area <- sum(units::set_units(st_area(aoo_sf),km^2))
         print(aoo_area)
         # Calculate the overlap with protected area
 
         aoo_overlap <- st_intersection(aoo_sf,overlap_area)
 
-        aoo_overlap_area <- sum(st_area(aoo_overlap))
+        aoo_overlap_area <- sum(units::set_units(st_area(aoo_overlap), km^2))
         print(aoo_overlap_area)
         species_row <- cbind(species, aoo_area, aoo_overlap_area)
 
@@ -105,7 +106,6 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
         # and then calculate the convex hull of the points of 
         # each species
         species_convex <- st_convex_hull(st_union(taxon_occurrences))
-        print(st_area(species_convex))
 
         # here we check whether the EOO of a species forms a polygon.
         # There are some rare cases that it forms a line. When that
@@ -117,7 +117,9 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
 
         } else {
             
-            calculations[[3]] <- st_area(species_convex)
+            #Use km^2 for area units
+            calculations[[3]] <- units::set_units(st_area(species_convex), km^2)
+            print(calculations[[3]])
 
             if (is(overlap_area, "sf")==TRUE){
 
@@ -125,7 +127,7 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
                 # st_intersection with multiple polygons returns multiple polygons
                 # so st_area returns the area of each polygon. Either we sum the area
                 # of each polygon or before calculating the area we union the polygons
-                calculations[[4]] <- st_area(st_union(species_convex_overlap))
+                calculations[[4]] <- units::set_units(st_area(st_union(species_convex_overlap)), km^2)
 
             } else {
                 calculations[[4]] <- NA
