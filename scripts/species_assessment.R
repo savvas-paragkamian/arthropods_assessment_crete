@@ -28,6 +28,8 @@ arthropods_occurrences <- arthropods_kriti_endemic %>%
     filter(latD<38, logD<30) %>%
     na.omit()
 
+out_of_crete <- arthropods_kriti_endemic[which(!(arthropods_kriti_endemic$subspeciesname %in% arthropods_occurrences$subspeciesname)),]
+
 locations_shp <- st_as_sf(arthropods_occurrences,
                           coords=c("logD", "latD"),
                           remove=TRUE,
@@ -80,9 +82,10 @@ crete_polygon <- st_cast(crete_shp, "POLYGON") %>%
 # some occurrences fall in the sea and others are on the peripheral
 # islands of Crete.
 
-locations_inland <- st_join(locations_shp, crete_polygon, left=F)
-locations_out <- st_difference(locations_shp, crete_polygon)
+locations_inland <- st_join(locations_shp, crete_shp, left=F)
+locations_out <- st_difference(locations_shp, crete_shp)
 
+print(paste0("these occurrences are in the sea", locations_out))
 # return the coordinates to a dataframe format
 
 locations_inland_df <- locations_inland %>%
@@ -111,7 +114,7 @@ crete_grid10m <- st_join(grid_10km, crete_polygon, left=F)
 ## Here is Crete with all the sampling points
 ##
 g <- ggplot() +
-    geom_sf(crete_polygon, mapping=aes()) +
+    geom_sf(crete_shp, mapping=aes()) +
     geom_sf(locations_inland, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
     geom_sf(locations_out, mapping=aes(),color="red", size=0.1, alpha=0.2) +
 #    geom_sf(crete_grid10m, mapping=aes(),color="red", alpha=0.2, size=0.1) +
@@ -128,7 +131,7 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 # eoo_calculation is a custom function that takes 3 inputs.
 # the location shapefile, the polygon and a TRUE/FALSE value to 
 # export or not to plot
-eoo_results <- eoo_calculation(locations_inland, crete_polygon,"nothing",FALSE, "EOO")
+eoo_results <- eoo_calculation(locations_inland, crete_shp,"nothing",FALSE, "EOO")
 
 eoo_results_df <- convert_ll_df(eoo_results) %>% as_tibble() 
 colnames(eoo_results_df) <- c("subspeciesname", "n_locations", "eoo", "land_eoo")
@@ -137,10 +140,10 @@ eoo_results_df$n_locations <- as.numeric(eoo_results_df$n_locations)
 eoo_results_df$eoo <- as.numeric(eoo_results_df$eoo)
 eoo_results_df$land_eoo <- as.numeric(eoo_results_df$land_eoo)
 
-write.table(eoo_results_df, file="../data/eoo_resuls.tsv", sep="\t")
+write.table(eoo_results_df, file="../results/eoo_resuls.tsv", sep="\t")
 
 ### Natura overlap with eoo of species
-eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land, TRUE, "natura")
+eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land_sci, FALSE, "natura")
 
 eoo_natura_df <- convert_ll_df(eoo_natura) %>% as_tibble()
 
@@ -149,13 +152,7 @@ colnames(eoo_natura_df) <- c("subspeciesname", "n_locations", "eoo", "natura_eoo
 eoo_natura_df$n_locations <- as.numeric(eoo_natura_df$n_locations)
 eoo_natura_df$eoo <- as.numeric(eoo_natura_df$eoo)
 eoo_natura_df$natura_eoo <- as.numeric(eoo_natura_df$natura_eoo)
-write.table(eoo_natura_df, file="../data/eoo_natura.tsv", sep="\t")
-
-## Use square km as unit of EOO
-eoo_results <- eoo_results %>% mutate(area_convex_km = ifelse(is.na(area_convex)==F,
-                                                               area_convex/1000000, area_convex), 
-                                      area_land_km = ifelse(is.na(area_land)==F,
-                                                           area_land/1000000, area_land))
+write.table(eoo_natura_df, file="../results/eoo_natura.tsv", sep="\t")
 
 ## AOO
 ## see for bootstrap
@@ -168,9 +165,12 @@ if (is.list(AOO_endemic)) {
     AOO_endemic_df <- tibble(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
 }
 
+write.table(AOO_endemic_df, file="../results/aoo_endemic.tsv", sep="\t")
+
 # This function returns a tibble with the calculations as well a figure for each species.
 #
-aoo_overlap_natura_sci <- aoo_overlap(AOO_endemic,crete_shp, natura_crete_land_sci, TRUE)
+aoo_overlap_natura_sci <- aoo_overlap(AOO_endemic,crete_shp, natura_crete_land_sci, T)
+
 ## Preliminary Automated Conservation Assessments (PACA)
 
 endemic_species <- locations_inland %>% 
