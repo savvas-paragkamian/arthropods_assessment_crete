@@ -108,8 +108,17 @@ grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") %>%
 ## make a new grid using the st_make_grid
 gr <- st_make_grid(crete_polygon,cellsize = 0.1)   
 ### keep grid that overlaps with Crete
-crete_grid10m <- st_join(grid_10km, crete_polygon, left=F)
+crete_grid10 <- st_join(grid_10km, crete_shp, left=F)
 #crete_iucn_grid10m <- st_join(grid_iucn, crete_polygon, left=F)
+
+### Sites to locations. Each 10km grid is a location of a species
+locations_grid <- st_join(crete_grid10, locations_inland, left=TRUE) %>%
+    dplyr::select(CELLCODE, subspeciesname, Order) %>% 
+    distinct() %>%
+    na.omit() %>%
+    group_by(subspeciesname) %>%
+    mutate(n_locations=n()) %>% 
+    ungroup()
 
 ## Here is Crete with all the sampling points
 ##
@@ -134,9 +143,9 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 eoo_results <- eoo_calculation(locations_inland, crete_shp,"nothing",FALSE, "EOO")
 
 eoo_results_df <- convert_ll_df(eoo_results) %>% as_tibble() 
-colnames(eoo_results_df) <- c("subspeciesname", "n_locations", "eoo", "land_eoo")
+colnames(eoo_results_df) <- c("subspeciesname", "n_sites", "eoo", "land_eoo")
 
-eoo_results_df$n_locations <- as.numeric(eoo_results_df$n_locations)
+eoo_results_df$n_sites <- as.numeric(eoo_results_df$n_sites)
 eoo_results_df$eoo <- as.numeric(eoo_results_df$eoo)
 eoo_results_df$land_eoo <- as.numeric(eoo_results_df$land_eoo)
 
@@ -147,9 +156,9 @@ eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land_sci
 
 eoo_natura_df <- convert_ll_df(eoo_natura) %>% as_tibble()
 
-colnames(eoo_natura_df) <- c("subspeciesname", "n_locations", "eoo", "natura_eoo")
+colnames(eoo_natura_df) <- c("subspeciesname", "n_sites", "eoo", "natura_eoo")
 
-eoo_natura_df$n_locations <- as.numeric(eoo_natura_df$n_locations)
+eoo_natura_df$n_sites <- as.numeric(eoo_natura_df$n_sites)
 eoo_natura_df$eoo <- as.numeric(eoo_natura_df$eoo)
 eoo_natura_df$natura_eoo <- as.numeric(eoo_natura_df$natura_eoo)
 write.table(eoo_natura_df, file="../results/eoo_natura.tsv", sep="\t")
@@ -165,24 +174,23 @@ if (is.list(AOO_endemic)) {
     AOO_endemic_df <- tibble(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
 }
 
-write.table(AOO_endemic_df, file="../results/aoo_endemic.tsv", sep="\t")
 
 # This function returns a tibble with the calculations as well a figure for each species.
 #
 aoo_overlap_natura_sci <- aoo_overlap(AOO_endemic,crete_shp, natura_crete_land_sci, T)
 
+write_delim(aoo_overlap_natura_sci, "../results/aoo_endemic.tsv", delim="\t")
 ## Preliminary Automated Conservation Assessments (PACA)
 
-endemic_species <- locations_inland %>% 
+endemic_species <- locations_grid %>% 
     st_drop_geometry() %>%
-    group_by(subspeciesname,Order) %>% 
-    summarize(n_locations=n()) %>% 
+    distinct(subspeciesname,Order,n_locations) %>% 
     ungroup() %>%
-    left_join(eoo_results, by=c("subspeciesname"="subspeciesname")) %>%
-    left_join(AOO_endemic_df, by=c("subspeciesname"="subspeciesname")) %>%
-    mutate(Potentially_VU=if_else(n_locations<10 & (area_convex<20000 | AOO<2000),TRUE,FALSE)) %>%
-    mutate(Potentially_EN=if_else(n_locations<5 & (area_convex<5000 | AOO<500),TRUE,FALSE)) %>%
-    mutate(Potentially_CR=if_else(n_locations==1 & (area_convex<500 | AOO<10),TRUE,FALSE)) %>%
+    left_join(eoo_natura_df, by=c("subspeciesname"="subspeciesname")) %>%
+    left_join(aoo_overlap_natura_sci, by=c("subspeciesname"="species")) %>%
+    mutate(Potentially_VU=if_else(n_locations<10 & (eoo<20000 | aoo_area<2000),TRUE,FALSE)) %>%
+    mutate(Potentially_EN=if_else(n_locations<5 & (eoo<5000 | aoo_area<500),TRUE,FALSE)) %>%
+    mutate(Potentially_CR=if_else(n_locations==1 & (eoo<500 | aoo_area<10),TRUE,FALSE)) %>%
     ungroup() %>%
     mutate(potential_status=if_else(
                                     Potentially_CR=="TRUE","Potentially_CR", 
@@ -191,17 +199,17 @@ endemic_species <- locations_inland %>%
                                             if_else(
                                                     Potentially_VU=="TRUE","Potentially_VU","FALSE"))))
 
-write_delim(endemic_species, "../data/endemic_species_iucn.tsv", delim="\t") 
+write_delim(endemic_species, "../results/endemic_species_paca.tsv", delim="\t") 
 
 endemic_species_threatened <- endemic_species %>% filter(potential_status!="FALSE") 
 
-write_delim(endemic_species_threatened, "../data/endemic_species_threatened.tsv", delim="\t") 
+write_delim(endemic_species_threatened, "../results/endemic_species_paca_threatened.tsv", delim="\t") 
 
 endemic_species_cr <- endemic_species %>% filter(potential_status=="Potentially_CR") 
 
-write_delim(endemic_species_cr, "../data/endemic_species_cr.tsv", delim="\t") 
+write_delim(endemic_species_cr, "../results/endemic_species_cr.tsv", delim="\t") 
 
-## Raster analysis
+## Hotspots and Threadspots - Raster analysis
 
 occurrencies_grid_10k <- st_join( x = locations_inland, y = crete_grid10m, left=F)
 grid_10k_species <- st_join( x = crete_grid10m, y = locations_inland, left=F)
