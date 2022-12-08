@@ -122,7 +122,10 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
             if (is(overlap_area, "sf")==TRUE){
 
                 species_convex_overlap <- st_intersection(species_convex,overlap_area)
-                calculations[[4]] <- st_area(species_convex_overlap)
+                # st_intersection with multiple polygons returns multiple polygons
+                # so st_area returns the area of each polygon. Either we sum the area
+                # of each polygon or before calculating the area we union the polygons
+                calculations[[4]] <- st_area(st_union(species_convex_overlap))
 
             } else {
                 calculations[[4]] <- NA
