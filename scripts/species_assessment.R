@@ -174,7 +174,6 @@ if (is.list(AOO_endemic)) {
     AOO_endemic_df <- tibble(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
 }
 
-
 # This function returns a tibble with the calculations as well a figure for each species.
 #
 aoo_overlap_natura_sci <- aoo_overlap(AOO_endemic,crete_shp, natura_crete_land_sci, T)
@@ -188,32 +187,49 @@ endemic_species <- locations_grid %>%
     ungroup() %>%
     left_join(eoo_natura_df, by=c("subspeciesname"="subspeciesname")) %>%
     left_join(aoo_overlap_natura_sci, by=c("subspeciesname"="species")) %>%
-    mutate(Potentially_VU=if_else(n_locations<=10 & (eoo<20000 | aoo_area<2000),TRUE,FALSE)) %>%
-    mutate(Potentially_EN=if_else(n_locations<=5 & (eoo<5000 | aoo_area<500),TRUE,FALSE)) %>%
-    mutate(Potentially_CR=if_else(n_locations==1 & (eoo<100 | aoo_area<10),TRUE,FALSE)) %>%
+    mutate(potentially_VU=if_else(n_locations<=10 & (eoo<20000 | aoo_area<2000),TRUE,FALSE)) %>%
+    mutate(potentially_EN=if_else(n_locations<=5 & (eoo<5000 | aoo_area<500),TRUE,FALSE)) %>%
+    mutate(potentially_CR=if_else(n_locations==1 & (if_else(is.na(eoo),0,eoo)<100 | aoo_area<10),TRUE,FALSE)) %>%
     ungroup() %>%
-    mutate(potential_status=if_else(
-                                    Potentially_CR=="TRUE","Potentially_CR", 
-                                    if_else(
-                                            Potentially_EN=="TRUE","Potentially_EN",
-                                            if_else(
-                                                    Potentially_VU=="TRUE","Potentially_VU","FALSE"))))
+    mutate(paca=if_else(potentially_CR=="TRUE","LT",
+                        if_else(potentially_EN=="TRUE","LT",
+                                if_else(potentially_VU=="TRUE","PT","FALSE"))))
 
 write_delim(endemic_species, "../results/endemic_species_paca.tsv", delim="\t") 
 
-endemic_species_threatened <- endemic_species %>% filter(potential_status!="FALSE") 
+endemic_species_threatened <- endemic_species %>% filter(paca!="FALSE") 
 
 write_delim(endemic_species_threatened, "../results/endemic_species_paca_threatened.tsv", delim="\t") 
 
-endemic_species_cr <- endemic_species %>% filter(potential_status=="Potentially_CR") 
+endemic_species_cr <- endemic_species %>% filter(potentially_CR==TRUE) 
 
 write_delim(endemic_species_cr, "../results/endemic_species_cr.tsv", delim="\t") 
 
 ## Endemic hotspots and Threadspots
 
+endemic_hotspots <- locations_grid %>%
+    group_by(CELLCODE) %>%
+    summarise(n_species=n()) %>%
+    filter(n_species >= quantile(n_species, 0.90))
+
+endemic_hotspots_order <- locations_grid %>% 
+    group_by(CELLCODE, Order) %>%
+    summarise(n_species=n(), .groups="drop") %>%
+    filter(n_species >= quantile(n_species, 0.90))
 
 
+threadspots <- locations_grid %>%
+    dplyr::select(CELLCODE,subspeciesname) %>%
+    left_join(endemic_species, by=c("subspeciesname"="subspeciesname")) %>%
+    st_drop_geometry() %>% # geometry must be dropped to run pivot wider
+    dplyr::group_by(CELLCODE, paca) %>%
+    dplyr::summarise(n_species = dplyr::n(), .groups = "drop") %>%
+    tidyr::pivot_wider(names_from = paca, values_from=n_species)
 
+threadspots <- locations_grid %>% 
+    dplyr::select(CELLCODE) %>%
+    distinct() %>%
+    inner_join(threadspots, by=c("CELLCODE"="CELLCODE"))
 
 
 
