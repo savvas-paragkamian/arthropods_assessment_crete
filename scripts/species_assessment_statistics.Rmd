@@ -1,0 +1,88 @@
+---
+title: "Arthropoda species assessment results"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+  pdf_document:
+    toc: yes
+    toc_depth: '2'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Load the data
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+library(tidyverse)
+library(sf)
+```
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
+crete_shp <- sf::st_read("../data/crete/crete.shp")
+endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
+```
+There are `r nrow(locations_shp)` occurrences of `r length(unique(locations_shp$subspeciesname))` 
+species that belong to `r length(unique(locations_shp$Order))` orders.
+
+# PACA - Preliminary Automated Conservation Assessment
+
+The PACA categories results. LT = CR + EN, PT = VU, PNT = NT and LC.
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+endemic_species_s <- endemic_species %>% 
+    group_by(paca) %>%
+    summarise(n_species=n()) %>%
+    mutate(paca = gsub("FALSE", "PNT",paca))
+
+g_paca <- ggplot() +
+    geom_col(data=endemic_species_s, aes(x=n_species,y=paca, fill=paca), show.legend=T)+
+    theme_bw()
+
+ggsave("../results/bar_chart_paca.png", g_paca, device="png")
+g_paca
+```
+
+PACA categories per Order:
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+endemic_species_s_o <- endemic_species %>% 
+    group_by(paca, Order) %>%
+    summarise(n_species=n(), .groups="drop") %>%
+    mutate(paca = gsub("FALSE", "PNT",paca))
+
+g_paca_o <- ggplot() +
+    geom_col(data=endemic_species_s_o, aes(x=n_species,y=Order, fill=paca), show.legend=T)+
+    theme_bw()
+
+ggsave("../results/bar_chart_paca_order.png", g_paca_o, device="png")
+g_paca_o
+
+```
+
+# Hotspots and threadspots
+Here are the hotspots and threadspots of the analysis.
+Endemic hotspots are the grid cells that contain the 10% 
+of the endemic species.
+
+
+![Crete endemic hotspots]("../plots/crete-hotspots.png")
+
+
+![Crete endemic hotspots per order]("../plots/crete-hotspots_order.png")
+
+
+![Crete endemic threadspots]("../plots/crete-threadspots.png")
+
+
+![Crete endemic threadspots per order]("../plots/crete-threadspots_order.png")
+
+
+![Overlap of hotspots with threadspots](""../plots/crete-hotspots-threadspots.png"")
