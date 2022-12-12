@@ -202,7 +202,7 @@ endemic_species <- locations_grid %>%
 
 write_delim(endemic_species, "../results/endemic_species_paca.tsv", delim="\t") 
 
-## Endemic hotspots and Threadspots
+## Endemic hotspots
 
 endemic_hotspots <- locations_grid %>%
     group_by(CELLCODE) %>%
@@ -302,3 +302,28 @@ g_t_order <- g_base +
 
 ggsave("../plots/crete-threadspots_order.png", plot=g_t_order, device="png")
 
+## Overlap
+
+### Hotspots and threadspots
+intersection_spots <- endemic_hotspots %>%
+    st_drop_geometry() %>%
+    inner_join(.,threadspots_lt, by=c("CELLCODE"="CELLCODE")) %>%
+    st_as_sf()
+
+g_e_t <- g_base +
+    geom_sf(intersection_spots, mapping=aes(fill="red"), alpha=0.3, size=0.1, na.rm = TRUE) +
+    ggtitle("Endemic hotspots and Threadspots")+
+#    scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
+    theme_bw()
+
+ggsave("../plots/crete-hotspots-threadspots.png", plot=g_e_t, device="png")
+
+### With natura
+
+endemic_hotspots_natura <- st_intersection(endemic_hotspots, natura_crete_land_sci)
+sum(units::set_units(st_area(endemic_hotspots),km^2))
+sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
+
+threadspots_natura <- st_intersection(threadspots_lt, natura_crete_land_sci)
+sum(units::set_units(st_area(threadspots_lt),km^2))
+sum(units::set_units(st_area(threadspots_natura),km^2))
