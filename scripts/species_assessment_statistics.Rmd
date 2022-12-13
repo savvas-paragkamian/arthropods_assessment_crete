@@ -21,12 +21,22 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, warning=FALSE, message=FALSE, echo=T}
 library(tidyverse)
 library(sf)
+source("species_assessment_functions.R")
+
+g_base <- g_base()
 ```
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
 crete_shp <- sf::st_read("../data/crete/crete.shp")
 endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
+natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
+
+natura_crete_land <- st_intersection(natura_crete, crete_shp)
+
+# split the SPA SCI
+
+natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
 ```
 There are `r nrow(locations_shp)` occurrences of `r length(unique(locations_shp$subspeciesname))` 
 species that belong to `r length(unique(locations_shp$Order))` orders.
@@ -86,3 +96,55 @@ of the endemic species.
 
 
 ![Overlap of hotspots with threadspots](""../plots/crete-hotspots-threadspots.png"")
+
+
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
+threadspots <- st_read("../results/threadspots/threadspots.shp")
+
+threadspots_lt <- threadspots %>% 
+    filter(pc_thrt>= quantile(pc_thrt,0.90))
+
+intersection_spots <- endemic_hotspots %>%
+    st_drop_geometry() %>%
+    inner_join(.,threadspots_lt, by=c("CELLCODE"="CELLCOD")) %>%
+    st_as_sf()
+
+g_e_t <- g_base +
+    geom_sf(intersection_spots, mapping=aes(fill="red"), alpha=0.3, size=0.1, na.rm = TRUE) +
+    ggtitle("Endemic hotspots and Threadspots")+
+#    scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
+    theme_bw()
+
+ggsave("../plots/crete-hotspots-threadspots.png", plot=g_e_t, device="png")
+
+g_e_t
+
+```
+
+Overlap of hotspots and threadspots with Natura2000 protected areas.
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+endemic_hotspots_natura <- st_intersection(endemic_hotspots, natura_crete_land_sci)
+print("Total area of endemic hotspots")
+sum(units::set_units(st_area(endemic_hotspots),km^2))
+
+print("Overlap area of endemic hotspots with Natura2000 sci")
+sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
+
+```
+Threadspots with Natura2000
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+threadspots_natura <- st_intersection(threadspots_lt, natura_crete_land_sci)
+
+print("Total area of threadspots as they were inferred with the PACA method")
+sum(units::set_units(st_area(threadspots_lt),km^2))
+
+print("Ovelap area of the PACA threadspots")
+sum(units::set_units(st_area(threadspots_natura),km^2))
+```
+
