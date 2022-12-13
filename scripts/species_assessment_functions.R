@@ -171,6 +171,27 @@ g_species <- function(occurrences,convex, baseline_map){
 
 }
 
+g_base <- function(){
+
+    crete_shp <- sf::st_read("../data/crete/crete.shp")
+    
+    natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
+
+    natura_crete_land <- st_intersection(natura_crete, crete_shp)
+
+    # split the SPA SCI
+
+    natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
+
+    g_base <- ggplot() +
+        geom_sf(crete_shp, mapping=aes()) +
+        geom_sf(natura_crete_land_sci, mapping=aes(),color="orange", alpha=0.2, size=0.1) +
+        coord_sf(crs="WGS84") +
+        theme_bw()
+
+    return(g_base)
+} 
+
 convert_ll_df <- function(list_of_l_of_l){
     
     list_of_l <- lapply(list_of_l_of_l, unlist)
