@@ -122,11 +122,7 @@ locations_grid <- st_join(crete_grid10, locations_inland, left=TRUE) %>%
 
 ## Here is Crete with all the sampling points
 ##
-g_base <- ggplot() +
-    geom_sf(crete_shp, mapping=aes()) +
-    geom_sf(natura_crete_land, mapping=aes(),color="orange", alpha=0.2, size=0.1) +
-    coord_sf(crs="WGS84") +
-    theme_bw()
+g_base <- g_base()
 
 g <- g_base +
     geom_sf(locations_inland, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
@@ -144,7 +140,7 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 # eoo_calculation is a custom function that takes 3 inputs.
 # the location shapefile, the polygon and a TRUE/FALSE value to 
 # export or not to plot
-eoo_results <- eoo_calculation(locations_inland, crete_shp,"nothing",FALSE, "EOO")
+eoo_results <- eoo_calculation(locations_inland, crete_shp,crete_shp,FALSE, "EOO")
 
 eoo_results_df <- convert_ll_df(eoo_results) %>% as_tibble() 
 colnames(eoo_results_df) <- c("subspeciesname", "n_sites", "eoo", "land_eoo")
@@ -153,7 +149,9 @@ eoo_results_df$n_sites <- as.numeric(eoo_results_df$n_sites)
 eoo_results_df$eoo <- as.numeric(eoo_results_df$eoo)
 eoo_results_df$land_eoo <- as.numeric(eoo_results_df$land_eoo)
 
-write.table(eoo_results_df, file="../results/eoo_resuls.tsv", sep="\t")
+write_delim(eoo_results_df, "../results/eoo_resuls.tsv", delim ="\t")
+
+#eoo_results_df <- read_delim("../results/eoo_resuls.tsv", delim="\t")
 
 ### Natura overlap with eoo of species
 eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land_sci, FALSE, "natura")
@@ -165,8 +163,9 @@ colnames(eoo_natura_df) <- c("subspeciesname", "n_sites", "eoo", "natura_eoo")
 eoo_natura_df$n_sites <- as.numeric(eoo_natura_df$n_sites)
 eoo_natura_df$eoo <- as.numeric(eoo_natura_df$eoo)
 eoo_natura_df$natura_eoo <- as.numeric(eoo_natura_df$natura_eoo)
-write.table(eoo_natura_df, file="../results/eoo_natura.tsv", sep="\t")
+write_delim(eoo_natura_df, "../results/eoo_natura.tsv", delim="\t")
 
+#eoo_natura_df <- read_delim("../results/eoo_natura.tsv", delim="\t")
 ## AOO
 ## see for bootstrap
 AOO_endemic <- AOO.computing(locations_inland_df,Cell_size_AOO = 2, nbe.rep.rast.AOO=1000, export_shp = T)
@@ -183,6 +182,7 @@ if (is.list(AOO_endemic)) {
 aoo_overlap_natura_sci <- aoo_overlap(AOO_endemic,crete_shp, natura_crete_land_sci, T)
 
 write_delim(aoo_overlap_natura_sci, "../results/aoo_endemic.tsv", delim="\t")
+aoo_overlap_natura_sci <- read_delim( "../results/aoo_endemic.tsv", delim="\t")
 ## Preliminary Automated Conservation Assessments (PACA)
 
 endemic_species <- locations_grid %>% 
@@ -208,6 +208,8 @@ endemic_hotspots <- locations_grid %>%
     group_by(CELLCODE) %>%
     summarise(n_species=n()) %>%
     filter(n_species >= quantile(n_species, 0.90))
+
+st_write(endemic_hotspots, "../results/endemic_hotspots/endemic_hotspots.shp") 
 
 endemic_hotspots_order <- locations_grid %>% 
     group_by(CELLCODE, Order) %>%
@@ -248,7 +250,7 @@ threadspots <- locations_grid %>%
 threadspots_lt <- threadspots %>% 
     filter(paca_threat>= quantile(paca_threat,0.90))
 
-write_delim(threadspots, "../results/threadspots_species_paca.tsv", delim="\t") 
+st_write(threadspots, "../results/threadspots/threadspots.shp") 
 
 ## Per order
 threadspots_order <- locations_grid %>% 
@@ -327,3 +329,7 @@ sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
 threadspots_natura <- st_intersection(threadspots_lt, natura_crete_land_sci)
 sum(units::set_units(st_area(threadspots_lt),km^2))
 sum(units::set_units(st_area(threadspots_natura),km^2))
+
+
+
+
