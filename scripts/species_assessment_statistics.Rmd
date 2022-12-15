@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Load the data
 
-```{r, warning=FALSE, message=FALSE, echo=T}
+```{r, warning=FALSE, message=FALSE, echo=T, results='hide'}
 library(tidyverse)
 library(sf)
 source("species_assessment_functions.R")
@@ -26,7 +26,7 @@ source("species_assessment_functions.R")
 g_base <- g_base()
 ```
 
-```{r, warning=FALSE, message=FALSE, echo=T}
+```{r, warning=FALSE, message=FALSE, echo=T, results='hide'}
 locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
 crete_shp <- sf::st_read("../data/crete/crete.shp")
 endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
@@ -37,6 +37,10 @@ natura_crete_land <- st_intersection(natura_crete, crete_shp)
 # split the SPA SCI
 
 natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
+## Hotspots and threadspots
+endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
+threadspots <- st_read("../results/threadspots/threadspots.shp")
+
 ```
 There are `r nrow(locations_shp)` occurrences of `r length(unique(locations_shp$subspeciesname))` 
 species that belong to `r length(unique(locations_shp$Order))` orders.
@@ -100,9 +104,6 @@ of the endemic species.
 
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
-
-endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
-threadspots <- st_read("../results/threadspots/threadspots.shp")
 
 threadspots_lt <- threadspots %>% 
     filter(pc_thrt>= quantile(pc_thrt,0.90))
