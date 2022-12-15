@@ -10,6 +10,49 @@ library(units)
 library(ConR)
 library(vegan)
 
+
+
+## Load shapefiles and crop only the Crete overlap
+
+periphereies_shp <- sf::st_read("~/Documents/spatial_data/periphereies/periphereies.shp")
+
+#### crete is the 12th region in this shapefile
+#### https://geodata.gov.gr/en/dataset/28121643-d977-48eb-a8ca-a6fac6b4af6d/resource/7c80a2c1-93b7-4814-9fc4-245e775acaa6/download/periphereies.zip
+#
+crete_shp <- periphereies_shp[12,] %>% st_transform(., "WGS84")
+
+st_write(crete_shp,"../data/crete/crete.shp",
+         layer_options = "ENCODING=UTF-8", delete_layer = TRUE)
+
+# natura2000 shapefile downloaded from here https://www.eea.europa.eu/data-and-maps/data/natura-13 
+natura2000 <- sf::st_read("~/Downloads/Natura2000_end2021_Shapefile/Natura2000_end2021_epsg3035.shp") 
+                   %>% st_transform(., "WGS84")
+
+natura_crete <- st_crop(natura2000,
+                        y=st_bbox(c(xmin=23,ymin=34,xmax=27,ymax=36),
+                                  crs="WGS84"))
+
+st_write(natura_crete,"../data/natura2000/natura2000_crete.shp",
+         layer_options = "ENCODING=UTF-8", delete_layer = TRUE)
+
+# World Database of Protected Areas
+wdpa_gr_0 <- sf::st_read("~/Documents/spatial_data/WDPA_WDOECM_Dec2022_Public_GRC_shp/WDPA_WDOECM_Dec2022_Public_GRC_shp_0/WDPA_WDOECM_Dec2022_Public_GRC_shp-polygons.shp")
+
+wdpa_gr_1 <- sf::st_read("~/Documents/spatial_data/WDPA_WDOECM_Dec2022_Public_GRC_shp/WDPA_WDOECM_Dec2022_Public_GRC_shp_1/WDPA_WDOECM_Dec2022_Public_GRC_shp-polygons.shp")
+
+wdpa_gr_2 <- sf::st_read("~/Documents/spatial_data/WDPA_WDOECM_Dec2022_Public_GRC_shp/WDPA_WDOECM_Dec2022_Public_GRC_shp_2/WDPA_WDOECM_Dec2022_Public_GRC_shp-polygons.shp")
+
+wdpa_gr <- rbind(wdpa_gr_0, wdpa_gr_1, wdpa_gr_2)
+
+wdpa_crete <- st_intersection(wdpa_gr, crete_shp)
+
+st_write(wdpa_crete,"../data/wdpa_crete/wdpa_crete.shp",
+         layer_options = "ENCODING=UTF-8", delete_layer = TRUE)
+
+#grid_iucn <- sf::st_read(dsn="~/Documents/AOOGrid_10x10kmshp/AOOGrid_10x10km.shp") %>% 
+#    st_transform(., crs="WGS84")
+##
+
 arthropods <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx")
 # remove Opiliones because the dataset has some errors that are under review.
 arthropods_kriti <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx") %>% 
