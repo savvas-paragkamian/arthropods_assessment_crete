@@ -21,6 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, warning=FALSE, message=FALSE, echo=T, results='hide'}
 library(tidyverse)
 library(sf)
+library(knitr)
 source("species_assessment_functions.R")
 
 g_base <- g_base()
@@ -31,6 +32,7 @@ locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurren
 crete_shp <- sf::st_read("../data/crete/crete.shp")
 endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
+wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
 
 natura_crete_land <- st_intersection(natura_crete, crete_shp)
 
@@ -42,8 +44,37 @@ endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
 threadspots <- st_read("../results/threadspots/threadspots.shp")
 
 ```
-There are `r nrow(locations_shp)` occurrences of `r length(unique(locations_shp$subspeciesname))` 
+There are `r nrow(locations_shp)` occurrences of `r length(unique(locations_shp$sbspcsn))` 
 species that belong to `r length(unique(locations_shp$Order))` orders.
+
+## Protected Areas
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+wdpa_crete$area <- units::set_units(st_area(wdpa_crete),km^2)
+
+wdpa_crete_combine <- st_union(wdpa_crete) %>%
+    st_make_valid() %>%
+    st_as_sf() %>% 
+    filter(st_geometry_type(.) %in% c("MULTIPOLYGON"))
+
+wdpa_crete_combine_area <- data.frame(name="total protected",
+                                      area=sum(units::set_units(st_area(wdpa_crete_combine), km^2)))
+crete_area <- data.frame(name="crete",
+                         area=sum(units::set_units(st_area(crete_shp), km^2)))
+
+protected_area <- wdpa_crete %>% 
+    group_by(DESIG_ENG) %>%
+    summarise(area=sum(area)) %>%
+    st_drop_geometry() %>%
+    dplyr::rename("name"="DESIG_ENG") %>%
+    bind_rows(crete_area, wdpa_crete_combine_area) %>%
+    arrange(area) %>%
+    mutate(area=round(area,2))
+
+kable(protected_area)
+
+```
+
 
 # PACA - Preliminary Automated Conservation Assessment
 
