@@ -37,31 +37,9 @@ locations_shp <- st_as_sf(arthropods_occurrences,
 #st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.shp", layer_options = "ENCODING=UTF-8" )
 ## Crete Spatial data
 
-# not run
-#periphereies_shp <- sf::st_read("~/Documents/spatial_data/periphereies/periphereies.shp")
-
-#### crete is the 12th region in this shapefile
-#### https://geodata.gov.gr/en/dataset/28121643-d977-48eb-a8ca-a6fac6b4af6d/resource/7c80a2c1-93b7-4814-9fc4-245e775acaa6/download/periphereies.zip
-#
-#crete_shp <- periphereies_shp[12,] %>% st_transform(., "WGS84")
-#
-#st_write(crete_shp,"../data/crete/crete.shp",
-#         layer_options = "ENCODING=UTF-8", delete_layer = TRUE)
-
 crete_shp <- sf::st_read("../data/crete/crete.shp")
 
 ### Natura2000
-
-# natura2000 shapefile downloaded from here https://www.eea.europa.eu/data-and-maps/data/natura-13 
-#natura2000 <- sf::st_read("~/Downloads/Natura2000_end2021_Shapefile/Natura2000_end2021_epsg3035.shp") 
-#                   %>% st_transform(., "WGS84")
-#
-#natura_crete <- st_crop(natura2000,
-#                        y=st_bbox(c(xmin=23,ymin=34,xmax=27,ymax=36),
-#                                  crs="WGS84"))
-#
-#st_write(natura_crete,"../data/natura2000/natura2000_crete.shp",
-#         layer_options = "ENCODING=UTF-8", delete_layer = TRUE)
 
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 
@@ -70,6 +48,10 @@ natura_crete_land <- st_intersection(natura_crete, crete_shp)
 # split the SPA SCI
 
 natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
+
+### World Database of Protected areas
+
+wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
 
 ## here we calculate the area of each polygon of the region of Crete
 ## and subsequently we keep only the largest polygon e.g. Crete island only.
@@ -97,13 +79,9 @@ locations_inland_df <- locations_inland %>%
 
 ## EEA reference grid
 ## https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2
-##
 
 grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") %>%
     st_transform(., crs="WGS84")
-
-#grid_iucn <- sf::st_read(dsn="~/Downloads/AOOGrid_10x10kmshp/AOOGrid_10x10km.shp") %>% 
-#    st_transform(., crs="WGS84")
 
 ## make a new grid using the st_make_grid
 gr <- st_make_grid(crete_polygon,cellsize = 0.1)   
@@ -329,7 +307,5 @@ sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
 threadspots_natura <- st_intersection(threadspots_lt, natura_crete_land_sci)
 sum(units::set_units(st_area(threadspots_lt),km^2))
 sum(units::set_units(st_area(threadspots_natura),km^2))
-
-
 
 
