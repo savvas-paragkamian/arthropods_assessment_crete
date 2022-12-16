@@ -53,6 +53,8 @@ natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
 
 wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
 
+wdpa_crete_wildlife <- wdpa_crete %>% filter(DESIG_ENG=="Wildlife Refugee")
+
 ## here we calculate the area of each polygon of the region of Crete
 ## and subsequently we keep only the largest polygon e.g. Crete island only.
 
@@ -120,30 +122,22 @@ ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 # export or not to plot
 eoo_results <- eoo_calculation(locations_inland, crete_shp,crete_shp,FALSE, "EOO")
 
-eoo_results_df <- convert_ll_df(eoo_results) %>% as_tibble() 
-colnames(eoo_results_df) <- c("subspeciesname", "n_sites", "eoo", "land_eoo")
-
-eoo_results_df$n_sites <- as.numeric(eoo_results_df$n_sites)
-eoo_results_df$eoo <- as.numeric(eoo_results_df$eoo)
-eoo_results_df$land_eoo <- as.numeric(eoo_results_df$land_eoo)
-
-write_delim(eoo_results_df, "../results/eoo_resuls.tsv", delim ="\t")
+write_delim(eoo_results, "../results/eoo_resuls.tsv", delim ="\t")
 
 #eoo_results_df <- read_delim("../results/eoo_resuls.tsv", delim="\t")
 
 ### Natura overlap with eoo of species
 eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land_sci, FALSE, "natura")
 
-eoo_natura_df <- convert_ll_df(eoo_natura) %>% as_tibble()
+write_delim(eoo_natura, "../results/eoo_natura.tsv", delim="\t")
 
-colnames(eoo_natura_df) <- c("subspeciesname", "n_sites", "eoo", "natura_eoo")
+### Wildlife refugees overlap with EOO
 
-eoo_natura_df$n_sites <- as.numeric(eoo_natura_df$n_sites)
-eoo_natura_df$eoo <- as.numeric(eoo_natura_df$eoo)
-eoo_natura_df$natura_eoo <- as.numeric(eoo_natura_df$natura_eoo)
-write_delim(eoo_natura_df, "../results/eoo_natura.tsv", delim="\t")
+eoo_wildlife <- eoo_calculation(locations_inland, crete_shp, wdpa_crete_wildlife, FALSE, "wildlife")
 
-#eoo_natura_df <- read_delim("../results/eoo_natura.tsv", delim="\t")
+write_delim(eoo_wildlife, "../results/eoo_wildlife.tsv", delim="\t")
+
+#eoo_wildlife_df <- read_delim("../results/eoo_wildlife.tsv", delim="\t")
 ## AOO
 ## see for bootstrap
 AOO_endemic <- AOO.computing(locations_inland_df,Cell_size_AOO = 2, nbe.rep.rast.AOO=1000, export_shp = T)
