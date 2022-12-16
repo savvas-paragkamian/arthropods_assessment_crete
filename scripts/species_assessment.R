@@ -154,7 +154,11 @@ if (is.list(AOO_endemic)) {
 aoo_overlap_natura_sci <- aoo_overlap(AOO_endemic,crete_shp, natura_crete_land_sci, T)
 
 write_delim(aoo_overlap_natura_sci, "../results/aoo_endemic.tsv", delim="\t")
-aoo_overlap_natura_sci <- read_delim( "../results/aoo_endemic.tsv", delim="\t")
+#aoo_overlap_natura_sci <- read_delim( "../results/aoo_endemic.tsv", delim="\t")
+### AOO overlap with wildlife refugees
+aoo_overlap_wildlife <- aoo_overlap(AOO_endemic,crete_shp, wdpa_crete_wildlife, T)
+write_delim(aoo_overlap_wildlife, "../results/aoo_overlap_natura_sci.tsv", delim="\t")
+
 ## Preliminary Automated Conservation Assessments (PACA)
 
 endemic_species <- locations_grid %>% 
