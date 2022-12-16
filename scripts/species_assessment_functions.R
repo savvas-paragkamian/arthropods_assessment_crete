@@ -69,6 +69,7 @@ eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefi
     }
 
     #calculations_df <- as.data.frame(do.call(rbind, calculations)) 
+    eoo_overlap_name <- paste0("eoo_",prefix)
     calculations_df <- convert_ll_df(calculations) %>% as_tibble() 
     colnames(calculations_df) <- c("subspeciesname", "n_sites", "eoo", "eoo_overlap")
 
@@ -76,6 +77,7 @@ eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefi
     calculations_df$eoo <- as.numeric(calculations_df$eoo)
     calculations_df$eoo_overlap <- as.numeric(calculations_df$eoo_overlap)
     
+    names(calculations_df)[names(calculations_df)== "eoo_overlap"] <- eoo_overlap_name
     return(calculations_df)
 }
 
