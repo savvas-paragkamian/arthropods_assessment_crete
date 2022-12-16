@@ -96,19 +96,47 @@ g_wdpa
 The PACA categories results. LT = CR + EN, PT = VU, PNT = NT and LC.
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-endemic_species_s <- endemic_species %>% 
+endemic_species_p <- endemic_species %>% 
     group_by(paca) %>%
-    summarise(n_species=n()) %>%
-    mutate(paca = gsub("FALSE", "PNT",paca))
+    summarise(n_species=n(), .groups="drop") %>%
+    mutate(paca = gsub("FALSE", "PNT",paca)) %>%
+    rename("category"="paca") %>%
+    mutate(method="paca")
+
+endemic_species_i <- endemic_species %>% 
+    group_by(iucn) %>%
+    summarise(n_species=n(), .groups="drop") %>%
+    rename("category"="iucn") %>%
+    mutate(method = "iucn") %>%
+    bind_rows(endemic_species_p)
 
 g_paca <- ggplot() +
-    geom_col(data=endemic_species_s, aes(x=n_species,y=paca, fill=paca), show.legend=T)+
-    theme_bw()
+    geom_col(data=endemic_species_i, 
+             aes(x=n_species,y=method, fill=category), 
+             show.legend=T, position = position_stack(reverse = TRUE))+
+    theme_bw() +
+    guides(fill=guide_legend(ncol=2)) 
 
 ggsave("../plots/bar_chart_paca.png", g_paca, device="png")
 g_paca
 ```
 
+IUCN categories per Order:
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+endemic_species_s_i <- endemic_species %>% 
+    group_by(iucn, Order) %>%
+    summarise(n_species=n(), .groups="drop")
+
+g_iucn_o <- ggplot() +
+    geom_col(data=endemic_species_s_i, aes(x=n_species,y=Order, fill=iucn), show.legend=T)+
+    theme_bw()
+
+ggsave("../plots/bar_chart_iucn_order.png", g_iucn_o, device="png")
+g_iucn_o
+
+```
 PACA categories per Order:
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
