@@ -223,3 +223,15 @@ print("Ovelap area of the PACA threadspots")
 sum(units::set_units(st_area(threadspots_natura),km^2))
 ```
 
+# EOO and AOO distributions
+
+```{r, , warning=FALSE, message=FALSE, echo=T}
+
+g_e_o <- ggplot() +
+    geom_point(endemic_species,mapping = aes(x=aoo_area, y=eoo, color=iucn)) +
+    theme_bw()
+ggsave("../plots/aoo-eoo_dist.png", plot=g_e_o, device="png")
+
+g_e_o
+```
+
