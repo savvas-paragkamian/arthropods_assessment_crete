@@ -52,12 +52,15 @@ species that belong to `r length(unique(locations_shp$Order))` orders.
 ```{r, warning=FALSE, message=FALSE, echo=T}
 wdpa_crete$area <- units::set_units(st_area(wdpa_crete),km^2)
 
+wdpa_crete_all <- data.frame(name="total protected", 
+                             area=sum(wdpa_crete$area))
+
 wdpa_crete_combine <- st_union(wdpa_crete) %>%
     st_make_valid() %>%
     st_as_sf() %>% 
     filter(st_geometry_type(.) %in% c("MULTIPOLYGON"))
 
-wdpa_crete_combine_area <- data.frame(name="total protected",
+wdpa_crete_combine_area <- data.frame(name="total protected (no overlap)",
                                       area=sum(units::set_units(st_area(wdpa_crete_combine), km^2)))
 crete_area <- data.frame(name="crete",
                          area=sum(units::set_units(st_area(crete_shp), km^2)))
@@ -67,7 +70,7 @@ protected_area <- wdpa_crete %>%
     summarise(area=sum(area)) %>%
     st_drop_geometry() %>%
     dplyr::rename("name"="DESIG_ENG") %>%
-    bind_rows(crete_area, wdpa_crete_combine_area) %>%
+    bind_rows(crete_area,wdpa_crete_all, wdpa_crete_combine_area) %>%
     arrange(area) %>%
     mutate(area=round(area,2))
 
@@ -75,6 +78,18 @@ kable(protected_area)
 
 ```
 
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+g_wdpa <- g_base +
+    geom_sf(wdpa_crete, mapping=aes(fill=DESIG_ENG),alpha=0.5, size=0.1)+
+    theme_bw()+
+    theme(legend.position="bottom", legend.margin=margin())+
+    guides(fill=guide_legend(nrow=5,byrow=TRUE, title=""))
+
+ggsave("../plots/wdpa_protected_aread.png", g_wdpa, device="png")
+
+g_wdpa
+```
 
 # PACA - Preliminary Automated Conservation Assessment
 
@@ -90,7 +105,7 @@ g_paca <- ggplot() +
     geom_col(data=endemic_species_s, aes(x=n_species,y=paca, fill=paca), show.legend=T)+
     theme_bw()
 
-ggsave("../results/bar_chart_paca.png", g_paca, device="png")
+ggsave("../plots/bar_chart_paca.png", g_paca, device="png")
 g_paca
 ```
 
@@ -107,7 +122,7 @@ g_paca_o <- ggplot() +
     geom_col(data=endemic_species_s_o, aes(x=n_species,y=Order, fill=paca), show.legend=T)+
     theme_bw()
 
-ggsave("../results/bar_chart_paca_order.png", g_paca_o, device="png")
+ggsave("../plots/bar_chart_paca_order.png", g_paca_o, device="png")
 g_paca_o
 
 ```
