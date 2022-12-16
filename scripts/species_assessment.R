@@ -128,15 +128,15 @@ write_delim(eoo_results, "../results/eoo_resuls.tsv", delim ="\t")
 
 ### Natura overlap with eoo of species
 eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land_sci, FALSE, "natura")
-
 write_delim(eoo_natura, "../results/eoo_natura.tsv", delim="\t")
 
 ### Wildlife refugees overlap with EOO
 
 eoo_wildlife <- eoo_calculation(locations_inland, crete_shp, wdpa_crete_wildlife, FALSE, "wildlife")
-
 write_delim(eoo_wildlife, "../results/eoo_wildlife.tsv", delim="\t")
 
+eoo_wildlife <- eoo_wildlife %>%
+    dplyr::select(-c(n_sites, eoo))
 #eoo_wildlife_df <- read_delim("../results/eoo_wildlife.tsv", delim="\t")
 ## AOO
 ## see for bootstrap
@@ -159,14 +159,19 @@ write_delim(aoo_overlap_natura_sci, "../results/aoo_endemic.tsv", delim="\t")
 aoo_overlap_wildlife <- aoo_overlap(AOO_endemic,crete_shp, wdpa_crete_wildlife, T)
 write_delim(aoo_overlap_wildlife, "../results/aoo_overlap_natura_sci.tsv", delim="\t")
 
+aoo_overlap_wildlife <- aoo_overlap_wildlife %>% 
+    dplyr::select(-aoo_area) %>% 
+    rename("aoo_wildlife"="aoo_overlap_area")
 ## Preliminary Automated Conservation Assessments (PACA)
 
 endemic_species <- locations_grid %>% 
     st_drop_geometry() %>%
     distinct(subspeciesname,Order,n_locations) %>% 
     ungroup() %>%
-    left_join(eoo_natura_df, by=c("subspeciesname"="subspeciesname")) %>%
+    left_join(eoo_natura, by=c("subspeciesname"="subspeciesname")) %>%
+    left_join(eoo_wildlife, by=c("subspeciesname"="subspeciesname")) %>%
     left_join(aoo_overlap_natura_sci, by=c("subspeciesname"="species")) %>%
+    left_join(aoo_overlap_wildlife, by=c("subspeciesname"="species")) %>%
     mutate(potentially_VU=if_else(n_locations<=10 & (eoo<20000 | aoo_area<2000),TRUE,FALSE)) %>%
     mutate(potentially_EN=if_else(n_locations<=5 & (eoo<5000 | aoo_area<500),TRUE,FALSE)) %>%
     mutate(potentially_CR=if_else(n_locations==1 & (if_else(is.na(eoo),0,eoo)<100 | aoo_area<10),TRUE,FALSE)) %>%
@@ -174,6 +179,9 @@ endemic_species <- locations_grid %>%
     mutate(paca=if_else(potentially_CR==TRUE,"LT",
                         if_else(potentially_EN==TRUE,"LT",
                                 if_else(potentially_VU==TRUE,"PT","FALSE")))) %>%
+    mutate(iucn=if_else(potentially_CR==TRUE,"CR",
+                        if_else(potentially_EN==TRUE,"EN",
+                                if_else(potentially_VU==TRUE,"VU","NT/LC")))) %>%
     mutate(threatened= if_else(paca=="FALSE",FALSE, TRUE))
 
 write_delim(endemic_species, "../results/endemic_species_paca.tsv", delim="\t") 
@@ -185,7 +193,7 @@ endemic_hotspots <- locations_grid %>%
     summarise(n_species=n()) %>%
     filter(n_species >= quantile(n_species, 0.90))
 
-st_write(endemic_hotspots, "../results/endemic_hotspots/endemic_hotspots.shp") 
+st_write(endemic_hotspots, "../results/endemic_hotspots/endemic_hotspots.shp", append=F) 
 
 endemic_hotspots_order <- locations_grid %>% 
     group_by(CELLCODE, Order) %>%
@@ -226,7 +234,7 @@ threadspots <- locations_grid %>%
 threadspots_lt <- threadspots %>% 
     filter(paca_threat>= quantile(paca_threat,0.90))
 
-st_write(threadspots, "../results/threadspots/threadspots.shp") 
+st_write(threadspots, "../results/threadspots/threadspots.shp", append=F) 
 
 ## Per order
 threadspots_order <- locations_grid %>% 
@@ -247,7 +255,7 @@ threadspots_order_lt <- threadspots_order %>%
 ##
 
 g_e <- g_base +
-    geom_sf(endemic_hotspots, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE) +
+    geom_sf(endemic_hotspots, mapping=aes(fill=n_species ), alpha=0.3, size=0.1, na.rm = FALSE) +
     ggtitle("Endemic hotspots")+
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
 
