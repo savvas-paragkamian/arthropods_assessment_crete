@@ -5,6 +5,7 @@ library(readxl)
 library(rredlist)
 library(taxize)
 library(sf)
+library(raster)
 library(units)
 #library(rgdal)
 library(ConR)
@@ -77,6 +78,16 @@ eoo_results <- EOO.computing(locations_inland_df,export_shp=T, write_shp=T)
 
 eoo_results <- read_delim("EOO.results.csv", delim=",", col_names=T)
 
+# Raster spatial data
+
+crete_shp <- sf::st_read("../data/crete/crete.shp")
+dem <- raster("~/Documents/spatial_data/EAA-DEM-EUD_CP-DEMS_5500015000-AA/EUD_CP-DEMS_5500015000-AA.tif")
+
+crete_epsg <- st_transform(crete_shp, crs="EPSG:3035")
+dem_crete <- crop(dem, crete_epsg)
+wgs84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+dem_crete <- projectRaster(dem_crete, crs = wgs84, method = "ngb")
+writeRaster(dem_crete, filename="../data/dem_crete/dem_crete.tif")
 # ConR package returned an error with the exclution of the land
 # so a new function named "eoo_calculation" is created
 g2 <- ggplot() +
