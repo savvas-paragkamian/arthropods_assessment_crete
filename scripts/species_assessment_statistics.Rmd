@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(sf)
 library(knitr)
-source("species_assessment_functions.R")
+source("functions.R")
 
 g_base <- g_base()
 ```
@@ -353,3 +353,11 @@ ggsave("../plots/aoo_dist_boxplot.png",
 
 g_aoo_b_o
 ```
+
+# Digital Elevation Maps
+
+
+# Habitats
+
+
+# Corine

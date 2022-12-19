@@ -10,7 +10,7 @@ library(units)
 library(ConR)
 library(vegan)
 
-source("species_assessment_functions.R")
+source("functions.R")
 
 # Load Data
 ## Endemic species occurrences in Crete
