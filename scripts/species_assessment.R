@@ -128,15 +128,19 @@ write_delim(eoo_results, "../results/eoo_resuls.tsv", delim ="\t")
 
 ### Natura overlap with eoo of species
 eoo_natura <- eoo_calculation(locations_inland, crete_shp, natura_crete_land_sci, FALSE, "natura")
+eoo_natura <- eoo_natura %>%
+    dplyr::select(-c(n_sites,eoo)) %>%
+    rename("eoo_natura"="eoo_overlap")
 write_delim(eoo_natura, "../results/eoo_natura.tsv", delim="\t")
 
 ### Wildlife refugees overlap with EOO
 
 eoo_wildlife <- eoo_calculation(locations_inland, crete_shp, wdpa_crete_wildlife, FALSE, "wildlife")
-write_delim(eoo_wildlife, "../results/eoo_wildlife.tsv", delim="\t")
 
 eoo_wildlife <- eoo_wildlife %>%
-    dplyr::select(-c(n_sites, eoo))
+    dplyr::select(-c(n_sites, eoo)) %>%
+    rename("eoo_wildlife"="eoo_overlap")
+write_delim(eoo_wildlife, "../results/eoo_wildlife.tsv", delim="\t")
 #eoo_wildlife_df <- read_delim("../results/eoo_wildlife.tsv", delim="\t")
 ## AOO
 ## see for bootstrap
@@ -153,28 +157,35 @@ if (is.list(AOO_endemic)) {
 #
 aoo_overlap_natura_sci <- aoo_overlap(AOO_endemic,crete_shp, natura_crete_land_sci, T)
 
+aoo_overlap_natura_sci <- aoo_overlap_natura_sci %>%
+    rename("aoo_natura"="aoo_overlap" )
+
 write_delim(aoo_overlap_natura_sci, "../results/aoo_endemic.tsv", delim="\t")
+
 #aoo_overlap_natura_sci <- read_delim( "../results/aoo_endemic.tsv", delim="\t")
 ### AOO overlap with wildlife refugees
 aoo_overlap_wildlife <- aoo_overlap(AOO_endemic,crete_shp, wdpa_crete_wildlife, T)
-write_delim(aoo_overlap_wildlife, "../results/aoo_overlap_natura_sci.tsv", delim="\t")
 
 aoo_overlap_wildlife <- aoo_overlap_wildlife %>% 
-    dplyr::select(-aoo_area) %>% 
-    rename("aoo_wildlife"="aoo_overlap_area")
+    dplyr::select(-aoo) %>% 
+    rename("aoo_wildlife"="aoo_overlap")
+
+write_delim(aoo_overlap_wildlife, "../results/aoo_overlap_natura_sci.tsv", delim="\t")
+
 ## Preliminary Automated Conservation Assessments (PACA)
 
 endemic_species <- locations_grid %>% 
     st_drop_geometry() %>%
     distinct(subspeciesname,Order,n_locations) %>% 
     ungroup() %>%
+    left_join(eoo_results, by=c("subspeciesname"="subspeciesname")) %>%
     left_join(eoo_natura, by=c("subspeciesname"="subspeciesname")) %>%
     left_join(eoo_wildlife, by=c("subspeciesname"="subspeciesname")) %>%
     left_join(aoo_overlap_natura_sci, by=c("subspeciesname"="species")) %>%
     left_join(aoo_overlap_wildlife, by=c("subspeciesname"="species")) %>%
-    mutate(potentially_VU=if_else(n_locations<=10 & (eoo<20000 | aoo_area<2000),TRUE,FALSE)) %>%
-    mutate(potentially_EN=if_else(n_locations<=5 & (eoo<5000 | aoo_area<500),TRUE,FALSE)) %>%
-    mutate(potentially_CR=if_else(n_locations==1 & (if_else(is.na(eoo),0,eoo)<100 | aoo_area<10),TRUE,FALSE)) %>%
+    mutate(potentially_VU=if_else(n_locations<=10 & (eoo<20000 | aoo<2000),TRUE,FALSE)) %>%
+    mutate(potentially_EN=if_else(n_locations<=5 & (eoo<5000 | aoo<500),TRUE,FALSE)) %>%
+    mutate(potentially_CR=if_else(n_locations==1 & (if_else(is.na(eoo),0,eoo)<100 | aoo<10),TRUE,FALSE)) %>%
     ungroup() %>%
     mutate(paca=if_else(potentially_CR==TRUE,"LT",
                         if_else(potentially_EN==TRUE,"LT",
@@ -267,16 +278,10 @@ g_e_order <- g_base +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
     facet_wrap(vars(Order), ncol=4, scales = "fixed")
 
-ggsave("../plots/aoo-eoo_order.png", 
-       plot=g_e_o_order, 
-       device="png", 
-       height = 20, 
-       width = 20, 
-       units="cm")
 ggsave("../plots/crete-hotspots_order.png", 
        plot=g_e_order, 
        height = 20, 
-       width = 20, 
+       width = 50, 
        units="cm",
        device="png")
 
@@ -295,9 +300,14 @@ g_t_order <- g_base +
     geom_sf(threadspots_order_lt, mapping=aes(fill=paca_threat), alpha=0.3, size=0.1, na.rm = TRUE) +
     ggtitle("Threadspots")+
     scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
-    facet_grid(rows=vars(Order))
+    facet_wrap(vars(Order), ncol=4, scales = "fixed")
 
-ggsave("../plots/crete-threadspots_order.png", plot=g_t_order, device="png")
+ggsave("../plots/crete-threadspots_order.png", 
+       plot=g_t_order, 
+       height = 20, 
+       width = 50, 
+       units="cm",
+       device="png")
 
 ## Overlap
 

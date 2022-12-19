@@ -40,9 +40,11 @@ aoo_overlap <- function(aoo_shp, baseline_map, overlap_area, plots){
         }
     }
 
-    species_aoo_df <- as_tibble(do.call(rbind, species_aoo)) 
-    species_aoo_df$aoo_area <- as.numeric(species_aoo_df$aoo_area)
-    species_aoo_df$aoo_overlap_area <- as.numeric(species_aoo_df$aoo_overlap_area)
+    species_aoo_df <- as_tibble(do.call(rbind, species_aoo)) %>%
+        rename("aoo"="aoo_area", "aoo_overlap"="aoo_overlap_area")
+
+    species_aoo_df$aoo <- as.numeric(species_aoo_df$aoo)
+    species_aoo_df$aoo_overlap <- as.numeric(species_aoo_df$aoo_overlap)
 
     return(species_aoo_df)
 }
@@ -68,7 +70,6 @@ eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefi
         
     }
 
-    #calculations_df <- as.data.frame(do.call(rbind, calculations)) 
     eoo_overlap_name <- paste0("eoo_",prefix)
     calculations_df <- convert_ll_df(calculations) %>% as_tibble() 
     colnames(calculations_df) <- c("subspeciesname", "n_sites", "eoo", "eoo_overlap")
@@ -77,15 +78,9 @@ eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefi
     calculations_df$eoo <- as.numeric(calculations_df$eoo)
     calculations_df$eoo_overlap <- as.numeric(calculations_df$eoo_overlap)
     
-    names(calculations_df)[names(calculations_df)== "eoo_overlap"] <- eoo_overlap_name
     return(calculations_df)
 }
 
-#eoo_protected <- function(taxon_occurrences,overlap_area, plots) {
-#
-#    calculations <- eoo_calculation(taxon_occurrences,overlap_area, plots)
-#
-#}
 
 eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, prefix) {
     

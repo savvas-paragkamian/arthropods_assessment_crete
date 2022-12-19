@@ -15,7 +15,6 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 # Load the data
 
 ```{r, warning=FALSE, message=FALSE, echo=T, results='hide'}
@@ -224,19 +223,20 @@ sum(units::set_units(st_area(threadspots_natura),km^2))
 
 # EOO and AOO distributions
 
+## EOO and AOO relation
 
 The relation of EOO and AOO per IUCN category
 ```{r, , warning=FALSE, message=FALSE, echo=T}
 
 g_e_o <- ggplot() +
-    geom_point(endemic_species,mapping = aes(x=aoo_area, y=eoo, color=iucn)) +
+    geom_point(endemic_species,mapping = aes(x=aoo, y=eoo, color=iucn)) +
     theme_bw()
 ggsave("../plots/aoo-eoo_dist.png", plot=g_e_o, device="png")
 
 g_e_o
 
 g_e_o_order <- ggplot() +
-    geom_point(endemic_species,mapping = aes(x=aoo_area, y=eoo, color=iucn)) +
+    geom_point(endemic_species,mapping = aes(x=aoo, y=eoo, color=iucn)) +
     theme_bw() +
     facet_wrap(vars(Order), ncol=4, scales = "free")
 
@@ -250,12 +250,106 @@ ggsave("../plots/aoo-eoo_order.png",
 g_e_o_order
 ```
 
+## EOO area distribution
+
+EOO area distribution and the differences with the EOO overlap
+with Natura2000 and wildlife refugees.
+
 ```{r, , warning=FALSE, message=FALSE, echo=T}
 
-g_paca_e_o <- ggplot() +
-    geom_point(endemic_species,mapping = aes(x=aoo_area, y=eoo, color=paca)) +
-    theme_bw()
-ggsave("../plots/aoo-eoo_dist_paca.png", plot=g_paca_e_o, device="png")
+endemic_species_eoo <- endemic_species %>%
+    dplyr::select(subspeciesname, eoo, eoo_natura,eoo_wildlife) %>%
+    pivot_longer(cols=c(eoo,eoo_natura, eoo_wildlife), 
+                 names_to="eoo",
+                 values_to="area")
 
-g_paca_e_o
+g_eoo_b <- ggplot() +
+    geom_boxplot(endemic_species_eoo, 
+                 mapping = aes(x=eoo, y=area), 
+                 outlier.colour = "red",
+                 outlier.shape = 1) +
+    theme_bw()
+ggsave("../plots/eoo_dist_boxplot.png", plot=g_eoo_b, device="png")
+
+g_eoo_b
+tapply(endemic_species_eoo$area, endemic_species_eoo$eoo, summary)
+
+```
+Examine the differences of EOO area per Order.
+
+```{r, , warning=FALSE, message=FALSE, echo=T}
+endemic_species_eoo_o <- endemic_species %>%
+    dplyr::select(subspeciesname,Order, eoo, eoo_natura,eoo_wildlife) %>%
+    pivot_longer(cols=c(eoo,eoo_natura, eoo_wildlife), 
+                 names_to="eoo",
+                 values_to="area")
+
+g_eoo_b_o <- ggplot() +
+    geom_boxplot(endemic_species_eoo_o, 
+                 mapping = aes(x=eoo, y=area), 
+                 outlier.colour = "red",
+                 outlier.shape = 1) +
+    theme_bw() +
+    facet_wrap(vars(Order), ncol=4, scales = "fixed")
+
+ggsave("../plots/eoo_dist_boxplot.png", 
+       plot=g_eoo_b_o, 
+       device="png", 
+       height = 20, 
+       width = 30, 
+       units="cm")
+
+g_eoo_b_o
+```
+## AOO area distribution
+
+AOO area distribution and the differences with the AOO overlap
+with Natura2000 and wildlife refugees.
+
+```{r, , warning=FALSE, message=FALSE, echo=T}
+
+endemic_species_aoo <- endemic_species %>%
+    dplyr::select(subspeciesname, aoo, aoo_natura,aoo_wildlife) %>%
+    pivot_longer(cols=c(aoo,aoo_natura, aoo_wildlife), 
+                 names_to="aoo",
+                 values_to="area")
+
+g_aoo_b <- ggplot() +
+    geom_boxplot(endemic_species_aoo, 
+                 mapping = aes(x=aoo, y=area), 
+                 outlier.colour = "red",
+                 outlier.shape = 1) +
+    theme_bw()
+ggsave("../plots/aoo_dist_boxplot.png", plot=g_aoo_b, device="png")
+
+g_aoo_b
+
+tapply(endemic_species_aoo$area, endemic_species_aoo$aoo, summary)
+
+```
+Examine the differences of AOO area per Order.
+
+```{r, , warning=FALSE, message=FALSE, echo=T}
+endemic_species_aoo_o <- endemic_species %>%
+    dplyr::select(subspeciesname, Order, aoo, aoo_natura,aoo_wildlife) %>%
+    pivot_longer(cols=c(aoo,aoo_natura, aoo_wildlife), 
+                 names_to="aoo",
+                 values_to="area")
+
+g_aoo_b_o <- ggplot() +
+    geom_boxplot(endemic_species_aoo_o, 
+                 mapping = aes(x=aoo, y=area), 
+                 outlier.colour = "red",
+                 outlier.shape = 1) +
+    theme_bw() +
+    facet_wrap(vars(Order), ncol=4, scales = "fixed")
+
+ggsave("../plots/aoo_dist_boxplot.png", 
+       plot=g_aoo_b_o, 
+       device="png", 
+       height = 20, 
+       width = 30, 
+       units="cm")
+
+g_aoo_b_o
 ```
