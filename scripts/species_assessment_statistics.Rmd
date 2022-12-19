@@ -28,6 +28,7 @@ g_base <- g_base()
 
 ```{r, warning=FALSE, message=FALSE, echo=T, results='hide'}
 locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
+locations_spatial <- sf::st_read("../results/locations_spatial/locations_spatial.shp")
 crete_shp <- sf::st_read("../data/crete/crete.shp")
 endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
@@ -41,6 +42,7 @@ natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
 ## Hotspots and threadspots
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
 threadspots <- st_read("../results/threadspots/threadspots.shp")
+
 
 ```
 There are `r nrow(locations_shp)` occurrences of `r length(unique(locations_shp$sbspcsn))` 
@@ -329,7 +331,7 @@ tapply(endemic_species_aoo$area, endemic_species_aoo$aoo, summary)
 ```
 Examine the differences of AOO area per Order.
 
-```{r, , warning=FALSE, message=FALSE, echo=T}
+```{r, warning=FALSE, message=FALSE, echo=T}
 endemic_species_aoo_o <- endemic_species %>%
     dplyr::select(subspeciesname, Order, aoo, aoo_natura,aoo_wildlife) %>%
     pivot_longer(cols=c(aoo,aoo_natura, aoo_wildlife), 
@@ -355,6 +357,65 @@ g_aoo_b_o
 ```
 
 # Digital Elevation Maps
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+locations_spatial_d <- locations_spatial %>% 
+    st_drop_geometry() %>%
+    dplyr::select(-Order) %>%
+    left_join(endemic_species, by=c("sbspcsn"="subspeciesname")) %>%
+    mutate(elevation_bin=cut(elevation, 
+                             breaks=seq.int(from=0, to=2500, by=100),
+                             dig.lab = 5 ))
+
+
+locations_spatial_d_b <- locations_spatial_d %>%
+    distinct(sbspcsn, elevation_bin) %>%
+    group_by(elevation_bin) %>%
+    summarise(n_species=n())
+
+
+locations_spatial_d_b_i <- locations_spatial_d %>%
+    distinct(sbspcsn, elevation_bin, iucn) %>%
+    group_by(elevation_bin, iucn) %>%
+    summarise(n_species=n(), .groups="drop")
+
+
+```
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+g_humb <- ggplot() +
+    geom_col(locations_spatial_d_b_i, mapping=aes(x=n_species, y= elevation_bin, fill=iucn))
+
+ggsave("../plots/elevation_humb.png", plot=g_humb, device="png")
+
+g_humb
+```
+
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+g_elev_h <- ggplot() +
+    geom_histogram(locations_spatial_d,mapping=aes(y=elevation, fill=iucn),bins=100)
+
+ggsave("../plots/elevation_hist.png", plot=g_elev_h, device="png")
+
+g_elev_h
+```
+
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+g_elev <- ggplot() +
+    geom_boxplot(locations_spatial_d, 
+                 mapping = aes(x=iucn, y=elevation), 
+                 outlier.colour = "red",
+                 outlier.shape = 1) +
+    theme_bw()
+ggsave("../plots/elevation_iucn.png", plot=g_elev, device="png")
+
+g_elev
+
+```
 
 
 # Habitats
