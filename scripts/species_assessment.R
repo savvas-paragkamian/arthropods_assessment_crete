@@ -178,7 +178,7 @@ endemic_species <- locations_grid %>%
     ungroup() %>%
     mutate(paca=if_else(potentially_CR==TRUE,"LT",
                         if_else(potentially_EN==TRUE,"LT",
-                                if_else(potentially_VU==TRUE,"PT","FALSE")))) %>%
+                                if_else(potentially_VU==TRUE,"PT","LNT")))) %>%
     mutate(iucn=if_else(potentially_CR==TRUE,"CR",
                         if_else(potentially_EN==TRUE,"EN",
                                 if_else(potentially_VU==TRUE,"VU","NT/LC")))) %>%
@@ -255,8 +255,8 @@ threadspots_order_lt <- threadspots_order %>%
 ##
 
 g_e <- g_base +
-    geom_sf(endemic_hotspots, mapping=aes(fill=n_species ), alpha=0.3, size=0.1, na.rm = FALSE) +
-    ggtitle("Endemic hotspots")+
+    geom_sf(endemic_hotspots, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    ggtitle("Endemic hotspots") +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
 
 ggsave("../plots/crete-hotspots.png", plot=g_e, device="png")
@@ -265,9 +265,20 @@ g_e_order <- g_base +
     geom_sf(endemic_hotspots_order, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE) +
     ggtitle("Endemic hotspots")+
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
-    facet_grid(rows=vars(Order))
+    facet_wrap(vars(Order), ncol=4, scales = "fixed")
 
-ggsave("../plots/crete-hotspots_order.png", plot=g_e_order, device="png")
+ggsave("../plots/aoo-eoo_order.png", 
+       plot=g_e_o_order, 
+       device="png", 
+       height = 20, 
+       width = 20, 
+       units="cm")
+ggsave("../plots/crete-hotspots_order.png", 
+       plot=g_e_order, 
+       height = 20, 
+       width = 20, 
+       units="cm",
+       device="png")
 
 ## Crete with threadspots
 ##

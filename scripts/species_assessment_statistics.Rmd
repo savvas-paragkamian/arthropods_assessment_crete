@@ -99,7 +99,6 @@ The PACA categories results. LT = CR + EN, PT = VU, PNT = NT and LC.
 endemic_species_p <- endemic_species %>% 
     group_by(paca) %>%
     summarise(n_species=n(), .groups="drop") %>%
-    mutate(paca = gsub("FALSE", "PNT",paca)) %>%
     rename("category"="paca") %>%
     mutate(method="paca")
 
@@ -225,6 +224,8 @@ sum(units::set_units(st_area(threadspots_natura),km^2))
 
 # EOO and AOO distributions
 
+
+The relation of EOO and AOO per IUCN category
 ```{r, , warning=FALSE, message=FALSE, echo=T}
 
 g_e_o <- ggplot() +
@@ -233,5 +234,28 @@ g_e_o <- ggplot() +
 ggsave("../plots/aoo-eoo_dist.png", plot=g_e_o, device="png")
 
 g_e_o
+
+g_e_o_order <- ggplot() +
+    geom_point(endemic_species,mapping = aes(x=aoo_area, y=eoo, color=iucn)) +
+    theme_bw() +
+    facet_wrap(vars(Order), ncol=4, scales = "free")
+
+ggsave("../plots/aoo-eoo_order.png", 
+       plot=g_e_o_order, 
+       device="png", 
+       height = 20, 
+       width = 20, 
+       units="cm")
+
+g_e_o_order
 ```
 
+```{r, , warning=FALSE, message=FALSE, echo=T}
+
+g_paca_e_o <- ggplot() +
+    geom_point(endemic_species,mapping = aes(x=aoo_area, y=eoo, color=paca)) +
+    theme_bw()
+ggsave("../plots/aoo-eoo_dist_paca.png", plot=g_paca_e_o, device="png")
+
+g_paca_e_o
+```
