@@ -365,7 +365,7 @@ locations_spatial_d <- locations_spatial %>%
     dplyr::select(-Order) %>%
     left_join(endemic_species, by=c("sbspcsn"="subspeciesname")) %>%
     mutate(elevation_bin=cut(elevation, 
-                             breaks=seq.int(from=0, to=2500, by=100),
+                             breaks=seq.int(from=0, to=2500, by=400),
                              dig.lab = 5 ))
 
 
@@ -380,28 +380,40 @@ locations_spatial_d_b_i <- locations_spatial_d %>%
     group_by(elevation_bin, iucn) %>%
     summarise(n_species=n(), .groups="drop")
 
+locations_spatial_d_b_o <- locations_spatial_d %>%
+    distinct(sbspcsn, elevation_bin, iucn, Order) %>%
+    group_by(elevation_bin, iucn, Order) %>%
+    summarise(n_species=n(), .groups="drop")
 
 ```
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 g_humb <- ggplot() +
-    geom_col(locations_spatial_d_b_i, mapping=aes(x=n_species, y= elevation_bin, fill=iucn))
+    geom_col(locations_spatial_d_b_i, 
+             mapping=aes(x=n_species, y= elevation_bin, fill=iucn)) +
+    theme_bw() 
 
-ggsave("../plots/elevation_humb.png", plot=g_humb, device="png")
+ggsave("../plots/elevation_humb.png", 
+       plot=g_humb, 
+       device="png")
 
 g_humb
+
+g_humb_o <- ggplot() +
+    geom_col(locations_spatial_d_b_o, 
+             mapping=aes(x=n_species, y= elevation_bin, fill=iucn)) + 
+    theme_bw() +
+    facet_wrap(vars(Order), ncol=4, scales = "free")
+
+ggsave("../plots/elevation_humb_o.png", 
+       plot=g_humb_o, 
+       height = 20, 
+       width = 40, 
+       units="cm",
+       device="png")
+
 ```
-
-
-```{r, warning=FALSE, message=FALSE, echo=T}
-g_elev_h <- ggplot() +
-    geom_histogram(locations_spatial_d,mapping=aes(y=elevation, fill=iucn),bins=100)
-
-ggsave("../plots/elevation_hist.png", plot=g_elev_h, device="png")
-
-g_elev_h
-```
-
+![Altitude bins and the species that occur]("../plots/elevation_humb_o.png")
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
