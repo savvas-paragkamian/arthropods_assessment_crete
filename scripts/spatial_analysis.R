@@ -1,5 +1,19 @@
 #!/usr/bin/Rscript
 
+## Script name: spacial_analysis.R
+##
+## Purpose of script: Spatial analysis using data from the Copernicus system
+## for elevation, habitats and corine land change
+##
+## How to run:
+## Rscript spacial_analysis.R
+##
+## Execution time: 
+##
+## Author: Savvas Paragkamian
+##
+## Date Created: 2022-12-22
+
 library(tidyverse)
 library(sf)
 library(raster)
@@ -43,4 +57,4 @@ g_ele <- g_base +
 ggsave("../plots/crete_occurrences_dem.png", plot=g_ele, device="png")
 
 
-st_write("../results/locations_spatial/locations_spatial.shp")
+st_write(locations_shp,"../results/locations_spatial/locations_spatial.shp")

@@ -1,5 +1,14 @@
 #!/usr/bin/Rscript
 
+## Script name: code_snippets.R
+##
+## Purpose of script: here are some parts of code to crop spatial 
+## objects around the area of Crete and other test code.
+##
+## Author: Savvas Paragkamian
+##
+## Date Created: 2022-12-22
+
 library(tidyverse)
 library(readxl)
 library(rredlist)
@@ -80,7 +89,6 @@ eoo_results <- read_delim("EOO.results.csv", delim=",", col_names=T)
 
 # Raster spatial data
 
-crete_shp <- sf::st_read("../data/crete/crete.shp")
 dem <- raster("~/Documents/spatial_data/EAA-DEM-EUD_CP-DEMS_5500015000-AA/EUD_CP-DEMS_5500015000-AA.tif")
 
 crete_epsg <- st_transform(crete_shp, crs="EPSG:3035")

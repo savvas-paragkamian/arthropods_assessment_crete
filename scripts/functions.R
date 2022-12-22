@@ -1,5 +1,14 @@
 #!/usr/bin/Rscript
 
+## Script name: functions.R
+##
+## Purpose of script: functions for the analysis of species 
+## assessments and statistics
+##
+## Author: Savvas Paragkamian
+##
+## Date Created: 2022-12-22
+
 aoo_overlap <- function(aoo_shp, baseline_map, overlap_area, plots){
 
     aoo <- aoo_shp[[2]]
