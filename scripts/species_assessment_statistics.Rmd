@@ -39,9 +39,9 @@ natura_crete_land <- st_intersection(natura_crete, crete_shp)
 # split the SPA SCI
 
 natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
-## Hotspots and threadspots
+## Hotspots and threatspots
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
-threadspots <- st_read("../results/threadspots/threadspots.shp")
+threatspots <- st_read("../results/threatspots/threatspots.shp")
 
 
 ```
@@ -155,8 +155,8 @@ g_paca_o
 
 ```
 
-# Hotspots and threadspots
-Here are the hotspots and threadspots of the analysis.
+# Hotspots and threatspots
+Here are the hotspots and threatspots of the analysis.
 Endemic hotspots are the grid cells that contain the 10% 
 of the endemic species.
 
@@ -167,39 +167,39 @@ of the endemic species.
 ![Crete endemic hotspots per order]("../plots/crete-hotspots_order.png")
 
 
-![Crete endemic threadspots]("../plots/crete-threadspots.png")
+![Crete endemic threatspots]("../plots/crete-threatspots.png")
 
 
-![Crete endemic threadspots per order]("../plots/crete-threadspots_order.png")
+![Crete endemic threatspots per order]("../plots/crete-threatspots_order.png")
 
 
-![Overlap of hotspots with threadspots](""../plots/crete-hotspots-threadspots.png"")
+![Overlap of hotspots with threatspots](""../plots/crete-hotspots-threatspots.png"")
 
 
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-threadspots_lt <- threadspots %>% 
+threatspots_lt <- threatspots %>% 
     filter(pc_thrt>= quantile(pc_thrt,0.90))
 
 intersection_spots <- endemic_hotspots %>%
     st_drop_geometry() %>%
-    inner_join(.,threadspots_lt, by=c("CELLCODE"="CELLCOD")) %>%
+    inner_join(.,threatspots_lt, by=c("CELLCODE"="CELLCOD")) %>%
     st_as_sf()
 
 g_e_t <- g_base +
     geom_sf(intersection_spots, mapping=aes(fill="red"), alpha=0.3, size=0.1, na.rm = TRUE) +
-    ggtitle("Endemic hotspots and Threadspots")+
+    ggtitle("Endemic hotspots and threatspots")+
 #    scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
     theme_bw()
 
-ggsave("../plots/crete-hotspots-threadspots.png", plot=g_e_t, device="png")
+ggsave("../plots/crete-hotspots-threatspots.png", plot=g_e_t, device="png")
 
 g_e_t
 
 ```
 
-Overlap of hotspots and threadspots with Natura2000 protected areas.
+Overlap of hotspots and threatspots with Natura2000 protected areas.
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
@@ -211,16 +211,16 @@ print("Overlap area of endemic hotspots with Natura2000 sci")
 sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
 
 ```
-Threadspots with Natura2000
+threatspots with Natura2000
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
-threadspots_natura <- st_intersection(threadspots_lt, natura_crete_land_sci)
+threatspots_natura <- st_intersection(threatspots_lt, natura_crete_land_sci)
 
-print("Total area of threadspots as they were inferred with the PACA method")
-sum(units::set_units(st_area(threadspots_lt),km^2))
+print("Total area of threatspots as they were inferred with the PACA method")
+sum(units::set_units(st_area(threatspots_lt),km^2))
 
-print("Ovelap area of the PACA threadspots")
-sum(units::set_units(st_area(threadspots_natura),km^2))
+print("Ovelap area of the PACA threatspots")
+sum(units::set_units(st_area(threatspots_natura),km^2))
 ```
 
 # EOO and AOO distributions

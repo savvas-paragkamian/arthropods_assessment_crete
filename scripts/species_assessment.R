@@ -1,14 +1,27 @@
 #!/usr/bin/Rscript
 
+## Script name: species_assessment.R
+##
+## Purpose of script: IUCN criterion B and PACA 
+## assessments of the cretan arthropoda occurrences as compiled from 
+## Giannis Bolanakis and Apostolos Trichas from NHMC
+##
+## How to run:
+## Rscript species_assessment.R
+##
+## Execution time: 22 minutes 
+## for 7690 occurrences of 343 species
+##
+## Author: Savvas Paragkamian
+##
+## Date Created: 2022-12-22
+
 library(tidyverse)
 library(readxl)
 library(rredlist)
-library(taxize)
 library(sf)
 library(units)
-#library(rgdal)
 library(ConR)
-library(vegan)
 
 source("functions.R")
 
@@ -193,7 +206,7 @@ endemic_species <- locations_grid %>%
     mutate(iucn=if_else(potentially_CR==TRUE,"CR",
                         if_else(potentially_EN==TRUE,"EN",
                                 if_else(potentially_VU==TRUE,"VU","NT/LC")))) %>%
-    mutate(threatened= if_else(paca=="FALSE",FALSE, TRUE))
+    mutate(threatened= if_else(paca %in% c("PT", "LT"),TRUE, FALSE))
 
 write_delim(endemic_species, "../results/endemic_species_paca.tsv", delim="\t") 
 
@@ -213,9 +226,9 @@ endemic_hotspots_order <- locations_grid %>%
     mutate(quant90= quantile(n_species, 0.90)) %>%
     filter(n_species >= quant90)
 
-## Threadspots
+## threatspots
 
-threadspots <- locations_grid %>%
+threatspots <- locations_grid %>%
     dplyr::select(CELLCODE,subspeciesname) %>%
     left_join(endemic_species, by=c("subspeciesname"="subspeciesname")) %>%
     st_drop_geometry() %>% # geometry must be dropped to run pivot wider
@@ -223,41 +236,41 @@ threadspots <- locations_grid %>%
     dplyr::summarise(n_species = dplyr::n(), .groups = "drop") %>%
     tidyr::pivot_wider(names_from = paca, values_from=n_species, values_fill=0)
 
-threadspots_order <- locations_grid %>%
+threatspots_order <- locations_grid %>%
     dplyr::select(CELLCODE,subspeciesname) %>%
     left_join(endemic_species, by=c("subspeciesname"="subspeciesname")) %>%
     st_drop_geometry() %>% # geometry must be dropped to run pivot wider
     dplyr::group_by(CELLCODE, paca, Order) %>%
     dplyr::summarise(n_species = dplyr::n(), .groups = "drop") %>%
     tidyr::pivot_wider(names_from = paca, values_from=n_species, values_fill=0)
-# override the dataframe threadspots with a new one to include the 
+# override the dataframe threatspots with a new one to include the 
 # geometry of the grid.
 
-threadspots <- locations_grid %>% 
+threatspots <- locations_grid %>% 
     dplyr::select(CELLCODE) %>%
     distinct() %>%
-    inner_join(threadspots, by=c("CELLCODE"="CELLCODE")) %>%
+    inner_join(threatspots, by=c("CELLCODE"="CELLCODE")) %>%
     mutate(LT.PT_pro=LT/PT) %>%
     dplyr::select(LT,PT, CELLCODE) %>%
     mutate(paca_threat=LT+PT) %>%
     filter(paca_threat>0)
 
-threadspots_lt <- threadspots %>% 
+threatspots_lt <- threatspots %>% 
     filter(paca_threat>= quantile(paca_threat,0.90))
 
-st_write(threadspots, "../results/threadspots/threadspots.shp", append=F) 
+st_write(threatspots, "../results/threatspots/threatspots.shp", append=F) 
 
 ## Per order
-threadspots_order <- locations_grid %>% 
+threatspots_order <- locations_grid %>% 
     dplyr::select(CELLCODE) %>%
     distinct() %>%
-    inner_join(threadspots_order, by=c("CELLCODE"="CELLCODE")) %>%
+    inner_join(threatspots_order, by=c("CELLCODE"="CELLCODE")) %>%
     mutate(LT.PT_pro=LT/PT) %>%
     dplyr::select(LT,PT, CELLCODE, Order) %>%
     mutate(paca_threat=LT+PT) %>%
     filter(paca_threat>0)
 
-threadspots_order_lt <- threadspots_order %>% 
+threatspots_order_lt <- threatspots_order %>% 
     group_by(Order) %>%
     mutate(quant90 = quantile(paca_threat,0.90)) %>%
     filter(paca_threat>=quant90)
@@ -285,24 +298,24 @@ ggsave("../plots/crete-hotspots_order.png",
        units="cm",
        device="png")
 
-## Crete with threadspots
+## Crete with threatspots
 ##
 g_t <- g_base +
-    geom_sf(threadspots_lt, mapping=aes(fill=paca_threat), alpha=0.3, size=0.1, na.rm = TRUE) +
-    ggtitle("Threadspots")+
+    geom_sf(threatspots_lt, mapping=aes(fill=paca_threat), alpha=0.3, size=0.1, na.rm = TRUE) +
+    ggtitle("threatspots")+
     scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
     theme_bw()
 
-ggsave("../plots/crete-threadspots.png", plot=g_t, device="png")
+ggsave("../plots/crete-threatspots.png", plot=g_t, device="png")
 
 
 g_t_order <- g_base +
-    geom_sf(threadspots_order_lt, mapping=aes(fill=paca_threat), alpha=0.3, size=0.1, na.rm = TRUE) +
-    ggtitle("Threadspots")+
+    geom_sf(threatspots_order_lt, mapping=aes(fill=paca_threat), alpha=0.3, size=0.1, na.rm = TRUE) +
+    ggtitle("threatspots")+
     scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
     facet_wrap(vars(Order), ncol=4, scales = "fixed")
 
-ggsave("../plots/crete-threadspots_order.png", 
+ggsave("../plots/crete-threatspots_order.png", 
        plot=g_t_order, 
        height = 20, 
        width = 50, 
@@ -311,19 +324,19 @@ ggsave("../plots/crete-threadspots_order.png",
 
 ## Overlap
 
-### Hotspots and threadspots
+### Hotspots and threatspots
 intersection_spots <- endemic_hotspots %>%
     st_drop_geometry() %>%
-    inner_join(.,threadspots_lt, by=c("CELLCODE"="CELLCODE")) %>%
+    inner_join(.,threatspots_lt, by=c("CELLCODE"="CELLCODE")) %>%
     st_as_sf()
 
 g_e_t <- g_base +
     geom_sf(intersection_spots, mapping=aes(fill="red"), alpha=0.3, size=0.1, na.rm = TRUE) +
-    ggtitle("Endemic hotspots and Threadspots")+
+    ggtitle("Endemic hotspots and threatspots")+
 #    scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
     theme_bw()
 
-ggsave("../plots/crete-hotspots-threadspots.png", plot=g_e_t, device="png")
+ggsave("../plots/crete-hotspots-threatspots.png", plot=g_e_t, device="png")
 
 ### With natura
 
@@ -331,8 +344,8 @@ endemic_hotspots_natura <- st_intersection(endemic_hotspots, natura_crete_land_s
 sum(units::set_units(st_area(endemic_hotspots),km^2))
 sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
 
-threadspots_natura <- st_intersection(threadspots_lt, natura_crete_land_sci)
-sum(units::set_units(st_area(threadspots_lt),km^2))
-sum(units::set_units(st_area(threadspots_natura),km^2))
+threatspots_natura <- st_intersection(threatspots_lt, natura_crete_land_sci)
+sum(units::set_units(st_area(threatspots_lt),km^2))
+sum(units::set_units(st_area(threatspots_natura),km^2))
 
 
