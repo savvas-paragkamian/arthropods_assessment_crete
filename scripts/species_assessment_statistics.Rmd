@@ -29,6 +29,7 @@ g_base <- g_base()
 ```{r, warning=FALSE, message=FALSE, echo=T, results='hide'}
 locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
 locations_spatial <- sf::st_read("../results/locations_spatial/locations_spatial.shp")
+locations_grid <- sf::st_read("../results/locations_grid/locations_grid.shp") 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
 endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
@@ -188,14 +189,20 @@ intersection_spots <- endemic_hotspots %>%
     st_as_sf()
 
 g_e_t <- g_base +
-    geom_sf(intersection_spots, mapping=aes(fill="red"), alpha=0.3, size=0.1, na.rm = TRUE) +
+    geom_sf(intersection_spots, mapping=aes(fill=pc_thrt/n_species), alpha=0.3, size=0.1, na.rm = TRUE) +
     ggtitle("Endemic hotspots and threatspots")+
-#    scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
+    scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
     theme_bw()
 
 ggsave("../plots/crete-hotspots-threatspots.png", plot=g_e_t, device="png")
 
 g_e_t
+
+```
+The area of the intersection of hotspots and threatspots:
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+sum(units::set_units(st_area(intersection_spots),km^2))
 
 ```
 
@@ -221,6 +228,26 @@ sum(units::set_units(st_area(threatspots_lt),km^2))
 
 print("Ovelap area of the PACA threatspots")
 sum(units::set_units(st_area(threatspots_natura),km^2))
+```
+
+# Order locations overlap
+
+```{r}
+
+locations_grid_o <- locations_grid %>%
+    group_by(CELLCOD, Order) %>%
+    summarise(n_species=n(), .groups="drop")
+
+order_cell_m <- locations_grid_o %>%
+    st_drop_geometry() %>%
+    pivot_wider(id_cols=Order, 
+                names_from = CELLCOD, 
+                values_from= n_species,
+                values_fill = 0) %>%
+    column_to_rownames(CELLCOD)
+
+a <- as.matrix(sapply(order_cell_m, as.numeric))
+
 ```
 
 # EOO and AOO distributions

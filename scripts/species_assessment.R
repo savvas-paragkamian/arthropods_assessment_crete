@@ -82,7 +82,7 @@ crete_polygon <- st_cast(crete_shp, "POLYGON") %>%
 locations_inland <- st_join(locations_shp, crete_shp, left=F)
 locations_out <- st_difference(locations_shp, crete_shp)
 
-print(paste0("these occurrences are in the sea", locations_out))
+print(paste0("these occurrences are in the sea", nrow(locations_out)))
 # return the coordinates to a dataframe format
 
 locations_inland_df <- locations_inland %>%
@@ -112,6 +112,8 @@ locations_grid <- st_join(crete_grid10, locations_inland, left=TRUE) %>%
     group_by(subspeciesname) %>%
     mutate(n_locations=n()) %>% 
     ungroup()
+
+st_write(locations_grid, "../results/locations_grid/locations_grid.shp", append=F) 
 
 ## Here is Crete with all the sampling points
 ##
