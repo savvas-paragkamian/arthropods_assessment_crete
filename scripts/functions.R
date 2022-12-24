@@ -9,6 +9,60 @@
 ##
 ## Date Created: 2022-12-22
 
+heatmaps <- function(locations_grid){
+    
+    locations_grid_o <- locations_grid %>%
+        distinct(CELLCOD, Order)
+    
+    order_cell_m <- locations_grid_o %>%
+        st_drop_geometry() %>%
+        mutate(exist=1) %>%
+        pivot_wider(id_cols=Order, 
+                    names_from = CELLCOD, 
+                    values_from= exist,
+                    values_fill = 0) %>%
+        column_to_rownames(var="Order") %>%
+        as.matrix()
+    
+    # create the heatmap matrix through matrix multiplication
+    
+    order_cell_over <- order_cell_m %*% t(order_cell_m)
+    
+    order_cell_over[lower.tri(order_cell_over)] <- 0
+    
+    order_cell_long <- order_cell_over %>% 
+        as.data.frame() %>%
+        rownames_to_column() %>% 
+        pivot_longer(-rowname,names_to="colname",values_to="count" )
+    
+    colnames(order_cell_long) <- c("from","to","count")
+    
+    order_cell_long$from <- factor(order_cell_long$from, 
+                                         levels = unique(order_cell_long$from))
+    order_cell_long$to <- factor(order_cell_long$to, 
+                                 levels = unique(order_cell_long$to))
+
+    order_cell_heatmap <- ggplot()+
+      geom_tile(data=order_cell_long,aes(x=from, y=to,fill=count),alpha=1, show.legend = T)+
+      scale_fill_gradient(low="azure2", high="azure4", limits=c(1, max(order_cell_long$count)),na.value="white")+ 
+      scale_x_discrete(position = "top")+
+      scale_y_discrete(limits = rev)+
+      labs(fill="# of locations")+
+      xlab("") +
+      ylab("")+
+      theme_bw()+
+      theme(
+            panel.border=element_blank(),
+            panel.grid.major = element_blank(),
+            panel.grid.minor=element_blank(),
+            text = element_text(size=17), 
+            axis.text.x = element_text(angle = 90, hjust = 0),
+            legend.position = c(.90, .83))
+
+    results <- list(order_cell_long,order_cell_heatmap)
+    return(results)
+}
+
 aoo_overlap <- function(aoo_shp, baseline_map, overlap_area, plots){
 
     aoo <- aoo_shp[[2]]
