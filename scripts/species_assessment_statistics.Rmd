@@ -174,7 +174,7 @@ of the endemic species.
 ![Crete endemic threatspots per order]("../plots/crete-threatspots_order.png")
 
 
-![Overlap of hotspots with threatspots](""../plots/crete-hotspots-threatspots.png"")
+![Overlap of hotspots with threatspots]("../plots/crete-hotspots-threatspots.png")
 
 
 
@@ -232,23 +232,66 @@ sum(units::set_units(st_area(threatspots_natura),km^2))
 
 # Order locations overlap
 
-```{r}
+Here we calculate the overlaps of locations and hotspots of the different
+orders.
 
-locations_grid_o <- locations_grid %>%
-    group_by(CELLCOD, Order) %>%
-    summarise(n_species=n(), .groups="drop")
 
-order_cell_m <- locations_grid_o %>%
-    st_drop_geometry() %>%
-    pivot_wider(id_cols=Order, 
-                names_from = CELLCOD, 
-                values_from= n_species,
-                values_fill = 0) %>%
-    column_to_rownames(CELLCOD)
+```{r, warning=FALSE, message=FALSE, echo=T}
 
-a <- as.matrix(sapply(order_cell_m, as.numeric))
+# Overlap of all locations
+heatmaps_l <- heatmaps(locations_grid)
 
+ggsave("../plots/order_location_heatmap.png",
+       plot = heatmaps_l[[2]],
+       width = 25,
+       height = 25,
+       units='cm', 
+       device = "png",
+       dpi = 300)
+
+# Overlap of hotspots
+endemic_hotspots_o <- locations_grid %>% 
+    filter(CELLCOD %in% endemic_hotspots$CELLCODE) %>%
+    distinct(CELLCOD, Order)
+
+heatmaps_hotspots <- heatmaps(endemic_hotspots_o)
+
+ggsave("../plots/order_hotspot_heatmap.png",
+       plot = heatmaps_hotspots[[2]],
+       width = 25,
+       height = 25,
+       units='cm', 
+       device = "png",
+       dpi = 300)
+
+# Overlap of threatspots
+threatspots_o <- locations_grid %>% 
+    filter(CELLCOD %in% threatspots_lt$CELLCOD) %>%
+    distinct(CELLCOD, Order)
+
+heatmaps_threatspots <- heatmaps(threatspots_o)
+
+ggsave("../plots/order_threatspots_heatmap.png",
+       plot = heatmaps_threatspots[[2]],
+       width = 25,
+       height = 25,
+       units='cm', 
+       device = "png",
+       dpi = 300)
 ```
+
+![Shared locations of arthopod orders]("../plots/order_location_heatmap.png")
+
+
+
+
+![Shared hotspots of arthopod orders]("../plots/order_hotspot_heatmap.png")
+
+
+
+
+![Shared threatspots of arthopod orders]("../plots/order_threatspots_heatmap.png")
+
 
 # EOO and AOO distributions
 
