@@ -34,6 +34,20 @@ natura_crete_land <- st_intersection(natura_crete, crete_shp)
 natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
 
 ## Spatial data
+
+habitats_crete <- raster("../data/habitats_crete/habitats_crete.tif")
+habitats_meta <- read_delim("../data/habitats_crete/CLC2018_CLC2018_V2018_20_QGIS.txt", delim=",", col_names=F)
+habs = raster::extract(nlcd, zion, df = TRUE, factors = TRUE)
+habitats <- raster("~/Downloads/u2018_clc2018_v2020_20u1_raster100m/DATA/U2018_CLC2018_V2020_20u1.tif")
+
+
+crete_epsg <- st_transform(crete_shp, crs="EPSG:3035")
+
+habitats_crete <- crop(habitats, crete_epsg)
+wgs84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+habitats_crete <- projectRaster(habitats_crete, crs = wgs84, method = "ngb")
+writeRaster(habitats_crete, filename="../data/habitats_crete/habitats_crete.tif")
+
 dem_crete <- raster("../data/dem_crete/dem_crete.tif")
 
 dem_crete_pixel <- as(dem_crete, "SpatialPixelsDataFrame")
