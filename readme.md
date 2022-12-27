@@ -1,11 +1,5 @@
 # Arhropoda species assessment in Crete island
 
-## Data
-
-Occurrences of endemic arthropod species in the island of Crete were 
-compiled by Natural History Museaum of Crete.
-
-
 ## Structure of the repo
 
 ```
@@ -15,18 +9,29 @@ compiled by Natural History Museaum of Crete.
 |-- scripts
 
 ```
+First the script `species_assessment.R` is executed. Then the 
+`spatial_analysis.R` script. These 2 scripts generate all the 
+results that are needed for the `species_assessment_statistict.Rmd`
+R markdown file that generates a report. The `functions.R` is a 
+collection of functions required in all scripts.
 
-## Spatial data
+There is an additional script, `code_snippets.R`, which contains 
+code and data manipulation of large files, e.g. Natura2000 sites, 
+elevation maps of Europe. This script is not meant to be executed
+but to guide to the original versions of the data as downloaded from 
+the sources.
 
-Copernicus 
+## Occurrence Data
 
-Elevation
+Occurrences of endemic arthropod species in the island of Crete were 
+compiled by Natural History Museaum of Crete.
 
-Corine 
 
 ## Assessment
 
 IUCN
+
+Preliminary Automated Conservation Assessments (PACA)
 
 ## Hotspots
 
@@ -42,4 +47,11 @@ Natura2000 SCI (habitats directive)
 Wildlife refugees.
 
 
+## Spatial data
+
+Copernicus 
+
+Elevation and slope
+
+Corine 
 
