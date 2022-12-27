@@ -59,10 +59,114 @@ wdpa_crete <- st_intersection(wdpa_gr, crete_shp)
 st_write(wdpa_crete,"../data/wdpa_crete/wdpa_crete.shp",
          layer_options = "ENCODING=UTF-8", delete_layer = TRUE)
 
+## Habitats Copernicus
+
+### Polygon
+clc_geo <- st_read("/Users/talos/Downloads/u2018_clc2018_v2020_20u1_geoPackage/DATA/U2018_CLC2018_V2020_20u1.gpkg")
+clc_legend <- readxl::read_excel("/Users/talos/Downloads/u2018_clc2018_v2020_20u1_geoPackage/Legend/clc_legend.xls")
+
+clc_geo_w <- clc_geo %>% st_transform(., "WGS84")
+
+clc_crete_shp <- st_crop(clc_geo_w,
+                        y=st_bbox(c(xmin=23,ymin=34,xmax=27,ymax=36),
+                                  crs="WGS84")) 
+### add the legend data and remove the sea and ocean data
+clc_crete_shp <- clc_crete_shp %>% 
+    left_join(clc_legend,by=c("Code_18"="CLC_CODE")) %>%
+    filter(LABEL3!="Sea and ocean")
+
+## transform RBG to HEX
+clc_crete_shp$hex <- sapply(strsplit(clc_crete_shp$RGB, split="-"), 
+                      function(x) rgb(x[1],x[2],x[3],maxColorValue=255))
+## keep only crete with the shapefile and write the object
+
+clc_crete_shp <- st_intersection(clc_crete_shp, crete_shp)
+st_write(clc_crete_shp,"../data/clc_crete_shp/clc_crete_shp.shp",
+         layer_options = "ENCODING=UTF-8", delete_layer = TRUE, append=T)
+
+### Raster
+habitats <- raster("~/Documents/spatial_data/CLC-land-habitats-copernicus-u2018_clc2018_v2020_20u1_raster100m/DATA/U2018_CLC2018_V2020_20u1.tif")
+
+crete_epsg <- st_transform(crete_shp, crs="EPSG:3035")
+
+habitats_crete <- crop(habitats, crete_epsg)
+#wgs84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+#habitats_crete <- projectRaster(habitats_crete, crs = wgs84, method = "ngb")
+writeRaster(habitats_crete, filename="../data/habitats_crete/habitats_crete.tif")
+
+clc_crete <- raster("../data/clc_crete/clc_crete.tif")
+clc_crete[clc_crete==44] <- NA
+locations_shp$clc <- raster::extract(clc_crete, locations_shp, cellnumbers=F)
+clc_meta <- read_delim("../data/clc_crete/CLC2018_CLC2018_V2018_20_QGIS.txt", delim=",", col_names=F)
+
+colnames(clc_meta) <- c("code", "r","g","b","255", "description")
+
+clc_meta$id <- seq(1:nrow(clc_meta))
+
+clc_meta$hex <- rgb(clc_meta$r,
+                         clc_meta$g,
+                         clc_meta$b,
+                         maxColorValue=255)
+
+
+clc_crete_pixel <- as(clc_crete, "SpatialPixelsDataFrame")
+clc_crete_df <- as.data.frame(clc_crete_pixel) %>%
+    left_join(clc_meta, by=c("clc_crete"="id")) %>%
+    na.omit()
+
+clc_crete_df$description <- factor(clc_crete_df$description, 
+                                        levels=unique(clc_crete_df$description))
+
+clc_crete_df$hex <- factor(clc_crete_df$hex, 
+                                        levels=unique(clc_crete_df$hex))
+
+
+colors_all <- setNames(clc_meta$hex,clc_meta$description)
+colors_crete <- colors_all[colors_all %in% unique(clc_crete_df$hex)]
+g_hab <- ggplot() +
+    geom_raster(clc_crete_df, mapping=aes(x=x, y=y, fill=description)) +
+    scale_fill_manual(values=colors_crete)+
+    theme(legend.position="bottom", legend.margin=margin()) +
+    guides(fill=guide_legend(nrow=8,byrow=TRUE, title="")) +
+    coord_equal() 
+
+ggsave("../plots/crete_clc.png",
+       plot=g_hab,
+       width = 50,
+       height = 30,
+       units='cm', 
+       device = "png",
+       dpi = 300)
+
+dim_x <- res(clc_crete)[1]
+dim_y <- res(clc_crete)[2]
+
+clc_summary <- as.data.frame(clc_crete) %>% 
+    group_by(clc_crete) %>% 
+    tally() %>% 
+    mutate(area=units::set_units(n * dim_x * dim_y,m^2)) %>%
+    mutate(area=units::set_units(area, km^2)) %>%
+    left_join(clc_meta, by=c("clc_crete"="id")) %>%
+    dplyr::select(clc_crete, area, description, hex) %>%
+    na.omit()
+
+g_clc <- ggplot() +
+    geom_col(clc_summary, mapping=aes(y=description, x=area, fill=description))+
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 90, hjust = 0))
+
+
+ggsave("../plots/crete_clc_sum.png",
+       plot=g_clc,
+       width = 50,
+       height = 30,
+       units='cm', 
+       device = "png",
+       dpi = 300)
+#################################################################################
 #grid_iucn <- sf::st_read(dsn="~/Documents/AOOGrid_10x10kmshp/AOOGrid_10x10km.shp") %>% 
 #    st_transform(., crs="WGS84")
 ##
-
 arthropods <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx")
 # remove Opiliones because the dataset has some errors that are under review.
 arthropods_kriti <- readxl::read_excel("../data/arthropoda_crete_nhmc_for_analysis.xlsx") %>% 
