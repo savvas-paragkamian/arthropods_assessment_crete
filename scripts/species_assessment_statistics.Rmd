@@ -32,6 +32,7 @@ locations_spatial <- sf::st_read("../results/locations_spatial/locations_spatial
 locations_grid <- sf::st_read("../results/locations_grid/locations_grid.shp") 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
 endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
+clc_crete_shp <- st_read("../data/clc_crete_shp/clc_crete_shp.shp")
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
 
@@ -501,6 +502,17 @@ g_elev
 
 
 # Habitats
+
+![CORINE Land Cover 2018 in Crete]("../plots/clc_crete_shp.png")
+
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+clc_crete_summary <- read_delim("../results/clc_crete_summary.tsv", delim="\t") %>% 
+    mutate(across(where(is.numeric), ~ round(.x,digits=2)))
+
+kable(clc_crete_summary)
+
+```
 
 
 # Corine
