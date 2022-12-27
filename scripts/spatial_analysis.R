@@ -3,7 +3,8 @@
 ## Script name: spacial_analysis.R
 ##
 ## Purpose of script: Spatial analysis using data from the Copernicus system
-## for elevation, habitats and corine land change
+## for elevation, habitats and corine land change. Main output is an
+## enriched locations file which is exported for further analysis.
 ##
 ## How to run:
 ## Rscript spacial_analysis.R
@@ -17,6 +18,7 @@
 library(tidyverse)
 library(sf)
 library(raster)
+library(units)
 source("functions.R")
 
 # Load data
@@ -24,6 +26,8 @@ g_base <- g_base()
 locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
 crete_shp <- sf::st_read("../data/crete/crete.shp")
 endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
+endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
+threatspots <- st_read("../results/threatspots/threatspots.shp")
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
 
@@ -35,59 +39,86 @@ natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
 
 # Spatial data
 
-## Habitats
-habitats_crete <- raster("../data/habitats_crete/habitats_crete.tif")
-locations_shp$habitats <- raster::extract(habitats_crete, locations_shp, cellnumbers=F)
+locations_shp <- st_join(locations_shp, natura_crete_land_sci, left=T)
+## CORINE Land Cover nomenclature
+clc_crete_shp <- st_read("../data/clc_crete_shp/clc_crete_shp.shp")
 
-habitats_meta <- read_delim("../data/habitats_crete/CLC2018_CLC2018_V2018_20_QGIS.txt", delim=",", col_names=F)
+clc_crete_colors <- clc_crete_shp %>% 
+    st_drop_geometry() %>%
+    distinct(LABEL3,hex)
+## create the named vector in order to plot with correct colors
+##
+colors_all <- setNames(clc_crete_colors$hex,clc_crete_colors$LABEL3)
 
-colnames(habitats_meta) <- c("code", "r","g","b","255", "description")
-
-habitats_meta$id <- seq(1:nrow(habitats_meta))
-
-habitats_meta$hex <- rgb(habitats_meta$r,
-                         habitats_meta$g,
-                         habitats_meta$b,
-                         maxColorValue=255)
-
-
-habitats_crete_pixel <- as(habitats_crete, "SpatialPixelsDataFrame")
-habitats_crete_df <- as.data.frame(habitats_crete_pixel) %>%
-    left_join(habitats_meta, by=c("habitats_crete"="id"))
-
-habitats_crete_df$description <- factor(habitats_crete_df$description, 
-                                        levels=unique(habitats_crete_df$description))
-
-habitats_crete_df$hex <- factor(habitats_crete_df$hex, 
-                                        levels=unique(habitats_crete_df$hex))
-
-
-colors_all <- setNames(habitats_meta$hex,habitats_meta$description)
-colors_crete <- colors_all[colors_all %in% unique(habitats_crete_df$hex)]
-g_hab <- ggplot() +
-    geom_raster(habitats_crete_df, mapping=aes(x=x, y=y, fill=description)) +
-    scale_fill_manual(values=colors_crete)+
+g_clc_s <- g_base + 
+    geom_sf(clc_crete_shp, mapping=aes(fill=LABEL3,color=LABEL3))+
+    scale_fill_manual(values=colors_all)+
+    scale_color_manual(values=colors_all)+
     theme(legend.position="bottom", legend.margin=margin()) +
-    guides(fill=guide_legend(nrow=8,byrow=TRUE, title="")) +
-    coord_equal() 
+    guides(fill=guide_legend(nrow=8,byrow=TRUE, title=""), color="none") 
 
-#    geom_sf(locations_shp, mapping=aes(),color="blue", size=0.1, alpha=0.2)
-
-ggsave("../plots/crete_habitats.png",
-       plot=g_hab,
+ggsave("../plots/clc_crete_shp.png", 
+       plot=g_clc_s,
        width = 50,
        height = 30,
-       units='cm', 
+       units='cm',
        device = "png",
        dpi = 300)
 
-dim_x <- res(habitats_crete)[1]
-dim_y <- res(habitats_crete)[2]
-habitats_summary <- as.data.frame(habitats_crete) %>% 
-    group_by(habitats_crete) %>% 
-    tally() %>% 
-    mutate(area=n * dim_x * dim_y) %>%
-    left_join(habitats_meta, by=c("habitats_crete"="id"))
+
+locations_shp <- st_join(locations_shp, clc_crete_shp, left=T)
+
+### Summary
+clc_crete_shp$area <- units::set_units(st_area(clc_crete_shp),km^2)
+
+clc_crete_summary <- clc_crete_shp %>%
+    st_drop_geometry() %>%
+    group_by(LABEL3) %>%
+    summarise(total=sum(area))
+
+## with natura2000
+clc_natura <- st_intersection(clc_crete_shp, natura_crete_land_sci) 
+
+clc_natura$area <- units::set_units(st_area(st_make_valid(clc_natura)),km^2)
+
+clc_natura_s <- clc_natura %>%
+    st_drop_geometry() %>%
+    group_by(LABEL3) %>%
+    summarise(natura2000=sum(area))
+
+## wildlife
+wdpa_crete_wildlife <- wdpa_crete %>% filter(DESIG_ENG=="Wildlife Refugee")
+
+clc_wildlife <- st_intersection(clc_crete_shp, wdpa_crete_wildlife) 
+
+clc_wildlife$area <- units::set_units(st_area(st_make_valid(clc_wildlife)),km^2)
+
+clc_wildlife_s <- clc_wildlife %>%
+    st_drop_geometry() %>%
+    group_by(LABEL3) %>%
+    summarise(wildlife=sum(area))
+
+## hotspots
+
+clc_hotspots <- st_intersection(clc_crete_shp, endemic_hotspots) 
+
+clc_hotspots$area <- units::set_units(st_area(st_make_valid(clc_hotspots)),km^2)
+
+clc_hotspots_s <- clc_hotspots %>%
+    st_drop_geometry() %>%
+    group_by(LABEL3) %>%
+    summarise(hotspots=sum(area))
+
+## threatspots
+
+clc_threatspots <- st_intersection(clc_crete_shp, threatspots) 
+
+clc_threatspots$area <- units::set_units(st_area(st_make_valid(clc_threatspots)),km^2)
+
+clc_threatspots_s <- clc_threatspots %>%
+    st_drop_geometry() %>%
+    group_by(LABEL3) %>%
+    summarise(threatspots=sum(area))
 ## Dem
 
 dem_crete <- raster("../data/dem_crete/dem_crete.tif")
