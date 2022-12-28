@@ -19,6 +19,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r, warning=FALSE, message=FALSE, echo=T, results='hide'}
 library(tidyverse)
+library(ggnewscale)
 library(sf)
 library(knitr)
 source("functions.R")
@@ -97,29 +98,54 @@ g_wdpa
 # PACA - Preliminary Automated Conservation Assessment
 
 The PACA categories results. LT = CR + EN, PT = VU, PNT = NT and LC.
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+iucn_color <- setNames(c("#FD0200","#FEFE08","#FFA706", "#008100"), 
+                       c("CR","VU","EN", "NT/LC"))
+
+paca_color <- setNames(c("brown1","#FEFE08","forestgreen"), 
+                       c("PT","LT","LNT"))
+```
+
+
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
 endemic_species_p <- endemic_species %>% 
     group_by(paca) %>%
     summarise(n_species=n(), .groups="drop") %>%
-    rename("category"="paca") %>%
+#    rename("category"="paca") %>%
     mutate(method="paca")
 
 endemic_species_i <- endemic_species %>% 
     group_by(iucn) %>%
     summarise(n_species=n(), .groups="drop") %>%
-    rename("category"="iucn") %>%
-    mutate(method = "iucn") %>%
-    bind_rows(endemic_species_p)
+#    rename("category"="iucn") %>%
+    mutate(method = "iucn")
+#%>%
+#    bind_rows(endemic_species_p)
 
 g_paca <- ggplot() +
     geom_col(data=endemic_species_i, 
-             aes(x=n_species,y=method, fill=category), 
-             show.legend=T, position = position_stack(reverse = TRUE))+
-    theme_bw() +
-    guides(fill=guide_legend(ncol=2)) 
+             aes(x=n_species,y=method, fill=iucn),
+             width=0.5,
+             position = position_stack(reverse = TRUE)) + 
+    scale_fill_manual("IUCN", values=iucn_color) +
+    new_scale('fill') +
+    geom_col(data=endemic_species_p, 
+             aes(x=n_species,y=method, fill=paca), 
+             width=0.5,
+             position = position_stack(reverse = TRUE)) + 
+    scale_fill_manual("PACA", values=paca_color) +
+#    guides(fill=guide_legend(override.aes = list(fill=c("PACA", "IUCN"),order=2))) +
+    theme_bw() 
 
-ggsave("../plots/bar_chart_paca.png", g_paca, device="png")
+ggsave("../plots/bar_chart_paca.png", 
+       g_paca, 
+       width = 20,
+       height = 15,
+       units='cm', 
+       device="png")
 g_paca
 ```
 
@@ -127,15 +153,24 @@ IUCN categories per Order:
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
+
 endemic_species_s_i <- endemic_species %>% 
     group_by(iucn, Order) %>%
     summarise(n_species=n(), .groups="drop")
 
 g_iucn_o <- ggplot() +
-    geom_col(data=endemic_species_s_i, aes(x=n_species,y=Order, fill=iucn), show.legend=T)+
+    geom_col(data=endemic_species_s_i, 
+             aes(x=n_species,y=Order, fill=iucn), 
+             width=0.5, show.legend=T)+
+    scale_fill_manual("IUCN", values=iucn_color) +
     theme_bw()
 
-ggsave("../plots/bar_chart_iucn_order.png", g_iucn_o, device="png")
+ggsave("../plots/bar_chart_iucn_order.png", 
+       g_iucn_o, 
+       width = 20,
+       height = 15,
+       units='cm', 
+       device="png")
 g_iucn_o
 
 ```
@@ -149,10 +184,17 @@ endemic_species_s_o <- endemic_species %>%
     mutate(paca = gsub("FALSE", "PNT",paca))
 
 g_paca_o <- ggplot() +
-    geom_col(data=endemic_species_s_o, aes(x=n_species,y=Order, fill=paca), show.legend=T)+
+    geom_col(data=endemic_species_s_o, aes(x=n_species,y=Order, fill=paca), 
+             width=0.5, show.legend=T)+
+    scale_fill_manual("PACA", values=paca_color) +
     theme_bw()
 
-ggsave("../plots/bar_chart_paca_order.png", g_paca_o, device="png")
+ggsave("../plots/bar_chart_paca_order.png",
+       g_paca_o,
+       width = 20,
+       height = 15,
+       units='cm', 
+       device="png")
 g_paca_o
 
 ```
@@ -303,6 +345,7 @@ The relation of EOO and AOO per IUCN category
 
 g_e_o <- ggplot() +
     geom_point(endemic_species,mapping = aes(x=aoo, y=eoo, color=iucn)) +
+    scale_color_manual("IUCN", values=iucn_color) +
     theme_bw()
 ggsave("../plots/aoo-eoo_dist.png", plot=g_e_o, device="png")
 
@@ -310,6 +353,7 @@ g_e_o
 
 g_e_o_order <- ggplot() +
     geom_point(endemic_species,mapping = aes(x=aoo, y=eoo, color=iucn)) +
+    scale_color_manual("IUCN", values=iucn_color) +
     theme_bw() +
     facet_wrap(vars(Order), ncol=4, scales = "free")
 
@@ -462,6 +506,7 @@ locations_spatial_d_b_o <- locations_spatial_d %>%
 g_humb <- ggplot() +
     geom_col(locations_spatial_d_b_i, 
              mapping=aes(x=n_species, y= elevation_bin, fill=iucn)) +
+    scale_fill_manual("IUCN", values=iucn_color) +
     theme_bw() 
 
 ggsave("../plots/elevation_humb.png", 
@@ -474,6 +519,7 @@ g_humb_o <- ggplot() +
     geom_col(locations_spatial_d_b_o, 
              mapping=aes(x=n_species, y= elevation_bin, fill=iucn)) + 
     theme_bw() +
+    scale_fill_manual("IUCN", values=iucn_color) +
     facet_wrap(vars(Order), ncol=4, scales = "free")
 
 ggsave("../plots/elevation_humb_o.png", 
