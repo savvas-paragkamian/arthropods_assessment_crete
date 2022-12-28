@@ -28,9 +28,13 @@ crete_shp <- sf::st_read("../data/crete/crete.shp")
 endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
 threatspots <- st_read("../results/threatspots/threatspots.shp")
+threatspots_lt <- threatspots %>% 
+    filter(pc_thrt>= quantile(pc_thrt,0.90))
+
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
 
+wdpa_crete_wildlife <- wdpa_crete %>% filter(DESIG_ENG=="Wildlife Refugee")
 natura_crete_land <- st_intersection(natura_crete, crete_shp)
 
 # split the SPA SCI
@@ -68,57 +72,39 @@ ggsave("../plots/clc_crete_shp.png",
 
 locations_shp <- st_join(locations_shp, clc_crete_shp, left=T)
 
-### Summary
-clc_crete_shp$area <- units::set_units(st_area(clc_crete_shp),km^2)
+### Summary of overlaps of CLC with areas
 
-clc_crete_summary <- clc_crete_shp %>%
-    st_drop_geometry() %>%
-    group_by(LABEL3) %>%
-    summarise(total=sum(area))
+list_sf <- list(natura2000 = natura_crete_land_sci,
+                wildlife = wdpa_crete_wildlife,
+                hotspots = endemic_hotspots,
+                threatspots = threatspots_lt)
 
-## with natura2000
-clc_natura <- st_intersection(clc_crete_shp, natura_crete_land_sci) 
+clabels <- c("LABEL1", "LABEL2", "LABEL3")
 
-clc_natura$area <- units::set_units(st_area(st_make_valid(clc_natura)),km^2)
+### Here we calculate the overlap of areas with CLC
+clc_area_ovelaps <- area_overlap_combination(clc_crete_shp, list_sf, clabels)
 
-clc_natura_s <- clc_natura %>%
-    st_drop_geometry() %>%
-    group_by(LABEL3) %>%
-    summarise(natura2000=sum(area))
+### data transformation
+clc_area_ovelaps_df <- convert_nested_l_df(clc_area_ovelaps)
 
-## wildlife
-wdpa_crete_wildlife <- wdpa_crete %>% filter(DESIG_ENG=="Wildlife Refugee")
+### Here we calculate the area of each LABEL for Crete
+clc_crete_summary <- lapply(clabels, function(x) spatial_area_summary(clc_crete_shp, x))
 
-clc_wildlife <- st_intersection(clc_crete_shp, wdpa_crete_wildlife) 
+### Here we merge the total area with the overlaps and 
+### print the output
 
-clc_wildlife$area <- units::set_units(st_area(st_make_valid(clc_wildlife)),km^2)
+for (i in seq_along(clc_crete_summary)){
+    
+    merged <- clc_crete_summary[[i]] %>%
+        left_join(clc_area_ovelaps_df[[i]])
 
-clc_wildlife_s <- clc_wildlife %>%
-    st_drop_geometry() %>%
-    group_by(LABEL3) %>%
-    summarise(wildlife=sum(area))
+    write_delim(merged,
+                paste0("../results/clc_crete_", 
+                       names(clc_area_ovelaps_df)[i],
+                       ".tsv",sep=""),
+                delim="\t")
+}
 
-## hotspots
-
-clc_hotspots <- st_intersection(clc_crete_shp, endemic_hotspots) 
-
-clc_hotspots$area <- units::set_units(st_area(st_make_valid(clc_hotspots)),km^2)
-
-clc_hotspots_s <- clc_hotspots %>%
-    st_drop_geometry() %>%
-    group_by(LABEL3) %>%
-    summarise(hotspots=sum(area))
-
-## threatspots
-
-clc_threatspots <- st_intersection(clc_crete_shp, threatspots) 
-
-clc_threatspots$area <- units::set_units(st_area(st_make_valid(clc_threatspots)),km^2)
-
-clc_threatspots_s <- clc_threatspots %>%
-    st_drop_geometry() %>%
-    group_by(LABEL3) %>%
-    summarise(threatspots=sum(area))
 ## Dem
 
 dem_crete <- raster("../data/dem_crete/dem_crete.tif")
