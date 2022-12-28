@@ -549,16 +549,24 @@ g_elev
 
 # Habitats
 
-![CORINE Land Cover 2018 in Crete]("../plots/clc_crete_shp.png")
+![CORINE Land Cover 2018 (LABEL 3) in Crete]("../plots/clc_crete_shp.png")
 
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
-clc_crete_summary <- read_delim("../results/clc_crete_summary.tsv", delim="\t") %>% 
+clc_crete_label1 <- read_delim("../results/clc_crete_LABEL1.tsv", delim="\t") %>% 
     mutate(across(where(is.numeric), ~ round(.x,digits=2)))
 
-kable(clc_crete_summary)
+kable(clc_crete_label1)
 
+clc_crete_label2 <- read_delim("../results/clc_crete_LABEL2.tsv", delim="\t") %>% 
+    mutate(across(where(is.numeric), ~ round(.x,digits=2)))
+
+kable(clc_crete_label2)
+
+clc_crete_label3 <- read_delim("../results/clc_crete_LABEL3.tsv", delim="\t") %>% 
+    mutate(across(where(is.numeric), ~ round(.x,digits=2)))
+
+kable(clc_crete_label3)
 ```
 
 
-# Corine

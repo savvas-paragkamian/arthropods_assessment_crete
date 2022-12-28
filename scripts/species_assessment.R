@@ -47,7 +47,8 @@ locations_shp <- st_as_sf(arthropods_occurrences,
                           coords=c("logD", "latD"),
                           remove=TRUE,
                           crs="WGS84")
-#st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.shp", layer_options = "ENCODING=UTF-8" )
+st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.shp", layer_options = "ENCODING=UTF-8" )
+st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.csv", layer_options = "ENCODING=UTF-8" )
 ## Crete Spatial data
 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
