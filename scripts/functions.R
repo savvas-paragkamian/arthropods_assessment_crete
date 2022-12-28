@@ -9,6 +9,49 @@
 ##
 ## Date Created: 2022-12-22
 
+area_overlap_combination <- function(master_sf, list_sf, clabels){
+
+    # this function takes as input a master sf, a named list of sf objects
+    # and a labels factor. It calculates the area of overlap of the master_sf 
+    # with each of the other sf objects per label. The output is a list of lists
+    # of dataframes. 
+    # Complementary functions are spatial_area_summary and convert_nested_l_df
+    results <- list()
+
+    for (i in seq_along(list_sf)){
+    
+        intersected <- st_intersection(master_sf,list_sf[[i]] )
+        name_sf <- names(list_sf)[i]
+        results[[name_sf]] <- list()
+        
+        for (j in seq_along(clabels)){
+
+            label <- clabels[j]
+            df_results <- spatial_area_summary(intersected,label)
+            colnames(df_results) <- c(label, name_sf)
+            print(j,i)
+
+            results[[name_sf]][[label]] <- df_results
+        }
+    }
+    return(results)
+}
+
+spatial_area_summary <- function(spatial_area,attribute){
+
+    #this function takes a sf object and a grouping variable
+    #and returns a dataframe of the area per name of the variable
+    attribute <- as.character(attribute)
+    spatial_area$area <- units::set_units(st_area(st_make_valid(spatial_area)),km^2)
+
+    spatial_area_s <- spatial_area %>%
+        st_drop_geometry() %>%
+        group_by(.data[[attribute]]) %>%
+        summarise(total_area=sum(area))
+
+    return(spatial_area_s)
+}
+
 heatmaps <- function(locations_grid){
     
     locations_grid_o <- locations_grid %>%
@@ -258,6 +301,25 @@ g_base <- function(){
 
     return(g_base)
 } 
+
+convert_nested_l_df <- function(list_of_l_of_df){
+
+    # transormation of nested list of lists to list of dataframes
+
+    # this step merges lists of lists of dataframes to lists of dataframes.
+    # The names of l1 are the concataned names of the original with . .
+    # The next step is to create a new list with the right part of the name.
+    # This way each element of the list contains dataframes of the same name.
+    # In the last step the dataframes with the same name and subsequently the
+    # same rows are merged. 
+    # The final list is contains merged dataframes.
+    l1 <- do.call('c', list_of_l_of_df)
+    l2 <- split(l1,sub('.*\\.', '', names(l1)))
+    results_df <- lapply(l2, function(x) Reduce(merge, x))
+    return(results_df)
+
+
+}
 
 convert_ll_df <- function(list_of_l_of_l){
     
