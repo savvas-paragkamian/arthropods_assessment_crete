@@ -130,3 +130,4 @@ ggsave("../plots/crete_occurrences_dem.png", plot=g_ele, device="png")
 
 # Export of locations shapefile with all the spatial metadata
 st_write(locations_shp,"../results/locations_spatial/locations_spatial.shp", append=TRUE)
+st_write(locations_shp,"../results/locations_spatial/locations_spatial.csv")
