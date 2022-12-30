@@ -37,7 +37,7 @@ species_wo_coords <- arthropods_kriti_endemic[which(is.na(arthropods_kriti_endem
 print(paste0("there are ", nrow(species_wo_coords)," rows without coordinates"))
 
 arthropods_occurrences <- arthropods_kriti_endemic %>% 
-    dplyr::select(subspeciesname,latD, logD, Order) %>% 
+    dplyr::select(subspeciesname,latD, logD, Order, families) %>% 
     filter(latD<38, logD<30) %>%
     na.omit()
 
@@ -47,8 +47,14 @@ locations_shp <- st_as_sf(arthropods_occurrences,
                           coords=c("logD", "latD"),
                           remove=TRUE,
                           crs="WGS84")
-st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.shp", layer_options = "ENCODING=UTF-8" )
-st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.csv", layer_options = "ENCODING=UTF-8" )
+
+st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.shp", layer_options = "ENCODING=UTF-8" , append=FALSE, delete_layer=T)
+
+st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.csv",
+         layer_options = "ENCODING=UTF-8", 
+         append=FALSE, 
+         delete_layer=T, 
+         delete_dsn = TRUE)
 ## Crete Spatial data
 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
@@ -107,14 +113,18 @@ crete_grid10 <- st_join(grid_10km, crete_shp, left=F)
 
 ### Sites to locations. Each 10km grid is a location of a species
 locations_grid <- st_join(crete_grid10, locations_inland, left=TRUE) %>%
-    dplyr::select(CELLCODE, subspeciesname, Order) %>% 
+    dplyr::select(CELLCODE, subspeciesname, Order, families) %>% 
     distinct() %>%
     na.omit() %>%
     group_by(subspeciesname) %>%
     mutate(n_locations=n()) %>% 
     ungroup()
 
-st_write(locations_grid, "../results/locations_grid/locations_grid.shp", append=F) 
+st_write(locations_grid,
+         "../results/locations_grid/locations_grid.shp", 
+         append=FALSE, 
+         delete_layer=T, 
+         delete_dsn = TRUE)
 
 ## Here is Crete with all the sampling points
 ##
@@ -192,7 +202,7 @@ write_delim(aoo_overlap_wildlife, "../results/aoo_overlap_natura_sci.tsv", delim
 
 endemic_species <- locations_grid %>% 
     st_drop_geometry() %>%
-    distinct(subspeciesname,Order,n_locations) %>% 
+    distinct(subspeciesname,Order,families,n_locations) %>% 
     ungroup() %>%
     left_join(eoo_results, by=c("subspeciesname"="subspeciesname")) %>%
     left_join(eoo_natura, by=c("subspeciesname"="subspeciesname")) %>%
@@ -211,7 +221,7 @@ endemic_species <- locations_grid %>%
                                 if_else(potentially_VU==TRUE,"VU","NT/LC")))) %>%
     mutate(threatened= if_else(paca %in% c("PT", "LT"),TRUE, FALSE))
 
-write_delim(endemic_species, "../results/endemic_species_paca.tsv", delim="\t") 
+write_delim(endemic_species, "../results/endemic_species_assessment.tsv", delim="\t") 
 
 ## Endemic hotspots
 
@@ -220,7 +230,11 @@ endemic_hotspots <- locations_grid %>%
     summarise(n_species=n()) %>%
     filter(n_species >= quantile(n_species, 0.90))
 
-st_write(endemic_hotspots, "../results/endemic_hotspots/endemic_hotspots.shp", append=F) 
+st_write(endemic_hotspots,
+         "../results/endemic_hotspots/endemic_hotspots.shp", 
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
 
 endemic_hotspots_order <- locations_grid %>% 
     group_by(CELLCODE, Order) %>%
@@ -261,7 +275,11 @@ threatspots <- locations_grid %>%
 threatspots_lt <- threatspots %>% 
     filter(paca_threat>= quantile(paca_threat,0.90))
 
-st_write(threatspots, "../results/threatspots/threatspots.shp", append=F) 
+st_write(threatspots,
+         "../results/threatspots/threatspots.shp",
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
 
 ## Per order
 threatspots_order <- locations_grid %>% 

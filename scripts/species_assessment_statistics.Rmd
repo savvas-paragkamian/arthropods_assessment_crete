@@ -32,11 +32,10 @@ locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurren
 locations_spatial <- sf::st_read("../results/locations_spatial/locations_spatial.shp")
 locations_grid <- sf::st_read("../results/locations_grid/locations_grid.shp") 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
-endemic_species <- read_delim("../results/endemic_species_taxonomy.tsv", delim="\t")
+endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t")
 clc_crete_shp <- st_read("../data/clc_crete_shp/clc_crete_shp.shp")
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
-
 natura_crete_land <- st_intersection(natura_crete, crete_shp)
 
 # split the SPA SCI
@@ -207,12 +206,12 @@ IUCN categories of the families of coleoptera
 
 endemic_species_coleoptera <- endemic_species %>% 
     filter(Order=="Coleoptera") %>%
-    group_by(iucn, family) %>%
+    group_by(iucn, families) %>%
     summarise(n_species=n(), .groups="drop")
 
 g_iucn_c <- ggplot() +
     geom_col(data=endemic_species_coleoptera, 
-             aes(x=n_species,y=family, fill=iucn), 
+             aes(x=n_species,y=families, fill=iucn), 
              width=0.5, show.legend=T)+
     scale_fill_manual("IUCN", values=iucn_color) +
     theme_bw()
@@ -233,12 +232,12 @@ PACA categories of the families of coleoptera
 
 endemic_species_coleoptera_p <- endemic_species %>% 
     filter(Order=="Coleoptera") %>%
-    group_by(paca, family) %>%
+    group_by(paca, families) %>%
     summarise(n_species=n(), .groups="drop")
 
 g_iucn_c_p <- ggplot() +
     geom_col(data=endemic_species_coleoptera_p, 
-             aes(x=n_species,y=family, fill=paca), 
+             aes(x=n_species,y=families, fill=paca), 
              width=0.5, show.legend=T)+
     scale_fill_manual("PACA", values=paca_color) +
     theme_bw()

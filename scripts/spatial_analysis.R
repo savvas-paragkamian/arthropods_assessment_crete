@@ -25,7 +25,7 @@ source("functions.R")
 g_base <- g_base()
 locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
 crete_shp <- sf::st_read("../data/crete/crete.shp")
-endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
+endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t")
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
 threatspots <- st_read("../results/threatspots/threatspots.shp")
 threatspots_lt <- threatspots %>% 
@@ -129,5 +129,11 @@ g_ele <- g_base +
 ggsave("../plots/crete_occurrences_dem.png", plot=g_ele, device="png")
 
 # Export of locations shapefile with all the spatial metadata
-st_write(locations_shp,"../results/locations_spatial/locations_spatial.shp", append=TRUE)
+st_write(locations_shp,
+         "../results/locations_spatial/locations_spatial.shp",
+         layer_options = "ENCODING=UTF-8", 
+         delete_layer=T, 
+         delete_dsn = TRUE)
+         append=TRUE)
+
 st_write(locations_shp,"../results/locations_spatial/locations_spatial.csv")

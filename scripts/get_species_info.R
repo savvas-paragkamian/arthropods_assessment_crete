@@ -22,7 +22,7 @@ locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurren
 locations_spatial <- sf::st_read("../results/locations_spatial/locations_spatial.shp")
 locations_grid <- sf::st_read("../results/locations_grid/locations_grid.shp") 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
-endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
+endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t")
 
 # Resolve names
 ## gnr_datasources() %>% filter(title=="GBIF Backbone Taxonomy") id=11
