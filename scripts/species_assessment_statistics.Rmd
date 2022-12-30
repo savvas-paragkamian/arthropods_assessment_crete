@@ -32,7 +32,7 @@ locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurren
 locations_spatial <- sf::st_read("../results/locations_spatial/locations_spatial.shp")
 locations_grid <- sf::st_read("../results/locations_grid/locations_grid.shp") 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
-endemic_species <- read_delim("../results/endemic_species_paca.tsv", delim="\t")
+endemic_species <- read_delim("../results/endemic_species_taxonomy.tsv", delim="\t")
 clc_crete_shp <- st_read("../data/clc_crete_shp/clc_crete_shp.shp")
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
@@ -149,7 +149,7 @@ ggsave("../plots/bar_chart_paca.png",
 g_paca
 ```
 
-IUCN categories per Order:
+## IUCN categories per Order:
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
@@ -174,7 +174,7 @@ ggsave("../plots/bar_chart_iucn_order.png",
 g_iucn_o
 
 ```
-PACA categories per Order:
+## PACA categories per Order:
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
@@ -198,6 +198,61 @@ ggsave("../plots/bar_chart_paca_order.png",
 g_paca_o
 
 ```
+
+## Categories of Coleoptera families
+
+IUCN categories of the families of coleoptera
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+endemic_species_coleoptera <- endemic_species %>% 
+    filter(Order=="Coleoptera") %>%
+    group_by(iucn, family) %>%
+    summarise(n_species=n(), .groups="drop")
+
+g_iucn_c <- ggplot() +
+    geom_col(data=endemic_species_coleoptera, 
+             aes(x=n_species,y=family, fill=iucn), 
+             width=0.5, show.legend=T)+
+    scale_fill_manual("IUCN", values=iucn_color) +
+    theme_bw()
+
+ggsave("../plots/bar_chart_iucn_coleoptera.png", 
+       g_iucn_c, 
+       width = 20,
+       height = 15,
+       units='cm', 
+       device="png")
+g_iucn_c
+
+```
+
+PACA categories of the families of coleoptera
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+endemic_species_coleoptera_p <- endemic_species %>% 
+    filter(Order=="Coleoptera") %>%
+    group_by(paca, family) %>%
+    summarise(n_species=n(), .groups="drop")
+
+g_iucn_c_p <- ggplot() +
+    geom_col(data=endemic_species_coleoptera_p, 
+             aes(x=n_species,y=family, fill=paca), 
+             width=0.5, show.legend=T)+
+    scale_fill_manual("PACA", values=paca_color) +
+    theme_bw()
+
+ggsave("../plots/bar_chart_paca_coleoptera.png", 
+       g_iucn_c_p, 
+       width = 20,
+       height = 15,
+       units='cm', 
+       device="png")
+g_iucn_c_p
+
+```
+
 
 # Hotspots and threatspots
 Here are the hotspots and threatspots of the analysis.
