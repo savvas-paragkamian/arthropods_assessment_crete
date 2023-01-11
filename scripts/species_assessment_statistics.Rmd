@@ -152,7 +152,6 @@ g_paca
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-
 endemic_species_s_i <- endemic_species %>% 
     group_by(iucn, Order) %>%
     summarise(n_species=n(), .groups="drop")
@@ -302,8 +301,9 @@ The area of the intersection of hotspots and threatspots:
 sum(units::set_units(st_area(intersection_spots),km^2))
 
 ```
+## Overlap of hotspots and threatspots with Natura2000 protected areas.
 
-Overlap of hotspots and threatspots with Natura2000 protected areas.
+Here are the hotspots that overlap with Natura2000:
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
@@ -326,6 +326,60 @@ sum(units::set_units(st_area(threatspots_lt),km^2))
 print("Ovelap area of the PACA threatspots")
 sum(units::set_units(st_area(threatspots_natura),km^2))
 ```
+
+The threatened species that have AOO < 10% overlap with Natura2000.
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+species_10_natura <- endemic_species %>%
+    mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) %>%
+    filter(aoo_natura_percent<0.1 & threatened==T)
+
+species_10_natura_l <- locations_grid %>%
+    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
+    group_by(CELLCOD) %>%
+    summarise(n_species=n()) %>%
+    filter(n_species>2)
+
+species_10_natura_l_o <- locations_grid %>%
+    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
+    group_by(CELLCOD, Order) %>%
+    summarise(n_species=n(), .groups="drop")
+
+table(species_10_natura$Order)
+```
+
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+g_n_e <- g_base +
+    geom_sf(species_10_natura_l, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    ggtitle("Hotspots of AOO<10% overlap with Natura2000") +
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
+
+ggsave("../plots/hotspots_10_overlap_natura.png", plot=g_n_e, device="png")
+
+g_e_order <- g_base +
+    geom_sf(species_10_natura_l_o, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    ggtitle("Hotspots of AOO<10% overlap with Natura2000") +
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
+    facet_wrap(vars(Order), ncol=3, scales = "fixed")
+
+ggsave("../plots/hotspots_10_overlap_natura_order.png", 
+       plot=g_e_order, 
+       height = 20, 
+       width = 50, 
+       units="cm",
+       device="png")
+
+```
+
+![Hotspots of < 10% AOO overlap with Natura2000]("../plots/hotspots_10_overlap_natura.png")
+
+
+![Hotspots of < 10% AOO overlap with Natura2000 per Order]("../plots/hotspots_10_overlap_natura_order.png")
+
+
 
 # Order locations overlap
 
