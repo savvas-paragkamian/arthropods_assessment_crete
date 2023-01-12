@@ -219,7 +219,8 @@ endemic_species <- locations_grid %>%
     mutate(iucn=if_else(potentially_CR==TRUE,"CR",
                         if_else(potentially_EN==TRUE,"EN",
                                 if_else(potentially_VU==TRUE,"VU","NT/LC")))) %>%
-    mutate(threatened= if_else(paca %in% c("PT", "LT"),TRUE, FALSE))
+    mutate(threatened= if_else(paca %in% c("PT", "LT"),TRUE, FALSE)) %>%
+    mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=5))
 
 write_delim(endemic_species, "../results/endemic_species_assessment.tsv", delim="\t") 
 
@@ -368,5 +369,42 @@ sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
 threatspots_natura <- st_intersection(threatspots_lt, natura_crete_land_sci)
 sum(units::set_units(st_area(threatspots_lt),km^2))
 sum(units::set_units(st_area(threatspots_natura),km^2))
+
+
+### The threatened species that have AOO < 10% overlap with Natura2000.
+
+species_10_natura <- endemic_species %>%
+    filter(aoo_natura_percent<0.1 & threatened==T)
+
+species_10_natura_l <- locations_grid %>%
+    filter(subspeciesname %in% species_10_natura$subspeciesname) %>%
+    group_by(CELLCODE) %>%
+    summarise(n_species=n()) %>%
+    filter(n_species>2)
+
+species_10_natura_l_o <- locations_grid %>%
+    filter(subspeciesname %in% species_10_natura$subspeciesname) %>%
+    group_by(CELLCODE, Order) %>%
+    summarise(n_species=n(), .groups="drop")
+
+g_n_e <- g_base +
+    geom_sf(species_10_natura_l, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    ggtitle("Hotspots of AOO<10% overlap with Natura2000") +
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
+
+ggsave("../plots/hotspots_10_overlap_natura.png", plot=g_n_e, device="png")
+
+g_e_order <- g_base +
+    geom_sf(species_10_natura_l_o, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    ggtitle("Hotspots of AOO<10% overlap with Natura2000") +
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
+    facet_wrap(vars(Order), ncol=3, scales = "fixed")
+
+ggsave("../plots/hotspots_10_overlap_natura_order.png", 
+       plot=g_e_order, 
+       height = 20, 
+       width = 50, 
+       units="cm",
+       device="png")
 
 
