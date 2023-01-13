@@ -114,13 +114,16 @@ endemic_species_p <- endemic_species %>%
     group_by(paca) %>%
     summarise(n_species=n(), .groups="drop") %>%
 #    rename("category"="paca") %>%
-    mutate(method="paca")
+    mutate(method="paca") %>%
+    mutate(proportion = round(n_species/sum(n_species),digits=2))
+
 
 endemic_species_i <- endemic_species %>% 
     group_by(iucn) %>%
     summarise(n_species=n(), .groups="drop") %>%
 #    rename("category"="iucn") %>%
-    mutate(method = "iucn")
+    mutate(method = "iucn") %>%
+    mutate(proportion = round(n_species/sum(n_species), digits=2))
 #%>%
 #    bind_rows(endemic_species_p)
 
@@ -146,6 +149,36 @@ ggsave("../plots/bar_chart_paca.png",
        units='cm', 
        device="png")
 g_paca
+
+g_paca_p <- ggplot() +
+    geom_col(data=endemic_species_i, 
+             aes(x=proportion,y=method, fill=iucn),
+             width=0.5,
+             position = position_stack(reverse = FALSE)) + 
+    geom_text(data=endemic_species_i, aes(x=proportion,y=method, fill=iucn, 
+                                          label = paste(proportion," (",n_species,")", sep="")),
+              position = position_stack(vjust = .5)) +
+    scale_fill_manual("IUCN", values=iucn_color) +
+    new_scale('fill') +
+    geom_col(data=endemic_species_p, 
+             aes(x=proportion,y=method, fill=paca), 
+             width=0.5,
+             position = position_stack(reverse = FALSE)) + 
+    geom_text(data=endemic_species_p, aes(x=proportion,y=method, fill=paca, 
+                                          label = paste(proportion," (",n_species,")", sep="")),
+              position = position_stack(vjust = .5)) +
+    scale_fill_manual("PACA", values=paca_color) +
+    ggtitle("Proportion of endemic taxa") +
+#    guides(fill=guide_legend(override.aes = list(fill=c("PACA", "IUCN"),order=2))) +
+    theme_bw() 
+
+ggsave("../plots/bar_chart_paca_proportion.png", 
+       g_paca_p, 
+       width = 20,
+       height = 15,
+       units='cm', 
+       device="png")
+g_paca_p
 ```
 
 ## IUCN categories per Order:
@@ -154,7 +187,9 @@ g_paca
 
 endemic_species_s_i <- endemic_species %>% 
     group_by(iucn, Order) %>%
-    summarise(n_species=n(), .groups="drop")
+    summarise(n_species=n(), .groups="drop") %>%
+    group_by(Order) %>%
+    mutate(proportion = round(n_species/sum(n_species), digits=2))
 
 g_iucn_o <- ggplot() +
     geom_col(data=endemic_species_s_i, 
@@ -171,6 +206,24 @@ ggsave("../plots/bar_chart_iucn_order.png",
        device="png")
 g_iucn_o
 
+g_iucn_o_p <- ggplot() +
+    geom_col(data=endemic_species_s_i, 
+             aes(x=proportion,y=Order, fill=iucn), 
+             width=0.5, show.legend=T)+
+    geom_text(data=endemic_species_s_i, aes(x=proportion,y=Order, fill=iucn, 
+                                          label = paste(proportion," (",n_species,")", sep="")),
+              size=3,
+              position = position_stack(vjust = .5)) +
+    scale_fill_manual("IUCN", values=iucn_color) +
+    theme_bw()
+
+ggsave("../plots/bar_chart_iucn_order_proportion.png", 
+       g_iucn_o_p, 
+       width = 20,
+       height = 15,
+       units='cm', 
+       device="png")
+g_iucn_o_p
 ```
 ## PACA categories per Order:
 
@@ -179,7 +232,9 @@ g_iucn_o
 endemic_species_s_o <- endemic_species %>% 
     group_by(paca, Order) %>%
     summarise(n_species=n(), .groups="drop") %>%
-    mutate(paca = gsub("FALSE", "PNT",paca))
+    mutate(paca = gsub("FALSE", "PNT",paca)) %>%
+    group_by(Order) %>%
+    mutate(proportion = round(n_species/sum(n_species), digits=2))
 
 g_paca_o <- ggplot() +
     geom_col(data=endemic_species_s_o, aes(x=n_species,y=Order, fill=paca), 
@@ -195,6 +250,23 @@ ggsave("../plots/bar_chart_paca_order.png",
        device="png")
 g_paca_o
 
+g_paca_o_p <- ggplot() +
+    geom_col(data=endemic_species_s_o, aes(x=proportion,y=Order, fill=paca), 
+             width=0.5, show.legend=T)+
+    geom_text(data=endemic_species_s_o, aes(x=proportion,y=Order, fill=paca, 
+                                          label = paste(proportion," (",n_species,")", sep="")),
+              size=3,
+              position = position_stack(vjust = .5)) +
+    scale_fill_manual("PACA", values=paca_color) +
+    theme_bw()
+
+ggsave("../plots/bar_chart_paca_order_proportion.png",
+       g_paca_o_p,
+       width = 20,
+       height = 15,
+       units='cm', 
+       device="png")
+g_paca_o_p
 ```
 
 ## Categories of Coleoptera families
