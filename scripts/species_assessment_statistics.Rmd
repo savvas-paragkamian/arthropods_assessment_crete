@@ -543,11 +543,12 @@ g_eoo_b <- ggplot() +
                  outlier.shape = 1) +
     theme_bw()
 ggsave("../plots/eoo_dist_boxplot.png", plot=g_eoo_b, device="png")
-
 g_eoo_b
 tapply(endemic_species_eoo$area, endemic_species_eoo$eoo, summary)
 
 ```
+
+
 Examine the differences of EOO area per Order.
 
 ```{r, , warning=FALSE, message=FALSE, echo=T}
@@ -565,15 +566,16 @@ g_eoo_b_o <- ggplot() +
     theme_bw() +
     facet_wrap(vars(Order), ncol=4, scales = "fixed")
 
-ggsave("../plots/eoo_dist_boxplot.png", 
+ggsave("../plots/eoo_dist_boxplot_o.png", 
        plot=g_eoo_b_o, 
        device="png", 
        height = 20, 
        width = 30, 
        units="cm")
 
-g_eoo_b_o
 ```
+![Distributions of EOO and overlaps per Order]("../plots/eoo_dist_boxplot_o.png")
+
 ## AOO area distribution
 
 AOO area distribution and the differences with the AOO overlap
@@ -617,15 +619,16 @@ g_aoo_b_o <- ggplot() +
     theme_bw() +
     facet_wrap(vars(Order), ncol=4, scales = "fixed")
 
-ggsave("../plots/aoo_dist_boxplot.png", 
+ggsave("../plots/aoo_dist_boxplot_o.png", 
        plot=g_aoo_b_o, 
        device="png", 
        height = 20, 
        width = 30, 
        units="cm")
 
-g_aoo_b_o
 ```
+
+![Distributions of AOO and overlaps per Order]("../plots/aoo_dist_boxplot_o.png")
 
 # Digital Elevation Maps
 
