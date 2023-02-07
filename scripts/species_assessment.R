@@ -18,7 +18,6 @@
 
 library(tidyverse)
 library(readxl)
-library(rredlist)
 library(sf)
 library(units)
 library(ConR)

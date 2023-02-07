@@ -50,6 +50,12 @@ threatspots <- st_read("../results/threatspots/threatspots.shp")
 There are `r nrow(locations_shp)` occurrences of `r length(unique(locations_shp$sbspcsn))` 
 species that belong to `r length(unique(locations_shp$Order))` orders.
 
+The unique locations are:
+```{r}
+st_coordinates(locations_shp) %>% as.data.frame() %>% distinct() %>% nrow()
+
+```
+
 ## Protected Areas
 
 ```{r, warning=FALSE, message=FALSE, echo=T}

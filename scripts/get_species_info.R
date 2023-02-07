@@ -61,3 +61,8 @@ classification_s_d_w <- classification_s_d %>% dplyr::select(-id) %>%
 endemic_species_tax <- endemic_species %>%
     left_join(classification_s_d_w, by=c("gbif"="gbif"))
 write_delim(endemic_species_tax, "../results/endemic_species_taxonomy.tsv", delim="\t")
+
+# Red List IUCN
+
+
+
