@@ -3,6 +3,7 @@
 # load packages and functions
 library(tidyverse)
 library(ggnewscale)
+library(ggpubr)
 library(sf)
 library(raster)
 source("functions.R")
@@ -76,8 +77,6 @@ crete_base <- ggplot() +
                size = 1.5,
                nudge_x = 0.05,
                nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
-#    scale_fill_manual(values = c("Natura2000 SAC" = "#56B4E9"),
-#                      guide = "legend") +
     scale_colour_manual(values = c("Sampling sites" = "#000000",
                                    "Places"="#D55E00"),
                         name = "") +
@@ -85,9 +84,6 @@ crete_base <- ggplot() +
                                   label = TRUE,
                                   title="Elevation",
                                   title.vjust = 0.8))+
-#           colour = guide_legend(override.aes = list(size = c(1,1),
-#                                                     alpha=c(1,0.5),
-#                                                     fill="transparent")))+
     coord_sf(crs="WGS84") +
     theme_bw()+
     theme(axis.title=element_blank(),
@@ -113,7 +109,7 @@ ggsave("../figures/Fig1adem.png",
        units="cm",
        device="png")
 ## Fig1a natura
-crete_base <- ggplot() +
+crete_base_n <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
             mapping=aes(fill="Natura2000 SAC"),
@@ -154,7 +150,7 @@ crete_base <- ggplot() +
 
 
 ggsave("../figures/Fig1a.tiff", 
-       plot=crete_base, 
+       plot=crete_base_n, 
        height = 10, 
        width = 20,
        dpi = 600, 
@@ -162,7 +158,7 @@ ggsave("../figures/Fig1a.tiff",
        device="tiff")
 
 ggsave("../figures/Fig1a.png", 
-       plot=crete_base, 
+       plot=crete_base_n, 
        height = 10, 
        width = 20,
        dpi = 600, 
@@ -247,8 +243,8 @@ crete_threat <- ggplot() +
             show.legend=T) +
     scale_fill_gradient(low="#E69F00",
                         high="#CC79A7",
-                        breaks = c(25,30,40,45,50),
-                        labels = c(25,35,40,45,50),
+                        breaks = c(25,30,35,40,45,50),
+                        labels = c(25,30,35,40,45,50),
                         guide = "colourbar")+
     geom_sf(crete_peaks,
             mapping=aes(),
@@ -265,7 +261,8 @@ crete_threat <- ggplot() +
     guides(fill = guide_colourbar(ticks = FALSE,
                                   label = TRUE,
                                   title="# threatened",
-                                  title.vjust = 0.8))+
+                                  title.vjust = 0.8,
+                                  order = 1))+
     theme_bw()+
     theme(axis.title=element_blank(),
           axis.text=element_text(colour="black"),
@@ -352,4 +349,35 @@ ggsave("../figures/Fig1d.png",
        device="png")
 
 
+fig1 <- ggarrange(crete_base,crete_hotspot ,crete_threat, crete_corine,
+          labels = c("A", "B", "C", "D"),
+          align = "hv",
+          widths = c(1,1,1,0.6),
+          ncol = 1,
+          nrow = 4,
+          font.label=list(color="black",size=22),
+          legend="right") + bgcolor("white")
 
+ggsave("../figures/Fig1.tiff", 
+       plot=fig1, 
+       height = 40, 
+       width = 30,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig1.png", 
+       plot=fig1, 
+       height = 40, 
+       width = 30,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+ggsave("../figures/Fig1.pdf", 
+       plot=fig1, 
+       height = 40, 
+       width = 30,
+       dpi = 600, 
+       units="cm",
+       device="pdf")
