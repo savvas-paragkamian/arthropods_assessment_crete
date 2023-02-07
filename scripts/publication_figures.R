@@ -50,8 +50,7 @@ crete_base <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
             mapping=aes(fill="Natura2000 SAC"),
-            alpha=0.4,
-#            size=0.1,
+            alpha=1,
             colour="transparent",
             show.legend=T) +
     geom_sf(locations_inland,
@@ -69,12 +68,15 @@ crete_base <- ggplot() +
                size = 1.5,
                nudge_x = 0.05,
                nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
-    scale_fill_manual(values = c("Natura2000 SAC" = "#009E73"),
+    scale_fill_manual(values = c("Natura2000 SAC" = "#56B4E9"),
                       guide = "legend") +
-    scale_colour_manual(values = c("Sampling sites" = "#CC79A7", "Places"="#D55E00"),
+    scale_colour_manual(values = c("Sampling sites" = "#CC79A7",
+                                   "Places"="#D55E00"),
                         guide = "legend") +
-    guides(fill = guide_legend(override.aes = list(color = "#009E73", alpha=1) ),
-           colour = guide_legend(override.aes = list(size = c(1,1),alpha=c(1,1), fill="transparent") ) )+
+    guides(fill = guide_legend(override.aes = list(color = "#56B4E9", alpha=1)),
+           colour = guide_legend(override.aes = list(size = c(1,1),
+                                                     alpha=c(1,1),
+                                                     fill="transparent")))+
     coord_sf(crs="WGS84") +
     theme_bw()+
     theme(axis.title=element_blank(),
@@ -105,15 +107,14 @@ crete_hotspot <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
             mapping=aes(fill="Natura2000 SAC"),
-            alpha=0.4,
+            alpha=1,
             colour="transparent",
             show.legend=T) +
-    scale_fill_manual(values = c("Natura2000 SAC" = "#009E73"))+
+    scale_fill_manual(values = c("Natura2000 SAC" = "#56B4E9"))+
     new_scale_fill() +
     geom_sf(endemic_hotspots, mapping=aes(fill=n_species),
             alpha=0.6,
             colour="transparent",
-            size=0.1,
             na.rm = FALSE,
             show.legend=T) +
     scale_fill_gradient(low="#F0E442",
@@ -158,10 +159,10 @@ crete_threat <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
             mapping=aes(fill="Natura2000 SAC"),
-            alpha=0.4,
+            alpha=1,
             colour="transparent",
             show.legend=T) +
-    scale_fill_manual(values = c("Natura2000 SAC" = "#009E73"))+
+    scale_fill_manual(values = c("Natura2000 SAC" = "#56B4E9"))+
     new_scale_fill() +
     geom_sf(threatspots_lt, mapping=aes(fill=pc_thrt),
             alpha=0.6,
@@ -170,7 +171,9 @@ crete_threat <- ggplot() +
             na.rm = FALSE,
             show.legend=T) +
     scale_fill_gradient(low="#E69F00",
-                        high="#CC79A7")+
+                        high="#CC79A7",
+                        breaks = c(26, 36,45,50),
+                        labels = c(25,35,45, 51))+
     geom_sf(crete_peaks,
             mapping=aes(),
             colour="#D55E00",
@@ -182,7 +185,6 @@ crete_threat <- ggplot() +
                size = 1.5,
                nudge_x = 0.05,
                nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
-#    guides(guide_legend(override.aes = list(alpha=1) ))+
     coord_sf(crs="WGS84") +
     theme_bw()+
     theme(axis.title=element_blank(),
@@ -207,4 +209,65 @@ ggsave("../figures/Fig1c.png",
        units="cm",
        device="png")
 
+## fig1d
 
+crete_corine <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(clc_crete_shp,
+            mapping=aes(fill=LABEL1),
+            alpha=1,
+            colour="transparent",
+            show.legend=T) +
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(color="Natura2000 SAC"),
+            linewidth=0.6,
+            fill=NA,
+            alpha=1,
+            show.legend=T) +
+    geom_sf(crete_peaks,
+            mapping=aes(),
+            color = "#D55E00",
+            size=1,
+            alpha=1,
+            show.legend=F) +
+    geom_label(data = crete_peaks, 
+               mapping=aes(x = X, y = Y, label = name),
+               size = 1.5,
+               nudge_x = 0.05,
+               nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
+    scale_fill_manual(values = c("Artificial surfaces"="#000000",
+                                 "Agricultural areas"="#E69F00",
+                                 "Forest and semi natural areas" = "#009E73",
+                                 "Water bodies" = "#0072B2",
+                                 "Natura2000 SAC"=NA),
+                      guide = "legend") +
+    scale_colour_manual(values = c("Natura2000 SAC" = "#999999"),
+                        guide = "legend") +
+    guides(fill = guide_legend(override.aes = list(color = "transparent", alpha=1) ),
+           colour = guide_legend(override.aes = list(alpha=1, fill="transparent") ) )+
+    coord_sf(crs="WGS84") +
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_blank(),
+          legend.position = "bottom",
+          legend.box.background = element_blank(),
+          legend.key.size = unit(6, "mm"), 
+          legend.text=element_text(size=8))
+
+
+ggsave("../figures/Fig1d.tiff", 
+       plot=crete_corine, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig1d.png", 
+       plot=crete_corine, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
