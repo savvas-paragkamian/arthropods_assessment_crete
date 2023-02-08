@@ -41,6 +41,9 @@ natura_crete_land <- st_intersection(natura_crete, crete_shp)
 # split the SPA SCI
 
 natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
+
+wildlife <- wdpa_crete %>% filter(DESIG_ENG=="Wildlife Refugee")
+
 ## Hotspots and threatspots
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
 threatspots <- st_read("../results/threatspots/threatspots.shp")
@@ -379,8 +382,9 @@ The area of the intersection of hotspots and threatspots:
 sum(units::set_units(st_area(intersection_spots),km^2))
 
 ```
-## Overlap of hotspots and threatspots with Natura2000 protected areas.
+## Overlap of hotspots and threatspots with protected areas.
 
+### Natura2000
 Here are the hotspots that overlap with Natura2000:
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
@@ -433,6 +437,26 @@ table(species_10_natura$Order)
 
 ![Hotspots of < 10% AOO overlap with Natura2000 per Order]("../plots/hotspots_10_overlap_natura_order.png")
 
+
+## Wildlife refuges
+
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+
+endemic_hotspots_wild <- st_intersection(endemic_hotspots, wildlife)
+
+print("Overlap area of endemic hotspots with Wildlife Refuges")
+sum(units::set_units(st_area(endemic_hotspots_wild),km^2))
+
+```
+threatspots with Wildlife Refuges
+
+```{r, warning=FALSE, message=FALSE, echo=T}
+threatspots_wild <- st_intersection(threatspots_lt, wildlife)
+
+print("Ovelap area of the PACA threatspots with Wildlife Refuges")
+sum(units::set_units(st_area(threatspots_wild),km^2))
+```
 
 
 # Order locations overlap
