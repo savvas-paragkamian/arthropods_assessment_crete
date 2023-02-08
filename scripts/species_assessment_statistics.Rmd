@@ -22,6 +22,7 @@ library(tidyverse)
 library(ggnewscale)
 library(sf)
 library(knitr)
+library(kableExtra)
 source("functions.R")
 
 g_base <- g_base()
@@ -758,4 +759,61 @@ clc_crete_label3 <- read_delim("../results/clc_crete_LABEL3.tsv", delim="\t") %>
 kable(clc_crete_label3)
 ```
 
+# Summary
+
+A summary table of each order.
+
+```{r}
+order_taxa <- endemic_species %>% 
+    group_by(Order) %>%
+    summarise(taxa=n())
+
+order_sites <- locations_shp %>%
+    mutate(lon=st_coordinates(locations_shp)[,1],
+           lat=st_coordinates(locations_shp)[,2]) %>%
+    distinct(Order,lon,lat) %>%
+    group_by(Order) %>%
+    summarise(sites=n())
+
+order_locations <- locations_grid %>% 
+    distinct(CELLCOD, Order) %>% 
+    group_by(Order) %>%
+    summarise(locations=n())
+
+order_iucn <- endemic_species_s_i %>% 
+    pivot_wider(names_from=iucn,
+                values_from=c(n_species,proportion),
+                id_cols=Order)
+
+order_paca <- endemic_species_s_o %>% 
+    pivot_wider(names_from=paca,
+                values_from=c(n_species,proportion),
+                id_cols=Order)
+
+order_total_l <- list(order_taxa,order_sites,order_locations,order_iucn,order_paca)
+
+order_total <- order_total_l %>% reduce(full_join, by="Order")
+
+total_iucn <- endemic_species_i %>% 
+    pivot_wider(names_from=iucn,
+                values_from=c(n_species,proportion)) %>% 
+    dplyr::select(-method)
+
+total_paca <- endemic_species_p %>% 
+    pivot_wider(names_from=paca,
+                values_from=c(n_species,proportion)) %>%
+    dplyr::select(-method)
+
+
+total_data <- data.frame(Order="total",
+                         taxa=length(unique(endemic_species$subspeciesname)),
+                         sites= nrow(unique(st_coordinates(locations_shp))),
+                         locations=length(unique(locations_grid$CELLCOD)))
+
+total_row <- cbind(total_data, total_paca, total_iucn)
+
+total_summary <- rbind(total_row, order_total)
+write_delim(total_summary, "../results/total_summary.tsv", delim="\t")
+kable(total_summary, "latex") %>% landscape(margin = NULL)
+```
 
