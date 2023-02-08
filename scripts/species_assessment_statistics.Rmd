@@ -2,10 +2,6 @@
 title: "Arthropoda species assessment results"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
-  html_document:
-    toc: yes
-    toc_depth: 2
-    toc_float: yes
   pdf_document:
     toc: yes
     toc_depth: '2'
@@ -87,7 +83,7 @@ protected_area <- wdpa_crete %>%
     arrange(area) %>%
     mutate(area=round(area,2))
 
-kable(protected_area)
+knitr::kable(protected_area, "latex")
 
 ```
 
@@ -746,17 +742,17 @@ g_elev
 clc_crete_label1 <- read_delim("../results/clc_crete_LABEL1.tsv", delim="\t") %>% 
     mutate(across(where(is.numeric), ~ round(.x,digits=2)))
 
-kable(clc_crete_label1)
+knitr::kable(clc_crete_label1, "latex")
 
 clc_crete_label2 <- read_delim("../results/clc_crete_LABEL2.tsv", delim="\t") %>% 
     mutate(across(where(is.numeric), ~ round(.x,digits=2)))
 
-kable(clc_crete_label2)
+knitr::kable(clc_crete_label2, "latex")
 
 clc_crete_label3 <- read_delim("../results/clc_crete_LABEL3.tsv", delim="\t") %>% 
     mutate(across(where(is.numeric), ~ round(.x,digits=2)))
 
-kable(clc_crete_label3)
+kbl(clc_crete_label3) %>% kable_styling(latex_options = "scale_down")
 ```
 
 # Summary
@@ -775,6 +771,11 @@ order_sites <- locations_shp %>%
     group_by(Order) %>%
     summarise(sites=n())
 
+order_occ <- locations_shp %>%
+    group_by(Order) %>%
+    summarise(occurrences=n()) %>%
+    st_drop_geometry()
+
 order_locations <- locations_grid %>% 
     distinct(CELLCOD, Order) %>% 
     group_by(Order) %>%
@@ -783,21 +784,28 @@ order_locations <- locations_grid %>%
 order_iucn <- endemic_species_s_i %>% 
     pivot_wider(names_from=iucn,
                 values_from=c(n_species,proportion),
-                id_cols=Order)
+                id_cols=Order) %>% 
+    group_by(Order) %>%
+    rowwise() %>%
+    mutate(threatened=sum(n_species_EN,n_species_VU,n_species_CR,na.rm=TRUE),
+            proportion_threatened=threatened/sum(n_species_EN,n_species_VU,n_species_CR,`n_species_NT/LC`, na.rm=TRUE))
 
 order_paca <- endemic_species_s_o %>% 
     pivot_wider(names_from=paca,
                 values_from=c(n_species,proportion),
                 id_cols=Order)
 
-order_total_l <- list(order_taxa,order_sites,order_locations,order_iucn,order_paca)
+order_total_l <- list(order_taxa,order_sites,order_occ,order_locations,order_iucn,order_paca)
 
 order_total <- order_total_l %>% reduce(full_join, by="Order")
 
 total_iucn <- endemic_species_i %>% 
     pivot_wider(names_from=iucn,
                 values_from=c(n_species,proportion)) %>% 
-    dplyr::select(-method)
+    dplyr::select(-method) %>%
+    rowwise() %>%
+    mutate(threatened=sum(n_species_EN,n_species_VU,n_species_CR,na.rm=TRUE),
+            proportion_threatened=threatened/sum(n_species_EN,n_species_VU,n_species_CR,`n_species_NT/LC`, na.rm=TRUE))
 
 total_paca <- endemic_species_p %>% 
     pivot_wider(names_from=paca,
@@ -806,14 +814,18 @@ total_paca <- endemic_species_p %>%
 
 
 total_data <- data.frame(Order="total",
-                         taxa=length(unique(endemic_species$subspeciesname)),
-                         sites= nrow(unique(st_coordinates(locations_shp))),
-                         locations=length(unique(locations_grid$CELLCOD)))
+                         taxa = length(unique(endemic_species$subspeciesname)),
+                         sites = nrow(unique(st_coordinates(locations_shp))),
+                         occurrences = nrow(locations_shp),
+                         locations = length(unique(locations_grid$CELLCOD)))
 
 total_row <- cbind(total_data, total_paca, total_iucn)
 
 total_summary <- rbind(total_row, order_total)
 write_delim(total_summary, "../results/total_summary.tsv", delim="\t")
-kable(total_summary, "latex") %>% landscape(margin = NULL)
 ```
 
+```{r}
+
+kbl(total_summary) %>% kable_styling(latex_options = "scale_down")
+```
