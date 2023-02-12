@@ -54,6 +54,26 @@ st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.c
          append=FALSE, 
          delete_layer=T, 
          delete_dsn = TRUE)
+## Source of the occurrences, NHMC collection and Bibliography
+
+locations_source <- readxl::read_excel("../data/Data-ENDEMICS.xlsx", 
+                                     col_types = c("text",
+                                                   "text",
+                                                   "text",
+                                                   "text",
+                                                   "text",
+                                                   "numeric",
+                                                   "numeric",
+                                                   "date",
+                                                   "text")) %>% 
+    filter(Order!="Opiliones") %>%
+    mutate(source=if_else(is.na(Ergasia),"Bibliography","NHMC")) %>% 
+    distinct(source, latD, logD) %>%
+    filter(latD<38, logD<30) %>%
+    na.omit()
+
+write_delim(locations_source, "../data/locations_source.tsv", delim="\t", col_names=T)
+
 ## Crete Spatial data
 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
