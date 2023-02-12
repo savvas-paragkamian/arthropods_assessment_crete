@@ -87,7 +87,7 @@ heatmaps <- function(locations_grid){
 
     order_cell_heatmap <- ggplot()+
       geom_tile(data=order_cell_long,aes(x=from, y=to,fill=count),alpha=1, show.legend = T)+
-      scale_fill_gradient(low="azure2", high="azure4", limits=c(1, max(order_cell_long$count)),na.value="white")+ 
+      scale_fill_gradient(low="#999999", high="#E69F00", limits=c(1, max(order_cell_long$count)),na.value="white")+ 
       scale_x_discrete(position = "top")+
       scale_y_discrete(limits = rev)+
       labs(fill="# of locations")+
