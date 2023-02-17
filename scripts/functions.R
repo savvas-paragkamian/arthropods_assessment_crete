@@ -55,7 +55,8 @@ spatial_area_summary <- function(spatial_area,attribute){
 heatmaps <- function(locations_grid){
     
     locations_grid_o <- locations_grid %>%
-        distinct(CELLCOD, Order)
+        distinct(CELLCOD, Order) %>%
+        arrange(Order)
     
     order_cell_m <- locations_grid_o %>%
         st_drop_geometry() %>%
