@@ -53,26 +53,12 @@ locations_inland <- st_join(locations_shp, crete_shp, left=F)
 palette.colors(palette = "Okabe-Ito") 
 # Crete figures
 
-
-fig1a <- readJPEG("../figures/Fig1a.jpg")
-
-g_fig1a <- ggplot() +
-    background_image(fig1a)+
-    theme(plot.margin = margin(t=0.5, l=0.7, r=0.7, b=0.5, unit = "cm"))
-
-fig1b <- readJPEG("../figures/Fig1b.jpg")
-
-g_fig1b <- ggplot() +
-    background_image(fig1b)+
-    theme(plot.margin = margin(t=0.7, l=0.7, r=0.5, b=0.5, unit = "cm"))
-
-fig1ab <- readJPEG("../figures/fig1ab.jpg")
+fig1ab <- readJPEG("../figures/Fig1ab.jpg")
 
 g_fig1ab <- ggplot() +
     background_image(fig1ab)+
     theme(plot.margin = margin(t=0.5, l=0.5, r=0.5, b=0, unit = "cm"))
 ## Fig1c
-
 
 crete_base <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
@@ -95,12 +81,6 @@ crete_base <- ggplot() +
             size=1.8,
             alpha=0.8,
             show.legend=T) +
-#    geom_sf(crete_peaks,
-#            mapping=aes(),
-#            colour=NA,
-#            size=1,
-#            alpha=1,
-#            show.legend=F) +
     geom_label(data = crete_peaks, 
                mapping=aes(x = X, y = Y, label = name),
                size = 1.5,
@@ -143,6 +123,7 @@ ggsave("../figures/Fig1c.png",
        dpi = 600, 
        units="cm",
        device="png")
+
 ## Combine
 fig1 <- ggarrange(g_fig1ab,crete_base,
 #          align = "hv",
@@ -178,63 +159,6 @@ ggsave("../figures/Fig1-small.png",
        height = 20, 
        width = 25,
        dpi = 300, 
-       units="cm",
-       device="png")
-
-## Fig1c natura
-crete_base_n <- ggplot() +
-    geom_sf(crete_shp, mapping=aes()) +
-    geom_sf(natura_crete_land_sci,
-            mapping=aes(fill="Natura2000 SAC"),
-            alpha=1,
-            colour="transparent",
-            show.legend=T) +
-    geom_sf(locations_inland,
-            mapping=aes(colour="Sampling sites"),
-            size=0.1,
-            alpha=0.5,
-            show.legend=T) +
-    geom_sf(crete_peaks,
-            mapping=aes(color = "Places"),
-            size=1,
-            alpha=1,
-            show.legend=T) +
-    geom_label(data = crete_peaks, 
-               mapping=aes(x = X, y = Y, label = name),
-               size = 1.5,
-               nudge_x = 0.05,
-               nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
-    scale_fill_manual(values = c("Natura2000 SAC" = "#56B4E9"),
-                      guide = "legend") +
-    scale_colour_manual(values = c("Sampling sites" = "#CC79A7",
-                                   "Places"="#D55E00"),
-                        guide = "legend") +
-    guides(fill = guide_legend(override.aes = list(color = "#56B4E9", alpha=1)),
-           colour = guide_legend(override.aes = list(size = c(1,1),
-                                                     alpha=c(1,1),
-                                                     fill="transparent")))+
-    coord_sf(crs="WGS84") +
-    theme_bw()+
-    theme(axis.title=element_blank(),
-          axis.text=element_text(colour="black"),
-          legend.title = element_blank(),
-          legend.position = "bottom",
-          legend.box.background = element_blank())
-
-
-ggsave("../figures/Fig1cnat.tiff", 
-       plot=crete_base_n, 
-       height = 10, 
-       width = 20,
-       dpi = 600, 
-       units="cm",
-       device="tiff")
-
-ggsave("../figures/Fig1cnat.png", 
-       plot=crete_base_n, 
-       height = 10, 
-       width = 20,
-       dpi = 600, 
        units="cm",
        device="png")
 
@@ -363,7 +287,7 @@ ggsave("../figures/Fig2b.png",
 ## fig2c
 species_10_natura <- endemic_species %>%
     mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) %>%
-    filter(aoo_natura_percent<0.2 & threatened==T)
+    filter(aoo_natura_percent<0.15 & threatened==T)
 
 species_10_natura_l <- locations_grid %>%
     filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
@@ -400,7 +324,7 @@ crete_aoo <- ggplot() +
                         guide = guide_colourbar(override.aes = list(alpha=1),
                                                 ticks = FALSE,
                                                 label = TRUE,
-                                                title="# taxa \n(AOO < 20% in N2K)",
+                                                title="# taxa \n(AOO < 15% in N2K)",
                                                 title.vjust = 0.8,
                                                 order = 1))+
     geom_sf(crete_peaks,
@@ -541,4 +465,7 @@ ggsave("../figures/Fig2-small.png",
        dpi = 300, 
        units="cm",
        device="png")
+
+#figure 3
+
 
