@@ -3,6 +3,7 @@
 # load packages and functions
 library(tidyverse)
 library(ggnewscale)
+library(scales)
 library(ggpubr)
 library(sf)
 library(jpeg)
@@ -468,4 +469,53 @@ ggsave("../figures/Fig2-small.png",
 
 #figure 3
 
+#fig3a
+
+# Overlap of hotspots
+endemic_hotspots_o <- locations_grid %>% 
+    filter(CELLCOD %in% endemic_hotspots$CELLCODE) %>%
+    distinct(CELLCOD, Order)
+
+heatmaps_hotspots <- heatmaps(endemic_hotspots_o)
+
+ggsave("../figures/fig3aa.png",
+       plot = heatmaps_hotspots[[2]],
+       width = 25,
+       height = 25,
+       units='cm', 
+       device = "png",
+       dpi = 300)
+
+# Overlap of threatspots
+threatspots_o <- locations_grid %>% 
+    filter(CELLCOD %in% threatspots_lt$CELLCOD) %>%
+    distinct(CELLCOD, Order)
+
+heatmaps_threatspots <- heatmaps(threatspots_o)
+
+ggsave("../figures/fig3a.png",
+       plot = heatmaps_threatspots[[2]],
+       width = 25,
+       height = 25,
+       units='cm', 
+       device = "png",
+       dpi = 300)
+
+#fig3b
+aoo_dist <- endemic_species %>%
+    dplyr::select(subspeciesname, Order, aoo, aoo_natura) %>% 
+    pivot_longer(cols=c(aoo,aoo_natura))
+
+p <- ggplot(endemic_species, mapping=aes(x=Order, y=aoo)) +
+    geom_jitter(position=position_jitter(0.2)) +
+    scale_y_continuous(trans='log10',
+                     breaks=trans_breaks('log10', function(x) 10^x),
+                     labels=trans_format('log10', math_format(10^.x)))
+
+ggsave("../figures/fig3b.png", 
+       plot=p, 
+       device="png", 
+       height = 20, 
+       width = 30, 
+       units="cm")
 

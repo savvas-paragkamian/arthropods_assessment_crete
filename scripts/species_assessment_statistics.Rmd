@@ -654,6 +654,19 @@ ggsave("../plots/aoo_dist_boxplot_o.png",
        units="cm")
 
 ```
+```{r}
+
+p <- ggplot(endemic_species, mapping=aes(x=Order, y=aoo)) +
+    geom_jitter(position=position_jitter(0.2))
+
+ggsave("../plots/aoo_dist_stripplot-o.png", 
+       plot=p, 
+       device="png", 
+       height = 20, 
+       width = 30, 
+       units="cm")
+p
+```
 
 ![Distributions of AOO and overlaps per Order]("../plots/aoo_dist_boxplot_o.png")
 
@@ -829,3 +842,14 @@ write_delim(total_summary, "../results/total_summary.tsv", delim="\t")
 
 kbl(total_summary) %>% kable_styling(latex_options = "scale_down")
 ```
+AOO distribution summaries
+
+```{r}
+
+summary(endemic_species$aoo)
+sd(endemic_species$aoo)
+summary(endemic_species$aoo_natura)
+sd(endemic_species$aoo_natura)
+
+```
+
