@@ -491,12 +491,43 @@ threatspots_o <- locations_grid %>%
     filter(CELLCOD %in% threatspots_lt$CELLCOD) %>%
     distinct(CELLCOD, Order)
 
-heatmaps_threatspots <- heatmaps(threatspots_o)
+heatmaps_threatspots <- heatmaps(threatspots_o) 
+
+heatmap_sort <- heatmaps_threatspots[[1]]
+
+order_cell_long <- heatmap_sort %>%
+    mutate(count=if_else(from==to,0,count))
+
+order_cell_long_t <- order_cell_long %>%
+    filter(count!=0)
+
+diagonal <- heatmap_sort %>%
+    filter(from==to)
+
+
+fig3a <- ggplot()+
+      geom_tile(data=order_cell_long,aes(x=from, y=to,fill=count), color="white", alpha=1, show.legend = T)+
+      geom_point(data=diagonal,aes(x=from, y=to),colour="lightyellow4",size=1,show.legend = F)+
+      geom_text(data=order_cell_long_t,aes(x=from, y=to, label=count), size=4) +
+      scale_fill_gradient(low="gray87", high="#0072B2", limits=c(1, max(order_cell_long$count)),na.value="white")+ 
+      scale_x_discrete(position = "top")+
+      scale_y_discrete(limits = rev)+
+      labs(fill="# of threatspots")+
+      xlab("") +
+      ylab("")+
+      theme_bw()+
+      theme(
+            panel.border=element_blank(),
+            panel.grid.major = element_blank(),
+            panel.grid.minor=element_blank(),
+            text = element_text(size=13), 
+            axis.text.x = element_text(angle = 90, hjust = 0),
+            legend.position = c(.80, .83))
 
 ggsave("../figures/fig3a.png",
-       plot = heatmaps_threatspots[[2]],
-       width = 25,
-       height = 25,
+       plot = fig3a,
+       width = 20,
+       height = 20,
        units='cm', 
        device = "png",
        dpi = 300)
@@ -506,16 +537,20 @@ aoo_dist <- endemic_species %>%
     dplyr::select(subspeciesname, Order, aoo, aoo_natura) %>% 
     pivot_longer(cols=c(aoo,aoo_natura))
 
-p <- ggplot(endemic_species, mapping=aes(x=Order, y=aoo)) +
+fig3b <-ggplot(endemic_species, mapping=aes(x=Order, y=aoo)) +
     geom_jitter(position=position_jitter(0.2)) +
+    stat_summary(fun=mean_sdl, geom="pointrange", color="red")+
     scale_y_continuous(trans='log10',
                      breaks=trans_breaks('log10', function(x) 10^x),
-                     labels=trans_format('log10', math_format(10^.x)))
+                     labels=trans_format('log10', math_format(10^.x)),
+                     name=bquote("log(AOO "~km^2~")")) + 
+    theme_classic()+
+    theme(axis.title.x=element_blank())
 
 ggsave("../figures/fig3b.png", 
-       plot=p, 
+       plot=fig3b, 
        device="png", 
        height = 20, 
-       width = 30, 
+       width = 23, 
        units="cm")
 
