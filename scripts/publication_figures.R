@@ -506,13 +506,30 @@ diagonal <- heatmap_sort %>%
 
 
 fig3a <- ggplot()+
-      geom_tile(data=order_cell_long,aes(x=from, y=to,fill=count), color="white", alpha=1, show.legend = T)+
-      geom_point(data=diagonal,aes(x=from, y=to),colour="lightyellow4",size=1,show.legend = F)+
-      geom_text(data=order_cell_long_t,aes(x=from, y=to, label=count), size=4) +
-      scale_fill_gradient(low="gray87", high="#0072B2", limits=c(1, max(order_cell_long$count)),na.value="white")+ 
-      scale_x_discrete(position = "top")+
+      geom_tile(data=order_cell_long,
+                aes(x=from, y=to,fill=count),
+                color="white",
+                alpha=1,
+                show.legend = T)+
+      geom_point(data=diagonal,
+                 aes(x=from, y=to),
+                 colour="lightyellow4",
+                 size=1,
+                 show.legend = F)+
+      geom_text(data=order_cell_long_t,
+                aes(x=from, y=to, label=count),
+                size=4) +
+      scale_fill_gradient(low="gray87",
+                          high="#0072B2",
+                          limits=c(1, max(order_cell_long$count)),
+                          na.value="white",
+                          guide = guide_legend(override.aes = list(alpha=1),
+                                                ticks = FALSE,
+                                                label = TRUE,
+                                                title="# threatspots",
+                                                title.vjust = 0.8,
+                                                order = 1))+
       scale_y_discrete(limits = rev)+
-      labs(fill="# of threatspots")+
       xlab("") +
       ylab("")+
       theme_bw()+
@@ -520,9 +537,10 @@ fig3a <- ggplot()+
             panel.border=element_blank(),
             panel.grid.major = element_blank(),
             panel.grid.minor=element_blank(),
-            text = element_text(size=13), 
+            axis.text = element_text(size=13), 
             axis.text.x = element_text(angle = 90, hjust = 0),
-            legend.position = c(.80, .83))
+            legend.position = c(.90, .83),
+            legend.title=element_text(size=9))
 
 ggsave("../figures/fig3a.png",
        plot = fig3a,
@@ -539,13 +557,15 @@ aoo_dist <- endemic_species %>%
 
 fig3b <-ggplot(endemic_species, mapping=aes(x=Order, y=aoo)) +
     geom_jitter(position=position_jitter(0.2)) +
-    stat_summary(fun=mean_sdl, geom="pointrange", color="red")+
+    stat_summary(fun=mean, geom="pointrange", color="red")+
     scale_y_continuous(trans='log10',
                      breaks=trans_breaks('log10', function(x) 10^x),
                      labels=trans_format('log10', math_format(10^.x)),
                      name=bquote("log(AOO "~km^2~")")) + 
     theme_classic()+
-    theme(axis.title.x=element_blank())
+    theme(axis.text.x = element_text(angle = 90, hjust = 0),
+          axis.text = element_text(size=13), 
+          axis.title.x=element_blank())
 
 ggsave("../figures/fig3b.png", 
        plot=fig3b, 
@@ -554,3 +574,42 @@ ggsave("../figures/fig3b.png",
        width = 23, 
        units="cm")
 
+fig3 <- ggarrange(fig3a, fig3b,
+          labels = c("A", "B"),
+          align = "hv",
+          widths = c(0.8,1),
+          ncol = 2,
+          nrow = 1,
+          font.label=list(color="black",size=22)) + bgcolor("white")
+
+ggsave("../figures/Fig3.tiff", 
+       plot=fig3, 
+       height = 20, 
+       width = 43,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig3.png", 
+       plot=fig3, 
+       height = 20, 
+       width = 43,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+ggsave("../figures/Fig3.pdf", 
+       plot=fig3, 
+       height = 20, 
+       width = 43,
+       dpi = 600, 
+       units="cm",
+       device="pdf")
+
+ggsave("../figures/Fig3-small.png", 
+       plot=fig3, 
+       height = 20, 
+       width = 43,
+       dpi = 300, 
+       units="cm",
+       device="png")
