@@ -505,7 +505,7 @@ diagonal <- heatmap_sort %>%
     filter(from==to)
 
 
-fig3a <- ggplot()+
+fig3b <- ggplot()+
       geom_tile(data=order_cell_long,
                 aes(x=from, y=to,fill=count),
                 color="white",
@@ -542,8 +542,8 @@ fig3a <- ggplot()+
             legend.position = c(.90, .83),
             legend.title=element_text(size=9))
 
-ggsave("../figures/fig3a.png",
-       plot = fig3a,
+ggsave("../figures/fig3b.png",
+       plot = fig3b,
        width = 20,
        height = 20,
        units='cm', 
@@ -552,23 +552,32 @@ ggsave("../figures/fig3a.png",
 
 #fig3b
 aoo_dist <- endemic_species %>%
-    dplyr::select(subspeciesname, Order, aoo, aoo_natura) %>% 
-    pivot_longer(cols=c(aoo,aoo_natura))
+    pivot_longer(cols=c(aoo,eoo,n_locations)) %>%
+    dplyr::select(subspeciesname, Order, name, value) %>%
+    filter(value>0)
 
-fig3b <-ggplot(endemic_species, mapping=aes(x=Order, y=aoo)) +
-    geom_jitter(position=position_jitter(0.2)) +
-    stat_summary(fun=mean, geom="pointrange", color="red")+
+fig3a <-ggplot() +
+    geom_point(aoo_dist, 
+               mapping=aes(x=Order, y=value, color=name, shape=name),
+               position=position_jitterdodge(0.3)) +
+#    stat_summary(fun=mean, geom="pointrange", color="red")+
     scale_y_continuous(trans='log10',
                      breaks=trans_breaks('log10', function(x) 10^x),
-                     labels=trans_format('log10', math_format(10^.x)),
-                     name=bquote("log(AOO "~km^2~")")) + 
-    theme_classic()+
+                     labels=trans_format('log10', math_format(10^.x))) + 
+    scale_shape_manual(values = c(2,1,3),
+                       labels=c("AOO","EOO", "# locations"),
+                       name="Quantity")+
+    scale_color_manual(values=c("gray48", "gray60", "gray40"),
+                       labels=c("AOO","EOO", "# locations"),
+                       name="Quantity")+
+    theme_bw()+
     theme(axis.text.x = element_text(angle = 90, hjust = 0),
           axis.text = element_text(size=13), 
-          axis.title.x=element_blank())
+          axis.title.x=element_blank(),
+          legend.position = c(0.85, 0.1))
 
-ggsave("../figures/fig3b.png", 
-       plot=fig3b, 
+ggsave("../figures/fig3a.png", 
+       plot=fig3a, 
        device="png", 
        height = 20, 
        width = 23, 
