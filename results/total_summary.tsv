@@ -1,0 +1,13 @@
+Order	taxa	sites	occurrences	locations	n_species_LNT	n_species_LT	n_species_PT	proportion_LNT	proportion_LT	proportion_PT	n_species_CR	n_species_EN	n_species_NT/LC	n_species_VU	proportion_CR	proportion_EN	proportion_NT/LC	proportion_VU	threatened	proportion_threatened
+total	343	1569	7690	135	86	195	62	0.25	0.57	0.18	75	120	86	62	0.22	0.35	0.25	0.18	257	0.749271137026239
+Araneae	40	254	559	102	14	16	10	0.35	0.4	0.25	7	9	14	10	0.17	0.22	0.35	0.25	26	0.65
+Chilopoda	2	238	543	89	2	NA	NA	1	NA	NA	NA	NA	2	NA	NA	NA	1	NA	0	0
+Coleoptera	206	949	4037	128	38	132	36	0.18	0.64	0.17	54	78	38	36	0.26	0.38	0.18	0.17	168	0.8155339805825242
+Diplopoda	7	74	203	46	2	4	1	0.29	0.57	0.14	3	1	2	1	0.43	0.14	0.29	0.14	5	0.7142857142857143
+Heteroptera	17	48	70	33	NA	14	3	NA	0.82	0.18	5	9	NA	3	0.29	0.53	NA	0.18	17	1
+Hymenoptera	25	173	305	71	8	14	3	0.32	0.56	0.12	3	11	8	3	0.12	0.44	0.32	0.12	17	0.68
+Lepidoptera	9	40	69	32	3	5	1	0.33	0.56	0.11	NA	5	3	1	NA	0.56	0.33	0.11	6	0.6666666666666666
+Odonata	3	29	50	20	2	NA	1	0.67	NA	0.33	NA	NA	2	1	NA	NA	0.67	0.33	1	0.3333333333333333
+Orthoptera	20	368	1189	107	10	7	3	0.5	0.35	0.15	3	4	10	3	0.15	0.2	0.5	0.15	10	0.5
+Scorpiones	2	243	508	88	2	NA	NA	1	NA	NA	NA	NA	2	NA	NA	NA	1	NA	0	0
+Trichoptera	12	66	157	43	5	3	4	0.42	0.25	0.33	NA	3	5	4	NA	0.25	0.42	0.33	7	0.5833333333333334

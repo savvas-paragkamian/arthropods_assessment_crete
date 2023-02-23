@@ -6,12 +6,4 @@
 *.swp
 *.swo
 
-*.csv
-*.tsv
-*.xlsx
-*.pdf
-plots/
 literature/
-
-literature/
-data/
