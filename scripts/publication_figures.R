@@ -1,5 +1,19 @@
 #!/usr/bin/Rscript
 
+## Script name: publications_figures.R
+##
+## Purpose of script: create figures for the publication of
+## The conservation status of Cretan Endemic Arthropods under 
+## Natura 2000 network
+## How to run:
+## Rscript publication_figures.R
+##
+## Execution time: 5 minutes 
+##
+## Author: Savvas Paragkamian
+##
+## Date Created: 2023-02-22
+
 # load packages and functions
 library(tidyverse)
 library(ggnewscale)
