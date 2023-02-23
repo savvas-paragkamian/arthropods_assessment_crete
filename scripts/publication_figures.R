@@ -288,7 +288,8 @@ ggsave("../figures/Fig2b.png",
 ## fig2c
 species_10_natura <- endemic_species %>%
     mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) %>%
-    filter(aoo_natura_percent<0.15 & threatened==T)
+    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
+    filter(aoo_natura_relative<0.1 & threatened==T)
 
 species_10_natura_l <- locations_grid %>%
     filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
@@ -320,12 +321,12 @@ crete_aoo <- ggplot() +
             show.legend=T) +
     scale_fill_gradient(low="#999999",
                         high="#E69F00",
-                        breaks = c(3,6,9,12),
-                        labels = c(3,6,9,12),
+                       # breaks = c(3,6,9,12),
+                       # labels = c(3,6,9,12),
                         guide = guide_colourbar(override.aes = list(alpha=1),
                                                 ticks = FALSE,
                                                 label = TRUE,
-                                                title="# taxa \n(AOO < 15% in N2K)",
+                                                title="# taxa \n(AOO < 10% in N2K)",
                                                 title.vjust = 0.8,
                                                 order = 1))+
     geom_sf(crete_peaks,
@@ -470,7 +471,49 @@ ggsave("../figures/Fig2-small.png",
 #figure 3
 
 #fig3a
+aoo_dist <- endemic_species %>%
+    pivot_longer(cols=c(aoo,eoo,n_locations)) %>%
+    dplyr::select(subspeciesname, Order, name, value) %>%
+    filter(value>0)
 
+fig3a <- ggplot() +
+    geom_boxplot(aoo_dist,
+                 mapping=aes(x=Order, y=value,color=name),
+                 outlier.size = 0) +
+    geom_point(aoo_dist, 
+               mapping=aes(x=Order, y=value, color=name, shape=name),
+               position=position_jitterdodge(0.3)) + 
+    geom_vline(xintercept = seq(0.5, length(aoo_dist$Order), by = 1), 
+               color="gray", 
+               size=.5, 
+               alpha=.5) + # # set vertical lines between x groups
+    scale_y_continuous(trans='log10', name = "Value",
+                     breaks=trans_breaks('log10', function(x) 10^x),
+                     labels=trans_format('log10', math_format(10^.x))) + 
+    scale_shape_manual(values = c(2,1,3),
+                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
+                       name="Quantity")+
+    scale_color_manual(values=c("gray15", "gray45", "gray65"),
+                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
+                       name="Quantity")+
+    scale_fill_manual(values=c("gray15", "gray45", "gray65"),
+                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
+                       name="Quantity")+
+    theme_bw()+
+    theme(panel.grid = element_blank(),
+          axis.text.x = element_text(angle = 90, hjust = 0),
+          axis.text = element_text(size=13), 
+          axis.title.x=element_blank(),
+          legend.position = c(0.85, 0.1))
+
+ggsave("../figures/fig3a.png", 
+       plot=fig3a, 
+       device="png", 
+       height = 20, 
+       width = 23, 
+       units="cm")
+
+#fig3b
 # Overlap of hotspots
 endemic_hotspots_o <- locations_grid %>% 
     filter(CELLCOD %in% endemic_hotspots$CELLCODE) %>%
@@ -550,38 +593,6 @@ ggsave("../figures/fig3b.png",
        device = "png",
        dpi = 300)
 
-#fig3b
-aoo_dist <- endemic_species %>%
-    pivot_longer(cols=c(aoo,eoo,n_locations)) %>%
-    dplyr::select(subspeciesname, Order, name, value) %>%
-    filter(value>0)
-
-fig3a <-ggplot() +
-    geom_point(aoo_dist, 
-               mapping=aes(x=Order, y=value, color=name, shape=name),
-               position=position_jitterdodge(0.3)) +
-#    stat_summary(fun=mean, geom="pointrange", color="red")+
-    scale_y_continuous(trans='log10',
-                     breaks=trans_breaks('log10', function(x) 10^x),
-                     labels=trans_format('log10', math_format(10^.x))) + 
-    scale_shape_manual(values = c(2,1,3),
-                       labels=c("AOO","EOO", "# locations"),
-                       name="Quantity")+
-    scale_color_manual(values=c("gray48", "gray60", "gray40"),
-                       labels=c("AOO","EOO", "# locations"),
-                       name="Quantity")+
-    theme_bw()+
-    theme(axis.text.x = element_text(angle = 90, hjust = 0),
-          axis.text = element_text(size=13), 
-          axis.title.x=element_blank(),
-          legend.position = c(0.85, 0.1))
-
-ggsave("../figures/fig3a.png", 
-       plot=fig3a, 
-       device="png", 
-       height = 20, 
-       width = 23, 
-       units="cm")
 
 fig3 <- ggarrange(fig3a, fig3b,
           labels = c("A", "B"),
