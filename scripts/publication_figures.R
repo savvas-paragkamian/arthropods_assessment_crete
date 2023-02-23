@@ -633,3 +633,36 @@ ggsave("../figures/Fig3-small.png",
        dpi = 300, 
        units="cm",
        device="png")
+
+## Supplementary Figure 3
+
+order_aoo <- endemic_species %>%
+    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
+    group_by(Order) %>%
+    mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative))
+
+
+figS3 <- ggplot() +
+    geom_boxplot(order_aoo,
+                 mapping=aes(x=Order, y=aoo_natura_relative),
+                 outlier.size = 0) +
+    geom_jitter(order_aoo, 
+               mapping=aes(x=Order, y=aoo_natura_relative)) + 
+    geom_vline(xintercept = seq(0.5, length(order_aoo$Order), by = 1), 
+               color="gray", 
+               size=.5, 
+               alpha=.5) + # # set vertical lines between x groups
+    labs(y="Average AOO overlap with N2K")+
+    theme_bw()+
+    theme(panel.grid = element_blank(),
+          axis.text.x = element_text(angle = 90, hjust = 0),
+          axis.text = element_text(size=13), 
+          axis.title.x=element_blank(),
+          legend.position = c(0.85, 0.1))
+
+ggsave("../figures/figS3.png", 
+       plot=figS3, 
+       device="png", 
+       height = 20, 
+       width = 23, 
+       units="cm")
