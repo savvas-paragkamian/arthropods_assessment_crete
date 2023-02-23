@@ -26,7 +26,7 @@ source("functions.R")
 
 # Load Data
 ## Endemic species occurrences in Crete
-arthropods_kriti_endemic <- readxl::read_excel("../data/Data-ENDEMICS.xlsx") %>% 
+arthropods_kriti_endemic <- readxl::read_excel("../data/endemic-arthropods-crete.xlsx") %>% 
     filter(Order!="Opiliones") %>% 
     dplyr::select(-Ergasia)
 
