@@ -46,13 +46,16 @@ downloaded from the sources.
 The script `get_species_info.R` is used for exploratory analysis of the
 GBIF information of the species in our dataset.
 
+In `publication_figures.R` we produce the figures for the publications.
+All figures use the color-blind friendly palette Okabe-Ito.
+
 ## Occurrence Data
 
 Occurrences of endemic arthropod species in the island of Crete were 
 compiled by Natural History Museaum of Crete. The data were cureted
 from the literature and from Natural History Museaum of Crete specimens.
 
-# Spatial data
+## Spatial data
 
 The protected areas of [Natura2000 SCI](https://www.eea.europa.eu/data-and-maps/data/natura-14)
 (habitats directive) and [Wildlife refugees](https://www.protectedplanet.net/en/thematic-areas/wdpa?tab=WDPA)
