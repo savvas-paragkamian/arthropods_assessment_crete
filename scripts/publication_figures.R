@@ -488,7 +488,9 @@ ggsave("../figures/Fig2-small.png",
 aoo_dist <- endemic_species %>%
     pivot_longer(cols=c(aoo,eoo,n_locations)) %>%
     dplyr::select(subspeciesname, Order, name, value) %>%
-    filter(value>0)
+    filter(value>0) %>%
+    mutate(Order=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths", Order))
+
 
 fig3a <- ggplot() +
     geom_boxplot(aoo_dist,
@@ -550,7 +552,10 @@ threatspots_o <- locations_grid %>%
 
 heatmaps_threatspots <- heatmaps(threatspots_o) 
 
-heatmap_sort <- heatmaps_threatspots[[1]]
+heatmap_sort <- heatmaps_threatspots[[1]] %>%
+    mutate(from=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths", from)) %>%
+    mutate(to=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths",to))
+
 
 order_cell_long <- heatmap_sort %>%
     mutate(count=if_else(from==to,0,count))
@@ -653,8 +658,8 @@ ggsave("../figures/Fig3-small.png",
 order_aoo <- endemic_species %>%
     mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
     group_by(Order) %>%
-    mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative))
-
+    mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative)) %>%
+    mutate(Order=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths", Order))
 
 figS3 <- ggplot() +
     geom_boxplot(order_aoo,
