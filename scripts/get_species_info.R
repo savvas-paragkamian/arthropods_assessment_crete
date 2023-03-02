@@ -33,12 +33,12 @@ iucn_arthropods <- read_delim("~/Downloads/redlist_species_data_e63da44c-39d3-46
     st_as_sf(coords=c("longitude", "latitude"),
              remove=FALSE,
              crs="WGS84")
-iucn_arthropods_species <- iucn_arthropods %>% mutate(subspeciesname=if_else(subspecies=="<NULL>" | is.na(subspecies),
-                                                         sci_name, 
-                                                         paste(sci_name,subspecies))) %>%
+
+# clean the subspecies column because it has null value and dates.
+iucn_arthropods_species <- iucn_arthropods %>% mutate(subspeciesname=if_else(grepl("^[[:digit:]]", subspecies) | subspecies %in% c("<NULL>","<Null>") | is.na(subspecies),sci_name, paste(sci_name,subspecies))) %>%
                             distinct(sci_name,subspeciesname)
 
-
+write_delim(iucn_arthropods_species, "../results/iucn_arthropods_species", delim="\t")
 iucn_arthropods_species_u <- unique(iucn_arthropods_species$sci_name)
 
 gbif_iucn <- get_gbifid(iucn_arthropods_species_u,ask=F)
