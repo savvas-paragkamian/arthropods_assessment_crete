@@ -501,7 +501,7 @@ fig3a <- ggplot() +
                position=position_jitterdodge(0.3)) + 
     geom_vline(xintercept = seq(0.5, length(aoo_dist$Order), by = 1), 
                color="gray", 
-               size=.5, 
+               linewidth=.5,
                alpha=.5) + # # set vertical lines between x groups
     scale_y_continuous(trans='log10', name = "Value",
                      breaks=trans_breaks('log10', function(x) 10^x),
@@ -520,7 +520,7 @@ fig3a <- ggplot() +
           axis.text.x = element_text(angle = 90, hjust = 0),
           axis.text = element_text(size=13), 
           axis.title.x=element_blank(),
-          legend.position = c(0.85, 0.1))
+          legend.position = c(0.88, 0.1))
 
 ggsave("../figures/fig3a.png", 
        plot=fig3a, 
@@ -613,42 +613,50 @@ ggsave("../figures/fig3b.png",
        dpi = 300)
 
 
+#fig3 <- ggarrange(fig3a, fig3b,
+#          labels = c("A", "B"),
+#          align = "hv",
+#          widths = c(0.8,1),
+#          ncol = 2,
+#          nrow = 1,
+#          font.label=list(color="black",size=22)) + bgcolor("white")
+
 fig3 <- ggarrange(fig3a, fig3b,
           labels = c("A", "B"),
           align = "hv",
-          widths = c(0.8,1),
-          ncol = 2,
-          nrow = 1,
+          widths = c(1,1),
+          ncol = 1,
+          nrow = 2,
           font.label=list(color="black",size=22)) + bgcolor("white")
 
 ggsave("../figures/Fig3.tiff", 
        plot=fig3, 
-       height = 20, 
-       width = 43,
+       height = 40, 
+       width = 24,
        dpi = 600, 
        units="cm",
        device="tiff")
 
 ggsave("../figures/Fig3.png", 
        plot=fig3, 
-       height = 20, 
-       width = 43,
+       height = 40, 
+       width = 24,
        dpi = 600, 
        units="cm",
        device="png")
 
 ggsave("../figures/Fig3.pdf", 
        plot=fig3, 
-       height = 20, 
-       width = 43,
+       height = 40, 
+       width = 24,
        dpi = 600, 
        units="cm",
        device="pdf")
 
 ggsave("../figures/Fig3-small.png", 
        plot=fig3, 
-       height = 20, 
-       width = 43,
+       height = 40, 
+       width = 24,
        dpi = 300, 
        units="cm",
        device="png")
@@ -681,6 +689,41 @@ figS3 <- ggplot() +
 
 ggsave("../figures/figS3.png", 
        plot=figS3, 
+       device="png", 
+       height = 20, 
+       width = 23, 
+       units="cm")
+
+## Supplementary Figure 1
+orders <- unique(endemic_species$Order)
+
+
+redlist_orders <- read_delim("../results/redlist_threatened.tsv", delim="\t")
+
+redlist_threatened <- redlist_orders %>%
+    group_by(Order, source) %>%
+    mutate(total=sum(n), proportion = round(n/total,digits=2)) %>%
+    ungroup() %>%
+    filter(threatened==TRUE, Order %in% orders)
+
+figS1 <- ggplot() +
+    geom_col(redlist_threatened,
+             mapping=aes(x=Order, y=n, fill=source),
+             position = position_dodge()) +
+    geom_text(data=redlist_threatened,
+              aes(x=Order,y=n, group=source,
+                  label = paste(proportion," (",n,")", sep="")),
+              size=3,
+              position = position_dodge(width=0.8)) +
+    theme_bw()+
+    theme(panel.grid = element_blank(),
+          axis.text.x = element_text(angle = 90, hjust = 0),
+          axis.text = element_text(size=13), 
+          axis.title.x=element_blank(),
+          legend.position = c(0.15, 0.9))
+
+ggsave("../figures/figS1.png", 
+       plot=figS1, 
        device="png", 
        height = 20, 
        width = 23, 
