@@ -28,11 +28,11 @@ endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim
 
 
 # IUCN dataset from website
-iucn_arthropods <- read_delim("~/Downloads/redlist_species_data_e63da44c-39d3-46bc-819d-1a3203f508bd/points_data.csv",
-                              delim=",") %>% 
-    st_as_sf(coords=c("longitude", "latitude"),
-             remove=FALSE,
-             crs="WGS84")
+endemic_greek_redlist_a <- read_delim("~/downloads/endemic-greek-redlist/assessments.csv", delim=",")
+endemic_greek_redlist_t <- read_delim("~/downloads/endemic-greek-redlist/simple_summary.csv", delim=",")
+
+endemic_europe_redlist_a <- read_delim("~/downloads/endemic-europe-redlist/assessments.csv", delim=",")
+endemic_europe_redlist_t <- read_delim("~/downloads/endemic-europe-redlist/simple_summary.csv", delim=",")
 
 # clean the subspecies column because it has null value and dates.
 iucn_arthropods_species <- iucn_arthropods %>% mutate(subspeciesname=if_else(grepl("^[[:digit:]]", subspecies) | subspecies %in% c("<NULL>","<Null>") | is.na(subspecies),sci_name, paste(sci_name,subspecies))) %>%
