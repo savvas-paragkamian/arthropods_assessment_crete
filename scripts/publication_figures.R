@@ -63,7 +63,8 @@ threatspots_lt <- threatspots %>%
     filter(pc_thrt>= quantile(pc_thrt,0.90))
 
 locations_inland <- st_join(locations_shp, crete_shp, left=F)
-
+# IUCN
+redlist_orders <- read_delim("../results/redlist_threatened.tsv", delim="\t")
 
 # Colorblind palette
 palette.colors(palette = "Okabe-Ito") 
@@ -662,44 +663,8 @@ ggsave("../figures/Fig3-small.png",
        units="cm",
        device="png")
 
-## Supplementary Figure 3
-
-order_aoo <- endemic_species %>%
-    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
-    group_by(Order) %>%
-    mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative)) %>%
-    mutate(Order=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths", Order))
-
-figS3 <- ggplot() +
-    geom_boxplot(order_aoo,
-                 mapping=aes(x=Order, y=aoo_natura_relative),
-                 outlier.size = 0) +
-    geom_jitter(order_aoo, 
-               mapping=aes(x=Order, y=aoo_natura_relative)) + 
-    geom_vline(xintercept = seq(0.5, length(order_aoo$Order), by = 1), 
-               color="gray", 
-               size=.5, 
-               alpha=.5) + # # set vertical lines between x groups
-    labs(y="Average AOO overlap with N2K")+
-    theme_bw()+
-    theme(panel.grid = element_blank(),
-          axis.text.x = element_text(angle = 90, hjust = 0),
-          axis.text = element_text(size=13), 
-          axis.title.x=element_blank(),
-          legend.position = c(0.85, 0.1))
-
-ggsave("../figures/figS3.png", 
-       plot=figS3, 
-       device="png", 
-       height = 20, 
-       width = 23, 
-       units="cm")
-
 ## Supplementary Figure 1
 orders <- unique(endemic_species$Order)
-
-
-redlist_orders <- read_delim("../results/redlist_threatened.tsv", delim="\t")
 
 redlist_threatened <- redlist_orders %>%
     group_by(Order, source) %>%
@@ -708,7 +673,16 @@ redlist_threatened <- redlist_orders %>%
     filter(Order %in% orders)
 
 redlist_threatened$source <- factor(redlist_threatened$source,
-                                    levels=c("endemic_greek_redlist", "endemic_europe_redlist", "world_redlist"))
+                                    levels=c("endemic_crete_redlist",
+                                             "endemic_greek_redlist",
+                                             "endemic_europe_redlist",
+                                             "world_redlist"))
+
+redlist_threatened$label <- factor(redlist_threatened$source,
+                                    labels=c("Cretan endemics Red List",
+                                             "Greek endemic Red List",
+                                             "Europe endemic Red List",
+                                             "World Red List"))
 
 figS1 <- ggplot() +
     geom_col(redlist_threatened,
@@ -721,13 +695,18 @@ figS1 <- ggplot() +
               position = position_stack(vjust = .6),
               direction="y",
               min.segment.length = 0) +
+    scale_fill_manual(values=c("FALSE"="#56B4E9","TRUE"="#D55E00"),
+                      labels=c("Not Threatened","Threatened")) +
     theme_bw()+
-    facet_grid(source ~ ., scales="free")+
+    ylab("# of taxa") + 
+    facet_grid(label ~ ., scales="free", labeller=label_value)+
+    scale_y_continuous(breaks = scales::pretty_breaks(6), limits = c(0, NA))+
     theme(panel.grid = element_blank(),
           axis.text.x = element_text(angle = 90, hjust = 0),
           axis.text = element_text(size=13), 
           axis.title.x=element_blank(),
-          legend.position = c(0.90, 0.9))
+          legend.position = c(0.90, 0.9),
+          legend.title=element_blank())
 
 ggsave("../figures/figS1.png", 
        plot=figS1, 
@@ -735,3 +714,37 @@ ggsave("../figures/figS1.png",
        height = 20, 
        width = 23, 
        units="cm")
+
+## Supplementary Figure 2
+
+order_aoo <- endemic_species %>%
+    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
+    group_by(Order) %>%
+    mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative)) %>%
+    mutate(Order=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths", Order))
+
+figS2 <- ggplot() +
+    geom_boxplot(order_aoo,
+                 mapping=aes(x=Order, y=aoo_natura_relative),
+                 outlier.size = 0) +
+    geom_jitter(order_aoo, 
+               mapping=aes(x=Order, y=aoo_natura_relative)) + 
+    geom_vline(xintercept = seq(0.5, length(order_aoo$Order), by = 1), 
+               color="gray", 
+               size=.5, 
+               alpha=.5) + # # set vertical lines between x groups
+    labs(y="Proportiokn of AOO overlap with N2K")+
+    theme_bw()+
+    theme(panel.grid = element_blank(),
+          axis.text.x = element_text(angle = 90, hjust = 0),
+          axis.text = element_text(size=13), 
+          axis.title.x=element_blank(),
+          legend.position = c(0.85, 0.1))
+
+ggsave("../figures/figS2.png", 
+       plot=figS2, 
+       device="png", 
+       height = 20, 
+       width = 23, 
+       units="cm")
+
