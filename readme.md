@@ -18,13 +18,24 @@ the spatial data required for this analysis.
 ## Dependencies
 
 This analysis is implemented in R version 4.2.2 (2022-10-31) and 
-requires the following packagesL:
+requires the following packages:
 
 ```
+# for analysis
+
 -- tidyverse
 -- sf
 -- raster
 -- ConR
+
+# for visualisation
+
+-- ggplot2
+-- ggarrange
+-- ggnewscale
+-- ggrepel
+-- ggpubr
+-- jpeg
 
 ```
 
@@ -95,5 +106,6 @@ the 10% highest endemic species and threatened species, respectively.
 
 ## Citation
 
-
+Giannis Bolanakis, Savvas Paragkamian, Maria Chatzaki, Liubitsa Kardaki and Apostolos Trichas. 2023.
+The conservation status of the Cretan Endemic Arthropods under Natura 2000 network.
 
