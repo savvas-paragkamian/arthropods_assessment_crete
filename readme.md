@@ -73,7 +73,7 @@ regions and on the hotspots of the arthropod endemic taxa.
 Full IUCN assessments of the species are downloaded from the [IUCN web resource](https://www.iucnredlist.org).
 In advanced search, the Taxonomy, Land regions and Filter on Endemics fields are 
 used to download data. We use the World, Europe, Greece Land regions and 
-endemics to generate 3 different datasets. Crete endemics are not included
+endemics to download "Search Results" of 3 different datasets. Crete endemics are not included
 in the IUCN assessment so we filter from our curated Cretan endemics. These data
 are used to compare with our preliminary analysis.
 
@@ -84,10 +84,16 @@ visualised in the `plots` directory.
 Preliminary Automated Conservation Assessments (PACA) is based on 
 critirion B. It is a fast way to estimated the taxa under threat.
 
+![Meme EOO with minimum convex polygon](convex-polygon-meme-en.jpg)
+
 ## Hotspots
 
 Using the [European Environment Agency reference grid](https://www.eea.europa.eu/data-and-maps/data/eea-reference-grids-2) 
 of 10km X 10km we defined a location as a cell grid that a species has occurrered. 
 The endemic hotspots and the threatened hotspots are the cell grids 
 the 10% highest endemic species and threatened species, respectively.
+
+## Citation
+
+
 
