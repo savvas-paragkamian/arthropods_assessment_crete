@@ -16,6 +16,7 @@
 
 # load packages and functions
 library(tidyverse)
+library(ggrepel)
 library(ggnewscale)
 library(scales)
 library(ggpubr)
@@ -704,23 +705,29 @@ redlist_threatened <- redlist_orders %>%
     group_by(Order, source) %>%
     mutate(total=sum(n), proportion = round(n/total,digits=2)) %>%
     ungroup() %>%
-    filter(threatened==TRUE, Order %in% orders)
+    filter(Order %in% orders)
+
+redlist_threatened$source <- factor(redlist_threatened$source,
+                                    levels=c("endemic_greek_redlist", "endemic_europe_redlist", "world_redlist"))
 
 figS1 <- ggplot() +
     geom_col(redlist_threatened,
-             mapping=aes(x=Order, y=n, fill=source),
-             position = position_dodge()) +
-    geom_text(data=redlist_threatened,
-              aes(x=Order,y=n, group=source,
-                  label = paste(proportion," (",n,")", sep="")),
+             mapping=aes(x=Order, y=n, fill=threatened),
+             position = position_stack()) +
+    geom_text_repel(data=redlist_threatened,
+              aes(x=Order,y=n, group=threatened,
+                  label = paste(n," (",proportion,")", sep="")),
               size=3,
-              position = position_dodge(width=0.8)) +
+              position = position_stack(vjust = .6),
+              direction="y",
+              min.segment.length = 0) +
     theme_bw()+
+    facet_grid(source ~ ., scales="free")+
     theme(panel.grid = element_blank(),
           axis.text.x = element_text(angle = 90, hjust = 0),
           axis.text = element_text(size=13), 
           axis.title.x=element_blank(),
-          legend.position = c(0.15, 0.9))
+          legend.position = c(0.90, 0.9))
 
 ggsave("../figures/figS1.png", 
        plot=figS1, 
