@@ -29,8 +29,8 @@ endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim
 
 # IUCN dataset from website
 
-greek_redlist_a <- read_delim("~/downloads/greece-redlist/assessments.csv", delim=",")
-greek_redlist_t <- read_delim("~/downloads/greece-redlist/taxonomy.csv", delim=",") %>%
+greek_redlist_a <- read_delim("../data/greece-redlist/assessments.csv", delim=",")
+greek_redlist_t <- read_delim("../data/greece-redlist/taxonomy.csv", delim=",") %>%
     dplyr::select(-scientificName)
 
 greek_redlist <- greek_redlist_a %>%
@@ -40,8 +40,8 @@ greek_redlist <- greek_redlist_a %>%
     summarise(n=n()) %>%
     mutate(source="greek_redlist")
 
-endemic_greek_redlist_a <- read_delim("~/downloads/endemic-greek-redlist/assessments.csv", delim=",")
-endemic_greek_redlist_t <- read_delim("~/downloads/endemic-greek-redlist/taxonomy.csv", delim=",") %>%
+endemic_greek_redlist_a <- read_delim("../data/endemic-greek-redlist/assessments.csv", delim=",")
+endemic_greek_redlist_t <- read_delim("../data/endemic-greek-redlist/taxonomy.csv", delim=",") %>%
     dplyr::select(-scientificName)
 
 endemic_greek_redlist <- endemic_greek_redlist_a %>%
@@ -50,6 +50,14 @@ endemic_greek_redlist <- endemic_greek_redlist_a %>%
     group_by(orderName, threatened) %>%
     summarise(n=n()) %>%
     mutate(source="endemic_greek_redlist")
+
+
+endemic_crete_redlist_s <- endemic_species %>% 
+    left_join(greek_redlist_a, by=c("subspeciesname"="scientificName")) %>%
+    dplyr::select(subspeciesname,paca,iucn,redlistCategory) %>%
+    na.omit()
+
+write_delim(endemic_crete_redlist_s, "../results/endemic_crete_redlist.tsv", delim="\t")
 
 endemic_crete_redlist <- greek_redlist_a %>% 
     filter(scientificName %in% endemic_species$subspeciesname) %>%
@@ -60,8 +68,8 @@ endemic_crete_redlist <- greek_redlist_a %>%
     mutate(source="endemic_crete_redlist")
 
 
-endemic_europe_redlist_a <- read_delim("~/downloads/endemic-europe-redlist/assessments.csv", delim=",")
-endemic_europe_redlist_t <- read_delim("~/downloads/endemic-europe-redlist/taxonomy.csv", delim=",") %>%
+endemic_europe_redlist_a <- read_delim("../data/endemic-europe-redlist/assessments.csv", delim=",")
+endemic_europe_redlist_t <- read_delim("../data/endemic-europe-redlist/taxonomy.csv", delim=",") %>%
     dplyr::select(-scientificName)
 
 endemic_europe_redlist <- endemic_europe_redlist_a %>%
@@ -71,8 +79,8 @@ endemic_europe_redlist <- endemic_europe_redlist_a %>%
     summarise(n=n()) %>%
     mutate(source="endemic_europe_redlist")
 
-world_redlist_a <- read_delim("~/downloads/world-redlist/assessments.csv", delim=",")
-world_redlist_t <- read_delim("~/downloads/world-redlist/taxonomy.csv", delim=",") %>%
+world_redlist_a <- read_delim("../data/world-redlist/assessments.csv", delim=",")
+world_redlist_t <- read_delim("../data/world-redlist/taxonomy.csv", delim=",") %>%
     dplyr::select(-scientificName)
 
 world_redlist <- world_redlist_a %>%
