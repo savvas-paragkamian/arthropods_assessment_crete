@@ -44,9 +44,10 @@ meant to be executed but to guide to the original versions of the data as
 downloaded from the sources. 
 
 The script `get_species_info.R` is used for exploratory analysis of the
-GBIF information of the species in our dataset.
+GBIF information of the species in our dataset and for the current IUCN assessments
+of arthropod species.
 
-In `publication_figures.R` we produce the figures for the publications.
+In `publication_figures.R` we produce the figures and supplementary figures for the publications.
 All figures use the color-blind friendly palette Okabe-Ito.
 
 ## Occurrence Data
@@ -68,6 +69,13 @@ CORINE Land Cover data are used to identify human pressures on the Natura2000
 regions and on the hotspots of the arthropod endemic taxa.
 
 ## Assessment
+
+Full IUCN assessments of the species are downloaded from the [IUCN web resource](https://www.iucnredlist.org).
+In advanced search, the Taxonomy, Land regions and Filter on Endemics fields are 
+used to download data. We use the World, Europe, Greece Land regions and 
+endemics to generate 3 different datasets. Crete endemics are not included
+in the IUCN assessment so we filter from our curated Cretan endemics. These data
+are used to compare with our preliminary analysis.
 
 The assessment of taxa is based on the critirion B of IUCN; Extend of 
 Occurrence and Area of Occupancy. All the results of this analysis is 
