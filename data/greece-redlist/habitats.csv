@@ -1,0 +1,1879 @@
+assessmentId,internalTaxonId,scientificName,code,name,majorImportance,season,suitability
+1281221,169975,Palinurus elephas,9.2,Marine Neritic - Subtidal Rock and Rocky Reefs,,,Suitable
+1413852,174425,Maniola halicarnassus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,,Suitable
+1413852,174425,Maniola halicarnassus,4.4,Grassland - Temperate,Yes,,Suitable
+2443143,196248,Hasarius adansoni,1.6,Forest - Subtropical/Tropical Moist Lowland,Yes,,Suitable
+2443143,196248,Hasarius adansoni,16,Introduced vegetation,,,Marginal
+2443143,196248,Hasarius adansoni,14.5,Artificial/Terrestrial - Urban Areas,Yes,,Suitable
+2443143,196248,Hasarius adansoni,14.3,Artificial/Terrestrial - Plantations,No,,Suitable
+2506191,197950,Palaemonetes antennarius,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+2506191,197950,Palaemonetes antennarius,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+2506191,197950,Palaemonetes antennarius,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+2521594,198337,Atyaephyra stankoi,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,resident,Suitable
+2521594,198337,Atyaephyra stankoi,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,resident,Suitable
+2521594,198337,Atyaephyra stankoi,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,resident,Suitable
+2521594,198337,Atyaephyra stankoi,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",Yes,resident,Suitable
+3933275,134293,Potamon fluviatile,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+3933275,134293,Potamon fluviatile,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),Yes,,Suitable
+3933275,134293,Potamon fluviatile,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+3933275,134293,Potamon fluviatile,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+3933275,134293,Potamon fluviatile,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+3933275,134293,Potamon fluviatile,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+3965427,134492,Potamon rhodium,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Marginal
+3965427,134492,Potamon rhodium,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+3965427,134492,Potamon rhodium,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+3965427,134492,Potamon rhodium,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Marginal
+3965427,134492,Potamon rhodium,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+3965427,134492,Potamon rhodium,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+3997379,134681,Potamon ibericum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+3997379,134681,Potamon ibericum,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Marginal
+3997379,134681,Potamon ibericum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+3997379,134681,Potamon ibericum,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Marginal
+3997379,134681,Potamon ibericum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+3997379,134681,Potamon ibericum,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+4061032,135117,Potamon potamios,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Marginal
+4061032,135117,Potamon potamios,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+4061032,135117,Potamon potamios,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+4061032,135117,Potamon potamios,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Marginal
+4061032,135117,Potamon potamios,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+4061032,135117,Potamon potamios,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+4526314,153648,Pacifastacus leniusculus,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+4526314,153648,Pacifastacus leniusculus,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+4526314,153648,Pacifastacus leniusculus,5.13,Wetlands (inland) - Permanent Inland Deltas,,,Suitable
+4526314,153648,Pacifastacus leniusculus,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+5077434,157474,Stenopterus similatus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,,Suitable
+5077434,157474,Stenopterus similatus,17,Other,Yes,,Suitable
+5098302,157571,Microrhagus pyrenaeus,1.4,Forest - Temperate,,,Suitable
+5098645,157573,Chlorophorus glabromaculatus,1.4,Forest - Temperate,,,Suitable
+5098836,157575,Osmoderma lassallei,1.4,Forest - Temperate,Yes,,Suitable
+5098836,157575,Osmoderma lassallei,17,Other,Yes,,Suitable
+5102180,157591,Brachygonus meraculus,1.4,Forest - Temperate,,,Suitable
+5112566,157631,Ropalopus insubricus,14.3,Artificial/Terrestrial - Plantations,,,Suitable
+5112566,157631,Ropalopus insubricus,1.4,Forest - Temperate,Yes,,Suitable
+5112566,157631,Ropalopus insubricus,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+5114760,157641,Ceruchus chrysomelinus,1.4,Forest - Temperate,Yes,,Suitable
+5114760,157641,Ceruchus chrysomelinus,1.1,Forest - Boreal,,,Marginal
+5115632,157645,Tritoma bipustulata,14.3,Artificial/Terrestrial - Plantations,Yes,,Suitable
+5115632,157645,Tritoma bipustulata,1.4,Forest - Temperate,Yes,,Suitable
+5115632,157645,Tritoma bipustulata,17,Other,Yes,,Suitable
+5116249,157647,Dolocerus reichii,1.4,Forest - Temperate,,,Suitable
+5119169,157659,Clytus lama,14.3,Artificial/Terrestrial - Plantations,,,Suitable
+5119169,157659,Clytus lama,1.4,Forest - Temperate,,,Suitable
+5119169,157659,Clytus lama,1.1,Forest - Boreal,Yes,,Suitable
+5126247,157692,Ampedus hjorti,1.4,Forest - Temperate,Yes,,Suitable
+5126672,157695,Lioderina linearis,14.4,Artificial/Terrestrial - Rural Gardens,,,Suitable
+5126672,157695,Lioderina linearis,17,Other,Yes,,Suitable
+5127501,157698,Ampedus coenobita,1.4,Forest - Temperate,,,Suitable
+5130390,157714,Pseudotriphyllus suturalis,1.4,Forest - Temperate,Yes,,Suitable
+5130390,157714,Pseudotriphyllus suturalis,17,Other,Yes,,Suitable
+5133820,157730,Grynocharis oblonga,1.4,Forest - Temperate,Yes,,Suitable
+5148186,157795,Clytus tropicus,1.4,Forest - Temperate,Yes,,Suitable
+5149054,157800,Ampedus cardinalis,1.4,Forest - Temperate,,,Marginal
+5149054,157800,Ampedus cardinalis,17,Other,Yes,,Suitable
+5149490,157802,Dacne notata,1.4,Forest - Temperate,,,Suitable
+5151090,157810,Ampedus melanurus,1.4,Forest - Temperate,Yes,,Suitable
+5158233,157847,Porthmidius gelineki,1.4,Forest - Temperate,,,Suitable
+5158380,157848,Ropalopus femoratus,3.4,Shrubland - Temperate,,,Marginal
+5158380,157848,Ropalopus femoratus,1.4,Forest - Temperate,Yes,,Suitable
+5158380,157848,Ropalopus femoratus,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+5165889,157886,Chlorophorus aegyptiacus,1.4,Forest - Temperate,Yes,,Suitable
+5169119,157901,Osmoderma barnabita,1.4,Forest - Temperate,Yes,,Suitable
+5169119,157901,Osmoderma barnabita,17,Other,Yes,,Suitable
+5171713,157914,Hylis cariniceps,1.4,Forest - Temperate,Yes,,Suitable
+5171713,157914,Hylis cariniceps,17,Other,Yes,,Suitable
+5175297,157928,Callimus abdominalis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+5175297,157928,Callimus abdominalis,1.4,Forest - Temperate,,,Suitable
+5358607,160251,Pontia daplidice,3.4,Shrubland - Temperate,,,Suitable
+5358607,160251,Pontia daplidice,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+5358607,160251,Pontia daplidice,4.4,Grassland - Temperate,,,Suitable
+5358607,160251,Pontia daplidice,8.2,Desert - Temperate,,,Suitable
+5364211,160360,Hipparchia statilinus,3.4,Shrubland - Temperate,Yes,,Suitable
+5364211,160360,Hipparchia statilinus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,,Suitable
+5364211,160360,Hipparchia statilinus,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,,Suitable
+5364211,160360,Hipparchia statilinus,1.4,Forest - Temperate,Yes,,Suitable
+5372859,160590,Erebia cassioides,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+5372859,160590,Erebia cassioides,4.4,Grassland - Temperate,,,Suitable
+5938416,164918,Purpuricenus globulicollis,1.4,Forest - Temperate,,,Suitable
+6022090,165463,Anax immaculifrons,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+6022090,165463,Anax immaculifrons,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+6022090,165463,Anax immaculifrons,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+6690609,169949,Scyllarus arctus,9.6,Marine Neritic - Subtidal Muddy,Yes,,Suitable
+6690609,169949,Scyllarus arctus,9.2,Marine Neritic - Subtidal Rock and Rocky Reefs,Yes,,Suitable
+6690609,169949,Scyllarus arctus,9.9,Marine Neritic - Seagrass (Submerged),Yes,,Suitable
+6698918,169983,Scyllarides latus,9.2,Marine Neritic - Subtidal Rock and Rocky Reefs,,,Suitable
+6722688,170056,Scyllarus pygmaeus,9.4,Marine Neritic - Subtidal Sandy,,,Suitable
+6722688,170056,Scyllarus pygmaeus,10.1,Marine Oceanic - Epipelagic (0-200m),,,Suitable
+6722688,170056,Scyllarus pygmaeus,9.9,Marine Neritic - Seagrass (Submerged),,,Suitable
+6974162,173209,Hipparchia fagi,1.4,Forest - Temperate,,,Suitable
+6974162,173209,Hipparchia fagi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+6974162,173209,Hipparchia fagi,4.4,Grassland - Temperate,,,Suitable
+6974668,173211,Lysandra coridon,3.4,Shrubland - Temperate,,,Suitable
+6974668,173211,Lysandra coridon,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+6974668,173211,Lysandra coridon,1.4,Forest - Temperate,,,Suitable
+6974668,173211,Lysandra coridon,4.4,Grassland - Temperate,,,Suitable
+6977611,173233,Hipparchia volgensis,3.4,Shrubland - Temperate,,,Suitable
+6977611,173233,Hipparchia volgensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+6977611,173233,Hipparchia volgensis,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+6977611,173233,Hipparchia volgensis,1.4,Forest - Temperate,,,Suitable
+6977611,173233,Hipparchia volgensis,4.4,Grassland - Temperate,,,Suitable
+6977748,173234,Erebia rhodopensis,1.4,Forest - Temperate,,,Suitable
+6977748,173234,Erebia rhodopensis,4.4,Grassland - Temperate,,,Suitable
+6979486,173246,Erebia oeme,3.4,Shrubland - Temperate,,,Suitable
+6979486,173246,Erebia oeme,4.4,Grassland - Temperate,,,Suitable
+6983131,173271,Polyommatus orphicus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+6983131,173271,Polyommatus orphicus,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+6983441,173273,Polyommatus eleniae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+6983441,173273,Polyommatus eleniae,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+6984697,173281,Coenonympha orientalis,1.4,Forest - Temperate,,,Suitable
+6984697,173281,Coenonympha orientalis,4.4,Grassland - Temperate,,,Suitable
+6985207,173284,Erebia epiphron,3.4,Shrubland - Temperate,,,Suitable
+6985207,173284,Erebia epiphron,4.4,Grassland - Temperate,,,Suitable
+6986657,173295,Polyommatus nephohiptamenos,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+6986821,173296,Coenonympha rhodopensis,4.4,Grassland - Temperate,,,Suitable
+6987579,173302,Pseudochazara orestes,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+6987579,173302,Pseudochazara orestes,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+6988820,173311,Polyommatus aroaniensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+6988820,173311,Polyommatus aroaniensis,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+6989024,173313,Pieris balcana,4.1,Grassland - Tundra,,,Suitable
+6989024,173313,Pieris balcana,4.2,Grassland - Subarctic,,,Suitable
+6989024,173313,Pieris balcana,14.4,Artificial/Terrestrial - Rural Gardens,,,Suitable
+6989024,173313,Pieris balcana,1.4,Forest - Temperate,,,Suitable
+6989024,173313,Pieris balcana,4.4,Grassland - Temperate,,,Suitable
+6989024,173313,Pieris balcana,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+6989024,173313,Pieris balcana,1.1,Forest - Boreal,,,Suitable
+6989024,173313,Pieris balcana,1.2,Forest - Subarctic,,,Suitable
+6989170,173314,Erebia melas,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+6989170,173314,Erebia melas,1.4,Forest - Temperate,,,Suitable
+6989170,173314,Erebia melas,4.4,Grassland - Temperate,,,Suitable
+8352663,185026,Polycheles typhlops,11.1,"Marine Deep Benthic - Continental Slope/Bathyl Zone (200-4,000m)",,,Suitable
+8352663,185026,Polycheles typhlops,11.1.2,Soft Substrate,,,Suitable
+8454057,185659,Platycnemis pennipes ssp. nitidula,18,Unknown,,,
+9338388,2191,Astacus astacus,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+9338388,2191,Astacus astacus,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Suitable
+9338388,2191,Astacus astacus,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+9338388,2191,Astacus astacus,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Suitable
+10228760,39486,Lycaena ottomana,3.4,Shrubland - Temperate,,,Unknown
+10228760,39486,Lycaena ottomana,1.4,Forest - Temperate,,,Unknown
+13309447,13304723,Colletes creticus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+13309507,13306742,Colletes hederae,3.4,Shrubland - Temperate,Yes,resident,Suitable
+13309507,13306742,Colletes hederae,4.4,Grassland - Temperate,,resident,Marginal
+13309507,13306742,Colletes hederae,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+13309507,13306742,Colletes hederae,14.5,Artificial/Terrestrial - Urban Areas,Yes,resident,Suitable
+13309607,13307748,Colletes standfussi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+13318550,13317994,Panurginus schwarzi,18,Unknown,,,
+13321504,13320156,Ceratina gravidula,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,,Suitable
+13321504,13320156,Ceratina gravidula,14.4,Artificial/Terrestrial - Rural Gardens,No,,Suitable
+13321552,13320615,Ceratina teunisseni,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,,Suitable
+13321552,13320615,Ceratina teunisseni,14.4,Artificial/Terrestrial - Rural Gardens,No,,Suitable
+13324673,13322492,Dasypoda frieseana,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,,Suitable
+13324689,13322514,Dasypoda pyriformis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,,Suitable
+13339970,13325451,Halictus centaureae,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,,Suitable
+13340046,13338039,Halictus holomelaenus,18,Unknown,,,
+13340050,13338042,Seladonia inpilosa,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,,Suitable
+13340078,13338089,Halictus lussinicus,18,Unknown,,,
+13340098,13338107,Halictus nicosiae,18,Unknown,,,
+13372703,165460,Lindenia tetraphylla,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+13372703,165460,Lindenia tetraphylla,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+13372703,165460,Lindenia tetraphylla,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+13372703,165460,Lindenia tetraphylla,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+13372703,165460,Lindenia tetraphylla,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),Yes,,Suitable
+13372703,165460,Lindenia tetraphylla,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",Yes,,Suitable
+13372703,165460,Lindenia tetraphylla,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+13372703,165460,Lindenia tetraphylla,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",Yes,,Suitable
+17046346,17046301,Dolichopoda remyi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+17046366,17046314,Dolichopoda hussoni,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+17533964,165506,Orthetrum taeniolatum,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+17533964,165506,Orthetrum taeniolatum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+17533964,165506,Orthetrum taeniolatum,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+17533964,165506,Orthetrum taeniolatum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+17533964,165506,Orthetrum taeniolatum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+17533964,165506,Orthetrum taeniolatum,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),No,,Suitable
+17537803,165471,Selysiothemis nigra,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",Yes,,Suitable
+17537803,165471,Selysiothemis nigra,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",Yes,,Suitable
+17537803,165471,Selysiothemis nigra,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",Yes,,Suitable
+17537803,165471,Selysiothemis nigra,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",Yes,,Suitable
+17537803,165471,Selysiothemis nigra,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+17537803,165471,Selysiothemis nigra,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+17537803,165471,Selysiothemis nigra,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+17537803,165471,Selysiothemis nigra,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),Yes,,Suitable
+17537803,165471,Selysiothemis nigra,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+17537803,165471,Selysiothemis nigra,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+17537803,165471,Selysiothemis nigra,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),Yes,,Suitable
+17537803,165471,Selysiothemis nigra,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Marginal
+17538409,60038,Sympetrum fonscolombii,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.13,Wetlands (inland) - Permanent Inland Deltas,Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Suitable
+17538409,60038,Sympetrum fonscolombii,15.5,Artificial/Aquatic - Excavations (open),,,Suitable
+17538409,60038,Sympetrum fonscolombii,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),,,Suitable
+17538409,60038,Sympetrum fonscolombii,15.8,Artificial/Aquatic - Seasonally Flooded Agricultural Land,,,Suitable
+17538409,60038,Sympetrum fonscolombii,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+17538409,60038,Sympetrum fonscolombii,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),Yes,,Suitable
+17538409,60038,Sympetrum fonscolombii,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+17891947,16084525,Oropodisma chelmosi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+17891947,16084525,Oropodisma chelmosi,4.4,Grassland - Temperate,Yes,resident,Suitable
+18053580,16084523,Oropodisma willemsei,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+18053580,16084523,Oropodisma willemsei,4.4,Grassland - Temperate,Yes,resident,Suitable
+18407506,16084420,Oropodisma karavica,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+18407506,16084420,Oropodisma karavica,4.4,Grassland - Temperate,Yes,resident,Suitable
+19152175,165489,Onychogomphus forcipatus,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,No,,Suitable
+19152175,165489,Onychogomphus forcipatus,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+19156286,165514,Brachytron pratense,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+19156286,165514,Brachytron pratense,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+19156286,165514,Brachytron pratense,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+19156286,165514,Brachytron pratense,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Marginal
+19156286,165514,Brachytron pratense,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+19156286,165514,Brachytron pratense,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Marginal
+19156286,165514,Brachytron pratense,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19156286,165514,Brachytron pratense,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,,,Marginal
+19156760,165467,Caliaeschna microstigma,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+19158182,165520,Coenagrion ornatum,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+19158182,165520,Coenagrion ornatum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+19158182,165520,Coenagrion ornatum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",Yes,,Suitable
+19158182,165520,Coenagrion ornatum,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+19158662,165484,Coenagrion pulchellum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+19158662,165484,Coenagrion pulchellum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+19158662,165484,Coenagrion pulchellum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+19158662,165484,Coenagrion pulchellum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+19158662,165484,Coenagrion pulchellum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19158662,165484,Coenagrion pulchellum,15.5,Artificial/Aquatic - Excavations (open),,,Marginal
+19158662,165484,Coenagrion pulchellum,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+19158662,165484,Coenagrion pulchellum,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,,,Marginal
+19159139,165502,Coenagrion scitulum,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+19159139,165502,Coenagrion scitulum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+19159139,165502,Coenagrion scitulum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+19159139,165502,Coenagrion scitulum,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,No,,Suitable
+19159139,165502,Coenagrion scitulum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+19159139,165502,Coenagrion scitulum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Marginal
+19159139,165502,Coenagrion scitulum,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+19159607,165478,Erythromma viridulum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+19159607,165478,Erythromma viridulum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+19159607,165478,Erythromma viridulum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Marginal
+19159607,165478,Erythromma viridulum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+19159607,165478,Erythromma viridulum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Marginal
+19159607,165478,Erythromma viridulum,15.5,Artificial/Aquatic - Excavations (open),,,Marginal
+19159607,165478,Erythromma viridulum,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19159607,165478,Erythromma viridulum,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,,,Marginal
+19159607,165478,Erythromma viridulum,13.5,Marine Coastal/Supratidal - Coastal Freshwater Lakes,No,,Suitable
+19159607,165478,Erythromma viridulum,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,No,,Suitable
+19159607,165478,Erythromma viridulum,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",No,,Suitable
+19159607,165478,Erythromma viridulum,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+19160047,165525,Ischnura pumilio,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+19160047,165525,Ischnura pumilio,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+19160047,165525,Ischnura pumilio,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",No,,Suitable
+19160047,165525,Ischnura pumilio,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+19160047,165525,Ischnura pumilio,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+19160047,165525,Ischnura pumilio,5.9,Wetlands (inland) - Freshwater Springs and Oases,No,,Suitable
+19160047,165525,Ischnura pumilio,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+19160047,165525,Ischnura pumilio,15.5,Artificial/Aquatic - Excavations (open),Yes,,Suitable
+19160047,165525,Ischnura pumilio,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),No,,Suitable
+19160047,165525,Ischnura pumilio,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",Yes,,Suitable
+19160047,165525,Ischnura pumilio,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+19160047,165525,Ischnura pumilio,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+19160047,165525,Ischnura pumilio,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),Yes,,Suitable
+19160047,165525,Ischnura pumilio,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+19160047,165525,Ischnura pumilio,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+19160047,165525,Ischnura pumilio,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",No,,Suitable
+19160630,165500,Pyrrhosoma nymphula,5.11,Wetlands (inland) - Alpine Wetlands (includes temporary waters from snowmelt),No,,Suitable
+19160630,165500,Pyrrhosoma nymphula,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+19160630,165500,Pyrrhosoma nymphula,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19160630,165500,Pyrrhosoma nymphula,15.3,Artificial/Aquatic - Aquaculture Ponds,No,,Suitable
+19160630,165500,Pyrrhosoma nymphula,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+19160630,165500,Pyrrhosoma nymphula,15.6,Artificial/Aquatic - Wastewater Treatment Areas,,,Marginal
+19160630,165500,Pyrrhosoma nymphula,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),,,Marginal
+19160630,165500,Pyrrhosoma nymphula,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19160630,165500,Pyrrhosoma nymphula,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+19160630,165500,Pyrrhosoma nymphula,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Marginal
+19160630,165500,Pyrrhosoma nymphula,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+19160630,165500,Pyrrhosoma nymphula,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+19160630,165500,Pyrrhosoma nymphula,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19160630,165500,Pyrrhosoma nymphula,5.9,Wetlands (inland) - Freshwater Springs and Oases,No,,Suitable
+19161110,165507,Cordulegaster insignis,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+19161110,165507,Cordulegaster insignis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+19161110,165507,Cordulegaster insignis,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19161110,165507,Cordulegaster insignis,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+19161436,165526,Cordulegaster picta,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+19161436,165526,Cordulegaster picta,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+19161728,165485,Somatochlora flavomaculata,5.10,Wetlands (inland) - Tundra Wetlands (incl. pools and temporary waters from snowmelt),,,Marginal
+19161728,165485,Somatochlora flavomaculata,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Marginal
+19161728,165485,Somatochlora flavomaculata,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+19161728,165485,Somatochlora flavomaculata,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+19161728,165485,Somatochlora flavomaculata,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+19161728,165485,Somatochlora flavomaculata,5.3,Wetlands (inland) - Shrub Dominated Wetlands,No,,Suitable
+19161728,165485,Somatochlora flavomaculata,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+19161728,165485,Somatochlora flavomaculata,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19161728,165485,Somatochlora flavomaculata,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+19161728,165485,Somatochlora flavomaculata,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19162182,165494,Somatochlora meridionalis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+19162182,165494,Somatochlora meridionalis,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+19162182,165494,Somatochlora meridionalis,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Marginal
+19162580,165515,Epallage fatime,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+19162847,165466,Stylurus flavipes,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+19162847,165466,Stylurus flavipes,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19162847,165466,Stylurus flavipes,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),No,,Suitable
+19163708,165523,Gomphus vulgatissimus,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+19163708,165523,Gomphus vulgatissimus,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+19163708,165523,Gomphus vulgatissimus,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+19163708,165523,Gomphus vulgatissimus,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19163708,165523,Gomphus vulgatissimus,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),No,,Suitable
+19164635,165480,Lestes macrostigma,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",Yes,,Suitable
+19164635,165480,Lestes macrostigma,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+19164635,165480,Lestes macrostigma,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,Yes,,Suitable
+19164635,165480,Lestes macrostigma,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",Yes,,Suitable
+19164635,165480,Lestes macrostigma,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",No,,Suitable
+19164635,165480,Lestes macrostigma,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Unknown
+19164635,165480,Lestes macrostigma,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Unknown
+19164635,165480,Lestes macrostigma,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Unknown
+19164635,165480,Lestes macrostigma,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Unknown
+19164635,165480,Lestes macrostigma,13.5,Marine Coastal/Supratidal - Coastal Freshwater Lakes,,,Marginal
+19165141,165493,Chalcolestes parvidens,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+19165141,165493,Chalcolestes parvidens,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19165141,165493,Chalcolestes parvidens,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Marginal
+19165141,165493,Chalcolestes parvidens,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),,,Marginal
+19165141,165493,Chalcolestes parvidens,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Marginal
+19165141,165493,Chalcolestes parvidens,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+19165141,165493,Chalcolestes parvidens,5.3,Wetlands (inland) - Shrub Dominated Wetlands,Yes,,Suitable
+19165141,165493,Chalcolestes parvidens,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+19165141,165493,Chalcolestes parvidens,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+19165141,165493,Chalcolestes parvidens,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Marginal
+19165141,165493,Chalcolestes parvidens,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19165141,165493,Chalcolestes parvidens,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Marginal
+19165141,165493,Chalcolestes parvidens,5.13,Wetlands (inland) - Permanent Inland Deltas,No,,Suitable
+19165578,165475,Lestes sponsa,5.11,Wetlands (inland) - Alpine Wetlands (includes temporary waters from snowmelt),No,,Suitable
+19165578,165475,Lestes sponsa,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19165578,165475,Lestes sponsa,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19165578,165475,Lestes sponsa,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),No,,Suitable
+19165578,165475,Lestes sponsa,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+19165578,165475,Lestes sponsa,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+19165578,165475,Lestes sponsa,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Marginal
+19165578,165475,Lestes sponsa,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+19165578,165475,Lestes sponsa,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19165578,165475,Lestes sponsa,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+19165578,165475,Lestes sponsa,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19165578,165475,Lestes sponsa,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,,,Marginal
+19166030,165492,Lestes virens,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+19166030,165492,Lestes virens,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19166030,165492,Lestes virens,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19166030,165492,Lestes virens,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),No,,Suitable
+19166030,165492,Lestes virens,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+19166030,165492,Lestes virens,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+19166030,165492,Lestes virens,5.3,Wetlands (inland) - Shrub Dominated Wetlands,No,,Suitable
+19166030,165492,Lestes virens,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19166030,165492,Lestes virens,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+19166030,165492,Lestes virens,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19166030,165492,Lestes virens,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,No,,Suitable
+19167508,165531,Libellula depressa,5.11,Wetlands (inland) - Alpine Wetlands (includes temporary waters from snowmelt),,,Marginal
+19167508,165531,Libellula depressa,5.9,Wetlands (inland) - Freshwater Springs and Oases,,,Marginal
+19167508,165531,Libellula depressa,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19167508,165531,Libellula depressa,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19167508,165531,Libellula depressa,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,,,Marginal
+19167508,165531,Libellula depressa,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),No,,Suitable
+19167508,165531,Libellula depressa,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19167508,165531,Libellula depressa,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Marginal
+19167508,165531,Libellula depressa,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+19167508,165531,Libellula depressa,15.6,Artificial/Aquatic - Wastewater Treatment Areas,,,Marginal
+19167508,165531,Libellula depressa,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+19167508,165531,Libellula depressa,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+19167508,165531,Libellula depressa,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,No,,Suitable
+19167508,165531,Libellula depressa,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Marginal
+19167508,165531,Libellula depressa,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+19167508,165531,Libellula depressa,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+19167508,165531,Libellula depressa,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),No,,Suitable
+19168031,165496,Libellula fulva,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19168031,165496,Libellula fulva,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+19168031,165496,Libellula fulva,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+19168031,165496,Libellula fulva,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+19168031,165496,Libellula fulva,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",Yes,,Suitable
+19168031,165496,Libellula fulva,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+19168031,165496,Libellula fulva,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19169192,165510,Sympetrum meridionale,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+19169192,165510,Sympetrum meridionale,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+19169192,165510,Sympetrum meridionale,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Marginal
+19169192,165510,Sympetrum meridionale,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+19169192,165510,Sympetrum meridionale,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Marginal
+19169192,165510,Sympetrum meridionale,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),No,,Suitable
+19169192,165510,Sympetrum meridionale,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19169192,165510,Sympetrum meridionale,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+19169192,165510,Sympetrum meridionale,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+19169192,165510,Sympetrum meridionale,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+19169192,165510,Sympetrum meridionale,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),No,,Suitable
+19169192,165510,Sympetrum meridionale,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19169192,165510,Sympetrum meridionale,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19169192,165510,Sympetrum meridionale,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",No,,Suitable
+19169192,165510,Sympetrum meridionale,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",No,,Suitable
+19170001,165464,Sympetrum pedemontanum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19170001,165464,Sympetrum pedemontanum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Marginal
+19170001,165464,Sympetrum pedemontanum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+19170001,165464,Sympetrum pedemontanum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19170001,165464,Sympetrum pedemontanum,15.8,Artificial/Aquatic - Seasonally Flooded Agricultural Land,No,,Suitable
+19170001,165464,Sympetrum pedemontanum,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),No,,Suitable
+19170001,165464,Sympetrum pedemontanum,15.5,Artificial/Aquatic - Excavations (open),,,Marginal
+19170001,165464,Sympetrum pedemontanum,15.3,Artificial/Aquatic - Aquaculture Ponds,No,,Suitable
+19170001,165464,Sympetrum pedemontanum,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19170436,165483,Sympetrum vulgatum,5.11,Wetlands (inland) - Alpine Wetlands (includes temporary waters from snowmelt),,,Marginal
+19170436,165483,Sympetrum vulgatum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+19170436,165483,Sympetrum vulgatum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+19170436,165483,Sympetrum vulgatum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+19170436,165483,Sympetrum vulgatum,5.3,Wetlands (inland) - Shrub Dominated Wetlands,No,,Suitable
+19170436,165483,Sympetrum vulgatum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+19170436,165483,Sympetrum vulgatum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+19170436,165483,Sympetrum vulgatum,15.6,Artificial/Aquatic - Wastewater Treatment Areas,,,Marginal
+19170436,165483,Sympetrum vulgatum,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+19170436,165483,Sympetrum vulgatum,15.3,Artificial/Aquatic - Aquaculture Ponds,No,,Suitable
+19170436,165483,Sympetrum vulgatum,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+19170436,165483,Sympetrum vulgatum,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+19201320,19198562,Andrena olympica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Marginal
+19201445,19199351,Andrena pellucens,4.4,Grassland - Temperate,Yes,resident,Suitable
+19201445,19199351,Andrena pellucens,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+19201450,19199069,Andrena pelopa,17,Other,,resident,Unknown
+19201560,19199036,Andrena resoluta,18,Unknown,,resident,Suitable
+19201655,19199760,Andrena sandanskia,18,Unknown,,resident,Suitable
+19201795,19198587,Andrena standfussorum,4.4,Grassland - Temperate,Yes,resident,Suitable
+19201795,19198587,Andrena standfussorum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+19201930,19199004,Andrena trikalensis,18,Unknown,,resident,Suitable
+19880276,19199477,Hylaeus adriaticus,18,Unknown,,,
+19880296,19199021,Hylaeus alpinus,18,Unknown,,,
+19881506,19199323,Hylaeus deceptorius,18,Unknown,,,
+19881571,19199231,Hylaeus friesei,18,Unknown,,,
+19881752,19199804,Hylaeus hellenicus,18,Unknown,,,
+19881804,19199207,Hylaeus hyperpunctatus,18,Unknown,,,
+19881954,19199635,Hylaeus koenigsmanni,18,Unknown,,,
+19882034,19199942,Hylaeus milossus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+19882049,19198899,Hylaeus nivaliformis,18,Unknown,,,
+19882091,19198613,Hylaeus pictus,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,resident,Suitable
+21145588,19199398,Epeolus cruciger,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+21145588,19199398,Epeolus cruciger,3.4,Shrubland - Temperate,Yes,resident,Suitable
+21145697,19199127,Epeolus productulus,4.4,Grassland - Temperate,Yes,resident,Suitable
+21145697,19199127,Epeolus productulus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+21145697,19199127,Epeolus productulus,17,Other,Yes,resident,Suitable
+21145860,19198984,Epeolus sigillatus,18,Unknown,,,Suitable
+21152184,19199003,Chelostoma grande,1.4,Forest - Temperate,Yes,resident,Suitable
+21152184,19199003,Chelostoma grande,4.4,Grassland - Temperate,Yes,resident,Suitable
+21152247,19199770,Chelostoma hellenicum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21152252,19198822,Chelostoma laticaudum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21153573,19199179,Hoplitis cretaea,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21153678,19198606,Hoplitis fabrei,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21153856,19199563,Hoplitis graeca,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21154133,19199033,Hoplitis holmboei,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21154657,19198429,Hoplitis parnesica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21154906,19199889,Osmia ariadne,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21156032,19199847,Osmia mirhiji,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21156038,19199916,Osmia moreensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21308952,19199797,Andrena bucephala,1.4,Forest - Temperate,Yes,resident,Suitable
+21308952,19199797,Andrena bucephala,4.4,Grassland - Temperate,Yes,resident,Suitable
+21308952,19199797,Andrena bucephala,14.5,Artificial/Terrestrial - Urban Areas,Yes,resident,Suitable
+21308952,19199797,Andrena bucephala,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+21308952,19199797,Andrena bucephala,14.3,Artificial/Terrestrial - Plantations,Yes,resident,Suitable
+21308952,19199797,Andrena bucephala,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+21308952,19199797,Andrena bucephala,15.5,Artificial/Aquatic - Excavations (open),Yes,resident,Suitable
+21309371,19198545,Andrena curvana,4.4,Grassland - Temperate,Yes,resident,Suitable
+21309808,19199528,Andrena fimbriata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21310215,19198660,Andrena fulva,1.4,Forest - Temperate,Yes,resident,Suitable
+21310215,19198660,Andrena fulva,4.4,Grassland - Temperate,Yes,resident,Suitable
+21310215,19198660,Andrena fulva,14.3,Artificial/Terrestrial - Plantations,Yes,resident,Suitable
+21310215,19198660,Andrena fulva,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+21310215,19198660,Andrena fulva,14.5,Artificial/Terrestrial - Urban Areas,Yes,resident,Suitable
+21310568,19199537,Andrena graecella,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+21460409,19199900,Nomada ariasi,18,Unknown,,,
+21460415,19199100,Nomada armata,4.4,Grassland - Temperate,Yes,resident,Suitable
+21460415,19199100,Nomada armata,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,resident,Suitable
+21460421,19199559,Nomada arrogans,18,Unknown,,,
+21460427,19199092,Nomada atroscutellaris,4.4,Grassland - Temperate,Yes,breeding,Suitable
+21460442,19199440,Nomada baccata,3.4,Shrubland - Temperate,Yes,breeding,Suitable
+21460442,19199440,Nomada baccata,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,breeding,Suitable
+21460589,19199394,Nomada bluethgeni,4.4,Grassland - Temperate,Yes,resident,Suitable
+21460679,19198699,Nomada corcyraea,18,Unknown,,,
+21460803,19199510,Nomada fabriciana,17,Other,Yes,resident,Suitable
+21460803,19199510,Nomada fabriciana,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+21461370,19199584,Nomada flava,4.4,Grassland - Temperate,Yes,resident,Suitable
+21461370,19199584,Nomada flava,3.4,Shrubland - Temperate,Yes,resident,Suitable
+21461370,19199584,Nomada flava,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+21461370,19199584,Nomada flava,1.4,Forest - Temperate,Yes,resident,Suitable
+21461370,19199584,Nomada flava,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,resident,Marginal
+21461370,19199584,Nomada flava,17,Other,Yes,resident,Suitable
+21461370,19199584,Nomada flava,14.5,Artificial/Terrestrial - Urban Areas,Yes,resident,Suitable
+21461772,19198560,Nomada gruenwaldti,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+21461772,19198560,Nomada gruenwaldti,17,Other,Yes,resident,Suitable
+21461824,19199437,Nomada hirtipes,4.4,Grassland - Temperate,Yes,resident,Suitable
+21461824,19199437,Nomada hirtipes,3.4,Shrubland - Temperate,Yes,resident,Suitable
+21461998,19198772,Nomada kornosica,18,Unknown,,,Suitable
+21462202,19198703,Nomada nesiotica,18,Unknown,,,
+21462359,19199761,Nomada piccioliana,4.4,Grassland - Temperate,Yes,resident,Suitable
+21462412,19199805,Nomada priesneri,4.4,Grassland - Temperate,Yes,resident,Suitable
+21462599,19199825,Nomada similis,1.4,Forest - Temperate,Yes,breeding,Suitable
+21462599,19199825,Nomada similis,4.4,Grassland - Temperate,Yes,breeding,Suitable
+21462599,19199825,Nomada similis,3.4,Shrubland - Temperate,Yes,breeding,Suitable
+21462599,19199825,Nomada similis,17,Other,Yes,breeding,Suitable
+21462605,19199755,Nomada standfussi,18,Unknown,,resident,Suitable
+21462908,19198806,Nomada verna,18,Unknown,Yes,resident,Suitable
+21462927,19198359,Habropoda ezonata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21768540,19199572,Anthophora dalmatica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+42461359,42428291,Atyaephyra strymonensis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,resident,Suitable
+42461459,42428293,Atyaephyra thyamisensis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,resident,Suitable
+42463679,42463645,Nomada cretensis,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+42463679,42463645,Nomada cretensis,14.3,Artificial/Terrestrial - Plantations,Yes,resident,Suitable
+42610428,59774,Somatochlora borisi,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+42610428,59774,Somatochlora borisi,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+42645306,165529,Chalcolestes viridis,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+42645306,165529,Chalcolestes viridis,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+42645306,165529,Chalcolestes viridis,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+42645306,165529,Chalcolestes viridis,5.3,Wetlands (inland) - Shrub Dominated Wetlands,No,,Suitable
+42645306,165529,Chalcolestes viridis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+42645306,165529,Chalcolestes viridis,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+42645306,165529,Chalcolestes viridis,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+42645306,165529,Chalcolestes viridis,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Marginal
+42645306,165529,Chalcolestes viridis,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+42645306,165529,Chalcolestes viridis,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),No,,Suitable
+43114098,19198726,Andrena grossella,3.4,Shrubland - Temperate,Yes,resident,Suitable
+43359222,19198281,Dufourea alpina,4.4,Grassland - Temperate,Yes,resident,Suitable
+43359222,19198281,Dufourea alpina,3.4,Shrubland - Temperate,Yes,resident,Suitable
+43362715,19199800,Dufourea iris,18,Unknown,,,Suitable
+43362782,19198809,Dufourea styx,18,Unknown,,,Suitable
+43362836,19199771,Rophites hellenicus,18,Unknown,,,Suitable
+43362861,54527148,Rhophitoides epiroticus,18,Unknown,,,Suitable
+43364151,19198862,Lasioglossum minutulum,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+43364151,19198862,Lasioglossum minutulum,4.4,Grassland - Temperate,Yes,resident,Suitable
+43364151,19198862,Lasioglossum minutulum,3.4,Shrubland - Temperate,Yes,resident,Suitable
+43364336,19199151,Lasioglossum lissonotum,4.4,Grassland - Temperate,Yes,resident,Suitable
+43364336,19199151,Lasioglossum lissonotum,3.4,Shrubland - Temperate,Yes,resident,Suitable
+43364385,19199403,Lasioglossum leucomontanum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43365120,19199238,Lasioglossum eurasicum,4.4,Grassland - Temperate,Yes,resident,Suitable
+43365856,19199413,Lasioglossum breviventre,1.4,Forest - Temperate,Yes,resident,Suitable
+43365856,19199413,Lasioglossum breviventre,4.4,Grassland - Temperate,Yes,resident,Suitable
+43365856,19199413,Lasioglossum breviventre,3.4,Shrubland - Temperate,Yes,resident,Suitable
+43365951,19198444,Lasioglossum bavaricum,4.4,Grassland - Temperate,Yes,resident,Suitable
+43365951,19198444,Lasioglossum bavaricum,17,Other,Yes,resident,Suitable
+43365979,19199243,Lasioglossum ariadne,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43365979,19199243,Lasioglossum ariadne,4.4,Grassland - Temperate,Yes,resident,Suitable
+43366115,19198672,Lasioglossum alpigenum,4.4,Grassland - Temperate,Yes,resident,Suitable
+43366115,19198672,Lasioglossum alpigenum,17,Other,Yes,resident,Suitable
+43509253,19199653,Andrena chelma,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43509282,19199240,Andrena concinna,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+43509688,21138032,Andrena ebmerella,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43509986,19199759,Andrena helenica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43510070,19199169,Andrena illyrica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+43510449,19199209,Andrena montana,4.4,Grassland - Temperate,,resident,Unknown
+43510449,19199209,Andrena montana,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,resident,Unknown
+43510449,19199209,Andrena montana,5.11,Wetlands (inland) - Alpine Wetlands (includes temporary waters from snowmelt),,resident,Unknown
+43510449,19199209,Andrena montana,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Unknown
+43510530,19198891,Andrena muscaria,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43510570,19199467,Andrena neovirida,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Suitable
+43959301,157814,Anaglyptus luteofasciatus,1.4,Forest - Temperate,Yes,resident,Suitable
+43959900,157893,Anaglyptus praecellens,1.4,Forest - Temperate,Yes,resident,Suitable
+43992674,157706,Delagrangeus angustissimus,1.4,Forest - Temperate,Yes,resident,Suitable
+43996816,157864,Isotomus jarmilae,1.4,Forest - Temperate,Yes,resident,Suitable
+44109677,157930,Ampedus canaliculatus,1.4,Forest - Temperate,Yes,resident,Suitable
+44113885,157668,Ampedus karneri,1.4,Forest - Temperate,,,Suitable
+44114151,157643,Ampedus macedonicus,18,Unknown,,,
+44114577,157495,Ampedus minos,18,Unknown,,,
+44147387,157805,Stenagostus zuercheri,18,Unknown,,,
+44149210,157759,Procraerus cretensis,18,Unknown,,unknown,Unknown
+44151187,157743,Lacon kapleri,18,Unknown,,unknown,Unknown
+44151322,157740,Lacon graecus,1.4,Forest - Temperate,,unknown,Unknown
+44189128,165907,Clinidium canaliculatum,1.4,Forest - Temperate,,,Suitable
+44190131,157934,Seidlitzella procera,1.4,Forest - Temperate,,,Suitable
+44257011,157767,Brachygonus gratiosus,17,Other,Yes,,Suitable
+44257011,157767,Brachygonus gratiosus,1.4,Forest - Temperate,,,Suitable
+44257011,157767,Brachygonus gratiosus,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+44798476,44793247,Mantis religiosa,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Suitable
+44798476,44793247,Mantis religiosa,3.5,Shrubland - Subtropical/Tropical Dry,,resident,Suitable
+44798476,44793247,Mantis religiosa,3.4,Shrubland - Temperate,,resident,Suitable
+44798476,44793247,Mantis religiosa,2.1,Savanna - Dry,,resident,Suitable
+44798476,44793247,Mantis religiosa,14.1,Artificial/Terrestrial - Arable Land,,resident,Marginal
+44798476,44793247,Mantis religiosa,4.4,Grassland - Temperate,,resident,Marginal
+44798476,44793247,Mantis religiosa,4.5,Grassland - Subtropical/Tropical Dry,,resident,Suitable
+44798476,44793247,Mantis religiosa,8.2,Desert - Temperate,,resident,Marginal
+44798476,44793247,Mantis religiosa,14.2,Artificial/Terrestrial - Pastureland,,resident,Marginal
+44798476,44793247,Mantis religiosa,14.4,Artificial/Terrestrial - Rural Gardens,,resident,Suitable
+44830029,44710554,Bradyporus macrogaster,1.5,Forest - Subtropical/Tropical Dry,Yes,resident,Suitable
+44830029,44710554,Bradyporus macrogaster,3.5,Shrubland - Subtropical/Tropical Dry,Yes,resident,Suitable
+44830029,44710554,Bradyporus macrogaster,4.4,Grassland - Temperate,Yes,resident,Suitable
+45462306,45462302,Eupholidoptera cephalonica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45462306,45462302,Eupholidoptera cephalonica,14.4,Artificial/Terrestrial - Rural Gardens,No,resident,Suitable
+45462306,45462302,Eupholidoptera cephalonica,4.4,Grassland - Temperate,No,resident,Suitable
+45462379,45462354,Eupholidoptera epirotica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45462379,45462354,Eupholidoptera epirotica,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45462578,45462525,Eupholidoptera leucasi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45462686,45462624,Eupholidoptera megastyla,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463162,45463146,Eupholidoptera uvarovi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463215,45463212,Eupholidoptera forcipata,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45463226,45463223,Eupholidoptera icariensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463236,45463233,Eupholidoptera jacquelinae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463253,45463250,Eupholidoptera kykladica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463288,45463281,Eupholidoptera spinigera,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463334,45463331,Eupholidoptera annamariae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463431,45463340,Eupholidoptera astyla,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45463466,45463463,Eupholidoptera feri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463477,45463473,Eupholidoptera giuliae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463496,45463493,Eupholidoptera latens,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463496,45463493,Eupholidoptera latens,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45463505,45463502,Eupholidoptera mariannae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463505,45463502,Eupholidoptera mariannae,14.3,Artificial/Terrestrial - Plantations,,resident,Unknown
+45463514,45463511,Poecilimon amissus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45466681,45466678,Poecilimon pindos,4.4,Grassland - Temperate,Yes,resident,Suitable
+45466681,45466678,Poecilimon pindos,3.4,Shrubland - Temperate,,resident,Marginal
+45466739,45466730,Poecilimon sanctipauli,3.4,Shrubland - Temperate,,,
+45466762,45466759,Poecilimon ege,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Suitable
+45510337,45466776,Poecilimon hamatus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45510361,45466791,Poecilimon unispinosus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45811388,157538,Pseudosphegesthes bergeri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45811388,157538,Pseudosphegesthes bergeri,1.4,Forest - Temperate,Yes,resident,Suitable
+45812578,157568,Purpuricenus desfontainii,1.4,Forest - Temperate,Yes,resident,Suitable
+45812940,157493,Purpuricenus graecus,1.4,Forest - Temperate,Yes,resident,Suitable
+45812940,157493,Purpuricenus graecus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45823223,157825,Stenopterus atricornis,1.4,Forest - Temperate,Yes,resident,Suitable
+45823371,157798,Stenopterus creticus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45826874,157771,Trichoferus bergeri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+46440146,13340340,Bombus cryptarum,4.4,Grassland - Temperate,Yes,,Suitable
+46440146,13340340,Bombus cryptarum,3.4,Shrubland - Temperate,Yes,,Suitable
+46440146,13340340,Bombus cryptarum,3.3,Shrubland - Boreal,Yes,,Suitable
+46440146,13340340,Bombus cryptarum,14.4,Artificial/Terrestrial - Rural Gardens,No,,Suitable
+46440146,13340340,Bombus cryptarum,14.5,Artificial/Terrestrial - Urban Areas,No,,Suitable
+47350001,47262019,Ampedus cretensis,1.4,Forest - Temperate,,resident,Suitable
+47350709,47262622,Ampedus vignai,18,Unknown,,unknown,Unknown
+47353318,47263254,Elater asmodaius,18,Unknown,,,Suitable
+47353433,47264405,Melanotus sulcicollis,1.4,Forest - Temperate,,resident,Suitable
+47353453,47265114,Podeonius subcyaneus,18,Unknown,,unknown,Unknown
+47688354,47260954,Enoplium doderoi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+47694399,47173828,Chlorophorus gratiosus,1.4,Forest - Temperate,Yes,resident,Suitable
+47694405,47173830,Chlorophorus nivipictus,1.4,Forest - Temperate,Yes,resident,Suitable
+47695901,47251945,Trichoferus kotschyi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+47708524,17182027,Poecilimon ikariensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+47708697,17181950,Poecilimon deplanatus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+47713900,15431178,Acrotylus patruelis,8.1,Desert - Hot,No,resident,Suitable
+47713900,15431178,Acrotylus patruelis,4.5,Grassland - Subtropical/Tropical Dry,Yes,resident,Suitable
+47713900,15431178,Acrotylus patruelis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,No,resident,Suitable
+47713900,15431178,Acrotylus patruelis,2.1,Savanna - Dry,Yes,resident,Suitable
+47713900,15431178,Acrotylus patruelis,14.2,Artificial/Terrestrial - Pastureland,No,resident,Suitable
+47713900,15431178,Acrotylus patruelis,14.1,Artificial/Terrestrial - Arable Land,No,resident,Suitable
+47713900,15431178,Acrotylus patruelis,14.4,Artificial/Terrestrial - Rural Gardens,No,resident,Suitable
+47713900,15431178,Acrotylus patruelis,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,No,resident,Suitable
+47713900,15431178,Acrotylus patruelis,8.2,Desert - Temperate,No,resident,Suitable
+47726171,17182043,Poecilimon klausgerhardi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+47995776,47981994,Sphecodes combai,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+47995800,47981998,Sphecodes creticus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+48031475,47943578,Agoliinus pittinoi,4.4,Grassland - Temperate,,resident,Suitable
+48031485,47943583,Agrilinus ibericus,1.4,Forest - Temperate,,resident,Suitable
+48031485,47943583,Agrilinus ibericus,4.4,Grassland - Temperate,,resident,Suitable
+48031485,47943583,Agrilinus ibericus,3.4,Shrubland - Temperate,,resident,Suitable
+48031680,47943887,Chilothorax lineolatus,1.4,Forest - Temperate,,resident,Marginal
+48031680,47943887,Chilothorax lineolatus,4.4,Grassland - Temperate,,resident,Suitable
+48031680,47943887,Chilothorax lineolatus,3.4,Shrubland - Temperate,,resident,Suitable
+48031800,47944151,Melinopterus stolzi,4.4,Grassland - Temperate,,resident,Suitable
+48031890,47944402,Nobius rhodiensis,18,Unknown,,,Suitable
+48031965,47944617,Pseudacrossus suffertus,4.4,Grassland - Temperate,,resident,Suitable
+48032052,47945259,Paracoptochirus kozanensis,4.4,Grassland - Temperate,,resident,Suitable
+48032057,47945314,Paracoptochirus singularis,4.4,Grassland - Temperate,,resident,Suitable
+48032062,47945322,Paracoptochirus vignai,4.4,Grassland - Temperate,,resident,Suitable
+48032077,47945671,Aphodius ghardimaouensis,4.4,Grassland - Temperate,,resident,Suitable
+48032077,47945671,Aphodius ghardimaouensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Marginal
+48037496,47416963,Trypocopris amedei,4.4,Grassland - Temperate,Yes,resident,Suitable
+48037506,47416976,Lethrus rotundicollis,4.4,Grassland - Temperate,Yes,resident,Suitable
+48037651,47942106,Lethrus fallax,17,Other,Yes,,Suitable
+48594666,47268032,Bubas bison,4.4,Grassland - Temperate,Yes,resident,Suitable
+48594666,47268032,Bubas bison,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+48594671,47268143,Bubas bubaloides,4.4,Grassland - Temperate,,resident,
+48594671,47268143,Bubas bubaloides,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,
+48594681,47268179,Cheironitis furcifer,4.4,Grassland - Temperate,,resident,Suitable
+48594681,47268179,Cheironitis furcifer,14.2,Artificial/Terrestrial - Pastureland,,resident,Suitable
+48594691,47267970,Copris umbilicatus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Suitable
+48594691,47267970,Copris umbilicatus,14.2,Artificial/Terrestrial - Pastureland,,resident,
+48594756,47414313,Onthophagus dellacasai,1.4,Forest - Temperate,,,Suitable
+48594756,47414313,Onthophagus dellacasai,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+48594756,47414313,Onthophagus dellacasai,4.4,Grassland - Temperate,,resident,Suitable
+48594816,47414331,Onthophagus opacicollis,1.4,Forest - Temperate,,,Suitable
+48594816,47414331,Onthophagus opacicollis,4.4,Grassland - Temperate,,,Suitable
+48594816,47414331,Onthophagus opacicollis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+48594831,47414335,Onthophagus sericatus,4.4,Grassland - Temperate,,,Suitable
+48594876,47415088,Ateuchetus variolosus,4.4,Grassland - Temperate,,,
+48635590,48635233,Ammobates melectoides,4.5,Grassland - Subtropical/Tropical Dry,Yes,resident,Suitable
+48635590,48635233,Ammobates melectoides,4.4,Grassland - Temperate,Yes,resident,Suitable
+48635590,48635233,Ammobates melectoides,3.5,Shrubland - Subtropical/Tropical Dry,Yes,resident,Suitable
+48635590,48635233,Ammobates melectoides,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+50137978,19199706,Megachile cressa,18,Unknown,,unknown,Unknown
+50141970,19199035,Megachile parietina,4.4,Grassland - Temperate,Yes,resident,Suitable
+50142315,19198600,Megachile roeweri,18,Unknown,,unknown,Unknown
+50142482,19198908,Megachile semicircularis,18,Unknown,,unknown,Unknown
+50986440,137728,Onthophagus panici,4.4,Grassland - Temperate,,,Suitable
+53713070,173274,Kretania psylorita,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+53713991,174239,Turanana taygetica,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+53713991,174239,Turanana taygetica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+53714375,173287,Hipparchia cretica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+53719556,174466,Hipparchia mersina,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+53719703,174397,Maniola megala,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+53720029,174183,Leptidea reali,4.4,Grassland - Temperate,,,Suitable
+53720029,174183,Leptidea reali,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+53720029,174183,Leptidea reali,3.4,Shrubland - Temperate,,,Suitable
+53930542,53925670,Epeolus transitorius,4.4,Grassland - Temperate,Yes,resident,Suitable
+53930542,53925670,Epeolus transitorius,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+53930542,53925670,Epeolus transitorius,17,Other,Yes,resident,Suitable
+56178679,20633459,Conocephalus conocephalus,17,Other,Yes,resident,Suitable
+56178679,20633459,Conocephalus conocephalus,16,Introduced vegetation,Yes,resident,Suitable
+56178679,20633459,Conocephalus conocephalus,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+56178679,20633459,Conocephalus conocephalus,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+56178679,20633459,Conocephalus conocephalus,14.1,Artificial/Terrestrial - Arable Land,Yes,resident,Suitable
+57368909,18528992,Bombus pyrenaeus,4.4,Grassland - Temperate,Yes,,Suitable
+57368909,18528992,Bombus pyrenaeus,3.4,Shrubland - Temperate,Yes,,Suitable
+64557835,173214,Coenonympha thyrsis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+64563270,173305,Hipparchia christenseni,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+64809060,173252,Maniola chia,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+64821523,173225,Pseudochazara graeca,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+64823983,173219,Zerynthia cretica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+65818523,59971,Pantala flavescens,2.1,Savanna - Dry,No,,Suitable
+65818523,59971,Pantala flavescens,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+65818523,59971,Pantala flavescens,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),Yes,,Suitable
+65818523,59971,Pantala flavescens,3.6,Shrubland - Subtropical/Tropical Moist,,,Marginal
+65818523,59971,Pantala flavescens,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+65818523,59971,Pantala flavescens,5.9,Wetlands (inland) - Freshwater Springs and Oases,,,Marginal
+65818523,59971,Pantala flavescens,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+65818523,59971,Pantala flavescens,2.2,Savanna - Moist,No,,Suitable
+65818523,59971,Pantala flavescens,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+65818523,59971,Pantala flavescens,3.5,Shrubland - Subtropical/Tropical Dry,,,Marginal
+65818523,59971,Pantala flavescens,4.6,Grassland - Subtropical/Tropical Seasonally Wet/Flooded,No,,Suitable
+65818523,59971,Pantala flavescens,5.13,Wetlands (inland) - Permanent Inland Deltas,No,,Suitable
+65818523,59971,Pantala flavescens,15.8,Artificial/Aquatic - Seasonally Flooded Agricultural Land,,,Suitable
+65818523,59971,Pantala flavescens,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),,,Suitable
+65818523,59971,Pantala flavescens,15.5,Artificial/Aquatic - Excavations (open),,,Suitable
+65818523,59971,Pantala flavescens,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Suitable
+65818523,59971,Pantala flavescens,15.2,Artificial/Aquatic - Ponds (below 8ha),,,Suitable
+65818523,59971,Pantala flavescens,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Suitable
+65834060,165469,Libellula quadrimaculata,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+65834060,165469,Libellula quadrimaculata,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+65834060,165469,Libellula quadrimaculata,5.10,Wetlands (inland) - Tundra Wetlands (incl. pools and temporary waters from snowmelt),,,Suitable
+65834060,165469,Libellula quadrimaculata,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+65834060,165469,Libellula quadrimaculata,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,,,Marginal
+65834060,165469,Libellula quadrimaculata,15.5,Artificial/Aquatic - Excavations (open),,,Marginal
+65834060,165469,Libellula quadrimaculata,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),,,Marginal
+65834060,165469,Libellula quadrimaculata,5.11,Wetlands (inland) - Alpine Wetlands (includes temporary waters from snowmelt),,,Suitable
+65834060,165469,Libellula quadrimaculata,15.2,Artificial/Aquatic - Ponds (below 8ha),,,Suitable
+65834060,165469,Libellula quadrimaculata,15.6,Artificial/Aquatic - Wastewater Treatment Areas,,,Marginal
+65834060,165469,Libellula quadrimaculata,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Suitable
+65834060,165469,Libellula quadrimaculata,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+65834060,165469,Libellula quadrimaculata,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Suitable
+65834060,165469,Libellula quadrimaculata,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+65834060,165469,Libellula quadrimaculata,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+65834060,165469,Libellula quadrimaculata,1.1,Forest - Boreal,,,Suitable
+65834060,165469,Libellula quadrimaculata,1.4,Forest - Temperate,,,Suitable
+65834549,165516,Lestes dryas,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+65834549,165516,Lestes dryas,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",No,,Suitable
+65834549,165516,Lestes dryas,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",No,,Suitable
+65834549,165516,Lestes dryas,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+65834549,165516,Lestes dryas,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+65834549,165516,Lestes dryas,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+65834549,165516,Lestes dryas,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+65834549,165516,Lestes dryas,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+65834549,165516,Lestes dryas,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+65834549,165516,Lestes dryas,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+65834549,165516,Lestes dryas,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),Yes,,Suitable
+69263868,19199320,Megachile giraudi,18,Unknown,,unknown,Unknown
+69264218,19198691,Megachile rhodosiaca,18,Unknown,,unknown,Unknown
+69264500,19199721,Megachile hungarica,18,Unknown,,unknown,Unknown
+69638033,69637992,Chorthippus ferdinandi,4.4,Grassland - Temperate,Yes,resident,Suitable
+69668556,69668544,Ovaliptila kinzelbachi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+69668595,69668585,Ovaliptila krueperi,7.2,Caves and Subterranean Habitats (non-aquatic) - Other Subterranean Habitats,,resident,Unknown
+69668595,69668585,Ovaliptila krueperi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,resident,Unknown
+69668595,69668585,Ovaliptila krueperi,1.4,Forest - Temperate,,resident,Unknown
+69668760,69668679,Ovaliptila lindbergi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+69668802,69668788,Ovaliptila nana,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+69668850,69668847,Ovaliptila newmanae,1.4,Forest - Temperate,Yes,resident,Suitable
+69669501,69669391,Ovaliptila wettsteini,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,resident,Unknown
+69680725,44698100,Rhacocleis silvestrii,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+69681546,69681526,Gryllomorpha cretensis,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,resident,Unknown
+69681546,69681526,Gryllomorpha cretensis,14.5,Artificial/Terrestrial - Urban Areas,,resident,Unknown
+69681546,69681526,Gryllomorpha cretensis,1.4,Forest - Temperate,,resident,Unknown
+69905303,169955,Homarus gammarus,9.6,Marine Neritic - Subtidal Muddy,,,Suitable
+69905303,169955,Homarus gammarus,9.5,Marine Neritic - Subtidal Sandy-Mud,,,Suitable
+69905303,169955,Homarus gammarus,9.4,Marine Neritic - Subtidal Sandy,,,Suitable
+69905303,169955,Homarus gammarus,9.3,Marine Neritic - Subtidal Loose Rock/pebble/gravel,,,Suitable
+69905303,169955,Homarus gammarus,9.2,Marine Neritic - Subtidal Rock and Rocky Reefs,,,Suitable
+70205292,16084448,Platypygius crassus,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,Yes,resident,Suitable
+70215800,68380508,Gryllomorpha albanica,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70215800,68380508,Gryllomorpha albanica,7.2,Caves and Subterranean Habitats (non-aquatic) - Other Subterranean Habitats,Yes,resident,Suitable
+70215800,68380508,Gryllomorpha albanica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+70217301,68460149,Pseudomogoplistes byzantius,12.3,Marine Intertidal - Shingle and/or Pebble Shoreline and/or Beaches,Yes,resident,Suitable
+70217409,68441442,Myrmecophilus nonveilleri,1.4,Forest - Temperate,Yes,resident,Suitable
+70217409,68441442,Myrmecophilus nonveilleri,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70217438,64547977,Asiotmethis limbatus,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,,resident,Marginal
+70217438,64547977,Asiotmethis limbatus,4.4,Grassland - Temperate,Yes,resident,Suitable
+70217460,68446564,Paranocaracris bulgaricus,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70217509,64549495,Barbitistes ocskayi,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70217509,64549495,Barbitistes ocskayi,1.4,Forest - Temperate,,resident,Marginal
+70217509,64549495,Barbitistes ocskayi,4.4,Grassland - Temperate,,resident,Marginal
+70217527,64865908,Isophya andreevae,4.4,Grassland - Temperate,Yes,resident,Suitable
+70217527,64865908,Isophya andreevae,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70268895,64866649,Isophya hospodar,4.4,Grassland - Temperate,Yes,resident,Suitable
+70269862,64869136,Isophya rhodopensis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70269862,64869136,Isophya rhodopensis,3.3,Shrubland - Boreal,Yes,resident,Suitable
+70269862,64869136,Isophya rhodopensis,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+70270600,45466571,Poecilimon gracilis,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70270600,45466571,Poecilimon gracilis,4.4,Grassland - Temperate,,resident,Marginal
+70271510,68485460,Troglophilus brevicauda,7.2,Caves and Subterranean Habitats (non-aquatic) - Other Subterranean Habitats,Yes,resident,Suitable
+70271510,68485460,Troglophilus brevicauda,1.4,Forest - Temperate,Yes,resident,Suitable
+70271510,68485460,Troglophilus brevicauda,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,resident,Marginal
+70271554,68485587,Troglophilus zorae,7.2,Caves and Subterranean Habitats (non-aquatic) - Other Subterranean Habitats,Yes,resident,Suitable
+70271554,68485587,Troglophilus zorae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70271554,68485587,Troglophilus zorae,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70271554,68485587,Troglophilus zorae,1.4,Forest - Temperate,Yes,resident,Suitable
+70271678,68280851,Conocephalus ebneri,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,resident,Suitable
+70271678,68280851,Conocephalus ebneri,5.13,Wetlands (inland) - Permanent Inland Deltas,Yes,resident,Suitable
+70271678,68280851,Conocephalus ebneri,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,resident,Suitable
+70271781,68440028,Montana macedonica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70271781,68440028,Montana macedonica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Marginal
+70271950,68451938,Pholidoptera rhodopensis,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70271950,68451938,Pholidoptera rhodopensis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70272066,68469288,Tessellana carinata,4.4,Grassland - Temperate,Yes,resident,Suitable
+70272066,68469288,Tessellana carinata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Marginal
+70432562,14870997,Chorthippus lacustris,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,resident,Suitable
+70564378,16084579,Chorthippus biroi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70564582,16084612,Chorthippus moreanus,4.4,Grassland - Temperate,Yes,resident,Suitable
+70564582,16084612,Chorthippus moreanus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70564761,16084456,Chorthippus parnon,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70564761,16084456,Chorthippus parnon,4.4,Grassland - Temperate,Yes,resident,Suitable
+70565847,16084479,Chorthippus pulloides,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Marginal
+70565847,16084479,Chorthippus pulloides,4.4,Grassland - Temperate,Yes,resident,Suitable
+70565854,16084530,Chorthippus sangiorgii,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,No,resident,Suitable
+70565854,16084530,Chorthippus sangiorgii,4.4,Grassland - Temperate,Yes,resident,Suitable
+70565872,16084594,Chorthippus willemsei,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,breeding,Marginal
+70565872,16084594,Chorthippus willemsei,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566026,16084625,Oedipoda venusta,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70566490,16084417,Oropodisma kyllinii,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+70566490,16084417,Oropodisma kyllinii,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566509,16084623,Oropodisma lagrecai,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+70566509,16084623,Oropodisma lagrecai,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566548,16084459,Oropodisma macedonica,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+70566548,16084459,Oropodisma macedonica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566636,16084516,Oropodisma parnassica,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+70566636,16084516,Oropodisma parnassica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566653,16084561,Oropodisma taygetosi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70566653,16084561,Oropodisma taygetosi,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566762,16084584,Oropodisma tymphrestosi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+70566762,16084584,Oropodisma tymphrestosi,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566900,16084362,Peripodisma tymphii,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70566900,16084362,Peripodisma tymphii,4.4,Grassland - Temperate,Yes,resident,Suitable
+70567218,16084574,Pezotettix lagoi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70567268,16084449,Sphingonotus crivellarii,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Unknown
+70567268,16084449,Sphingonotus crivellarii,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,resident,Suitable
+70567366,16084627,Stenobothrus clavatus,4.4,Grassland - Temperate,Yes,resident,Suitable
+70567692,16084408,Xerohippus solerii,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70567952,68380920,Gryllotalpa krimbasi,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,resident,Suitable
+70567979,68439867,Mogoplistes kinzelbachi,18,Unknown,,resident,Suitable
+70568039,44698010,Glyphanus obtusus,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+70568039,44698010,Glyphanus obtusus,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70568039,44698010,Glyphanus obtusus,4.4,Grassland - Temperate,Yes,resident,Suitable
+70568360,68380404,Glyphotmethis heldreichi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70571529,68444850,Orchamus raulinii,1.4,Forest - Temperate,Yes,resident,Suitable
+70572638,64337698,Acrometopa cretensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70572787,17181617,Isophya lemnotica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70576978,64869701,Isophya tosevski,14.4,Artificial/Terrestrial - Rural Gardens,,resident,Marginal
+70576978,64869701,Isophya tosevski,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70577245,17181748,Leptophyes lisae,1.4,Forest - Temperate,No,resident,Suitable
+70577245,17181748,Leptophyes lisae,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70577245,17181748,Leptophyes lisae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70577990,17181859,Metaplastes oertzeni,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70578251,17181896,Poecilimon aegaeus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70580066,17181947,Poecilimon cretensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70583263,17181974,Poecilimon gerlindae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70584324,17181977,Poecilimon gracilioides,4.4,Grassland - Temperate,Yes,resident,Suitable
+70587058,68458212,Poecilimon mariannae,14.1,Artificial/Terrestrial - Arable Land,Yes,resident,Suitable
+70588026,45466621,Poecilimon nobilis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70588026,45466621,Poecilimon nobilis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70588521,45466644,Poecilimon obesus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70588833,68458389,Poecilimon orbelicus,1.4,Forest - Temperate,Yes,resident,Suitable
+70588894,45466779,Poecilimon paros,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70589222,68458962,Poecilimon propinquus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70589222,68458962,Poecilimon propinquus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70590078,45466695,Poecilimon soulion,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70591713,68459242,Poecilimon thessalicus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70592575,68459544,Poecilimon veluchianus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70592810,68459582,Poecilimon werneri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+70592907,68459596,Poecilimon zimmeri,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70593097,68313516,Dolichopoda annae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70593507,17046304,Dolichopoda dalensi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,,Suitable
+70594412,17046311,Dolichopoda giachinoi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70594650,68314157,Dolichopoda graeca,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70595042,68314228,Dolichopoda insignis,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,,Suitable
+70595257,17046317,Dolichopoda ithakii,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70595489,17046320,Dolichopoda kiriakii,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70595921,17046297,Dolichopoda lustriae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70596147,68314432,Dolichopoda makrykapa,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70596267,68314461,Dolichopoda matsakisi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70596318,68314517,Dolichopoda naxia,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70613718,70613694,Dolichopoda giulianae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70613903,70613898,Troglophilus zoiai,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70622869,17046324,Dolichopoda patrizii,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623051,17046327,Dolichopoda pavesii,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623319,68314680,Dolichopoda petrochilosi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623572,68315084,Dolichopoda unicolor,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623590,68315135,Dolichopoda vandeli,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623629,68485526,Troglophilus lagoi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623629,68485526,Troglophilus lagoi,1.4,Forest - Temperate,,resident,Unknown
+70623658,68485565,Troglophilus marinae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623690,64529440,Anadrymadusa brevipennis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70623879,44710646,Bradyporus oniscus,4.4,Grassland - Temperate,Yes,resident,Suitable
+70623879,44710646,Bradyporus oniscus,14.1,Artificial/Terrestrial - Arable Land,No,resident,Suitable
+70623879,44710646,Bradyporus oniscus,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+70624036,68281269,Conocephalus grebenchikovi,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,resident,Suitable
+70624269,44711866,Eupholidoptera pallipes,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70624514,68380211,Gampsocleis abbreviata,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624514,68380211,Gampsocleis abbreviata,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70624570,68427881,Metrioptera tsirojanni,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624570,68427881,Metrioptera tsirojanni,1.4,Forest - Temperate,No,resident,Suitable
+70624587,44712056,Modestana ebneri,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624635,68450071,Parnassiana chelmos,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624651,68450152,Parnassiana coracis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624666,68450165,Parnassiana dirphys,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624681,68450223,Parnassiana fusca,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624696,68450237,Parnassiana gionica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624711,68450241,Parnassiana menalon,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624711,68450241,Parnassiana menalon,3.4,Shrubland - Temperate,No,resident,Suitable
+70624738,68450251,Parnassiana nigromarginata,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624763,68450271,Parnassiana panaetolikon,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624784,68450303,Parnassiana parnassica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624834,68450311,Parnassiana parnon,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624861,68450318,Parnassiana tenuis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624888,68450364,Parnassiana tymphiensis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624904,68450372,Parnassiana tymphrestos,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624951,68451909,Pholidoptera lucasi,1.4,Forest - Temperate,Yes,resident,Suitable
+70624978,44698034,Rhacocleis agiostratica,18,Unknown,,resident,Unknown
+70625066,44698051,Rhacocleis crypta,4.4,Grassland - Temperate,Yes,resident,Suitable
+70625081,44698053,Rhacocleis derrai,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625107,44698055,Rhacocleis distinguenda,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625138,44698057,Rhacocleis edentata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625171,44698059,Rhacocleis ferdinandi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625186,44698070,Rhacocleis graeca,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625240,44698072,Rhacocleis insularis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625268,44698076,Rhacocleis lithoscirtetes,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70625294,44698104,Rhacocleis trilobata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625315,44698115,Rhacocleis uvarovi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625374,44698141,Rhacocleis werneri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625374,44698141,Rhacocleis werneri,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70627797,70613415,Dolichopoda calidnae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70627846,68427564,Metaplastes ornatus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70627846,68427564,Metaplastes ornatus,1.4,Forest - Temperate,No,resident,Suitable
+70627851,68468653,Saga hellenica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70627851,68468653,Saga hellenica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70627851,68468653,Saga hellenica,14.4,Artificial/Terrestrial - Rural Gardens,No,resident,Suitable
+70627851,68468653,Saga hellenica,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+70632622,15037223,Acrida ungarica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70632622,15037223,Acrida ungarica,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+70632622,15037223,Acrida ungarica,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,No,resident,Suitable
+70648409,68441393,Myrmecophilus myrmecophilus,1.4,Forest - Temperate,Yes,resident,Suitable
+70648409,68441393,Myrmecophilus myrmecophilus,4.4,Grassland - Temperate,Yes,resident,Suitable
+70648409,68441393,Myrmecophilus myrmecophilus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70737900,16084535,Sphingonotus personatus,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,resident,Suitable
+70741204,68486103,Uromenus elegans,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70984770,158694,Aeshna affinis,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Suitable
+70984770,158694,Aeshna affinis,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+70984770,158694,Aeshna affinis,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Suitable
+70984770,158694,Aeshna affinis,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+70984770,158694,Aeshna affinis,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Suitable
+72305432,158692,Aeshna isoceles,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+72305432,158692,Aeshna isoceles,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Suitable
+72305432,158692,Aeshna isoceles,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Marginal
+72305432,158692,Aeshna isoceles,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+72310087,59811,Anax ephippiger,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+72310087,59811,Anax ephippiger,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+72310087,59811,Anax ephippiger,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),Yes,,Suitable
+72310087,59811,Anax ephippiger,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+72310087,59811,Anax ephippiger,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+72310087,59811,Anax ephippiger,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+72311295,59812,Anax imperator,5.9,Wetlands (inland) - Freshwater Springs and Oases,No,,Suitable
+72311295,59812,Anax imperator,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+72311295,59812,Anax imperator,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),No,,Suitable
+72311295,59812,Anax imperator,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+72311295,59812,Anax imperator,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,No,,Suitable
+72311295,59812,Anax imperator,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+72311295,59812,Anax imperator,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+72312377,165488,Anax parthenope,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",Yes,,Suitable
+72312377,165488,Anax parthenope,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",Yes,,Suitable
+72312377,165488,Anax parthenope,5.12,Wetlands (inland) - Geothermal Wetlands,No,,Suitable
+72312377,165488,Anax parthenope,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+72312377,165488,Anax parthenope,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+72312377,165488,Anax parthenope,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),No,,Suitable
+72312377,165488,Anax parthenope,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+72312377,165488,Anax parthenope,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+72312377,165488,Anax parthenope,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Marginal
+72312377,165488,Anax parthenope,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Marginal
+74249405,16084560,Chorthippus oschei,4.4,Grassland - Temperate,Yes,resident,Suitable
+74249405,16084560,Chorthippus oschei,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+74491942,16084407,Euchorthippus declivus,4.4,Grassland - Temperate,Yes,resident,Suitable
+74491942,16084407,Euchorthippus declivus,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+74495954,16084581,Odontopodisma decipiens,4.4,Grassland - Temperate,No,resident,Suitable
+74495954,16084581,Odontopodisma decipiens,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74515247,16084507,Stenobothrus rubicundulus,4.4,Grassland - Temperate,Yes,resident,Suitable
+74521769,68446520,Paramogoplistes novaki,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+74525015,44710118,Andreiniimon nuptialis,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74525015,44710118,Andreiniimon nuptialis,1.4,Forest - Temperate,,resident,Marginal
+74525174,64549979,Barbitistes yersini,1.4,Forest - Temperate,Yes,resident,Suitable
+74525174,64549979,Barbitistes yersini,4.4,Grassland - Temperate,No,resident,Suitable
+74525174,64549979,Barbitistes yersini,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74525748,64869542,Isophya speciosa,4.4,Grassland - Temperate,Yes,resident,Suitable
+74525748,64869542,Isophya speciosa,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74525748,64869542,Isophya speciosa,1.4,Forest - Temperate,,resident,Marginal
+74525748,64869542,Isophya speciosa,14.3,Artificial/Terrestrial - Plantations,,resident,Marginal
+74525748,64869542,Isophya speciosa,14.2,Artificial/Terrestrial - Pastureland,,resident,Marginal
+74526085,44709104,Leptophyes boscii,4.4,Grassland - Temperate,Yes,resident,Suitable
+74526085,44709104,Leptophyes boscii,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74526293,44709622,Leptophyes punctatissima,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74526293,44709622,Leptophyes punctatissima,14.5,Artificial/Terrestrial - Urban Areas,No,resident,Suitable
+74526293,44709622,Leptophyes punctatissima,14.4,Artificial/Terrestrial - Rural Gardens,No,resident,Suitable
+74527328,45466482,Poecilimon affinis,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74527328,45466482,Poecilimon affinis,4.4,Grassland - Temperate,No,resident,Suitable
+74528033,68454861,Poecilimon brunneri,4.4,Grassland - Temperate,Yes,resident,Suitable
+74528033,68454861,Poecilimon brunneri,14.2,Artificial/Terrestrial - Pastureland,No,resident,Suitable
+74528038,68454920,Poecilimon chopardi,4.4,Grassland - Temperate,Yes,resident,Suitable
+74528038,68454920,Poecilimon chopardi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+74528047,45463531,Poecilimon ebneri,4.4,Grassland - Temperate,Yes,resident,Suitable
+74528047,45463531,Poecilimon ebneri,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+74528383,47709322,Poecilimon jonicus,1.4,Forest - Temperate,No,resident,Suitable
+74528383,47709322,Poecilimon jonicus,4.4,Grassland - Temperate,Yes,resident,Suitable
+74528394,68455994,Poecilimon laevissimus,4.4,Grassland - Temperate,No,resident,Suitable
+74528394,68455994,Poecilimon laevissimus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+74528406,68458200,Poecilimon macedonicus,4.4,Grassland - Temperate,Yes,resident,Suitable
+74528406,68458200,Poecilimon macedonicus,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+74528658,68458496,Poecilimon ornatus,4.4,Grassland - Temperate,Yes,resident,Suitable
+74528658,68458496,Poecilimon ornatus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74529086,68459410,Poecilimon thoracicus,4.4,Grassland - Temperate,Yes,resident,Suitable
+74529086,68459410,Poecilimon thoracicus,3.4,Shrubland - Temperate,No,resident,Suitable
+74529086,68459410,Poecilimon thoracicus,14.2,Artificial/Terrestrial - Pastureland,No,resident,Suitable
+74529159,68459608,Poecilimon zwicki,4.4,Grassland - Temperate,Yes,resident,Suitable
+74529159,68459608,Poecilimon zwicki,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+74529234,68459646,Polysarcus denticauda,4.4,Grassland - Temperate,Yes,resident,Suitable
+74529545,44712223,Polysarcus scutatus,4.4,Grassland - Temperate,Yes,resident,Suitable
+74532103,44710285,Bradyporus dasypus,1.4,Forest - Temperate,Yes,resident,Suitable
+74532103,44710285,Bradyporus dasypus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+74537999,68315499,Ephippiger ephippiger,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74537999,68315499,Ephippiger ephippiger,4.4,Grassland - Temperate,No,resident,Suitable
+74537999,68315499,Ephippiger ephippiger,14.1,Artificial/Terrestrial - Arable Land,,resident,Marginal
+74537999,68315499,Ephippiger ephippiger,14.3,Artificial/Terrestrial - Plantations,No,resident,Suitable
+74538718,68379164,Eupholidoptera schmidti,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74540428,68427417,Meconema thalassinum,1.4,Forest - Temperate,Yes,resident,Suitable
+74540428,68427417,Meconema thalassinum,14.5,Artificial/Terrestrial - Urban Areas,No,resident,Suitable
+74540428,68427417,Meconema thalassinum,14.4,Artificial/Terrestrial - Rural Gardens,No,resident,Suitable
+74540428,68427417,Meconema thalassinum,14.3,Artificial/Terrestrial - Plantations,No,resident,Suitable
+74542870,68446261,Pachytrachis gracilis,1.4,Forest - Temperate,No,resident,Suitable
+74542870,68446261,Pachytrachis gracilis,4.4,Grassland - Temperate,No,resident,Suitable
+74542870,68446261,Pachytrachis gracilis,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74621887,47712216,Pholidoptera aptera,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74621887,47712216,Pholidoptera aptera,4.4,Grassland - Temperate,,resident,Marginal
+74621887,47712216,Pholidoptera aptera,1.4,Forest - Temperate,Yes,resident,Suitable
+74621887,47712216,Pholidoptera aptera,6,"Rocky areas (eg. inland cliffs, mountain peaks)",No,resident,Suitable
+74621932,62148031,Pholidoptera frivaldszkyi,4.4,Grassland - Temperate,,,Suitable
+74621956,68451954,Pholidoptera stankoi,3.4,Shrubland - Temperate,Yes,resident,Suitable
+74621956,68451954,Pholidoptera stankoi,1.4,Forest - Temperate,,resident,Marginal
+74621956,68451954,Pholidoptera stankoi,4.4,Grassland - Temperate,,resident,Marginal
+74623878,68468365,Roeseliana ambitiosa,4.4,Grassland - Temperate,Yes,resident,Suitable
+74624205,68468640,Saga campbelli,4.4,Grassland - Temperate,Yes,resident,Suitable
+74624205,68468640,Saga campbelli,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+74624205,68468640,Saga campbelli,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+74624537,68468849,Saga rammei,4.4,Grassland - Temperate,Yes,resident,Suitable
+74624537,68468849,Saga rammei,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+74624537,68468849,Saga rammei,14.1,Artificial/Terrestrial - Arable Land,,resident,Marginal
+74624624,68469308,Tessellana orina,4.4,Grassland - Temperate,Yes,resident,Suitable
+74624624,68469308,Tessellana orina,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+74625126,68486449,Yersinella raymondii,1.4,Forest - Temperate,Yes,resident,Suitable
+74625126,68486449,Yersinella raymondii,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+83846274,59859,Crocothemis erythraea,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+83846274,59859,Crocothemis erythraea,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",No,,Suitable
+83846274,59859,Crocothemis erythraea,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+83846274,59859,Crocothemis erythraea,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,No,,Suitable
+83846274,59859,Crocothemis erythraea,5.3,Wetlands (inland) - Shrub Dominated Wetlands,No,,Suitable
+83846274,59859,Crocothemis erythraea,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Unknown
+83846274,59859,Crocothemis erythraea,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+83846274,59859,Crocothemis erythraea,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Unknown
+83846274,59859,Crocothemis erythraea,15.5,Artificial/Aquatic - Excavations (open),,,Unknown
+83846274,59859,Crocothemis erythraea,15.2,Artificial/Aquatic - Ponds (below 8ha),,,Unknown
+83846274,59859,Crocothemis erythraea,1.6,Forest - Subtropical/Tropical Moist Lowland,No,,Suitable
+83846274,59859,Crocothemis erythraea,15.8,Artificial/Aquatic - Seasonally Flooded Agricultural Land,,,Unknown
+83846274,59859,Crocothemis erythraea,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),,,Unknown
+83846274,59859,Crocothemis erythraea,3.5,Shrubland - Subtropical/Tropical Dry,No,,Suitable
+83846274,59859,Crocothemis erythraea,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+83846274,59859,Crocothemis erythraea,3.6,Shrubland - Subtropical/Tropical Moist,No,,Suitable
+83846274,59859,Crocothemis erythraea,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+83846274,59859,Crocothemis erythraea,2.1,Savanna - Dry,No,,Suitable
+83846274,59859,Crocothemis erythraea,1.5,Forest - Subtropical/Tropical Dry,No,,Suitable
+83846274,59859,Crocothemis erythraea,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Unknown
+83846274,59859,Crocothemis erythraea,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",No,,Suitable
+83846274,59859,Crocothemis erythraea,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+83846274,59859,Crocothemis erythraea,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+83846274,59859,Crocothemis erythraea,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Marginal
+83847795,59864,Diplacodes lefebvrii,5.3,Wetlands (inland) - Shrub Dominated Wetlands,No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.13,Wetlands (inland) - Permanent Inland Deltas,No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",No,,Suitable
+83847795,59864,Diplacodes lefebvrii,3.6,Shrubland - Subtropical/Tropical Moist,No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+83847795,59864,Diplacodes lefebvrii,2.1,Savanna - Dry,No,,Suitable
+83847795,59864,Diplacodes lefebvrii,3.5,Shrubland - Subtropical/Tropical Dry,No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+83847795,59864,Diplacodes lefebvrii,1.6,Forest - Subtropical/Tropical Moist Lowland,No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),No,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",Yes,,Suitable
+83847795,59864,Diplacodes lefebvrii,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+83856823,59954,Orthetrum chrysostigma,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),No,,Suitable
+83856823,59954,Orthetrum chrysostigma,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+83856823,59954,Orthetrum chrysostigma,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.12,Wetlands (inland) - Geothermal Wetlands,No,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.13,Wetlands (inland) - Permanent Inland Deltas,Yes,,Suitable
+83856823,59954,Orthetrum chrysostigma,3.5,Shrubland - Subtropical/Tropical Dry,No,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),No,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+83856823,59954,Orthetrum chrysostigma,3.6,Shrubland - Subtropical/Tropical Moist,No,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+83856823,59954,Orthetrum chrysostigma,2.1,Savanna - Dry,No,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+83856823,59954,Orthetrum chrysostigma,5.3,Wetlands (inland) - Shrub Dominated Wetlands,No,,Suitable
+83856823,59954,Orthetrum chrysostigma,1.6,Forest - Subtropical/Tropical Moist Lowland,No,,Suitable
+83859517,59965,Orthetrum trinacria,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+83859517,59965,Orthetrum trinacria,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Marginal
+83859517,59965,Orthetrum trinacria,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Suitable
+83859517,59965,Orthetrum trinacria,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+83859517,59965,Orthetrum trinacria,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+83859517,59965,Orthetrum trinacria,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+83859517,59965,Orthetrum trinacria,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Suitable
+83872427,60052,Trithemis annulata,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Marginal
+83872427,60052,Trithemis annulata,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+83872427,60052,Trithemis annulata,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+83872427,60052,Trithemis annulata,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+83872427,60052,Trithemis annulata,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+83872427,60052,Trithemis annulata,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),Yes,,Suitable
+83872427,60052,Trithemis annulata,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+83872427,60052,Trithemis annulata,5.13,Wetlands (inland) - Permanent Inland Deltas,Yes,,Suitable
+83872427,60052,Trithemis annulata,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+83872427,60052,Trithemis annulata,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+83873068,60053,Trithemis arteriosa,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+83873068,60053,Trithemis arteriosa,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Marginal
+83873068,60053,Trithemis arteriosa,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+83873068,60053,Trithemis arteriosa,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Marginal
+83873068,60053,Trithemis arteriosa,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Suitable
+83873068,60053,Trithemis arteriosa,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+83889114,165499,Aeshna mixta,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+83889114,165499,Aeshna mixta,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+83889114,165499,Aeshna mixta,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+83889114,165499,Aeshna mixta,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+83889114,165499,Aeshna mixta,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+83889114,165499,Aeshna mixta,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+83889114,165499,Aeshna mixta,5.3,Wetlands (inland) - Shrub Dominated Wetlands,No,,Suitable
+83889114,165499,Aeshna mixta,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+83889114,165499,Aeshna mixta,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+83891998,165524,Aeshna cyanea,15.5,Artificial/Aquatic - Excavations (open),Yes,,Suitable
+83891998,165524,Aeshna cyanea,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+83891998,165524,Aeshna cyanea,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",Yes,,Suitable
+83891998,165524,Aeshna cyanea,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+83891998,165524,Aeshna cyanea,15.6,Artificial/Aquatic - Wastewater Treatment Areas,,,Marginal
+83891998,165524,Aeshna cyanea,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+83891998,165524,Aeshna cyanea,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Marginal
+83891998,165524,Aeshna cyanea,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+83891998,165524,Aeshna cyanea,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Marginal
+83891998,165524,Aeshna cyanea,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+83891998,165524,Aeshna cyanea,5.3,Wetlands (inland) - Shrub Dominated Wetlands,Yes,,Suitable
+83891998,165524,Aeshna cyanea,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+85697412,169967,Nephrops norvegicus,11.1.2,Soft Substrate,,,Suitable
+85697412,169967,Nephrops norvegicus,11.1,"Marine Deep Benthic - Continental Slope/Bathyl Zone (200-4,000m)",,,Suitable
+85697412,169967,Nephrops norvegicus,9.6,Marine Neritic - Subtidal Muddy,,,Suitable
+85697412,169967,Nephrops norvegicus,9.5,Marine Neritic - Subtidal Sandy-Mud,,,Suitable
+85851404,68462466,Psorodonotus macedonicus,4.4,Grassland - Temperate,Yes,resident,Suitable
+86222081,86222059,Saga gracilis,4.4,Grassland - Temperate,Yes,resident,Suitable
+86222081,86222059,Saga gracilis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Marginal
+86222081,86222059,Saga gracilis,1.4,Forest - Temperate,Yes,resident,Suitable
+87310028,86802697,Alosterna pauli,1.4,Forest - Temperate,Yes,resident,Suitable
+87311325,86807153,Paracorymbia picticornis,1.4,Forest - Temperate,Yes,resident,Suitable
+87311361,86807269,Pedostrangalia ariadne,14.3,Artificial/Terrestrial - Plantations,Yes,resident,Suitable
+87311361,86807269,Pedostrangalia ariadne,1.4,Forest - Temperate,Yes,resident,Suitable
+87311361,86807269,Pedostrangalia ariadne,14.5,Artificial/Terrestrial - Urban Areas,No,resident,Suitable
+87311361,86807269,Pedostrangalia ariadne,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+87311442,86807246,Pedostrangalia revestita,1.4,Forest - Temperate,Yes,resident,Suitable
+87311442,86807246,Pedostrangalia revestita,14.5,Artificial/Terrestrial - Urban Areas,Yes,resident,Suitable
+87311442,86807246,Pedostrangalia revestita,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+87311442,86807246,Pedostrangalia revestita,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+87311452,86848967,Pidonia lurida,1.4,Forest - Temperate,Yes,resident,Suitable
+87311509,86849298,Saphanus piceus,1.4,Forest - Temperate,Yes,resident,Suitable
+87312050,86859525,Xylosteus bartoni,1.4,Forest - Temperate,Yes,resident,Suitable
+87312078,86859528,Xylosteus spinolae,1.4,Forest - Temperate,Yes,resident,Suitable
+87313242,86863032,Alphitophagus obtusangulus,1.4,Forest - Temperate,Yes,resident,Suitable
+87313242,86863032,Alphitophagus obtusangulus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+87313242,86863032,Alphitophagus obtusangulus,14.5,Artificial/Terrestrial - Urban Areas,No,resident,Suitable
+87313606,86863400,Hymenalia elongata,1.4,Forest - Temperate,Yes,resident,Suitable
+87313731,86863416,Hymenalia obscuriceps,18,Unknown,Yes,resident,Suitable
+87313981,86883562,Isomira antennata,1.4,Forest - Temperate,Yes,resident,Suitable
+87313981,86883562,Isomira antennata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+87313981,86883562,Isomira antennata,3.4,Shrubland - Temperate,Yes,resident,Suitable
+87314193,86883960,Mycetochara flavicornis,18,Unknown,Yes,resident,Suitable
+87314453,86884024,Mycetochara jonica,18,Unknown,Yes,resident,Suitable
+87314522,86884117,Mycetochara myrmecophila,18,Unknown,Yes,resident,Suitable
+87340560,87329104,Corticeus fusciventris,1.4,Forest - Temperate,Yes,resident,Suitable
+87340560,87329104,Corticeus fusciventris,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+87340560,87329104,Corticeus fusciventris,14.5,Artificial/Terrestrial - Urban Areas,Yes,resident,Suitable
+87340585,87329111,Corticeus krueperi,18,Unknown,Yes,resident,Suitable
+87340628,87329140,Corticeus rufithorax,1.4,Forest - Temperate,Yes,resident,Suitable
+87340628,87329140,Corticeus rufithorax,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+87340628,87329140,Corticeus rufithorax,14.5,Artificial/Terrestrial - Urban Areas,Yes,resident,Suitable
+87341023,87329419,Mycetochara cretica,18,Unknown,Yes,resident,Suitable
+88000000,87999248,Prionotropis willemsorum,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+88000000,87999248,Prionotropis willemsorum,4.4,Grassland - Temperate,Yes,resident,Suitable
+88047152,88046398,Stictoleptura slamai,18,Unknown,Yes,resident,Suitable
+88227785,88227721,Leptorhabdium nitidum,1.4,Forest - Temperate,Yes,resident,Suitable
+88231738,88227438,Leptorhabdium illyricum,1.4,Forest - Temperate,Yes,resident,Suitable
+90799179,90799145,Eupholidoptera garganica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+90799179,90799145,Eupholidoptera garganica,3.4,Shrubland - Temperate,No,resident,Suitable
+90854097,90853972,Dolichopoda ochtoniai,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+90854152,90854150,Dolichopoda saraolacosi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+90947052,90934784,Ceratophyus schaffrathi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+90947052,90934784,Ceratophyus schaffrathi,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,resident,Suitable
+91395333,91394977,Stictoleptura ivoroberti,1.4,Forest - Temperate,Yes,resident,Suitable
+96420286,96419923,Anogcodes fulvicollis,1.4,Forest - Temperate,Yes,resident,Suitable
+98732278,91470563,Coxelus alinae,1.4,Forest - Temperate,,,Suitable
+98732380,91473473,Diplagia hellenica,18,Unknown,,,Suitable
+99773641,99773552,Rhacocleis andikithirensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+103506603,16084613,Chorthippus crassiceps,4.4,Grassland - Temperate,Yes,resident,Suitable
+103506603,16084613,Chorthippus crassiceps,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+103507242,68313777,Dolichopoda cassagnaui,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,resident,Suitable
+103507546,70613726,Dolichopoda kalithea,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103507773,68314552,Dolichopoda paraskevi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103508061,68314902,Dolichopoda steriotisi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103508315,68314976,Dolichopoda thasosensis,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103508476,45463437,Eupholidoptera cretica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+103508875,17046307,Dolichopoda gasparoi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103509317,44711767,Eupholidoptera gemellata,3.4,Shrubland - Temperate,Yes,resident,Suitable
+103509603,17181907,Poecilimon athos,3.4,Shrubland - Temperate,Yes,resident,Suitable
+103509603,17181907,Poecilimon athos,1.4,Forest - Temperate,,resident,Marginal
+103510430,17181953,Poecilimon erimanthos,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+103510605,68485512,Troglophilus cavicola,7.2,Caves and Subterranean Habitats (non-aquatic) - Other Subterranean Habitats,Yes,resident,Suitable
+103510605,68485512,Troglophilus cavicola,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103510605,68485512,Troglophilus cavicola,1.4,Forest - Temperate,No,resident,Suitable
+103510920,68485583,Troglophilus spinulosus,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+120103207,153745,Pontastacus leptodactylus,9.10,Marine Neritic - Estuaries,,,Suitable
+120103207,153745,Pontastacus leptodactylus,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",,,Suitable
+120103207,153745,Pontastacus leptodactylus,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+120103207,153745,Pontastacus leptodactylus,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+120103207,153745,Pontastacus leptodactylus,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+121724677,2431,Austropotamobius torrentium,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+128973042,165501,Sympetrum flaveolum,5.11,Wetlands (inland) - Alpine Wetlands (includes temporary waters from snowmelt),No,,Suitable
+128973042,165501,Sympetrum flaveolum,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+128973042,165501,Sympetrum flaveolum,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Marginal
+128973042,165501,Sympetrum flaveolum,15.8,Artificial/Aquatic - Seasonally Flooded Agricultural Land,,,Marginal
+128973042,165501,Sympetrum flaveolum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+128973042,165501,Sympetrum flaveolum,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+128973042,165501,Sympetrum flaveolum,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+128973042,165501,Sympetrum flaveolum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+128973042,165501,Sympetrum flaveolum,5.3,Wetlands (inland) - Shrub Dominated Wetlands,No,,Suitable
+128973042,165501,Sympetrum flaveolum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",No,,Suitable
+128973042,165501,Sympetrum flaveolum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),No,,Suitable
+128973042,165501,Sympetrum flaveolum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+128973042,165501,Sympetrum flaveolum,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),No,,Suitable
+140015452,16084372,Oropodisma erymanthosi,4.4,Grassland - Temperate,Yes,Resident,Suitable
+140015452,16084372,Oropodisma erymanthosi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,Resident,Marginal
+109192791,68378608,Eumodicogryllus bordigalensis,4.4,Grassland - Temperate,Yes,Resident,Suitable
+109192791,68378608,Eumodicogryllus bordigalensis,17,Other,No,Resident,Suitable
+109192791,68378608,Eumodicogryllus bordigalensis,14.4,Artificial/Terrestrial - Rural Gardens,No,Resident,Suitable
+109192791,68378608,Eumodicogryllus bordigalensis,14.2,Artificial/Terrestrial - Pastureland,Yes,Resident,Suitable
+109192791,68378608,Eumodicogryllus bordigalensis,14.1,Artificial/Terrestrial - Arable Land,No,Resident,Suitable
+109192791,68378608,Eumodicogryllus bordigalensis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+109192791,68378608,Eumodicogryllus bordigalensis,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",No,Resident,Suitable
+109192791,68378608,Eumodicogryllus bordigalensis,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",No,Resident,Suitable
+140754022,68451285,Phaneroptera nana,1.4,Forest - Temperate,Yes,Resident,Suitable
+140754022,68451285,Phaneroptera nana,4.4,Grassland - Temperate,No,Resident,Suitable
+140754022,68451285,Phaneroptera nana,3.4,Shrubland - Temperate,No,Resident,Suitable
+140754022,68451285,Phaneroptera nana,14.5,Artificial/Terrestrial - Urban Areas,No,Resident,Suitable
+140754022,68451285,Phaneroptera nana,14.4,Artificial/Terrestrial - Rural Gardens,No,Resident,Suitable
+83377025,165470,Orthetrum sabina,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+83377025,165470,Orthetrum sabina,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),No,,Suitable
+83377025,165470,Orthetrum sabina,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+83377025,165470,Orthetrum sabina,15.6,Artificial/Aquatic - Wastewater Treatment Areas,,,Marginal
+83377025,165470,Orthetrum sabina,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",No,,Suitable
+83377025,165470,Orthetrum sabina,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+83377025,165470,Orthetrum sabina,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Marginal
+83377025,165470,Orthetrum sabina,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,,Suitable
+83377025,165470,Orthetrum sabina,15.5,Artificial/Aquatic - Excavations (open),,,Marginal
+83377025,165470,Orthetrum sabina,15.8,Artificial/Aquatic - Seasonally Flooded Agricultural Land,No,,Suitable
+83377025,165470,Orthetrum sabina,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+83377025,165470,Orthetrum sabina,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+83377025,165470,Orthetrum sabina,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+83377025,165470,Orthetrum sabina,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+83377025,165470,Orthetrum sabina,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+83377025,165470,Orthetrum sabina,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),Yes,,Suitable
+83377025,165470,Orthetrum sabina,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",No,,Suitable
+83377025,165470,Orthetrum sabina,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),No,,Suitable
+166538784,3334,Buprestis splendens,1.4,Forest - Temperate,Yes,,Suitable
+166538784,3334,Buprestis splendens,1.1,Forest - Boreal,No,,Suitable
+44798247,44793097,Rivetina baetica ssp. tenuidentata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+44798247,44793097,Rivetina baetica ssp. tenuidentata,3.5,Shrubland - Subtropical/Tropical Dry,,,Suitable
+44798428,44791345,Ameles decolor,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+44798432,44791577,Ameles heldreichi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+44798440,44791655,Ameles spallanzania,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+44798440,44791655,Ameles spallanzania,14.4,Artificial/Terrestrial - Rural Gardens,,Resident,Marginal
+44798452,44790994,Empusa fasciata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+44798452,44790994,Empusa fasciata,3.4,Shrubland - Temperate,,Resident,Suitable
+44798452,44790994,Empusa fasciata,4.4,Grassland - Temperate,,Resident,Marginal
+44798468,44791239,Iris oratoria,3.4,Shrubland - Temperate,Yes,,Suitable
+44798468,44791239,Iris oratoria,3.5,Shrubland - Subtropical/Tropical Dry,Yes,,Suitable
+44798468,44791239,Iris oratoria,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,,Suitable
+44798468,44791239,Iris oratoria,4.5,Grassland - Subtropical/Tropical Dry,Yes,,Suitable
+44798484,44792855,Rivetina baetica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+44798484,44792855,Rivetina baetica,3.5,Shrubland - Subtropical/Tropical Dry,Yes,Resident,Suitable
+118892175,118892125,Hierodula tenuidentata,1.6,Forest - Subtropical/Tropical Moist Lowland,Yes,Resident,Suitable
+118892175,118892125,Hierodula tenuidentata,14.1,Artificial/Terrestrial - Arable Land,,Resident,Suitable
+118892175,118892125,Hierodula tenuidentata,14.4,Artificial/Terrestrial - Rural Gardens,,Resident,Suitable
+118892175,118892125,Hierodula tenuidentata,14.5,Artificial/Terrestrial - Urban Areas,,Resident,Marginal
+148923756,44792809,Geomantis larvoides,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+148923756,44792809,Geomantis larvoides,3.5,Shrubland - Subtropical/Tropical Dry,Yes,Resident,Suitable
+175783472,86862896,Allecula morio,1.1,Forest - Boreal,,Resident,Marginal
+175783472,86862896,Allecula morio,14.5,Artificial/Terrestrial - Urban Areas,No,Resident,Suitable
+175783472,86862896,Allecula morio,17,Other,No,Resident,Suitable
+175783472,86862896,Allecula morio,1.4,Forest - Temperate,Yes,Resident,Suitable
+785848,173805983,Enallagma cyathigerum,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,,,Suitable
+785848,173805983,Enallagma cyathigerum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+785848,173805983,Enallagma cyathigerum,15.5,Artificial/Aquatic - Excavations (open),,,Suitable
+785848,173805983,Enallagma cyathigerum,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Suitable
+785848,173805983,Enallagma cyathigerum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+785848,173805983,Enallagma cyathigerum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+785848,173805983,Enallagma cyathigerum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+785848,173805983,Enallagma cyathigerum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+785848,173805983,Enallagma cyathigerum,5.10,Wetlands (inland) - Tundra Wetlands (incl. pools and temporary waters from snowmelt),,,Suitable
+785848,173805983,Enallagma cyathigerum,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+785848,173805983,Enallagma cyathigerum,15.2,Artificial/Aquatic - Ponds (below 8ha),,,Suitable
+1095700,165512,Sympetrum depressiusculum,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Suitable
+1095700,165512,Sympetrum depressiusculum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+1095700,165512,Sympetrum depressiusculum,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Marginal
+1095700,165512,Sympetrum depressiusculum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+1095700,165512,Sympetrum depressiusculum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+1095700,165512,Sympetrum depressiusculum,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),Yes,,Suitable
+1095700,165512,Sympetrum depressiusculum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Marginal
+1095700,165512,Sympetrum depressiusculum,15.8,Artificial/Aquatic - Seasonally Flooded Agricultural Land,Yes,,Suitable
+1095700,165512,Sympetrum depressiusculum,15.2,Artificial/Aquatic - Ponds (below 8ha),Yes,,Suitable
+1095700,165512,Sympetrum depressiusculum,15.3,Artificial/Aquatic - Aquaculture Ponds,Yes,,Suitable
+83884411,158685,Sympetrum striolatum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+83884411,158685,Sympetrum striolatum,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Marginal
+83884411,158685,Sympetrum striolatum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Marginal
+83884411,158685,Sympetrum striolatum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+83884411,158685,Sympetrum striolatum,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Marginal
+83884411,158685,Sympetrum striolatum,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Suitable
+83884411,158685,Sympetrum striolatum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+83884411,158685,Sympetrum striolatum,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Suitable
+83884411,158685,Sympetrum striolatum,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Suitable
+83884411,158685,Sympetrum striolatum,15.5,Artificial/Aquatic - Excavations (open),,,Suitable
+83884411,158685,Sympetrum striolatum,15.2,Artificial/Aquatic - Ponds (below 8ha),,,Suitable
+83885601,158696,Erythromma lindenii,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+83885601,158696,Erythromma lindenii,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+83885601,158696,Erythromma lindenii,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+83885601,158696,Erythromma lindenii,15.5,Artificial/Aquatic - Excavations (open),,,Suitable
+83885601,158696,Erythromma lindenii,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+83886221,158707,Coenagrion puella,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Suitable
+83886221,158707,Coenagrion puella,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+83886221,158707,Coenagrion puella,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Marginal
+83886221,158707,Coenagrion puella,5.9,Wetlands (inland) - Freshwater Springs and Oases,,,Marginal
+83886221,158707,Coenagrion puella,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+83886221,158707,Coenagrion puella,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+83886221,158707,Coenagrion puella,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Suitable
+83886221,158707,Coenagrion puella,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+83886221,158707,Coenagrion puella,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Marginal
+138710298,60307,Boyeria cretensis,5.9,Wetlands (inland) - Freshwater Springs and Oases,,,Unknown
+138710298,60307,Boyeria cretensis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+138711145,158701,Calopteryx splendens,5.9,Wetlands (inland) - Freshwater Springs and Oases,,,Marginal
+138711145,158701,Calopteryx splendens,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+138711145,158701,Calopteryx splendens,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+138714520,59700,Ceriagrion georgifreyi,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,Resident,Suitable
+138714520,59700,Ceriagrion georgifreyi,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,Passage,Marginal
+138714520,59700,Ceriagrion georgifreyi,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+138884087,165504,Coenagrion intermedium,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+138884087,165504,Coenagrion intermedium,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+139211176,165497,Erythromma najas,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+139211176,165497,Erythromma najas,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+139211176,165497,Erythromma najas,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Marginal
+139211176,165497,Erythromma najas,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+139211176,165497,Erythromma najas,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+139211176,165497,Erythromma najas,15.5,Artificial/Aquatic - Excavations (open),,,Suitable
+139211176,165497,Erythromma najas,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Marginal
+139211176,165497,Erythromma najas,15.2,Artificial/Aquatic - Ponds (below 8ha),,,Suitable
+139211176,165497,Erythromma najas,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Suitable
+139357758,165479,Ischnura elegans,5.17,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Marshes/Pools",,,Marginal
+139357758,165479,Ischnura elegans,5.16,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Marshes/Pools",,,Suitable
+139357758,165479,Ischnura elegans,5.15,"Wetlands (inland) - Seasonal/Intermittent Saline, Brackish or Alkaline Lakes and Flats",,,Marginal
+139357758,165479,Ischnura elegans,5.14,"Wetlands (inland) - Permanent Saline, Brackish or Alkaline Lakes",,,Suitable
+139357758,165479,Ischnura elegans,5.9,Wetlands (inland) - Freshwater Springs and Oases,,,Marginal
+139357758,165479,Ischnura elegans,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Marginal
+139357758,165479,Ischnura elegans,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+139357758,165479,Ischnura elegans,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Marginal
+139357758,165479,Ischnura elegans,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+139357758,165479,Ischnura elegans,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+139357758,165479,Ischnura elegans,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,,,Suitable
+139357758,165479,Ischnura elegans,13.5,Marine Coastal/Supratidal - Coastal Freshwater Lakes,,,Suitable
+139357758,165479,Ischnura elegans,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Suitable
+139357758,165479,Ischnura elegans,15.2,Artificial/Aquatic - Ponds (below 8ha),,,Suitable
+139357758,165479,Ischnura elegans,15.3,Artificial/Aquatic - Aquaculture Ponds,,,Marginal
+139357758,165479,Ischnura elegans,15.5,Artificial/Aquatic - Excavations (open),,,Suitable
+139357758,165479,Ischnura elegans,15.7,Artificial/Aquatic - Irrigated Land (includes irrigation channels),,,Suitable
+139357758,165479,Ischnura elegans,15.8,Artificial/Aquatic - Seasonally Flooded Agricultural Land,,,Marginal
+139357758,165479,Ischnura elegans,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+139357758,165479,Ischnura elegans,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+139357758,165479,Ischnura elegans,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Marginal
+139357758,165479,Ischnura elegans,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Suitable
+140028029,60274,Pyrrhosoma elisabethae,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+140028029,60274,Pyrrhosoma elisabethae,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,Seasonal Occurrence Unknown,Unknown
+140229216,165498,Cordulegaster bidentata,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+140229216,165498,Cordulegaster bidentata,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+140514673,59706,Cordulegaster helladica,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,Resident,Suitable
+140514673,59706,Cordulegaster helladica,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+140520373,158700,Cordulegaster heros,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+140521963,158702,Cordulia aenea,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+140521963,158702,Cordulia aenea,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+140521963,158702,Cordulia aenea,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Marginal
+140521963,158702,Cordulia aenea,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Marginal
+140521963,158702,Cordulia aenea,15.2,Artificial/Aquatic - Ponds (below 8ha),,,Marginal
+140521963,158702,Cordulia aenea,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+140552175,15364,Ophiogomphus cecilia,1.4,Forest - Temperate,,,Suitable
+140552175,15364,Ophiogomphus cecilia,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+140552175,15364,Ophiogomphus cecilia,1.1,Forest - Boreal,,,Marginal
+140555879,158684,Lestes barbarus,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Suitable
+140555879,158684,Lestes barbarus,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Marginal
+140555879,158684,Lestes barbarus,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Marginal
+140557384,158690,Sympecma fusca,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Suitable
+140557384,158690,Sympecma fusca,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+140557384,158690,Sympecma fusca,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Marginal
+140557384,158690,Sympecma fusca,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+140557384,158690,Sympecma fusca,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+140557384,158690,Sympecma fusca,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Suitable
+140578608,158689,Orthetrum albistylum,5.8,Wetlands (inland) - Seasonal/Intermittent Freshwater Marshes/Pools (under 8ha),,,Suitable
+140578608,158689,Orthetrum albistylum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+140578608,158689,Orthetrum albistylum,5.6,Wetlands (inland) - Seasonal/Intermittent Freshwater Lakes (over 8ha),,,Suitable
+140578608,158689,Orthetrum albistylum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+140579909,158698,Orthetrum brunneum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+140579909,158698,Orthetrum brunneum,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Suitable
+140579909,158698,Orthetrum brunneum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+140579909,158698,Orthetrum brunneum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+140593008,165521,Orthetrum cancellatum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,,Suitable
+140593008,165521,Orthetrum cancellatum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,,Suitable
+140593008,165521,Orthetrum cancellatum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,,Suitable
+140593008,165521,Orthetrum cancellatum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+140593008,165521,Orthetrum cancellatum,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,,Suitable
+140593008,165521,Orthetrum cancellatum,15.5,Artificial/Aquatic - Excavations (open),No,,Suitable
+140593008,165521,Orthetrum cancellatum,15.3,Artificial/Aquatic - Aquaculture Ponds,No,,Suitable
+140593008,165521,Orthetrum cancellatum,15.2,Artificial/Aquatic - Ponds (below 8ha),No,,Suitable
+140593008,165521,Orthetrum cancellatum,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),No,,Suitable
+140593008,165521,Orthetrum cancellatum,13.4,Marine Coastal/Supratidal - Coastal Brackish/Saline Lagoons/Marine Lakes,Yes,,Suitable
+140593008,165521,Orthetrum cancellatum,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Marginal
+140593008,165521,Orthetrum cancellatum,15.6,Artificial/Aquatic - Wastewater Treatment Areas,,,Marginal
+140594360,158682,Orthetrum coerulescens,5.9,Wetlands (inland) - Freshwater Springs and Oases,,,Suitable
+140594360,158682,Orthetrum coerulescens,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+140594360,158682,Orthetrum coerulescens,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+140594360,158682,Orthetrum coerulescens,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+140594360,158682,Orthetrum coerulescens,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Suitable
+140594360,158682,Orthetrum coerulescens,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,,,Suitable
+140594360,158682,Orthetrum coerulescens,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+140594360,158682,Orthetrum coerulescens,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+140594360,158682,Orthetrum coerulescens,15.6,Artificial/Aquatic - Wastewater Treatment Areas,,,Marginal
+140594360,158682,Orthetrum coerulescens,15.5,Artificial/Aquatic - Excavations (open),,,Suitable
+140594360,158682,Orthetrum coerulescens,15.2,Artificial/Aquatic - Ponds (below 8ha),,,Suitable
+140601918,158691,Sympetrum sanguineum,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Suitable
+140601918,158691,Sympetrum sanguineum,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+140601918,158691,Sympetrum sanguineum,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+140601918,158691,Sympetrum sanguineum,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Marginal
+140601918,158691,Sympetrum sanguineum,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Marginal
+140604365,163609,Trithemis festiva,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+140610287,158709,Platycnemis pennipes,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+140610287,158709,Platycnemis pennipes,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Suitable
+140610287,158709,Platycnemis pennipes,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+140610287,158709,Platycnemis pennipes,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",,,Suitable
+140610287,158709,Platycnemis pennipes,15.5,Artificial/Aquatic - Excavations (open),,,Suitable
+140610287,158709,Platycnemis pennipes,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+155166908,47261026,Flabellotilloidea palaestina,1.4,Forest - Temperate,Yes,Resident,Suitable
+161326679,174379,Vanessa cardui,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,,Resident,Suitable
+161326679,174379,Vanessa cardui,14.2,Artificial/Terrestrial - Pastureland,,Resident,Suitable
+161326679,174379,Vanessa cardui,1.4,Forest - Temperate,,Breeding Season,Suitable
+161326679,174379,Vanessa cardui,14.4,Artificial/Terrestrial - Rural Gardens,,Resident,Suitable
+161326679,174379,Vanessa cardui,14.5,Artificial/Terrestrial - Urban Areas,,Resident,Suitable
+161326679,174379,Vanessa cardui,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,Resident,Suitable
+161326679,174379,Vanessa cardui,8.2,Desert - Temperate,,Breeding Season,Suitable
+161326679,174379,Vanessa cardui,2.1,Savanna - Dry,,Resident,Suitable
+161326679,174379,Vanessa cardui,3.4,Shrubland - Temperate,,Breeding Season,Suitable
+161326679,174379,Vanessa cardui,3.5,Shrubland - Subtropical/Tropical Dry,,Resident,Suitable
+161326679,174379,Vanessa cardui,3.6,Shrubland - Subtropical/Tropical Moist,,Resident,Suitable
+161326679,174379,Vanessa cardui,8.1,Desert - Hot,,Passage,Suitable
+161326679,174379,Vanessa cardui,1.6,Forest - Subtropical/Tropical Moist Lowland,,Resident,Suitable
+161326679,174379,Vanessa cardui,1.5,Forest - Subtropical/Tropical Dry,,Resident,Suitable
+161326679,174379,Vanessa cardui,4.4,Grassland - Temperate,,Breeding Season,Suitable
+161326679,174379,Vanessa cardui,4.5,Grassland - Subtropical/Tropical Dry,,Resident,Suitable
+161341814,174289,Cacyreus marshalli,14.4,Artificial/Terrestrial - Rural Gardens,,,Suitable
+161341814,174289,Cacyreus marshalli,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+161341814,174289,Cacyreus marshalli,2.1,Savanna - Dry,,,Suitable
+161341814,174289,Cacyreus marshalli,2.2,Savanna - Moist,,,Suitable
+161341814,174289,Cacyreus marshalli,3.5,Shrubland - Subtropical/Tropical Dry,,,Suitable
+161341814,174289,Cacyreus marshalli,3.6,Shrubland - Subtropical/Tropical Moist,,,Suitable
+161341814,174289,Cacyreus marshalli,3.7,Shrubland - Subtropical/Tropical High Altitude,,,Suitable
+161341814,174289,Cacyreus marshalli,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+161341814,174289,Cacyreus marshalli,5.3,Wetlands (inland) - Shrub Dominated Wetlands,,,Suitable
+161341814,174289,Cacyreus marshalli,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+172421220,174225,Vanessa atalanta,14.4,Artificial/Terrestrial - Rural Gardens,,Resident,Suitable
+172421220,174225,Vanessa atalanta,14.5,Artificial/Terrestrial - Urban Areas,,Resident,Suitable
+172421220,174225,Vanessa atalanta,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,Resident,Suitable
+172421220,174225,Vanessa atalanta,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,Resident,Suitable
+172421220,174225,Vanessa atalanta,14.2,Artificial/Terrestrial - Pastureland,,Resident,Suitable
+172421236,174452,Nymphalis antiopa,1.4,Forest - Temperate,Yes,Resident,Suitable
+172421236,174452,Nymphalis antiopa,1.1,Forest - Boreal,Yes,Resident,Suitable
+176026892,44710000,Ancistrura nigrovittata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+176393184,86863386,Gerandryus aetnensis,1.4,Forest - Temperate,Yes,Resident,Suitable
+176511953,17181745,Isophya rhodopensis ssp. leonorae,1.4,Forest - Temperate,Yes,,Suitable
+176652726,68441316,Myrmecophilus hirticaudus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+176652726,68441316,Myrmecophilus hirticaudus,1.4,Forest - Temperate,Yes,Resident,Suitable
+176825250,17046338,Orchamus kaltenbachi,1.4,Forest - Temperate,Yes,Resident,Suitable
+176843951,44697976,Paranocarodes chopardi,1.4,Forest - Temperate,Yes,Resident,Suitable
+176938645,68451913,Pholidoptera macedonica,3.4,Shrubland - Temperate,No,Resident,Suitable
+176938645,68451913,Pholidoptera macedonica,4.4,Grassland - Temperate,No,Resident,Suitable
+176938645,68451913,Pholidoptera macedonica,1.4,Forest - Temperate,Yes,Resident,Suitable
+176958611,17181904,Poecilimon artedentatus,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+176958611,17181904,Poecilimon artedentatus,1.4,Forest - Temperate,Yes,Resident,Suitable
+176959319,17182024,Poecilimon hoelzeli,1.4,Forest - Temperate,Yes,Resident,Suitable
+177064260,68462331,Psorodonotus fieberi,4.4,Grassland - Temperate,Yes,Resident,Suitable
+177074359,47251891,Purpuricenus schurmanni,1.4,Forest - Temperate,Yes,Resident,Suitable
+177141482,157838,Ropalopus siculus,1.4,Forest - Temperate,Yes,Resident,Suitable
+177245047,70613909,Tettigonia balcanica,4.4,Grassland - Temperate,,Resident,Marginal
+177245047,70613909,Tettigonia balcanica,1.4,Forest - Temperate,,Resident,Marginal
+177253381,157580,Triplax emgei,1.4,Forest - Temperate,,Resident,Suitable
+177293435,68486352,Vichetia oblongicollis,4.4,Grassland - Temperate,Yes,Resident,Suitable
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+188016479,165533,Cordulegaster helladica ssp. helladica,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+188016479,165533,Cordulegaster helladica ssp. helladica,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+188019481,63227,Cordulegaster helladica ssp. kastalia,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+188019481,63227,Cordulegaster helladica ssp. kastalia,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,Resident,Suitable
+122600528,16249,Parnassius apollo,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,Resident,Suitable
+122600528,16249,Parnassius apollo,4.4,Grassland - Temperate,Yes,Resident,Suitable
+122600528,16249,Parnassius apollo,1.4,Forest - Temperate,Yes,Resident,Suitable
+122602056,174210,Parnassius mnemosyne,1.4,Forest - Temperate,Yes,Resident,Suitable
+122602056,174210,Parnassius mnemosyne,4.4,Grassland - Temperate,Yes,Resident,Suitable
+122602056,174210,Parnassius mnemosyne,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+122602056,174210,Parnassius mnemosyne,1.1,Forest - Boreal,Yes,Resident,Suitable
+161282855,174246,Pelopidas thrax,1.9,Forest - Subtropical/Tropical Moist Montane,,,Suitable
+161282855,174246,Pelopidas thrax,2.1,Savanna - Dry,,,Suitable
+161282855,174246,Pelopidas thrax,2.2,Savanna - Moist,,,Suitable
+161282855,174246,Pelopidas thrax,4.5,Grassland - Subtropical/Tropical Dry,,,Suitable
+161282855,174246,Pelopidas thrax,1.5,Forest - Subtropical/Tropical Dry,,,Suitable
+161282855,174246,Pelopidas thrax,1.6,Forest - Subtropical/Tropical Moist Lowland,,,Suitable
+161337391,174361,Freyeria trochylus,14.4,Artificial/Terrestrial - Rural Gardens,,,Suitable
+161337391,174361,Freyeria trochylus,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+161337391,174361,Freyeria trochylus,2.1,Savanna - Dry,,,Suitable
+161337391,174361,Freyeria trochylus,2.2,Savanna - Moist,,,Suitable
+161337391,174361,Freyeria trochylus,3.5,Shrubland - Subtropical/Tropical Dry,,,Suitable
+161337391,174361,Freyeria trochylus,3.6,Shrubland - Subtropical/Tropical Moist,,,Suitable
+161337391,174361,Freyeria trochylus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+161337391,174361,Freyeria trochylus,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",,,Suitable
+161341394,174427,Lampides boeticus,14.4,Artificial/Terrestrial - Rural Gardens,,,Suitable
+161341394,174427,Lampides boeticus,2.1,Savanna - Dry,,,Suitable
+161341394,174427,Lampides boeticus,3.4,Shrubland - Temperate,,,Suitable
+161341394,174427,Lampides boeticus,3.5,Shrubland - Subtropical/Tropical Dry,,,Suitable
+161341394,174427,Lampides boeticus,3.6,Shrubland - Subtropical/Tropical Moist,,,Suitable
+161341394,174427,Lampides boeticus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+161341394,174427,Lampides boeticus,4.4,Grassland - Temperate,,,Suitable
+161341394,174427,Lampides boeticus,4.5,Grassland - Subtropical/Tropical Dry,,,Suitable
+161341394,174427,Lampides boeticus,2.2,Savanna - Moist,,,Suitable
+173191103,173329988,Gomphus schneiderii,15.1,Artificial/Aquatic - Water Storage Areas (over 8ha),,,Marginal
+173191103,173329988,Gomphus schneiderii,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),,,Marginal
+173191103,173329988,Gomphus schneiderii,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+173191103,173329988,Gomphus schneiderii,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,No,,Suitable
+197512143,47261048,Korynetes coxalis,18,Unknown,,,Suitable
+197512562,47266488,Tetratoma crenicollis,18,Unknown,,,Suitable
+149168118,149168113,Brachypalpus valgus,1.4,Forest - Temperate,Yes,Resident,Suitable
+149168118,149168113,Brachypalpus valgus,14.5,Artificial/Terrestrial - Urban Areas,Yes,Resident,Suitable
+149168118,149168113,Brachypalpus valgus,14.3,Artificial/Terrestrial - Plantations,Yes,Resident,Suitable
+149168808,149168804,Pelecocera pruinosomaculata,13.2,Marine Coastal/supratidal - Coastal Caves/Karst,Yes,Resident,Suitable
+149168808,149168804,Pelecocera pruinosomaculata,1.4,Forest - Temperate,Yes,Resident,Suitable
+149168808,149168804,Pelecocera pruinosomaculata,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+149168808,149168804,Pelecocera pruinosomaculata,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,Resident,Suitable
+149168808,149168804,Pelecocera pruinosomaculata,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149169691,149169687,Pelecocera lusitanica,1.4,Forest - Temperate,Yes,Resident,Suitable
+149169691,149169687,Pelecocera lusitanica,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+149169691,149169687,Pelecocera lusitanica,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,Resident,Suitable
+149169711,149169708,Pelecocera caledonica,1.4,Forest - Temperate,Yes,Resident,Suitable
+149169711,149169708,Pelecocera caledonica,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149169711,149169708,Pelecocera caledonica,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+149169711,149169708,Pelecocera caledonica,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,Resident,Suitable
+149169996,149169986,Callicera macquarti,1.4,Forest - Temperate,Yes,Resident,Suitable
+149169996,149169986,Callicera macquarti,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+149170048,149170036,Brachypalpus laphriformis,1.4,Forest - Temperate,Yes,Resident,Suitable
+149170048,149170036,Brachypalpus laphriformis,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+149171111,149171108,Palumbia bellierii,3.4,Shrubland - Temperate,,Resident,Unknown
+149171606,149171603,Sericomyia bombiformis,1.4,Forest - Temperate,Yes,Resident,Suitable
+149171606,149171603,Sericomyia bombiformis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149171606,149171603,Sericomyia bombiformis,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149171606,149171603,Sericomyia bombiformis,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+149171606,149171603,Sericomyia bombiformis,5.2,Wetlands (inland) - Seasonal/Intermittent/Irregular Rivers/Streams/Creeks,Yes,Resident,Suitable
+149171639,149171636,Sericomyia superbiens,1.4,Forest - Temperate,Yes,Resident,Suitable
+149171639,149171636,Sericomyia superbiens,5.11,Wetlands (inland) - Alpine Wetlands (includes temporary waters from snowmelt),Yes,Resident,Suitable
+149171639,149171636,Sericomyia superbiens,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,Resident,Suitable
+149171639,149171636,Sericomyia superbiens,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),Yes,Resident,Suitable
+149171639,149171636,Sericomyia superbiens,5.3,Wetlands (inland) - Shrub Dominated Wetlands,Yes,Resident,Suitable
+149171639,149171636,Sericomyia superbiens,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149171639,149171636,Sericomyia superbiens,3.4,Shrubland - Temperate,No,Resident,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,2.1,Savanna - Dry,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,14.2,Artificial/Terrestrial - Pastureland,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,1.9,Forest - Subtropical/Tropical Moist Montane,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,4.4,Grassland - Temperate,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,14.1,Artificial/Terrestrial - Arable Land,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,14.3,Artificial/Terrestrial - Plantations,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,14.4,Artificial/Terrestrial - Rural Gardens,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,4.6,Grassland - Subtropical/Tropical Seasonally Wet/Flooded,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,1.5,Forest - Subtropical/Tropical Dry,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,3.7,Shrubland - Subtropical/Tropical High Altitude,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,4.7,Grassland - Subtropical/Tropical High Altitude,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,4.5,Grassland - Subtropical/Tropical Dry,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,14.6,Artificial/Terrestrial - Subtropical/Tropical Heavily Degraded Former Forest,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,2.2,Savanna - Moist,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,3.4,Shrubland - Temperate,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,3.6,Shrubland - Subtropical/Tropical Moist,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,1.6,Forest - Subtropical/Tropical Moist Lowland,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,1.4,Forest - Temperate,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+180615299,180450141,Leptotes pirithous ssp. pirithous,3.5,Shrubland - Subtropical/Tropical Dry,,,Suitable
+180618290,180529174,Ypthima asterope ssp. asterope,2.1,Savanna - Dry,,,Suitable
+202085044,173204,Pseudochazara amymone,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149115155,149115153,Merodon albifasciatus,1.4,Forest - Temperate,Yes,Resident,Suitable
+149115155,149115153,Merodon albifasciatus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149163269,149163267,Eumerus consimilis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,No,Resident,Suitable
+149163269,149163267,Eumerus consimilis,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163269,149163267,Eumerus consimilis,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149163289,149163287,Eumerus claripennis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149163289,149163287,Eumerus claripennis,5.3,Wetlands (inland) - Shrub Dominated Wetlands,Yes,Resident,Suitable
+149163289,149163287,Eumerus claripennis,5.5,Wetlands (inland) - Permanent Freshwater Lakes (over 8ha),Yes,Resident,Suitable
+149163339,149163337,Eumerus alpinus,14.2,Artificial/Terrestrial - Pastureland,Yes,Resident,Suitable
+149163339,149163337,Eumerus alpinus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149163339,149163337,Eumerus alpinus,4.5,Grassland - Subtropical/Tropical Dry,Yes,Resident,Suitable
+149163339,149163337,Eumerus alpinus,1.5,Forest - Subtropical/Tropical Dry,Yes,Resident,Suitable
+149163339,149163337,Eumerus alpinus,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149163362,149163359,Pipiza noctiluca,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163362,149163359,Pipiza noctiluca,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+149163362,149163359,Pipiza noctiluca,14.1,Artificial/Terrestrial - Arable Land,,Resident,Marginal
+149163362,149163359,Pipiza noctiluca,14.4,Artificial/Terrestrial - Rural Gardens,,Resident,Suitable
+149163382,149163380,Pipiza luteibarba,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163402,149163400,Pipiza laurusi,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163450,149163445,Pipiza austriaca,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163450,149163445,Pipiza austriaca,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+149163467,149163465,Katara connexa,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163833,149163831,Cheilosia redi,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163854,149163851,Cheilosia pubera,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163854,149163851,Cheilosia pubera,4.4,Grassland - Temperate,,Resident,Suitable
+149163864,149163862,Cheilosia psilophthalma,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163864,149163862,Cheilosia psilophthalma,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149163894,149163892,Cheilosia pascuorum,1.4,Forest - Temperate,Yes,Resident,Suitable
+149163894,149163892,Cheilosia pascuorum,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149164045,149164043,Cheilosia lenta,1.4,Forest - Temperate,Yes,Resident,Suitable
+149164095,149164093,Cheilosia laeviseta,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149164125,149164123,Cheilosia katara,1.4,Forest - Temperate,Yes,Resident,Suitable
+149164207,149164204,Cheilosia himantopa,1.4,Forest - Temperate,,Resident,Suitable
+149164207,149164204,Cheilosia himantopa,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,Resident,Suitable
+149164207,149164204,Cheilosia himantopa,4.4,Grassland - Temperate,,Resident,Marginal
+149164311,149164309,Cheilosia cynocephala,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149164311,149164309,Cheilosia cynocephala,14.2,Artificial/Terrestrial - Pastureland,,Resident,Marginal
+149164475,149164472,Cheilosia antiqua,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149164475,149164472,Cheilosia antiqua,1.4,Forest - Temperate,Yes,Resident,Suitable
+149164628,149164626,Xanthogramma pilosum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149164628,149164626,Xanthogramma pilosum,14.3,Artificial/Terrestrial - Plantations,Yes,Resident,Suitable
+149164662,149164659,Xanthogramma aeginae,1.4,Forest - Temperate,Yes,Resident,Suitable
+149164662,149164659,Xanthogramma aeginae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149164671,149164660,Merodon trochantericus,1.4,Forest - Temperate,Yes,Resident,Suitable
+149164671,149164660,Merodon trochantericus,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149164671,149164660,Merodon trochantericus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149164943,149164940,Sphegina clavata,1.4,Forest - Temperate,Yes,Resident,Suitable
+149164943,149164940,Sphegina clavata,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149165034,149165032,Merodon peloponnesius,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165034,149165032,Merodon peloponnesius,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149165067,149165065,Riponnensia morini,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149165067,149165065,Riponnensia morini,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,Resident,Suitable
+149165067,149165065,Riponnensia morini,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165102,149165099,Merodon nisi,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165102,149165099,Merodon nisi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149165205,149165203,Orthonevra montana,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149165205,149165203,Orthonevra montana,5.11,Wetlands (inland) - Alpine Wetlands (includes temporary waters from snowmelt),Yes,Resident,Suitable
+149165205,149165203,Orthonevra montana,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165205,149165203,Orthonevra montana,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,Resident,Suitable
+149165216,149165213,Merodon naxius,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149165248,149165245,Neoascia unifasciata,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149165248,149165245,Neoascia unifasciata,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165248,149165245,Neoascia unifasciata,14.2,Artificial/Terrestrial - Pastureland,Yes,Resident,Suitable
+149165314,149165312,Criorhina pachymera,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165324,149165322,Merodon megavidus,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165324,149165322,Merodon megavidus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149165540,149165538,Brachyopa plena,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165611,149165606,Claussenia hispanica,1.4,Forest - Temperate,,Resident,Suitable
+149165611,149165606,Claussenia hispanica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,Resident,Suitable
+149165632,149165628,Brachyopa minima,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165670,149165668,Brachyopa insensilis,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165736,149165734,Brachyopa bimaculosa,1.4,Forest - Temperate,Yes,Resident,Suitable
+149166474,149166468,Pipizella annulata,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149166474,149166468,Pipizella annulata,1.4,Forest - Temperate,Yes,Resident,Suitable
+149166597,149166595,Platycheirus muelleri,1.4,Forest - Temperate,Yes,Resident,Suitable
+149166678,149166676,Paragus majoranae,1.4,Forest - Temperate,Yes,Resident,Suitable
+149166678,149166676,Paragus majoranae,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149167059,149167049,Eumerus rubrum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149167059,149167049,Eumerus rubrum,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167112,149167110,Syrphus nitidifrons,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167142,149167140,Eumerus minotaurus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149167292,149167289,Cheilosia morio,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167519,149167516,Eupeodes lucasi,14.4,Artificial/Terrestrial - Rural Gardens,No,Resident,Suitable
+149167519,149167516,Eupeodes lucasi,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167577,149167572,Merodon euri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149167577,149167572,Merodon euri,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167758,149167756,Merodon erymanthius,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167758,149167756,Merodon erymanthius,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149167843,149167838,Merodon constans,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167960,149167955,Merodon andriotes,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149167960,149167955,Merodon andriotes,1.4,Forest - Temperate,Yes,Resident,Suitable
+149168283,149168281,Merodon caerulescens,1.4,Forest - Temperate,Yes,Resident,Suitable
+149168283,149168281,Merodon caerulescens,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149168389,149168387,Merodon dobrogensis,1.4,Forest - Temperate,Yes,Resident,Suitable
+149168389,149168387,Merodon dobrogensis,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149168389,149168387,Merodon dobrogensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149168924,149168922,Pipizella zloti,1.4,Forest - Temperate,Yes,Resident,Suitable
+149168924,149168922,Pipizella zloti,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149168934,149168932,Sphegina elegans,1.4,Forest - Temperate,Yes,Resident,Suitable
+149168934,149168932,Sphegina elegans,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149169047,149169044,Sphegina sublatifrons,1.4,Forest - Temperate,Yes,Resident,Suitable
+149169047,149169044,Sphegina sublatifrons,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149169047,149169044,Sphegina sublatifrons,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,Resident,Suitable
+149169129,149169119,Sphegina latifrons,1.4,Forest - Temperate,Yes,Resident,Suitable
+149169129,149169119,Sphegina latifrons,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149169298,149169296,Eumerus uncipes,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149169298,149169296,Eumerus uncipes,1.5,Forest - Subtropical/Tropical Dry,Yes,Resident,Suitable
+149169362,149169360,Eumerus torsicus,1.4,Forest - Temperate,Yes,Resident,Suitable
+149169630,149169625,Eumerus phaeacus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149169630,149169625,Eumerus phaeacus,1.5,Forest - Subtropical/Tropical Dry,Yes,Resident,Suitable
+149169638,149169627,Criorhina ranunculi,1.4,Forest - Temperate,Yes,Resident,Suitable
+149169638,149169627,Criorhina ranunculi,4.4,Grassland - Temperate,No,Resident,Suitable
+149170064,149170056,Merodon virgatus,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,Resident,Suitable
+149170064,149170056,Merodon virgatus,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149170226,149170224,Eumerus montanum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149170226,149170224,Eumerus montanum,4.7,Grassland - Subtropical/Tropical High Altitude,Yes,Resident,Suitable
+149170290,149170288,Eumerus pauper,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+149170438,149170436,Eumerus karyates,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149170512,149170510,Cheilosia thessala,1.4,Forest - Temperate,Yes,Resident,Suitable
+149170575,149170573,Cheilosia semifasciata,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,Resident,Suitable
+149170575,149170573,Cheilosia semifasciata,1.4,Forest - Temperate,,Resident,Suitable
+149170575,149170573,Cheilosia semifasciata,4.4,Grassland - Temperate,,Resident,Suitable
+149170575,149170573,Cheilosia semifasciata,14.4,Artificial/Terrestrial - Rural Gardens,,Resident,Suitable
+149170575,149170573,Cheilosia semifasciata,14.5,Artificial/Terrestrial - Urban Areas,,Resident,Suitable
+149170659,149170654,Pipiza notata,1.4,Forest - Temperate,Yes,Resident,Suitable
+149171302,149171300,Brachyopa vernalis,1.4,Forest - Temperate,Yes,Resident,Suitable
+149171323,149171321,Brachyopa grunewaldensis,1.4,Forest - Temperate,Yes,Resident,Suitable
+149171836,149171833,Chrysotoxum fasciolatum,1.4,Forest - Temperate,Yes,Resident,Suitable
+149171836,149171833,Chrysotoxum fasciolatum,4.4,Grassland - Temperate,Yes,Resident,Suitable
+149172043,149172040,Epistrophella coronata,1.4,Forest - Temperate,Yes,Resident,Suitable
+149172043,149172040,Epistrophella coronata,1.5,Forest - Subtropical/Tropical Dry,Yes,Resident,Suitable
+149172189,149172186,Melangyna cingulata,1.4,Forest - Temperate,Yes,Resident,Suitable
+149172717,149172712,Criorhina asilica,1.4,Forest - Temperate,Yes,Resident,Suitable
+152281710,149168902,Anasimyia femorata,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,Resident,Suitable
+152281759,149170214,Sphiximorpha petronillae,1.4,Forest - Temperate,Yes,Resident,Suitable
+152281823,149170563,Primocerioides regale,1.4,Forest - Temperate,Yes,Resident,Suitable
+152281823,149170563,Primocerioides regale,14.3,Artificial/Terrestrial - Plantations,No,Resident,Suitable
+152281827,149170583,Psilota exilistyla,1.4,Forest - Temperate,Yes,Resident,Suitable
+152281827,149170583,Psilota exilistyla,1.5,Forest - Subtropical/Tropical Dry,Yes,Resident,Suitable
+152281831,149170604,Psilota nana,1.4,Forest - Temperate,Yes,Resident,Suitable
+152281831,149170604,Psilota nana,1.5,Forest - Subtropical/Tropical Dry,Yes,Resident,Suitable
+152281839,149170644,Sphiximorpha garibaldii,1.4,Forest - Temperate,Yes,Resident,Suitable
+152281839,149170644,Sphiximorpha garibaldii,1.5,Forest - Subtropical/Tropical Dry,Yes,Resident,Suitable
+152281847,149170677,Psilota anthracina,1.4,Forest - Temperate,Yes,Resident,Suitable
+152281847,149170677,Psilota anthracina,1.5,Forest - Subtropical/Tropical Dry,Yes,Resident,Suitable
+152281847,149170677,Psilota anthracina,14.3,Artificial/Terrestrial - Plantations,No,Resident,Suitable
+172768416,172768413,Merodon confinium,1.4,Forest - Temperate,Yes,Resident,Suitable
+172768523,172768520,Merodon spineus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+172768523,172768520,Merodon spineus,1.4,Forest - Temperate,Yes,Resident,Suitable
+172768737,172768719,Merodon calidus,1.4,Forest - Temperate,Yes,Resident,Suitable
+179993037,175942795,Merodon kozufensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+179993037,175942795,Merodon kozufensis,1.4,Forest - Temperate,Yes,Resident,Suitable
+179993092,175944745,Merodon medium,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+179993092,175944745,Merodon medium,1.4,Forest - Temperate,Yes,Resident,Suitable
+179993092,175944745,Merodon medium,4.4,Grassland - Temperate,Yes,Resident,Suitable
+179993389,175944635,Merodon olympius,1.4,Forest - Temperate,Yes,Resident,Suitable
+179993901,175922919,Merodon atricapillatus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+179993994,175923879,Merodon rojoi,1.4,Forest - Temperate,Yes,Resident,Suitable
+191489906,188456986,Cheilosia candida,1.4,Forest - Temperate,Yes,Resident,Suitable
+194174834,194174678,Paragus thracusi,4.4,Grassland - Temperate,Yes,Resident,Suitable
+219967836,165505,Calopteryx virgo,15.9,"Artificial/Aquatic - Canals and Drainage Channels, Ditches",No,Resident,Suitable
+219967836,165505,Calopteryx virgo,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+219967836,165505,Calopteryx virgo,5.9,Wetlands (inland) - Freshwater Springs and Oases,No,Resident,Suitable
+222964578,174464,Zizeeria knysna,4.7,Grassland - Subtropical/Tropical High Altitude,,,Suitable
+222964578,174464,Zizeeria knysna,3.6,Shrubland - Subtropical/Tropical Moist,,,Suitable
+222964578,174464,Zizeeria knysna,14.4,Artificial/Terrestrial - Rural Gardens,,,Suitable
+222964578,174464,Zizeeria knysna,3.7,Shrubland - Subtropical/Tropical High Altitude,,,Suitable
+222964578,174464,Zizeeria knysna,1.6,Forest - Subtropical/Tropical Moist Lowland,,,Suitable
+222964578,174464,Zizeeria knysna,4.4,Grassland - Temperate,,,Suitable
+222964578,174464,Zizeeria knysna,4.5,Grassland - Subtropical/Tropical Dry,,,Suitable
+222964578,174464,Zizeeria knysna,4.6,Grassland - Subtropical/Tropical Seasonally Wet/Flooded,,,Suitable
+222964578,174464,Zizeeria knysna,3.5,Shrubland - Subtropical/Tropical Dry,,,Suitable
+222964578,174464,Zizeeria knysna,1.9,Forest - Subtropical/Tropical Moist Montane,,,Suitable
+222964578,174464,Zizeeria knysna,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+222964578,174464,Zizeeria knysna,14.2,Artificial/Terrestrial - Pastureland,,,Suitable
+222964578,174464,Zizeeria knysna,1.5,Forest - Subtropical/Tropical Dry,,,Suitable
+222964578,174464,Zizeeria knysna,14.6,Artificial/Terrestrial - Subtropical/Tropical Heavily Degraded Former Forest,,,Suitable
+222964578,174464,Zizeeria knysna,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+222964578,174464,Zizeeria knysna,2.1,Savanna - Dry,,,Suitable
+222964578,174464,Zizeeria knysna,2.2,Savanna - Moist,,,Suitable
+222964578,174464,Zizeeria knysna,14.1,Artificial/Terrestrial - Arable Land,,,Suitable
+222964578,174464,Zizeeria knysna,3.4,Shrubland - Temperate,,,Suitable
+222964578,174464,Zizeeria knysna,14.3,Artificial/Terrestrial - Plantations,,,Suitable
+222973332,174447,Gegenes pumilio,4.7,Grassland - Subtropical/Tropical High Altitude,,,Suitable
+222973332,174447,Gegenes pumilio,4.5,Grassland - Subtropical/Tropical Dry,,,Suitable
+222973332,174447,Gegenes pumilio,2.1,Savanna - Dry,,,Suitable
+222981123,174286,Leptotes pirithous,14.1,Artificial/Terrestrial - Arable Land,,,Suitable
+222981123,174286,Leptotes pirithous,2.2,Savanna - Moist,,,Suitable
+222981123,174286,Leptotes pirithous,1.5,Forest - Subtropical/Tropical Dry,,,Suitable
+222981123,174286,Leptotes pirithous,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+222981123,174286,Leptotes pirithous,1.9,Forest - Subtropical/Tropical Moist Montane,,,Suitable
+222981123,174286,Leptotes pirithous,14.6,Artificial/Terrestrial - Subtropical/Tropical Heavily Degraded Former Forest,,,Suitable
+222981123,174286,Leptotes pirithous,3.6,Shrubland - Subtropical/Tropical Moist,,,Suitable
+222981123,174286,Leptotes pirithous,14.4,Artificial/Terrestrial - Rural Gardens,,,Suitable
+222981123,174286,Leptotes pirithous,4.4,Grassland - Temperate,,,Suitable
+222981123,174286,Leptotes pirithous,4.6,Grassland - Subtropical/Tropical Seasonally Wet/Flooded,,,Suitable
+222981123,174286,Leptotes pirithous,3.7,Shrubland - Subtropical/Tropical High Altitude,,,Suitable
+222981123,174286,Leptotes pirithous,1.4,Forest - Temperate,,,Suitable
+222981123,174286,Leptotes pirithous,14.2,Artificial/Terrestrial - Pastureland,,,Suitable
+222981123,174286,Leptotes pirithous,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+222981123,174286,Leptotes pirithous,3.5,Shrubland - Subtropical/Tropical Dry,,,Suitable
+222981123,174286,Leptotes pirithous,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+222981123,174286,Leptotes pirithous,4.7,Grassland - Subtropical/Tropical High Altitude,,,Suitable
+222981123,174286,Leptotes pirithous,3.4,Shrubland - Temperate,,,Suitable
+222981123,174286,Leptotes pirithous,14.3,Artificial/Terrestrial - Plantations,,,Suitable
+222981123,174286,Leptotes pirithous,1.6,Forest - Subtropical/Tropical Moist Lowland,,,Suitable
+222981123,174286,Leptotes pirithous,2.1,Savanna - Dry,,,Suitable
+222981123,174286,Leptotes pirithous,4.5,Grassland - Subtropical/Tropical Dry,,,Suitable
+222994308,174451,Ypthima asterope,2.1,Savanna - Dry,,,Suitable
+222994680,174455,Danaus chrysippus,14.5,Artificial/Terrestrial - Urban Areas,,,Suitable
+222994680,174455,Danaus chrysippus,1.9,Forest - Subtropical/Tropical Moist Montane,,,Suitable
+222994680,174455,Danaus chrysippus,4.6,Grassland - Subtropical/Tropical Seasonally Wet/Flooded,,,Suitable
+222994680,174455,Danaus chrysippus,4.4,Grassland - Temperate,,,Suitable
+222994680,174455,Danaus chrysippus,2.1,Savanna - Dry,,,Suitable
+222994680,174455,Danaus chrysippus,1.4,Forest - Temperate,,,Suitable
+222994680,174455,Danaus chrysippus,3.6,Shrubland - Subtropical/Tropical Moist,,,Suitable
+222994680,174455,Danaus chrysippus,14.3,Artificial/Terrestrial - Plantations,,,Suitable
+222994680,174455,Danaus chrysippus,14.1,Artificial/Terrestrial - Arable Land,,,Suitable
+222994680,174455,Danaus chrysippus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+222994680,174455,Danaus chrysippus,14.6,Artificial/Terrestrial - Subtropical/Tropical Heavily Degraded Former Forest,,,Suitable
+222994680,174455,Danaus chrysippus,14.4,Artificial/Terrestrial - Rural Gardens,,,Suitable
+222994680,174455,Danaus chrysippus,1.5,Forest - Subtropical/Tropical Dry,,,Suitable
+222994680,174455,Danaus chrysippus,3.4,Shrubland - Temperate,,,Suitable
+222994680,174455,Danaus chrysippus,4.5,Grassland - Subtropical/Tropical Dry,,,Suitable
+222994680,174455,Danaus chrysippus,1.6,Forest - Subtropical/Tropical Moist Lowland,,,Suitable
+222994680,174455,Danaus chrysippus,4.7,Grassland - Subtropical/Tropical High Altitude,,,Suitable
+222994680,174455,Danaus chrysippus,2.2,Savanna - Moist,,,Suitable
+222994680,174455,Danaus chrysippus,3.7,Shrubland - Subtropical/Tropical High Altitude,,,Suitable
+222994680,174455,Danaus chrysippus,3.5,Shrubland - Subtropical/Tropical Dry,,,Suitable
+222994680,174455,Danaus chrysippus,14.2,Artificial/Terrestrial - Pastureland,,,Suitable

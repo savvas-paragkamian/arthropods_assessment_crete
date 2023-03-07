@@ -1,0 +1,2173 @@
+internalTaxonId,scientificName,name,language,main
+11797,Lepus castroviejoi,Liebre De Piornal,Spanish; Castilian,false
+11797,Lepus castroviejoi,Lievre de Castroviejo,French,false
+11797,Lepus castroviejoi,Broom Hare,English,true
+136503,Plecotus sardus,Oreillard Sarde,French,false
+136503,Plecotus sardus,Orejudo Sardo,Spanish; Castilian,false
+136503,Plecotus sardus,Sardinian Long-eared Bat,English,true
+136536,Microtus brachycercus,Calabria Pine Vole,English,true
+157938,Narthecium reverchonii,Ossifrage de Reverchon,French,false
+157938,Narthecium reverchonii,Narthécie de Reverchon,French,true
+162144,Anthyllis hystrix,Socarrell gros,Catalan; Valencian,true
+162229,Ophrys melitensis,Brimba Sewda,Maltese,false
+162229,Ophrys melitensis,Maltse Spider Orchid,English,true
+162906,Helicocranchia pfefferi,Banded Piglet Squid,English,true
+162910,Chtenopteryx sicula,Toothed-fin Squid,English,false
+162910,Chtenopteryx sicula,Comb-finned Squid,English,true
+165121,Lycopodium madeirense,Madeira Clubmoss,English,true
+165231,Asplenium azoricum,Azorean Spleenwort,English,true
+171087,Oxychilus lathyri,Luisant de Bastia,French,true
+171134,Oxychilus blauneri,Luisant de Figari,French,true
+171262,Cochlodina meisneriana,Fuseau corse,French,true
+171271,Oxychilus tropidophorus,Luisant de Haute-Corse,French,true
+171291,Oxychilus obscuratus,Luisant de Marmano,French,true
+171635,Oxychilus requienii,Luisant de Corte,French,true
+171648,Oxychilus adjaciensis,Luisant corse,French,true
+171709,Oxychilus shuttleworthianus,Luisant de Saint-Florent,French,true
+171995,Oxychilus edmundi,Luisant de Porto,French,true
+193529,Acer lobelii,Lobel's Maple,English,true
+196116,Backeljaia corbellai,Small snail of Navés,English,false
+196116,Backeljaia corbellai,Pequeño caracol de Navés,Spanish; Castilian,true
+202990,Santolina oblongifolia,Santolina,Spanish; Castilian,false
+202990,Santolina oblongifolia,Manzanilla de Gredos,Spanish; Castilian,true
+202992,Tanacetum cinerariifolium,Dalmatian Insect-Flower,English,false
+202992,Tanacetum cinerariifolium,Dalmatia Pyrethrum,English,false
+202992,Tanacetum cinerariifolium,Chu Chong Ju,Chinese,false
+202992,Tanacetum cinerariifolium,Dalmatiner Insektenblume,German,false
+202992,Tanacetum cinerariifolium,Dalmatinerkrage,Swedish,false
+202992,Tanacetum cinerariifolium,Dalmatskaja Romaška,Russian,false
+202992,Tanacetum cinerariifolium,Jechunggug,Korean,false
+202992,Tanacetum cinerariifolium,Karajpel lulepleshti,Albanian,false
+202992,Tanacetum cinerariifolium,Pelitre,Spanish; Castilian,false
+202992,Tanacetum cinerariifolium,Piretro,Spanish; Castilian,false
+202992,Tanacetum cinerariifolium,Piretrum Sinerarielistnyj,Russian,false
+202992,Tanacetum cinerariifolium,Pyrèthre,French,false
+202992,Tanacetum cinerariifolium,Pyrèthre de Dalmatie,French,false
+202992,Tanacetum cinerariifolium,Shirobana-Mushi-Yokegiku,Japanese,false
+202992,Tanacetum cinerariifolium,Dalmatian Pyrethrum,English,true
+203261,Salvia officinalis subsp. lavandulifolia,Sauge à Feuilles de Lavande,French,false
+203261,Salvia officinalis subsp. lavandulifolia,Spanish Sage,English,true
+203267,Sideritis glacialis,Manrubio,Spanish; Castilian,false
+203267,Sideritis glacialis,Samarilla Blanca,Spanish; Castilian,false
+203267,Sideritis glacialis,Zahareña Fina,Spanish; Castilian,false
+203267,Sideritis glacialis,Hierba de la sangre,Spanish; Castilian,true
+203269,Sideritis leucantha,Rabo de gato,Spanish; Castilian,true
+203270,Sideritis reverchonii,Zahareña,Spanish; Castilian,true
+203344,Thymus baeticus,Tomillo basto,Spanish; Castilian,false
+203344,Thymus baeticus,Tomillo fino,Spanish; Castilian,false
+203344,Thymus baeticus,Spanish Lemon Thyme,English,true
+20411,Sorex samniticus,Musaraigne Des Apennins,French,false
+20411,Sorex samniticus,Musaraña De Los Apeninos,Spanish; Castilian,false
+20411,Sorex samniticus,Appenine Shrew,English,true
+269,Acomys minous,Cretan Spiny Mouse,English,false
+269,Acomys minous,Spiny Mouse,English,false
+269,Acomys minous,Kreta-Stachelmaus,German,false
+269,Acomys minous,Ratón Espinoso De Creta,Spanish; Castilian,false
+269,Acomys minous,Souris Épineuse De Crete,French,false
+269,Acomys minous,Crete Spiny Mouse,English,true
+30336,Sideroxylon mirmulans,Marmulan,Spanish; Castilian,false
+30336,Sideroxylon mirmulans,Marmulano,Portuguese,false
+33956,Frangula azorica,Tintureira,Portuguese,false
+34161,Larix decidua var. polonica,Larice,Romanian,false
+34161,Larix decidua var. polonica,Zada,Romanian,false
+41484,Talpa romana,Taupe Romaine,French,false
+41484,Talpa romana,Topo Romano,Spanish; Castilian,false
+41484,Talpa romana,Roman Mole,English,true
+5560,Crocidura canariensis,Canarian Shrew,English,false
+5560,Crocidura canariensis,Canarian White-toothed Shrew,English,false
+5560,Crocidura canariensis,Crocidure des Canaries,French,false
+5560,Crocidura canariensis,Musaraña Canaria,Spanish; Castilian,false
+5560,Crocidura canariensis,Canary Shrew,English,true
+61645,Atriplex lanfrancoi,Bjanka taI-Irdum,Maltese,false
+61645,Atriplex lanfrancoi,Maltese Cliff Orache,English,true
+61649,Euphorbia margalidiana,Spurge of Margadiles Islet,English,false
+61649,Euphorbia margalidiana,Lletrera,Catalan; Valencian,false
+61649,Euphorbia margalidiana,Lletrera de Ses Margalides,Catalan; Valencian,false
+10799,Iglica kleinzellensis,Steirische Höhlennadelschneck,German,true
+11027,Knipowitschia thessala,Θεσσαλογωβιός,"Greek, Modern (1453-)",false
+11027,Knipowitschia thessala,Thessaly goby,English,true
+11028,Knipowitschia goerneri,Κερκυρογωβιός,"Greek, Modern (1453-)",false
+11028,Knipowitschia goerneri,Corfu dwarf goby,English,true
+11029,Knipowitschia milleri,Αχερονογωβιός,"Greek, Modern (1453-)",false
+11029,Knipowitschia milleri,Acheron spring goby,English,true
+11133,Ladigesocypris ghigii,Ghizáni,English,false
+11455,Leiostyla abbreviata,Madeiran Land Snail,English,false
+11456,Leiostyla cassidula,Madeiran Land Snail,English,false
+11457,Leiostyla corneocostata,Madeiran Land Snail,English,false
+11458,Leiostyla gibba,Madeiran Land Snail,English,false
+11459,Leiostyla lamellosa,Madeiran Land Snail,English,false
+1199,Anaecypris hispanica,Jarabugo,Spanish; Castilian,false
+1199,Anaecypris hispanica,Saramugo,Portuguese,false
+1199,Anaecypris hispanica,Iberian minnowcarp,English,true
+12245,Hauffenia danubialis,Donau-Zwergrundmundschnecke,German,true
+12654,Macrovipera schweizeri,Milos Viper,English,false
+12654,Macrovipera schweizeri,Milosotter,German,false
+12654,Macrovipera schweizeri,Cyclades Blunt-nosed Viper,English,true
+135442,Achondrostoma oligolepis,Ruivaco,Portuguese,true
+135497,Iberochondrostoma almacai,Mira pardelha,Portuguese,false
+135497,Iberochondrostoma almacai,Algarve nase,English,true
+135503,Alburnus vistonicus,Αλάια,"Greek, Modern (1453-)",false
+135503,Alburnus vistonicus,Vistonida shemaya,English,true
+135504,Knipowitschia cameliae,Danube Delta dwarf goby,English,true
+135518,Coregonus pennantii,Gwyniad,English,false
+135518,Coregonus pennantii,Gwyniad,Welsh,true
+135538,Cottus haemusi,Glavoch,Bulgarian,false
+135538,Cottus haemusi,Vit Koppe,German,false
+135538,Cottus haemusi,Vit Sculpin,English,true
+135563,Coregonus palaea,Palée,French,false
+135566,Coregonus clupeoides,Powan,English,true
+135589,Cottus scaturigo,Timavo sculpin,English,true
+135598,Alburnus mandrensis,Mandra shemaya,English,false
+135598,Alburnus mandrensis,Мандренска брияна [Mandrenska briyana],Bulgarian,false
+135600,Aphanius almiriensis,Ζαχαριάς Αλμυρής,"Greek, Modern (1453-)",false
+135600,Aphanius almiriensis,Almiri Killifish,English,true
+135615,Gobio kovatschevi,Varna Gudgeon,English,false
+135616,Coregonus nobilis,Edelfisch,German,false
+135623,Salmo fibreni,Fibreno trout,English,true
+135630,Rutilus panosi,Acheloos roach,English,true
+135640,Coregonus vandesius,Vendace,English,true
+135641,Alburnus volviticus,Γελάρτζα,"Greek, Modern (1453-)",false
+135641,Alburnus volviticus,Gelartza shemaya,English,true
+135649,Squalius malacitanus,Málaga chub,English,true
+135657,Barbus sperchiensis,Sperchios barbel,English,true
+135659,Gobio skadarensis,Skadar gudgeon,English,true
+135662,Knipowitschia radovici,Norin goby,English,false
+135662,Knipowitschia radovici,Norinski glavočić,Croatian,false
+135666,Gasterosteus islandicus,Icelandic Stickleback,English,false
+135678,Squalius valentinus,Valencia chub,English,true
+135683,Achondrostoma occidentale,Ruivaco do Oeste,Portuguese,false
+135683,Achondrostoma occidentale,Western ruivaco,English,true
+135685,Cottus metae,Sava Sculpin,English,false
+135692,Salmo taleri,Zeta Trout,English,false
+135701,Coregonus stigmaticus,Schelly,English,true
+135718,Phoxinus strymonicus,Aegean minnow,English,true
+135721,Pelasgus marathonicus,Marathon minnow,English,false
+136721,Bos primigenius,Auerochse,German,false
+136721,Bos primigenius,Auroch,French,false
+136721,Bos primigenius,Eurasischer Auerochse,German,false
+136721,Bos primigenius,Uro,Spanish; Castilian,false
+136721,Bos primigenius,Aurochs,English,true
+154821,Psednos andriashevi,Andriashev's Dwarf Snailfish,English,false
+155358,Xerocrassa moraguesi,Caragol de na Claudina,Catalan; Valencian,false
+155358,Xerocrassa moraguesi,Cargol de Serp,Catalan; Valencian,true
+155488,Paladilhiopsis pretneri,Pretner's Paladilhiopse,Croatian,true
+155492,Graziana adlitzensis,Adlitzgraben-Zwergquellschnecke,German,true
+155525,Bythiospeum sterkianum,Sterkis Brunnenschnecke,German,true
+155565,Hauffenia erythropomatia,Rdeča  Sadjarka,Slovenian,true
+155606,Bythiospeum suevicum,Schwäbische Brunnenschnecke,German,true
+155614,Belgrandia torifera,Dalmatinska Belgrandija,Croatian,false
+155614,Belgrandia torifera,Dalmatian Belgrande,English,true
+155618,Iglica luxurians,Bujna Iglica,Slovenian,true
+155658,Bythiospeum heldii,Helds Brunnenschnecke,German,true
+155661,Belgrandiella kreisslorum,Kleine Zwergquellschnecke,German,true
+155702,Bythiospeum excessum,Salzburger Hohlendeckelschnecke,German,true
+155783,Iglica gracilis,Vitka Iglica,Slovenian,true
+155839,Bythiospeum clessini,Clessins Brunnenschnecke,German,true
+155845,Bythinella bertrandi,Bythinelle Étirée,French,true
+155847,Bythiospeum putei,Festschalige Brunnenschnecken,German,true
+155858,Bythiospeum exiguum,Randecker Maar-Brunnenschnecke,German,true
+155867,Bythiospeum bormanni,Rundmundige Hohlendeckelschnecke,German,true
+155903,Iglica bagliviaeformis,Omblina Iglica ,Croatian,true
+155957,Bythiospeum pellucidum,Durchsichtige Brunnenschnecke,German,true
+155958,Narentiana vjetrenicae,Zavalka,Bosnian,true
+155972,Belgrandiella boetersi,Verkannte Zwergquellschnecke,German,true
+155984,Bythiospeum turritum,Regnitz-Brunnenschnecke,German,true
+156072,Sadleriana bavarica,Bayerische Zwergdeckelschnecke,German,true
+156082,Saxurinator sketi,Šipun Cave Water Snail,English,true
+156027,Bythiospeum oshanovae,Danubial Blind Snail,English,true
+156093,Bythiospeum excelsior,Gaisberg-Hohlendeckelschnecke,German,true
+156096,Bythiospeum waegelei,Wägeles Brunnenschnecken,German,true
+156031,Hadziella krkae,Krška Hadžijela,Slovenian,true
+156042,Bythiospeum haessleini,Haesslein's Brunnenschnecke,German,true
+156049,Bythiospeum nocki,Steyerling-Hohlendeckelschnecke,German,true
+156129,Belgrandiella aulaei,Mollner Zwergquellschnecke,German,true
+156137,Bythiospeum taxisi,Thurn-und-Taxis-Brunnenschnecke,German,true
+156140,Hadziella thermalis,Termalna Hadžijela,Slovenian,true
+156152,Bythiospeum gonostoma,Degenfelder Brunnenschnecke,German,true
+156174,Belgrandiella multiformis,Vielgestaltige Zwergquellschnecke,German,true
+156192,Saxurinator labiatus,Zaton Cave Water Snail,English,true
+156666,Iberus marmoratus,Serranito,Spanish; Castilian,false
+156666,Iberus marmoratus,Cabrilla de Sierra,Spanish; Castilian,true
+157271,Iberolacerta galani,Galan's Rock Lizard,English,true
+157939,Pinguicula corsica,Grassette de Corse,French,true
+15870,Neogobius nigricans,Arno goby,English,false
+15870,Neogobius nigricans,Ghiozzo appenninico,Italian,false
+160595,Pseudochazara cingovskii,Macedonian Grayling,English,false
+161145,Erebia palarica,Chapman's Ringlet,English,false
+161804,Potentilla delphinensis,Potentille du Dauphiné,French,true
+161806,Viola paradoxa,Violeta-amarela-da-Madeira,Portuguese,false
+161806,Viola paradoxa,Violeta-da-Madeira,Portuguese,true
+161822,Erigeron frigidus,Erigeron de Sierra Nevada,Spanish; Castilian,false
+161822,Erigeron frigidus,Zamárraga,Spanish; Castilian,true
+161826,Lotus kunkelii,Cuernecillo de Costa,Spanish; Castilian,false
+161826,Lotus kunkelii,Hierbamuda,Spanish; Castilian,false
+161826,Lotus kunkelii,Loto de Kunkel,Spanish; Castilian,false
+161826,Lotus kunkelii,Yerbamuda de Jinámar,Spanish; Castilian,true
+161829,Sventenia bupleuroides,Hija de Don Enrique,Spanish; Castilian,false
+161829,Sventenia bupleuroides,Lechugón de Sventenius,Spanish; Castilian,true
+161846,Centaurea pulvinata,Escobilla de Cojín,Spanish; Castilian,true
+161847,Euphorbia handiensis,Cardón de Jandía,Spanish; Castilian,true
+161852,Galium litorale,Caglio Litorale,Italian,true
+161856,Boleum asperum,Asperillo,Spanish; Castilian,true
+161861,Aconitum corsicum,Aconit de Corse,French,true
+161868,Teucrium lepicephalum,Poliol amarg de la Nucia,Catalan; Valencian,false
+161868,Teucrium lepicephalum,Zamarrilla de los yesos,Spanish; Castilian,true
+161872,Convolvulus lopezsocasii,Corregüela de Famara,Spanish; Castilian,false
+161872,Convolvulus lopezsocasii,Corregüelón de Famara,Spanish; Castilian,true
+161874,Thymus camphoratus,Tomilho do Mar,Portuguese,true
+161880,Limonium sventenii,Siempreviva Azul,Spanish; Castilian,true
+161882,Cheirolophus junonianus,Cabezón,Spanish; Castilian,false
+161882,Cheirolophus junonianus,Centaurea,Spanish; Castilian,false
+161882,Cheirolophus junonianus,Cabezón de Teneguía,Spanish; Castilian,true
+161886,Lotus callis-viridis,Corazoncillo,Spanish; Castilian,false
+161886,Lotus callis-viridis,Cuernecillo,Spanish; Castilian,false
+161886,Lotus callis-viridis,Trébol de Risco,Spanish; Castilian,false
+161886,Lotus callis-viridis,Coranzoncillo de Andén Verde,Spanish; Castilian,true
+161896,Helichrysum gossypinum,Algodonera,Spanish; Castilian,false
+161896,Helichrysum gossypinum,Yesquera Amarilla,Spanish; Castilian,true
+161909,Euphorbia nevadensis,Lechetrezna,Spanish; Castilian,true
+161923,Leontodon boryi,Leontodon de Sierra Nevada,Spanish; Castilian,false
+161923,Leontodon boryi,Leontodon de Bory,Spanish; Castilian,true
+161926,Coronopus navasii,Mastuerzo de Gádor,Spanish; Castilian,true
+161936,Onopordum nogalesii,Cardón de Jandía,Spanish; Castilian,true
+161939,Crocus etruscus,Zafferano Etrusco,Italian,true
+161943,Kunkeliella subsucculenta,Escobilla,Spanish; Castilian,false
+161943,Kunkeliella subsucculenta,Escobilla Carnosa,Spanish; Castilian,true
+161946,Antirrhinum charidemi,Dragoncillo del Cabo de Gata,Spanish; Castilian,true
+161955,Centaurea corymbosa,Centaurée de la Clape,French,true
+161958,Pinguicula nevadensis,Grasilla,Spanish; Castilian,false
+161958,Pinguicula nevadensis,Tirañuela de Sierra Nevada,Spanish; Castilian,true
+161967,Isoplexis chalcantha,Cresta de gallo,Spanish; Castilian,false
+161967,Isoplexis chalcantha,Crestagallo de Doramas,Spanish; Castilian,true
+161974,Thymus lotocephalus,Erva ursa,Portuguese,true
+161975,Atractylis arbuscula,Cabezuela Marina,Spanish; Castilian,false
+161975,Atractylis arbuscula,Cancelillo,Spanish; Castilian,false
+161975,Atractylis arbuscula,Cardo Enrejado,Spanish; Castilian,false
+161975,Atractylis arbuscula,Piñamar Mayor,Spanish; Castilian,true
+161981,Armeria pseudarmeria,Cravo Romano,Portuguese,false
+161985,Ionopsidium acaule,Cocleária Menor,Portuguese,true
+161990,Leontodon microcephalus,Leontodon de los Borreguiles,Spanish; Castilian,true
+161992,Oenanthe conioides,Schierling-Wasserfenchel ,German,true
+161993,Saxifraga tombeanensis,Sassifraga del Monte Tombea,Italian,true
+161995,Lactuca watsoniana,Alfacinha,Portuguese,true
+161998,Cheirolophus ghomerythus,Cabezón Gomero,Spanish; Castilian,true
+162057,Artemisia granatensis,Royal chamomile,English,false
+162057,Artemisia granatensis,Manzanilla de Sierra Nevada,Spanish; Castilian,true
+162058,Argyranthemum winteri,Margarita de Jandía,Spanish; Castilian,true
+162060,Crepis granatensis,Crepis de Granada,Spanish; Castilian,true
+162073,Saxifraga vayredana,Bálsamo del Montseny,Spanish; Castilian,false
+162073,Saxifraga vayredana,Herba de Sant Segimon,Catalan; Valencian,true
+162074,Hypochaeris oligocephala,Lechuguilla de El Fraile,Spanish; Castilian,true
+162011,Crambe arborea,Colderrisco de Güímar,Spanish; Castilian,true
+162080,Isoplexis isabelliana,Cresta de Gallo,English,false
+162080,Isoplexis isabelliana,Crestagallo de Pinar,Spanish; Castilian,true
+162083,Lythrum flexuosum,Jopillo,Spanish; Castilian,true
+162020,Atractylis preauxiana,Piña de Mar,Spanish; Castilian,false
+162020,Atractylis preauxiana,Piñamar,Spanish; Castilian,true
+162024,Dendriopoterium pulidoi,Rosal de risco,Spanish; Castilian,false
+162024,Dendriopoterium pulidoi,Algafitón de La Aldea,Spanish; Castilian,true
+162025,Petrocoptis pseudoviscosa,Falaguera,Spanish; Castilian,false
+162025,Petrocoptis pseudoviscosa,Falguera,Spanish; Castilian,true
+162097,Helichrysum monogynum,Yesquera Roja,Spanish; Castilian,true
+162032,Centaurea kartschiana,Fiordaliso del Carso,Italian,true
+162102,Geranium maderense,Gerânio-da-Madeira,Portuguese,false
+162102,Geranium maderense,Pássaras,Portuguese,true
+162104,Sideritis infernalis,Chajorra de Adeje,Spanish; Castilian,true
+162108,Tanacetum ptarmiciflorum,Margarita Plateada,Spanish; Castilian,false
+162108,Tanacetum ptarmiciflorum,Magarza Plateada,Spanish; Castilian,true
+162044,Stipa bavarica,Bayerisches Federgras,German,true
+162111,Convolvulus caput-medusae,Chaparro,Spanish; Castilian,false
+162111,Convolvulus caput-medusae,Chaparro canario,Spanish; Castilian,true
+162112,Ophrys argolica,Argolian bee-orchid,English,false
+162112,Ophrys argolica,Late spider orchid,English,false
+162112,Ophrys argolica,Argolic Ophrys,English,true
+162047,Centaurea citricolor,Escobilla de Despeñaperros,Spanish; Castilian,true
+162116,Silene hifacensis,esclafidora major o rosada,Spanish; Castilian,false
+162116,Silene hifacensis,Silene de Ifac,Spanish; Castilian,true
+162117,Bencomia sphaerocarpa,Bencomia herreña,Spanish; Castilian,true
+162053,Dactylorhiza kalopissii,Kalopiss' Dactylorhiza,English,true
+162063,Limonium arborescens,Siempreviva,Spanish; Castilian,false
+162063,Limonium arborescens,Siempreviva Arbórea,Spanish; Castilian,true
+162125,Armeria soleirolii,Armeria de Soleirol,French,true
+162065,Aeonium gomerense,Bejeque gomero,Spanish; Castilian,true
+162136,Pericallis hadrosoma,Flor de Mayo Leñosa,Spanish; Castilian,true
+162140,Ranunculus weyleri,Botó d'or,Catalan; Valencian,true
+162150,Onopordum carduelium,Cardo de Tenteniguada,Spanish; Castilian,true
+162158,Erodium paularense,Erodio de Cañamares,Spanish; Castilian,false
+162158,Erodium paularense,Geranio del Paular,Spanish; Castilian,true
+162159,Erodium astragaloides,Alfilerillos de los Alayos,Spanish; Castilian,true
+162162,Teucrium charidemi,Mata de las Fiebres Maltas,Spanish; Castilian,true
+162166,Limonium spectabile,Siempreviva,Spanish; Castilian,false
+162166,Limonium spectabile,Siempreviva de Guelgue,Spanish; Castilian,true
+162171,Echium gentianoides,Tajinaste Palmero de Cumbre,Spanish; Castilian,true
+162173,Teline salsoloides,Guildana,Spanish; Castilian,false
+162173,Teline salsoloides,Sildana,Spanish; Castilian,false
+162173,Teline salsoloides,Retamón de El Fraile,Spanish; Castilian,true
+162181,Alyssum pyrenaicum,Corbeille d'Argent des Pyrénées,French,false
+162181,Alyssum pyrenaicum,Alysson des Pyrénées,French,true
+162184,Angelica heterocarpa,Angélique à fruits variables,French,true
+162187,Galium cracoviense,Przytulia Małopolska ,Polish,true
+162189,Sisymbrium cavanillesianum,Jaramago de Cavanilles,Spanish; Castilian,false
+162189,Sisymbrium cavanillesianum,Rabanillo Cornudo,Spanish; Castilian,true
+162198,Arenaria provincialis,Sabline de Provence,French,true
+162200,Salvia granatensis,Romero Blanco,Spanish; Castilian,true
+162213,Bupleurum handiense,Anís de Jandía,Spanish; Castilian,true
+162218,Stemmacantha cynaroides,Cardo de Plata,Spanish; Castilian,true
+162221,Parolinia schizogynoides,Dama de Argaga,Spanish; Castilian,true
+162223,Vicia bifoliolata,Vessa,Catalan; Valencian,true
+162225,Globularia ascanii,Mosquera de Tamadaba,Spanish; Castilian,true
+162232,Monanthes wildpretii,Pelotilla de Chinamada,Spanish; Castilian,true
+162239,Limonium dendroides,Siempreviva Gigante,Spanish; Castilian,true
+162240,Sideritis marmorea,Chajorra,Spanish; Castilian,false
+162240,Sideritis marmorea,Chajorra de Aluce,Spanish; Castilian,true
+162245,Bunium brevifolium,Nozelha,Portuguese,false
+162245,Bunium brevifolium,Nozelhinha,Portuguese,false
+162245,Bunium brevifolium,Nozinha,Portuguese,false
+162245,Bunium brevifolium,Norça,Portuguese,true
+162252,Elatine gussonei,Maltese Waterwort,English,true
+162255,Pulsatilla subslavica,Intermediate Pasque Flower,English,true
+162257,Erodium rupicola,Reloj de Sierra Nevada,Spanish; Castilian,false
+162257,Erodium rupicola,Alfilerillos de Sierra Nevada,Spanish; Castilian,true
+162258,Sinapidendron rupestre,Couve da Rocha,Portuguese,true
+162260,Dianthus moravicus,Moravian Pink,English,true
+162262,Helianthemum alypoides,Matamarilla,Spanish; Castilian,false
+162262,Helianthemum alypoides,Perdiguera de los Yesos,Spanish; Castilian,true
+162264,Aeonium saundersii,Bejequillo peludo de La Gomera,Spanish; Castilian,true
+162272,Stipa austroitalica,Lino delle Fate Piumoso,Italian,true
+162282,Dorycnium spectabile,Trébol de Risco,Spanish; Castilian,false
+162282,Dorycnium spectabile,Trébol de Risco Rosado,Spanish; Castilian,true
+162284,Ferula latipinna,Cañaheja ,Spanish; Castilian,true
+162286,Laserpitium longiradium,Laserpicio de Sierra Nevada,Spanish; Castilian,true
+162295,Santolina elegans,Santolina,Spanish; Castilian,false
+162295,Santolina elegans,Abrótano menor,Spanish; Castilian,true
+162308,Senecio elodes,Cineraria,Spanish; Castilian,true
+162314,Viola hispida,Pensée de Rouen,French,false
+162314,Viola hispida,Violette de Rouen,French,true
+162319,Linum muelleri,Lino di Moris,Italian,true
+162325,Cheirolophus duranii,Cabezón,Spanish; Castilian,false
+162325,Cheirolophus duranii,Cabezón Herreño,Spanish; Castilian,true
+162329,Solanum lidii,Pimentero,Spanish; Castilian,false
+162329,Solanum lidii,Pimiento,Spanish; Castilian,false
+162329,Solanum lidii,Tomatero Salvaje,Spanish; Castilian,false
+162329,Solanum lidii,Pimentero de Temisas,Spanish; Castilian,true
+162332,Teline rosmarinifolia,Gildana del Risco Blanco,Spanish; Castilian,true
+162338,Centaurea gadorensis,Centaurea de Gádor,Spanish; Castilian,false
+162338,Centaurea gadorensis,Escobilla de Gádor,Spanish; Castilian,true
+162339,Corydalis gotlandica,Gotländsk Nunneört,Swedish,true
+162340,Argyranthemum lidii,Magarza de Risco,Spanish; Castilian,false
+162340,Argyranthemum lidii,Magarza de Lid,Spanish; Castilian,true
+162344,Armeria helodes,Armerie di Palùt,Italian,false
+162344,Armeria helodes,Spillone Palustre,Italian,false
+162348,Sideritis discolor,Salvia Amarilla,Spanish; Castilian,false
+162348,Sideritis discolor,Salviablanca de Doramas,Spanish; Castilian,true
+162352,Origanum dictamnus,Diktamo,"Greek, Modern (1453-)",true
+162354,Anagyris latifolia,Oro de risco,Spanish; Castilian,true
+162355,Androcymbium psammophilum,Cebollín Estrellado,Spanish; Castilian,false
+162355,Androcymbium psammophilum,Lirio,Spanish; Castilian,false
+162355,Androcymbium psammophilum,Cebollín Estrellado de Jable,Spanish; Castilian,true
+162358,Sideritis serrata,Rabogato,Spanish; Castilian,true
+162364,Erysimum pieninicum,Pszonak Pieniński ,Polish,true
+162365,Globularia sarcophylla,Mata de risco,Spanish; Castilian,false
+162365,Globularia sarcophylla,Mosquera de Tirajana,Spanish; Castilian,true
+162367,Biscutella neustriaca,Lunetière de Neustrie,French,true
+162369,Centaurium somedanum,Centaura de Somiedo,Spanish; Castilian,true
+162371,Sideritis cystosiphon,Chahorra,Spanish; Castilian,false
+162371,Sideritis cystosiphon,Salvia Blanca,Spanish; Castilian,false
+162371,Sideritis cystosiphon,Chajorra de Tamaimo,Spanish; Castilian,true
+162380,Gentianella anglica,Early Gentian,English,true
+162383,Bencomia brachystachya,Bencomia de risco,Spanish; Castilian,false
+162383,Bencomia brachystachya,Bencomia de Tirajana,Spanish; Castilian,true
+163992,Hypericum corsicum,Millepertuis de Corse,French,false
+164284,Carex cretica,Laîche de Crête,French,false
+164284,Carex cretica,Crete Sedge,English,true
+164291,Bellium nivale,Pâquerette des Neiges,French,false
+164360,Bellis bernardii,Paquerette de Bernard,French,false
+164360,Bellis bernardii,Pratellina di Pozzi,Italian,false
+164363,Sisymbrella dentata,Crescione Dentato,Italian,true
+164367,Veronica repens,Véronique Rampante,French,false
+164515,Doronicum corsicum,Doronique Corse,French,false
+164526,Juncus requienii,Jonc de Requien,French,false
+164845,Bythiospeum wiaaiglica,Nadelformige Hohlendeckelschencke,German,true
+164850,Hauffenia nesemanni,Moosbrunner Zwergrundmundschnecke,German,true
+165109,Adenocarpus ombriosus,Codeso,Spanish; Castilian,false
+165109,Adenocarpus ombriosus,Escobón Negro,Spanish; Castilian,false
+165109,Adenocarpus ombriosus,Codeso Herreño,Spanish; Castilian,true
+165110,Aeonium balsamiferum,Alfarroba,Spanish; Castilian,false
+165110,Aeonium balsamiferum,Bejeque amarillo,Spanish; Castilian,false
+165110,Aeonium balsamiferum,Potera,Spanish; Castilian,false
+165110,Aeonium balsamiferum,Bejeque farrobo,Spanish; Castilian,true
+165118,Teline nervosa,Gildana Peluda,Spanish; Castilian,true
+165120,Cheirolophus tagananensis,Cabezón,Spanish; Castilian,false
+165120,Cheirolophus tagananensis,Cabezón de Taganana,Spanish; Castilian,true
+165122,Silene nocteolens,Hierba conejera,Spanish; Castilian,false
+165122,Silene nocteolens,Canutillo del Teide,Spanish; Castilian,true
+165126,Tanacetum oshanahanii,Magarza de Guayedra,Spanish; Castilian,true
+165146,Ruta microcarpa,Ruda Salvaje,Spanish; Castilian,false
+165146,Ruta microcarpa,Ruda Gomera,Spanish; Castilian,true
+165149,Helianthemum teneriffae,Jarilla,Spanish; Castilian,false
+165149,Helianthemum teneriffae,Jarilla de Agache,Spanish; Castilian,true
+165159,Salvia herbanica,Conservilla Majorera,Spanish; Castilian,true
+165164,Limonium preauxii,Siempreviva,Spanish; Castilian,false
+165164,Limonium preauxii,Siempreviva Lunaria,Spanish; Castilian,true
+165186,Sonchus gandogeri,Cerraja,Spanish; Castilian,false
+165186,Sonchus gandogeri,Cerrajón,Spanish; Castilian,false
+165186,Sonchus gandogeri,Cerrajón de El Golfo,Spanish; Castilian,true
+165205,Kunkeliella psilotoclada,Escobilla,Spanish; Castilian,false
+165205,Kunkeliella psilotoclada,Escobilla de Masca,Spanish; Castilian,true
+165207,Cheirolophus metlesicsii,Cabezón,Spanish; Castilian,false
+165207,Cheirolophus metlesicsii,Cabezón de Añavingo,Spanish; Castilian,true
+165208,Artemisia insipida,Armoise insipide,French,true
+165209,Cheirolophus satarataensis,Cabezón,Spanish; Castilian,false
+165209,Cheirolophus satarataensis,Cabezón de Sataratá,Spanish; Castilian,true
+165210,Viola cryana,Violette de Cry,French,false
+165210,Viola cryana,Pensée de Cry,French,true
+165214,Lotus maculatus,Pico de Paloma,Spanish; Castilian,false
+165214,Lotus maculatus,Pico de El Sauzal,Spanish; Castilian,true
+165218,Lotus eremiticus,Pico de Cernícalo,Spanish; Castilian,false
+165218,Lotus eremiticus,Picocernícalo,Spanish; Castilian,true
+165220,Bencomia exstipulata,Rosal del Guanche,Spanish; Castilian,false
+165220,Bencomia exstipulata,Bencomia de Cumbre,Spanish; Castilian,true
+165224,Cheirolophus falcisectus,Cabezón Rosado,Spanish; Castilian,false
+165224,Cheirolophus falcisectus,Cabezón de Güígüí,Spanish; Castilian,true
+165226,Micromeria leucantha,Tomillo Blanco,Spanish; Castilian,false
+165226,Micromeria leucantha,Tomillón Blanco,Spanish; Castilian,true
+165229,Tolpis glabrescens,Lechuguilla de Chinobre,Spanish; Castilian,true
+165236,Lotus pyranthus,Cienfuegos,Spanish; Castilian,false
+165236,Lotus pyranthus,Corazoncillo,Spanish; Castilian,false
+165236,Lotus pyranthus,Pico de Fuego,Spanish; Castilian,true
+165239,Plantago famarae,Pinillo Llantén,Spanish; Castilian,false
+165239,Plantago famarae,Pinillo de Famara,Spanish; Castilian,true
+165246,Cicer canariense,Garbancera canaria,Spanish; Castilian,true
+165250,Echium pininana,Pininana,Spanish; Castilian,true
+165252,Cheirolophus santos-abreui,Cabezón,Spanish; Castilian,false
+165252,Cheirolophus santos-abreui,Centaurea,Spanish; Castilian,false
+165252,Cheirolophus santos-abreui,Cabezón de Las Nieves,Spanish; Castilian,true
+165263,Limonium perezii,Siempreviva de Masca,Spanish; Castilian,true
+165268,Limonium fruticans,Siempreviva,Spanish; Castilian,false
+165268,Limonium fruticans,Siempreviva de El Fraile,Spanish; Castilian,true
+165836,Holacanthus limbaughi,Clipperton-kejserfisk,Danish,false
+165836,Holacanthus limbaughi,Clipperton Angelfish,English,true
+170361,Sanguisorba dodecandra,Salvastrella Orobica,Italian,true
+171926,Hipparchia azorina,Azores Grayling,English,false
+172071,Malus crescimannoi,Melo di Crescimanno,Italian,true
+172174,Allium lojaconoi,Maltese Dwarf Garlic,English,true
+172260,Patellifolia webbiana,Pinocha,Spanish; Castilian,false
+172260,Patellifolia webbiana,Marmohaya,Spanish; Castilian,true
+173017,Pyrus vallis-demonis,Pero di Val Demone,Italian,true
+173201,Hipparchia tilosi,La Palma Grayling,English,false
+173206,Hipparchia neapolitana,Italian Grayling,English,false
+173215,Pararge xiphia,Madeiran Speckled Wood,English,false
+173220,Hipparchia gomera,Gomera Grayling,English,false
+173222,Cyclyrius webbianus,Canary Blue,English,false
+173223,Gonepteryx cleobule,Canary Brimstone,English,false
+173232,Pararge xiphioides,Canary Speckled Wood,English,false
+173238,Hipparchia miguelensis,Le Cerf's Grayling,English,false
+173257,Polyommatus nivescens,Mother-of-pearl Blue,English,false
+173258,Erebia claudina,White Speck Ringlet,English,false
+173266,Euchloe hesperidum,Canary Green-striped White,English,false
+173299,Hipparchia bacchus,El Hierro Grayling,English,false
+173304,Hipparchia tamadabae,Gran Canaria Grayling,English,false
+173306,Polyommatus fulgens,Catalonian Furry Blue,English,false
+173308,Hipparchia wyssii,Canary Grayling,English,false
+173392,Limonium legrandii,Saladelle de Legrand,French,false
+173392,Limonium legrandii,Limonium de Legrand,French,true
+175917,Gymnadenia runei,Brudkulla ,Swedish,true
+175944,Epipactis dunensis,Dune Helleborine,English,true
+175958,Anacamptis boryi,Bory's Anacamptis ,English,true
+175984,Gymnadenia archiducis-joannis,Austrian Gymnadenia ,English,true
+176013,Dactylorhiza foliosa,Orquídea da Serra,Portuguese,false
+176013,Dactylorhiza foliosa,Richly-Leaved Dactylorhiza ,English,true
+176019,Gymnadenia stiriaca,Austrian Gymnadenia,English,true
+176043,Himantoglossum metlesicsianum,Metlesics' Himantoglossum ,English,true
+176406,Asparagus plocamoides,Esparragera,Spanish; Castilian,true
+176413,Crambe gomerae,Col de Risco,Spanish; Castilian,true
+176424,Asparagus fallax,Esparragera,Spanish; Castilian,true
+176463,Crambe microcarpa,Col de Risco,Spanish; Castilian,true
+176492,Crambe strigosa,Col de Risco,Spanish; Castilian,true
+176529,Barbarea bosniaca,Bosnian Yellow Rocket,English,true
+176533,Asparagus arborescens,Esparragera,Spanish; Castilian,true
+176579,Crambe scaberrima,Col de Risco,Spanish; Castilian,true
+176604,Crambe pritzelii,Col de Risco,Spanish; Castilian,true
+17795,Podarcis lilfordi,Balearic Lizard,English,false
+17795,Podarcis lilfordi,Balearen-eidechse,German,false
+17795,Podarcis lilfordi,Lagartija Balear,Spanish; Castilian,false
+17795,Podarcis lilfordi,Lézard De Lilford,French,false
+17795,Podarcis lilfordi,Lézard Des Baléares,French,false
+17795,Podarcis lilfordi,Lilford's Wall Lizard,English,true
+17797,Podarcis milensis,Miles Wall Lizard,English,false
+17797,Podarcis milensis,Milos-mauereidechse,German,false
+17797,Podarcis milensis,Milos Wall Lizard,English,true
+17800,Podarcis pityusensis,Lagartija de las Pitiusas,Spanish; Castilian,false
+17800,Podarcis pityusensis,Lagartija De Las Pitiusas,Spanish; Castilian,false
+17800,Podarcis pityusensis,Lézard Des Pityuses,French,false
+17800,Podarcis pityusensis,Pityusen-eidechse,German,false
+17800,Podarcis pityusensis,Ibiza Wall Lizard,English,true
+17939,Polyommatus galloi,Gallo’s Anomalous Blue,English,false
+17941,Polyommatus humedasae,Piedmont Anomalous Blue,English,false
+180554,Sinapidendron angustifolium,Sinapidendro de Folha Estreita,Portuguese,true
+180555,Sinapidendron frutescens,Couve da Rocha,Portuguese,true
+180557,Crambe feuillei,Col de Risco,Spanish; Castilian,true
+180558,Crambe wildpretii,Col de Risco,Spanish; Castilian,true
+180559,Crambe tamadabensis,Col de Risco,Spanish; Castilian,true
+180561,Crambe santosii,Col de Risco,Spanish; Castilian,true
+184439,Cobitis jadovaensis,Jadova Steinbeisser,German,false
+184439,Cobitis jadovaensis,Jadovski vijun,Croatian,false
+184439,Cobitis jadovaensis,Jadova spined loach,English,true
+184440,Knipowitschia mrakovcici,Visovački glavočić,Croatian,false
+184440,Knipowitschia mrakovcici,Visovac goby,English,true
+184445,Achondrostoma salmantinum,Sarda,Spanish; Castilian,true
+184446,Squalius castellanus,Gallo chub,English,true
+1846,Apricaphanius iberus,Fartet,Spanish; Castilian,false
+1846,Apricaphanius iberus,Spanish Killifish,English,true
+184948,Iberus gualtieranus,Chapa,Spanish; Castilian,true
+184949,Iberus alonensis,Vaqueta,Spanish; Castilian,true
+18579,Pelasgus stymphalicus,Dáska,English,false
+190498,Abida ateni,Maillot d'Aspe,French,true
+193560,Euphorbia bourgeana,Tabaiba Amarilla de Tenerife,Spanish; Castilian,true
+195063,Squalius albus,Trasimeno Chub,English,true
+195349,Bellevalia webbiana,Giacinto di Webb,Italian,true
+195484,Micromeria glomerata,Tomillo de Risco,Spanish; Castilian,false
+195484,Micromeria glomerata,Tomillo de Taganana,Spanish; Castilian,true
+19740,Romanichthys valsanicola,Asprete,English,false
+19786,Rutilus rubilio,Rovella,English,false
+19786,Rutilus rubilio,South European roach,English,true
+19788,Rutilus ylikiensis,Yliki roach,English,true
+19794,Sabanejewia larvata,Italian golden loach,English,true
+19856,Salmo carpio,Carpione del Garda,Italian,false
+19856,Salmo carpio,Garda trout,English,true
+19947,Scardinius graecus,Greek rudd,English,true
+20207,Siettitia balsetensis,Perrin's Cave Beetle,English,false
+22274,Troglohyphantes gracilis,Kocevje Subterranean Spider,English,false
+22275,Troglohyphantes similis,Kocevje Subterranean Spider,English,false
+22276,Troglohyphantes spinipes,Kocevje Subterranean Spider,English,false
+22346,Tropidophoxinellus spartiaticus,Spartian minnowroach,English,true
+22829,Valencia hispanica,Valencia toothcarp,English,false
+22829,Valencia hispanica,Samaruc,Spanish; Castilian,false
+2576,Barbus euboicus,Evia barbel,English,true
+2577,Luciobarbus guiraonis,Barbo mediterráneo,Spanish; Castilian,false
+2577,Luciobarbus guiraonis,Valencia barbel,English,true
+2578,Barbus haasi,Barb cua-roig,Catalan; Valencian,false
+2578,Barbus haasi,Barbo colirrojo,Spanish; Castilian,false
+2578,Barbus haasi,Haasi barboa,Basque,false
+2578,Barbus haasi,Redtail barb,English,true
+2591,Barbus tyberinus,Barbo appenninico,Italian,false
+2591,Barbus tyberinus,Barbo del Tevere,Italian,false
+2591,Barbus tyberinus,Horse barbel,English,true
+2725,Belgrandiella austriana,Ursprungs-Zwergquellschnecke,German,true
+2726,Belgrandiella fuchsi,Kugelige Zwergquellschnecke,German,true
+2728,Belgrandiella parreyssii,Thermen Zwergquellschnecke,German,true
+2729,Belgrandiella styriaca,Mixnitzer Zwergquellschnecke,German,true
+2732,Belgrandiella ganslmayri,Weyer-Zwergquellschnecke,German,true
+2734,Belgrandiella mimula,Fischauer Zwergquellschnecke,German,true
+2735,Belgrandiella pelerei,Haschendorfer Zwergquellschnecke,German,true
+2737,Belgrandiella wawrai,Further Zwergquellschnecke,German,true
+30314,Prunus ramburii,Endrino De Sierra Nevada,Spanish; Castilian,false
+30314,Prunus ramburii,Espino Negro,Spanish; Castilian,true
+30321,Apollonias barbujana subsp. ceballosi,Barbusano,Spanish; Castilian,false
+3392,Bythinella compressa,Rhön Spring Snail,English,false
+3392,Bythinella compressa,Rhön-Quellschnecke,German,true
+3393,Bythinella cylindrica,Zylindrische Quellschnecke,German,true
+3406,Bythiospeum noricum,Grobe Hohlendeckelschnecke,German,true
+3401,Bythiospeum acicula,Kleine Brunnenschnecke,German,true
+3408,Bythiospeum reisalpense,Gestreifte Hohlendeckelschnecke,German,true
+3403,Bythiospeum cisterciensorum,Bauchige Hohlendeckelschnecke,German,true
+3404,Bythiospeum elseri,Elsers Hohlendeckelschnecke,German,true
+3405,Bythiospeum geyeri,Winzige Hohlendeckelschnecke,German,true
+3407,Bythiospeum quenstedti,Quenstedts Brunnenschnecke,German,true
+3410,Bythiospeum pfeifferi,Dicke Hohlendeckelschnecke,German,true
+3411,Bythiospeum tschapecki,Steirische Hohlendeckelschnecke,German,true
+34729,Sorbus aria subsp. lanifera,Mukinja,Croatian,false
+34733,Sorbus austriaca subsp. croatica,Planinska Mukinja,Croatian,false
+37498,Betula pendula var. parvibracteata,Abedul,Spanish; Castilian,false
+37671,Erica scoparia subsp. platycodon,Tejo,Spanish; Castilian,false
+37853,Pittosporum coriaceum,Mocano,Portuguese,false
+39274,Telestes croaticus,Hrvatski pijor,Croatian,false
+39274,Telestes croaticus,Croatian pijor,English,true
+39484,Pieris cheiranthi,Canary Islands Large White,English,false
+39484,Pieris cheiranthi,Canary Large White,English,false
+39485,Gonepteryx maderensis,Madeiran Brimstone,English,false
+39494,Hipparchia maderensis,Madeira Grayling,English,false
+39483,Pieris wollastoni,Madeiran Large White,English,false
+3990,Caseolus calculus,Madeiran Land Snail,English,false
+40712,Silurus aristotelis,Aristotle's catfish,English,false
+5030,Cobitis stephanidisi,Velestino spined loach,English,true
+5032,Cobitis hellenica,Λουροβελονίτσα,"Greek, Modern (1453-)",false
+5032,Cobitis hellenica,Louros spined loach,English,true
+5036,Sabanejewia romanica,Romanian Loach,English,false
+5038,Cobitis trichonica,Τριχωνοβελονίτσα,"Greek, Modern (1453-)",false
+5038,Cobitis trichonica,Trichonis spined loach,English,true
+5056,Codringtonia codringtonii,Rock Snail,English,true
+5447,Cottus petiti,Lez Sculpin,English,false
+5447,Cottus petiti,Chabot du Lez,French,true
+60375,Squalius palaciosi,Bogardilla,Spanish; Castilian,false
+60375,Squalius palaciosi,Jándula chub,English,true
+60343,Iberochondrostoma oretanum,Pardilla oretana,Spanish; Castilian,false
+60343,Iberochondrostoma oretanum,Jándula nase,English,true
+60347,Cobitis vettonica,Colmilleja del Alagón,Spanish; Castilian,false
+60347,Cobitis vettonica,Alagón spined loach,English,true
+60446,Delminichthys krbavensis,Krbavska Elritze,German,false
+60446,Delminichthys krbavensis,Krbavska gaovica,Croatian,false
+60446,Delminichthys krbavensis,Krbava minnow,English,true
+60635,Telestes beoticus,Boeotian riffle dace,English,true
+60759,Delminichthys jadovensis,Jadova Elritze,German,false
+60759,Delminichthys jadovensis,Jadovska gaovica,Croatian,false
+60759,Delminichthys jadovensis,Jadova minnow,English,true
+60761,Phoxinellus dalmaticus,Dalmatinische Elritze,German,false
+60761,Phoxinellus dalmaticus,Dalmatinska pijurica,Croatian,false
+60761,Phoxinellus dalmaticus,Dalmation minnow,English,true
+60791,Iberochondrostoma lusitanicum,Portugese nase,English,false
+60791,Iberochondrostoma lusitanicum,Boga de boca arqueada,Portuguese,false
+60791,Iberochondrostoma lusitanicum,Boga portugesa,Portuguese,false
+60791,Iberochondrostoma lusitanicum,Arched-mouth nase,English,true
+60794,Squalius zrmanjae,Zrmanjski klen,Croatian,false
+60794,Squalius zrmanjae,Zrmanja chub,English,true
+60738,Squalius keadicus,Evrotas chub,English,true
+60858,Cobitis zanandreai,Cobite del Fiume Volturno,Italian,false
+60858,Cobitis zanandreai,Volturno spined loach,English,true
+60826,Phoxinellus pseudalepidotus,Mostar Elritze,German,false
+60826,Phoxinellus pseudalepidotus,Mostarska pijurica,Croatian,false
+60826,Phoxinellus pseudalepidotus,Mostar minnow,English,true
+60827,Parachondrostoma turiense,Turia nase,English,true
+60828,Squalius lucumonis,Toscana stream chub,English,true
+60829,Cobitis dalmatina,Cetinski vijun,Croatian,false
+60829,Cobitis dalmatina,Dalmatinischer Steinbeisser,German,false
+60829,Cobitis dalmatina,Dalmatian spined loach,English,true
+60838,Cobitis punctilineata,Γραμμοβελονίτσα,"Greek, Modern (1453-)",false
+60838,Cobitis punctilineata,Aggitis spined loach,English,true
+60857,Squalius torgalensis,Escalo do Mira,Portuguese,false
+60857,Squalius torgalensis,Torgal chub,English,true
+61214,Scardinius acarnanicus,Trichonis rudd,English,true
+61290,Cobitis arachthosensis,Αραχθοβελονίτσα,"Greek, Modern (1453-)",false
+61290,Cobitis arachthosensis,Arachthos spined loach,English,true
+61217,Scardinius scardafa,Scardola del Tever,Italian,false
+61217,Scardinius scardafa,Tiber rudd,English,true
+61235,Apricaphanius baeticus,Salinete,Spanish; Castilian,false
+61235,Apricaphanius baeticus,Baetican Killifish,English,true
+61256,Pelasgus epiroticus,Epirus minnow,English,true
+61374,Pelasgus laconicus,Evrotas minnow,English,true
+61388,Oxynoemacheilus pindus,Pindus stone loach,English,true
+61393,Alosa vistonica,Θρίτσα,"Greek, Modern (1453-)",false
+61393,Alosa vistonica,Thracian Shad,English,true
+61312,Telestes fontinalis,Krbavski pijor,Croatian,false
+61312,Telestes fontinalis,Krbava dace,English,true
+61394,Telestes ukliva,Cetinska ukliva,Croatian,false
+61394,Telestes ukliva,Ukliva dace,English,true
+61342,Squalius aradensis,Arade chub,English,true
+61351,Telestes turskyi,Turskijev klen,Croatian,false
+61351,Telestes turskyi,Čikola riffle dace,English,true
+61353,Salariopsis economidisi,Τριχωνοσαλιάρα,"Greek, Modern (1453-)",false
+61353,Salariopsis economidisi,Trichonis blenny,English,true
+61361,Salmo macedonicus,Macedonian trout,English,true
+61363,Parachondrostoma arrigonis,Loína txikia,Basque,false
+61363,Parachondrostoma arrigonis,Madrilla,Spanish; Castilian,false
+61363,Parachondrostoma arrigonis,Júcar nase,English,true
+61379,Telestes polylepis,Svijetlica,Croatian,false
+61379,Telestes polylepis,Croatian dace,English,true
+61381,Squalius illyricus,Ilirski klen,Croatian,false
+61381,Squalius illyricus,Illyrian chub,English,true
+61487,Chalcides sexlineatus,Gran Canaria Skink,English,false
+61487,Chalcides sexlineatus,Lisa Grancanaria o Lisa Variable,Spanish; Castilian,false
+61487,Chalcides sexlineatus,Lisa Grancanaria O Lisa Variable,Spanish; Castilian,false
+61488,Chalcides simonyi,East Canary Skink,English,false
+61488,Chalcides simonyi,Fuerteventura Skink,English,false
+61488,Chalcides simonyi,Lisneja,Spanish; Castilian,true
+61490,Chalcides viridanus,Lisa Dorada,Spanish; Castilian,false
+61490,Chalcides viridanus,West Canary Skink,English,true
+61465,Algyroides moreoticus,Greek Algyroides,English,false
+61500,Gallotia atlantica,Lagarto Atlántico,Spanish; Castilian,false
+61500,Gallotia atlantica,Atlantic Lizard,English,true
+61502,Gallotia bravoana,Lagarto Gigante de La Gomera,Spanish; Castilian,false
+61502,Gallotia bravoana,La Gomera Giant Lizard,English,true
+61503,Gallotia caesaris,Boettger's Lizard,English,false
+61503,Gallotia caesaris,Lagarto Tizón de La Gomera y El Hierro,Spanish; Castilian,false
+61503,Gallotia caesaris,Lagarto Tizón De La Gomera Y El Hierro,Spanish; Castilian,false
+61504,Gallotia galloti,Lagarto Tizón,Spanish; Castilian,false
+61504,Gallotia galloti,Lagarto Tizón,Spanish; Castilian,false
+61504,Gallotia galloti,Tenerife Lizard,English,true
+61505,Gallotia intermedia,Lagarto Canario Moteado,Spanish; Castilian,false
+61505,Gallotia intermedia,Tenerife Speckled Lizard,English,true
+61506,Gallotia stehlini,Lagarto de Gran Canaria,Spanish; Castilian,false
+61506,Gallotia stehlini,Gran Canaria Giant Lizard,English,true
+61575,Tarentola delalandii,Tenerife Gecko,English,false
+61575,Tarentola delalandii,Kanarischer Mauergecko,German,false
+61575,Tarentola delalandii,Praquén Común,Spanish; Castilian,false
+61575,Tarentola delalandii,Praquén Común,Spanish; Castilian,false
+61575,Tarentola delalandii,Tenerife Wall Gecko,English,true
+61577,Tarentola gomerensis,Gomero Wall Gecko,English,false
+61577,Tarentola gomerensis,La Gomera Gecko,English,false
+61577,Tarentola gomerensis,Gomera-gecko,German,false
+61577,Tarentola gomerensis,Perenquén Gomero,Spanish; Castilian,false
+61577,Tarentola gomerensis,Perenquén Gomero,Spanish; Castilian,false
+61516,Iberolacerta martinezricai,Peña de Francia Rock Lizard,English,true
+61523,Hellenolacerta graeca,Griechische Spitzkopfeidechse,German,false
+61523,Hellenolacerta graeca,Greek Rock Lizard,English,true
+61595,Zamenis lineatus,Saettone Occhirossi,Italian,false
+61595,Zamenis lineatus,Italian Aesculapian Snake,English,true
+61596,Sambucus nigra subsp. palmensis,Sabuco,Spanish; Castilian,false
+61596,Sambucus nigra subsp. palmensis,Sauco,Spanish; Castilian,false
+61599,Allium rouyi,Ajo Amarillo,Spanish; Castilian,true
+61547,Podarcis gaigeae,Skyros Wall Lizard,English,true
+61551,Podarcis peloponnesiacus,Peloponnesische Eidechse,German,false
+61551,Podarcis peloponnesiacus,Peloponnese Wall Lizard,English,true
+61552,Podarcis raffonei,Lucertola Delle Eolie,Italian,false
+61552,Podarcis raffonei,Lucertola Eoliana,Italian,false
+61552,Podarcis raffonei,Aeolian Wall Lizard,English,true
+61557,Podarcis waglerianus,Lucertola Di Wagler,Italian,false
+61557,Podarcis waglerianus,Sizilianische Mauereidechse,German,false
+61557,Podarcis waglerianus,Sicilian Wall Lizard,English,true
+61572,Tarentola angustimentalis,East Canary Gecko,English,false
+61572,Tarentola angustimentalis,Perenquén Majorero,Spanish; Castilian,false
+61572,Tarentola angustimentalis,Perenquén Majorero,Spanish; Castilian,false
+61658,Echium handiense,Taginaste Azul de Jandía,Spanish; Castilian,false
+61658,Echium handiense,Tajinaste de Jandía,Spanish; Castilian,true
+61671,Aquilegia barbaricina,Barbaricina Colombine,English,true
+61672,Aquilegia nuragica,Nuragica Columbine,English,true
+61608,Apium bermejoi,Apid den Bermejo,Spanish; Castilian,true
+61609,Bupleurum dianthifolium,Bupleuro di Marettimo,Italian,false
+61610,Bupleurum elatum,Bupleuro delle Madonie,Italian,false
+61615,Naufraga balearica,Naufragée des Baléares,French,true
+61681,Viola ucriana,Viola di Ucria,Italian,false
+61616,Petagnaea gussonei,Falsa Sanicola,Italian,false
+61618,Calendula maritima,Sea Marigold,English,false
+61618,Calendula maritima,Calendula Marittima,Italian,false
+61618,Calendula maritima,Fiorrancio Marittimo,Italian,false
+61620,Centaurea gymnocarpa,Fiordaliso di Capraia,Italian,false
+61621,Cheirolophus crassifolius,Maltese Rock-centaury,English,false
+61621,Cheirolophus crassifolius,Fiordaliso Crassifoglio,Italian,false
+61621,Cheirolophus crassifolius,Widnet Il-bahar,Maltese,false
+61621,Cheirolophus crassifolius,Maltese Centaury,English,true
+61623,Helichrysum melitense,Perpetuini delle Scogliere Maltese,Italian,false
+61623,Helichrysum melitense,Sempreviva T'gnawdex,Maltese,false
+61623,Helichrysum melitense,Maltese Everlasting,English,true
+61624,Hieracium lucidum,Sparviere di Monte Gallo,Italian,false
+61626,Senecio alboranicus,Azuzón De Alborán,Spanish; Castilian,false
+61630,Biscutella rotgesii,Lunetière de Rotgès,French,false
+61631,Diplotaxis siettiana,Jaramago de Alborán,Spanish; Castilian,true
+61634,Arenaria nevadensis,Arenaria,Spanish; Castilian,true
+61643,Silene hicesiae,Silene Vellutata delle Eolie,Italian,true
+61647,Centranthus amazonum,Centranthe Des Amazones,French,false
+61648,Centranthus trinervis,Centranthe à trois nervures,French,true
+61662,Lithodora nitida,Viniebla Azul,Spanish; Castilian,true
+6720,Wollastonaria leacockiana,Madeiran Land Snail,English,true
+6721,Discula tabellata,Madeiran Land Snail,English,true
+6722,Testudodiscula testudinalis,Madeiran Land Snail,English,false
+6723,Wollastonaria turricula,Cima Discula,English,false
+7021,Economidichthys trichonis,Νανογωβιός,"Greek, Modern (1453-)",false
+7021,Economidichthys trichonis,Trichonis dwarf goby,English,true
+7022,Economidichthys pygmaeus,Λουρογωβιός,"Greek, Modern (1453-)",false
+7022,Economidichthys pygmaeus,Western Greece goby,English,true
+7844,Epimyrma ravouxi,Ravoux's Slavemaker Ant,English,false
+8881,Gallotia simonyi,El Hierro Giant Lizard,English,false
+8881,Gallotia simonyi,Hierro Giant Lizard,English,false
+8881,Gallotia simonyi,Lagarto Gigante de El Hierro,Spanish; Castilian,false
+8881,Gallotia simonyi,Lézard De Simony,French,false
+9051,Geomitra moniziana,Madeiran Land Snail,English,false
+9511,Graziana klagenfurtensis,Klagenfurter Zwergquellschnecke,German,true
+9746,Hauffenia wienerwaldensis,Wienerwald-Zwergrundmundschnecke,German,true
+9843,Helix ceratina,Escargot de Corse,French,false
+9843,Helix ceratina,Corsican Snail,English,true
+788,Alburnus albidus,White bleak,English,false
+788,Alburnus albidus,Alborella meridionale,Italian,false
+788,Alburnus albidus,Vulturino,Italian,false
+788,Alburnus albidus,Italian bleak,English,true
+840,Algyroides marchi,Lagartija de Valverde,Spanish; Castilian,false
+840,Algyroides marchi,Spanish Algyroides,English,true
+905,Alosa macedonica,Λιπαριά,"Greek, Modern (1453-)",false
+905,Alosa macedonica,Macedonian shad,English,true
+13160676,Iberochondrostoma olisiponensis,Boga-de-boca-arqueada de Lisboa,Portuguese,false
+13160676,Iberochondrostoma olisiponensis,Lisbon arched-mouth nase,English,true
+23320,Zubovskya banatica,Banat Grasshopper,English,true
+10874,Isophya harzi,Cozia Plump Bush-cricket,English,true
+17818,Podismopsis transsylvanica,Transylvanian Plump Grasshopper,English,true
+4799,Chorthippus acroleucus,White-tipped Grasshopper,English,true
+15039196,Chortopodisma cobellii,Veneto Mountain Grasshopper,English,true
+15039317,Italopodisma lucianae,Maiella Apennine Grasshopper,English,true
+15039290,Italopodisma fiscellana,Gran Sasso Apennine Grasshopper,English,true
+15039296,Italopodisma lagrecai,La Greca's Apennine Grasshopper,English,true
+15039263,Italopodisma acuminata,Abruzzo Apennine Grasshopper,English,true
+15038384,Prionotropis azami,French Stone Grasshopper,English,true
+17046314,Dolichopoda hussoni,Naoussa Cave-cricket,English,true
+16084525,Oropodisma chelmosi,Chelmos Mountain Grasshopper,English,true
+18006942,Allium castellanense,Aglio di Castellana,Italian,true
+16084523,Oropodisma willemsei,Willemse's Mountain Grasshopper,English,true
+16084420,Oropodisma karavica,Karavica Mountain Grasshopper,English,true
+13143443,Allium garganicum,Garlic of the Gargano Promontory,English,false
+13143443,Allium garganicum,Aglio del Gargano,Italian,false
+13143443,Allium garganicum,Aglio garganico,Italian,true
+13134311,Colchicum verlaqueae,Colchico di Régine Verlaque,Italian,true
+13143296,Allium diomedeum,Garlic of the Tremiti Islands,English,false
+13143296,Allium diomedeum,Aglio delle Tremiti,Italian,true
+13160834,Crocus suaveolens,Zafferano profumato,Italian,true
+13165120,Leucopoa calabrica,Festuca della Calabria,Italian,true
+13133888,Colchicum gonarei,Colchico del monte Gonare,Italian,true
+13134115,Colchicum neapolitanum,Colchique de Naples,French,false
+13134115,Colchicum neapolitanum,Colchico napoletano,Italian,true
+13142481,Gagea tisoniana,Cipollaccio giallo di Tison,Italian,true
+13161600,Iris calabra,Giaggiolo di Calabria,Italian,false
+13161600,Iris calabra,Giaggiolo calabrese,Italian,true
+13142416,Gagea sicula,Cipollaccio siciliano,Italian,true
+13163667,Romulea arnaudii,Romulée d'Arnaudres,French,true
+13163672,Romulea bocchierii,Zafferanetto di Bocchieri,Italian,true
+13161521,Iris bicapitata,Giaggiolo garganico,Italian,false
+13161521,Iris bicapitata,Gargano Iris,English,true
+13168163,Sesleria nitida,Sesleria italiana dei macereti,Italian,true
+13161903,Iris revoluta,Giaggiolo salentino,Italian,false
+13161903,Iris revoluta,Salento Iris,English,true
+13153154,Ornithogalum visianicum,Visianijevo ptičje mlijeko,Croatian,false
+13153154,Ornithogalum visianicum,Visiani's star of Bethlehem,English,true
+13167929,Holcus notarisii,Bambagione di De Notaris,Italian,true
+13144622,Allium nebrodense,Aglio delle Madonie,Italian,true
+13164074,Romulea florentii,Romulée de Florent,French,true
+13164068,Romulea corsica,Romulée de Corse,French,true
+18009886,Puccinellia gussonei,Gramignone di Gussone,Italian,true
+13142898,Allium apulum,Apulian Garlic,English,false
+13142898,Allium apulum,Aglio Pugliese,Italian,true
+13164129,Epipactis ioessa,Elleborina viola,Italian,true
+13164139,Epipactis provincialis,Épipactis de Provence,French,true
+13164166,Ophrys lepida,Ofride Graziosa,Italian,true
+13160393,Crocus corsicus,Corsican crocus,English,false
+13160393,Crocus corsicus,Crocus corse,French,true
+13142696,Allium agrigentinum,Aglio d’Agrigento,Italian,true
+13147082,Narcissus supramontanus,Narciso del Supramonte,Italian,true
+13142668,Acis fabrei,Nivéole de Fabre,French,true
+13142672,Acis longifolia,Niveole a Longues Feuilles,French,true
+13137033,Fritillaria davisii,Agkouráki,"Greek, Modern (1453-)",true
+13146981,Narcissus cuatrecasasii,Flor de los Pajaritos,Spanish; Castilian,false
+13146981,Narcissus cuatrecasasii,Narciso de Cuatrecasas,Spanish; Castilian,false
+13146981,Narcissus cuatrecasasii,Nerj,Arabic,false
+13146981,Narcissus cuatrecasasii,Ansel,Arabic,true
+13164429,Luzula calabra,Erba Lucciola di Calabria,Italian,true
+13142545,Tulipa albanica,Albanian Tulip,English,true
+175268,Pinguicula mundi,Grasilla de Andalucía,Spanish; Castilian,false
+175268,Pinguicula mundi,Atrapamoscas,Spanish; Castilian,true
+18875,Pungitius hellenicus,Greek ninespine stickleback,English,true
+19891950,Hippocrepis valentina,Ferradura De Cingle,Catalan; Valencian,false
+19891950,Hippocrepis valentina,Herradura De Roca,Spanish; Castilian,false
+13273,Metatrichoniscoides celticus,Celtic Woodlouse,English,true
+10332,Hydropsyche tobiasi,Tobias' Caddisfly,English,false
+19199037,Thyreus hohmanni,La Crocise de Hohmann,French,true
+22484033,Genista sulcitana,Ginestra del Sulcis,Italian,true
+43115432,Linum katiae,Lino di Katia,Italian,true
+44318764,Festuca gamisansii subsp. aethaliae,Elban Fescue,English,false
+44318764,Festuca gamisansii subsp. aethaliae,Festuca dell'Elba,Italian,true
+44791483,Ameles gracilis,Delicate Dwarf Mantis,English,true
+44791491,Ameles limbata,Fringed Dwarf Mantis,English,true
+44792105,Pseudoyersinia betancuriae,Betancurian Dwarf Mantis,English,true
+44792111,Pseudoyersinia canariensis,Canary Dwarf Mantis,English,true
+44792114,Pseudoyersinia lagrecai,La Greca's Dwarf Mantis,English,true
+44792117,Pseudoyersinia paui,Pau's Dwarf Mantis,English,true
+44792219,Pseudoyersinia pilipes,Hairy Legged Dwarf Mantis,English,true
+44792252,Pseudoyersinia subaptera,Short-winged Dwarf Mantis,English,true
+44792287,Pseudoyersinia teydeana,Teydean Dwarf Mantis,English,true
+18161514,Vanneaugobius pruvoti,Gobi de Corall,Spanish; Castilian,false
+18161514,Vanneaugobius pruvoti,Gobie Nain de Pruvot,French,false
+18161514,Vanneaugobius pruvoti,Ratan goby,English,true
+45462302,Eupholidoptera cephalonica,Ionian Marbled Bush-cricket,English,true
+45462354,Eupholidoptera epirotica,Epirus Marbled Bush-cricket,English,true
+45462435,Eupholidoptera hesperica,Western Marbled Bush-cricket,English,true
+45462525,Eupholidoptera leucasi,Lefkas Marbled Bush-cricket,English,true
+45462624,Eupholidoptera megastyla,Greek Marbled Bush-cricket,English,true
+45463146,Eupholidoptera uvarovi,Uvarov's Marbled Bush-cricket,English,true
+45463212,Eupholidoptera forcipata,Idi Marbled Bush-cricket,English,true
+45463223,Eupholidoptera icariensis,Ikaria Marbled Bush-cricket,English,true
+45463233,Eupholidoptera jacquelinae,Jacqueline's Marbled Bush-cricket,English,true
+45463250,Eupholidoptera kykladica,Cyclades Marbled Bush-cricket,English,true
+45463281,Eupholidoptera spinigera,Spiny Marbled Bush-cricket,English,true
+45463331,Eupholidoptera annamariae,Annamaria's Marbled Bush-cricket,English,true
+45463340,Eupholidoptera astyla,Naxos Marbled Bush-cricket,English,false
+45463340,Eupholidoptera astyla,Mount Ida Marbled Bush-cricket,English,true
+45463463,Eupholidoptera feri,Fer's Marbled Bush-cricket,English,true
+45463473,Eupholidoptera giuliae,Giulia's Marbled Bush-cricket,English,true
+45463493,Eupholidoptera latens,Hidden Marbled Bush-cricket,English,true
+45463502,Eupholidoptera mariannae,Marianne's Marbled Bush-cricket,English,true
+45466678,Poecilimon pindos,Pindos Bright Bush-cricket,English,true
+16084547,Chorthippus messinai,Messina's Grasshopper,English,true
+16084582,Chorthippus rubratibialis,Italian Bow-winged Grasshopper,English,true
+16084508,Chorthippus trinacriae,Sicilian Lesser Grasshopper,English,true
+16084397,Euchorthippus sardous,Sardinian Straw Grasshopper,English,true
+16084526,Italohippus monticola,Gran Sasso Italian Grasshopper,English,true
+16084553,Ochrilidia sicula,Sicilian Match Grasshopper,English,true
+16084505,Omocestus lopadusae,Lampedusa Grasshopper,English,true
+16084429,Omocestus uvarovi,Uvarov's Grasshopper,English,false
+16084429,Omocestus uvarovi,Italian Dune Grasshopper,English,true
+16084555,Podisma eitschbergeri,Valdieri Mountain Grasshopper,English,true
+16084360,Podisma emiliae,Emilia Mountain Grasshopper,English,true
+16084391,Podisma goidanichi,Gran Sasso Mountain Grasshopper,English,true
+16084558,Podisma magdalenae,Marche Mountain Grasshopper,English,true
+16084392,Podisma ruffoi,Reatini Mountain Grasshopper,English,true
+16084424,Podisma silvestrii,Sibillini Mountain Grasshopper,English,true
+16084352,Pseudoprumna baldensis,Baldo Mountain Grasshopper,English,true
+16084515,Stenobothrus ursulae,Ursula's Grasshopper,English,false
+16084515,Stenobothrus ursulae,Ursula's Toothed Grasshopper,English,true
+44709683,Leptophyes sicula,Sicilian Speckled Bush-cricket,English,true
+46879459,Acis valentina,Campanilla Valenciana,Spanish; Castilian,false
+46879459,Acis valentina,Campaneta de Roca o de Tardor,Catalan; Valencian,true
+46880371,Narcissus munozii-garmendiae,Narciso Amarillo,Spanish; Castilian,false
+61604,Narcissus nevadensis subsp. nevadensis,Daffodil,English,false
+61604,Narcissus nevadensis subsp. nevadensis,Narciso de Sierra Nevada,Spanish; Castilian,true
+61682,Narcissus nevadensis,Narciso de Sierra Nevada,Spanish; Castilian,false
+61682,Narcissus nevadensis,Narciso,Spanish; Castilian,true
+47691366,Ephippiger camillae,Camilla's Saddle Bush-cricket,English,true
+47691451,Ephippiger carlottae,Carlotta's Saddle Bush-cricket,English,true
+47691497,Ephippiger cavannai,Cavanna's Saddle Bush-cricket,English,true
+47691650,Ephippiger perforatus,North Apennine Saddle Bush-cricket,English,false
+47691650,Ephippiger perforatus,Apennine Saddle Bush-cricket,English,true
+47691854,Ephippiger ruffoi,Pygmy Saddle Bush-cricket,English,true
+47692210,Ephippiger zelleri,Zeller's Saddle Bush-cricket,English,true
+47692483,Uromenus annae,Sardinian Saddle-backed Bush-cricket,English,false
+47692483,Uromenus annae,Sardinian Saddle Bush-cricket,English,true
+47693371,Uromenus siculus,Sicilian Saddle-backed Bush-cricket,English,false
+47693371,Uromenus siculus,Sicilian Saddle Bush-cricket,English,true
+47693655,Petaloptila clauseri,Corniolo Glandular Cricket,English,true
+47693952,Petaloptila sbordonii,Risorgenza Glandular Cricket,English,true
+47695668,Gryllotalpa octodecim,Eighteen-chromosome Mole-cricket,English,true
+47696009,Gryllotalpa quindecim,Fifteen-chromosome Mole-cricket,English,true
+47696165,Gryllotalpa viginti,Twenty-chromosome Mole-cricket,English,true
+47696294,Gryllotalpa vigintiunum,Twenty-one-chromosome Mole-cricket,English,true
+47696467,Acinipe galvagnii,Galvagni's Stone Grasshopper,English,true
+47696546,Pamphagus marmoratus,Marbled Stone Grasshopper,English,true
+47696611,Pamphagus ortolaniae,Lampedusa Stone Grasshopper,English,true
+17182027,Poecilimon ikariensis,Ikaria Bright Bush-cricket,English,true
+17181950,Poecilimon deplanatus,Dodecanese Bright Bush-cricket,English,true
+15038481,Prionotropis rhodanica,Crau Stone Grasshopper,English,false
+15038481,Prionotropis rhodanica,Crau Plain Grasshopper,English,true
+47696694,Pamphagus sardeus,Sardinian Stone Grasshopper,English,true
+47697291,Barbitistes vicetinus,Vicentine Saw-tailed Bush-cricket,English,true
+47697896,Metaplastes ippolitoi,Calabrian Saw-tailed Bush-cricket,English,false
+47697896,Metaplastes ippolitoi,Calabrian Ornate Bush-cricket,English,true
+47697976,Odontura arcuata,Sicilian Striped Bush-cricket,English,true
+47697986,Odontura calaritana,Sardinian Mimetic Bush-cricket,English,false
+47697986,Odontura calaritana,Sardinian Striped Bush-cricket,English,true
+47709616,Dolichopoda schiavazzii,Livorno Cave-cricket,English,true
+47709755,Anonconotus apenninigenus,Southern Alpine Bush-cricket,English,true
+47709771,Anonconotus pusillus,Pygmy Alpine Bush-cricket,English,true
+47709779,Anonconotus sibyllinus,Sibylline Alpine Bush-cricket,English,true
+47712804,Platycleis concii,Sicilian Bush-cricket,English,false
+47712804,Platycleis concii,Sicilian Grey Bush-cricket,English,true
+47712847,Platycleis ragusai,Messina Bush-cricket,English,false
+47712847,Platycleis ragusai,Messina Grey Bush-cricket,English,true
+47713025,Roeseliana brunneri,Brunner's Bush-cricket,English,false
+47713025,Roeseliana brunneri,Giant Meadow Bush-cricket,English,true
+47713106,Tessellana lagrecai,Lagreca's Slender Bush-cricket,English,false
+47713106,Tessellana lagrecai,La Greca's Slender Bush-cricket,English,true
+47713126,Tessellana nigrosignata,Black-marked Bush-cricket,English,false
+47713126,Tessellana nigrosignata,Black-marked Slender Bush-cricket,English,true
+47713194,Tettigonia longispina,Sardinian Green Bush-cricket,English,true
+47713218,Tettigonia silana,Calabrian Green Bush-cricket,English,true
+17182043,Poecilimon klausgerhardi,Andros Bright Bush-cricket,English,true
+161475,Hydrolagus lusitanicus,Coelho,Portuguese,true
+161459,Raja maderensis,Madeira Skate,English,true
+194889,Speleogobius trigloides,Gobie Cavernicole,French,false
+194889,Speleogobius trigloides,Gobie Cavernicole Trigloïde,French,false
+194889,Speleogobius trigloides,Grotto Goby,English,true
+16895615,Calliphona alluaudi,Gran Canaria Green Bush-cricket,English,true
+39489,Kretania hesperica,Spanish Zephyr Blue,English,false
+173274,Kretania psylorita,Cretan Argus,English,false
+701,Agriades zullichi,Zullich's Blue,English,false
+173267,Lysandra caelestissima,Azure Chalkhill Blue,English,false
+173287,Hipparchia cretica,Cretan Grayling,English,false
+16895619,Calliphona gomerensis,Gomera Green Bush-cricket,English,true
+57455245,Narcissus hedraeanthus,Zafranillo,Spanish; Castilian,true
+57454112,Narcissus eugeniae,Narciso Amarillo,Spanish; Castilian,true
+61600,Narcissus alcaracensis,Cebolletas,Spanish; Castilian,true
+57842073,Dysdera coiffaiti,Aranha-tenaz-de-Coiffait,Portuguese,true
+57842078,Dysdera diversa,Aranha-tenaz-diversa,Portuguese,true
+57854498,Dysdera portisancti,Aranha-tenaz-do-Porto-Santo,Portuguese,true
+57859856,Dysdera vandeli,Aranha-tenaz-de-Vandel,Portuguese,true
+57979781,Centromerus anoculus,Aranha-cavernicola-de-Sao-Vicente,Portuguese,true
+57979794,Centromerus sexoculatus,Aranha-cavernicola-do-Machico,Portuguese,true
+58048548,Hogna biscoitoi,Tarantula-de-Biscoito,Portuguese,false
+58048548,Hogna biscoitoi,Biscoito Wolf Spider,English,true
+58048559,Hogna heeri,Tarantula-de-Heer,Portuguese,false
+58048559,Hogna heeri,Heer Wolf Spider,English,true
+58048571,Hogna ingens,Tarantula-das-Desertas,Portuguese,false
+58048571,Hogna ingens,Desertas Wolf Spider,English,true
+58048618,Hogna maderiana,Tarantula-da-Madeira,Portuguese,false
+58048618,Hogna maderiana,Madeira Wolf Spider,English,true
+58048645,Hogna schmitzi,Tarantula-de-Porto-Santo,Portuguese,false
+58048645,Hogna schmitzi,Porto Santo Wolf Spider,English,true
+58053050,Rugathodes pico,Cave Cobweb Spider,English,true
+58080969,Turinyphia cavernicola,Aranha Cavernícola do Algar do Carvão,Portuguese,false
+58080969,Turinyphia cavernicola,Algar do Carvão Cave Spider,English,true
+176367,Lathyrus odoratus,Guisante de Olor,English,false
+176367,Lathyrus odoratus,Chorreque,Spanish; Castilian,false
+176367,Lathyrus odoratus,Duftwicke,German,false
+176367,Lathyrus odoratus,Ervilha-de-Cheiro,Portuguese,false
+176367,Lathyrus odoratus,Frijol de Olor,Spanish; Castilian,false
+176367,Lathyrus odoratus,Gartenwicke,German,false
+176367,Lathyrus odoratus,Gesse Odorante,French,false
+176367,Lathyrus odoratus,Luktärt,Swedish,false
+176367,Lathyrus odoratus,Pois de senteur,French,false
+176367,Lathyrus odoratus,Pois Fleur,French,false
+176367,Lathyrus odoratus,Xiang Wan Dou,Chinese,false
+176367,Lathyrus odoratus,Sweet Pea,English,true
+62147256,Isophya beybienkoi,Bei-Bienko's Plump Bush-cricket,English,true
+62147331,Isophya dochia,Ceahlau Plump Bush-cricket,English,true
+62147340,Isophya nagyi,Nagy's Plump Bush-cricket,English,true
+62148753,Hipparchia blachieri,Sicilian Grayling,English,true
+62148586,Pseudochazara williamsi,Nevada Grayling,English,true
+173310,Polyommatus fabressei,Oberthür’s Anomalous Blue,English,false
+17940,Polyommatus golgus,Nevada Blue,English,false
+17940,Polyommatus golgus,Sierra Nevada Blue,English,true
+173202,Polyommatus violetae,Andalusian Anomalous Blue,English,true
+173207,Pseudophilotes barbagiae,Sardinian Blue,English,false
+173214,Coenonympha thyrsis,Cretan Small Heath ,English,false
+173294,Erebia hispania,Spanish Brassy Ringlet,English,true
+173265,Erebia zapateri,Zapater’s Ringlet,English,false
+173305,Hipparchia christenseni,Karpathos Grayling,English,false
+173260,Hipparchia leighebi,Eolian Grayling,English,false
+173231,Hipparchia sbordonii,Ponza Grayling,English,false
+173252,Maniola chia,Chios Meadow Brown,English,true
+173213,Maniola nurag,Sardinian Meadow Brown,English,false
+173235,Melanargia arge,Italian Marbled White,English,false
+173229,Melanargia pherusa,Sicilian Marbled White,English,true
+173225,Pseudochazara graeca,Grecian Grayling,English,true
+173219,Zerynthia cretica,Eastern Festoon,English,false
+173219,Zerynthia cretica,Cretan Festoon,English,true
+173241,Euchloe bazae,Spanish Greenish Black-tip,English,true
+16896334,Cycloptiloides canariensis,Canarian Tiny Cricket,English,true
+41675,Pusa hispida ssp. saimensis,Saimaa Ringed Seal,English,false
+41675,Pusa hispida ssp. saimensis,Saimaannorppa ,Finnish,false
+41675,Pusa hispida ssp. saimensis,Saimaa Seal,English,true
+67963974,Gaidropsarus guttatus,Brota de tierra,Spanish; Castilian,false
+67963974,Gaidropsarus guttatus,Motelle à taches blanches,French,false
+67963974,Gaidropsarus guttatus,Viúva,Portuguese,false
+67963974,Gaidropsarus guttatus,Abrótea da poça,Portuguese,true
+199360,Paraconger macrops,Blackspot Conger,English,false
+187595,Symphodus caeruleus,Bodião Azul,Portuguese,false
+187595,Symphodus caeruleus,Bodião Verde,Portuguese,true
+64547741,Arcyptera kheili,Provence Banded Grasshopper,English,true
+69637992,Chorthippus ferdinandi,Ferdinand's Grasshopper,English,true
+69638189,Chorthippus jutlandica,Jutland Bow-winged Grasshopper,English,true
+69638285,Chorthippus smardai,Slovakian Grasshopper,English,true
+69642258,Coracinotus presai,Granada Saddle Bush-cricket,English,true
+69667624,Corsteropleurus chopardi,Corsican Saddle Bush-cricket,English,true
+69667660,Ephippiger melisi,Abruzzo Saddle Bush-cricket,English,true
+68412973,Lluciapomaresius eclipticus,Zaragoza Saddle Bush-cricket,English,true
+69667958,Neocallicrania barrosi,Barros' Saddle Bush-cricket,English,true
+68464919,Pycnogaster cucullatus,Hooded Saddle Bush-cricket,English,true
+69668544,Ovaliptila kinzelbachi,Karpathos Glandular Cricket,English,true
+69668585,Ovaliptila krueperi,Parnassos Glandular Cricket,English,true
+69668679,Ovaliptila lindbergi,Cretan Glandular Cricket,English,true
+69668788,Ovaliptila nana,Dodecanese Glandular Cricket,English,true
+69668847,Ovaliptila newmanae,Epirus Glandular Cricket,English,true
+69669391,Ovaliptila wettsteini,Sporades Glandular Cricket,English,true
+68443187,Ocnerodes brunnerii,Brunner's Stone Grasshopper,English,true
+68458373,Poecilimon nonveilleri,Nonveiller's Bright Bush-cricket,English,true
+69679084,Antaxius bouvieri,Corsican Mountain Bush-cricket,English,true
+47711235,Eupholidoptera bimucronata,Sicilian Marbled Bush-cricket,English,true
+69680271,Eupholidoptera tyrrhenica,Corsican Marbled Bush-cricket,English,true
+44698100,Rhacocleis silvestrii,Maquis Bush-cricket,English,true
+69681526,Gryllomorpha cretensis,Cretan Crevice-cricket,English,true
+47694054,Petaloptila fragosoi,Spanish Glandular Cricket,English,true
+16084492,Pseudochorthippus tatrae,Tatra Grasshopper,English,true
+16084472,Odontopodisma acuminata,Tapering Mountain Grasshopper,English,true
+16084554,Odontopodisma carpathica,Carpathian Mountain Grasshopper,English,true
+16084534,Odontopodisma rammei,Rijeka Mountain Grasshopper,English,true
+16084586,Stenobothrus croaticus,Croatian Toothed Grasshopper,English,true
+64549053,Barbitistes kaltenbachi,Hvar Saw Bush-cricket,English,true
+62147313,Isophya ciucasi,Ciucas Plump Bush-cricket,English,true
+68398749,Isophya dobrogensis,Popina Plump Bush-cricket,English,true
+68401189,Isophya fatrensis,Fatra Plump Bush-cricket,English,true
+17046330,Isophya gulae,Bulgarian Plump Bush-cricket,English,true
+64869058,Isophya plevnensis,Plevne Plump Bush-cricket,English,true
+62147322,Isophya sicula,Harghita Plump Bush-cricket,English,true
+45466602,Poecilimon jablanicensis,Jablanica Bright Bush-cricket,English,true
+68459571,Poecilimon vodnensis,Vodno Bright Bush-cricket,English,true
+44710621,Bradyporus montandoni,Montandon's Glandular Bush-cricket,English,true
+68427749,Metrioptera karnyana,Ruzevaca Meadow Bush-cricket,English,true
+68446174,Pachytrachis bosniacus,Bosnian Bush-cricket,English,true
+68486027,Uromenus dyrrhachiacus,Albanian Saddle Bush-cricket,English,true
+47687601,Arcyptera alzonai,Piedmont Banded Grasshopper,English,true
+70381370,Ramalina confertula,Mountain Strap Lichen,English,true
+14870997,Chorthippus lacustris,Epirus Dancing Grasshopper,English,true
+70560176,Nothophantes horridus,Horrid Ground-weaver,English,true
+16084579,Chorthippus biroi,Cretan Grasshopper,English,true
+16084612,Chorthippus moreanus,Morea Grasshopper,English,true
+16084456,Chorthippus parnon,Parnon Grasshopper,English,true
+16084479,Chorthippus pulloides,Nymph-like Grasshopper,English,true
+16084530,Chorthippus sangiorgii,Cephalonia Grasshopper,English,true
+16084625,Oedipoda venusta,Cretan Band-winged Grasshopper,English,true
+16084417,Oropodisma kyllinii,Kyllini Mountain Grasshopper,English,true
+16084623,Oropodisma lagrecai,Triandafilia Mountain Grasshopper,English,true
+16084516,Oropodisma parnassica,Parnassos Mountain Grasshopper,English,true
+16084561,Oropodisma taygetosi,Tayetos Mountain Grasshopper,English,true
+16084584,Oropodisma tymphrestosi,Tymphrestos Mountain Grasshopper,English,true
+16084574,Pezotettix lagoi,Rhodes Maquis Grasshopper,English,true
+16084408,Xerohippus solerii,Aegean Desert Grasshopper,English,true
+68380920,Gryllotalpa krimbasi,Krimbas' Mole-cricket,English,false
+68380920,Gryllotalpa krimbasi,Krimbas' Mole-cricket,English,true
+68439867,Mogoplistes kinzelbachi,Kinzelbach's Scale-cricket,English,true
+44698010,Glyphanus obtusus,Parnassos Stone Grasshopper,English,true
+68444850,Orchamus raulinii,Cretan Stone Grasshopper,English,true
+64337698,Acrometopa cretensis,Cretan Long-legged Bush-cricket,English,true
+17181617,Isophya lemnotica,Limnos Bush-cricket,English,false
+17181617,Isophya lemnotica,Limnos Plump Bush-cricket,English,true
+17181748,Leptophyes lisae,Greek Speckled Bush-cricket,English,true
+17181859,Metaplastes oertzeni,Greek Saw-tailed Bush-cricket,English,false
+17181859,Metaplastes oertzeni,Greek Ornate Bush-cricket,English,true
+17181896,Poecilimon aegaeus,Aegean Bright Bush-cricket,English,true
+17181947,Poecilimon cretensis,Cretan Bright Bush-cricket,English,true
+17181974,Poecilimon gerlindae,Thessalian Bright Bush-cricket,English,false
+17181974,Poecilimon gerlindae,Gerlind's Bright Bush-cricket,English,true
+68458212,Poecilimon mariannae,Marianne's Bright Bush-cricket,English,true
+45466621,Poecilimon nobilis,Noble Bright Bush-cricket,English,true
+45466644,Poecilimon obesus,Obese Bright Bush-cricket,English,true
+45466779,Poecilimon paros,Paros Bright Bush-cricket,English,true
+68458962,Poecilimon propinquus,Similar Bright Bush-cricket,English,true
+45466695,Poecilimon soulion,Soulion Bright Bush-cricket,English,true
+68459242,Poecilimon thessalicus,Thessalian Bright Bush-cricket,English,true
+68459544,Poecilimon veluchianus,Veluchi Bright Bush-cricket,English,true
+68459582,Poecilimon werneri,Werner's Bright Bush-cricket,English,true
+68459596,Poecilimon zimmeri,Zimmer's Bright Bush-cricket,English,true
+68313516,Dolichopoda annae,Larissa Cave-cricket,English,true
+17046304,Dolichopoda dalensi,Kefalari Cave-cricket,English,true
+17046311,Dolichopoda giachinoi,Megalo Spilio Cave-cricket,English,true
+68314157,Dolichopoda graeca,Perama Cave-cricket,English,true
+68314228,Dolichopoda insignis,Koutouki Cave-cricket,English,true
+17046317,Dolichopoda ithakii,Ithaka Cave-cricket,English,true
+17046320,Dolichopoda kiriakii,Kiriaki Cave-cricket,English,true
+17046297,Dolichopoda lustriae,Aghias Andreas Cave-cricket,English,true
+68314432,Dolichopoda makrykapa,Makrykapa Cave-cricket,English,true
+68314461,Dolichopoda matsakisi,Matsakis' Cave-cricket,English,true
+68314517,Dolichopoda naxia,Naxos Cave-cricket,English,true
+70613073,Myrmecophilus balcanicus,Balkan Ant-cricket,English,true
+70613694,Dolichopoda giulianae,Giuliana's Cave-cricket,English,true
+70613898,Troglophilus zoiai,Zoia's Cave-cricket,English,true
+17046324,Dolichopoda patrizii,Petalas Cave-cricket,English,true
+17046327,Dolichopoda pavesii,Cephalonia Cave-cricket,English,true
+68314680,Dolichopoda petrochilosi,Pan Cave-cricket,English,true
+68315084,Dolichopoda unicolor,Katafygi Cave-cricket,English,true
+68315135,Dolichopoda vandeli,Orchomenos Cave-cricket,English,true
+68485526,Troglophilus lagoi,Lago's Cave-cricket,English,true
+68485565,Troglophilus marinae,San Torini Cave-cricket,English,true
+64529440,Anadrymadusa brevipennis,Short-winged Tonged Bush-cricket,English,true
+44710646,Bradyporus oniscus,Wood-louse Glandular Bush-cricket,English,true
+44711866,Eupholidoptera pallipes,Pale-legged Marbled Bush-cricket,English,true
+68450071,Parnassiana chelmos,Chelmos Greek Bush-cricket,English,true
+68450152,Parnassiana coracis,Vardousia Greek Bush-cricket,English,true
+68450165,Parnassiana dirphys,Dirphys Greek Bush-cricket,English,true
+68450223,Parnassiana fusca,Tawny Greek Bush-cricket,English,true
+68450237,Parnassiana gionica,Giona Greek Bush-cricket,English,true
+68450241,Parnassiana menalon,Menalon Greek Bush-cricket,English,true
+68450251,Parnassiana nigromarginata,Akarnanika Greek Bush-cricket,English,true
+68450271,Parnassiana panaetolikon,Panaitoliko Greek Bush-cricket,English,true
+68450303,Parnassiana parnassica,Parnassos Greek Bush-cricket,English,true
+68450311,Parnassiana parnon,Parnon Greek Bush-cricket,English,true
+68450318,Parnassiana tenuis,Slim Greek Bush-cricket,English,true
+68450364,Parnassiana tymphiensis,Tymphi Greek Bush-cricket,English,true
+68450372,Parnassiana tymphrestos,Tymphrestos Greek Bush-cricket,English,true
+68451909,Pholidoptera lucasi,Lucas' Dark Bush-cricket,English,true
+44698034,Rhacocleis agiostratica,Agiostrati Bush-cricket,English,true
+44698051,Rhacocleis crypta,Gavrogo Bush-cricket,English,true
+44698053,Rhacocleis derrai,Cretan Bush-cricket,English,true
+44698055,Rhacocleis distinguenda,Lesbos Bush-cricket,English,true
+44698057,Rhacocleis edentata,Toothless Bush-cricket,English,true
+44698059,Rhacocleis ferdinandi,Ferdinand's Bush-cricket,English,true
+44698070,Rhacocleis graeca,Greek Bush-cricket,English,true
+44698072,Rhacocleis insularis,Cyclades Bush-cricket,English,true
+44698076,Rhacocleis lithoscirtetes,Stone-jumping Bush-cricket,English,true
+44698104,Rhacocleis trilobata,Three-lobed Bush-cricket,English,true
+44698115,Rhacocleis uvarovi,Uvarov's Bush-cricket,English,true
+44698141,Rhacocleis werneri,Werner's Bush-cricket,English,true
+70613415,Dolichopoda calidnae,Kalymnos Cave-cricket,English,true
+68468653,Saga hellenica,Greek Predatory Bush-cricket,English,true
+68376537,Eugryllodes littoreus,Riverine Mountain-cricket,English,true
+68451115,Petaloptila baenai,Baena's Glandular Cricket,English,true
+68451121,Petaloptila barrancoi,Barranco's Glandular Cricket,English,true
+68451133,Petaloptila bolivari,Bolivar's Glandular Cricket,English,true
+68451149,Petaloptila carabajali,Carabajal's Glandular Cricket,English,true
+68451174,Petaloptila isabelae,Isabel's Glandular Cricket,English,true
+68451178,Petaloptila llorenteae,Llorente's Glandular Cricket,English,true
+68451183,Petaloptila malacitana,Malaga Glandular Cricket,English,true
+68451187,Petaloptila mogon,Mogon Glandular Cricket,English,true
+68451192,Petaloptila pallescens,Pale Glandular Cricket,English,true
+68451203,Petaloptila pyrenaea,Pyrenean Glandular Cricket,English,true
+68451212,Petaloptila venosa,Venous Glandular Cricket,English,true
+68468948,Sciobia boscai,Bosca's Spade-cricket,English,true
+68460168,Pseudomogoplistes madeirae,Madeiran Beach-cricket,English,true
+68486388,Xya iberica,Iberian Molehopper,English,true
+16084482,Podisma amedegnatoae,Ventoux Mountain Grasshopper,English,true
+16084435,Podismopsis keisti,Keist's Plump Grasshopper,English,true
+16084476,Podismopsis styriaca,Styrian Plump Grasshopper,English,true
+47709829,Anonconotus mercantouri,Mercantour Alpine Bush-cricket,English,true
+16084604,Chorthippus corsicus,Corsican Grasshopper,English,true
+16084572,Omocestus defauti,Defaut's Grasshopper,English,true
+68313715,Dolichopoda bormansi,Bormans' Cave-cricket,English,true
+68313831,Dolichopoda chopardi,Chopard's Cave-cricket,English,true
+68313954,Dolichopoda cyrnensis,Cymi Cave-cricket,English,true
+64529098,Amedegnatiana vicheti,Vichet's Bush-cricket,English,true
+64547396,Antaxius sorrezensis,French Mountain Bush-cricket,English,true
+68286221,Ctenodecticus ramburi,Rambur's Pygmy Wart-biter,English,true
+68315858,Ephippiger provincialis,Provence Saddle Bush-cricket,English,true
+68452956,Platycleis waltheri,Vaucluse Grey Bush-cricket,English,true
+44698044,Rhacocleis bonfilsi,Bonfils' Bush-cricket,English,true
+44698090,Rhacocleis poneli,Ponel's Bush-cricket,English,true
+16084395,Chrysochraon beybienkoi,Calabrian Gold Grasshopper,English,true
+16084624,Dociostaurus minutus,Sicilian Cross-backed Grasshopper,English,true
+16084520,Italohippus albicornis,White-horned Italian Grasshopper,English,true
+16084402,Italohippus modestus,Reatine Italian Grasshopper,English,true
+15039266,Italopodisma baccettii,Baccetti's Apennine Grasshopper,English,true
+15039272,Italopodisma costae,Costa's Apennine Grasshopper,English,true
+15039279,Italopodisma ebneri,Reatine Apennine Grasshopper,English,true
+15039336,Italopodisma trapezoidalis,La Meta Apennine Grasshopper,English,true
+16084440,Ochrilidia nuragica,Sardinian Cylindric Grasshopper,English,false
+16084440,Ochrilidia nuragica,Sardinian Match Grasshopper,English,true
+16084460,Sphingonotus candidus,Whitish Sand Grasshopper,English,true
+16084513,Stenobothrus apenninus,Apennine Grasshopper,English,false
+16084513,Stenobothrus apenninus,Apennine Toothed Grasshopper,English,true
+47693579,Acroneuroptila puddui,Southern Sardinian Cricket,English,true
+47693622,Acroneuroptila sardoa,Northern Sardinian Cricket,English,true
+68459778,Prionotropis appula,Apulian Stone Grasshopper,English,true
+44698567,Leptophyes calabra,Calabrian Speckled Bush-cricket,English,true
+47709374,Dolichopoda aegilion,Giglio Cave Cricket,English,true
+47709379,Dolichopoda baccettii,Baccetti's Cave-cricket,English,true
+47709392,Dolichopoda capreensis,Capri Cave-cricket,English,true
+47709459,Dolichopoda laetitiae,Laetitia's Cave Cricket,English,true
+47709579,Dolichopoda muceddai,Mucedda's Cave-cricket,English,true
+47709672,Troglophilus andreinii,Italian Cave Cricket,English,true
+47710557,Decorana drepanensis,Trapani Bush-cricket,English,true
+68288397,Decticus aprutianus,Abruzzo Wart-biter,English,true
+68288443,Decticus loudoni,Apulian Wart-biter,English,true
+47690845,Ephippiger apulus,Apulian Saddle Bush-cricket,English,true
+68379032,Eupholidoptera magnifica,Splendid Marbled Bush-cricket,English,true
+47712093,Metrioptera caprai,Italian Meadow Bush-cricket,English,true
+68462789,Pterolepis elymica,Sicilian Bush-cricket,English,true
+44698042,Rhacocleis baccettii,Baccetti's Bush-cricket,English,true
+44698074,Rhacocleis japygia,Apulian Bush-cricket,English,true
+44698078,Rhacocleis maculipedes,Speckled Sardinian Bush-cricket,English,true
+44698102,Rhacocleis thyrrhenica,Tyrrhenian Bush-cricket,English,true
+44712322,Sardoplatycleis galvagnii,Gennargentu Platycleis,English,false
+44712322,Sardoplatycleis galvagnii,Sardinian Mountain Bush-cricket,English,false
+44712322,Sardoplatycleis galvagnii,Sardinian Grey Bush-cricket,English,true
+68486119,Uromenus riggioi,Riggio's Saddle Bush-cricket,English,true
+70848490,Pterolepis pityusensis,Ibiza Bush-cricket,English,true
+68279966,Conocephalus chavesi,Azores Cone-head,English,true
+15038931,Arminda brunneri,Tenerife Rock Grasshopper,English,true
+15038941,Arminda burri,Gran Canaria Rock Grasshopper,English,true
+15039060,Arminda canariensis,Splendid Rock Grasshopper,English,true
+15039063,Arminda fuerteventurae,Fuerteventura Rock Grasshopper,English,true
+15039073,Arminda hierroensis,Hierro Rock Grasshopper,English,true
+15039077,Arminda lancerottensis,Lanzarote Rock Grasshopper,English,true
+15039154,Arminda latifrons,Gomera Rock Grasshopper,English,true
+15039158,Arminda palmae,Palma Rock Grasshopper,English,true
+15038705,Calliptamus plebeius,Canarian Pincer Grasshopper,English,false
+15038696,Calliptamus madeirae,Madeira Pincer Grasshopper,English,true
+16084510,Dericorys carthagonovae,Iberian Crested Grasshopper,English,true
+51269274,Dericorys minutus,Gran Canaria Crested Grasshopper,English,false
+16084374,Euchorthippus madeirae,Madeiran Straw Grasshopper,English,true
+16084578,Oedipoda canariensis,Canarian Band-Winged Grasshopper,English,true
+16084450,Omocestus simonyi,Purpurarian Grasshopper,English,true
+47687276,Sphingonotus almeriense,Almeria Sand Grasshopper,English,true
+16084412,Sphingonotus fuerteventurae,Fuerteventura Sand Grasshopper,English,true
+16084509,Sphingonotus guanchus,Gran Canaria Sand Grasshopper,English,true
+16084573,Sphingonotus pachecoi,Lanzarote Sand Grasshopper,English,true
+16084409,Sphingonotus picteti,Tenerife Sand Grasshopper,English,true
+16084496,Sphingonotus rugosus,Rugose Sand Grasshopper,English,true
+16084531,Sphingonotus sublaevis,Red Sand Grasshopper,English,true
+16084556,Sphingonotus willemsei,Cañadas Sand Grasshopper,English,true
+16896284,Gryllomorpha canariensis,Canarian Crevice-cricket,English,true
+16896309,Hymenoptila lanzarotensis,Lanzarote Malpais Cricket,English,true
+68469231,Tartarogryllus sandanski,Eastern Arable Cricket,English,true
+16896690,Acrostira bellamyi,Gomera Stick Grasshopper,English,true
+16896956,Acrostira tamarani,Gran Canaria Stick Grasshopper,English,true
+16896959,Acrostira tenerifae,Tenerife Stick Grasshopper,English,true
+44698025,Kurtharzia sulcata,Groovy Stone Grasshopper,English,true
+49697894,Purpuraria erna,Purpurarian Stick Grasshopper,English,false
+49697894,Purpuraria erna,Purpurarian Stone Grasshopper,English,true
+47687189,Purpuraria magna,Lanzarote Stick Grasshopper,English,true
+68455994,Poecilimon laevissimus,Transionian Bright Bush-cricket,English,true
+47709397,Dolichopoda geniculata,Bended Cave-cricket,English,true
+16894995,Ariagona margaritae,Tenerife Short-winged Bush-cricket,English,true
+16895612,Calliphona koenigi,Tenerife Green Bush-cricket,English,true
+16895632,Calliphona palmensis,Palma Green Bush-cricket,English,true
+16895402,Canariola nubigena,Canarian Laurel Bush-cricket,English,true
+68378821,Eupholidoptera danconai,Dancona's Marbled Bush-cricket,English,true
+16895307,Evergoderes cabrerai,Gran Canaria Bush-cricket,English,true
+44698046,Rhacocleis buchichii,Bučić's bush cricket,English,false
+44698046,Rhacocleis buchichii,Bučićev zrikavac,Croatian,false
+44698046,Rhacocleis buchichii,Lesina Bush-cricket,English,true
+74780837,Leptophyes asamo,Bosnian Speckled Bush-cricket,English,true
+16084434,Chorthippus ariasi,Sierra De Gredos Grasshopper,English,true
+16084437,Chorthippus cazurroi,Cazurro's Grasshopper,English,true
+16084551,Chorthippus chloroticus,Greenish Field Grasshopper,English,true
+16084567,Chorthippus nevadensis,Sierra Nevadan Grasshopper,English,true
+16084498,Chorthippus reissingeri,Reissinger's Grasshopper,English,true
+16084433,Dociostaurus hispanicus,Iberian Cross-backed Grasshopper,English,true
+16084466,Euchorthippus angustulus,Balearic Straw Grasshopper,English,true
+16084452,Omocestus bolivari,Iberian Grasshopper,English,true
+16084447,Omocestus femoralis,Stripe-legged Grasshopper,English,true
+16084418,Omocestus minutissimus,Small Spanish Grasshopper,English,true
+16084355,Omocestus uhagonii,Uhagon's Grasshopper,English,true
+16084528,Podisma cantabricae,Cantabrian Mountain Grasshopper,English,true
+16084405,Podisma carpetana,Carpetan Mountain Grasshopper,English,true
+16084443,Sphingonotus gypsicola,Gypsum Sand Grasshopper,English,true
+16084470,Sphingonotus morini,Morin's Sand Grasshopper,English,true
+16084599,Xerohippus occidentalis,Iberian Desert Grasshopper,English,true
+64336659,Acinipe comptei,Compte's Stone Grasshopper,English,true
+64336664,Acinipe deceptoria,Deceptive Stone Grasshopper,English,true
+64336679,Acinipe eulaliae,Eulalia's Stone Grasshopper,English,true
+64336696,Acinipe ignatii,Ignat's Stone Grasshopper,English,true
+64336701,Acinipe mabillei,Mabille's Stone Grasshopper,English,true
+64336719,Acinipe perisi,Doñana Stone Grasshopper,English,true
+64336724,Acinipe segurensis,Segura Stone Grasshopper,English,true
+68377000,Eumigus cucullatus,Hooded Stone Grasshopper,English,true
+68377050,Eumigus monticola,Mountain Stone Grasshopper,English,true
+68377084,Eumigus punctatus,Speckled Stone Grasshopper,English,true
+68377122,Eumigus rubioi,Rubio's Stone Grasshopper,English,true
+68380016,Euryparyphes terrulentus,Earthling Stone Grasshopper,English,true
+44698019,Kurtharzia nugatoria,Futile Stone Grasshopper,English,true
+68443292,Ocnerodes soleri,Soler's Stone Grasshopper,English,true
+68443930,Odontura aspericauda,Iberian Striped Bush-cricket,English,true
+68313663,Dolichopoda bolivari,Bolivar's Cave-cricket,English,true
+64337798,Albarracinia zapaterii,Zapatero's Saddle Bush-cricket,English,true
+64547317,Antaxius kraussii,Albarracin Mountain Bush-cricket,English,true
+2463,Baetica ustulata,Sierra Nevadan Saddle Bush-cricket,English,true
+64552974,Callicrania belarrensis,Huesca Saddle Bush-cricket,English,true
+64553197,Callicrania demandae,Demanda Saddle Bush-cricket,English,true
+64553359,Callicrania denticulata,Toothed Saddle Bush-cricket,English,true
+64553381,Callicrania faberi,Faber's Bush-cricket,English,false
+64553381,Callicrania faberi,Faber's Saddle Bush-cricket,English,true
+64553404,Callicrania plaxicauda,Lleida Saddle Bush-cricket,English,true
+64553524,Callicrania vicentae,Vicente Saddle Bush-cricket,English,true
+44710700,Canariola emarginata,Spanish Laurel Bush-cricket,English,true
+44710734,Canariola quinonesi,Quinones' Bush-cricket,English,true
+44710894,Coracinotus notarioi,Notario's Saddle Bush-cricket,English,true
+44710951,Coracinotus politus,Smooth Saddle Bush-cricket,English,true
+44710836,Coracinotus squamiferus,Scaled Saddle Bush-cricket,English,true
+68286168,Ctenodecticus granatensis,Granada Pygmy Wart-biter,English,true
+68286180,Ctenodecticus lusitanicus,Lusitanian Pygmy Wart-biter,English,true
+68286189,Ctenodecticus major,Sierra Nevadan Pygmy Wart-biter,English,true
+68286373,Ctenodecticus thymi,Thyme Pygmy Wart-biter,English,true
+68317934,Ephippigerida areolaria,Spanish Saddle Bush-cricket,English,true
+68318023,Ephippigerida asella,Pre-Pyrenean Saddle Bush-cricket,English,true
+68318089,Ephippigerida carinata,Keeled Saddle Bush-cricket,English,true
+68318314,Ephippigerida longicauda,Long-tailed Saddle Bush-cricket,English,true
+68318450,Ephippigerida marceti,Marcet's Saddle Bush-cricket,English,true
+68318511,Ephippigerida pantingana,Aragon Saddle Bush-cricket,English,true
+68410961,Lluciapomaresius anapaulae,Ana-Paula's Saddle Bush-cricket,English,true
+68413029,Lluciapomaresius nobrei,Nobre's Saddle Bush-cricket,English,true
+68427313,Lluciapomaresius ortegai,Ortega's Saddle Bush-cricket,English,true
+68427395,Lluciapomaresius panteli,Pantel's Saddle Bush-cricket,English,true
+68427754,Metrioptera maritima,Cantabrian Meadow Bush-cricket,English,true
+68439963,Montana barretii,Madeiran Steppe Bush-cricket,English,true
+68439977,Montana carpetana,Carpetan Steppe Bush-cricket,English,true
+68442303,Neocallicrania bolivarii,Bolivar's Saddle Bush-cricket,English,true
+68442513,Neocallicrania serrata,Serrated Saddle Bush-cricket,English,true
+68446850,Parasteropleurus balearicus,Balearic Saddle Bush-cricket,English,true
+68446871,Parasteropleurus martorellii,Martorell's Saddle Bush-cricket,English,true
+68446900,Parasteropleurus perezii,Perez's Saddle Bush-cricket,English,true
+68452832,Platycleis iberica,Iberian Bush-cricket,English,false
+68452832,Platycleis iberica,Iberian Grey Bush-cricket,English,true
+68453553,Platystolus surcularius,Cryptic Saddle Bush-cricket,English,true
+68460092,Psalmatophanes barretoi,Madeiran Green Bush-cricket,English,true
+68462760,Pterolepis cordubensis,Cordoba Bush-cricket,English,true
+68462914,Pterolepis lusitanica,Lusitanian Bush-cricket,English,true
+68464883,Pycnogaster algecirensis,Algeciras Saddle Bush-cricket,English,true
+68464988,Pycnogaster gaditana,Cadiz Saddle Bush-cricket,English,true
+68464994,Pycnogaster graellsii,Graells' Saddle Bush-cricket,English,true
+68465022,Pycnogaster inermis,Unarmed Saddle Bush-cricket,English,true
+68465107,Pycnogaster sanchezgomezi,Sanchez Gomez's Saddle Bush-cricket,English,true
+68465113,Pycnogaster valentini,Valentin's Saddle Bush-cricket,English,true
+68468373,Roeseliana azami,French Meadow Bush-cricket,English,true
+68468511,Sabaterpia hispanica,Iberian Saddle Bush-cricket,English,true
+68468537,Sabaterpia paulinoi,Paulino's Saddle Bush-cricket,English,true
+68469098,Steropleurus andalusius,Andalusian Saddle Bush-cricket,English,true
+68469138,Steropleurus castellanus,Castilian Saddle Bush-cricket,English,true
+68469176,Steropleurus obsoletus,Shabby Saddle Bush-cricket,English,true
+68469192,Steropleurus recticarinatus,Straight-keeled Saddle Bush-cricket,English,true
+68469221,Synephippius obvius,Exposed Saddle Bush-cricket,English,true
+68485030,Tettigonia hispanica,Spanish Green Bush-cricket,English,true
+68486527,Zeuneriana burriana,Burr's Bush-cricket,English,false
+68486527,Zeuneriana burriana,Burr's Wide-winged Bush-cricket,English,true
+76196620,Cortinarius osloensis,osloslørsopp,Norwegian,true
+79726923,Dracaena tamaranae,Drago de Gran Canaria,Spanish; Castilian,true
+79727248,Euphorbia canariensis,Cardón,Spanish; Castilian,true
+79736015,Sorbus adamii,Hungarian Whitebeam,English,true
+79738200,Vaccinium padifolium,Madeiran blueberry,English,false
+79738200,Vaccinium padifolium,Uveira,Portuguese,false
+79738200,Vaccinium padifolium,Uva-de-serra,Portuguese,true
+79740183,Sorbus admonitor,No Parking Tree,English,true
+79748376,Sorbus borbasii,Borbás’ rowan,English,false
+79748376,Sorbus borbasii,Borbás-berkenye,Hungarian,true
+79748410,Sorbus cambrensis,Welsh Whitebeam,English,true
+79748432,Sorbus cheddarensis,Cheddar Whitebeam,English,true
+79748466,Sorbus cuneifolia,Llangollen Whitebeam,English,true
+79748575,Sorbus eminentoides,Twin Cliffs Whitebeam,English,true
+79749175,Sorbus joannis,Jarabina Jänova,Slovak,true
+79749215,Sorbus lancifolia,Smaloxel,Swedish,false
+79749215,Sorbus lancifolia,Smalasal,Norwegian,true
+79749225,Sorbus latifolia,Fontainebleau Whitebeam,English,false
+79749225,Sorbus latifolia,L'Alisier de Fountainebleau,French,true
+79749246,Sorbus leighensis,Leigh Wood's Whitebeam,English,true
+79749266,Sorbus margaretae,Margaret's Whitebeam,English,true
+79749277,Sorbus minima,Least Whitebeam,English,true
+79749297,Sorbus neglecta,Nordlandsoxel,Swedish,false
+79749297,Sorbus neglecta,Nordlandsasal,Norwegian,true
+79749327,Sorbus parviloba,Ship Rock Whitebeam,English,true
+79749347,Sorbus porrigentiformis,Grey-leaved Whitebeam,English,true
+79749367,Sorbus pseudomeinichii,Catacol Whitebeam,English,true
+79749438,Sorbus rupicoloides,Gough's Rock Whitebeam,English,true
+79749448,Sorbus scannelliana,Maura Scannell's Whitebeam,English,true
+79749856,Sorbus stenophylla,Llanthony Whitebeam,English,true
+79749967,Sorbus stirtoniana,Stirton's Whitebeam,English,true
+79749999,Sorbus subpinnata,Grenmarasal,Norwegian,true
+79750025,Sorbus subsimilis,Sørlandsasal,Norwegian,true
+79750042,Sorbus whiteana,White's Whitebeam,English,true
+79920094,Sorbus barthae,Bartha-berkenye ,Hungarian,true
+80257250,Paramogoplistes ortini,Ortin's Scale-cricket,English,true
+80257367,Ephippigerida rosae,Portuguese Saddle Bush-cricket,English,true
+80257403,Ephippigerida laserena,Badajoz Saddle Bush-cricket,English,true
+79928204,Tamarix canariensis,Tarajal,Spanish; Castilian,false
+79928204,Tamarix canariensis,Canary Island tamarisk,English,true
+34728,Sorbus eminens,Cerddinen Mynwy,Welsh,false
+34728,Sorbus eminens,Round-leaved Whitebeam,English,true
+34730,Sorbus lancastriensis,Lancashire Whitebeam,English,true
+34739,Sorbus leptophylla,Thin-Leaved Whitebeam,English,true
+34723,Sorbus leyana,Ley's Whitebeam,English,false
+34723,Sorbus leyana,Cerddinen Darren Fach,Welsh,false
+34723,Sorbus leyana,Ley's Whitebeam,English,true
+34722,Sorbus subcuneata,Somerset Whitebeam,English,true
+34725,Sorbus vexans,Bloody Whitebeam,English,true
+34732,Sorbus wilmottiana,Wilmott's Whitebeam,English,true
+34735,Sorbus arranensis,Arran Whitebeam,English,true
+34741,Sorbus bristoliensis,Bristol Whitebeam,English,true
+34724,Sorbus franconica,Fränkische Mehlbeere,German,false
+34724,Sorbus franconica,Fränkische Bastard-elsbeere,German,true
+34720,Sorbus pseudofennica,Arran Cut-leaved Whitebeam,English,false
+34720,Sorbus pseudofennica,Arran Service-tree,English,true
+34727,Sorbus pseudothuringiaca,Hersbrucker Mehlbeere,German,false
+34727,Sorbus pseudothuringiaca,Scheinthüringer Bastard-eberesche,German,false
+79722994,Adenocarpus foliolosus,Mount Codeso,Spanish; Castilian,true
+30322,Arbutus canariensis,Madroño,Spanish; Castilian,false
+38395,Clethra arborea,Folhado,Portuguese,false
+38397,Laurus azorica,Macaronesian Laurel,English,false
+38397,Laurus azorica,Lauro,Portuguese,false
+38397,Laurus azorica,Loureiro,Portuguese,false
+37673,Maytenus canariensis,Peralillo,Spanish; Castilian,false
+34734,Sorbus badensis,Badische Bastard-elsbeere,German,false
+34734,Sorbus badensis,Badische Mehlbeere,German,false
+13133499,Arum apulum,Apulian lords and ladies,English,false
+13133499,Arum apulum,Gigaro pugliese,Italian,true
+83467644,Asplenium aegaeum,Aegean Spleenwort,English,true
+83468188,Asplenium aureum,Golden Rustyback Fern,English,true
+83470616,Asplenium creticum,Cretan Spleenwort,English,true
+83474088,Asplenium hybridum,križani zlatinjak,Croatian,false
+83474088,Asplenium hybridum,Dalmatian Spleenwort,English,true
+83475245,Asplenium macedonicum,Macedonian Spleenwort,English,true
+83475652,Asplenium majoricum,Majorca Spleenwort,English,true
+83478083,Peripodisma llofizii,Albanian Mountain Grasshopper,English,true
+83503613,Asplenium octoploideum,Canarian Spleenwort,English,true
+83508309,Asplenium terorense,Teror Spleenwort,English,true
+83515051,Isoetes iapygia,Calamaria pugliese,Italian,false
+83515051,Isoetes iapygia,Apulian Quillwort,English,true
+83515150,Isoetes sabatina,Calamaria del Lago di Bracciano ,Italian,false
+83515150,Isoetes sabatina,Lake Bracciano Quillwort,English,true
+83515290,Isoetes tiguliana,Teguli Quillwort,English,false
+83515290,Isoetes tiguliana,Calamaria di Teulada ,Italian,false
+83515290,Isoetes tiguliana,Sardinian Quillwort,English,true
+83570762,Isoetes todaroana,Todaro's Quillwort,English,false
+83570762,Isoetes todaroana,Sicilian Quillwort,English,true
+83826643,Salix nebrodensis,Salice dei monti Nebrodi,Italian,true
+39603,Pinus canariensis,Canary Islands Pine,English,false
+39603,Pinus canariensis,Pino Canario,Spanish; Castilian,false
+39603,Pinus canariensis,Canary Pine,English,true
+83645231,Dryopteris aitoniana,Aiton's buckler-Fern,English,false
+83645231,Dryopteris aitoniana,levada-alvejuuri,Finnish,false
+83645231,Dryopteris aitoniana,Madeira Buckler-fern,English,true
+162071,Dryopteris corleyi,Helecho macho asturiano,Spanish; Castilian,false
+162071,Dryopteris corleyi,Costa Verde Male-fern,English,true
+83646140,Dryopteris crispifolia,Poimualvejuuri,Finnish,false
+83646140,Dryopteris crispifolia,Parsley Buckler-fern,English,true
+83649274,Dryopteris oligodonta,helecho macho,Spanish; Castilian,false
+83649274,Dryopteris oligodonta,Kanaren-Wurmfarn,German,false
+83649274,Dryopteris oligodonta,kanarianalvejuuri,Finnish,false
+83649274,Dryopteris oligodonta,Canarian Male-fern,English,true
+162182,Asplenium jahandiezii,Doradille de Jahandiez,French,false
+162182,Asplenium jahandiezii,Dordadille du Verdon,French,false
+162182,Asplenium jahandiezii,Verdon Spleenwort,English,true
+78674300,Arachniodes webbiana,Madeira Holly Fern,English,true
+83644630,Elaphoglossum semicylindricum,Scaly Tongue-fern,English,true
+162178,Polystichum drepanum,Madeira Shield-Fern,English,true
+83650906,Polystichum falcinellum,Madeira Sword-Fern,English,true
+161904,Hymenophyllum maderense,Madeira Filmy Fern,English,true
+162270,Isoetes azorica,Azorean Quillwort,English,true
+161833,Isoetes boryana,Gascoyne Quillwort,English,true
+164101,Isoetes fluitans,Isoète Nageante,French,false
+164101,Isoetes fluitans,River Quillwort,English,true
+175294,Isoetes heldreichii,Pindus Quillwort,English,true
+162124,Isoetes malinverniana,Calamaria di Malinverni,Italian,false
+162124,Isoetes malinverniana,Piedmont Quillwort,English,true
+78672292,Huperzia dentata,Toothed clubmoss,English,true
+78672476,Huperzia suberecta,Azorean Clubmoss,English,true
+83650353,Grammitis azorica,Azorean Finger Fern,English,true
+83651176,Allosorus fragilis,Fragile Lipfern,English,true
+164191,Pteris incompleta,Helecho Rajuño,Spanish; Castilian,false
+164191,Pteris incompleta,Laurisilva Brake,English,true
+170639,Deroceras adolphi,Loche de Ligué,French,true
+170651,Deroceras cazioti,Loche de Corse,French,true
+170654,Deroceras corsicum,Loche de Bastia,French,true
+183961,Stegastes baldwini,Baldwin's Major,English,false
+183961,Stegastes baldwini,Clipperton Gregory,English,false
+183961,Stegastes baldwini,Chauffet de Baldwin,French,false
+183961,Stegastes baldwini,Jaqueta de Baldwin,Spanish; Castilian,false
+85712849,Peripodisma ceraunii,Cika Mountain Grasshopper,English,true
+85736948,Roeseliana oporina,Cuenca Meadow Bush-cricket,English,true
+6735,Atlantica guerinianus,Madeiran Land Snail,English,true
+22690117,Columba bollii,Bolle's Laurel Pigeon,English,false
+22690117,Columba bollii,Bolle's Pigeon,English,false
+22690117,Columba bollii,Dark-tailed Laurel-pigeon,English,true
+86089590,Sorbus adeana,Ade-Mehlbeere,German,true
+86091120,Sorbus cordigastensis,Kordigast Mehlbeere,German,true
+86091540,Sorbus eystettensis,Eichstätter Mehlbeere,German,true
+86091575,Sorbus fischeri,Fischer Mehlbeere,German,false
+86091575,Sorbus fischeri,Ries Mehlbeere,German,true
+86091602,Sorbus gauckleri,Gaucklers Mehlbeere,German,true
+86091653,Sorbus greenii,Green's Whitebeam,English,true
+86093504,Sorbus haesitans,Thüngersheimer Mehlbeere,German,true
+86100353,Sorbus meyeri,Meyers Mehlbeere,German,true
+11205,Lampedusa melitensis,Maltese Door-snail,English,true
+170833,Lampedusa imitatrix,Maltese Door Snail,English,true
+61678,Zelkova sicula,Zelkova Siciliana,Italian,false
+86093546,Sorbus harziana,Harz' Mehlbeere,German,true
+86095471,Sorbus herbipolitana,Würzburger Mehlbeere,German,true
+86095479,Sorbus herefordensis,Herefordshire Whitebeam,English,true
+86095491,Sorbus hohenesteri,Hohenesters Mehlbeere,German,true
+86096051,Sorbus meierottii,Meierotts Mehlbeere,German,true
+86096092,Sorbus mergenthaleriana,Mergenthalers Mehlbeere,German,true
+86096929,Sorbus perlonga,Langblättrige Mehlbeere,German,true
+86098002,Sorbus puellarum,Mädchen Mehlbeere,German,true
+86098009,Sorbus pulchra,Gößweinsteiner Mehlbeere,German,true
+86098265,Sorbus ratisbonensis,Regensburger Mehlbeere,German,true
+86098636,Sorbus schnizleiniana,Schnizleins Mehlbeere,German,true
+86098673,Sorbus schuwerkiorum,Schuwerk Mehlbeere,German,true
+86098683,Sorbus schwarziana,Schwarz' Mehlbeere,German,true
+86105340,Sorbus richii,Rich's Whitebeam,English,true
+19891838,Cytisus cantabricus,Escoba Reciniega,Spanish; Castilian,false
+19891838,Cytisus cantabricus,Escoba Serraniega,Spanish; Castilian,false
+19891838,Cytisus cantabricus,Genêt des Cantabriques,French,false
+19892994,Echinospartum boissieri,Piorno Fino,Spanish; Castilian,false
+83751984,Ebenus cretica,Shrubby sainfoil,English,false
+83751984,Ebenus cretica,L'ebenier de Crete,French,false
+83751984,Ebenus cretica,Cretan Silver Bush,English,true
+83755901,Genista aristata,ginestra dei Nebrodi ,Italian,true
+83764576,Lavandula lanata,Woolly Lavender,English,true
+83772920,Rubus hochstetterorum,Silva-mansa,Portuguese,false
+83772920,Rubus hochstetterorum,Silvadomanso,Portuguese,true
+83774146,Sorbus margittaiana,Jarabina Margittaiho,Slovak,true
+84388409,Cotoneaster nebrodensis,Brickberry Cotoneaster,English,true
+86107331,Cotoneaster delphinensis,Cotoneaster du Dauphiné,French,true
+86124273,Malva canariensis,Malva de risco,Spanish; Castilian,true
+19892669,Genista tenera,Madeira Broom,English,false
+19892669,Genista tenera,Giesta De Piorno,Portuguese,false
+86163048,Sorbus meinichii,Fagerrogn,Norwegian,true
+10712,Hypnophila remyi,Brillante corse,French,true
+13165130,Festuca christianii-bernardii,Fetuque de Christian Bernard,French,false
+22729528,Phylloscopus canariensis,Canary Islands Chiffchaff,English,true
+167938,Zannichellia melitensis,Harira tal-ilma ta’ Malta,Maltese,false
+167938,Zannichellia melitensis,Maltese Horned Pondweed,English,true
+22734358,Regulus madeirensis,Madeira Kinglet,English,false
+22734358,Regulus madeirensis,Madeiran Kinglet,English,false
+22734358,Regulus madeirensis,Madeira Firecrest,English,true
+39196,Herbertus borealis,Northern Prongwort,English,true
+84535114,Pohlia scotica,Scottish Thread-moss,English,true
+39191,Thamnobryum angustifolium,Derbyshire Feather-moss,English,true
+87467834,Thamnobryum cataractarum,Yorkshire Feather-moss,English,true
+175948,Orchis brancifortii,Branciforti's Orchid,English,true
+87539204,Orthotrichum cambrense,Welsh Bristle-moss,English,true
+85839319,Bryoerythrophyllum caledonicum,Scottish Beard Moss,English,true
+87999248,Prionotropis willemsorum,Willemses' Stone Grasshopper,English,true
+88258972,Epipactis hyblaea,Elleborine iblea,Italian,true
+88264177,Gagea chrysantha,Golden Gagea,English,false
+88264177,Gagea chrysantha,Gagée dorée,French,true
+22720641,Loxia scotica,Scottish Crossbill,English,true
+88793883,Allium panormitanum,Aglio palermitano,Italian,true
+88797143,Allium pelagicum,Aglio delle Pelagie,Italian,true
+89640469,Gagea peruzzii,Cipollaccio giallo di Peruzzi,Italian,false
+89640469,Gagea peruzzii,Gagée de Peruzzi,French,false
+89640469,Gagea peruzzii,Peruzzi’s Gagea,English,true
+136131,Calotriton arnoldi,Montseny Newt,English,false
+136131,Calotriton arnoldi,Montseny Brook Newt,English,true
+8371,Euproctus platycephalus,Sardinian Mountain Newt,English,false
+8371,Euproctus platycephalus,Tritone Sardo,Italian,false
+8371,Euproctus platycephalus,Sardinian Brook Salamander,English,true
+20459,Speleomantes supramontis,Geotritone del Supramonte,Italian,false
+20459,Speleomantes supramontis,Supramonte Cave Salamander,English,true
+979,Alytes dickhilleni,Sapo Partero Bético,Spanish; Castilian,false
+979,Alytes dickhilleni,Betic Midwife Toad,English,true
+977,Alytes muletensis,Majorca Midwife Toad,English,false
+977,Alytes muletensis,Majorcan Midwife Toad,English,false
+977,Alytes muletensis,Ferreret,Spanish; Castilian,false
+977,Alytes muletensis,Ferreret,Catalan; Valencian,false
+977,Alytes muletensis,Mallorcan Midwife Toad,English,true
+20456,Speleomantes genei,Sardinian Cave Salamander,English,false
+20456,Speleomantes genei,Geotritone di Gené,Italian,false
+20456,Speleomantes genei,Gene's Cave Salamander,English,true
+20455,Speleomantes flavus,Monte Albo Cave Salamander,English,false
+20455,Speleomantes flavus,Stefani's Salamander,English,false
+20455,Speleomantes flavus,Geotritone del Monte Albo,Italian,false
+20455,Speleomantes flavus,Mount Albo's Cave Salamander,English,true
+135825,Speleomantes sarrabusensis,Sarrabus Cave Salamander,English,false
+135825,Speleomantes sarrabusensis,Sette Fratelli Cave Salamander,English,true
+59449,Euproctus montanus,Corsican Brook Salamander,English,false
+59449,Euproctus montanus,Corsican Mountain Newt,English,true
+59476,Lissotriton italicus,Tritone Italiano,Italian,false
+59476,Lissotriton italicus,Italian Newt,English,true
+59465,Salamandra corsica,Corsican Fire Salamander,English,true
+59468,Salamandrina terdigitata,Salamandrina Dagli Occhiali,Italian,false
+59468,Salamandrina terdigitata,Spectacled Salamander,English,true
+136135,Salamandrina perspicillata,Salamandrina settentrionale,Italian,false
+136135,Salamandrina perspicillata,Northern Spectacled Salamander,English,true
+6714,Discoglossus montalentii,Corsican Painted Frog,English,false
+20454,Speleomantes ambrosii,Spezia Cave Salamander,English,false
+20454,Speleomantes ambrosii,Geotritone di Ambrosi,Italian,false
+20454,Speleomantes ambrosii,Ambrosi's Cave Salamander,English,true
+20457,Speleomantes imperialis,Imperial Cave Salamander,English,false
+20457,Speleomantes imperialis,Odorous Cave Salamander,English,false
+20457,Speleomantes imperialis,Geotritone Imperiale,Italian,false
+20457,Speleomantes imperialis,Geotritone Odoroso,Italian,false
+20457,Speleomantes imperialis,Scented Cave Salamander,English,true
+20458,Speleomantes italicus,Geotritone Italiano,Italian,false
+20458,Speleomantes italicus,Italian Cave Salamander,English,true
+89779095,Gagea pseudopeduncularis,Long-pedicelled Gagea,English,false
+89779095,Gagea pseudopeduncularis,Gagée à longs pédicelles,French,true
+89796054,Gagea polymorpha,Changing Gagea,English,false
+89796054,Gagea polymorpha,Gagée variable,French,true
+89799806,Gagea omalensis,Omalos Gagea,English,false
+89799806,Gagea omalensis,Gagée d’Omalos,French,true
+89817861,Gagea heldreichii,Heldreich’s Gagea,English,false
+89817861,Gagea heldreichii,Gagée de Heldreich,French,true
+89826661,Gagea extremadurensis,Estremadure gagea,English,false
+89826661,Gagea extremadurensis,Gagée d’Estrémadure,French,true
+5588,Crocidura zimmermanni,Cretan Shrew,English,false
+5588,Crocidura zimmermanni,Cretan White-toothed Shrew,English,false
+5588,Crocidura zimmermanni,Crocidure de Zimmermann,French,false
+5588,Crocidura zimmermanni,Musaraña de Creta,Spanish; Castilian,false
+5588,Crocidura zimmermanni,Κρητική μυγαλή,"Greek, Modern (1453-)",false
+5588,Crocidura zimmermanni,Zimmermann's Shrew,English,true
+90853972,Dolichopoda ochtoniai,Ochtonia Cave-cricket,English,true
+90854150,Dolichopoda saraolacosi,Saraolakos Cave-cricket,English,true
+91071133,Sorbus seyboldiana,Seybold Mehlbeere,German,true
+30478,Abies nebrodensis,Abete dei Nebrodi,Italian,false
+30478,Abies nebrodensis,Abete delle Madonie,Italian,false
+30478,Abies nebrodensis,Sicilian Fir,English,true
+30310,Cotoneaster granatensis,Durillo,Spanish; Castilian,false
+30310,Cotoneaster granatensis,Guillomera,Spanish; Castilian,false
+30310,Cotoneaster granatensis,Guillomero,Spanish; Castilian,false
+30310,Cotoneaster granatensis,Guillomo,Spanish; Castilian,false
+95545664,Sorbus sognensis,Sogneasal,Norwegian,true
+95546347,Sorbus subarranensis,Småasal,Norwegian,true
+47709592,Dolichopoda palpata,Palpate Cave Cricket,English,true
+95947515,Arion luisae,Slug of Espadán,English,false
+95947515,Arion luisae,Llimac d'Espadà,Catalan; Valencian,false
+95947515,Arion luisae,Loche d'Espadán,French,false
+95947515,Arion luisae,Babosa de Espadán,Spanish; Castilian,true
+96430454,Euphorbia pedroi,Eufórbia-de-gomes-pedro,Portuguese,true
+96436226,Hypericum balearicum,Majorca St John's wort,English,false
+96436226,Hypericum balearicum,Hipérico de las Baleares,Spanish; Castilian,true
+96437005,Lavatera oblongifolia,Malva de las Alpujarras,Spanish; Castilian,true
+96986314,Bradycellus chavesi,Carocho,Portuguese,false
+96986314,Bradycellus chavesi,Ground-beetle,English,true
+97007437,Sorbus avonensis,Avon Gorge Whitebeam,English,true
+97154635,Sorbus arvonensis,Cerddin Menai,Welsh,false
+97154635,Sorbus arvonensis,Menai Strait Whitebeam,English,true
+97209900,Sorbus saxicola,Symonds Yat Whitebeam,English,true
+158469,Emys trinacris,Sizilianische Sumpfschildkrîte,German,false
+158469,Emys trinacris,Testuggine Palustre Siciliana,Italian,false
+158469,Emys trinacris,Sicilian Pond Turtle,English,true
+98140004,Isoetes tenuissima,French Quillwort,English,true
+98141659,Dryopteris ardechensis,Dryoptéris d’Ardèche ,French,false
+98141659,Dryopteris ardechensis,Dryoptéris des Cévennes,French,false
+98141659,Dryopteris ardechensis,Cévennes Male-fern,English,true
+98562533,Linderiella baetica,Fairy Shrimp,English,false
+98562533,Linderiella baetica,Gambilusa,Spanish; Castilian,false
+98562533,Linderiella baetica,Gambilusa,Spanish; Castilian,true
+96986682,Heteroderes azoricus,Escaravelho-mola,Portuguese,false
+96986682,Heteroderes azoricus,Click beetle,English,true
+97102905,Calathus carvalhoi,Carocho,Portuguese,false
+97102905,Calathus carvalhoi,Ground Beetle,English,true
+97104847,Calathus extensicollis,Carocho,Portuguese,false
+97104847,Calathus extensicollis,Ground beetle,English,true
+97110409,Calathus lundbladi,Carocho,Portuguese,false
+97110409,Calathus lundbladi,Ground beetle,English,true
+97111002,Calathus vicenteorum,Carocho,Portuguese,false
+97111002,Calathus vicenteorum,Ground beetle,English,true
+97113324,Cedrorum azoricus,Carocho-da-penumbra,Portuguese,true
+97117836,Pseudanchomenus aptinoides,Ground-beetle,English,false
+97117836,Pseudanchomenus aptinoides,Laurocho,Portuguese,true
+97118594,Thalassophilus azoricus,Carocho,Portuguese,false
+97118594,Thalassophilus azoricus,Ground beetle,English,true
+97120426,Trechus isabelae,Carocho cavernícola,Portuguese,false
+97120426,Trechus isabelae,Cave ground-beetle,English,true
+97120924,Trechus jorgensis,Carocho cavernícola,Portuguese,false
+97120924,Trechus jorgensis,Cave ground-beetle,English,true
+97122215,Trechus montanheirorum,Carocho cavernícola,Portuguese,false
+97122215,Trechus montanheirorum,Cave ground-beetle,English,true
+97122456,Trechus oromii,Carocho cavernícola,Portuguese,false
+97122456,Trechus oromii,Cave grround-beetle,English,true
+97122954,Trechus pereirai,Carocho cavernícola,Portuguese,false
+97122954,Trechus pereirai,Cave ground-beetle,English,true
+97124342,Trechus picoensis,Carocho cavernícola,Portuguese,false
+97124342,Trechus picoensis,Cave ground-beetle,English,true
+97125072,Trechus terceiranus,Carocho cavernícola,Portuguese,false
+97125072,Trechus terceiranus,Cave ground-beetle,English,true
+97126159,Trechus terrabravensis,Carocho-da-terra-brava,Portuguese,false
+97126159,Trechus terrabravensis,Ground-beetle,English,true
+97126539,Trechus torretassoi,Carocho,Portuguese,false
+97126539,Trechus torretassoi,Ground-beetle,English,true
+97127598,Mniophilosoma obscurum,Escaravelho do musgão,Portuguese,false
+97127598,Mniophilosoma obscurum,Leaf-beetle,English,true
+97159182,Caulotrupis parvus,Snout beetle,English,false
+97159182,Caulotrupis parvus,Santa Maria Tiny weevil,English,true
+97161019,Drouetius azoricus,Weevil,English,false
+97161019,Drouetius azoricus,Gorgulho,Portuguese,true
+97161490,Drouetius borgesi,Weevil,English,false
+97161490,Drouetius borgesi,Gorgulho,Portuguese,true
+97161588,Drouetius oceanicus,Weevil,English,false
+97161588,Drouetius oceanicus,Gorgulho,Portuguese,true
+97161884,Neocnemis occidentalis,Gorgulho,Portuguese,false
+97161884,Neocnemis occidentalis,Weevil,English,true
+97162328,Pseudechinosoma nodosum,Snout beetle,English,false
+97162328,Pseudechinosoma nodosum,Weevil,English,false
+97162328,Pseudechinosoma nodosum,Gorgulho-casca-de-noz,Portuguese,false
+97162328,Pseudechinosoma nodosum,True weevil,English,true
+97163447,Agabus godmanni,Azorean predacious diving beetle,English,true
+97167384,Hydroporus guernei,Aguadeiro,Portuguese,false
+97167384,Hydroporus guernei,Predacious diving beetle,English,true
+97167398,Athous azoricus,Wireworm,English,false
+97167398,Athous azoricus,Escaravelho-mola-dos-Açores,Portuguese,false
+97167398,Athous azoricus,Click beetle,English,true
+97169500,Gietella faialensis,Escaravelho-do-vulcão-dos-capelinhos,Portuguese,false
+97169500,Gietella faialensis,Stone beetle,English,true
+97170117,Metophthalmus occidentalis,Minute brown,English,false
+97170117,Metophthalmus occidentalis,Plaster beetle,English,false
+97170117,Metophthalmus occidentalis,Scavenger beetle,English,false
+97170117,Metophthalmus occidentalis,Mould beetle,English,true
+97170461,Catops velhocabrali,Azorean small scavenger beetle,English,true
+97179599,Atheta azorica,Rove beetle,English,true
+97180194,Atheta caprariensis,Rove beetle,English,true
+97185801,Geostiba melanocephala,Rove beetle,English,true
+97213213,Medon varamontis,Rove beetle,English,true
+97213226,Phloeostiba azorica,Rove Beetle,English,true
+97213241,Phytosus schatzmayri,Rove Beetle,English,true
+97213262,Nesotes azoricus,False Wireworm,English,false
+97213262,Nesotes azoricus,Mealworms,English,false
+97213262,Nesotes azoricus,Darkling Beetle,English,true
+97215835,Aphrodes hamiltoni,Leafhopper,English,true
+97236499,Eupithecia ogilviata,Traça,Portuguese,false
+97236499,Eupithecia ogilviata,Geometer Moth,English,true
+97240865,Hemerobius azoricus,Rendado,Portuguese,false
+97240865,Hemerobius azoricus,Brown lacewings,English,true
+97241143,Elipsocus azoricus,Quasimosca,Portuguese,false
+97241143,Elipsocus azoricus,Barklice,English,true
+97241247,Elipsocus brincki,Barklice,English,true
+97241503,Limnephilus atlanticus,Caddisfly,English,true
+97295365,Athous pomboi,Wireworm,English,false
+97295365,Athous pomboi,Escaravelho-mola-de-Santa-Maria,Portuguese,false
+97295365,Athous pomboi,Click beetle,English,true
+97295664,Cobalius freyi,Minute moss beetle,English,false
+97295664,Cobalius freyi,Hydraenid beetle,English,true
+97296302,Graphania granti,Underwing Moth,English,false
+97296302,Graphania granti,Traça,Portuguese,false
+97296302,Graphania granti,Owlet Moth,English,true
+97481131,Atlantocis gillerforsi,Fungus Beetle,English,false
+97481131,Atlantocis gillerforsi,Minute Tree Beetle,English,true
+97488857,Sphaericus velhocabrali,Death Watch Beetle,English,false
+97488857,Sphaericus velhocabrali,Drugstore Beetle,English,false
+97488857,Sphaericus velhocabrali,Furniture Beetle,English,false
+97488857,Sphaericus velhocabrali,Powerpost Beetle,English,false
+97488857,Sphaericus velhocabrali,Cigarette Beetle,English,true
+97493071,Parapetrobius azoricus,Bristletails,English,true
+97493135,Trigoniophthalmus borgesi,Bristletails,English,true
+97633244,Atheta floresensis,Rove beetle,English,true
+97633856,Bembidion derelictus,Carocho,Portuguese,false
+97633856,Bembidion derelictus,Ground-beetle,English,true
+97634472,Aleochara freyi,Rove beetle,English,true
+99556169,Sideroxylon canariense,Marmulán canario,Spanish; Castilian,false
+99556169,Sideroxylon canariense,Marmulano,Spanish; Castilian,true
+37665,Pleiomeris canariensis,Delfino,Spanish; Castilian,false
+173009,Pyrus castribonensis,Pero di Castelbuono,Italian,true
+99773552,Rhacocleis andikithirensis,Andikithira Bush-cricket,English,true
+38320,Abies cephalonica,Grecian Fir,English,false
+38320,Abies cephalonica,Kukunaria,"Greek, Modern (1453-)",false
+38320,Abies cephalonica,Greek Fir,English,true
+101313145,Botanophila fonsecai,Fonseca's Seed Fly,English,true
+101608332,Cytisus supranubius,Retama del Teide,Spanish; Castilian,true
+101883407,Isoetes haussknechtii,Greek Quillwort,English,true
+161857,Cistus chinamadensis,Jara,Spanish; Castilian,false
+161857,Cistus chinamadensis,Amagante,Spanish; Castilian,true
+102794629,Artemisia argentea,Madeira wormwood,English,true
+102815753,Echium portosanctense,Massaroco,Portuguese,true
+102818740,Euphorbia piscatoria,Figuera do inferno,Portuguese,false
+102818740,Euphorbia piscatoria,Fish-stunning Spurge,English,true
+102819202,Isoplexis sceptrum,Madeira foxglove,English,true
+19892254,Genista maderensis,Madeira Dyer's greenweed,English,false
+19892254,Genista maderensis,Piorno,Portuguese,true
+102827479,Cotoneaster cambricus,Rock Apple,English,false
+102827479,Cotoneaster cambricus,Creigafal y Gogarth,Welsh,false
+102827479,Cotoneaster cambricus,Great Orme Berry,English,true
+102827947,Cotoneaster kullensis,Skånskt oxbär,Swedish,true
+102854639,Pyrus ciancioi,Pero di Ciancio,Italian,true
+195499,Carthamus balearicus,Distaff thistle of Majorca,English,false
+195499,Carthamus balearicus,Socarrell Bord,Catalan; Valencian,false
+195499,Carthamus balearicus,Gatosa,Spanish; Castilian,true
+61675,Ribes sardoum,Sardinian Currant,English,true
+61597,Pleurotus nebrodensis ssp. nebrodensis,Funcia di Basiliscu,Sicilian,false
+61597,Pleurotus nebrodensis ssp. nebrodensis,White Ferula Mushroom,English,true
+161828,Ophrys lunulata,Lunulate Ophrys,English,false
+161828,Ophrys lunulata,Ofride a mezza-luna,Italian,true
+30337,Sorbus aucuparia subsp. maderensis,Madeira Mountain Ash,English,false
+30337,Sorbus aucuparia subsp. maderensis,Madeiran White Beam,English,false
+30337,Sorbus aucuparia subsp. maderensis,Sorveira,Portuguese,true
+61655,Echium acanthocarpum,Blue bugloss,English,false
+61655,Echium acanthocarpum,Tajinaste azul de La Gomera,Spanish; Castilian,true
+30334,Rhamnus integrifolia,Mocanillo,Spanish; Castilian,false
+30334,Rhamnus integrifolia,Moralito,Spanish; Castilian,true
+30332,Rhamnus crenulata,Espinero,Spanish; Castilian,false
+30332,Rhamnus crenulata,Espino negro,Spanish; Castilian,true
+103496234,Genista bocchierii,Ginestra di Bocchieri,Italian,true
+103496331,Genista sardoa,Ginestra sarda,Italian,true
+16084613,Chorthippus crassiceps,Plump-headed Grasshopper,English,true
+68313777,Dolichopoda cassagnaui,Cassagnau's Cave-cricket,English,true
+70613726,Dolichopoda kalithea,Kalithea Cave-cricket,English,true
+68314552,Dolichopoda paraskevi,Cretan Cave-cricket,English,true
+68314902,Dolichopoda steriotisi,Corfu Cave-cricket,English,true
+68314976,Dolichopoda thasosensis,Thassos Cave-cricket,English,true
+45463437,Eupholidoptera cretica,Cretan Marbled Bush-cricket,English,true
+17046307,Dolichopoda gasparoi,Lefkas Cave-cricket,English,true
+17181907,Poecilimon athos,Athos Bright Bush-cricket,English,true
+17181953,Poecilimon erimanthos,Erimanthos Bright Bush-cricket,English,true
+68485583,Troglophilus spinulosus,Spiny Cave-cricket,English,true
+162224,Genista dorycnifolia,Genestra,Catalan; Valencian,true
+161922,Daphne rodriguezii,Dafne menorquí,Catalan; Valencian,true
+103562319,Viburnum treleasei,Folhado,Portuguese,true
+103562390,Hypericum foliosum,Malfurada,Portuguese,true
+173014,Pyrus sicanorum,Pero dei Sicani,Italian,false
+173014,Pyrus sicanorum,Pero dei Monti Sicani,Italian,true
+103686613,Cneorum pulverulentum,Leña Santa,Spanish; Castilian,false
+103686613,Cneorum pulverulentum,Orijama,Spanish; Castilian,false
+103686613,Cneorum pulverulentum,Leña Buena,Spanish; Castilian,true
+104190621,Bencomia caudata,Bencomia,English,false
+104190621,Bencomia caudata,Bencomia de monte,Spanish; Castilian,false
+104190621,Bencomia caudata,Bencomia,Spanish; Castilian,true
+104191153,Marcetella moquiniana,Burnet tree,English,false
+104191153,Marcetella moquiniana,Marcetella,German,false
+104191153,Marcetella moquiniana,Palo de sangre,Spanish; Castilian,true
+104191669,Plocama pendula,Bufo,Spanish; Castilian,false
+104191669,Plocama pendula,Jediondo,Spanish; Castilian,false
+104191669,Plocama pendula,Balo,Spanish; Castilian,true
+104193084,Convolvulus floridus,Anuel,Spanish; Castilian,false
+104193084,Convolvulus floridus,Guaidil,Spanish; Castilian,false
+104193084,Convolvulus floridus,Guaydil,Spanish; Castilian,true
+104195079,Bosea yervamora,Hierbamora,Spanish; Castilian,false
+104195079,Bosea yervamora,Hediondo,Spanish; Castilian,true
+31361,Morella rivas-martinezii,Faya Herreña,Spanish; Castilian,false
+31361,Morella rivas-martinezii,Faya Romana,Spanish; Castilian,false
+110627649,Genista canariensis,Canary Broom,English,false
+110627649,Genista canariensis,Canary Islands Broom,English,false
+110627649,Genista canariensis,Florist’s Genista,English,false
+110627649,Genista canariensis,Retama de monte,Spanish; Castilian,false
+110627649,Genista canariensis,Retamón canario,Spanish; Castilian,true
+22690122,Columba junoniae,Laurel Pigeon,English,false
+22690122,Columba junoniae,Paloma Rabiche,Spanish; Castilian,false
+22690122,Columba junoniae,White-tailed Laurel-pigeon,English,true
+111208559,Rhamnus lojaconoi,Ranno di Lojacono,Italian,true
+112213625,Tarphius tornvalli,Escaravelho-cascudo-da-mata,Portuguese,false
+112213625,Tarphius tornvalli,Ironclad Beetle,English,true
+112214780,Tarphius relictus,Escaravelho-cascudo-da-mata,Portuguese,false
+112214780,Tarphius relictus,Ironclad Beetle,English,true
+112214889,Tarphius furtadoi,Escaravelho-cascudo-da-mata,Portuguese,false
+112214889,Tarphius furtadoi,Ironclad Beetle,English,true
+112214981,Tarphius gabrielae,Escaravelho-cascudo-da-mata,Portuguese,false
+112214981,Tarphius gabrielae,Ironclad Beetle,English,true
+112215110,Tarphius floresensis,Escaravelho-cascudo-da-mata,Portuguese,false
+112215110,Tarphius floresensis,Ironclad Beetle,English,true
+112215339,Tarphius rufonodulosus,Escaravelho-cascudo-da-mata,Portuguese,false
+112215339,Tarphius rufonodulosus,Ironclad Beetle,English,true
+112215669,Tarphius serranoi,Escaravelho-cascudo-da-mata,Portuguese,false
+112215669,Tarphius serranoi,Ironclad Beetle,English,true
+112215914,Tarphius pomboi,Escaravelho-cascudo-da-mata,Portuguese,false
+112215914,Tarphius pomboi,Ironclad Beetle,English,true
+112216190,Tarphius azoricus,Escaravelho-cascudo-da-mata,Portuguese,false
+112216190,Tarphius azoricus,Ironclad Beetle,English,true
+112216642,Tarphius depressus,Escaravelho-cascudo-da-mata,Portuguese,false
+112216642,Tarphius depressus,Ironclad Beetle,English,true
+112216738,Tarphius wollastoni,Escaravelho-cascudo-da-mata,Portuguese,false
+112216738,Tarphius wollastoni,Ironclad Beetle,English,true
+112217627,Tarphius acuminatus,Escaravelho-cascudo-da-mata,Portuguese,false
+112217627,Tarphius acuminatus,Ironclad Beetle,English,true
+61686,Echium decaisnei,Tajinaste blanco,Spanish; Castilian,true
+22734798,Curruca balearica,Balearic Warbler,English,true
+175916,Orchis sitiaca,Cretan Orchid,English,true
+115631179,Serapias olbia,Sérapias de Provence,French,true
+161895,Monizia edulis,Nozelha,Portuguese,false
+161895,Monizia edulis,Cenoura-da-rocha,Portuguese,true
+180556,Sinapidendron gymnocalyx,Couve da Rocha,Portuguese,true
+165227,Sinapidendron sempervivifolium,Couve da Rocha,Portuguese,true
+165129,Genista benehoavensis,Retamón,Spanish; Castilian,false
+165129,Genista benehoavensis,Retamón Palmero,Spanish; Castilian,true
+117060520,Triops emeritensis,Shield shrimp,English,false
+117060520,Triops emeritensis,Tortuguetes,Catalan; Valencian,false
+117060520,Triops emeritensis,Triops,Spanish; Castilian,false
+117060520,Triops emeritensis,Tadpole shrimp,English,true
+117060599,Triops gadensis,Shield shrimp,English,false
+117060599,Triops gadensis,Tortuguetes,Catalan; Valencian,false
+117060599,Triops gadensis,Triops,Spanish; Castilian,false
+117060599,Triops gadensis,Tadpole shrimp,English,true
+117060633,Triops vicentinus,Shield shrimp,English,false
+117060633,Triops vicentinus,Tadpole shrimp,English,false
+117060633,Triops vicentinus,Tortuguetes,Catalan; Valencian,false
+117060633,Triops vicentinus,Triops,Spanish; Castilian,false
+117060633,Triops vicentinus,Camarão girino,Portuguese,true
+164249,Artemisia molinieri,Molinier's Wormwood,English,false
+164249,Artemisia molinieri,Armoise de Molinier,French,false
+61467,Anguis cephallonica,Peloponnese Slow Worm,English,true
+22690112,Columba trocaz,Long-toed Pigeon,English,false
+22690112,Columba trocaz,Trocaz Pigeon,English,false
+22690112,Columba trocaz,Madeira Laurel-pigeon,English,true
+86091382,Sorbus evansii,Evans's Whitebeam,English,true
+162068,Cytisus aeolicus,Sgurbio,Sicilian,false
+162068,Cytisus aeolicus,Citiso delle Eolie,Italian,true
+61521,Teira dugesii,Madeira Lizard,English,false
+13416997,Phoenix canariensis,Canary Island Date Palm,English,false
+13416997,Phoenix canariensis,Canary Palm,English,false
+13416997,Phoenix canariensis,Pineapple Palm,English,false
+13416997,Phoenix canariensis,Palmera Canaria,Spanish; Castilian,false
+13416997,Phoenix canariensis,Palma Canaria,Spanish; Castilian,true
+123669218,Nothogeophilus turki,Turk's Earth Centipede,English,true
+123670403,Psylliodes luridipennis,Bronze Lundy Cabbage Flea Beetle,English,false
+123670403,Psylliodes luridipennis,Lundy Cabbage Flea Beetle,English,true
+123671000,Thinobius newberyi,Newbery's Rove Beetle,English,true
+123672002,Cixius caledonicus,Caledonian Planthopper,English,true
+123672536,Brachyptera putata,Northern February Red Stonefly,English,true
+123672975,Ceratophyllus fionnus,Manx Shearwater Flea,English,true
+123673542,Niphargellus glenniei,Southwestern Goundwater Shrimp,English,false
+123673542,Niphargellus glenniei,British Cave Shrimp,English,true
+123716589,Dysdera aneris,Aranha-tenaz-das-Selvagens,Portuguese,true
+61656,Echium callithyrsum,Tajinaste azul de Gran Canaria,Spanish; Castilian,false
+61656,Echium callithyrsum,Tajinaste azul,Spanish; Castilian,true
+161912,Cephalanthera cucullata,The Hood-Shaped Cephalanthera,English,true
+162087,Helianthemum bystropogophyllum,Turmero Peludo,Spanish; Castilian,false
+162087,Helianthemum bystropogophyllum,Jarilla Peluda,Spanish; Castilian,true
+161583,Scymnodalatias garricki,Azores Dogfish,English,true
+19892142,Adenocarpus viscosus,Codeso Del Pico,Spanish; Castilian,true
+128764544,Epipactis cupaniana,Elleborina di Cupani,Italian,true
+97217787,Cixius azomariae,Tree lacehopper,English,true
+97218110,Cixius azopifajo,Tree hopper,English,true
+22711176,Sitta whiteheadi,Corsican Nuthatch,English,true
+22698062,Pterodroma madeira,Freira,English,false
+22698062,Pterodroma madeira,Madeira Petrel,English,false
+22698062,Pterodroma madeira,Pétrel de Madère,French,false
+22698062,Pterodroma madeira,Petrel Freira,Spanish; Castilian,false
+22698062,Pterodroma madeira,Zino's Petrel,English,true
+22735624,Hydrobates monteiroi,Paíño de Monteiro,Spanish; Castilian,false
+22735624,Hydrobates monteiroi,Monteiro's Storm-petrel,English,true
+30317,Salix tarraconensis,Salenca Tortosina,Spanish; Castilian,true
+155528,Bythiospeum labiatum,Lichtliebende Brunnenschnecke,German,true
+135406017,Saccopharynx hjorti,Hjort’s Gulper,English,true
+97157927,Calacalles azoricus,Snout beetle,English,false
+97157927,Calacalles azoricus,Weevil,English,false
+97157927,Calacalles azoricus,True weevil,English,true
+97158270,Calacalles droueti,Snout beetle,English,false
+97158270,Calacalles droueti,Weevil,English,false
+97158270,Calacalles droueti,Gorgulho-trovisqueiro,Portuguese,false
+97158270,Calacalles droueti,True weevil,English,true
+97158410,Calacalles subcarinatus,Snout beetle,English,false
+97158410,Calacalles subcarinatus,Weevil,English,false
+97158410,Calacalles subcarinatus,Gorgulho,Portuguese,false
+97158410,Calacalles subcarinatus,True weevil,English,true
+97162217,Phloeosinus gillerforsi,Caruncho do cedro do mato,Portuguese,false
+97162217,Phloeosinus gillerforsi,Bark beetle,English,true
+97180394,Atheta dryochares,Rove beetle,English,false
+97180394,Atheta dryochares,Escaravelho-de-asa-curta,Portuguese,true
+97185409,Euconnus azoricus,Ant-like stone beetle,English,true
+97217192,Eupteryx azorica,Leaf hopper,English,true
+97217487,Cixius azofloresi,Tree lacehopper,English,true
+97217920,Cixius azopicavus,Cave lacehopper,English,true
+97218194,Cixius azoricus,Tree lacehopper,English,true
+97218887,Cixius azoterceirae,Tree lacehopper,English,true
+97218908,Cixius cavazoricus,Cave lacehopper,English,true
+97219031,Cixius insularis,Tree lacehopper,English,true
+97219655,Javesella azorica,Leafhopper,English,true
+97223894,Pinalitus oromii,Leaf bug,English,false
+97223894,Pinalitus oromii, Plant bug,English,false
+97223894,Pinalitus oromii,Percevejo-âmbar,Portuguese,false
+97223894,Pinalitus oromii,Capsid bug,English,true
+97224034,Strophingia harteni,Jumping plant lice,English,true
+97224278,Eudonia interlinealis,Traça,Portuguese,false
+97224278,Eudonia interlinealis,Moth,English,true
+97224807,Eudonia luteusalis,Traça,Portuguese,false
+97224807,Eudonia luteusalis,Moth,English,true
+97225092,Eudonia melanographa,Traça,Portuguese,false
+97225092,Eudonia melanographa,Moth,English,true
+97225371,Scoparia aequipennalis,Traça,Portuguese,false
+97225371,Scoparia aequipennalis,Moth,English,true
+97226172,Scoparia carvalhoi,Traça,Portuguese,false
+97226172,Scoparia carvalhoi,Moth,English,true
+97226481,Scoparia coecimaculalis,Traça,Portuguese,false
+97226481,Scoparia coecimaculalis,Moth,English,true
+97226719,Scoparia semiamplalis,Traça,Portuguese,false
+97226719,Scoparia semiamplalis,Moth,English,true
+97226785,Udea azorensis,Tarça,Portuguese,false
+97226785,Udea azorensis,Moth,English,true
+97232026,Brachmia infuscatella,Traça,Portuguese,false
+97232026,Brachmia infuscatella,Moth,English,true
+97236261,Cyclophora azorensis,Traça,Portuguese,false
+97236261,Cyclophora azorensis,Geometer Moth,English,true
+97236961,Xanthorhoe inaequata,Traça,Portuguese,false
+97236961,Xanthorhoe inaequata,Geometer Moth,English,true
+97237103,Micrurapteryx bistrigella,Traça,Portuguese,false
+97237103,Micrurapteryx bistrigella,Moth,English,true
+97237575,Hadena azorica,Underwing Moth,English,false
+97237575,Hadena azorica,Traça,Portuguese,false
+97237575,Hadena azorica,Owlet Moth,English,true
+97237686,Mesapamea storai,Underwing Moth,English,false
+97237686,Mesapamea storai,Traça,Portuguese,false
+97237686,Mesapamea storai,Owlet Moth,English,true
+97237920,Noctua atlantica,Underwing Moth,English,false
+97237920,Noctua atlantica,Traça,Portuguese,false
+97237920,Noctua atlantica,Owlet Moth,English,true
+97238174,Noctua carvalhoi,Underwing Moth,English,false
+97238174,Noctua carvalhoi,Traça,Portuguese,false
+97238174,Noctua carvalhoi,Owlet Moth,English,true
+97238330,Phlogophora cabrali,Underwing Moth,English,false
+97238330,Phlogophora cabrali,Noctua,Portuguese,false
+97238330,Phlogophora cabrali,Owlet Moth,English,true
+97238422,Phlogophora furnasi,Underwing Moth,English,false
+97238422,Phlogophora furnasi,Traça,Portuguese,false
+97238422,Phlogophora furnasi,Owlet Moth,English,true
+97238526,Phlogophora interrupta,Underwing Moth,English,false
+97238526,Phlogophora interrupta,Traça,Portuguese,false
+97238526,Phlogophora interrupta,Owlet Moth,English,true
+97238633,Phlogophora kruegeri,Traça,Portuguese,false
+97238633,Phlogophora kruegeri,Owlet moth,English,true
+97238829,Homoeosoma miguelensis,Traça,Portuguese,false
+97238829,Homoeosoma miguelensis,Moth,English,true
+97238857,Homoeosoma picoensis,Traça,Portuguese,false
+97238857,Homoeosoma picoensis,Moth,English,true
+97239116,Neomariania incertella,Traça,Portuguese,false
+97239116,Neomariania incertella,Moth,English,true
+97239378,Neomariania oecophorella,Traça,Portuguese,false
+97239378,Neomariania oecophorella,Moth,English,true
+97239466,Neomariania scriptella,Traça,Portuguese,false
+97239466,Neomariania scriptella,Moth,English,true
+97239685,Eudarcia atlantica,Traça,Portuguese,false
+97239685,Eudarcia atlantica,Moth,English,true
+97489122,Nysius atlantidum,Milkweed bug,English,false
+97489122,Nysius atlantidum,Seed bug,English,false
+97489122,Nysius atlantidum,Percevejo das sementes,Portuguese,false
+97489122,Nysius atlantidum,Ground bug,English,true
+97492384,Argyresthia atlanticella,Small ermine moth,English,true
+97492472,Argyresthia minusculella,Small ermine moth,English,true
+184443,Telestes karsticus,Kapelska svijetlica,Croatian,false
+184443,Telestes karsticus,Karst dace,English,true
+184442,Ninnigobius montenegrensis,Skadar Goby,English,true
+11026,Orsinigobius punctatissimus,Italian spring goby,English,true
+155662,Paladilhiopsis hungaricum,Hungarian Blind Snail,English,true
+30326,Juniperus brevifolia,Cedro,Portuguese,false
+30326,Juniperus brevifolia,Azores Juniper,English,true
+60307,Boyeria cretensis,Creatan Spectre,English,false
+60307,Boyeria cretensis,Kreta schemerlibel,Dutch; Flemish,false
+60307,Boyeria cretensis,Kretische Geisterlibelle,German,false
+60307,Boyeria cretensis,Cretan Spectre,English,true
+165504,Coenagrion intermedium,Agrion Intermédiaire,French,false
+165504,Coenagrion intermedium,Kreta waterjuffer,Dutch; Flemish,false
+165504,Coenagrion intermedium,Kretische Azurjungfer,German,false
+165504,Coenagrion intermedium,Cretan Bluet,English,true
+16084372,Oropodisma erymanthosi,Erimanthos Mountain Grasshopper,English,true
+15039329,Italopodisma samnitica,Sannio Apennine Grasshopper,English,true
+68442094,Nemobius interstitialis,Mute Wood-cricket,English,true
+59706,Cordulegaster helladica,Griekse bronlibel,Dutch; Flemish,false
+59706,Cordulegaster helladica,Greek Goldenring,English,true
+59708,Cordulegaster trinacriae,Cordulegastre de Sicile,French,false
+59708,Cordulegaster trinacriae,Guardaruscello meridionale,Italian,false
+59708,Cordulegaster trinacriae,Italiaanse bronlibel,Dutch; Flemish,false
+59708,Cordulegaster trinacriae,Italienische Quelljungfer,German,false
+59708,Cordulegaster trinacriae,Italian Goldenring,English,true
+142185429,Helicopsis austriaca,Österreichische Heideschnecke,German,true
+146280943,Thymallus aeliani,Adriatic grayling,English,true
+97114574,Olisthopus inclavatus,Carocho,Portuguese,false
+97114574,Olisthopus inclavatus,Ground Beetle,English,true
+148872843,Ameles paradecolor,Iberian Dwarf Mantis,English,true
+148873651,Ameles spallanzania ssp. obscura,Obscure European Dwarf Mantis,English,true
+149167120,Eumerus narcissi,Kleine Nordamerikanische Narzissenfliege,German,false
+149167120,Eumerus narcissi,Lesser Bulb Fly,English,true
+149172587,Platycheirus islandicus,Mörk Fotblomfluga,Swedish,true
+13165427,Festuca morisiana,Festuca di Moris,Italian,true
+44791445,Ameles fasciipennis,Spined Dwarf Mantis,English,true
+61198,Caspiomyzon hellenicus,Greek Brook Lamprey,English,true
+15038553,Acrostira euphorbiae,Palma Stick Grasshopper,English,true
+172636389,Genista demarcoi,De Marco's Broom,English,true
+17046338,Orchamus kaltenbachi,Karpathos Stone Grasshopper,English,true
+16895588,Canariola willemsei,Tenerife Laurel Bush-cricket,English,true
+17181904,Poecilimon artedentatus,Pelopponesian Bright Bush-cricket,English,true
+69673708,Pyrgomorphula serbica,Serbian Stick Grasshopper,English,true
+79727759,Gesnouinia arborea,Estrelladera,Spanish; Castilian,true
+187940073,Quercus protoroburoides,Rila Oak,English,true
+63226,Cordulegaster helladica ssp. buchholzi,Cordulegastre des Cyclades,French,false
+63226,Cordulegaster helladica ssp. buchholzi,Griechische Quelljungfer,German,false
+63226,Cordulegaster helladica ssp. buchholzi,Buchholz' Cordulegaster,English,true
+165533,Cordulegaster helladica ssp. helladica,Greek Goldenring,English,false
+165533,Cordulegaster helladica ssp. helladica,Cordulegastre de Gréce,French,false
+165533,Cordulegaster helladica ssp. helladica,Griechische Quelljungfer,German,false
+63227,Cordulegaster helladica ssp. kastalia,Cordulégastre de Delphi,French,false
+63227,Cordulegaster helladica ssp. kastalia,Griechische Quelljungfer,German,false
+63227,Cordulegaster helladica ssp. kastalia,Delphi Cordulegaster,English,true
+184930288,Primula scotica,Scottish Primrose,English,true
+200849,Bathymodiolus azoricus,Atlantic Vent Mussel,English,true
+157721219,Laeviphitus desbruyeresi,Desbruyeres's Deep-sea Hot-spring Snail,English,true
+157786766,Pseudorimula midatlantica,Atlantic Vent Slit-limpet,English,true
+157850735,Dendronotus comteti,Hydrothermal Vent Nudibranch,English,true
+157856804,Lepetodrilus atlanticus,Atlantic Dimorphic Limpet,English,true
+157856808,Lirapex costellatus,Ribbed Taper-snout Snail,English,true
+157856823,Lurifax vitreus,Glassy Lurifax Snail,English,true
+157856995,Paralepetopsis ferrugivora,Rust-eating Limpet,English,true
+157857019,Peltospira smaragdina,Emerald Taper-snout Limpet,English,true
+157857039,Phymorhynchus ovatus,Oval Vent Snail,English,true
+157857179,Protolira valvatoides,Lirated Vent Top-snail,English,true
+157858181,Veleropilina segonzaci,Hydrothermal Vent Monoplacophoran,English,true
+157858210,Xylodiscula analoga,Deep-sea Disc-snail,English,true
+157910741,Divia briandi,Briand's Red-blooded Limpet,English,true
+177247357,Onychogomphus cazuma,Alguacil de Cazuma,Spanish; Castilian,false
+177247357,Onychogomphus cazuma,Cazuma tanglibel,Dutch; Flemish,false
+177247357,Onychogomphus cazuma,Cazuma Pincertail,English,true
+149689922,Hyla intermedia,Raganella Italiana,Italian,false
+149689922,Hyla intermedia,Italian Tree Frog,English,true
+7035,Edwardsia ivelli,Ivell's Sea Anemone,English,true
+58567,Pelophylax cerigensis,Karpathos Frog,English,true
+58581,Pelophylax cretensis,Cretan Frog,English,true
+79079357,Lissotriton maltzani,Portuguese Smooth Newt,English,true
+114139495,Pelodytes atlanticus,Lusitanian Parsley Frog,English,true
+173103952,Rana parvipalmata,Galician Common Frog,English,true
+162444,Aquilegia cazorlensis,Aguileña de Cazorla,Spanish; Castilian,true
+64081145,Anzia centrifuga,Porto Santo Foam Lichen,English,true
+103822640,Fringilla polatzeki,Gran Canaria Blue Chaffinch,English,true
+103822567,Fringilla teydea,Tenerife Blue Chaffinch,English,true
+22693621,Haematopus meadewaldoi,Canarian Black Oystercatcher,English,false
+22693621,Haematopus meadewaldoi,Canarian Oystercatcher,English,true
+22720676,Pyrrhula murina,Azores Bullfinch,English,true
+22710177,Saxicola dacotiae,Canary Chat,English,false
+22710177,Saxicola dacotiae,Canary Islands Bush Chat,English,false
+22710177,Saxicola dacotiae,Canary Islands Chat,English,false
+22710177,Saxicola dacotiae,Canary Islands Stonechat,English,false
+22710177,Saxicola dacotiae,Fuerteventura Stonechat,English,true
+83826347,Salix oropotamica,Salice dei fiumi montani,Italian,true
+83827246,Salix tyrrhenica,Salice tirrenico,Italian,true
+14922,Nyctalus azoreum,Azores Noctule,English,false
+14922,Nyctalus azoreum,Morcego dos Açores,Portuguese,false
+14922,Nyctalus azoreum,Noctule Des Açores,French,false
+14922,Nyctalus azoreum,Nóctulo De Azores,Spanish; Castilian,false
+14922,Nyctalus azoreum,Azorean Bat,English,true
+214650064,Dilta chateri,Chater's Bristletail,English,true
+215482954,Plecotus teneriffae,Canary Long-eared Bat,English,false
+215482954,Plecotus teneriffae,Tenerife Long-eared Bat,English,false
+215482954,Plecotus teneriffae,Oreillard de Tenerife,French,false
+215482954,Plecotus teneriffae,Orejudo Canario,Spanish; Castilian,false
+215482954,Plecotus teneriffae,Canary Big-eared Bat,English,true
+87796710,Anacamptis pyramidalis var. urvilleana,Orkida piramidali ta'Malta,Maltese,false
+87796710,Anacamptis pyramidalis var. urvilleana,Maltese Pyramidal Orchid,English,true
+97250195,Spalax antiquus,Mehely's Blind Mole-rat,English,false
+97250195,Spalax antiquus,Méhely’s Blind Mole-rat,English,true
+97250154,Spalax istricus,Oltenia Blind Mole-rat,English,true
+196001,Dinarolacerta montenegrina,Prokletije Rock Lizard,English,true
+160469253,Anchusa cespitosa,Blavi,"Greek, Modern (1453-)",true

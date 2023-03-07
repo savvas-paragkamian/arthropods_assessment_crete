@@ -1,0 +1,722 @@
+assessmentId,internalTaxonId,scientificName,kingdomName,phylumName,orderName,className,familyName,genusName,speciesName,infraType,infraName,infraAuthority,authority,redlistCategory,redlistCriteria,criteriaVersion,populationTrend,scopes
+785848,173805983,Enallagma cyathigerum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Enallagma,cyathigerum,,,,"(Charpentier, 1840)",Least Concern,,3.1,Stable,Global
+1095700,165512,Sympetrum depressiusculum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Sympetrum,depressiusculum,,,,"(Selys, 1841)",Least Concern,,3.1,Unknown,Global
+1281221,169975,Palinurus elephas,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,PALINURIDAE,Palinurus,elephas,,,,"(Fabricius, 1787)",Vulnerable,A2bd,3.1,Decreasing,Global
+1413852,174425,Maniola halicarnassus,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Maniola,halicarnassus,,,,"Thomson, 1990",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,Global & Mediterranean
+2443143,196248,Hasarius adansoni,ANIMALIA,ARTHROPODA,ARANEAE,ARACHNIDA,SALTICIDAE,Hasarius,adansoni,,,,"(Audouin, 1826)",Least Concern,,3.1,Stable,Global
+2506191,197950,Palaemonetes antennarius,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,PALAEMONIDAE,Palaemonetes,antennarius,,,,"(H. Milne Edwards, 1837)",Least Concern,,3.1,Unknown,Global
+2521594,198337,Atyaephyra stankoi,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,ATYIDAE,Atyaephyra,stankoi,,,,"Karaman, 1972",Least Concern,,3.1,Unknown,Global
+3198676,10542,Hyles hippophaes,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,SPHINGIDAE,Hyles,hippophaes,,,,"(Esper, 1793)",Data Deficient,,2.3,,Global
+3209604,10713,Euphydryas maturna,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Euphydryas,maturna,,,,"(Linnaeus, 1758)",Data Deficient,,2.3,,Global
+3347854,12433,Lycaena dispar,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Lycaena,dispar,,,,"(Haworth, 1802)",Lower Risk/near threatened,,2.3,,Global
+3368483,12649,Macrothele cretica,ANIMALIA,ARTHROPODA,ARANEAE,ARACHNIDA,MACROTHELIDAE,Macrothele,cretica,,,,"Kulczynski, 1903",Data Deficient,,2.3,,Global
+3371159,12659,Phengaris arion,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Phengaris,arion,,,,"(Linnaeus, 1758)",Lower Risk/near threatened,,2.3,,Global
+3390729,1285,Anergates atratulus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,FORMICIDAE,Anergates,atratulus,,,,"(Schenck, 1852)",Vulnerable,D2,2.3,,Global
+3933275,134293,Potamon fluviatile,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,POTAMIDAE,Potamon,fluviatile,,,,"(Herbst, 1785)",Near Threatened,,3.1,Decreasing,Global & Mediterranean
+3965427,134492,Potamon rhodium,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,POTAMIDAE,Potamon,rhodium,,,,"Parisi, 1913",Near Threatened,,3.1,Decreasing,Global & Mediterranean
+3997379,134681,Potamon ibericum,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,POTAMIDAE,Potamon,ibericum,,,,"(Bieberstein, 1808)",Near Threatened,,3.1,Decreasing,Global & Mediterranean
+4061032,135117,Potamon potamios,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,POTAMIDAE,Potamon,potamios,,,,"(Olivier, 1804)",Near Threatened,,3.1,Decreasing,Global & Mediterranean
+4460769,14794,Niphargobates lefkodemonaki,ANIMALIA,ARTHROPODA,AMPHIPODA,MALACOSTRACA,NIPHARGIDAE,Niphargobates,lefkodemonaki,,,,"Sket, 1990",Vulnerable,D2,2.3,,Global
+4526314,153648,Pacifastacus leniusculus,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,ASTACIDAE,Pacifastacus,leniusculus,,,,"(Dana, 1852)",Least Concern,,3.1,Unknown,Global
+5077434,157474,Stenopterus similatus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Stenopterus,similatus,,,,"Holzschuh, 1979",Data Deficient,,3.1,Unknown,Global & Europe
+5098302,157571,Microrhagus pyrenaeus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,EUCNEMIDAE,Microrhagus,pyrenaeus,,,,"Bonvouloir, 1872",Near Threatened,,3.1,Unknown,Global & Europe
+5098645,157573,Chlorophorus glabromaculatus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Chlorophorus,glabromaculatus,,,,"(Goeze, 1777)",Least Concern,,3.1,Stable,Global & Europe
+5098836,157575,Osmoderma lassallei,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CETONIIDAE,Osmoderma,lassallei,,,,"Baraud &amp; Tauzin, 1991",Endangered,"B2ab(ii,iii)",3.1,Decreasing,Global & Europe
+5102180,157591,Brachygonus meraculus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Brachygonus,meraculus,,,,"(Reitter, 1889)",Near Threatened,,3.1,Unknown,Global & Europe
+5112566,157631,Ropalopus insubricus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Ropalopus,insubricus,,,,"(Germar, 1824)",Near Threatened,,3.1,Unknown,Global & Europe
+5114760,157641,Ceruchus chrysomelinus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,LUCANIDAE,Ceruchus,chrysomelinus,,,,"(Hochenwart, 1785)",Near Threatened,,3.1,Decreasing,Global & Europe
+5115632,157645,Tritoma bipustulata,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,EROTYLIDAE,Tritoma,bipustulata,,,,"Fabricius, 1775",Least Concern,,3.1,Stable,Global & Europe
+5116249,157647,Dolocerus reichii,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Dolocerus,reichii,,,,"Mulsant, 1862",Least Concern,,3.1,Unknown,Global & Europe
+5119169,157659,Clytus lama,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Clytus,lama,,,,"Mulsant, 1847",Least Concern,,3.1,Unknown,Global & Europe
+5126247,157692,Ampedus hjorti,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,hjorti,,,,"(Rye, 1905)",Vulnerable,A4c,3.1,Decreasing,Global & Europe
+5126672,157695,Lioderina linearis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Lioderina,linearis,,,,"(Hampe, 1870)",Data Deficient,,3.1,Decreasing,Global & Europe
+5127501,157698,Ampedus coenobita,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,coenobita,,,,"(Costa, 1881)",Near Threatened,,3.1,Unknown,Global & Europe
+5130390,157714,Pseudotriphyllus suturalis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,MYCETOPHAGIDAE,Pseudotriphyllus,suturalis,,,,"(Fabricius, 1801)",Near Threatened,,3.1,Unknown,Global & Europe
+5133820,157730,Grynocharis oblonga,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TROGOSITIDAE,Grynocharis,oblonga,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Decreasing,Global & Europe
+5148186,157795,Clytus tropicus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Clytus,tropicus,,,,"(Panzer, 1795)",Least Concern,,3.1,Unknown,Global & Europe
+5149054,157800,Ampedus cardinalis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,cardinalis,,,,"(Schiödte, 1865)",Near Threatened,,3.1,Unknown,Global & Europe
+5149490,157802,Dacne notata,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,EROTYLIDAE,Dacne,notata,,,,"(Gmelin, 1790)",Least Concern,,3.1,Unknown,Global & Europe
+5151090,157810,Ampedus melanurus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,melanurus,,,,"Mulsant &amp; Guillebeau, 1855",Data Deficient,,3.1,Decreasing,Global & Europe
+5158233,157847,Porthmidius gelineki,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Porthmidius,gelineki,,,,"(Reitter, 1904)",Data Deficient,,3.1,Unknown,Global & Europe
+5158380,157848,Ropalopus femoratus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Ropalopus,femoratus,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global & Europe
+5165889,157886,Chlorophorus aegyptiacus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Chlorophorus,aegyptiacus,,,,"(Fabricius, 1775)",Data Deficient,,3.1,Unknown,Global & Europe
+5169119,157901,Osmoderma barnabita,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CETONIIDAE,Osmoderma,barnabita,,,,"Motschulsky, 1845",Near Threatened,,3.1,Decreasing,Global & Europe
+5171713,157914,Hylis cariniceps,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,EUCNEMIDAE,Hylis,cariniceps,,,,"(Reitter, 1902)",Least Concern,,3.1,Stable,Global & Europe
+5175297,157928,Callimus abdominalis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Callimus,abdominalis,,,,"(Olivier, 1795)",Least Concern,,3.1,Stable,Global & Europe
+5358607,160251,Pontia daplidice,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,PIERIDAE,Pontia,daplidice,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+5364211,160360,Hipparchia statilinus,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Hipparchia,statilinus,,,,"Hüfnagel, 1766",Least Concern,,3.1,Stable,Global
+5372859,160590,Erebia cassioides,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Erebia,cassioides,,,,"(Reiner &amp; Hochenwarth, 1792)",Least Concern,,3.1,Decreasing,Global & Europe
+5938416,164918,Purpuricenus globulicollis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Purpuricenus,globulicollis,,,,"Dejean, 1839",Data Deficient,,3.1,Unknown,Global & Europe
+6022090,165463,Anax immaculifrons,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Anax,immaculifrons,,,,"Rambur, 1842",Least Concern,,3.1,Stable,Global
+6690609,169949,Scyllarus arctus,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,SCYLLARIDAE,Scyllarus,arctus,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global
+6698918,169983,Scyllarides latus,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,SCYLLARIDAE,Scyllarides,latus,,,,"(Latreille, 1802)",Data Deficient,,3.1,Unknown,Global
+6722688,170056,Scyllarus pygmaeus,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,SCYLLARIDAE,Scyllarus,pygmaeus,,,,"(Bate, 1888)",Least Concern,,3.1,Unknown,Global
+6809917,171925,Archon apollinus,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,PAPILIONIDAE,Archon,apollinus,,,,"(Herbst, 1798)",Lower Risk/near threatened,,2.3,,Global
+6974162,173209,Hipparchia fagi,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Hipparchia,fagi,,,,"(Scopoli, 1763)",Near Threatened,,3.1,Decreasing,Global & Europe
+6974668,173211,Lysandra coridon,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Lysandra,coridon,,,,"(Poda, 1761)",Least Concern,,3.1,Stable,Global & Europe
+6977611,173233,Hipparchia volgensis,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Hipparchia,volgensis,,,,"(Mazochin-Porshnjakov, 1952)",Least Concern,,3.1,Stable,Global & Europe
+6977748,173234,Erebia rhodopensis,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Erebia,rhodopensis,,,,"Nicholl, 1900",Least Concern,,3.1,Stable,Global & Europe
+6979486,173246,Erebia oeme,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Erebia,oeme,,,,"(Hübner, 1804)",Least Concern,,3.1,Decreasing,Global & Europe
+6983131,173271,Polyommatus orphicus,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Polyommatus,orphicus,,,,"Kolev, 2005",Vulnerable,"B2ab(iii,iv,v)",3.1,Decreasing,Global & Europe
+6983441,173273,Polyommatus eleniae,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Polyommatus,eleniae,,,,"Coutsis &amp; De Prins, 2005",Data Deficient,,3.1,Unknown,Global & Europe
+6984697,173281,Coenonympha orientalis,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Coenonympha,orientalis,,,,"Rebel, 1910",Vulnerable,A2c,3.1,Decreasing,Global & Europe
+6985207,173284,Erebia epiphron,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Erebia,epiphron,,,,"(Knoch, 1783)",Least Concern,,3.1,Decreasing,Global & Europe
+6986657,173295,Polyommatus nephohiptamenos,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Polyommatus,nephohiptamenos,,,,"(Brown &amp; Coutsis, 1978)",Near Threatened,,3.1,Unknown,Global & Europe
+6986821,173296,Coenonympha rhodopensis,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Coenonympha,rhodopensis,,,,"Elwes, 1900",Least Concern,,3.1,Stable,Global & Europe
+6987579,173302,Pseudochazara orestes,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Pseudochazara,orestes,,,,"de Prins &amp; van der Poorten, 1981",Vulnerable,D2,3.1,Unknown,Global & Europe
+6988820,173311,Polyommatus aroaniensis,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Polyommatus,aroaniensis,,,,"(Brown, 1976)",Least Concern,,3.1,Stable,Global & Europe
+6989024,173313,Pieris balcana,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,PIERIDAE,Pieris,balcana,,,,"Lorkovic, 1968",Least Concern,,3.1,Stable,Global & Europe
+6989170,173314,Erebia melas,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Erebia,melas,,,,"(Herbst, 1796)",Least Concern,,3.1,Decreasing,Global & Europe
+8153516,18366,Proserpinus proserpina,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,SPHINGIDAE,Proserpinus,proserpina,,,,"(Pallas, 1772)",Data Deficient,,2.3,,Global
+8352663,185026,Polycheles typhlops,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,POLYCHELIDAE,Polycheles,typhlops,,,,"Heller, 1862",Least Concern,,3.1,Stable,Global
+8454057,185659,Platycnemis pennipes ssp. nitidula,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,PLATYCNEMIDIDAE,Platycnemis,pennipes,subspecies,nitidula,,"Brullé, 1832",Least Concern,,3.1,Stable,Global & Mediterranean
+9009447,19743,Rosalia alpina,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Rosalia,alpina,,,,"(Linnaeus, 1758)",Vulnerable,A1c,2.3,,Global
+9237349,20938,Strongylognathus silvestrii,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,FORMICIDAE,Strongylognathus,silvestrii,,,,"Menozzi, 1936",Vulnerable,D2,2.3,,Global
+9338388,2191,Astacus astacus,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,ASTACIDAE,Astacus,astacus,,,,"(Linnaeus, 1758)",Vulnerable,A2ad,3.1,Decreasing,Global
+10120005,3845,Carabus intricatus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CARABIDAE,Carabus,intricatus,,,,"Linnaeus, 1761",Lower Risk/near threatened,,2.3,,Global
+10228760,39486,Lycaena ottomana,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Lycaena,ottomana,,,,"(Lefèbvre, 1830)",Vulnerable,A1ac,2.3,Decreasing,Global
+10360341,40730,Epimyrma adlerzi,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,FORMICIDAE,Epimyrma,adlerzi,,,,"Douwes, Jessen &amp; Buschinger, 1988",Vulnerable,D2,2.3,,Global
+13309447,13304723,Colletes creticus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Colletes,creticus,,,,"Noskiewicz, 1936",Near Threatened,,3.1,Unknown,Global & Europe
+13309507,13306742,Colletes hederae,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Colletes,hederae,,,,"Schmidt &amp; Westrich, 1993",Least Concern,,3.1,Increasing,Global & Europe
+13309607,13307748,Colletes standfussi,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Colletes,standfussi,,,,"Kuhlmann, 2003",Data Deficient,,3.1,Unknown,Global & Europe
+13318550,13317994,Panurginus schwarzi,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Panurginus,schwarzi,,,,"(Warncke, 1972)",Data Deficient,,3.1,Unknown,Global & Europe
+13321504,13320156,Ceratina gravidula,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Ceratina,gravidula,,,,"Gerstäcker, 1869",Least Concern,,3.1,Stable,Global & Europe
+13321552,13320615,Ceratina teunisseni,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Ceratina,teunisseni,,,,"Terzo and Rasmont, 1997",Data Deficient,,3.1,Unknown,Global & Europe
+13324673,13322492,Dasypoda frieseana,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MELITTIDAE,Dasypoda,frieseana,,,,"Schletterer, 1890",Endangered,B2ab(iii),3.1,Decreasing,Global & Europe
+13324689,13322514,Dasypoda pyriformis,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MELITTIDAE,Dasypoda,pyriformis,,,,"Radoszkowski, 1887",Least Concern,,3.1,Unknown,Global & Europe
+13339970,13325451,Halictus centaureae,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Halictus,centaureae,,,,"Ebmer, 1985",Data Deficient,,3.1,Unknown,Global & Europe
+13340046,13338039,Halictus holomelaenus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Halictus,holomelaenus,,,,"Blüthgen, 1936",Data Deficient,,3.1,Unknown,Global & Europe
+13340050,13338042,Seladonia inpilosa,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Seladonia,inpilosa,,,,"(Ebmer, 1975)",Data Deficient,,3.1,Unknown,Global & Europe
+13340078,13338089,Halictus lussinicus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Halictus,lussinicus,,,,"Blüthgen, 1936",Data Deficient,,3.1,Unknown,Global & Europe
+13340098,13338107,Halictus nicosiae,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Halictus,nicosiae,,,,"Blüthgen, 1923",Data Deficient,,3.1,Unknown,Global & Europe
+13372703,165460,Lindenia tetraphylla,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,GOMPHIDAE,Lindenia,tetraphylla,,,,"(Vander Linden, 1825)",Least Concern,,3.1,Unknown,Global
+17046346,17046301,Dolichopoda remyi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,remyi,,,,"Chopard, 1934",Least Concern,,3.1,Unknown,Global & Europe
+17046366,17046314,Dolichopoda hussoni,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,hussoni,,,,"Chopard, 1934",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+17533964,165506,Orthetrum taeniolatum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Orthetrum,taeniolatum,,,,"(Schneider, 1845)",Least Concern,,3.1,Unknown,Global
+17537803,165471,Selysiothemis nigra,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Selysiothemis,nigra,,,,"(Vander Linden, 1825)",Least Concern,,3.1,Stable,Global
+17538409,60038,Sympetrum fonscolombii,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Sympetrum,fonscolombii,,,,"(Selys, 1840)",Least Concern,,3.1,Stable,Global
+17891947,16084525,Oropodisma chelmosi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,chelmosi,,,,"Uvarov, 1942",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+18053580,16084523,Oropodisma willemsei,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,willemsei,,,,"La Greca &amp; Messina, 1976",Critically Endangered,"B1ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+18407506,16084420,Oropodisma karavica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,karavica,,,,"La Greca &amp; Messina, 1977",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+19152175,165489,Onychogomphus forcipatus,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,GOMPHIDAE,Onychogomphus,forcipatus,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+19156286,165514,Brachytron pratense,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Brachytron,pratense,,,,"(Müller, 1764)",Least Concern,,3.1,Stable,Global
+19156760,165467,Caliaeschna microstigma,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Caliaeschna,microstigma,,,,"(Schneider, 1845)",Least Concern,,3.1,Decreasing,Global
+19158182,165520,Coenagrion ornatum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Coenagrion,ornatum,,,,"(Selys, 1850)",Least Concern,,3.1,Decreasing,Global
+19158662,165484,Coenagrion pulchellum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Coenagrion,pulchellum,,,,"(Vander Linden, 1823)",Least Concern,,3.1,Stable,Global
+19159139,165502,Coenagrion scitulum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Coenagrion,scitulum,,,,"(Rambur, 1842)",Least Concern,,3.1,Increasing,Global
+19159607,165478,Erythromma viridulum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Erythromma,viridulum,,,,"Charpentier, 1840",Least Concern,,3.1,Increasing,Global
+19160047,165525,Ischnura pumilio,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Ischnura,pumilio,,,,"(Charpentier, 1825)",Least Concern,,3.1,Stable,Global
+19160630,165500,Pyrrhosoma nymphula,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Pyrrhosoma,nymphula,,,,"(Sulzer, 1776)",Least Concern,,3.1,Stable,Global
+19161110,165507,Cordulegaster insignis,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULEGASTRIDAE,Cordulegaster,insignis,,,,"Schneider, 1845",Least Concern,,3.1,Stable,Global
+19161436,165526,Cordulegaster picta,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULEGASTRIDAE,Cordulegaster,picta,,,,"Selys, 1854",Least Concern,,3.1,Stable,Global
+19161728,165485,Somatochlora flavomaculata,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULIIDAE,Somatochlora,flavomaculata,,,,"(Vander Linden, 1825)",Least Concern,,3.1,Stable,Global
+19162182,165494,Somatochlora meridionalis,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULIIDAE,Somatochlora,meridionalis,,,,"Nielsen, 1935",Least Concern,,3.1,Unknown,Global
+19162580,165515,Epallage fatime,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,EUPHAEIDAE,Epallage,fatime,,,,"(Charpentier, 1840)",Least Concern,,3.1,Stable,Global
+19162847,165466,Stylurus flavipes,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,GOMPHIDAE,Stylurus,flavipes,,,,"(Charpentier, 1825)",Least Concern,,3.1,Increasing,Global
+19163708,165523,Gomphus vulgatissimus,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,GOMPHIDAE,Gomphus,vulgatissimus,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+19164635,165480,Lestes macrostigma,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LESTIDAE,Lestes,macrostigma,,,,"(Eversmann, 1836)",Least Concern,,3.1,Decreasing,Global
+19165141,165493,Chalcolestes parvidens,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LESTIDAE,Chalcolestes,parvidens,,,,"Artobolevskii, 1929",Least Concern,,3.1,Stable,Global
+19165578,165475,Lestes sponsa,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LESTIDAE,Lestes,sponsa,,,,"(Hansemann, 1823)",Least Concern,,3.1,Stable,Global
+19166030,165492,Lestes virens,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LESTIDAE,Lestes,virens,,,,"(Charpentier, 1825)",Least Concern,,3.1,Stable,Global
+19167508,165531,Libellula depressa,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Libellula,depressa,,,,"Linnaeus, 1758",Least Concern,,3.1,Stable,Global
+19168031,165496,Libellula fulva,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Libellula,fulva,,,,"Müller, 1764",Least Concern,,3.1,Stable,Global
+19169192,165510,Sympetrum meridionale,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Sympetrum,meridionale,,,,"(Selys, 1841)",Least Concern,,3.1,Stable,Global
+19170001,165464,Sympetrum pedemontanum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Sympetrum,pedemontanum,,,,"(Müller in Allioni, 1766)",Least Concern,,3.1,Stable,Global
+19170436,165483,Sympetrum vulgatum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Sympetrum,vulgatum,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+19201320,19198562,Andrena olympica,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,olympica,,,,"Grünwaldt, 2005",Data Deficient,,3.1,Unknown,Global & Europe
+19201445,19199351,Andrena pellucens,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,pellucens,,,,"Pérez, 1895",Data Deficient,,3.1,Unknown,Global & Europe
+19201450,19199069,Andrena pelopa,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,pelopa,,,,"Warncke, 1975",Data Deficient,,3.1,Unknown,Global & Europe
+19201560,19199036,Andrena resoluta,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,resoluta,,,,"Warncke, 1973",Data Deficient,,3.1,Unknown,Global & Europe
+19201655,19199760,Andrena sandanskia,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,sandanskia,,,,"Warncke, 1973",Data Deficient,,3.1,Unknown,Global & Europe
+19201795,19198587,Andrena standfussorum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,standfussorum,,,,"Scheuchl, 2010",Data Deficient,,3.1,Unknown,Global & Europe
+19201930,19199004,Andrena trikalensis,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,trikalensis,,,,"Warncke, 1965",Data Deficient,,3.1,Unknown,Global & Europe
+19880276,19199477,Hylaeus adriaticus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,adriaticus,,,,"(Warncke, 1972)",Data Deficient,,3.1,Unknown,Global & Europe
+19880296,19199021,Hylaeus alpinus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,alpinus,,,,"(Morawitz, 1867)",Data Deficient,,3.1,Unknown,Global & Europe
+19881506,19199323,Hylaeus deceptorius,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,deceptorius,,,,"(Benoist, 1959)",Data Deficient,,3.1,Unknown,Global & Europe
+19881571,19199231,Hylaeus friesei,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,friesei,,,,"(Alfken, 1904)",Near Threatened,,3.1,Unknown,Global & Europe
+19881752,19199804,Hylaeus hellenicus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,hellenicus,,,,"Dathe, 2000",Data Deficient,,3.1,Unknown,Global & Europe
+19881804,19199207,Hylaeus hyperpunctatus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,hyperpunctatus,,,,"(Strand, 1909)",Data Deficient,,3.1,Unknown,Global & Europe
+19881954,19199635,Hylaeus koenigsmanni,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,koenigsmanni,,,,"Dathe, 1981",Data Deficient,,3.1,Unknown,Global & Europe
+19882034,19199942,Hylaeus milossus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,milossus,,,,"(Warncke, 1981)",Data Deficient,,3.1,Unknown,Global & Europe
+19882049,19198899,Hylaeus nivaliformis,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,nivaliformis,,,,"Dathe, 1977",Data Deficient,,3.1,Unknown,Global & Europe
+19882091,19198613,Hylaeus pictus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,COLLETIDAE,Hylaeus,pictus,,,,"(Smith, 1853)",Data Deficient,,3.1,Unknown,Global & Europe
+21145588,19199398,Epeolus cruciger,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Epeolus,cruciger,,,,"(Panzer, 1799)",Near Threatened,,3.1,Decreasing,Global & Europe
+21145697,19199127,Epeolus productulus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Epeolus,productulus,,,,"Bischoff, 1930",Data Deficient,,3.1,Unknown,Global & Europe
+21145860,19198984,Epeolus sigillatus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Epeolus,sigillatus,,,,"Alfken, 1930",Data Deficient,,3.1,Unknown,Global & Europe
+21152184,19199003,Chelostoma grande,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Chelostoma,grande,,,,"(Nylander, 1852)",Data Deficient,,3.1,Unknown,Global & Europe
+21152247,19199770,Chelostoma hellenicum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Chelostoma,hellenicum,,,,"(Benoist, 1938)",Data Deficient,,3.1,Unknown,Global & Europe
+21152252,19198822,Chelostoma laticaudum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Chelostoma,laticaudum,,,,"(Benoist, 1938)",Data Deficient,,3.1,Unknown,Global & Europe
+21153573,19199179,Hoplitis cretaea,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Hoplitis,cretaea,,,,"(Tkalců, 1992)",Data Deficient,,3.1,Unknown,Global & Europe
+21153678,19198606,Hoplitis fabrei,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Hoplitis,fabrei,,,,"van der Zanden, 1987",Data Deficient,,3.1,Unknown,Global & Europe
+21153856,19199563,Hoplitis graeca,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Hoplitis,graeca,,,,"(Tkalců, 2000)",Data Deficient,,3.1,Unknown,Global & Europe
+21154133,19199033,Hoplitis holmboei,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Hoplitis,holmboei,,,,"(Mavromoustakis, 1948)",Data Deficient,,3.1,Unknown,Global & Europe
+21154657,19198429,Hoplitis parnesica,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Hoplitis,parnesica,,,,"(Mavromoustakis, 1958)",Data Deficient,,3.1,Unknown,Global & Europe
+21154906,19199889,Osmia ariadne,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Osmia,ariadne,,,,"Peters, 1978",Data Deficient,,3.1,Unknown,Global & Europe
+21156032,19199847,Osmia mirhiji,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Osmia,mirhiji,,,,"Mavromoustakis, 1957",Data Deficient,,3.1,Unknown,Global & Europe
+21156038,19199916,Osmia moreensis,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Osmia,moreensis,,,,"van der Zanden, 1984",Data Deficient,,3.1,Unknown,Global & Europe
+21308952,19199797,Andrena bucephala,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,bucephala,,,,"Stephens, 1846",Data Deficient,,3.1,Unknown,Global & Europe
+21309371,19198545,Andrena curvana,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,curvana,,,,"Warncke, 1965",Data Deficient,,3.1,Unknown,Global & Europe
+21309808,19199528,Andrena fimbriata,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,fimbriata,,,,"Brullé, 1832",Data Deficient,,3.1,Unknown,Global & Europe
+21310215,19198660,Andrena fulva,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,fulva,,,,"(Müller, 1766)",Data Deficient,,3.1,Unknown,Global & Europe
+21310568,19199537,Andrena graecella,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,graecella,,,,"Warncke, 1965",Data Deficient,,3.1,Unknown,Global & Europe
+21460409,19199900,Nomada ariasi,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,ariasi,,,,"Dusmet y Alonso, 1913",Data Deficient,,3.1,Unknown,Global & Europe
+21460415,19199100,Nomada armata,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,armata,,,,"Herrich-Schäffer, 1839",Near Threatened,,3.1,Decreasing,Global & Europe
+21460421,19199559,Nomada arrogans,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,arrogans,,,,"Schmiedeknecht, 1882",Data Deficient,,3.1,Unknown,Global & Europe
+21460427,19199092,Nomada atroscutellaris,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,atroscutellaris,,,,"Strand, 1921",Least Concern,,3.1,Unknown,Global & Europe
+21460442,19199440,Nomada baccata,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,baccata,,,,"Smith, 1844",Near Threatened,,3.1,Decreasing,Global & Europe
+21460589,19199394,Nomada bluethgeni,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,bluethgeni,,,,"Stoeckhert, 1943",Least Concern,,3.1,Stable,Global & Europe
+21460679,19198699,Nomada corcyraea,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,corcyraea,,,,"Schmiedeknecht, 1882",Data Deficient,,3.1,Unknown,Global & Europe
+21460803,19199510,Nomada fabriciana,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,fabriciana,,,,"(Linné, 1767)",Least Concern,,3.1,Stable,Global & Europe
+21461370,19199584,Nomada flava,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,flava,,,,"Panzer, 1798",Least Concern,,3.1,Stable,Global & Europe
+21461772,19198560,Nomada gruenwaldti,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,gruenwaldti,,,,"Schwarz, 1979",Data Deficient,,3.1,Unknown,Global & Europe
+21461824,19199437,Nomada hirtipes,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,hirtipes,,,,"Pérez, 1884",Least Concern,,3.1,Unknown,Global & Europe
+21461998,19198772,Nomada kornosica,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,kornosica,,,,"Mavromoustakis, 1958",Data Deficient,,3.1,Unknown,Global & Europe
+21462202,19198703,Nomada nesiotica,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,nesiotica,,,,"Mavromoustakis, 1958",Data Deficient,,3.1,Unknown,Global & Europe
+21462359,19199761,Nomada piccioliana,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,piccioliana,,,,"Magretti, 1883",Least Concern,,3.1,Decreasing,Global & Europe
+21462412,19199805,Nomada priesneri,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,priesneri,,,,"Schwarz, 1965",Least Concern,,3.1,Stable,Global & Europe
+21462599,19199825,Nomada similis,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,similis,,,,"Morawitz, 1872",Least Concern,,3.1,Decreasing,Global & Europe
+21462605,19199755,Nomada standfussi,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,standfussi,,,,"Schwarz, 2007",Data Deficient,,3.1,Unknown,Global & Europe
+21462908,19198806,Nomada verna,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,verna,,,,"Schmiedeknecht, 1882",Data Deficient,,3.1,Unknown,Global & Europe
+21462927,19198359,Habropoda ezonata,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Habropoda,ezonata,,,,"Smith, 1854",Data Deficient,,3.1,Unknown,Global & Europe
+21768540,19199572,Anthophora dalmatica,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Anthophora,dalmatica,,,,"Pérez, 1902",Data Deficient,,3.1,Unknown,Global & Europe
+42461359,42428291,Atyaephyra strymonensis,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,ATYIDAE,Atyaephyra,strymonensis,,,,"Christodoulou, Antoniou, Magoulas &amp; Koukouras, 2012",Vulnerable,B1ab(iii),3.1,Unknown,Global
+42461459,42428293,Atyaephyra thyamisensis,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,ATYIDAE,Atyaephyra,thyamisensis,,,,"Christodoulou, Antoniou, Magoulas &amp; Koukouras, 2012",Least Concern,,3.1,Unknown,Global
+42463679,42463645,Nomada cretensis,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Nomada,cretensis,,,,"Schulz, 1906",Near Threatened,,3.1,Stable,Global & Europe
+42610428,59774,Somatochlora borisi,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULIIDAE,Somatochlora,borisi,,,,"Marinov, 2001",Vulnerable,C1+2a(i),3.1,Decreasing,"Global, Europe & Mediterranean"
+42645306,165529,Chalcolestes viridis,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LESTIDAE,Chalcolestes,viridis,,,,"(Vander Linden, 1825)",Least Concern,,3.1,Stable,Global
+43114098,19198726,Andrena grossella,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,grossella,,,,"Grünwaldt, 1976",Data Deficient,,3.1,Unknown,Global & Europe
+43359222,19198281,Dufourea alpina,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Dufourea,alpina,,,,"Morawitz, 1865",Least Concern,,3.1,Unknown,Global & Europe
+43362715,19199800,Dufourea iris,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Dufourea,iris,,,,"Ebmer, 1987",Data Deficient,,3.1,Unknown,Global & Europe
+43362782,19198809,Dufourea styx,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Dufourea,styx,,,,"Ebmer, 1976",Data Deficient,,3.1,Unknown,Global & Europe
+43362836,19199771,Rophites hellenicus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Rophites,hellenicus,,,,"Ebmer, 1984",Data Deficient,,3.1,Unknown,Global & Europe
+43362861,54527148,Rhophitoides epiroticus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Rhophitoides,epiroticus,,,,"Schwammberger, 1975",Data Deficient,,3.1,Unknown,Global & Europe
+43364151,19198862,Lasioglossum minutulum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Lasioglossum,minutulum,,,,"(Schenck, 1853)",Near Threatened,,3.1,Unknown,Global & Europe
+43364336,19199151,Lasioglossum lissonotum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Lasioglossum,lissonotum,,,,"(Noskiewicz, 1926)",Data Deficient,,3.1,Unknown,Global & Europe
+43364385,19199403,Lasioglossum leucomontanum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Lasioglossum,leucomontanum,,,,"Ebmer, 1981",Data Deficient,,3.1,Unknown,Global & Europe
+43365120,19199238,Lasioglossum eurasicum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Lasioglossum,eurasicum,,,,"Ebmer, 1972",Data Deficient,,3.1,Unknown,Global & Europe
+43365856,19199413,Lasioglossum breviventre,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Lasioglossum,breviventre,,,,"(Schenck, 1853)",Endangered,"B2ab(i,ii,v)",3.1,Decreasing,Global & Europe
+43365951,19198444,Lasioglossum bavaricum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Lasioglossum,bavaricum,,,,"(Blüthgen, 1930)",Least Concern,,3.1,Stable,Global & Europe
+43365979,19199243,Lasioglossum ariadne,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Lasioglossum,ariadne,,,,"Ebmer, 1981",Data Deficient,,3.1,Unknown,Global & Europe
+43366115,19198672,Lasioglossum alpigenum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Lasioglossum,alpigenum,,,,"(Dalla Torre, 1877)",Least Concern,,3.1,Stable,Global & Europe
+43509253,19199653,Andrena chelma,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,chelma,,,,"Warncke, 1975",Data Deficient,,3.1,Unknown,Global & Europe
+43509282,19199240,Andrena concinna,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,concinna,,,,"Smith, 1853",Least Concern,,3.1,Unknown,Global & Europe
+43509688,21138032,Andrena ebmerella,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,ebmerella,,,,"Scheuchl, 2011",Data Deficient,,3.1,Unknown,Global & Europe
+43509986,19199759,Andrena helenica,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,helenica,,,,"Warncke, 1965",Data Deficient,,3.1,Unknown,Global & Europe
+43510070,19199169,Andrena illyrica,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,illyrica,,,,"Warncke, 1975",Data Deficient,,3.1,Unknown,Global & Europe
+43510449,19199209,Andrena montana,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,montana,,,,"Warncke, 1973",Data Deficient,,3.1,Unknown,Global & Europe
+43510530,19198891,Andrena muscaria,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,muscaria,,,,"Warncke, 1965",Data Deficient,,3.1,Unknown,Global & Europe
+43510570,19199467,Andrena neovirida,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,ANDRENIDAE,Andrena,neovirida,,,,"Grünwaldt, 2005",Data Deficient,,3.1,Unknown,Global & Europe
+43959301,157814,Anaglyptus luteofasciatus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Anaglyptus,luteofasciatus,,,,"Pic, 1905",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+43959900,157893,Anaglyptus praecellens,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Anaglyptus,praecellens,,,,"Holzschuh, 1981",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+43992674,157706,Delagrangeus angustissimus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Delagrangeus,angustissimus,,,,"Pic, 1892",Least Concern,,3.1,Stable,Global & Mediterranean
+43996816,157864,Isotomus jarmilae,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Isotomus,jarmilae,,,,"Slama, 1982",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+44109677,157930,Ampedus canaliculatus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,canaliculatus,,,,"(Reitter, 1918)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+44113885,157668,Ampedus karneri,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,karneri,,,,"Schimmel , 1996",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+44114151,157643,Ampedus macedonicus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,macedonicus,,,,"Schimmel , 1996",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+44114577,157495,Ampedus minos,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,minos,,,,"Wurst, 1997",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+44147387,157805,Stenagostus zuercheri,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Stenagostus,zuercheri,,,,"(Reitter, 1905)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+44149210,157759,Procraerus cretensis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Procraerus,cretensis,,,,"Platia &amp; Gudenzi, 1996",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+44151187,157743,Lacon kapleri,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Lacon,kapleri,,,,"Platia &amp; Schimmel, 1994",Data Deficient,,3.1,Unknown,Global & Mediterranean
+44151322,157740,Lacon graecus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Lacon,graecus,,,,"(Candèze, 1857)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+44189128,165907,Clinidium canaliculatum,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CARABIDAE,Clinidium,canaliculatum,,,,"(Costa, 1839)",Vulnerable,"B2ab(ii,iii)",3.1,Unknown,"Global, Europe & Mediterranean"
+44190131,157934,Seidlitzella procera,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TROGOSITIDAE,Seidlitzella,procera,,,,"(Kraatz, 1858)",Near Threatened,B2b(iii),3.1,Decreasing,Global & Mediterranean
+44257011,157767,Brachygonus gratiosus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Brachygonus,gratiosus,,,,"Platia &amp; Schimmel, 1991",Data Deficient,,3.1,Unknown,Global & Mediterranean
+44798247,44793097,Rivetina baetica ssp. tenuidentata,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,RIVETINIDAE,Rivetina,baetica,subspecies,tenuidentata,,"La Greca &amp; Lombardo, 1982",Data Deficient,,3.1,Unknown,Global & Europe
+44798428,44791345,Ameles decolor,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,MANTIDAE,Ameles,decolor,,,,"Charpentier, 1825",Least Concern,,3.1,Unknown,Global
+44798432,44791577,Ameles heldreichi,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,MANTIDAE,Ameles,heldreichi,,,,"Brunner, 1882",Least Concern,,3.1,Unknown,Global
+44798440,44791655,Ameles spallanzania,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,MANTIDAE,Ameles,spallanzania,,,,"(Rossi, 1792)",Least Concern,,3.1,Unknown,Global
+44798452,44790994,Empusa fasciata,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,EMPUSIDAE,Empusa,fasciata,,,,"Brulle, 1832",Data Deficient,,3.1,Unknown,Global
+44798468,44791239,Iris oratoria,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,EREMIAPHILIDAE,Iris,oratoria,,,,"Linne, 1758",Least Concern,,3.1,Unknown,Global
+44798476,44793247,Mantis religiosa,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,MANTIDAE,Mantis,religiosa,,,,"(Linne, 1758)",Least Concern,,3.1,Unknown,Global
+44798484,44792855,Rivetina baetica,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,RIVETINIDAE,Rivetina,baetica,,,,"(Rambur, 1839)",Data Deficient,,3.1,Unknown,Global
+44830029,44710554,Bradyporus macrogaster,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Bradyporus,macrogaster,,,,"(Lefebvre, 1831)",Endangered,"B2ab(i,ii,iii)",3.1,Decreasing,Global & Mediterranean
+45462306,45462302,Eupholidoptera cephalonica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,cephalonica,,,,"Willemse &amp; Willemse, 2004",Near Threatened,,3.1,Decreasing,"Global, Europe & Mediterranean"
+45462379,45462354,Eupholidoptera epirotica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,epirotica,,,,"(Ramme, 1927)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+45462578,45462525,Eupholidoptera leucasi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,leucasi,,,,"Willemse, 1980",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+45462686,45462624,Eupholidoptera megastyla,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,megastyla,,,,"(Ramme, 1939)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+45463162,45463146,Eupholidoptera uvarovi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,uvarovi,,,,"(Karabag, 1952)",Near Threatened,,3.1,Decreasing,"Global, Europe & Mediterranean"
+45463215,45463212,Eupholidoptera forcipata,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,forcipata,,,,"Willemse &amp; Kruseman, 1976",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+45463226,45463223,Eupholidoptera icariensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,icariensis,,,,"Willemse, 1980",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+45463236,45463233,Eupholidoptera jacquelinae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,jacquelinae,,,,"Tilmans, 2002",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+45463253,45463250,Eupholidoptera kykladica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,kykladica,,,,"Çiplak, Heller &amp; Willemse, 2009",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+45463288,45463281,Eupholidoptera spinigera,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,spinigera,,,,"(Ramme, 1930)",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Unknown,"Global, Europe & Mediterranean"
+45463334,45463331,Eupholidoptera annamariae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,annamariae,,,,"Nadig, 1985",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+45463431,45463340,Eupholidoptera astyla,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,astyla,,,,"(Ramme, 1927)",Endangered,"B1ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+45463466,45463463,Eupholidoptera feri,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,feri,,,,"Koçak &amp; Kemal, 2010",Critically Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+45463477,45463473,Eupholidoptera giuliae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,giuliae,,,,"Massa, 1999",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+45463496,45463493,Eupholidoptera latens,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,latens,,,,"Willemse &amp; Kruseman, 1976",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+45463505,45463502,Eupholidoptera mariannae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,mariannae,,,,"Willemse &amp; Heller, 2001",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+45463514,45463511,Poecilimon amissus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,amissus,,,,"Brunner von Wattenwyl, 1878",Least Concern,,3.1,Unknown,Global & Mediterranean
+45466681,45466678,Poecilimon pindos,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,pindos,,,,"Willemse, 1982",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+45466739,45466730,Poecilimon sanctipauli,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,sanctipauli,,,,"Brunner von Wattenwyl, 1878",Least Concern,,3.1,Unknown,Global & Mediterranean
+45466762,45466759,Poecilimon ege,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,ege,,,,"Ünal, 2005",Least Concern,,3.1,Unknown,Global & Mediterranean
+45510337,45466776,Poecilimon hamatus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,hamatus,,,,"Brunner von Wattenwyl, 1878",Least Concern,,3.1,Unknown,Global & Mediterranean
+45510361,45466791,Poecilimon unispinosus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,unispinosus,,,,"Brunner von Wattenwyl, 1878",Least Concern,,3.1,Unknown,Global & Mediterranean
+45811388,157538,Pseudosphegesthes bergeri,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Pseudosphegesthes,bergeri,,,,"Slama, 1982",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+45812578,157568,Purpuricenus desfontainii,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Purpuricenus,desfontainii,,,,"(Fabricius, 1792)",Least Concern,,3.1,Stable,Global & Mediterranean
+45812940,157493,Purpuricenus graecus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Purpuricenus,graecus,,,,"Slama, 1993",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+45823223,157825,Stenopterus atricornis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Stenopterus,atricornis,,,,"Pic, 1891",Near Threatened,,3.1,Unknown,Global & Mediterranean
+45823371,157798,Stenopterus creticus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Stenopterus,creticus,,,,"Sama, 1995",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+45826874,157771,Trichoferus bergeri,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Trichoferus,bergeri,,,,"Holzschuh, 1982",Critically Endangered,"B1ab(iii,iv)",3.1,Unknown,"Global, Europe & Mediterranean"
+46440146,13340340,Bombus cryptarum,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Bombus,cryptarum,,,,"(Fabricius, 1775)",Data Deficient,,3.1,Unknown,Global
+47350001,47262019,Ampedus cretensis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,cretensis,,,,"Platia, 2004",Data Deficient,,3.1,Unknown,Global & Mediterranean
+47350709,47262622,Ampedus vignai,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Ampedus,vignai,,,,"Guglielmi &amp; Platia, 1985",Data Deficient,,3.1,Unknown,Global & Mediterranean
+47353318,47263254,Elater asmodaius,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Elater,asmodaius,,,,"Wurst, 1994",Data Deficient,,3.1,Unknown,Global & Mediterranean
+47353433,47264405,Melanotus sulcicollis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Melanotus,sulcicollis,,,,"(Mulsant &amp; Guillebeau, 1855)",Least Concern,,3.1,Unknown,Global & Mediterranean
+47353453,47265114,Podeonius subcyaneus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ELATERIDAE,Podeonius,subcyaneus,,,,"(Kiesenwetter, 1858)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+47688354,47260954,Enoplium doderoi,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CLERIDAE,Enoplium,doderoi,,,,"Luigioni, 1926",Vulnerable,"B2ab(ii,iii)",3.1,Unknown,"Global, Europe & Mediterranean"
+47694399,47173828,Chlorophorus gratiosus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Chlorophorus,gratiosus,,,,"(Marseul, 1868)",Least Concern,,3.1,Stable,Global & Mediterranean
+47694405,47173830,Chlorophorus nivipictus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Chlorophorus,nivipictus,,,,"(Kraatz, 1879)",Least Concern,,3.1,Stable,Global & Mediterranean
+47695901,47251945,Trichoferus kotschyi,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Trichoferus,kotschyi,,,,"(Ganglbauer, 1883)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+47708524,17182027,Poecilimon ikariensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,ikariensis,,,,"Willemse, 1982",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+47708697,17181950,Poecilimon deplanatus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,deplanatus,,,,"Brunner von Wattenwyl, 1891",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+47713900,15431178,Acrotylus patruelis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Acrotylus,patruelis,,,,"(Herrich-Schäffer, 1838)",Least Concern,,3.1,Unknown,Global
+47726171,17182043,Poecilimon klausgerhardi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,klausgerhardi,,,,"Fontana, 2004",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+47995776,47981994,Sphecodes combai,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Sphecodes,combai,,,,"Nobile et Turrisi, 2004",Data Deficient,,3.1,Unknown,Global & Europe
+47995800,47981998,Sphecodes creticus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,HALICTIDAE,Sphecodes,creticus,,,,"Warncke, 1992",Data Deficient,,3.1,Unknown,Global & Europe
+48031475,47943578,Agoliinus pittinoi,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Agoliinus,pittinoi,,,,"(Carpaneto, 1986)",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+48031485,47943583,Agrilinus ibericus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Agrilinus,ibericus,,,,"(Harold, 1874)",Least Concern,,3.1,Stable,Global & Mediterranean
+48031680,47943887,Chilothorax lineolatus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Chilothorax,lineolatus,,,,"(Illiger, 1803)",Least Concern,,3.1,Stable,Global
+48031800,47944151,Melinopterus stolzi,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Melinopterus,stolzi,,,,"(Reitter, 1906)",Least Concern,,3.1,Unknown,Global
+48031890,47944402,Nobius rhodiensis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Nobius,rhodiensis,,,,"(Baraud, 1976)",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+48031965,47944617,Pseudacrossus suffertus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Pseudacrossus,suffertus,,,,"(Schmidt, 1922)",Least Concern,,3.1,Stable,Global & Mediterranean
+48032052,47945259,Paracoptochirus kozanensis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Paracoptochirus,kozanensis,,,,"Pittino, 2001",Data Deficient,,3.1,Unknown,Global & Mediterranean
+48032057,47945314,Paracoptochirus singularis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Paracoptochirus,singularis,,,,"Harold, 1868",Data Deficient,,3.1,Unknown,Global
+48032062,47945322,Paracoptochirus vignai,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Paracoptochirus,vignai,,,,"Carpaneto &amp; Piattella, 1990",Data Deficient,,3.1,Unknown,Global & Mediterranean
+48032077,47945671,Aphodius ghardimaouensis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Aphodius,ghardimaouensis,,,,"(Balthasar, 1929)",Least Concern,,3.1,Stable,Global
+48037496,47416963,Trypocopris amedei,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,GEOTRUPIDAE,Trypocopris,amedei,,,,"(Fairmaire, 1861)",Data Deficient,,3.1,Unknown,Global
+48037506,47416976,Lethrus rotundicollis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,GEOTRUPIDAE,Lethrus,rotundicollis,,,,"Fairmaire, 1866",Data Deficient,,3.1,Unknown,Global & Mediterranean
+48037651,47942106,Lethrus fallax,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,GEOTRUPIDAE,Lethrus,fallax,,,,"Nikolajev, 1975",Near Threatened,,3.1,Unknown,Global
+48594666,47268032,Bubas bison,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Bubas,bison,,,,"(Linnaeus, 1767)",Least Concern,,3.1,Stable,Global & Mediterranean
+48594671,47268143,Bubas bubaloides,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Bubas,bubaloides,,,,"Janssens, 1938",Least Concern,,3.1,Unknown,Global
+48594681,47268179,Cheironitis furcifer,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Cheironitis,furcifer,,,,"(Rossi, 1792)",Least Concern,,3.1,Decreasing,Global
+48594691,47267970,Copris umbilicatus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Copris,umbilicatus,,,,"Abeille de Perrin, 1901",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+48594756,47414313,Onthophagus dellacasai,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Onthophagus,dellacasai,,,,"Pittino &amp; Mariani, 1981",Least Concern,,3.1,Unknown,Global
+48594816,47414331,Onthophagus opacicollis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Onthophagus,opacicollis,,,,"Reitter, 1893",Least Concern,,3.1,Unknown,Global
+48594831,47414335,Onthophagus sericatus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Onthophagus,sericatus,,,,"Reitter, 1893",Least Concern,,3.1,Unknown,Global
+48594876,47415088,Ateuchetus variolosus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Ateuchetus,variolosus,,,,"(Fabricius, 1787)",Least Concern,,3.1,Unknown,Global & Mediterranean
+48635590,48635233,Ammobates melectoides,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Ammobates,melectoides,,,,"(Smith, 1854)",Endangered,"B2ab(i,ii,v)",3.1,Decreasing,Global & Europe
+50137978,19199706,Megachile cressa,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Megachile,cressa,,,,"(Tkalců, 1988)",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+50141970,19199035,Megachile parietina,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Megachile,parietina,,,,"(Geoffroy, 1785)",Least Concern,,3.1,Unknown,Global & Europe
+50142315,19198600,Megachile roeweri,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Megachile,roeweri,,,,"(Alfken, 1927)",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+50142482,19198908,Megachile semicircularis,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Megachile,semicircularis,,,,"van der Zanden, 1996",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+50986440,137728,Onthophagus panici,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,SCARABAEIDAE,Onthophagus,panici,,,,"Petrovitz, 1964",Least Concern,,3.1,Unknown,Global
+53713070,173274,Kretania psylorita,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Kretania,psylorita,,,,"(Freyer, 1845)",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+53713991,174239,Turanana taygetica,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Turanana,taygetica,,,,"(Rebel, 1902)",Near Threatened,,3.1,Decreasing,Global & Mediterranean
+53714375,173287,Hipparchia cretica,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Hipparchia,cretica,,,,"(Rebel, 1916)",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+53719556,174466,Hipparchia mersina,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Hipparchia,mersina,,,,"Staudinger, 1871",Least Concern,,3.1,Stable,Global & Mediterranean
+53719703,174397,Maniola megala,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Maniola,megala,,,,"Oberthür, 1909",Least Concern,,3.1,Decreasing,Global & Mediterranean
+53720029,174183,Leptidea reali,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,PIERIDAE,Leptidea,reali,,,,"Reissinger, 1989",Least Concern,,3.1,Stable,Global & Mediterranean
+53930542,53925670,Epeolus transitorius,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Epeolus,transitorius,,,,"Eversmann, 1852",Data Deficient,,3.1,Unknown,Global & Europe
+56178679,20633459,Conocephalus conocephalus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Conocephalus,conocephalus,,,,"(Linnaeus, 1767)",Least Concern,,3.1,Unknown,Global
+57368909,18528992,Bombus pyrenaeus,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,APIDAE,Bombus,pyrenaeus,,,,"Pérez, 1879",Least Concern,,3.1,Stable,Global & Europe
+64557835,173214,Coenonympha thyrsis,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Coenonympha,thyrsis,,,,"(Freyer, 1845)",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+64563270,173305,Hipparchia christenseni,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Hipparchia,christenseni,,,,"Kudrna, 1977",Endangered,B2ab(v),3.1,Decreasing,"Global, Europe & Mediterranean"
+64809060,173252,Maniola chia,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Maniola,chia,,,,"Thomson, 1987",Near Threatened,,3.1,Decreasing,"Global, Europe & Mediterranean"
+64821523,173225,Pseudochazara graeca,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Pseudochazara,graeca,,,,"(Staudinger, 1870)",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+64823983,173219,Zerynthia cretica,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,PAPILIONIDAE,Zerynthia,cretica,,,,"(Rebel, 1904)",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+65818523,59971,Pantala flavescens,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Pantala,flavescens,,,,"(Fabricius, 1798)",Least Concern,,3.1,Stable,Global
+65834060,165469,Libellula quadrimaculata,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Libellula,quadrimaculata,,,,"Linnaeus, 1758",Least Concern,,3.1,Stable,Global
+65834549,165516,Lestes dryas,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LESTIDAE,Lestes,dryas,,,,"Kirby, 1890",Least Concern,,3.1,Stable,Global
+69263868,19199320,Megachile giraudi,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Megachile,giraudi,,,,"Gerstäcker, 1869",Data Deficient,,3.1,Unknown,Global & Europe
+69264218,19198691,Megachile rhodosiaca,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Megachile,rhodosiaca,,,,"Rebmann, 1972",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+69264500,19199721,Megachile hungarica,ANIMALIA,ARTHROPODA,HYMENOPTERA,INSECTA,MEGACHILIDAE,Megachile,hungarica,,,,"Mocsáry, 1877",Data Deficient,,3.1,Unknown,Global & Europe
+69638033,69637992,Chorthippus ferdinandi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,ferdinandi,,,,"Vedenina &amp; Helversen, 2009",Endangered,"B1ab(ii,iii,iv,v)+2ab(ii,iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+69668556,69668544,Ovaliptila kinzelbachi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLIDAE,Ovaliptila,kinzelbachi,,,,"(Harz, 1971)",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+69668595,69668585,Ovaliptila krueperi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLIDAE,Ovaliptila,krueperi,,,,"(Pantel, 1890)",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+69668760,69668679,Ovaliptila lindbergi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLIDAE,Ovaliptila,lindbergi,,,,"(Chopard, 1957)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+69668802,69668788,Ovaliptila nana,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLIDAE,Ovaliptila,nana,,,,"(Baccetti, 1992)",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+69668850,69668847,Ovaliptila newmanae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLIDAE,Ovaliptila,newmanae,,,,"(Harz, 1969)",Least Concern,,3.1,Unknown,Global & Europe
+69669501,69669391,Ovaliptila wettsteini,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLIDAE,Ovaliptila,wettsteini,,,,"(Werner, 1934)",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+69680725,44698100,Rhacocleis silvestrii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,silvestrii,,,,"Ramme, 1939",Near Threatened,,3.1,Decreasing,"Global, Europe & Mediterranean"
+69681546,69681526,Gryllomorpha cretensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLIDAE,Gryllomorpha,cretensis,,,,"Ramme, 1927",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+69905303,169955,Homarus gammarus,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,NEPHROPIDAE,Homarus,gammarus,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+70205292,16084448,Platypygius crassus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Platypygius,crassus,,,,"(Karny, 1907)",Endangered,"B2ab(iii,v)c(iv)",3.1,Decreasing,Global & Europe
+70215800,68380508,Gryllomorpha albanica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLIDAE,Gryllomorpha,albanica,,,,"Ebner, 1910",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+70217301,68460149,Pseudomogoplistes byzantius,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,MOGOPLISTIDAE,Pseudomogoplistes,byzantius,,,,"Gorochov, 1995",Endangered,"B2ab(iii,iv,v)",3.1,Decreasing,Global & Europe
+70217409,68441442,Myrmecophilus nonveilleri,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,MYRMECOPHILIDAE,Myrmecophilus,nonveilleri,,,,"Ingrisch &amp; Pavicevic, 2008",Least Concern,,3.1,Unknown,Global & Europe
+70217438,64547977,Asiotmethis limbatus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,PAMPHAGIDAE,Asiotmethis,limbatus,,,,"(Charpentier, 1845)",Vulnerable,"B2ab(ii,iii,iv)",3.1,Decreasing,Global & Europe
+70217460,68446564,Paranocaracris bulgaricus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,PAMPHAGIDAE,Paranocaracris,bulgaricus,,,,"(Ebner &amp; Drenowski, 1936)",Endangered,B2ac(iv),3.1,Unknown,Global & Europe
+70217509,64549495,Barbitistes ocskayi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Barbitistes,ocskayi,,,,"Charpentier, 1850",Least Concern,,3.1,Unknown,Global & Europe
+70217527,64865908,Isophya andreevae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Isophya,andreevae,,,,"Peshev, 1981",Least Concern,,3.1,Stable,Global & Europe
+70268895,64866649,Isophya hospodar,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Isophya,hospodar,,,,"(Saussure, 1898)",Endangered,"B2ab(ii,iii)c(iv)",3.1,Decreasing,Global & Europe
+70269862,64869136,Isophya rhodopensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Isophya,rhodopensis,,,,"Ramme, 1951",Least Concern,,3.1,Unknown,Global & Europe
+70270600,45466571,Poecilimon gracilis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,gracilis,,,,"(Fieber, 1853)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70271510,68485460,Troglophilus brevicauda,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Troglophilus,brevicauda,,,,"Chopard, 1934",Least Concern,,3.1,Unknown,Global & Europe
+70271554,68485587,Troglophilus zorae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Troglophilus,zorae,,,,"Karaman &amp; Pavicevic, 2011",Least Concern,,3.1,Unknown,Global & Europe
+70271678,68280851,Conocephalus ebneri,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Conocephalus,ebneri,,,,"Harz, 1966",Endangered,"B2ab(i,ii,iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70271781,68440028,Montana macedonica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Montana,macedonica,,,,"(Berland &amp; Chopard, 1922)",Vulnerable,B2ab(iii),3.1,Decreasing,Global & Europe
+70271950,68451938,Pholidoptera rhodopensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Pholidoptera,rhodopensis,,,,"Maran, 1953",Least Concern,,3.1,Unknown,Global & Europe
+70272066,68469288,Tessellana carinata,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Tessellana,carinata,,,,"(Berland &amp; Chopard, 1922)",Least Concern,,3.1,Unknown,Global & Europe
+70432562,14870997,Chorthippus lacustris,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,lacustris,,,,"La Greca &amp; Messina, 1975",Critically Endangered,"B2ab(i,ii,iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70564378,16084579,Chorthippus biroi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,biroi,,,,"(Kuthy, 1907)",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+70564582,16084612,Chorthippus moreanus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,moreanus,,,,"Willemse, Helversen &amp; Odé, 2009",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70564761,16084456,Chorthippus parnon,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,parnon,,,,"Willemse, Helversen &amp; Odé, 2009",Near Threatened,,3.1,Decreasing,"Global, Europe & Mediterranean"
+70565847,16084479,Chorthippus pulloides,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,pulloides,,,,"(Ramme, 1926)",Near Threatened,,3.1,Decreasing,"Global, Europe & Mediterranean"
+70565854,16084530,Chorthippus sangiorgii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,sangiorgii,,,,"(Finot, 1902)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70565872,16084594,Chorthippus willemsei,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,willemsei,,,,"Harz, 1971",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70566026,16084625,Oedipoda venusta,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oedipoda,venusta,,,,"Fieber, 1853",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70566490,16084417,Oropodisma kyllinii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,kyllinii,,,,"Willemse, 1971",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70566509,16084623,Oropodisma lagrecai,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,lagrecai,,,,"Willemse, 1979",Critically Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70566548,16084459,Oropodisma macedonica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,macedonica,,,,"Ramme, 1951",Vulnerable,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70566636,16084516,Oropodisma parnassica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,parnassica,,,,"(Scudder, 1897)",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70566653,16084561,Oropodisma taygetosi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,taygetosi,,,,"Willemse, 1972",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70566762,16084584,Oropodisma tymphrestosi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,tymphrestosi,,,,"Willemse, 1972",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70566900,16084362,Peripodisma tymphii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Peripodisma,tymphii,,,,"Willemse, 1972",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70567218,16084574,Pezotettix lagoi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Pezotettix,lagoi,,,,"Jannone, 1936",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70567268,16084449,Sphingonotus crivellarii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Sphingonotus,crivellarii,,,,"Jannone, 1936",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+70567366,16084627,Stenobothrus clavatus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Stenobothrus,clavatus,,,,"Willemse, 1979",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70567692,16084408,Xerohippus solerii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Xerohippus,solerii,,,,"(Jannone, 1936)",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+70567952,68380920,Gryllotalpa krimbasi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLOTALPIDAE,Gryllotalpa,krimbasi,,,,"Baccetti, 1992",Least Concern,,3.1,Decreasing,"Global, Europe & Mediterranean"
+70567979,68439867,Mogoplistes kinzelbachi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,MOGOPLISTIDAE,Mogoplistes,kinzelbachi,,,,"Harz, 1976",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+70568039,44698010,Glyphanus obtusus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,PAMPHAGIDAE,Glyphanus,obtusus,,,,"Fieber, 1853",Endangered,"B2ab(i,ii,iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70568360,68380404,Glyphotmethis heldreichi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,PAMPHAGIDAE,Glyphotmethis,heldreichi,,,,"(Brunner von Wattenwyl, 1882)",Near Threatened,,3.1,Unknown,Global & Europe
+70571529,68444850,Orchamus raulinii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,PAMPHAGIDAE,Orchamus,raulinii,,,,"(Lucas, 1854)",Vulnerable,"B1ab(ii,iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70572638,64337698,Acrometopa cretensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Acrometopa,cretensis,,,,"Ramme, 1927",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70572787,17181617,Isophya lemnotica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Isophya,lemnotica,,,,"Werner, 1932",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70576978,64869701,Isophya tosevski,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Isophya,tosevski,,,,"Pavicevic, 1983",Least Concern,,3.1,Stable,Global & Europe
+70577245,17181748,Leptophyes lisae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Leptophyes,lisae,,,,"Heller, 1988",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+70577990,17181859,Metaplastes oertzeni,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Metaplastes,oertzeni,,,,"(Brunner von Wattenwyl, 1891)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70578251,17181896,Poecilimon aegaeus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,aegaeus,,,,"Werner, 1932",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70580066,17181947,Poecilimon cretensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,cretensis,,,,"Werner, 1903",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70583263,17181974,Poecilimon gerlindae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,gerlindae,,,,"Lehmann, Willemse &amp; Heller, 2006",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70584324,17181977,Poecilimon gracilioides,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,gracilioides,,,,"Willemse &amp; Heller, 1992",Endangered,"B2ab(ii,iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70587058,68458212,Poecilimon mariannae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,mariannae,,,,"Heller, 1988",Least Concern,,3.1,Decreasing,"Global, Europe & Mediterranean"
+70588026,45466621,Poecilimon nobilis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,nobilis,,,,"Brunner von Wattenwyl, 1878",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70588521,45466644,Poecilimon obesus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,obesus,,,,"Brunner von Wattenwyl, 1878",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70588833,68458389,Poecilimon orbelicus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,orbelicus,,,,"Pancic, 1883",Least Concern,,3.1,Unknown,Global & Europe
+70588894,45466779,Poecilimon paros,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,paros,,,,"Heller &amp; Reinhold, 1992",Endangered,"B1ab(iii,iv,v)+2ab(iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70589222,68458962,Poecilimon propinquus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,propinquus,,,,"Brunner von Wattenwyl, 1878",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70590078,45466695,Poecilimon soulion,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,soulion,,,,"Willemse, 1987",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70591713,68459242,Poecilimon thessalicus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,thessalicus,,,,"Brunner von Wattenwyl, 1891",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70592575,68459544,Poecilimon veluchianus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,veluchianus,,,,"Ramme, 1933",Least Concern,,3.1,Unknown,Global & Europe
+70592810,68459582,Poecilimon werneri,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,werneri,,,,"Ramme, 1933",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70592907,68459596,Poecilimon zimmeri,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,zimmeri,,,,"Ramme, 1933",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70593097,68313516,Dolichopoda annae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,annae,,,,"Boudou-Saltet, 1973",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+70593507,17046304,Dolichopoda dalensi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,dalensi,,,,"Boudou-Saltet, 1972",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70594412,17046311,Dolichopoda giachinoi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,giachinoi,,,,"Rampini &amp; di Russo, 2008",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+70594650,68314157,Dolichopoda graeca,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,graeca,,,,"Chopard, 1964",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70595042,68314228,Dolichopoda insignis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,insignis,,,,"Chopard, 1955",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+70595257,17046317,Dolichopoda ithakii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,ithakii,,,,"Rampini &amp; di Russo, 2008",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70595489,17046320,Dolichopoda kiriakii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,kiriakii,,,,"Rampini and Di Russo, 2008",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+70595921,17046297,Dolichopoda lustriae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,lustriae,,,,"Rampini &amp; di Russo, 2008",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70596147,68314432,Dolichopoda makrykapa,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,makrykapa,,,,"Boudou-Saltet, 1980",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70596267,68314461,Dolichopoda matsakisi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,matsakisi,,,,"Boudou-Saltet, 1972",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70596318,68314517,Dolichopoda naxia,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,naxia,,,,"Boudou-Saltet, 1973",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70613718,70613694,Dolichopoda giulianae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,giulianae,,,,"Rampini &amp; Di Russo, 2012",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70613903,70613898,Troglophilus zoiai,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Troglophilus,zoiai,,,,"Di Russo, Rampini &amp; Cobolli, 2014",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+70622869,17046324,Dolichopoda patrizii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,patrizii,,,,"Chopard, 1964",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70623051,17046327,Dolichopoda pavesii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,pavesii,,,,"Galvagni, 2002",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70623319,68314680,Dolichopoda petrochilosi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,petrochilosi,,,,"Chopard, 1954",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70623572,68315084,Dolichopoda unicolor,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,unicolor,,,,"Chopard, 1964",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+70623590,68315135,Dolichopoda vandeli,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,vandeli,,,,"Boudou-Saltet, 1970",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+70623629,68485526,Troglophilus lagoi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Troglophilus,lagoi,,,,"Mennozi, 1934",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70623658,68485565,Troglophilus marinae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Troglophilus,marinae,,,,"Rampini &amp; Di Russo, 2003",Critically Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+70623690,64529440,Anadrymadusa brevipennis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Anadrymadusa,brevipennis,,,,"(Brunner von Wattenwyl, 1882)",Vulnerable,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70623879,44710646,Bradyporus oniscus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Bradyporus,oniscus,,,,"(Burmeister, 1838)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70624036,68281269,Conocephalus grebenchikovi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Conocephalus,grebenchikovi,,,,"Uvarov, 1942",Data Deficient,,3.1,Decreasing,"Global, Europe & Mediterranean"
+70624269,44711866,Eupholidoptera pallipes,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,pallipes,,,,"Willemse &amp; Kruseman, 1976",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70624514,68380211,Gampsocleis abbreviata,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Gampsocleis,abbreviata,,,,"Herman, 1874",Least Concern,,3.1,Unknown,Global & Europe
+70624570,68427881,Metrioptera tsirojanni,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Metrioptera,tsirojanni,,,,"Harz &amp; Pfau, 1983",Least Concern,,3.1,Unknown,Global & Europe
+70624587,44712056,Modestana ebneri,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Modestana,ebneri,,,,"(Ramme, 1926)",Least Concern,,3.1,Unknown,Global & Europe
+70624635,68450071,Parnassiana chelmos,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,chelmos,,,,"(Zeuner, 1941)",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70624651,68450152,Parnassiana coracis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,coracis,,,,"(Ramme, 1921)",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70624666,68450165,Parnassiana dirphys,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,dirphys,,,,"(Willemse, 1980)",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70624681,68450223,Parnassiana fusca,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,fusca,,,,"(Brunner von Wattenwyl, 1882)",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70624696,68450237,Parnassiana gionica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,gionica,,,,"La Greca &amp; Messina, 1976",Critically Endangered,"B1ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70624711,68450241,Parnassiana menalon,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,menalon,,,,"Willemse, 1975",Critically Endangered,"B1ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70624738,68450251,Parnassiana nigromarginata,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,nigromarginata,,,,"(Willemse &amp; Willemse, 1987)",Critically Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70624763,68450271,Parnassiana panaetolikon,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,panaetolikon,,,,"Willemse, 1980",Critically Endangered,B1ab(v),3.1,Decreasing,"Global, Europe & Mediterranean"
+70624784,68450303,Parnassiana parnassica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,parnassica,,,,"(Ramme, 1926)",Critically Endangered,"B1ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70624834,68450311,Parnassiana parnon,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,parnon,,,,"Willemse, 1980",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70624861,68450318,Parnassiana tenuis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,tenuis,,,,"(Heller &amp; Willemse, 1989)",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70624888,68450364,Parnassiana tymphiensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,tymphiensis,,,,"(Willemse, 1973)",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70624904,68450372,Parnassiana tymphrestos,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Parnassiana,tymphrestos,,,,"Zeuner, 1941",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70624951,68451909,Pholidoptera lucasi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Pholidoptera,lucasi,,,,"Willemse, 1976",Endangered,"B1ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70624978,44698034,Rhacocleis agiostratica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,agiostratica,,,,"Werner, 1937",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+70625066,44698051,Rhacocleis crypta,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,crypta,,,,"Willemse &amp; Willemse, 2005",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70625081,44698053,Rhacocleis derrai,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,derrai,,,,"Harz, 1983",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70625107,44698055,Rhacocleis distinguenda,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,distinguenda,,,,"Werner, 1934",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70625138,44698057,Rhacocleis edentata,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,edentata,,,,"Willemse, 1982",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70625171,44698059,Rhacocleis ferdinandi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,ferdinandi,,,,"Willemse &amp; Tilmans, 1987",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70625186,44698070,Rhacocleis graeca,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,graeca,,,,"Uvarov, 1942",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70625240,44698072,Rhacocleis insularis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,insularis,,,,"Ramme, 1928",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70625268,44698076,Rhacocleis lithoscirtetes,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,lithoscirtetes,,,,"Willemse &amp; Willemse, 2005",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70625294,44698104,Rhacocleis trilobata,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,trilobata,,,,"La Greca &amp; Messina, 1974",Critically Endangered,"B1ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+70625315,44698115,Rhacocleis uvarovi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,uvarovi,,,,"Ramme, 1936",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+70625374,44698141,Rhacocleis werneri,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,werneri,,,,"Willemse, 1982",Near Threatened,,3.1,Decreasing,"Global, Europe & Mediterranean"
+70627797,70613415,Dolichopoda calidnae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,calidnae,,,,"Rampini &amp; Di Russo, 2012",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+70627846,68427564,Metaplastes ornatus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Metaplastes,ornatus,,,,"(Ramme, 1931)",Least Concern,,3.1,Unknown,Global & Europe
+70627851,68468653,Saga hellenica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Saga,hellenica,,,,"Kaltenbach, 1967",Least Concern,,3.1,Unknown,Global & Europe
+70632622,15037223,Acrida ungarica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Acrida,ungarica,,,,"(Herbst, 1786)",Least Concern,,3.1,Stable,Global & Europe
+70648409,68441393,Myrmecophilus myrmecophilus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,MYRMECOPHILIDAE,Myrmecophilus,myrmecophilus,,,,"(Savi, 1819)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70737900,16084535,Sphingonotus personatus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Sphingonotus,personatus,,,,"Zanon, 1926",Endangered,"B2ab(ii,iii,iv,v)",3.1,Decreasing,Global & Europe
+70741204,68486103,Uromenus elegans,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Uromenus,elegans,,,,"(Fischer, 1853)",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+70984770,158694,Aeshna affinis,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Aeshna,affinis,,,,"Vander Linden, 1820",Least Concern,,3.1,Increasing,Global
+72305432,158692,Aeshna isoceles,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Aeshna,isoceles,,,,"(Müller, 1767)",Least Concern,,3.1,Unknown,Global
+72310087,59811,Anax ephippiger,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Anax,ephippiger,,,,"(Burmeister, 1839)",Least Concern,,3.1,Unknown,Global
+72311295,59812,Anax imperator,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Anax,imperator,,,,"Leach, 1815",Least Concern,,3.1,Stable,Global
+72312377,165488,Anax parthenope,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Anax,parthenope,,,,"(Selys, 1839)",Least Concern,,3.1,Stable,Global
+74249405,16084560,Chorthippus oschei,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,oschei,,,,"Helversen, 1986",Least Concern,,3.1,Unknown,Global & Europe
+74491942,16084407,Euchorthippus declivus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Euchorthippus,declivus,,,,"(Brisout de Barneville, 1848)",Least Concern,,3.1,Increasing,Global & Europe
+74495954,16084581,Odontopodisma decipiens,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Odontopodisma,decipiens,,,,"Ramme, 1951",Least Concern,,3.1,Stable,Global & Europe
+74515247,16084507,Stenobothrus rubicundulus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Stenobothrus,rubicundulus,,,,"Kruseman & Jeekel, 1967",Least Concern,,3.1,Unknown,Global & Europe
+74521769,68446520,Paramogoplistes novaki,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,MOGOPLISTIDAE,Paramogoplistes,novaki,,,,"(Krauss, 1888)",Data Deficient,,3.1,Unknown,Global & Europe
+74525015,44710118,Andreiniimon nuptialis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Andreiniimon,nuptialis,,,,"(Karny, 1918)",Vulnerable,"B2ab(iii,v)",3.1,Decreasing,Global & Europe
+74525174,64549979,Barbitistes yersini,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Barbitistes,yersini,,,,"Brunner von Wattenwyl, 1878",Least Concern,,3.1,Unknown,Global & Europe
+74525748,64869542,Isophya speciosa,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Isophya,speciosa,,,,"(Frivaldsky, 1867)",Least Concern,,3.1,Unknown,Global & Europe
+74526085,44709104,Leptophyes boscii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Leptophyes,boscii,,,,"Fieber, 1853",Least Concern,,3.1,Decreasing,Global & Europe
+74526293,44709622,Leptophyes punctatissima,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Leptophyes,punctatissima,,,,"(Bosc, 1792)",Least Concern,,3.1,Increasing,Global & Europe
+74527328,45466482,Poecilimon affinis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,affinis,,,,"(Frivaldsky, 1867)",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+74528033,68454861,Poecilimon brunneri,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,brunneri,,,,"(Frivaldsky, 1867)",Least Concern,,3.1,Decreasing,Global & Europe
+74528038,68454920,Poecilimon chopardi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,chopardi,,,,"Ramme, 1933",Least Concern,,3.1,Unknown,Global & Europe
+74528047,45463531,Poecilimon ebneri,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,ebneri,,,,"Ramme, 1933",Endangered,"B2ab(iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+74528383,47709322,Poecilimon jonicus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,jonicus,,,,"(Fieber, 1853)",Least Concern,,3.1,Unknown,Global & Europe
+74528394,68455994,Poecilimon laevissimus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,laevissimus,,,,"(Fischer, 1853)",Least Concern,,3.1,Unknown,Global & Europe
+74528406,68458200,Poecilimon macedonicus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,macedonicus,,,,"Ramme, 1926",Least Concern,,3.1,Unknown,Global & Europe
+74528658,68458496,Poecilimon ornatus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,ornatus,,,,"(Schmidt, 1850)",Least Concern,,3.1,Stable,Global & Europe
+74529086,68459410,Poecilimon thoracicus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,thoracicus,,,,"(Fieber, 1853)",Least Concern,,3.1,Unknown,Global & Europe
+74529159,68459608,Poecilimon zwicki,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,zwicki,,,,"Ramme, 1939",Least Concern,,3.1,Unknown,Global & Europe
+74529234,68459646,Polysarcus denticauda,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Polysarcus,denticauda,,,,"(Charpentier, 1825)",Least Concern,,3.1,Decreasing,Global & Europe
+74529545,44712223,Polysarcus scutatus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Polysarcus,scutatus,,,,"(Brunner von Wattenwyl, 1882)",Endangered,B2ac(iv),3.1,Unknown,Global & Europe
+74532103,44710285,Bradyporus dasypus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Bradyporus,dasypus,,,,"(Illiger, 1800)",Least Concern,,3.1,Decreasing,Global & Europe
+74537999,68315499,Ephippiger ephippiger,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Ephippiger,ephippiger,,,,"(Fiebig, 1784)",Least Concern,,3.1,Decreasing,Global & Europe
+74538718,68379164,Eupholidoptera schmidti,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,schmidti,,,,"(Fieber, 1861)",Least Concern,,3.1,Unknown,Global & Europe
+74540428,68427417,Meconema thalassinum,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Meconema,thalassinum,,,,"(De Geer, 1773)",Least Concern,,3.1,Decreasing,Global & Europe
+74542870,68446261,Pachytrachis gracilis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Pachytrachis,gracilis,,,,"(Brunner von Wattenwyl, 1861)",Least Concern,,3.1,Increasing,Global & Europe
+74621887,47712216,Pholidoptera aptera,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Pholidoptera,aptera,,,,"(Fabricius, 1793)",Least Concern,,3.1,Unknown,Global & Europe
+74621932,62148031,Pholidoptera frivaldszkyi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Pholidoptera,frivaldszkyi,,,,"(Herman, 1871)",Least Concern,,3.1,Decreasing,Global & Europe
+74621956,68451954,Pholidoptera stankoi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Pholidoptera,stankoi,,,,"Karaman, 1960",Data Deficient,,3.1,Unknown,Global & Europe
+74623878,68468365,Roeseliana ambitiosa,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Roeseliana,ambitiosa,,,,"(Uvarov, 1924)",Data Deficient,,3.1,Unknown,Global & Europe
+74624205,68468640,Saga campbelli,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Saga,campbelli,,,,"Uvarov, 1921",Near Threatened,,3.1,Unknown,Global & Europe
+74624537,68468849,Saga rammei,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Saga,rammei,,,,"Kaltenbach, 1965",Least Concern,,3.1,Stable,Global & Europe
+74624624,68469308,Tessellana orina,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Tessellana,orina,,,,"(Burr, 1899)",Least Concern,,3.1,Decreasing,Global & Europe
+74625126,68486449,Yersinella raymondii,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Yersinella,raymondii,,,,"(Yersin, 1860)",Least Concern,,3.1,Unknown,Global & Europe
+83377025,165470,Orthetrum sabina,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Orthetrum,sabina,,,,"(Drury, 1773)",Least Concern,,3.1,Stable,Global
+83846274,59859,Crocothemis erythraea,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Crocothemis,erythraea,,,,"(Brullé, 1832)",Least Concern,,3.1,Increasing,Global
+83847795,59864,Diplacodes lefebvrii,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Diplacodes,lefebvrii,,,,"(Rambur, 1842)",Least Concern,,3.1,Stable,Global
+83856823,59954,Orthetrum chrysostigma,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Orthetrum,chrysostigma,,,,"(Burmeister, 1839)",Least Concern,,3.1,Stable,Global
+83859517,59965,Orthetrum trinacria,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Orthetrum,trinacria,,,,"(Selys, 1841)",Least Concern,,3.1,Unknown,Global
+83872427,60052,Trithemis annulata,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Trithemis,annulata,,,,"(Palisot de Beauvois, 1807)",Least Concern,,3.1,Increasing,Global
+83873068,60053,Trithemis arteriosa,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Trithemis,arteriosa,,,,"(Burmeister, 1839)",Least Concern,,3.1,Stable,Global
+83884411,158685,Sympetrum striolatum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Sympetrum,striolatum,,,,"(Charpentier, 1840)",Least Concern,,3.1,Unknown,Global
+83885601,158696,Erythromma lindenii,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Erythromma,lindenii,,,,"(Selys, 1840)",Least Concern,,3.1,Unknown,Global
+83886221,158707,Coenagrion puella,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Coenagrion,puella,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global
+83889114,165499,Aeshna mixta,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Aeshna,mixta,,,,"Latreille, 1805",Least Concern,,3.1,Increasing,Global
+83891998,165524,Aeshna cyanea,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Aeshna,cyanea,,,,"(Müller, 1764)",Least Concern,,3.1,Increasing,Global
+85697412,169967,Nephrops norvegicus,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,NEPHROPIDAE,Nephrops,norvegicus,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+85851404,68462466,Psorodonotus macedonicus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Psorodonotus,macedonicus,,,,"Ramme, 1931",Near Threatened,,3.1,Unknown,Global & Europe
+86222081,86222059,Saga gracilis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Saga,gracilis,,,,"Kis, 1962",Vulnerable,B2ab(iii),3.1,Decreasing,Global & Europe
+87310028,86802697,Alosterna pauli,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Alosterna,pauli,,,,"Pesarini, Rapuzzi &amp; Sabbadini, 2004",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+87311325,86807153,Paracorymbia picticornis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Paracorymbia,picticornis,,,,"(Reitter, 1885)",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+87311361,86807269,Pedostrangalia ariadne,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Pedostrangalia,ariadne,,,,"Daniel, 1904",Vulnerable,D2,3.1,Stable,"Global, Europe & Mediterranean"
+87311442,86807246,Pedostrangalia revestita,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Pedostrangalia,revestita,,,,"(Linnaeus, 1767)",Vulnerable,A3ce,3.1,Stable,Global & Europe
+87311452,86848967,Pidonia lurida,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Pidonia,lurida,,,,"(Fabricius, 1793)",Least Concern,,3.1,Stable,Global & Europe
+87311509,86849298,Saphanus piceus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Saphanus,piceus,,,,"(Laicharting, 1784)",Least Concern,,3.1,Stable,Global & Europe
+87312050,86859525,Xylosteus bartoni,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Xylosteus,bartoni,,,,"Obenberger &amp; Maran, 1933",Near Threatened,B2b(iii),3.1,Stable,Global & Europe
+87312078,86859528,Xylosteus spinolae,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Xylosteus,spinolae,,,,"Frivaldszky, 1838",Least Concern,,3.1,Stable,Global & Europe
+87313242,86863032,Alphitophagus obtusangulus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Alphitophagus,obtusangulus,,,,"J. Müller, 1904",Near Threatened,B2a,3.1,Increasing,"Global, Europe & Mediterranean"
+87313606,86863400,Hymenalia elongata,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Hymenalia,elongata,,,,"Pic, 1925",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+87313731,86863416,Hymenalia obscuriceps,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Hymenalia,obscuriceps,,,,"Pic, 1925",Data Deficient,,3.1,Unknown,Global & Europe
+87313981,86883562,Isomira antennata,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Isomira,antennata,,,,"(Panzer, 1798)",Least Concern,,3.1,Stable,Global & Europe
+87314193,86883960,Mycetochara flavicornis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Mycetochara,flavicornis,,,,"(Miller, 1883)",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+87314453,86884024,Mycetochara jonica,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Mycetochara,jonica,,,,"(Obenberger, 1916)",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+87314522,86884117,Mycetochara myrmecophila,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Mycetochara,myrmecophila,,,,"(Obenberger, 1916)",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+87340560,87329104,Corticeus fusciventris,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Corticeus,fusciventris,,,,"Reitter, 1884",Data Deficient,,3.1,Unknown,Global & Europe
+87340585,87329111,Corticeus krueperi,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Corticeus,krueperi,,,,"(Obenberger, 1922)",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+87340628,87329140,Corticeus rufithorax,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Corticeus,rufithorax,,,,"Pic, 1903",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+87341023,87329419,Mycetochara cretica,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Mycetochara,cretica,,,,"Mařan, 1954",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+88000000,87999248,Prionotropis willemsorum,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,PAMPHAGIDAE,Prionotropis,willemsorum,,,,"Massa &amp; Ünal, 2015",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,Global & Europe
+88047152,88046398,Stictoleptura slamai,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Stictoleptura,slamai,,,,"Sama, 2010",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+88227785,88227721,Leptorhabdium nitidum,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Leptorhabdium,nitidum,,,,"Holzschuh, 1974",Data Deficient,,3.1,Unknown,Global & Europe
+88231738,88227438,Leptorhabdium illyricum,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Leptorhabdium,illyricum,,,,"(Kraatz, 1871)",Data Deficient,,3.1,Unknown,Global & Europe
+90799179,90799145,Eupholidoptera garganica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,garganica,,,,"La Greca, 1959",Near Threatened,,3.1,Decreasing,"Global, Europe & Mediterranean"
+90854097,90853972,Dolichopoda ochtoniai,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,ochtoniai,,,,"Rampini &amp; Di Russo, 2015",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+90854152,90854150,Dolichopoda saraolacosi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,saraolacosi,,,,"Rampini &amp; Di Russo, 2015",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+90947052,90934784,Ceratophyus schaffrathi,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,GEOTRUPIDAE,Ceratophyus,schaffrathi,,,,"Hillert &amp; Král, 2013",Data Deficient,,3.1,Unknown,Global & Mediterranean
+91395333,91394977,Stictoleptura ivoroberti,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Stictoleptura,ivoroberti,,,,"Sama, 2010",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+96420286,96419923,Anogcodes fulvicollis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,OEDEMERIDAE,Anogcodes,fulvicollis,,,,"(Scopoli, 1763)",Least Concern,,3.1,Stable,Global & Europe
+98732278,91470563,Coxelus alinae,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ZOPHERIDAE,Coxelus,alinae,,,,"Dajoz, 1973",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+98732380,91473473,Diplagia hellenica,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,ZOPHERIDAE,Diplagia,hellenica,,,,"Reitter, 1882",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+99773641,99773552,Rhacocleis andikithirensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Rhacocleis,andikithirensis,,,,"Tilmans, Odé &amp; Willemse, 2016",Least Concern,,3.1,Stable,"Global, Europe & Mediterranean"
+103506603,16084613,Chorthippus crassiceps,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Chorthippus,crassiceps,,,,"Ramme, 1926",Near Threatened,,3.1,Decreasing,"Global, Europe & Mediterranean"
+103507242,68313777,Dolichopoda cassagnaui,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,cassagnaui,,,,"Boudou-Saltet, 1971",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+103507546,70613726,Dolichopoda kalithea,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,kalithea,,,,"Di Russo &amp; Rampini, 2012",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+103507773,68314552,Dolichopoda paraskevi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,paraskevi,,,,"Boudou-Saltet, 1973",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+103508061,68314902,Dolichopoda steriotisi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,steriotisi,,,,"Boudou-Saltet, 1973",Near Threatened,,3.1,Unknown,"Global, Europe & Mediterranean"
+103508315,68314976,Dolichopoda thasosensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,thasosensis,,,,"Chopard, 1964",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+103508476,45463437,Eupholidoptera cretica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,cretica,,,,"Ramme, 1951",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+103508875,17046307,Dolichopoda gasparoi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Dolichopoda,gasparoi,,,,"Rampini &amp; di Russo, 2008",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+103509317,44711767,Eupholidoptera gemellata,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Eupholidoptera,gemellata,,,,"Willemse &amp; Kruseman, 1976",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+103509603,17181907,Poecilimon athos,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,athos,,,,"Tilmans, Willemse &amp; Willemse, 1989",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+103510430,17181953,Poecilimon erimanthos,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,erimanthos,,,,"Willemse &amp; Heller, 1992",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+103510605,68485512,Troglophilus cavicola,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Troglophilus,cavicola,,,,"(Kollar, 1833)",Least Concern,,3.1,Unknown,Global & Europe
+103510920,68485583,Troglophilus spinulosus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,RHAPHIDOPHORIDAE,Troglophilus,spinulosus,,,,"Chopard, 1921",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+109192791,68378608,Eumodicogryllus bordigalensis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,GRYLLIDAE,Eumodicogryllus,bordigalensis,,,,"(Latreille, 1804)",Least Concern,,3.1,Increasing,Global
+118892175,118892125,Hierodula tenuidentata,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,MANTIDAE,Hierodula,tenuidentata,,,,"Saussure, 1869",Least Concern,,3.1,Increasing,Global
+120103207,153745,Pontastacus leptodactylus,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,ASTACIDAE,Pontastacus,leptodactylus,,,,"(Eschscholtz, 1823)",Least Concern,,3.1,Unknown,Global
+121724677,2431,Austropotamobius torrentium,ANIMALIA,ARTHROPODA,DECAPODA,MALACOSTRACA,ASTACIDAE,Austropotamobius,torrentium,,,,"(Schrank, 1803)",Data Deficient,,3.1,Decreasing,Global
+122600528,16249,Parnassius apollo,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,PAPILIONIDAE,Parnassius,apollo,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Decreasing,Global
+122602056,174210,Parnassius mnemosyne,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,PAPILIONIDAE,Parnassius,mnemosyne,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Decreasing,Global
+128973042,165501,Sympetrum flaveolum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Sympetrum,flaveolum,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+138710298,60307,Boyeria cretensis,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,AESHNIDAE,Boyeria,cretensis,,,,"Peters, 1991",Endangered,"B1ab(i,ii,iii,iv,v)+2ab(i,ii,iii,iv,v); C1+2a(i)",3.1,Decreasing,"Global, Europe & Mediterranean"
+138711145,158701,Calopteryx splendens,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CALOPTERYGIDAE,Calopteryx,splendens,,,,"(Harris, 1780)",Least Concern,,3.1,Stable,Global
+138714520,59700,Ceriagrion georgifreyi,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Ceriagrion,georgifreyi,,,,"Schmidt, 1953",Endangered,"B2ab(ii,iii,iv,v)",3.1,Decreasing,Global & Mediterranean
+138884087,165504,Coenagrion intermedium,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Coenagrion,intermedium,,,,"Lohmann, 1990",Endangered,"B1ab(ii,iii,v)+2ab(ii,iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+139211176,165497,Erythromma najas,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Erythromma,najas,,,,"(Hansemann, 1823)",Least Concern,,3.1,Stable,Global
+139357758,165479,Ischnura elegans,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Ischnura,elegans,,,,"(Vander Linden, 1820)",Least Concern,,3.1,Stable,Global
+140015452,16084372,Oropodisma erymanthosi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,ACRIDIDAE,Oropodisma,erymanthosi,,,,"Willemse, 1971",Vulnerable,D2,3.1,Unknown,"Global, Europe & Mediterranean"
+140028029,60274,Pyrrhosoma elisabethae,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,COENAGRIONIDAE,Pyrrhosoma,elisabethae,,,,"Schmidt, 1948",Endangered,"A3c; B2ab(i,ii,iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+140229216,165498,Cordulegaster bidentata,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULEGASTRIDAE,Cordulegaster,bidentata,,,,"Selys, 1843",Near Threatened,A3c,3.1,Decreasing,Global & Europe
+140514673,59706,Cordulegaster helladica,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULEGASTRIDAE,Cordulegaster,helladica,,,,"Lohmann, 1993",Endangered,"A2c+3c; B2ab(ii,iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+140520373,158700,Cordulegaster heros,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULEGASTRIDAE,Cordulegaster,heros,,,,"Theischinger, 1979",Near Threatened,"B2b(ii,iii,iv,v)",3.1,Decreasing,Global & Europe
+140521963,158702,Cordulia aenea,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULIIDAE,Cordulia,aenea,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global
+140552175,15364,Ophiogomphus cecilia,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,GOMPHIDAE,Ophiogomphus,cecilia,,,,"(Geoffroy in Fourcroy, 1785)",Least Concern,,3.1,Stable,Global
+140555879,158684,Lestes barbarus,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LESTIDAE,Lestes,barbarus,,,,"(Fabricius, 1798)",Least Concern,,3.1,Unknown,Global
+140557384,158690,Sympecma fusca,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LESTIDAE,Sympecma,fusca,,,,"(Vander Linden, 1820)",Least Concern,,3.1,Unknown,Global
+140578608,158689,Orthetrum albistylum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Orthetrum,albistylum,,,,"(Selys, 1848)",Least Concern,,3.1,Unknown,Global
+140579909,158698,Orthetrum brunneum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Orthetrum,brunneum,,,,"(Fonscolombe, 1837)",Least Concern,,3.1,Increasing,Global
+140593008,165521,Orthetrum cancellatum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Orthetrum,cancellatum,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+140594360,158682,Orthetrum coerulescens,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Orthetrum,coerulescens,,,,"(Fabricius, 1798)",Least Concern,,3.1,Stable,Global
+140601918,158691,Sympetrum sanguineum,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Sympetrum,sanguineum,,,,"(Müller, 1764)",Least Concern,,3.1,Unknown,Global
+140604365,163609,Trithemis festiva,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,LIBELLULIDAE,Trithemis,festiva,,,,"(Rambur, 1842)",Least Concern,,3.1,Unknown,Global
+140610287,158709,Platycnemis pennipes,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,PLATYCNEMIDIDAE,Platycnemis,pennipes,,,,"(Pallas, 1771)",Least Concern,,3.1,Unknown,Global
+140754022,68451285,Phaneroptera nana,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Phaneroptera,nana,,,,"Fieber, 1853",Least Concern,,3.1,Increasing,Global
+148923756,44792809,Geomantis larvoides,ANIMALIA,ARTHROPODA,MANTODEA,INSECTA,RIVETINIDAE,Geomantis,larvoides,,,,"Pantel, 1896",Data Deficient,,3.1,Unknown,Global
+149115155,149115153,Merodon albifasciatus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,albifasciatus,,,,"Macquart, 1842",Least Concern,,3.1,Unknown,Global & Europe
+149163269,149163267,Eumerus consimilis,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,consimilis,,,,"Šimić &amp; Vujić, 1996",Least Concern,,3.1,Unknown,Global & Europe
+149163289,149163287,Eumerus claripennis,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,claripennis,,,,"Coe, 1957",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149163339,149163337,Eumerus alpinus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,alpinus,,,,"Rondani, 1857",Least Concern,,3.1,Unknown,Global & Europe
+149163362,149163359,Pipiza noctiluca,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pipiza,noctiluca,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global & Europe
+149163382,149163380,Pipiza luteibarba,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pipiza,luteibarba,,,,"Vujić, Radenković &amp; Polić, 2008",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+149163402,149163400,Pipiza laurusi,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pipiza,laurusi,,,,"Vujić &amp; Ståhls, 2012",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+149163450,149163445,Pipiza austriaca,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pipiza,austriaca,,,,"Meigen, 1822",Least Concern,,3.1,Unknown,Global & Europe
+149163467,149163465,Katara connexa,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Katara,connexa,,,,"Vujić &amp; Radenković, 2018",Critically Endangered,B1ab(iii)+2ab(iii),3.1,Stable,"Global, Europe & Mediterranean"
+149163833,149163831,Cheilosia redi,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,redi,,,,"Vujić, 1996",Least Concern,,3.1,Unknown,Global & Europe
+149163854,149163851,Cheilosia pubera,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,pubera,,,,"(Zetterstedt, 1838)",Least Concern,,3.1,Unknown,Global & Europe
+149163864,149163862,Cheilosia psilophthalma,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,psilophthalma,,,,"Becker, 1894",Least Concern,,3.1,Unknown,Global & Europe
+149163894,149163892,Cheilosia pascuorum,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,pascuorum,,,,"Becker, 1894",Least Concern,,3.1,Unknown,Global & Europe
+149164045,149164043,Cheilosia lenta,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,lenta,,,,"Becker, 1894",Endangered,B2ab(iii),3.1,Decreasing,Global & Europe
+149164095,149164093,Cheilosia laeviseta,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,laeviseta,,,,"Claussen, 1987",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+149164125,149164123,Cheilosia katara,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,katara,,,,"Claussen &amp; Vujić, 1993",Critically Endangered,"B1ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+149164207,149164204,Cheilosia himantopa,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,himantopa,,,,"(Panzer, 1798)",Least Concern,,3.1,Stable,Global & Europe
+149164311,149164309,Cheilosia cynocephala,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,cynocephala,,,,"Loew, 1840",Least Concern,,3.1,Unknown,Global & Europe
+149164475,149164472,Cheilosia antiqua,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,antiqua,,,,"(Meigen, 1822)",Least Concern,,3.1,Unknown,Global & Europe
+149164628,149164626,Xanthogramma pilosum,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Xanthogramma,pilosum,,,,"Nedeljković, Ricarte  &amp; Vujić, 2018",Endangered,B2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149164662,149164659,Xanthogramma aeginae,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Xanthogramma,aeginae,,,,"Ricarte, Nedeljković &amp; Vujić, 2018",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149164671,149164660,Merodon trochantericus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,trochantericus,,,,"Costa, 1884",Least Concern,,3.1,Unknown,Global & Europe
+149164943,149164940,Sphegina clavata,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Sphegina,clavata,,,,"(Scopoli, 1763)",Least Concern,,3.1,Unknown,Global & Europe
+149165034,149165032,Merodon peloponnesius,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,peloponnesius,,,,"Vujić, Radenković, Ačanski and Šašic, 2018",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149165067,149165065,Riponnensia morini,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Riponnensia,morini,,,,"Vujić, 1999",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+149165102,149165099,Merodon nisi,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,nisi,,,,"Veselić, Vujić &amp; Radenković, 2017",Endangered,B2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149165205,149165203,Orthonevra montana,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Orthonevra,montana,,,,"Vujić, 1999",Endangered,"B2ab(ii,iii)",3.1,Unknown,Global & Europe
+149165216,149165213,Merodon naxius,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,naxius,,,,"Vujić &amp; Šašić, 2018",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149165248,149165245,Neoascia unifasciata,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Neoascia,unifasciata,,,,"(Strobl, 1898)",Endangered,"B2ab(iii,v)",3.1,Decreasing,Global & Europe
+149165314,149165312,Criorhina pachymera,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Criorhina,pachymera,,,,"Egger, 1858",Least Concern,,3.1,Unknown,Global & Europe
+149165324,149165322,Merodon megavidus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,megavidus,,,,"Vujić &amp; Radenković, 2016",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149165540,149165538,Brachyopa plena,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Brachyopa,plena,,,,"Collin, 1939",Near Threatened,"B2b(iii,v)",3.1,Decreasing,Global & Europe
+149165611,149165606,Claussenia hispanica,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Claussenia,hispanica,,,,"(Strobl, 1909)",Endangered,B2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149165632,149165628,Brachyopa minima,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Brachyopa,minima,,,,"Vujić &amp; Pérez-Bañón, 2016",Critically Endangered,"B1ab(i,ii,iii,iv,v)+2ab(i,ii,iii,iv,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+149165670,149165668,Brachyopa insensilis,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Brachyopa,insensilis,,,,"Collin, 1939",Least Concern,,3.1,Decreasing,Global & Europe
+149165736,149165734,Brachyopa bimaculosa,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Brachyopa,bimaculosa,,,,"Doczkal &amp; Dziock, 2004",Endangered,"B2ab(ii,iii)",3.1,Unknown,Global & Europe
+149166474,149166468,Pipizella annulata,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pipizella,annulata,,,,"(Macquart, 1829)",Near Threatened,B2ab(iii),3.1,Unknown,Global & Europe
+149166597,149166595,Platycheirus muelleri,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Platycheirus,muelleri,,,,"Marcuzzi, 1941",Endangered,B2ab(ii),3.1,Decreasing,"Global, Europe & Mediterranean"
+149166678,149166676,Paragus majoranae,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Paragus,majoranae,,,,"Rondani, 1857",Endangered,"B2ab(iii,v)",3.1,Decreasing,Global & Europe
+149167059,149167049,Eumerus rubrum,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,rubrum,,,,"Grković &amp; Vujić, 2017",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149167112,149167110,Syrphus nitidifrons,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Syrphus,nitidifrons,,,,"Becker, 1921",Least Concern,,3.1,Unknown,Global & Europe
+149167142,149167140,Eumerus minotaurus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,minotaurus,,,,"Claussen &amp; Lucas, 1988",Vulnerable,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149167292,149167289,Cheilosia morio,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,morio,,,,"(Zetterstedt, 1838)",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+149167519,149167516,Eupeodes lucasi,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eupeodes,lucasi,,,,"(Marcos-García &amp; Láska, 1983)",Least Concern,,3.1,Stable,Global & Europe
+149167577,149167572,Merodon euri,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,euri,,,,"Vujić &amp; Radenković, 2018",Vulnerable,B2ab(iii),3.1,Stable,Global & Europe
+149167758,149167756,Merodon erymanthius,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,erymanthius,,,,"Vujić, Ačanski and Šašić, 2018",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149167843,149167838,Merodon constans,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,constans,,,,"(Rossi, 1794)",Least Concern,,3.1,Unknown,Global & Europe
+149167960,149167955,Merodon andriotes,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,andriotes,,,,"Vujić, Radenković &amp; Šašic, 2018",Critically Endangered,B1ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149168118,149168113,Brachypalpus valgus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Brachypalpus,valgus,,,,"(Panzer, 1798)",Least Concern,,3.1,Decreasing,Global & Europe
+149168283,149168281,Merodon caerulescens,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,caerulescens,,,,"Loew, 1869",Vulnerable,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149168389,149168387,Merodon dobrogensis,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,dobrogensis,,,,"Bradescu, 1982",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,Global & Europe
+149168808,149168804,Pelecocera pruinosomaculata,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pelecocera,pruinosomaculata,,,,"Strobl, 1906",Near Threatened,A3c,3.1,Decreasing,Global & Europe
+149168924,149168922,Pipizella zloti,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pipizella,zloti,,,,"Vujić, 1997",Vulnerable,B2ab(iii),3.1,Unknown,Global & Europe
+149168934,149168932,Sphegina elegans,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Sphegina,elegans,,,,"Schummel, 1843",Least Concern,,3.1,Unknown,Global & Europe
+149169047,149169044,Sphegina sublatifrons,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Sphegina,sublatifrons,,,,"Vujić, 1990",Endangered,"B2ab(ii,iii)",3.1,Decreasing,Global & Europe
+149169129,149169119,Sphegina latifrons,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Sphegina,latifrons,,,,"Egger, 1865",Least Concern,,3.1,Stable,Global & Europe
+149169298,149169296,Eumerus uncipes,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,uncipes,,,,"Rondani, 1850",Least Concern,,3.1,Unknown,Global & Europe
+149169362,149169360,Eumerus torsicus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,torsicus,,,,"Grković &amp; Vujić, 2015",Endangered,B2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149169630,149169625,Eumerus phaeacus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,phaeacus,,,,"Loew, 1848",Endangered,B2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149169638,149169627,Criorhina ranunculi,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Criorhina,ranunculi,,,,"(Panzer, 1804)",Least Concern,,3.1,Stable,Global & Europe
+149169691,149169687,Pelecocera lusitanica,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pelecocera,lusitanica,,,,"(Mik, 1898)",Near Threatened,A3c,3.1,Decreasing,Global & Europe
+149169711,149169708,Pelecocera caledonica,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pelecocera,caledonica,,,,"(Collin, 1940)",Least Concern,,3.1,Unknown,Global & Europe
+149169996,149169986,Callicera macquarti,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Callicera,macquarti,,,,"Rondani, 1844",Endangered,"B2ab(ii,iii,iv)",3.1,Decreasing,Global & Europe
+149170048,149170036,Brachypalpus laphriformis,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Brachypalpus,laphriformis,,,,"(Fallén, 1816)",Least Concern,,3.1,Decreasing,Global & Europe
+149170064,149170056,Merodon virgatus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,virgatus,,,,"Vujić &amp; Radenković, 2016",Vulnerable,B2ab(iii),3.1,Unknown,Global & Europe
+149170226,149170224,Eumerus montanum,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,montanum,,,,"Grković, Radenković &amp; Vujić, 2017",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,Global & Europe
+149170290,149170288,Eumerus pauper,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,pauper,,,,"Becker, 1921",Data Deficient,,3.1,Unknown,Global & Europe
+149170438,149170436,Eumerus karyates,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Eumerus,karyates,,,,"Chroni, Grković and Vujić, 2018",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149170512,149170510,Cheilosia thessala,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,thessala,,,,"Claussen &amp; Ståhls, 2007",Endangered,B2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+149170575,149170573,Cheilosia semifasciata,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,semifasciata,,,,"Becker, 1894",Least Concern,,3.1,Unknown,Global & Europe
+149170659,149170654,Pipiza notata,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Pipiza,notata,,,,"Meigen, 1822",Least Concern,,3.1,Unknown,Global & Europe
+149171111,149171108,Palumbia bellierii,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Palumbia,bellierii,,,,"(Bigot, 1860)",Endangered,B2ab(iii),3.1,Decreasing,Global & Europe
+149171302,149171300,Brachyopa vernalis,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Brachyopa,vernalis,,,,"J. van Steenis and W. van Steenis, 2014",Endangered,"B1ab(ii,iii)+2ab(ii,iii)",3.1,Unknown,"Global, Europe & Mediterranean"
+149171323,149171321,Brachyopa grunewaldensis,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Brachyopa,grunewaldensis,,,,"Kassebeer, 2000",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+149171606,149171603,Sericomyia bombiformis,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Sericomyia,bombiformis,,,,"(Fallén, 1810)",Least Concern,,3.1,Stable,Global & Europe
+149171639,149171636,Sericomyia superbiens,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Sericomyia,superbiens,,,,"(Müller, 1776)",Least Concern,,3.1,Stable,Global & Europe
+149171836,149171833,Chrysotoxum fasciolatum,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Chrysotoxum,fasciolatum,,,,"(De Geer, 1776)",Least Concern,,3.1,Unknown,Global & Europe
+149172043,149172040,Epistrophella coronata,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Epistrophella,coronata,,,,"(Rondani, 1857)",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+149172189,149172186,Melangyna cingulata,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Melangyna,cingulata,,,,"(Egger, 1860)",Least Concern,,3.1,Unknown,Global & Europe
+149172717,149172712,Criorhina asilica,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Criorhina,asilica,,,,"(Fallén, 1816)",Least Concern,,3.1,Stable,Global & Europe
+152281710,149168902,Anasimyia femorata,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Anasimyia,femorata,,,,"Šimić, 1987",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+152281759,149170214,Sphiximorpha petronillae,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Sphiximorpha,petronillae,,,,"Rondani, 1850",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+152281823,149170563,Primocerioides regale,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Primocerioides,regale,,,,"Violovitsch, 1985",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+152281827,149170583,Psilota exilistyla,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Psilota,exilistyla,,,,"Smit &amp; Vujić, 2008",Data Deficient,,3.1,Unknown,Global & Europe
+152281831,149170604,Psilota nana,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Psilota,nana,,,,"Smit &amp; Vujić, 2008",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+152281839,149170644,Sphiximorpha garibaldii,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Sphiximorpha,garibaldii,,,,"Rondani, 1860",Least Concern,,3.1,Unknown,Global & Europe
+152281847,149170677,Psilota anthracina,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Psilota,anthracina,,,,"Meigen, 1822",Least Concern,,3.1,Unknown,Global & Europe
+155166908,47261026,Flabellotilloidea palaestina,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CLERIDAE,Flabellotilloidea,palaestina,,,,"(Pic, 1900)",Data Deficient,,3.1,Unknown,Global & Mediterranean
+161282855,174246,Pelopidas thrax,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,HESPERIIDAE,Pelopidas,thrax,,,,"(Hübner, 1821)",Least Concern,,3.1,Unknown,Global
+161326679,174379,Vanessa cardui,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Vanessa,cardui,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global
+161337391,174361,Freyeria trochylus,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Freyeria,trochylus,,,,"(Freyer, 1845)",Least Concern,,3.1,Unknown,Global
+161341394,174427,Lampides boeticus,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Lampides,boeticus,,,,"(Linnaeus, 1767)",Least Concern,,3.1,Unknown,Global
+161341814,174289,Cacyreus marshalli,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Cacyreus,marshalli,,,,"Butler, 1898",Least Concern,,3.1,Unknown,Global
+166538784,3334,Buprestis splendens,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,BUPRESTIDAE,Buprestis,splendens,,,,"Fabricius, 1775",Endangered,"B2ab(iii,iv)",3.1,Decreasing,Global & Europe
+172421220,174225,Vanessa atalanta,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Vanessa,atalanta,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global
+172421236,174452,Nymphalis antiopa,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Nymphalis,antiopa,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global
+172768416,172768413,Merodon confinium,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,confinium,,,,"Šašić &amp; Vujić, 2020",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+172768523,172768520,Merodon spineus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,spineus,,,,"Vujić, Šašić &amp; Likov, 2020",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+172768737,172768719,Merodon calidus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,calidus,,,,"Vujić, Ačanski &amp; Šašić, 2020",Least Concern,,3.1,Unknown,Global & Europe
+173191103,173329988,Gomphus schneiderii,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,GOMPHIDAE,Gomphus,schneiderii,,,,"Selys, 1850",Least Concern,,3.1,Stable,Global
+175783472,86862896,Allecula morio,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Allecula,morio,,,,"(Fabricius, 1787)",Least Concern,,3.1,Unknown,Global & Europe
+176026892,44710000,Ancistrura nigrovittata,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Ancistrura,nigrovittata,,,,"(Brunner von Wattenwyl, 1878)",Least Concern,,3.1,Decreasing,Global & Europe
+176393184,86863386,Gerandryus aetnensis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TENEBRIONIDAE,Gerandryus,aetnensis,,,,"(Rottenberg, 1871)",Near Threatened,B2a,3.1,Unknown,"Global, Europe & Mediterranean"
+176511953,17181745,Isophya rhodopensis ssp. leonorae,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Isophya,rhodopensis,subspecies,leonorae,,"Kaltenbach, 1965",Least Concern,,3.1,Unknown,Global & Europe
+176652726,68441316,Myrmecophilus hirticaudus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,MYRMECOPHILIDAE,Myrmecophilus,hirticaudus,,,,"Fischer von Waldheim, 1846",Least Concern,,3.1,Unknown,Global & Europe
+176825250,17046338,Orchamus kaltenbachi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,PAMPHAGIDAE,Orchamus,kaltenbachi,,,,"Massa, 2009",Endangered,"B1ab(iii,v)+2ab(iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+176843951,44697976,Paranocarodes chopardi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,PAMPHAGIDAE,Paranocarodes,chopardi,,,,"Peshev, 1965",Endangered,"B1ab(ii,iii,iv,v)+2ab(ii,iii,iv,v)",3.1,Decreasing,Global & Europe
+176938645,68451913,Pholidoptera macedonica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Pholidoptera,macedonica,,,,"Ramme, 1928",Least Concern,,3.1,Stable,Global & Europe
+176958611,17181904,Poecilimon artedentatus,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,artedentatus,,,,"Heller, 1984",Least Concern,,3.1,Unknown,"Global, Europe & Mediterranean"
+176959319,17182024,Poecilimon hoelzeli,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Poecilimon,hoelzeli,,,,"Harz, 1966",Least Concern,,3.1,Unknown,Global & Europe
+177064260,68462331,Psorodonotus fieberi,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Psorodonotus,fieberi,,,,"(Frivaldsky, 1853)",Near Threatened,,3.1,Unknown,Global & Europe
+177074359,47251891,Purpuricenus schurmanni,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Purpuricenus,schurmanni,,,,"Sláma, 1985",Data Deficient,,3.1,Unknown,"Global, Europe & Mediterranean"
+177141482,157838,Ropalopus siculus,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CERAMBYCIDAE,Ropalopus,siculus,,,,"(Stierlin, 1864)",Near Threatened,,3.1,Unknown,Global & Mediterranean
+177245047,70613909,Tettigonia balcanica,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Tettigonia,balcanica,,,,"Chobanov &amp; Lemonnier-Darcemont, 2014",Least Concern,,3.1,Unknown,Global & Europe
+177253381,157580,Triplax emgei,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,EROTYLIDAE,Triplax,emgei,,,,"Reitter, 1885",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+177293435,68486352,Vichetia oblongicollis,ANIMALIA,ARTHROPODA,ORTHOPTERA,INSECTA,TETTIGONIIDAE,Vichetia,oblongicollis,,,,"(Brunner von Wattenwyl, 1882)",Least Concern,,3.1,Increasing,Global & Europe
+179993037,175942795,Merodon kozufensis,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,kozufensis,,,,"Radenković &amp; Vujić, 2020",Endangered,B2ab(iii),3.1,Unknown,Global & Europe
+179993092,175944745,Merodon medium,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,medium,,,,"Vujić, Likov &amp; Radenković, 2020",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+179993389,175944635,Merodon olympius,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,olympius,,,,"Vujić &amp; Radenković, 2020",Critically Endangered,B1ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+179993901,175922919,Merodon atricapillatus,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,atricapillatus,,,,"Šašić, Ačanski &amp; Vujić, 2018",Endangered,B1ab(iii)+2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+179993994,175923879,Merodon rojoi,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Merodon,rojoi,,,,"Vujić &amp; Radenković, 2020",Vulnerable,B2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+180615299,180450141,Leptotes pirithous ssp. pirithous,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Leptotes,pirithous,subspecies,pirithous,,"(Linnaeus, 1767)",Least Concern,,3.1,Unknown,Global
+180618290,180529174,Ypthima asterope ssp. asterope,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Ypthima,asterope,subspecies,asterope,,"(Klug, 1832)",Least Concern,,3.1,Unknown,Global
+188013205,63226,Cordulegaster helladica ssp. buchholzi,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULEGASTRIDAE,Cordulegaster,helladica,subspecies,buchholzi,,"Lohmann, 1993",Endangered,B1ab(iii)+2ab(iii),3.1,Decreasing,"Global, Europe & Mediterranean"
+188016479,165533,Cordulegaster helladica ssp. helladica,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULEGASTRIDAE,Cordulegaster,helladica,subspecies,helladica,,"(Lohmann, 1993)",Endangered,"B2ab(ii,iii,v)",3.1,Decreasing,"Global, Europe & Mediterranean"
+188019481,63227,Cordulegaster helladica ssp. kastalia,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CORDULEGASTRIDAE,Cordulegaster,helladica,subspecies,kastalia,,"(Lohmann, 1993)",Critically Endangered,"B1ab(iii,v)+2ab(iii,v); D",3.1,Decreasing,"Global, Europe & Mediterranean"
+191489906,188456986,Cheilosia candida,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Cheilosia,candida,,,,"Vujić &amp; Radenković, 2020",Data Deficient,,3.1,Unknown,Global & Europe
+194174834,194174678,Paragus thracusi,ANIMALIA,ARTHROPODA,DIPTERA,INSECTA,SYRPHIDAE,Paragus,thracusi,,,,"Radenković, Likov &amp; Vujić, 2020",Critically Endangered,B2ab(iii),3.1,Unknown,"Global, Europe & Mediterranean"
+197512143,47261048,Korynetes coxalis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,CLERIDAE,Korynetes,coxalis,,,,"Reitter, 1894",Data Deficient,,3.1,Unknown,Global & Mediterranean
+197512562,47266488,Tetratoma crenicollis,ANIMALIA,ARTHROPODA,COLEOPTERA,INSECTA,TETRATOMIDAE,Tetratoma,crenicollis,,,,"Baudi, 1877",Data Deficient,,3.1,Unknown,Global & Mediterranean
+202085044,173204,Pseudochazara amymone,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Pseudochazara,amymone,,,,"Brown, 1976",Endangered,"B2ab(ii,iii,iv)",3.1,Unknown,"Global, Europe & Mediterranean"
+219967836,165505,Calopteryx virgo,ANIMALIA,ARTHROPODA,ODONATA,INSECTA,CALOPTERYGIDAE,Calopteryx,virgo,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Stable,Global
+222964578,174464,Zizeeria knysna,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Zizeeria,knysna,,,,"(Trimen, 1862) ",Least Concern,,3.1,Unknown,Global
+222973332,174447,Gegenes pumilio,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,HESPERIIDAE,Gegenes,pumilio,,,,"(Hoffmannsegg, 1804)",Least Concern,,3.1,Unknown,Global
+222981123,174286,Leptotes pirithous,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,LYCAENIDAE,Leptotes,pirithous,,,,"(Linnaeus, 1767)",Least Concern,,3.1,Unknown,Global
+222994308,174451,Ypthima asterope,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Ypthima,asterope,,,,"(Klug, 1832)",Least Concern,,3.1,Unknown,Global
+222994680,174455,Danaus chrysippus,ANIMALIA,ARTHROPODA,LEPIDOPTERA,INSECTA,NYMPHALIDAE,Danaus,chrysippus,,,,"(Linnaeus, 1758)",Least Concern,,3.1,Unknown,Global

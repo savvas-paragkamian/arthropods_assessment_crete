@@ -1,0 +1,325 @@
+assessmentId,internalTaxonId,scientificName,code,name,majorImportance,season,suitability
+5102180,157591,Brachygonus meraculus,1.4,Forest - Temperate,,,Suitable
+6983441,173273,Polyommatus eleniae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+6983441,173273,Polyommatus eleniae,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+13309447,13304723,Colletes creticus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+13309607,13307748,Colletes standfussi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+13318550,13317994,Panurginus schwarzi,18,Unknown,,,
+13321552,13320615,Ceratina teunisseni,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,,Suitable
+13321552,13320615,Ceratina teunisseni,14.4,Artificial/Terrestrial - Rural Gardens,No,,Suitable
+13340046,13338039,Halictus holomelaenus,18,Unknown,,,
+13340050,13338042,Seladonia inpilosa,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,,Suitable
+17046366,17046314,Dolichopoda hussoni,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+17891947,16084525,Oropodisma chelmosi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+17891947,16084525,Oropodisma chelmosi,4.4,Grassland - Temperate,Yes,resident,Suitable
+18053580,16084523,Oropodisma willemsei,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+18053580,16084523,Oropodisma willemsei,4.4,Grassland - Temperate,Yes,resident,Suitable
+18407506,16084420,Oropodisma karavica,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+18407506,16084420,Oropodisma karavica,4.4,Grassland - Temperate,Yes,resident,Suitable
+19201320,19198562,Andrena olympica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Marginal
+19201795,19198587,Andrena standfussorum,4.4,Grassland - Temperate,Yes,resident,Suitable
+19201795,19198587,Andrena standfussorum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+19201930,19199004,Andrena trikalensis,18,Unknown,,resident,Suitable
+19881752,19199804,Hylaeus hellenicus,18,Unknown,,,
+19881954,19199635,Hylaeus koenigsmanni,18,Unknown,,,
+19882034,19199942,Hylaeus milossus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+21145860,19198984,Epeolus sigillatus,18,Unknown,,,Suitable
+21152247,19199770,Chelostoma hellenicum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21152252,19198822,Chelostoma laticaudum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21153573,19199179,Hoplitis cretaea,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21153678,19198606,Hoplitis fabrei,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21153856,19199563,Hoplitis graeca,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21154657,19198429,Hoplitis parnesica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21154906,19199889,Osmia ariadne,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21156032,19199847,Osmia mirhiji,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21156038,19199916,Osmia moreensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+21461772,19198560,Nomada gruenwaldti,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+21461772,19198560,Nomada gruenwaldti,17,Other,Yes,resident,Suitable
+21462412,19199805,Nomada priesneri,4.4,Grassland - Temperate,Yes,resident,Suitable
+21462605,19199755,Nomada standfussi,18,Unknown,,resident,Suitable
+42461359,42428291,Atyaephyra strymonensis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,resident,Suitable
+42461459,42428293,Atyaephyra thyamisensis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,resident,Suitable
+42463679,42463645,Nomada cretensis,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+42463679,42463645,Nomada cretensis,14.3,Artificial/Terrestrial - Plantations,Yes,resident,Suitable
+43114098,19198726,Andrena grossella,3.4,Shrubland - Temperate,Yes,resident,Suitable
+43364385,19199403,Lasioglossum leucomontanum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43365979,19199243,Lasioglossum ariadne,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43365979,19199243,Lasioglossum ariadne,4.4,Grassland - Temperate,Yes,resident,Suitable
+43509253,19199653,Andrena chelma,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43509688,21138032,Andrena ebmerella,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43509986,19199759,Andrena helenica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43510530,19198891,Andrena muscaria,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+43510570,19199467,Andrena neovirida,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Suitable
+43959301,157814,Anaglyptus luteofasciatus,1.4,Forest - Temperate,Yes,resident,Suitable
+43959900,157893,Anaglyptus praecellens,1.4,Forest - Temperate,Yes,resident,Suitable
+43996816,157864,Isotomus jarmilae,1.4,Forest - Temperate,Yes,resident,Suitable
+44113885,157668,Ampedus karneri,1.4,Forest - Temperate,,,Suitable
+44114151,157643,Ampedus macedonicus,18,Unknown,,,
+44114577,157495,Ampedus minos,18,Unknown,,,
+44149210,157759,Procraerus cretensis,18,Unknown,,unknown,Unknown
+45462306,45462302,Eupholidoptera cephalonica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45462306,45462302,Eupholidoptera cephalonica,14.4,Artificial/Terrestrial - Rural Gardens,No,resident,Suitable
+45462306,45462302,Eupholidoptera cephalonica,4.4,Grassland - Temperate,No,resident,Suitable
+45462379,45462354,Eupholidoptera epirotica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45462379,45462354,Eupholidoptera epirotica,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45462578,45462525,Eupholidoptera leucasi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45462686,45462624,Eupholidoptera megastyla,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463162,45463146,Eupholidoptera uvarovi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463215,45463212,Eupholidoptera forcipata,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45463226,45463223,Eupholidoptera icariensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463236,45463233,Eupholidoptera jacquelinae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463253,45463250,Eupholidoptera kykladica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463288,45463281,Eupholidoptera spinigera,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463334,45463331,Eupholidoptera annamariae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463431,45463340,Eupholidoptera astyla,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45463466,45463463,Eupholidoptera feri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463477,45463473,Eupholidoptera giuliae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463496,45463493,Eupholidoptera latens,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463496,45463493,Eupholidoptera latens,3.4,Shrubland - Temperate,Yes,resident,Suitable
+45463505,45463502,Eupholidoptera mariannae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45463505,45463502,Eupholidoptera mariannae,14.3,Artificial/Terrestrial - Plantations,,resident,Unknown
+45466681,45466678,Poecilimon pindos,4.4,Grassland - Temperate,Yes,resident,Suitable
+45466681,45466678,Poecilimon pindos,3.4,Shrubland - Temperate,,resident,Marginal
+45811388,157538,Pseudosphegesthes bergeri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45811388,157538,Pseudosphegesthes bergeri,1.4,Forest - Temperate,Yes,resident,Suitable
+45812940,157493,Purpuricenus graecus,1.4,Forest - Temperate,Yes,resident,Suitable
+45812940,157493,Purpuricenus graecus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45823371,157798,Stenopterus creticus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+45826874,157771,Trichoferus bergeri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+47350001,47262019,Ampedus cretensis,1.4,Forest - Temperate,,resident,Suitable
+47350709,47262622,Ampedus vignai,18,Unknown,,unknown,Unknown
+47353318,47263254,Elater asmodaius,18,Unknown,,,Suitable
+47353453,47265114,Podeonius subcyaneus,18,Unknown,,unknown,Unknown
+47708524,17182027,Poecilimon ikariensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+47708697,17181950,Poecilimon deplanatus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+47726171,17182043,Poecilimon klausgerhardi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+47995800,47981998,Sphecodes creticus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+48031475,47943578,Agoliinus pittinoi,4.4,Grassland - Temperate,,resident,Suitable
+48031890,47944402,Nobius rhodiensis,18,Unknown,,,Suitable
+48032052,47945259,Paracoptochirus kozanensis,4.4,Grassland - Temperate,,resident,Suitable
+48032062,47945322,Paracoptochirus vignai,4.4,Grassland - Temperate,,resident,Suitable
+50137978,19199706,Megachile cressa,18,Unknown,,unknown,Unknown
+50142482,19198908,Megachile semicircularis,18,Unknown,,unknown,Unknown
+53713070,173274,Kretania psylorita,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+53714375,173287,Hipparchia cretica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+64557835,173214,Coenonympha thyrsis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+64563270,173305,Hipparchia christenseni,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+64809060,173252,Maniola chia,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+64821523,173225,Pseudochazara graeca,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,,Suitable
+64823983,173219,Zerynthia cretica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Suitable
+69264218,19198691,Megachile rhodosiaca,18,Unknown,,unknown,Unknown
+69638033,69637992,Chorthippus ferdinandi,4.4,Grassland - Temperate,Yes,resident,Suitable
+69668556,69668544,Ovaliptila kinzelbachi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+69668595,69668585,Ovaliptila krueperi,7.2,Caves and Subterranean Habitats (non-aquatic) - Other Subterranean Habitats,,resident,Unknown
+69668595,69668585,Ovaliptila krueperi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,resident,Unknown
+69668595,69668585,Ovaliptila krueperi,1.4,Forest - Temperate,,resident,Unknown
+69668760,69668679,Ovaliptila lindbergi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+69668802,69668788,Ovaliptila nana,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+69668850,69668847,Ovaliptila newmanae,1.4,Forest - Temperate,Yes,resident,Suitable
+69669501,69669391,Ovaliptila wettsteini,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,resident,Unknown
+69680725,44698100,Rhacocleis silvestrii,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+69681546,69681526,Gryllomorpha cretensis,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,resident,Unknown
+69681546,69681526,Gryllomorpha cretensis,14.5,Artificial/Terrestrial - Urban Areas,,resident,Unknown
+69681546,69681526,Gryllomorpha cretensis,1.4,Forest - Temperate,,resident,Unknown
+70432562,14870997,Chorthippus lacustris,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,resident,Suitable
+70564378,16084579,Chorthippus biroi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70564582,16084612,Chorthippus moreanus,4.4,Grassland - Temperate,Yes,resident,Suitable
+70564582,16084612,Chorthippus moreanus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70564761,16084456,Chorthippus parnon,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70564761,16084456,Chorthippus parnon,4.4,Grassland - Temperate,Yes,resident,Suitable
+70565847,16084479,Chorthippus pulloides,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,,Marginal
+70565847,16084479,Chorthippus pulloides,4.4,Grassland - Temperate,Yes,resident,Suitable
+70565854,16084530,Chorthippus sangiorgii,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,No,resident,Suitable
+70565854,16084530,Chorthippus sangiorgii,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566026,16084625,Oedipoda venusta,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70566490,16084417,Oropodisma kyllinii,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+70566490,16084417,Oropodisma kyllinii,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566509,16084623,Oropodisma lagrecai,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+70566509,16084623,Oropodisma lagrecai,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566636,16084516,Oropodisma parnassica,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+70566636,16084516,Oropodisma parnassica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566653,16084561,Oropodisma taygetosi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70566653,16084561,Oropodisma taygetosi,4.4,Grassland - Temperate,Yes,resident,Suitable
+70566762,16084584,Oropodisma tymphrestosi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,resident,Marginal
+70566762,16084584,Oropodisma tymphrestosi,4.4,Grassland - Temperate,Yes,resident,Suitable
+70567218,16084574,Pezotettix lagoi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70567692,16084408,Xerohippus solerii,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70567952,68380920,Gryllotalpa krimbasi,5.4,"Wetlands (inland) - Bogs, Marshes, Swamps, Fens, Peatlands",Yes,resident,Suitable
+70567979,68439867,Mogoplistes kinzelbachi,18,Unknown,,resident,Suitable
+70568039,44698010,Glyphanus obtusus,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+70568039,44698010,Glyphanus obtusus,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70568039,44698010,Glyphanus obtusus,4.4,Grassland - Temperate,Yes,resident,Suitable
+70571529,68444850,Orchamus raulinii,1.4,Forest - Temperate,Yes,resident,Suitable
+70572638,64337698,Acrometopa cretensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70572787,17181617,Isophya lemnotica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70577245,17181748,Leptophyes lisae,1.4,Forest - Temperate,No,resident,Suitable
+70577245,17181748,Leptophyes lisae,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70577245,17181748,Leptophyes lisae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70577990,17181859,Metaplastes oertzeni,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70578251,17181896,Poecilimon aegaeus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70580066,17181947,Poecilimon cretensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70583263,17181974,Poecilimon gerlindae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70587058,68458212,Poecilimon mariannae,14.1,Artificial/Terrestrial - Arable Land,Yes,resident,Suitable
+70588026,45466621,Poecilimon nobilis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70588026,45466621,Poecilimon nobilis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70588521,45466644,Poecilimon obesus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70588894,45466779,Poecilimon paros,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70589222,68458962,Poecilimon propinquus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70589222,68458962,Poecilimon propinquus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70590078,45466695,Poecilimon soulion,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70591713,68459242,Poecilimon thessalicus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70592575,68459544,Poecilimon veluchianus,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70592810,68459582,Poecilimon werneri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,,resident,Unknown
+70592907,68459596,Poecilimon zimmeri,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70593097,68313516,Dolichopoda annae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70593507,17046304,Dolichopoda dalensi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,,Suitable
+70594412,17046311,Dolichopoda giachinoi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70594650,68314157,Dolichopoda graeca,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70595042,68314228,Dolichopoda insignis,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,,Suitable
+70595257,17046317,Dolichopoda ithakii,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70595489,17046320,Dolichopoda kiriakii,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70595921,17046297,Dolichopoda lustriae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70596147,68314432,Dolichopoda makrykapa,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70596267,68314461,Dolichopoda matsakisi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70596318,68314517,Dolichopoda naxia,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70613718,70613694,Dolichopoda giulianae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70613903,70613898,Troglophilus zoiai,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70622869,17046324,Dolichopoda patrizii,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623051,17046327,Dolichopoda pavesii,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623319,68314680,Dolichopoda petrochilosi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623572,68315084,Dolichopoda unicolor,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623590,68315135,Dolichopoda vandeli,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623629,68485526,Troglophilus lagoi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623629,68485526,Troglophilus lagoi,1.4,Forest - Temperate,,resident,Unknown
+70623658,68485565,Troglophilus marinae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70623690,64529440,Anadrymadusa brevipennis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70623879,44710646,Bradyporus oniscus,4.4,Grassland - Temperate,Yes,resident,Suitable
+70623879,44710646,Bradyporus oniscus,14.1,Artificial/Terrestrial - Arable Land,No,resident,Suitable
+70623879,44710646,Bradyporus oniscus,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+70624269,44711866,Eupholidoptera pallipes,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70624635,68450071,Parnassiana chelmos,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624651,68450152,Parnassiana coracis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624666,68450165,Parnassiana dirphys,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624681,68450223,Parnassiana fusca,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624696,68450237,Parnassiana gionica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624711,68450241,Parnassiana menalon,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624711,68450241,Parnassiana menalon,3.4,Shrubland - Temperate,No,resident,Suitable
+70624738,68450251,Parnassiana nigromarginata,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624763,68450271,Parnassiana panaetolikon,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624784,68450303,Parnassiana parnassica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624834,68450311,Parnassiana parnon,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624861,68450318,Parnassiana tenuis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624888,68450364,Parnassiana tymphiensis,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624904,68450372,Parnassiana tymphrestos,4.4,Grassland - Temperate,Yes,resident,Suitable
+70624951,68451909,Pholidoptera lucasi,1.4,Forest - Temperate,Yes,resident,Suitable
+70624978,44698034,Rhacocleis agiostratica,18,Unknown,,resident,Unknown
+70625066,44698051,Rhacocleis crypta,4.4,Grassland - Temperate,Yes,resident,Suitable
+70625081,44698053,Rhacocleis derrai,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625107,44698055,Rhacocleis distinguenda,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625138,44698057,Rhacocleis edentata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625171,44698059,Rhacocleis ferdinandi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625186,44698070,Rhacocleis graeca,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625240,44698072,Rhacocleis insularis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625268,44698076,Rhacocleis lithoscirtetes,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+70625294,44698104,Rhacocleis trilobata,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625315,44698115,Rhacocleis uvarovi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625374,44698141,Rhacocleis werneri,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70625374,44698141,Rhacocleis werneri,3.4,Shrubland - Temperate,Yes,resident,Suitable
+70627797,70613415,Dolichopoda calidnae,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+70627851,68468653,Saga hellenica,4.4,Grassland - Temperate,Yes,resident,Suitable
+70627851,68468653,Saga hellenica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+70627851,68468653,Saga hellenica,14.4,Artificial/Terrestrial - Rural Gardens,No,resident,Suitable
+70627851,68468653,Saga hellenica,14.2,Artificial/Terrestrial - Pastureland,Yes,resident,Suitable
+74528394,68455994,Poecilimon laevissimus,4.4,Grassland - Temperate,No,resident,Suitable
+74528394,68455994,Poecilimon laevissimus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+87310028,86802697,Alosterna pauli,1.4,Forest - Temperate,Yes,resident,Suitable
+87311325,86807153,Paracorymbia picticornis,1.4,Forest - Temperate,Yes,resident,Suitable
+87311361,86807269,Pedostrangalia ariadne,14.3,Artificial/Terrestrial - Plantations,Yes,resident,Suitable
+87311361,86807269,Pedostrangalia ariadne,1.4,Forest - Temperate,Yes,resident,Suitable
+87311361,86807269,Pedostrangalia ariadne,14.5,Artificial/Terrestrial - Urban Areas,No,resident,Suitable
+87311361,86807269,Pedostrangalia ariadne,14.4,Artificial/Terrestrial - Rural Gardens,Yes,resident,Suitable
+87313606,86863400,Hymenalia elongata,1.4,Forest - Temperate,Yes,resident,Suitable
+87314193,86883960,Mycetochara flavicornis,18,Unknown,Yes,resident,Suitable
+87314453,86884024,Mycetochara jonica,18,Unknown,Yes,resident,Suitable
+87314522,86884117,Mycetochara myrmecophila,18,Unknown,Yes,resident,Suitable
+87341023,87329419,Mycetochara cretica,18,Unknown,Yes,resident,Suitable
+88000000,87999248,Prionotropis willemsorum,6,"Rocky areas (eg. inland cliffs, mountain peaks)",Yes,resident,Suitable
+88000000,87999248,Prionotropis willemsorum,4.4,Grassland - Temperate,Yes,resident,Suitable
+88047152,88046398,Stictoleptura slamai,18,Unknown,Yes,resident,Suitable
+90854097,90853972,Dolichopoda ochtoniai,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+90854152,90854150,Dolichopoda saraolacosi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+90947052,90934784,Ceratophyus schaffrathi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+90947052,90934784,Ceratophyus schaffrathi,13.3,Marine Coastal/Supratidal - Coastal Sand Dunes,Yes,resident,Suitable
+91395333,91394977,Stictoleptura ivoroberti,1.4,Forest - Temperate,Yes,resident,Suitable
+98732278,91470563,Coxelus alinae,1.4,Forest - Temperate,,,Suitable
+98732380,91473473,Diplagia hellenica,18,Unknown,,,Suitable
+99773641,99773552,Rhacocleis andikithirensis,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+103506603,16084613,Chorthippus crassiceps,4.4,Grassland - Temperate,Yes,resident,Suitable
+103506603,16084613,Chorthippus crassiceps,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+103507242,68313777,Dolichopoda cassagnaui,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,,resident,Suitable
+103507546,70613726,Dolichopoda kalithea,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103507773,68314552,Dolichopoda paraskevi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103508061,68314902,Dolichopoda steriotisi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103508315,68314976,Dolichopoda thasosensis,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103508476,45463437,Eupholidoptera cretica,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+103508875,17046307,Dolichopoda gasparoi,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+103509603,17181907,Poecilimon athos,3.4,Shrubland - Temperate,Yes,resident,Suitable
+103509603,17181907,Poecilimon athos,1.4,Forest - Temperate,,resident,Marginal
+103510430,17181953,Poecilimon erimanthos,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,resident,Suitable
+103510920,68485583,Troglophilus spinulosus,7.1,Caves and Subterranean Habitats (non-aquatic) - Caves,Yes,resident,Suitable
+140015452,16084372,Oropodisma erymanthosi,4.4,Grassland - Temperate,Yes,Resident,Suitable
+140015452,16084372,Oropodisma erymanthosi,6,"Rocky areas (eg. inland cliffs, mountain peaks)",,Resident,Marginal
+138710298,60307,Boyeria cretensis,5.9,Wetlands (inland) - Freshwater Springs and Oases,,,Unknown
+138710298,60307,Boyeria cretensis,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+138884087,165504,Coenagrion intermedium,5.7,Wetlands (inland) - Permanent Freshwater Marshes/Pools (under 8ha),,,Marginal
+138884087,165504,Coenagrion intermedium,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),,,Suitable
+140514673,59706,Cordulegaster helladica,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,Resident,Suitable
+140514673,59706,Cordulegaster helladica,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+176511953,17181745,Isophya rhodopensis ssp. leonorae,1.4,Forest - Temperate,Yes,,Suitable
+176825250,17046338,Orchamus kaltenbachi,1.4,Forest - Temperate,Yes,Resident,Suitable
+176958611,17181904,Poecilimon artedentatus,3.4,Shrubland - Temperate,Yes,Resident,Suitable
+176958611,17181904,Poecilimon artedentatus,1.4,Forest - Temperate,Yes,Resident,Suitable
+177074359,47251891,Purpuricenus schurmanni,1.4,Forest - Temperate,Yes,Resident,Suitable
+177253381,157580,Triplax emgei,1.4,Forest - Temperate,,Resident,Suitable
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+188016479,165533,Cordulegaster helladica ssp. helladica,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,,Suitable
+188016479,165533,Cordulegaster helladica ssp. helladica,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,,Suitable
+188019481,63227,Cordulegaster helladica ssp. kastalia,5.1,Wetlands (inland) - Permanent Rivers/Streams/Creeks (includes waterfalls),Yes,Resident,Suitable
+188019481,63227,Cordulegaster helladica ssp. kastalia,5.9,Wetlands (inland) - Freshwater Springs and Oases,Yes,Resident,Suitable
+149163467,149163465,Katara connexa,1.4,Forest - Temperate,Yes,Resident,Suitable
+149164125,149164123,Cheilosia katara,1.4,Forest - Temperate,Yes,Resident,Suitable
+149164628,149164626,Xanthogramma pilosum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149164628,149164626,Xanthogramma pilosum,14.3,Artificial/Terrestrial - Plantations,Yes,Resident,Suitable
+149164662,149164659,Xanthogramma aeginae,1.4,Forest - Temperate,Yes,Resident,Suitable
+149164662,149164659,Xanthogramma aeginae,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149165034,149165032,Merodon peloponnesius,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165034,149165032,Merodon peloponnesius,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149165102,149165099,Merodon nisi,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165102,149165099,Merodon nisi,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149165216,149165213,Merodon naxius,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149165324,149165322,Merodon megavidus,1.4,Forest - Temperate,Yes,Resident,Suitable
+149165324,149165322,Merodon megavidus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149165632,149165628,Brachyopa minima,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167059,149167049,Eumerus rubrum,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149167059,149167049,Eumerus rubrum,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167142,149167140,Eumerus minotaurus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149167758,149167756,Merodon erymanthius,1.4,Forest - Temperate,Yes,Resident,Suitable
+149167758,149167756,Merodon erymanthius,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149167960,149167955,Merodon andriotes,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149167960,149167955,Merodon andriotes,1.4,Forest - Temperate,Yes,Resident,Suitable
+149168283,149168281,Merodon caerulescens,1.4,Forest - Temperate,Yes,Resident,Suitable
+149168283,149168281,Merodon caerulescens,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149170438,149170436,Eumerus karyates,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+149171302,149171300,Brachyopa vernalis,1.4,Forest - Temperate,Yes,Resident,Suitable
+172768416,172768413,Merodon confinium,1.4,Forest - Temperate,Yes,Resident,Suitable
+172768523,172768520,Merodon spineus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+172768523,172768520,Merodon spineus,1.4,Forest - Temperate,Yes,Resident,Suitable
+179993092,175944745,Merodon medium,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+179993092,175944745,Merodon medium,1.4,Forest - Temperate,Yes,Resident,Suitable
+179993092,175944745,Merodon medium,4.4,Grassland - Temperate,Yes,Resident,Suitable
+179993389,175944635,Merodon olympius,1.4,Forest - Temperate,Yes,Resident,Suitable
+179993901,175922919,Merodon atricapillatus,3.8,Shrubland - Mediterranean-type Shrubby Vegetation,Yes,Resident,Suitable
+179993994,175923879,Merodon rojoi,1.4,Forest - Temperate,Yes,Resident,Suitable
+191489906,188456986,Cheilosia candida,1.4,Forest - Temperate,Yes,Resident,Suitable
+194174834,194174678,Paragus thracusi,4.4,Grassland - Temperate,Yes,Resident,Suitable

@@ -1,0 +1,256 @@
+assessmentId,internalTaxonId,scientificName,code,name,note
+5102180,157591,Brachygonus meraculus,2.1,Site/area management,
+6983441,173273,Polyommatus eleniae,4.3,Awareness & communications,
+6983441,173273,Polyommatus eleniae,2.1,Site/area management,
+6983441,173273,Polyommatus eleniae,1.1,Site/area protection,
+13309447,13304723,Colletes creticus,1.2,Resource & habitat protection,""
+13309447,13304723,Colletes creticus,1.1,Site/area protection,""
+13309607,13307748,Colletes standfussi,1.2,Resource & habitat protection,""
+13309607,13307748,Colletes standfussi,1.1,Site/area protection,""
+17046366,17046314,Dolichopoda hussoni,1.2,Resource & habitat protection,""
+17891947,16084525,Oropodisma chelmosi,2.3,Habitat & natural process restoration,""
+17891947,16084525,Oropodisma chelmosi,2.1,Site/area management,""
+18053580,16084523,Oropodisma willemsei,2.1,Site/area management,""
+18053580,16084523,Oropodisma willemsei,1.2,Resource & habitat protection,""
+18053580,16084523,Oropodisma willemsei,1.1,Site/area protection,""
+18407506,16084420,Oropodisma karavica,2.1,Site/area management,""
+42463679,42463645,Nomada cretensis,1.2,Resource & habitat protection,""
+43114098,19198726,Andrena grossella,1.1,Site/area protection,""
+43959301,157814,Anaglyptus luteofasciatus,2.1,Site/area management,
+43959301,157814,Anaglyptus luteofasciatus,5.1.3,Sub-national level,
+43959900,157893,Anaglyptus praecellens,2.1,Site/area management,
+43959900,157893,Anaglyptus praecellens,5.1.2,National level,
+43996816,157864,Isotomus jarmilae,2.1,Site/area management,
+44113885,157668,Ampedus karneri,2.1,Site/area management,
+45462578,45462525,Eupholidoptera leucasi,2.1,Site/area management,""
+45463215,45463212,Eupholidoptera forcipata,2.1,Site/area management,""
+45463226,45463223,Eupholidoptera icariensis,2.1,Site/area management,""
+45463236,45463233,Eupholidoptera jacquelinae,2.1,Site/area management,""
+45463288,45463281,Eupholidoptera spinigera,2.1,Site/area management,""
+45463288,45463281,Eupholidoptera spinigera,1.2,Resource & habitat protection,""
+45463288,45463281,Eupholidoptera spinigera,1.1,Site/area protection,""
+45463334,45463331,Eupholidoptera annamariae,2.1,Site/area management,""
+45463334,45463331,Eupholidoptera annamariae,1.1,Site/area protection,""
+45463431,45463340,Eupholidoptera astyla,2.1,Site/area management,""
+45463466,45463463,Eupholidoptera feri,2.1,Site/area management,""
+45463466,45463463,Eupholidoptera feri,1.2,Resource & habitat protection,""
+45463505,45463502,Eupholidoptera mariannae,2.1,Site/area management,""
+45463505,45463502,Eupholidoptera mariannae,1.2,Resource & habitat protection,""
+45463505,45463502,Eupholidoptera mariannae,1.1,Site/area protection,""
+45466681,45466678,Poecilimon pindos,2.1,Site/area management,""
+45811388,157538,Pseudosphegesthes bergeri,2.1,Site/area management,
+45811388,157538,Pseudosphegesthes bergeri,5.1.3,Sub-national level,
+45811388,157538,Pseudosphegesthes bergeri,1.1,Site/area protection,
+45823371,157798,Stenopterus creticus,2.1,Site/area management,
+45823371,157798,Stenopterus creticus,5.1.3,Sub-national level,
+45826874,157771,Trichoferus bergeri,2.1,Site/area management,
+45826874,157771,Trichoferus bergeri,1.1,Site/area protection,
+47350001,47262019,Ampedus cretensis,1.2,Resource & habitat protection,""
+47708524,17182027,Poecilimon ikariensis,2.1,Site/area management,""
+48031475,47943578,Agoliinus pittinoi,2.1,Site/area management,""
+48031475,47943578,Agoliinus pittinoi,1.2,Resource & habitat protection,""
+48031890,47944402,Nobius rhodiensis,2.1,Site/area management,""
+48031890,47944402,Nobius rhodiensis,1.2,Resource & habitat protection,""
+48032062,47945322,Paracoptochirus vignai,2.1,Site/area management,""
+48032062,47945322,Paracoptochirus vignai,1.2,Resource & habitat protection,""
+69638033,69637992,Chorthippus ferdinandi,2.1,Site/area management,""
+69638033,69637992,Chorthippus ferdinandi,1.2,Resource & habitat protection,""
+69668556,69668544,Ovaliptila kinzelbachi,1.2,Resource & habitat protection,""
+69668556,69668544,Ovaliptila kinzelbachi,1.1,Site/area protection,""
+69668802,69668788,Ovaliptila nana,2.1,Site/area management,""
+70432562,14870997,Chorthippus lacustris,2.3,Habitat & natural process restoration,""
+70432562,14870997,Chorthippus lacustris,2.1,Site/area management,""
+70432562,14870997,Chorthippus lacustris,5.1.2,National level,""
+70432562,14870997,Chorthippus lacustris,5.1.1,International level,""
+70432562,14870997,Chorthippus lacustris,1.1,Site/area protection,""
+70565847,16084479,Chorthippus pulloides,2.1,Site/area management,""
+70566490,16084417,Oropodisma kyllinii,2.1,Site/area management,""
+70566509,16084623,Oropodisma lagrecai,2.1,Site/area management,""
+70566636,16084516,Oropodisma parnassica,2.1,Site/area management,""
+70566653,16084561,Oropodisma taygetosi,2.1,Site/area management,""
+70566762,16084584,Oropodisma tymphrestosi,2.1,Site/area management,""
+70568039,44698010,Glyphanus obtusus,1.1,Site/area protection,""
+70568039,44698010,Glyphanus obtusus,2.1,Site/area management,""
+70571529,68444850,Orchamus raulinii,2.1,Site/area management,""
+70588894,45466779,Poecilimon paros,2.1,Site/area management,""
+70590078,45466695,Poecilimon soulion,2.1,Site/area management,""
+70593507,17046304,Dolichopoda dalensi,2.1,Site/area management,""
+70593507,17046304,Dolichopoda dalensi,1.1,Site/area protection,""
+70594650,68314157,Dolichopoda graeca,2.1,Site/area management,""
+70595257,17046317,Dolichopoda ithakii,1.2,Resource & habitat protection,""
+70595921,17046297,Dolichopoda lustriae,1.2,Resource & habitat protection,""
+70596267,68314461,Dolichopoda matsakisi,2.1,Site/area management,""
+70596318,68314517,Dolichopoda naxia,2.1,Site/area management,""
+70613718,70613694,Dolichopoda giulianae,2.1,Site/area management,""
+70613718,70613694,Dolichopoda giulianae,1.1,Site/area protection,""
+70623051,17046327,Dolichopoda pavesii,2.1,Site/area management,""
+70623051,17046327,Dolichopoda pavesii,1.1,Site/area protection,""
+70623319,68314680,Dolichopoda petrochilosi,2.1,Site/area management,""
+70623658,68485565,Troglophilus marinae,2.1,Site/area management,""
+70623690,64529440,Anadrymadusa brevipennis,2.1,Site/area management,""
+70624269,44711866,Eupholidoptera pallipes,2.1,Site/area management,""
+70624635,68450071,Parnassiana chelmos,2.1,Site/area management,""
+70624651,68450152,Parnassiana coracis,2.1,Site/area management,""
+70624666,68450165,Parnassiana dirphys,2.1,Site/area management,""
+70624681,68450223,Parnassiana fusca,2.1,Site/area management,""
+70624696,68450237,Parnassiana gionica,1.1,Site/area protection,""
+70624696,68450237,Parnassiana gionica,2.1,Site/area management,""
+70624696,68450237,Parnassiana gionica,2.3,Habitat & natural process restoration,""
+70624711,68450241,Parnassiana menalon,2.1,Site/area management,""
+70624738,68450251,Parnassiana nigromarginata,2.1,Site/area management,""
+70624763,68450271,Parnassiana panaetolikon,2.1,Site/area management,""
+70624784,68450303,Parnassiana parnassica,2.1,Site/area management,""
+70624834,68450311,Parnassiana parnon,2.1,Site/area management,""
+70624861,68450318,Parnassiana tenuis,2.1,Site/area management,""
+70624888,68450364,Parnassiana tymphiensis,2.1,Site/area management,""
+70624904,68450372,Parnassiana tymphrestos,1.1,Site/area protection,""
+70624951,68451909,Pholidoptera lucasi,2.1,Site/area management,""
+70625066,44698051,Rhacocleis crypta,2.1,Site/area management,""
+70625081,44698053,Rhacocleis derrai,2.1,Site/area management,""
+70625107,44698055,Rhacocleis distinguenda,2.1,Site/area management,""
+70625171,44698059,Rhacocleis ferdinandi,2.1,Site/area management,""
+70625171,44698059,Rhacocleis ferdinandi,1.2,Resource & habitat protection,""
+70625171,44698059,Rhacocleis ferdinandi,1.1,Site/area protection,""
+70625268,44698076,Rhacocleis lithoscirtetes,2.1,Site/area management,""
+70625294,44698104,Rhacocleis trilobata,2.1,Site/area management,""
+70627797,70613415,Dolichopoda calidnae,2.1,Site/area management,""
+87313606,86863400,Hymenalia elongata,4.3,Awareness & communications,""
+88000000,87999248,Prionotropis willemsorum,2.1,Site/area management,""
+103507242,68313777,Dolichopoda cassagnaui,1.2,Resource & habitat protection,""
+103507242,68313777,Dolichopoda cassagnaui,1.1,Site/area protection,""
+103507546,70613726,Dolichopoda kalithea,2.1,Site/area management,""
+103508315,68314976,Dolichopoda thasosensis,2.1,Site/area management,""
+103508315,68314976,Dolichopoda thasosensis,1.1,Site/area protection,""
+103508875,17046307,Dolichopoda gasparoi,1.1,Site/area protection,""
+103509603,17181907,Poecilimon athos,2.1,Site/area management,""
+140015452,16084372,Oropodisma erymanthosi,2.1,Site/area management,""
+138710298,60307,Boyeria cretensis,2.3,Habitat & natural process restoration,
+138710298,60307,Boyeria cretensis,2.1,Site/area management,
+138710298,60307,Boyeria cretensis,5.4.3,Sub-national level,
+138710298,60307,Boyeria cretensis,5.4.2,National level,
+138710298,60307,Boyeria cretensis,5.1.3,Sub-national level,
+138710298,60307,Boyeria cretensis,5.1.2,National level,
+138710298,60307,Boyeria cretensis,5.1.1,International level,
+138710298,60307,Boyeria cretensis,4.3,Awareness & communications,
+138710298,60307,Boyeria cretensis,1.1,Site/area protection,
+138884087,165504,Coenagrion intermedium,2.3,Habitat & natural process restoration,
+138884087,165504,Coenagrion intermedium,2.1,Site/area management,
+138884087,165504,Coenagrion intermedium,5.4.3,Sub-national level,
+138884087,165504,Coenagrion intermedium,5.4.2,National level,
+138884087,165504,Coenagrion intermedium,5.4.1,International level,
+138884087,165504,Coenagrion intermedium,5.1.3,Sub-national level,
+138884087,165504,Coenagrion intermedium,5.1.2,National level,
+138884087,165504,Coenagrion intermedium,5.1.1,International level,
+138884087,165504,Coenagrion intermedium,4.3,Awareness & communications,
+138884087,165504,Coenagrion intermedium,1.1,Site/area protection,
+140514673,59706,Cordulegaster helladica,2.1,Site/area management,
+140514673,59706,Cordulegaster helladica,5.4.3,Sub-national level,
+140514673,59706,Cordulegaster helladica,5.4.2,National level,
+140514673,59706,Cordulegaster helladica,5.4.1,International level,
+140514673,59706,Cordulegaster helladica,5.1.3,Sub-national level,
+140514673,59706,Cordulegaster helladica,5.1.2,National level,
+140514673,59706,Cordulegaster helladica,5.1.1,International level,
+140514673,59706,Cordulegaster helladica,4.3,Awareness & communications,
+140514673,59706,Cordulegaster helladica,1.1,Site/area protection,
+176825250,17046338,Orchamus kaltenbachi,2.1,Site/area management,""
+177253381,157580,Triplax emgei,2.1,Site/area management,
+188013205,63226,Cordulegaster helladica ssp. buchholzi,1.1,Site/area protection,
+188013205,63226,Cordulegaster helladica ssp. buchholzi,4.3,Awareness & communications,
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.1.1,International level,
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.1.2,National level,
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.1.3,Sub-national level,
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.4.1,International level,
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.4.2,National level,
+188013205,63226,Cordulegaster helladica ssp. buchholzi,5.4.3,Sub-national level,
+188013205,63226,Cordulegaster helladica ssp. buchholzi,2.1,Site/area management,
+188016479,165533,Cordulegaster helladica ssp. helladica,1.1,Site/area protection,
+188016479,165533,Cordulegaster helladica ssp. helladica,4.3,Awareness & communications,
+188016479,165533,Cordulegaster helladica ssp. helladica,5.1.1,International level,
+188016479,165533,Cordulegaster helladica ssp. helladica,5.1.2,National level,
+188016479,165533,Cordulegaster helladica ssp. helladica,5.1.3,Sub-national level,
+188016479,165533,Cordulegaster helladica ssp. helladica,5.4.1,International level,
+188016479,165533,Cordulegaster helladica ssp. helladica,5.4.2,National level,
+188016479,165533,Cordulegaster helladica ssp. helladica,5.4.3,Sub-national level,
+188016479,165533,Cordulegaster helladica ssp. helladica,2.1,Site/area management,
+188016479,165533,Cordulegaster helladica ssp. helladica,2.3,Habitat & natural process restoration,
+188019481,63227,Cordulegaster helladica ssp. kastalia,1.1,Site/area protection,
+188019481,63227,Cordulegaster helladica ssp. kastalia,4.3,Awareness & communications,
+188019481,63227,Cordulegaster helladica ssp. kastalia,5.1.1,International level,
+188019481,63227,Cordulegaster helladica ssp. kastalia,5.1.2,National level,
+188019481,63227,Cordulegaster helladica ssp. kastalia,5.4.1,International level,
+188019481,63227,Cordulegaster helladica ssp. kastalia,5.4.2,National level,
+188019481,63227,Cordulegaster helladica ssp. kastalia,5.4.3,Sub-national level,
+188019481,63227,Cordulegaster helladica ssp. kastalia,2.1,Site/area management,
+149163467,149163465,Katara connexa,1.2,Resource & habitat protection,""
+149163467,149163465,Katara connexa,5.1.3,Sub-national level,""
+149163467,149163465,Katara connexa,5.1.2,National level,""
+149163467,149163465,Katara connexa,4.3,Awareness & communications,""
+149163467,149163465,Katara connexa,1.1,Site/area protection,""
+149164125,149164123,Cheilosia katara,5.1.2,National level,""
+149164125,149164123,Cheilosia katara,4.3,Awareness & communications,""
+149164125,149164123,Cheilosia katara,2.1,Site/area management,""
+149165034,149165032,Merodon peloponnesius,4.3,Awareness & communications,""
+149165034,149165032,Merodon peloponnesius,1.1,Site/area protection,""
+149165102,149165099,Merodon nisi,1.2,Resource & habitat protection,""
+149165102,149165099,Merodon nisi,5.1.2,National level,""
+149165102,149165099,Merodon nisi,4.3,Awareness & communications,""
+149165102,149165099,Merodon nisi,1.1,Site/area protection,""
+149165216,149165213,Merodon naxius,1.2,Resource & habitat protection,""
+149165216,149165213,Merodon naxius,5.1.2,National level,""
+149165216,149165213,Merodon naxius,4.3,Awareness & communications,""
+149165216,149165213,Merodon naxius,1.1,Site/area protection,""
+149165324,149165322,Merodon megavidus,1.2,Resource & habitat protection,""
+149165324,149165322,Merodon megavidus,5.1.2,National level,""
+149165324,149165322,Merodon megavidus,4.3,Awareness & communications,""
+149165324,149165322,Merodon megavidus,1.1,Site/area protection,""
+149165632,149165628,Brachyopa minima,1.2,Resource & habitat protection,""
+149165632,149165628,Brachyopa minima,1.1,Site/area protection,""
+149165632,149165628,Brachyopa minima,2.3,Habitat & natural process restoration,""
+149167059,149167049,Eumerus rubrum,1.2,Resource & habitat protection,""
+149167059,149167049,Eumerus rubrum,5.1.2,National level,""
+149167059,149167049,Eumerus rubrum,1.1,Site/area protection,""
+149167142,149167140,Eumerus minotaurus,1.2,Resource & habitat protection,""
+149167142,149167140,Eumerus minotaurus,1.1,Site/area protection,""
+149167758,149167756,Merodon erymanthius,2.1,Site/area management,""
+149167758,149167756,Merodon erymanthius,5.2,Policies and regulations,""
+149167758,149167756,Merodon erymanthius,1.2,Resource & habitat protection,""
+149167758,149167756,Merodon erymanthius,4.3,Awareness & communications,""
+149167960,149167955,Merodon andriotes,2.1,Site/area management,""
+149167960,149167955,Merodon andriotes,5.2,Policies and regulations,""
+149167960,149167955,Merodon andriotes,1.2,Resource & habitat protection,""
+149167960,149167955,Merodon andriotes,5.1.2,National level,""
+149167960,149167955,Merodon andriotes,4.3,Awareness & communications,""
+149167960,149167955,Merodon andriotes,1.1,Site/area protection,""
+149168283,149168281,Merodon caerulescens,2.3,Habitat & natural process restoration,""
+149168283,149168281,Merodon caerulescens,2.1,Site/area management,""
+149168283,149168281,Merodon caerulescens,5.2,Policies and regulations,""
+149168283,149168281,Merodon caerulescens,1.2,Resource & habitat protection,""
+149168283,149168281,Merodon caerulescens,5.1.2,National level,""
+149168283,149168281,Merodon caerulescens,4.3,Awareness & communications,""
+149168283,149168281,Merodon caerulescens,1.1,Site/area protection,""
+149170438,149170436,Eumerus karyates,1.2,Resource & habitat protection,""
+149170438,149170436,Eumerus karyates,5.1.2,National level,""
+149170438,149170436,Eumerus karyates,1.1,Site/area protection,""
+149171302,149171300,Brachyopa vernalis,1.1,Site/area protection,""
+149171302,149171300,Brachyopa vernalis,4.3,Awareness & communications,""
+149171302,149171300,Brachyopa vernalis,1.2,Resource & habitat protection,""
+149171302,149171300,Brachyopa vernalis,2.1,Site/area management,""
+172768416,172768413,Merodon confinium,1.1,Site/area protection,""
+172768416,172768413,Merodon confinium,4.3,Awareness & communications,""
+172768416,172768413,Merodon confinium,1.2,Resource & habitat protection,""
+172768523,172768520,Merodon spineus,1.1,Site/area protection,""
+172768523,172768520,Merodon spineus,4.3,Awareness & communications,""
+172768523,172768520,Merodon spineus,2.1,Site/area management,""
+179993092,175944745,Merodon medium,1.1,Site/area protection,""
+179993092,175944745,Merodon medium,4.3,Awareness & communications,""
+179993389,175944635,Merodon olympius,1.1,Site/area protection,""
+179993389,175944635,Merodon olympius,4.3,Awareness & communications,""
+179993389,175944635,Merodon olympius,5.1.2,National level,""
+179993389,175944635,Merodon olympius,5.2,Policies and regulations,""
+179993901,175922919,Merodon atricapillatus,1.1,Site/area protection,""
+179993901,175922919,Merodon atricapillatus,4.3,Awareness & communications,""
+179993901,175922919,Merodon atricapillatus,2.1,Site/area management,""
+179993994,175923879,Merodon rojoi,1.1,Site/area protection,""
+179993994,175923879,Merodon rojoi,4.3,Awareness & communications,""
+179993994,175923879,Merodon rojoi,2.1,Site/area management,""
+194174834,194174678,Paragus thracusi,5.1.2,National level,""
