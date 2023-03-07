@@ -110,7 +110,7 @@ iucn_color <- setNames(c("#FD0200","#FEFE08","#FFA706", "#008100"),
                        c("CR","VU","EN", "NT/LC"))
 
 paca_color <- setNames(c("brown1","#FEFE08","forestgreen"), 
-                       c("PT","LT","LNT"))
+                       c("PT","LT","PNT"))
 ```
 
 

@@ -234,7 +234,7 @@ endemic_species <- locations_grid %>%
     ungroup() %>%
     mutate(paca=if_else(potentially_CR==TRUE,"LT",
                         if_else(potentially_EN==TRUE,"LT",
-                                if_else(potentially_VU==TRUE,"PT","LNT")))) %>%
+                                if_else(potentially_VU==TRUE,"PT","PNT")))) %>%
     mutate(iucn=if_else(potentially_CR==TRUE,"CR",
                         if_else(potentially_EN==TRUE,"EN",
                                 if_else(potentially_VU==TRUE,"VU","NT/LC")))) %>%
