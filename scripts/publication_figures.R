@@ -84,12 +84,12 @@ crete_base <- ggplot() +
                         breaks = c(100, 800, 1500, 2400),
                         labels = c(100, 800, 1500, 2400))+
     geom_sf(natura_crete_land_sci,
-            mapping=aes(colour="Natura2000 SAC"),
+            mapping=aes(colour="Natura2000 HSD"),
             linewidth=0.4,
             alpha=1,
             fill=NA,
             show.legend=T) +
-    scale_colour_manual(values = c("Natura2000 SAC" = "#56B4E9"),
+    scale_colour_manual(values = c("Natura2000 HSD" = "#56B4E9"),
                         guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
                         name="")+
     new_scale_color()+
@@ -184,11 +184,11 @@ ggsave("../figures/Fig1-small.png",
 crete_hotspot <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
-            mapping=aes(fill="Natura2000 SAC"),
+            mapping=aes(fill="Natura2000 HSD"),
             alpha=1,
             colour="transparent",
             show.legend=T) +
-    scale_fill_manual(values = c("Natura2000 SAC" = "#56B4E9"),
+    scale_fill_manual(values = c("Natura2000 HSD" = "#56B4E9"),
                       guide = guide_legend(title=""))+
     new_scale_fill() +
     geom_sf(endemic_hotspots, mapping=aes(fill=n_species),
@@ -243,11 +243,11 @@ ggsave("../figures/Fig2a.png",
 crete_threat <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
-            mapping=aes(fill="Natura2000 SAC"),
+            mapping=aes(fill="Natura2000 HSD"),
             alpha=1,
             colour="transparent",
             show.legend=T) +
-    scale_fill_manual(values = c("Natura2000 SAC" = "#56B4E9"), 
+    scale_fill_manual(values = c("Natura2000 HSD" = "#56B4E9"), 
                       guide = guide_legend(title=""))+
     new_scale_fill() +
     geom_sf(threatspots_lt, mapping=aes(fill=pc_thrt),
@@ -323,10 +323,10 @@ table(species_10_natura$Order)
 crete_aoo <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
-            mapping=aes(fill="Natura2000 SAC"),
+            mapping=aes(fill="Natura2000 HSD"),
             colour="transparent",
             show.legend=T) +
-    scale_fill_manual(values = c("Natura2000 SAC" = "#56B4E9"),
+    scale_fill_manual(values = c("Natura2000 HSD" = "#56B4E9"),
                       guide = guide_legend(title = ""))+
     new_scale_fill() +
     geom_sf(species_10_natura_l, mapping=aes(fill=n_species),
@@ -390,7 +390,7 @@ crete_corine <- ggplot() +
             colour="transparent",
             show.legend=T) +
     geom_sf(natura_crete_land_sci,
-            mapping=aes(color="Natura2000 SAC"),
+            mapping=aes(color="Natura2000 HSD"),
             linewidth=0.6,
             fill=NA,
             alpha=1,
@@ -410,9 +410,9 @@ crete_corine <- ggplot() +
                                  "Agricultural areas"="#E69F00",
                                  "Forest and semi natural areas" = "#009E73",
                                  "Water bodies" = "#0072B2",
-                                 "Natura2000 SAC"=NA),
+                                 "Natura2000 HSD"=NA),
                       guide = "legend") +
-    scale_colour_manual(values = c("Natura2000 SAC" = "#56B4E9"),
+    scale_colour_manual(values = c("Natura2000 HSD" = "#56B4E9"),
                         guide = "legend") +
     guides(fill = guide_legend(override.aes = list(color = "transparent", alpha=1) ),
            colour = guide_legend(override.aes = list(alpha=1, fill="transparent") ) )+
@@ -491,7 +491,7 @@ aoo_dist <- endemic_species %>%
     pivot_longer(cols=c(aoo,eoo,n_locations)) %>%
     dplyr::select(subspeciesname, Order, name, value) %>%
     filter(value>0) %>%
-    mutate(Order=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths", Order))
+    mutate(Order=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", Order))
 
 
 fig3a <- ggplot() +
@@ -519,9 +519,10 @@ fig3a <- ggplot() +
                        name="Quantity")+
     theme_bw()+
     theme(panel.grid = element_blank(),
-          axis.text.x = element_text(angle = 90, hjust = 0),
+          axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
           axis.text = element_text(size=13), 
           axis.title.x=element_blank(),
+          axis.title.y=element_text(face="bold", size=13),
           legend.position = c(0.88, 0.1))
 
 ggsave("../figures/fig3a.png", 
@@ -555,8 +556,8 @@ threatspots_o <- locations_grid %>%
 heatmaps_threatspots <- heatmaps(threatspots_o) 
 
 heatmap_sort <- heatmaps_threatspots[[1]] %>%
-    mutate(from=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths", from)) %>%
-    mutate(to=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths",to))
+    mutate(from=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", from)) %>%
+    mutate(to=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)",to))
 
 
 order_cell_long <- heatmap_sort %>%
@@ -601,8 +602,11 @@ fig3b <- ggplot()+
             panel.border=element_blank(),
             panel.grid.major = element_blank(),
             panel.grid.minor=element_blank(),
+            axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
+            axis.text.y = element_text(face="bold"),
             axis.text = element_text(size=13), 
-            axis.text.x = element_text(angle = 90, hjust = 0),
+            axis.title.x=element_blank(),
+            axis.title.y=element_text(face="bold", size=13),
             legend.position = c(.90, .83),
             legend.title=element_text(size=9))
 
@@ -679,10 +683,10 @@ redlist_threatened$source <- factor(redlist_threatened$source,
                                              "world_redlist"))
 
 redlist_threatened$label <- factor(redlist_threatened$source,
-                                    labels=c("Cretan endemics Red List",
-                                             "Greek endemic Red List",
-                                             "Europe endemic Red List",
-                                             "World Red List"))
+                                    labels=c("Cretan endemics IUCN",
+                                             "Greek endemic IUCN",
+                                             "Europe endemic IUCN",
+                                             "World Red IUCN"))
 
 figS1 <- ggplot() +
     geom_col(redlist_threatened,
@@ -699,19 +703,21 @@ figS1 <- ggplot() +
                       labels=c("Not Threatened","Threatened")) +
     theme_bw()+
     ylab("# of taxa") + 
-    facet_grid(label ~ ., scales="free", labeller=label_value)+
+    facet_grid(label ~ ., scales="free")+
     scale_y_continuous(breaks = scales::pretty_breaks(6), limits = c(0, NA))+
     theme(panel.grid = element_blank(),
-          axis.text.x = element_text(angle = 90, hjust = 0),
+          axis.text.x = element_text(face="bold",size = 13,angle = 90, hjust = 0),
           axis.text = element_text(size=13), 
+          axis.title.y=element_text(face="bold",size = 13),
           axis.title.x=element_blank(),
           legend.position = c(0.90, 0.9),
+          strip.text = element_text(size = 12, face="bold"),
           legend.title=element_blank())
 
 ggsave("../figures/figS1.png", 
        plot=figS1, 
        device="png", 
-       height = 20, 
+       height = 23, 
        width = 23, 
        units="cm")
 
@@ -721,7 +727,7 @@ order_aoo <- endemic_species %>%
     mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
     group_by(Order) %>%
     mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative)) %>%
-    mutate(Order=gsub("Lepidoptera", "Lepidoptera\nGeometrid moths", Order))
+    mutate(Order=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", Order))
 
 figS2 <- ggplot() +
     geom_boxplot(order_aoo,
@@ -731,14 +737,15 @@ figS2 <- ggplot() +
                mapping=aes(x=Order, y=aoo_natura_relative)) + 
     geom_vline(xintercept = seq(0.5, length(order_aoo$Order), by = 1), 
                color="gray", 
-               size=.5, 
+               linewidth=.5, 
                alpha=.5) + # # set vertical lines between x groups
-    labs(y="Proportiokn of AOO overlap with N2K")+
+    labs(y="Proportion of AOO overlap with N2K")+
     theme_bw()+
     theme(panel.grid = element_blank(),
-          axis.text.x = element_text(angle = 90, hjust = 0),
+          axis.text.x = element_text(angle = 90, hjust = 0,face="bold"),
           axis.text = element_text(size=13), 
           axis.title.x=element_blank(),
+          axis.title.y=element_text(face="bold"),
           legend.position = c(0.85, 0.1))
 
 ggsave("../figures/figS2.png", 
