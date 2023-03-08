@@ -590,7 +590,7 @@ fig3b <- ggplot()+
                           guide = guide_legend(override.aes = list(alpha=1),
                                                 ticks = FALSE,
                                                 label = TRUE,
-                                                title="# threatspots",
+                                                title="# threat-spots",
                                                 title.vjust = 0.8,
                                                 order = 1))+
       scale_y_discrete(limits = rev)+
