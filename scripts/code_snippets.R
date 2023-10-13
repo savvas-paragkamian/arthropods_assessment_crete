@@ -192,12 +192,15 @@ eoo_results <- EOO.computing(locations_inland_df,export_shp=T, write_shp=T)
 eoo_results <- read_delim("EOO.results.csv", delim=",", col_names=T)
 
 ########################## Raster spatial data #############################
+wgs84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
 #### World Clim , Bioclim Variables
 ###
 world_clim_directory <- "/Users/talos/Documents/spatial_data/world_clim/wc2.1_30s_bio/"
 output_directory <- "/Users/talos/Documents/programming_projects/arthropoda_crete_nhmc/data/world_clim_crete/"
 
 world_clim_files <- list.files(world_clim_directory)
+
+crete_bbox_polygon <- st_as_sf(st_as_sfc(st_bbox(crete_shp)))
 
 for (f in world_clim_files) {
     
@@ -207,10 +210,11 @@ for (f in world_clim_files) {
         path_raster <- paste0(world_clim_directory,f,sep="")
         raster_tmp <- raster(path_raster)
         
-        crete_raster <- crop(raster_tmp, crete_shp)
+        crete_raster <- raster::crop(raster_tmp, crete_bbox_polygon)
+        crete_raster <- projectRaster(crete_raster, crs = wgs84, method = "ngb")
         output_raster <- paste0(output_directory, "crete_",f,sep="")
         print(output_raster)
-        writeRaster(crete_raster, filename=output_raster)
+        writeRaster(crete_raster, filename=output_raster,overwrite=TRUE)
 
         rm(path_raster,raster_tmp,crete_raster,output_raster)
 
@@ -221,12 +225,13 @@ for (f in world_clim_files) {
     }
 }
 
+
+
 # Digital Elevation Model
 dem <- raster("~/Documents/spatial_data/EAA-DEM-EUD_CP-DEMS_5500015000-AA/EUD_CP-DEMS_5500015000-AA.tif")
 
 crete_epsg <- st_transform(crete_shp, crs="EPSG:3035")
 dem_crete <- crop(dem, crete_epsg)
-wgs84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
 dem_crete <- projectRaster(dem_crete, crs = wgs84, method = "ngb")
 writeRaster(dem_crete, filename="../data/dem_crete/dem_crete.tif")
 # ConR package returned an error with the exclution of the land
