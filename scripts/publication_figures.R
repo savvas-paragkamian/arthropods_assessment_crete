@@ -755,3 +755,229 @@ ggsave("../figures/figS2.png",
        width = 23, 
        units="cm")
 
+## Supplementary Figure box plot
+
+locations_grid_d <- locations_grid %>% group_by(CELLCOD) %>% summarise(n_species=n()) %>% mutate(group="all")
+
+cell_boxplot <- ggplot()+
+    geom_boxplot(locations_grid_d,
+                 mapping=aes(y=n_species),
+                 outlier.size = 0) +
+#    geom_point(locations_grid_d, 
+#               mapping=aes(x=group, y=n_species),
+#               position=position_jitterdodge(0.3)) + 
+#    scale_y_continuous(trans='log10', name = "Value",
+#                     breaks=trans_breaks('log10', function(x) 10^x),
+#                     labels=trans_format('log10', math_format(10^.x))) + 
+#    scale_shape_manual(values = c(2,1,3),
+#                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
+#                       name="Quantity")+
+#    scale_color_manual(values=c("gray15", "gray45", "gray65"),
+#                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
+#                       name="Quantity")+
+#    scale_fill_manual(values=c("gray15", "gray45", "gray65"),
+#                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
+#                       name="Quantity")+
+    theme_bw()+
+    theme(panel.grid = element_blank(),
+          axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
+          axis.text = element_text(size=13), 
+          axis.title.x=element_blank(),
+          axis.title.y=element_text(face="bold", size=13),
+          legend.position = c(0.88, 0.1))
+
+ggsave("../figures/fig_cell_boxplot.png", 
+       plot=cell_boxplot, 
+       device="png", 
+       height = 20, 
+       width = 23, 
+       units="cm")
+
+locations_grid_d <- locations_grid_d %>% filter(n_species>60)
+crete_cells <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(fill="Natura2000 HSD"),
+            alpha=1,
+            colour="transparent",
+            show.legend=T) +
+    scale_fill_manual(values = c("Natura2000 HSD" = "#56B4E9"),
+                      guide = guide_legend(title=""))+
+    new_scale_fill() +
+    geom_sf(locations_grid_d, mapping=aes(fill=n_species),
+            alpha=0.6,
+            colour="transparent",
+            na.rm = FALSE,
+            show.legend=T) +
+    scale_fill_gradient(low="#F0E442",
+                        high="#D55E00",
+                        guide = "colourbar")+
+    geom_sf(crete_peaks,
+            mapping=aes(),
+            colour="#D55E00",
+            size=1,
+            alpha=1,
+            show.legend=F) +
+    geom_label(data = crete_peaks, 
+               mapping=aes(x = X, y = Y, label = name),
+               size = 1.5,
+               nudge_x = 0.05,
+               nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
+    coord_sf(crs="WGS84") +
+    guides(fill = guide_colourbar(ticks = FALSE,
+                                  label = TRUE,
+                                  title="# endemics",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank())
+
+ggsave("../figures/crete_cells.png", 
+       plot=crete_cells, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+
+##################### create CELLCOD metadata #######################
+threatspots_df <- st_drop_geometry(threatspots) %>% mutate(threatspot="threatspot") 
+endemic_hotspots_df <- st_drop_geometry(endemic_hotspots) %>%
+    mutate(hotspot="hotspot") %>%
+    dplyr::select(-n_species)
+
+locations_grid_d <- locations_grid %>% distinct(CELLCOD,geometry)
+eea_10_crete_metadata <- st_intersection(locations_grid_d, clc_crete_shp)
+
+eea_10_crete_metadata_d <- eea_10_crete_metadata %>%
+    mutate(area = st_area(geometry)) %>%
+    group_by(LABEL2, CELLCOD) %>%
+    summarise(area_sum=sum(area), .groups="keep") %>%
+    st_drop_geometry() %>% units::drop_units() %>%
+    pivot_wider(id_cols="CELLCOD", names_from="LABEL2", values_from="area_sum", values_fill=0)
+
+grid_stats <- locations_grid %>%
+    st_drop_geometry() %>%
+    group_by(CELLCOD) %>%
+    summarise(n_species=n()) %>%
+    left_join(endemic_hotspots_df, by=c("CELLCOD"="CELLCODE")) %>%
+    left_join(threatspots_df) %>%
+    left_join(eea_10_crete_metadata_d)
+
+grid_stats_t <-grid_stats %>%
+    mutate_at(c('hotspot','threatspot'), ~replace_na(.,"no")) %>%
+    mutate_at(c('LT','PT','pc_thrt'), ~replace_na(.,0))
+
+
+
+
+eea_10_crete_metadata_plot <- ggplot() + 
+    geom_sf(eea_10_crete_metadata, mapping=aes(fill=LABEL1),show.legend =T)
+
+ggsave("../figures/aa_plot_test.png", 
+       plot=eea_10_crete_metadata_plot, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+############################### ecology of grids ####################
+
+locations_grid_community <- locations_grid %>% st_drop_geometry() %>%
+    mutate(occurrence=1) %>%
+    pivot_wider(id_cols=CELLCOD, names_from=sbspcsn, values_from=occurrence, values_fill=0) %>%
+    column_to_rownames("CELLCOD")
+
+cell_n_species <- as.data.frame(rowSums(locations_grid_community)) %>% rownames_to_column("CELLCOD")
+colnames(cell_n_species) <- c("CELLCOD", "n_total_species")
+
+bray <- vegdist(locations_grid_community,
+                method="bray")
+jac <- vegdist(locations_grid_community,
+                method="jaccard")
+plot(hclust(bray))
+# nmds because is nonparametrics requires more data
+nmds <- vegan::metaMDS(locations_grid_community,
+                       k=2,
+                       distance = "jaccard",
+                       trymax=100)
+stressplot(nmds)
+plot(nmds)
+library(ape)
+pcoa_c <- pcoa(bray)
+pcoa_v <- as.matrix(pcoa_c$vectors)
+pcoa_t <- as.data.frame(pcoa_v) %>% dplyr::select(Axis.1,Axis.2,Axis.3)
+pcoa_t$CELLCOD <- rownames(pcoa_v) 
+
+
+grid_stats_t_v <- grid_stats_t %>%
+    left_join(pcoa_t) %>%
+    left_join(cell_n_species)
+
+
+pcoa_plot <- ggplot()+
+    geom_point(grid_stats_t_v,
+               mapping=aes(x=Axis.1, y=Axis.2, color=as.factor(hotspot), size=as.numeric(n_species)))+
+    coord_equal() +
+    theme_bw()
+
+ggsave("../figures/pcoa_plot.png", 
+       plot=pcoa_plot, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+
+####### modeling
+###
+
+grid_stats_long <- grid_stats_t_v %>%
+    pivot_longer(!c(CELLCOD,hotspot,threatspot),
+                 names_to="variables",
+                 values_to="values")
+
+grid_stats_long_label2 <- grid_stats_long %>% 
+    filter(variables %in% unique(clc_crete_shp$LABEL2))
+
+grid_label2_boxplot <- ggplot()+
+    geom_boxplot(grid_stats_long_label2,
+                 mapping=aes(x= variables, y=values),
+                 outlier.size = 0) +
+#    geom_point(locations_grid_d, 
+#               mapping=aes(x=group, y=n_species),
+#               position=position_jitterdodge(0.3)) + 
+    scale_y_continuous(name = "Area in m2",
+                       labels = scales::comma) + 
+#    scale_shape_manual(values = c(2,1,3),
+#                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
+#                       name="Quantity")+
+#    scale_color_manual(values=c("gray15", "gray45", "gray65"),
+#                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
+#                       name="Quantity")+
+#    scale_fill_manual(values=c("gray15", "gray45", "gray65"),
+#                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
+#                       name="Quantity")+
+    theme_bw()+
+    theme(panel.grid = element_blank(),
+          axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
+          axis.text = element_text(size=10), 
+          axis.title.x=element_blank(),
+          axis.title.y=element_text(face="bold", size=13),
+          legend.position = c(0.88, 0.1)) +
+    facet_wrap(~ hotspot)
+
+ggsave("../figures/fig_grid_labal2_boxplot.png", 
+       plot=grid_label2_boxplot, 
+       device="png", 
+       height = 20, 
+       width = 23, 
+       units="cm")
+
