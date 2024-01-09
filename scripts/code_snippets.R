@@ -14,7 +14,7 @@ library(readxl)
 library(rredlist)
 library(taxize)
 library(sf)
-library(raster)
+library(terra)
 library(units)
 #library(rgdal)
 library(ConR)
@@ -208,13 +208,13 @@ for (f in world_clim_files) {
         
         #read_raster
         path_raster <- paste0(world_clim_directory,f,sep="")
-        raster_tmp <- raster(path_raster)
+        raster_tmp <- rast(path_raster)
         
-        crete_raster <- raster::crop(raster_tmp, crete_bbox_polygon)
-        crete_raster <- projectRaster(crete_raster, crs = wgs84, method = "ngb")
+        crete_raster <- terra::crop(raster_tmp, crete_bbox_polygon)
+        crete_raster <- terra::project(crete_raster, wgs84)
         output_raster <- paste0(output_directory, "crete_",f,sep="")
         print(output_raster)
-        writeRaster(crete_raster, filename=output_raster,overwrite=TRUE)
+        terra::writeRaster(crete_raster, output_raster,overwrite=TRUE)
 
         rm(path_raster,raster_tmp,crete_raster,output_raster)
 
@@ -228,7 +228,7 @@ for (f in world_clim_files) {
 
 
 # Digital Elevation Model
-dem <- raster("~/Documents/spatial_data/EAA-DEM-EUD_CP-DEMS_5500015000-AA/EUD_CP-DEMS_5500015000-AA.tif")
+dem <- rast("~/Documents/spatial_data/EAA-DEM-EUD_CP-DEMS_5500015000-AA/EUD_CP-DEMS_5500015000-AA.tif")
 
 crete_epsg <- st_transform(crete_shp, crs="EPSG:3035")
 dem_crete <- crop(dem, crete_epsg)
@@ -307,3 +307,35 @@ map_greece_plot_grid_endemic <- ggplot()+
     
 ggsave("map_greece_plot_grid_endemic.png", plot = map_greece_plot_grid_endemic, device = "png",width = 30,height = 30,units = "cm",dpi = 300 ,path = "../plots/")
 
+
+################ Global land use change hildap_GLOB-v1.0 #####################
+
+wgs84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+path_hilda <- "/Users/talos/Documents/spatial_data/hildap_vGLOB-1.0_geotiff_wgs84/hildap_GLOB-v1.0_lulc-states/"
+output_directory <- "/Users/talos/Documents/spatial_data/hildap_vGLOB-1.0_geotiff_wgs84/hildap_GLOB-v1.0_lulc-states_crete/"
+hilda_files <- list.files(path_hilda)
+
+crete_bbox_polygon <- st_as_sf(st_as_sfc(st_bbox(crete_shp)))
+
+for (f in hilda_files) {
+    
+    if (grepl("*.tif$", f)) {
+        
+        #read_raster
+        path_raster <- paste0(path_hilda,f,sep="")
+        raster_tmp <- rast(path_raster)
+        
+        crete_raster <- terra::crop(raster_tmp, crete_bbox_polygon)
+        crete_raster <- terra::project(crete_raster, wgs84)
+        output_raster <- paste0(output_directory, "crete_",f,sep="")
+        print(output_raster)
+        terra::writeRaster(crete_raster, output_raster,overwrite=TRUE)
+
+        rm(path_raster,raster_tmp,crete_raster,output_raster)
+
+    }else{
+        
+        print(f, " not a tif")
+        next
+    }
+}
