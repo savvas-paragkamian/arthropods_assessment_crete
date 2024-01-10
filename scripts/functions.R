@@ -8,6 +8,15 @@
 ## Author: Savvas Paragkamian
 ##
 ## Date Created: 2022-12-22
+create_dir <- function(dir_name){
+
+    if (!dir.exists(dir_name)){
+    dir.create(dir_name)
+    print(paste0(dir_name, " directory created", sep=""))
+    } else{
+        print(paste0(dir_name, " directory exists", sep=""))
+    }
+}
 
 area_overlap_combination <- function(master_sf, list_sf, clabels){
 

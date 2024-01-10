@@ -18,8 +18,8 @@
 library(tidyverse)
 library(sf)
 library(terra)
-library(tidyterra)
 library(units)
+library(ggpubr)
 source("functions.R")
 
 # Load data
@@ -176,9 +176,10 @@ ggsave("../plots/crete_hilda_1994.png", plot=g_hilda_1994, device="png")
 hilda_path <- "../data/hildap_GLOB-v1.0_lulc-states_crete/"
 hilda_files <- list.files(hilda_path)
 
-for (i in hilda_files){
+#create_dir("../plots/hilda_crete")
 
-    i=100
+for (i in 1:length(hilda_files)){
+    print(i)
     filename <- hilda_files[i]
     
     raster_file <- rast(paste0(hilda_path,hilda_files[i],sep=""))
@@ -206,13 +207,13 @@ for (i in hilda_files){
               legend.text=element_text(size=8),
               legend.title=element_blank())
     
-    ggsave(paste0("../plots/crete_",raster_name,"_map.png",sep=""),
-           plot=g_hilda_map,
-           height = 10, 
-           width = 20,
-           dpi = 300, 
-           units="cm",
-           device="png")
+#    ggsave(paste0("../plots/hilda_crete/crete_",raster_name,"_map.png",sep=""),
+#           plot=g_hilda_map,
+#           height = 10, 
+#           width = 20,
+#           dpi = 300, 
+#           units="cm",
+#           device="png")
     
     hilda_sum <- zonal(cellSize(raster_file), raster_file, "sum") |> 
         mutate(area_m2=units::set_units(area,m^2)) |>
@@ -225,21 +226,46 @@ for (i in hilda_files){
     
     hilda_sum_g <- ggplot()+
         geom_col(hilda_sum,
-                 mapping= aes(x=area,
-                              y="",
+                 mapping= aes(y=as.numeric(area),
+                              x="",
                               fill = hilda_name),
-                 position = position_stack()) +
+                 position = position_stack(),
+                 width = 0.2) +
         scale_fill_manual(values=hilda_cat_v) +
+        scale_x_discrete(expand = expansion(add=c(0,0)))+
+        scale_y_continuous(breaks=seq(0,9000,1000),
+                           limits=c(0,8900),
+                           expand = c(0,0))+
+        ylab("Area sq. km") +
+        xlab("") +
         theme_bw()+
         theme(legend.position='none',
-            panel.border = element_blank(),
-            panel.grid.major = element_blank(), #remove major gridlines
-            panel.grid.minor = element_blank()) #remove minor gridlines
+              axis.ticks.x=element_blank(),
+              panel.border = element_blank(),
+              panel.grid.major = element_blank(), #remove major gridlines
+              panel.grid.minor = element_blank()) #remove minor gridlines
     
-    ggsave(paste0("../plots/crete_",raster_name,"_bar.png",sep=""),
-           plot=hilda_sum_g,
+#    ggsave(paste0("../plots/hilda_crete/crete_",raster_name,"_bar.png",sep=""),
+#           plot=hilda_sum_g,
+#           height = 10, 
+#           width = 10,
+#           dpi = 300, 
+#           units="cm",
+#           device="png")
+
+    fig_hilda <- ggarrange(g_hilda_map,hilda_sum_g,
+              labels = c("A", "B"),
+              ncol = 2,
+              nrow = 1,
+              widths = c(0.85,0.15),
+              font.label=list(color="black",size=15),
+              common.legend = TRUE,
+              legend="bottom") + bgcolor("white")
+    
+    ggsave(paste0("../plots/hilda_crete/crete_",raster_name,".png",sep=""), 
+           plot=fig_hilda, 
            height = 10, 
-           width = 20,
+           width = 25,
            dpi = 300, 
            units="cm",
            device="png")
