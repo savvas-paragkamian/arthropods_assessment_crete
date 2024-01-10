@@ -310,7 +310,6 @@ ggsave("map_greece_plot_grid_endemic.png", plot = map_greece_plot_grid_endemic, 
 
 ################ Global land use change hildap_GLOB-v1.0 #####################
 
-wgs84 = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
 path_hilda <- "/Users/talos/Documents/spatial_data/hildap_vGLOB-1.0_geotiff_wgs84/hildap_GLOB-v1.0_lulc-states/"
 output_directory <- "/Users/talos/Documents/spatial_data/hildap_vGLOB-1.0_geotiff_wgs84/hildap_GLOB-v1.0_lulc-states_crete/"
 hilda_files <- list.files(path_hilda)
@@ -326,9 +325,7 @@ for (f in hilda_files) {
         raster_tmp <- rast(path_raster)
         
         crete_raster <- terra::crop(raster_tmp, crete_bbox_polygon)
-        crete_raster <- terra::project(crete_raster, wgs84)
         output_raster <- paste0(output_directory, "crete_",f,sep="")
-        print(output_raster)
         terra::writeRaster(crete_raster, output_raster,overwrite=TRUE)
 
         rm(path_raster,raster_tmp,crete_raster,output_raster)
