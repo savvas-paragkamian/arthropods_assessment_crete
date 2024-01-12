@@ -157,20 +157,6 @@ hilda_cat_v <- c("urban"="#000000",
                  "sparse/no vegetation"="#999999",
                  "water"="#1370A1")
 
-hilda_1994 <- rast("../data/hildap_GLOB-v1.0_lulc-states_crete/crete_hilda_plus_1994_states_GLOB-v1-0_wgs84-nn.tif")
-hilda_1994_df <- terra::as.data.frame(hilda_1994, xy=TRUE, cells=TRUE) |>
-    filter(`hilda_plus_1994_states_GLOB-v1-0_wgs84-nn`>0) |>
-    mutate(hilda_1994=as.character(`hilda_plus_1994_states_GLOB-v1-0_wgs84-nn`)) |>
-    left_join(hilda_cat, by=c("hilda_1994"="hilda_id"))
-
-hilda_1994_df$hilda_name <- factor(hilda_1994_df$hilda_name, levels=as.character(unique(sort(hilda_1994_df$hilda_name))))
-
-g_hilda_1994 <- g_base +
-    geom_raster(hilda_1994_df,
-                mapping=aes(x=x, y=y, fill=hilda_name)) +
-    scale_fill_manual(values=hilda_cat_v)
-
-ggsave("../plots/crete_hilda_1994.png", plot=g_hilda_1994, device="png")
 
 #### Hilda analysis
 hilda_path <- "../data/hildap_GLOB-v1.0_lulc-states_crete/"
@@ -270,6 +256,53 @@ for (i in 1:length(hilda_files)){
            units="cm",
            device="png")
 }
+
+## HILDA difference of land use, 1999-2019
+##
+hilda_1999 <- rast("../data/hildap_GLOB-v1.0_lulc-states_crete/crete_hilda_plus_1999_states_GLOB-v1-0_wgs84-nn.tif")
+locations_shp$hilda_1999 <- terra::extract(hilda_1999, locations_shp, cellnumbers=F)
+
+hilda_2019 <- rast("../data/hildap_GLOB-v1.0_lulc-states_crete/crete_hilda_plus_2019_states_GLOB-v1-0_wgs84-nn.tif")
+locations_shp$hilda_2019 <- terra::extract(hilda_2019, locations_shp, cellnumbers=F)
+
+## what is the transitions?
+## the raster objects contain numeric values. The smart thing about this dataset
+## is that I can use the numbers that are to show the category and create new
+## numbers of the difference to symbolise the transitions.
+## The oldest raster is the origin so transform it to the closest decade,
+## 11 = 10, 22 = 20 etc. This can be accomplished with
+## Modulus operation 44 - 44 %% 10
+## Transform the latest raster to the units. so 44 = 4,
+## Modulus operation 44 %% 10
+
+hilda_1999_o <- app(hilda_1999, fun=function(i) i-i %% 10)
+hilda_2019_o <- app(hilda_2019, fun=function(i) i %% 10)
+
+hilda_1999_2019 <- hilda_1999_o + hilda_2019_o
+
+locations_shp$hilda_transition <- terra::extract(hilda_1999_2019, locations_shp, cellnumbers=F)
+
+hilda_1999_2019_df <- terra::as.data.frame(hilda_1999_2019, xy=TRUE, cells=TRUE) |>
+    filter(lyr.1>0) |>
+    mutate(hilda_transition=as.character(lyr.1))
+#    left_join(hilda_cat, by=c("hilda_id"="hilda_id"))
+
+hilda_sum <- zonal(cellSize(hilda_1999_2019), hilda_1999_2019, "sum") |> 
+    mutate(area_m2=units::set_units(area,m^2)) |>
+    mutate(area=units::set_units(area/10^6, km^2)) 
+
+hilda_sum <- hilda_sum |>
+    mutate(hilda_id_transition=as.character(hilda_sum[,1])) |>
+    filter(hilda_sum[,1]>0)
+
+write_delim(hilda_sum, "../results/hilda_1999_2019.tsv", delim="\t")
+#hilda_1999_df$hilda_name <- factor(hilda_1999_df$hilda_name, levels=as.character(unique(sort(hilda_1999_df$hilda_name))))
+
+
+## Natura2000 diffence of land use, 1999-2019
+##
+
+
 # Export of locations shapefile with all the spatial metadata
 st_write(locations_shp,
          "../results/locations_spatial/locations_spatial.shp",
