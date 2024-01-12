@@ -40,6 +40,8 @@ arthropods_occurrences <- arthropods_kriti_endemic %>%
     filter(latD<38, logD<30) %>%
     na.omit()
 
+arthropods_occurrences |> dplyr::select(-c(families,Order)) |> write_delim("../results/arthropods_occurrences.tsv",delim="\t")
+
 out_of_crete <- arthropods_kriti_endemic[which(!(arthropods_kriti_endemic$subspeciesname %in% arthropods_occurrences$subspeciesname)),]
 
 locations_shp <- st_as_sf(arthropods_occurrences,
