@@ -79,6 +79,11 @@ and the [Digital Elevation Models](https://www.eea.europa.eu/data-and-maps/data/
 CORINE Land Cover data are used to identify human pressures on the Natura2000
 regions and on the hotspots of the arthropod endemic taxa.
 
+The land use change in Crete is estimated with the HILDA+ dataset available
+[here](https://ceos.org/gst/HILDAplus.html).
+
+![Crete land use change 1998-2018 from the HILDA+ dataset](hilda_crete_1998_2018.gif)
+
 ## Assessment
 
 Full IUCN assessments of the species are downloaded from the [IUCN web resource](https://www.iucnredlist.org).
