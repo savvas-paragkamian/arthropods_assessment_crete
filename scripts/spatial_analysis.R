@@ -3,13 +3,13 @@
 ## Script name: spacial_analysis.R
 ##
 ## Purpose of script: Spatial analysis using data from the Copernicus system
-## for elevation, habitats and corine land change. Main output is an
-## enriched locations file which is exported for further analysis.
+## for elevation, habitats and corine land cover and land use change.
+## Main output is an enriched locations file which is exported for further analysis.
 ##
 ## How to run:
 ## Rscript spacial_analysis.R
 ##
-## Execution time: 
+## Execution time: 4 minutes
 ##
 ## Author: Savvas Paragkamian
 ##
@@ -18,7 +18,6 @@
 library(tidyverse)
 library(sf)
 library(terra)
-library(quadtree)
 library(units)
 library(ggpubr)
 source("functions.R")
@@ -163,7 +162,8 @@ hilda_cat_v <- c("urban"="#000000",
 #### Hilda analysis
 hilda_path <- "../data/hildap_GLOB-v1.0_lulc-states_crete/"
 hilda_id_names <- read_delim(paste0(hilda_path, "hilda_transitions_names.tsv", sep=""), delim="\t")
-hilda_files <- list.files(hilda_path)
+hilda_all <- list.files(hilda_path)
+hilda_files <- hilda_all[grepl("*.tif", hilda_all)] 
 
 #create_dir("../plots/hilda_crete")
 
@@ -320,19 +320,16 @@ natura_crete_land_hilda_sum <- zonal(cellSize(natura_crete_land_hilda), natura_c
     left_join(hilda_id_names, by=c("hilda_id_transition"="hilda_id"))
 
 write_delim(natura_crete_land_hilda_sum, "../results/natura_crete_land_hilda_sum.tsv", delim="\t")
-# Adaptive resolution with quadtree
-
-
 
 # Export of locations shapefile with all the spatial metadata
 st_write(locations_shp,
          "../results/locations_spatial/locations_spatial.shp",
          layer_options = "ENCODING=UTF-8", 
          delete_layer=T, 
-         delete_dsn = TRUE)
+         delete_dsn = TRUE,
          append=TRUE)
 
-st_write(locations_shp,"../results/locations_spatial/locations_spatial.csv")
-
-
+st_write(locations_shp,
+         "../results/locations_spatial/locations_spatial.csv",
+         append=TRUE)
 
