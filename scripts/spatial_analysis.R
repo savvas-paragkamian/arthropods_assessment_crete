@@ -18,6 +18,7 @@
 library(tidyverse)
 library(sf)
 library(terra)
+library(quadtree)
 library(units)
 library(ggpubr)
 source("functions.R")
@@ -25,6 +26,9 @@ source("functions.R")
 # Load data
 g_base <- g_base()
 locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
+locations_shp <- locations_shp |>
+    mutate(long = unlist(map(locations_shp$geometry,1)),
+           lat = unlist(map(locations_shp$geometry,2)))
 crete_shp <- sf::st_read("../data/crete/crete.shp")
 endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t")
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
@@ -46,6 +50,19 @@ natura_crete_land_sci <- natura_crete_land |> filter(SITETYPE=="B")
 
 locations_shp <- st_join(locations_shp, natura_crete_land_sci, left=T)
 ## CORINE Land Cover nomenclature
+colors_clc_label2_v <- c("Artificial, non-agricultural vegetated areas"="#000000",
+"Open spaces with little or no vegetation"="#A77300",
+"Pastures"="#98BA6A",
+"Mine, dump and construction sites"="#46B0D3",
+"Forests"="#07A07D",
+"Scrub and/or herbaceous vegetation associations"="#98CA53",
+"Urban fabric" ="#A4A869",
+"Inland waters"="#1370A1",
+"Permanent crops"="#AE6120",
+"Industrial, commercial and transport units"="#D06C5B",
+"Heterogeneous agricultural areas"="#BE81A3",
+"Arable land"="#999999")
+
 clc_crete_shp <- st_read("../data/clc_crete_shp/clc_crete_shp.shp")
 
 clc_crete_colors <- clc_crete_shp |> 
@@ -110,11 +127,10 @@ for (i in seq_along(clc_crete_summary)){
 
 dem_crete <- rast("../data/dem_crete/dem_crete.tif")
 
-locations_shp$elevation <- terra::extract(dem_crete, locations_shp, cellnumbers=F)
+dem_crete_locations <- terra::extract(dem_crete, locations_shp, cellnumbers=F, ID=F)
+locations_shp$elevation <- dem_crete_locations$dem_crete
 
-dem_crete_pixel <- as(dem_crete, "SpatialPixelsDataFrame")
-dem_crete_df <- as.data.frame(dem_crete_pixel)
-
+dem_crete_df <- terra::as.data.frame(dem_crete, xy=TRUE, cells=TRUE)
 
 g_dem <- g_base +
     geom_raster(dem_crete_df, mapping=aes(x=x, y=y, fill=dem_crete))+
@@ -125,30 +141,16 @@ ggsave("../plots/crete_dem.png", plot=g_dem, device="png")
 
 g_ele <- g_base + 
     geom_sf(locations_shp, mapping=aes(color=elevation), size=0.1, alpha=0.2) +
-    scale_color_gradientn(colours = terrain.colors(10)) 
+    scale_color_gradientn(colours = terrain.colors(5)) 
 
 ggsave("../plots/crete_occurrences_dem.png", plot=g_ele, device="png")
 
 
 ## Crete land use change
-colors_clc_label2_v <- c("Artificial, non-agricultural vegetated areas"="#000000",
-"Open spaces with little or no vegetation"="#A77300",
-"Pastures"="#98BA6A",
-"Mine, dump and construction sites"="#46B0D3",
-"Forests"="#07A07D",
-"Scrub and/or herbaceous vegetation associations"="#98CA53",
-"Urban fabric" ="#A4A869",
-"Inland waters"="#1370A1",
-"Permanent crops"="#AE6120",
-"Industrial, commercial and transport units"="#D06C5B",
-"Heterogeneous agricultural areas"="#BE81A3",
-"Arable land"="#999999")
-
 hilda_cat <- data.frame(hilda_id = c("11","22","33","44","55","66","77"),
                         hilda_name=c("urban","cropland","pasture/rangeland",
                                      "forest", "unmanaged grass/shrubland","sparse/no vegetation", "water"),
                         hilda_hex=c("#000000","#AE6120","#98BA6A","#07A07D","#BE81A3","#999999", "#1370A1"))
-
 hilda_cat_v <- c("urban"="#000000",
                  "cropland"="#AE6120",
                  "pasture/rangeland"="#98BA6A",
@@ -160,6 +162,7 @@ hilda_cat_v <- c("urban"="#000000",
 
 #### Hilda analysis
 hilda_path <- "../data/hildap_GLOB-v1.0_lulc-states_crete/"
+hilda_id_names <- read_delim(paste0(hilda_path, "hilda_transitions_names.tsv", sep=""), delim="\t")
 hilda_files <- list.files(hilda_path)
 
 #create_dir("../plots/hilda_crete")
@@ -259,12 +262,14 @@ for (i in 1:length(hilda_files)){
 
 ## HILDA difference of land use, 1999-2019
 ##
-hilda_1999 <- rast("../data/hildap_GLOB-v1.0_lulc-states_crete/crete_hilda_plus_1999_states_GLOB-v1-0_wgs84-nn.tif")
-locations_shp$hilda_1999 <- terra::extract(hilda_1999, locations_shp, cellnumbers=F)
+hilda_1998 <- rast("../data/hildap_GLOB-v1.0_lulc-states_crete/crete_hilda_plus_1998_states_GLOB-v1-0_wgs84-nn.tif")
 
-hilda_2019 <- rast("../data/hildap_GLOB-v1.0_lulc-states_crete/crete_hilda_plus_2019_states_GLOB-v1-0_wgs84-nn.tif")
-locations_shp$hilda_2019 <- terra::extract(hilda_2019, locations_shp, cellnumbers=F)
+hilda_1998_locations <- terra::extract(hilda_1998, locations_shp, cellnumbers=F, ID=F)
+colnames(hilda_1998_locations) <- c("hilda_1998")
 
+hilda_2018 <- rast("../data/hildap_GLOB-v1.0_lulc-states_crete/crete_hilda_plus_2018_states_GLOB-v1-0_wgs84-nn.tif")
+hilda_2018_locations <- terra::extract(hilda_2018, locations_shp, cellnumbers=F, ID=F)
+colnames(hilda_2018_locations) <- c("hilda_2018")
 ## what is the transitions?
 ## the raster objects contain numeric values. The smart thing about this dataset
 ## is that I can use the numbers that are to show the category and create new
@@ -275,32 +280,48 @@ locations_shp$hilda_2019 <- terra::extract(hilda_2019, locations_shp, cellnumber
 ## Transform the latest raster to the units. so 44 = 4,
 ## Modulus operation 44 %% 10
 
-hilda_1999_o <- app(hilda_1999, fun=function(i) i-i %% 10)
-hilda_2019_o <- app(hilda_2019, fun=function(i) i %% 10)
+hilda_1998_o <- app(hilda_1998, fun=function(i) i-i %% 10)
+hilda_2018_o <- app(hilda_2018, fun=function(i) i %% 10)
 
-hilda_1999_2019 <- hilda_1999_o + hilda_2019_o
+hilda_1998_2018 <- hilda_1998_o + hilda_2018_o
 
-locations_shp$hilda_transition <- terra::extract(hilda_1999_2019, locations_shp, cellnumbers=F)
+hilda_transition <- terra::extract(hilda_1998_2018, locations_shp, cellnumbers=F, ID=F)
+colnames(hilda_transition) <- c("hilda_transition")
 
-hilda_1999_2019_df <- terra::as.data.frame(hilda_1999_2019, xy=TRUE, cells=TRUE) |>
+hilda_all <- cbind(hilda_transition,hilda_2018_locations,hilda_1998_locations)
+
+locations_shp <- cbind(locations_shp, hilda_all)
+
+### Hilda summary
+hilda_1998_2018_df <- terra::as.data.frame(hilda_1998_2018, xy=TRUE, cells=TRUE) |>
     filter(lyr.1>0) |>
     mutate(hilda_transition=as.character(lyr.1))
 #    left_join(hilda_cat, by=c("hilda_id"="hilda_id"))
 
-hilda_sum <- zonal(cellSize(hilda_1999_2019), hilda_1999_2019, "sum") |> 
+hilda_sum <- zonal(cellSize(hilda_1998_2018), hilda_1998_2018, "sum") |> 
     mutate(area_m2=units::set_units(area,m^2)) |>
     mutate(area=units::set_units(area/10^6, km^2)) 
 
 hilda_sum <- hilda_sum |>
-    mutate(hilda_id_transition=as.character(hilda_sum[,1])) |>
-    filter(hilda_sum[,1]>0)
+    mutate(hilda_id_transition=hilda_sum[,1]) |>
+    filter(hilda_sum[,1]>0) |> 
+    left_join(hilda_id_names, by=c("hilda_id_transition"="hilda_id"))
 
-write_delim(hilda_sum, "../results/hilda_1999_2019.tsv", delim="\t")
-#hilda_1999_df$hilda_name <- factor(hilda_1999_df$hilda_name, levels=as.character(unique(sort(hilda_1999_df$hilda_name))))
+write_delim(hilda_sum, "../results/hilda_1998_2018.tsv", delim="\t")
 
+## Natura2000 diffence of land use, 1998-2018
+natura_crete_land_hilda <- terra::mask(hilda_1998_2018, natura_crete_land)
 
-## Natura2000 diffence of land use, 1999-2019
-##
+natura_crete_land_hilda_sum <- zonal(cellSize(natura_crete_land_hilda), natura_crete_land_hilda, "sum") |> 
+    mutate(area_m2=units::set_units(area,m^2)) |>
+    mutate(area=units::set_units(area/10^6, km^2)) |>
+    rename(hilda_id_transition=lyr.1) |>
+    filter(hilda_id_transition>0) |>
+    left_join(hilda_id_names, by=c("hilda_id_transition"="hilda_id"))
+
+write_delim(natura_crete_land_hilda_sum, "../results/natura_crete_land_hilda_sum.tsv", delim="\t")
+# Adaptive resolution with quadtree
+
 
 
 # Export of locations shapefile with all the spatial metadata
