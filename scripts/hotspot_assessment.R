@@ -19,25 +19,128 @@ library(tidyverse)
 library(sf)
 library(terra)
 library(quadtree)
+library(WEGE) 
 library(units)
 source("functions.R")
 
 # Load data
+g_base <- g_base()
+grid_1km_o <- st_read("../data/Greece_shapefile/gr_1km.shp")
+
+locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
+locations_shp <- locations_shp |>
+    mutate(long = unlist(map(locations_shp$geometry,1)),
+           lat = unlist(map(locations_shp$geometry,2)))
+locations_eea <- locations_shp |> st_transform(crs(grid_1km_o)) 
 endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t") 
+locations_spatial <- st_read("../results/locations_spatial/locations_spatial.shp")
+crete_shp <- sf::st_read("../data/crete/crete.shp")
+crete_eea <- crete_shp |> st_transform(crs(grid_1km_o))
+crete_1km <- st_read("../data/Greece_shapefile/gr_1km.shp") |>
+    st_transform(., crs="WGS84") |>
+    st_join(crete_shp, left=F)
+
+grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") 
+grid_10km_w <- grid_10km |> st_transform(., crs="WGS84")
+
+crete_grid10 <- st_join(grid_10km, crete_shp, left=F)
 
 locations_grid <- st_read("../results/locations_grid/locations_grid.shp")
 
+### 1km over 
+
+
+crete_bbox_polygon <- st_as_sf(st_as_sfc(st_bbox(crete_eea)))
+crete_grid1 <- st_crop(grid_1km, crete_bbox_polygon)
+
+crete_manual_grid <- rast(ncol=311,
+          nrow=152,
+          xmin=5523000,
+          xmax=5834000,
+          ymin=1400000,
+          ymax=1552000,
+          crs=crs(grid_1km_o))
+
+values(crete_manual_grid) <- 0
+crete_manual_grid_w <- terra::project(crete_manual_grid, "WGS84")
+values(crete_manual_grid_w) <- 0
+
+#crete_grid <- st_make_grid(crete_grid1,cellsize = 1000) |>
+#    st_transform(crs="WGS84") 
+locations_inland <- st_join(locations_shp, crete_shp, left=F)
+locations_inland <- locations_inland |> distinct(sbspcsn,long, lat, geometry)
+
+locations_eea <- locations_eea |> distinct(sbspcsn,long, lat, geometry) 
+grid_occ_count <- rasterize(locations_eea, crete_manual_grid, fun='count')
+#locations_inland$grid_occ <- extract(crete_manual_grid_w, locations_inland,cellnumbers=F, ID=F)
+
+raster_df <- terra::as.data.frame(grid_occ_count, xy=TRUE, cells=TRUE)
+
+#locations_1_grid <- st_join(crete_1km, locations_inland, left=TRUE) %>%
+#    dplyr::select(CELLCODE, sbspcsn) %>% 
+#    distinct() %>%
+#    na.omit() %>%
+#    group_by(CELLCODE) %>%
+#    mutate(n_occurrences=n()) %>% 
+#    ungroup()
+
+
+crete_sampling_1_grid <- g_base +
+    geom_tile(raster_df,mapping=aes(x=x, y=y, fill=count)) +
+    geom_sf(locations_inland, mapping=aes(color="red"), size=0.02)+
+#    geom_sf(locations_1_grid, mapping=aes(fill=n_occurrences), alpha=0.3,size=0.02)+
+    ggtitle("1km rasters")
+
+ggsave("../plots/crete_sampling_1_grid.png",
+       plot=crete_sampling_1_grid,
+       width=30,
+       height=30,
+       dpi=300,
+       unit="cm",
+       device="png")
+
 # Adaptive resolution with quadtree
+qt <- quadtree(grid_occ_count,
+               min_cell_length=2000,
+               split_threshold=20,
+               split_method = "range")
 
-grid_10km <- terra::vect("../data/Greece_shapefile/gr_10km.shp") 
-grid_10km_wgs <- terra::project(grid_10km,crete_shp)
 
-### keep grid that overlaps with Crete
-crete_bbox_polygon <- st_as_sf(st_as_sfc(st_bbox(crete_shp)))
-crete_grid10 <- terra::crop(grid_10km_wgs, crete_bbox_polygon)
+png(file="../plots/quadtree_crete.png",
+    width = 40,
+    height = 20,
+    res=300,
+    units = "cm",
+    bg="white")
+plot(qt,
+     border_lwd = .01,
+     xlim = c(5523000, 5834000),
+     ylim = c(1420000,1548000),
+     main = "expand raster dimensions")
+plot(crete_eea, add=T, color="")
+#plot(grid_occ_count, add=T)
+plot(crete_grid10,border_lwd = .02, add=T, color="")
+dev.off()
 
-g_base + 
-    geom_sf(sf::st_as_sf(crete_grid10), mapping=aes())
+
+
+# WEGE
+###
+#endemic_species
+
+species <- letters[1:26]
+range_list <- list()
+for (i in seq_along(species)){
+    temp  <-  Polygon(cbind(runif(4,1,50),runif(4,1,50)))
+    range_list[[i]] <- Polygons(list(temp), ID = c(species[i]))}
+input <- st_as_sf(SpatialPolygons(range_list))
+categories <- c('LC','NT','VU','EN','CR')
+input$binomial <- species
+input$category <- sample(size = nrow(input),x = categories,replace = TRUE)
+target_area <- Polygon(cbind(runif(4,1,50),runif(4,1,50)))
+target_area <- Polygons(list(target_area), ID = 'Target area')
+target_area <- st_as_sf(SpatialPolygons(list(target_area)))
+get_wege(target_area,input,species = 'binomial',category = 'category')
 
 ## Endemic hotspots
 
