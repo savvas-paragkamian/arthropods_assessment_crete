@@ -25,7 +25,7 @@ requires the following packages:
 
 -- tidyverse
 -- sf
--- raster
+-- terra
 -- ConR
 
 # for visualisation
@@ -44,8 +44,9 @@ requires the following packages:
 First the script `species_assessment.R` is executed. It is the main
 script that calculates the IUCN AOO and EOO and PACA metrics. Then the 
 `spatial_analysis.R` script finds all the overlaps between the species metrics
-and spatial data. These 2 scripts generate all the 
-results. Subsequently, the `species_assessment_statistict.Rmd`
+and spatial data. Based on the results of hese 2 scripts the script 
+`hotspot_assessment.R` generates the hotspots and threatspots of the
+endemic arthropods of Crete. Subsequently, the `species_assessment_statistict.Rmd`
 R markdown file generates a report based on these results. The `functions.R` is a 
 collection of functions required in all scripts.
 
@@ -70,7 +71,7 @@ from the literature and from Natural History Museaum of Crete specimens.
 ## Spatial data
 
 The protected areas of [Natura2000 SCI](https://www.eea.europa.eu/data-and-maps/data/natura-14)
-(habitats directive) and [Wildlife refugees](https://www.protectedplanet.net/en/thematic-areas/wdpa?tab=WDPA)
+(habitats directive) and [Wildlife refuges](https://www.protectedplanet.net/en/thematic-areas/wdpa?tab=WDPA)
 are used in this analysis. 
 
 Spatial data from Copernicus system are also used. These are the 
