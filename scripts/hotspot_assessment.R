@@ -43,7 +43,7 @@ crete_1km <- st_read("../data/Greece_shapefile/gr_1km.shp") |>
 grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") 
 grid_10km_w <- grid_10km |> st_transform(., crs="WGS84")
 
-crete_grid10 <- st_join(grid_10km, crete_shp, left=F)
+crete_grid10 <- st_join(grid_10km_w, crete_shp, left=F)
 
 locations_grid <- st_read("../results/locations_grid/locations_grid.shp")
 
@@ -125,24 +125,63 @@ dev.off()
 
 
 # WEGE
-###
-#endemic_species
+## first create the input sf object of the species
 
-species <- letters[1:26]
+occurrences <- locations_inland |>
+    rename(subspeciesname=sbspcsn)
+
+species <- occurrences %>% st_drop_geometry() %>%
+    dplyr::select(subspeciesname) %>% 
+    distinct() %>%
+    pull()
+
 range_list <- list()
-for (i in seq_along(species)){
-    temp  <-  Polygon(cbind(runif(4,1,50),runif(4,1,50)))
-    range_list[[i]] <- Polygons(list(temp), ID = c(species[i]))}
-input <- st_as_sf(SpatialPolygons(range_list))
-categories <- c('LC','NT','VU','EN','CR')
-input$binomial <- species
-input$category <- sample(size = nrow(input),x = categories,replace = TRUE)
-target_area <- Polygon(cbind(runif(4,1,50),runif(4,1,50)))
-target_area <- Polygons(list(target_area), ID = 'Target area')
-target_area <- st_as_sf(SpatialPolygons(list(target_area)))
-get_wege(target_area,input,species = 'binomial',category = 'category')
 
-## Endemic hotspots
+for(s in seq_along(species)){
+
+    n_occurrences <- occurrences %>%
+        filter(subspeciesname==species[s])
+
+    if (nrow(n_occurrences) > 2) {
+
+        species_convex <- st_convex_hull(st_union(n_occurrences))
+        range_list[[s]] <- st_sf(geom=species_convex, ID=species[s])
+    }
+}
+
+input <- do.call(rbind, range_list)
+
+input <- input |>
+    mutate(binomial=ID) |>
+    left_join(endemic_species, by=c("ID"="subspeciesname")) |>
+    mutate(category=gsub("NT/","",iucn))
+
+## for each cellgrid calculate the WEGE
+
+cellcodes <- crete_grid10[[1]]
+wege_10km <- list()
+for (c in seq_along(cellcodes)){
+
+    target_area <- crete_grid10 |> filter(CELLCODE==cellcodes[c])
+    temp <- get_wege(target_area,input,species = 'binomial',category = 'category')
+    if (!is.null(temp)){
+        wege_10km[[c]] <- st_sf(st_as_sfc(target_area), wege=temp, CELLCODE=c)
+    }
+}
+
+wege_results <- do.call(rbind, wege_10km)
+
+wege_results_f <- wege_results |> filter(wege>0.2)
+
+wege_map <- g_base +
+    geom_sf(wege_results_f, mapping=aes(fill=wege)) + 
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA) +
+    theme_bw()
+
+ggsave("../plots/wege_map.png", plot=wege_map, device="png")
+
+
+# Endemic hotspots
 
 endemic_hotspots <- locations_grid %>%
     group_by(CELLCODE) %>%
