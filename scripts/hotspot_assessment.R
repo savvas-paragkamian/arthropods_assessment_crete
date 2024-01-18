@@ -16,6 +16,7 @@
 ## Date Created: 2024-01-14
 
 library(tidyverse)
+library(ggnewscale)
 library(sf)
 library(terra)
 library(quadtree)
@@ -24,35 +25,46 @@ library(units)
 source("functions.R")
 
 # Load data
+## Base
 g_base <- g_base()
-grid_1km_o <- st_read("../data/Greece_shapefile/gr_1km.shp")
+endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t") 
+crete_shp <- sf::st_read("../data/crete/crete.shp")
 
+## Locations
 locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
 locations_shp <- locations_shp |>
     mutate(long = unlist(map(locations_shp$geometry,1)),
            lat = unlist(map(locations_shp$geometry,2)))
-locations_eea <- locations_shp |> st_transform(crs(grid_1km_o)) 
-endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t") 
+locations_grid <- st_read("../results/locations_grid/locations_grid.shp")
 locations_spatial <- st_read("../results/locations_spatial/locations_spatial.shp")
-crete_shp <- sf::st_read("../data/crete/crete.shp")
+
+## grid 1km
+grid_1km_o <- st_read("../data/Greece_shapefile/gr_1km.shp")
 crete_eea <- crete_shp |> st_transform(crs(grid_1km_o))
 crete_1km <- st_read("../data/Greece_shapefile/gr_1km.shp") |>
     st_transform(., crs="WGS84") |>
     st_join(crete_shp, left=F)
+#crete_bbox_polygon <- st_as_sf(st_as_sfc(st_bbox(crete_eea)))
+#crete_grid1 <- st_crop(grid_1km, crete_bbox_polygon)
 
+## grid 10km
 grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") 
 grid_10km_w <- grid_10km |> st_transform(., crs="WGS84")
-
 crete_grid10 <- st_join(grid_10km_w, crete_shp, left=F)
 
-locations_grid <- st_read("../results/locations_grid/locations_grid.shp")
+### locations modifications
+locations_inland <- st_join(locations_shp, crete_shp, left=F)
+locations_inland <- locations_inland |> distinct(sbspcsn,long, lat, geometry)
+locations_eea <- locations_inland |> st_transform(crs(grid_1km_o)) 
+### 1km over shp
 
-### 1km over 
+locations_1_grid <- st_join(crete_1km, locations_inland, left=F) |>
+    dplyr::distinct(CELLCODE, sbspcsn, geometry) |>
+    group_by(sbspcsn) |>
+    summarise(geometry=st_union(geometry)) |>
+    mutate(area=st_area(geometry))
 
-
-crete_bbox_polygon <- st_as_sf(st_as_sfc(st_bbox(crete_eea)))
-crete_grid1 <- st_crop(grid_1km, crete_bbox_polygon)
-
+### 1km over raster
 crete_manual_grid <- rast(ncol=311,
           nrow=152,
           xmin=5523000,
@@ -65,10 +77,6 @@ values(crete_manual_grid) <- 0
 crete_manual_grid_w <- terra::project(crete_manual_grid, "WGS84")
 values(crete_manual_grid_w) <- 0
 
-#crete_grid <- st_make_grid(crete_grid1,cellsize = 1000) |>
-#    st_transform(crs="WGS84") 
-locations_inland <- st_join(locations_shp, crete_shp, left=F)
-locations_inland <- locations_inland |> distinct(sbspcsn,long, lat, geometry)
 
 locations_eea <- locations_eea |> distinct(sbspcsn,long, lat, geometry) 
 grid_occ_count <- rasterize(locations_eea, crete_manual_grid, fun='count')
@@ -76,36 +84,19 @@ grid_occ_count <- rasterize(locations_eea, crete_manual_grid, fun='count')
 
 raster_df <- terra::as.data.frame(grid_occ_count, xy=TRUE, cells=TRUE)
 
-#locations_1_grid <- st_join(crete_1km, locations_inland, left=TRUE) %>%
-#    dplyr::select(CELLCODE, sbspcsn) %>% 
-#    distinct() %>%
-#    na.omit() %>%
-#    group_by(CELLCODE) %>%
-#    mutate(n_occurrences=n()) %>% 
-#    ungroup()
-
-
-crete_sampling_1_grid <- g_base +
-    geom_tile(raster_df,mapping=aes(x=x, y=y, fill=count)) +
-    geom_sf(locations_inland, mapping=aes(color="red"), size=0.02)+
-#    geom_sf(locations_1_grid, mapping=aes(fill=n_occurrences), alpha=0.3,size=0.02)+
-    ggtitle("1km rasters")
-
-ggsave("../plots/crete_sampling_1_grid.png",
-       plot=crete_sampling_1_grid,
-       width=30,
-       height=30,
-       dpi=300,
-       unit="cm",
-       device="png")
 
 # Adaptive resolution with quadtree
 qt <- quadtree(grid_occ_count,
-               min_cell_length=2000,
-               split_threshold=20,
+               min_cell_length=4000,
+               max_cell_length=10000,
+               split_threshold=10,
+               split_if_any_na=T,
                split_method = "range")
 
+qt_rast <- as_raster(qt)
+qt_rast_df <- terra::as.data.frame(qt_rast, xy=TRUE, cells=TRUE) 
 
+### plots
 png(file="../plots/quadtree_crete.png",
     width = 40,
     height = 20,
@@ -123,62 +114,90 @@ plot(crete_grid10,border_lwd = .02, add=T, color="")
 dev.off()
 
 
+crete_sampling_1_grid <- ggplot() +
+    geom_sf(crete_eea, mapping=aes()) +
+    geom_tile(qt_rast_df, mapping=aes(x=x, y=y, fill=lyr.1)) + 
+    scale_fill_gradientn(colours = c("black", "grey80")) +
+    labs(fill = "Quadtrees")+
+    new_scale_fill() +
+    geom_tile(raster_df,mapping=aes(x=x, y=y, fill=count)) +
+    scale_fill_gradientn(colours = c("purple", "orange")) +
+    labs(fill = "1km grid",y = "Group") +
+    geom_sf(locations_eea, mapping=aes(),color="red", size=0.01)+
+#    geom_sf(locations_1_grid, mapping=aes(fill=n_occurrences), alpha=0.3,size=0.02)+
+    ggtitle("Adaptive resolution")+
+    theme_bw()
+
+ggsave("../plots/crete_sampling_1_grid.png",
+       plot=crete_sampling_1_grid,
+       width=30,
+       height=30,
+       dpi=300,
+       unit="cm",
+       device="png")
 
 # WEGE
 ## first create the input sf object of the species
 
-occurrences <- locations_inland |>
-    rename(subspeciesname=sbspcsn)
+# WEGE with EOO
+#occurrences <- locations_inland |>
+#    rename(subspeciesname=sbspcsn)
 
-species <- occurrences %>% st_drop_geometry() %>%
-    dplyr::select(subspeciesname) %>% 
-    distinct() %>%
-    pull()
+#species <- occurrences %>% st_drop_geometry() %>%
+#    dplyr::select(subspeciesname) %>% 
+#    distinct() %>%
+#    pull()
+#
+### range as EOO, extend of occurrence
+#range_list <- list()
+#for(s in seq_along(species)){
+#
+#    n_occurrences <- occurrences %>%
+#        filter(subspeciesname==species[s])
+#
+#    if (nrow(n_occurrences) > 2) {
+#
+#        species_convex <- st_convex_hull(st_union(n_occurrences))
+#        range_list[[s]] <- st_sf(geom=species_convex, ID=species[s])
+#    }
+#}
+#
+#input <- do.call(rbind, range_list)
 
-range_list <- list()
+occurrences <- locations_1_grid |>
+    rename(subspeciesname=sbspcsn)|>
+    mutate(ID=subspeciesname)
 
-for(s in seq_along(species)){
-
-    n_occurrences <- occurrences %>%
-        filter(subspeciesname==species[s])
-
-    if (nrow(n_occurrences) > 2) {
-
-        species_convex <- st_convex_hull(st_union(n_occurrences))
-        range_list[[s]] <- st_sf(geom=species_convex, ID=species[s])
-    }
-}
-
-input <- do.call(rbind, range_list)
-
-input <- input |>
+input <- occurrences |>
     mutate(binomial=ID) |>
     left_join(endemic_species, by=c("ID"="subspeciesname")) |>
     mutate(category=gsub("NT/","",iucn))
 
 ## for each cellgrid calculate the WEGE
 
-cellcodes <- crete_grid10[[1]]
-wege_10km <- list()
+grid_for_wege <- crete_grid10
+
+cellcodes <- grid_for_wege[[1]]
+wege_l <- list()
 for (c in seq_along(cellcodes)){
 
     target_area <- crete_grid10 |> filter(CELLCODE==cellcodes[c])
     temp <- get_wege(target_area,input,species = 'binomial',category = 'category')
     if (!is.null(temp)){
-        wege_10km[[c]] <- st_sf(st_as_sfc(target_area), wege=temp, CELLCODE=c)
+        wege_l[[c]] <- st_sf(st_as_sfc(target_area), wege=temp, CELLCODE=c)
     }
 }
 
-wege_results <- do.call(rbind, wege_10km)
+wege_results <- do.call(rbind, wege_l)
 
-wege_results_f <- wege_results |> filter(wege>0.2)
+wege_results_f <- wege_results |> filter(wege>3)
 
 wege_map <- g_base +
     geom_sf(wege_results_f, mapping=aes(fill=wege)) + 
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA) +
     theme_bw()
 
-ggsave("../plots/wege_map.png", plot=wege_map, device="png")
+ggsave("../plots/crete_wege_hotspots_map.png", plot=wege_map, device="png")
 
 
 # Endemic hotspots
