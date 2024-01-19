@@ -35,8 +35,23 @@ locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurren
 locations_shp <- locations_shp |>
     mutate(long = unlist(map(locations_shp$geometry,1)),
            lat = unlist(map(locations_shp$geometry,2)))
-locations_grid <- st_read("../results/locations_grid/locations_grid.shp")
+locations_grid <- st_read("../results/locations_grid/locations_grid.shp") |>
+    rename("CELLCODE"="CELLCOD") |>
+    rename("subspeciesname"="sbspcsn") |>
+    rename("families"="familis")
 locations_spatial <- st_read("../results/locations_spatial/locations_spatial.shp")
+
+## Natura2000
+
+natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
+wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
+
+wdpa_crete_wildlife <- wdpa_crete |> filter(DESIG_ENG=="Wildlife Refugee")
+natura_crete_land <- st_intersection(natura_crete, crete_shp)
+
+# split the SPA SCI
+
+natura_crete_land_sci <- natura_crete_land |> filter(SITETYPE=="B")
 
 ## grid 1km
 grid_1km_o <- st_read("../data/Greece_shapefile/gr_1km.shp")
@@ -89,14 +104,23 @@ raster_df <- terra::as.data.frame(grid_occ_count, xy=TRUE, cells=TRUE)
 qt <- quadtree(grid_occ_count,
                min_cell_length=4000,
                max_cell_length=10000,
-               split_threshold=10,
+               split_threshold=30,
                split_if_any_na=T,
                split_method = "range")
 
 qt_rast <- as_raster(qt)
 qt_rast_df <- terra::as.data.frame(qt_rast, xy=TRUE, cells=TRUE) 
+qt_sf <- st_as_sf(as.polygons(qt_rast, values=T, aggregate=F))
 
-### plots
+qt_sf_sp <- qt_sf |>
+    st_transform(crs(locations_inland)) |> 
+    st_join(locations_inland, left=F) |>
+    distinct(sbspcsn,geometry) |>
+    group_by(geometry) |>
+    mutate(n_species=n()) |>
+    left_join(endemic_species, by=c("sbspcsn"="subspeciesname"))
+
+### quadstrees plots
 png(file="../plots/quadtree_crete.png",
     width = 40,
     height = 20,
@@ -110,32 +134,140 @@ plot(qt,
      main = "expand raster dimensions")
 plot(crete_eea, add=T, color="")
 #plot(grid_occ_count, add=T)
-plot(crete_grid10,border_lwd = .02, add=T, color="")
+#plot(crete_grid10,border_lwd = .02, add=T, color="")
 dev.off()
 
 
-crete_sampling_1_grid <- ggplot() +
+crete_quads_sampling_grid <- ggplot() +
     geom_sf(crete_eea, mapping=aes()) +
     geom_tile(qt_rast_df, mapping=aes(x=x, y=y, fill=lyr.1)) + 
-    scale_fill_gradientn(colours = c("black", "grey80")) +
+    scale_fill_gradientn(colours = c("grey80", "#D55E00")) +
     labs(fill = "Quadtrees")+
     new_scale_fill() +
     geom_tile(raster_df,mapping=aes(x=x, y=y, fill=count)) +
-    scale_fill_gradientn(colours = c("purple", "orange")) +
+    scale_fill_gradientn(colours = c("grey70", "purple")) +
     labs(fill = "1km grid",y = "Group") +
     geom_sf(locations_eea, mapping=aes(),color="red", size=0.01)+
 #    geom_sf(locations_1_grid, mapping=aes(fill=n_occurrences), alpha=0.3,size=0.02)+
     ggtitle("Adaptive resolution")+
     theme_bw()
 
-ggsave("../plots/crete_sampling_1_grid.png",
-       plot=crete_sampling_1_grid,
+ggsave("../plots/crete_quads_sampling_grid.png",
+       plot=crete_quads_sampling_grid,
        width=30,
        height=30,
        dpi=300,
        unit="cm",
        device="png")
 
+### quads and biodiversity
+qt_sf_all <- qt_sf_sp |>
+    group_by(geometry) |>
+    summarise(n_species=n()) |>
+    mutate(Order="All")
+
+qt_sf_order <- qt_sf_sp |> 
+    group_by(geometry, Order) |> 
+    summarise(n_species=n(), .groups="keep")
+
+qt_sf_n_order <- qt_sf_sp |> 
+    distinct(geometry, Order) |> 
+    group_by(geometry) |> 
+    summarise(n_orders=n())
+
+crete_quads_endemics_map <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(qt_sf_all, mapping=aes(fill=n_species),
+            alpha=0.8,
+            colour="transparent",
+            na.rm = false,
+            show.legend=t) +
+    scale_fill_gradient(low="#f0e442",
+                        high="#d55e00",
+                        guide = "colourbar")+
+    coord_sf(crs="wgs84") +
+    guides(fill = guide_colourbar(ticks = false,
+                                  label = true,
+                                  title="# endemics",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank())
+
+ggsave("../plots/crete_quads_endemics_map.png", 
+       plot=crete_quads_endemics_map, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+crete_quads_endemics_orders_map <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(qt_sf_order, mapping=aes(fill=n_species),
+            alpha=0.8,
+            colour="transparent",
+            na.rm = FALSE,
+            show.legend=T) +
+    scale_fill_gradient(low="#F0E442",
+                        high="#D55E00",
+                        guide = "colourbar")+
+    coord_sf(crs="WGS84") +
+    guides(fill = guide_colourbar(ticks = FALSE,
+                                  label = TRUE,
+                                  title="# endemics",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank()) +
+    facet_grid(Order ~ .)
+
+ggsave("../plots/crete_quads_endemics_orders_map.png",
+       plot=crete_quads_endemics_orders_map, 
+       height = 60, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+crete_quads_orders_map <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(qt_sf_n_order, mapping=aes(fill=n_orders),
+            alpha=0.8,
+            colour="transparent",
+            na.rm = F,
+            show.legend=T) +
+    scale_fill_gradient(low="#f0e442",
+                        high="#d55e00",
+                        guide = "colourbar")+
+    coord_sf(crs="wgs84") +
+    guides(fill = guide_colourbar(ticks = F,
+                                  label = T,
+                                  title="# orders",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank())
+
+ggsave("../plots/crete_quads_orders_map.png", 
+       plot=crete_quads_orders_map, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
 # WEGE
 ## first create the input sf object of the species
 
@@ -345,7 +477,6 @@ sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
 threatspots_natura <- st_intersection(threatspots_lt, natura_crete_land_sci)
 sum(units::set_units(st_area(threatspots_lt),km^2))
 sum(units::set_units(st_area(threatspots_natura),km^2))
-
 
 ### The threatened species that have AOO < 10% overlap with Natura2000.
 
