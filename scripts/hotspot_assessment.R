@@ -92,7 +92,6 @@ values(crete_manual_grid) <- 0
 crete_manual_grid_w <- terra::project(crete_manual_grid, "WGS84")
 values(crete_manual_grid_w) <- 0
 
-
 locations_eea <- locations_eea |> distinct(sbspcsn,long, lat, geometry) 
 grid_occ_count <- rasterize(locations_eea, crete_manual_grid, fun='count')
 #locations_inland$grid_occ <- extract(crete_manual_grid_w, locations_inland,cellnumbers=F, ID=F)
@@ -132,9 +131,10 @@ plot(qt,
      xlim = c(5523000, 5834000),
      ylim = c(1420000,1548000),
      main = "expand raster dimensions")
-plot(crete_eea, add=T, color="")
-#plot(grid_occ_count, add=T)
-#plot(crete_grid10,border_lwd = .02, add=T, color="")
+plot(vect(grid_10km),
+     lwd = .05,
+     add=T)
+#plot(crete_eea, add=T, color="")
 dev.off()
 
 
@@ -177,17 +177,18 @@ qt_sf_n_order <- qt_sf_sp |>
 
 crete_quads_endemics_map <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(locations_grid, mapping=aes()) +
     geom_sf(qt_sf_all, mapping=aes(fill=n_species),
             alpha=0.8,
             colour="transparent",
-            na.rm = false,
-            show.legend=t) +
+            na.rm = F,
+            show.legend=F) +
     scale_fill_gradient(low="#f0e442",
                         high="#d55e00",
                         guide = "colourbar")+
     coord_sf(crs="wgs84") +
-    guides(fill = guide_colourbar(ticks = false,
-                                  label = true,
+    guides(fill = guide_colourbar(ticks = F,
+                                  label = T,
                                   title="# endemics",
                                   title.vjust = 0.8,
                                   order = 1))+
@@ -268,6 +269,19 @@ ggsave("../plots/crete_quads_orders_map.png",
        dpi = 600, 
        units="cm",
        device="png")
+
+
+## Locations grid and quads
+
+locations_grid_q <- locations_grid |> 
+    distinct(CELLCODE,geometry) |>
+    mutate(grid_area=units::set_units(st_area(geometry),km^2)) |>
+    st_intersection(qt_sf_all) |>
+    mutate(ovelap_area=units::set_units(st_area(geometry),km^2)) |>
+    group_by(CELLCODE) |> 
+    summarise(ovelap_area=sum(ovelap_area)) |>
+    filter(ovelap_area>50)
+
 # WEGE
 ## first create the input sf object of the species
 
@@ -351,6 +365,7 @@ endemic_hotspots_order <- locations_grid %>%
     group_by(Order) %>%
     mutate(quant90= quantile(n_species, 0.90)) %>%
     filter(n_species >= quant90)
+
 
 ## threatspots
 
@@ -470,7 +485,41 @@ ggsave("../plots/crete-hotspots-threatspots.png", plot=g_e_t, device="png")
 
 ### With natura
 
-endemic_hotspots_natura <- st_intersection(endemic_hotspots, natura_crete_land_sci)
+endemic_hotspots_natura <- st_intersection(endemic_hotspots, natura_crete_land_sci) |>
+    mutate(natura_area=units::set_units(st_area(geometry),km^2)) |>
+    group_by(CELLCODE) |>
+    summarise(natura_area=sum(natura_area)) |>
+    mutate(natura="yes")
+
+locations_grid_yes <- endemic_hotspots |>
+    distinct(CELLCODE,geometry) |>
+    left_join(st_drop_geometry(endemic_hotspots_natura), by=c("CELLCODE"="CELLCODE")) |>
+    mutate(classification="hotspot") 
+
+
+locations_grid_natura <- locations_grid |>
+    distinct(CELLCODE,geometry) |>
+    filter(!c(CELLCODE %in% endemic_hotspots$CELLCODE)) |> 
+    mutate(classification="no hotspot") |>
+    st_intersection(natura_crete_land_sci) |>
+    mutate(natura_area=units::set_units(st_area(geometry),km^2)) |>
+    group_by(CELLCODE) |>
+    summarise(natura_area=sum(natura_area)) |>
+    mutate(natura="yes")
+
+
+locations_grid_no <- locations_grid |>
+    distinct(CELLCODE,geometry) |>
+    left_join(st_drop_geometry(locations_grid_natura), by=c("CELLCODE"="CELLCODE")) |>
+    mutate(classification="no hotspot") 
+
+locations_all_classification <- rbind(locations_grid_no, locations_grid_yes) |>
+    replace_na(list(natura="no", natura_area=units::set_units(0,km^2)))
+
+
+chisq.test(locations_all_classification$natura,locations_all_classification$classification)
+table(locations_all_classification$natura,locations_all_classification$classification)
+
 sum(units::set_units(st_area(endemic_hotspots),km^2))
 sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
 
