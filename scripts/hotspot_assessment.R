@@ -94,6 +94,7 @@ values(crete_manual_grid_w) <- 0
 
 locations_eea <- locations_eea |> distinct(sbspcsn,long, lat, geometry) 
 grid_occ_count <- rasterize(locations_eea, crete_manual_grid, fun='count')
+grid_occ_count_y <- subst(grid_occ_count, NA, 0)
 #locations_inland$grid_occ <- extract(crete_manual_grid_w, locations_inland,cellnumbers=F, ID=F)
 grid_occ_count_w <- project(grid_occ_count, crs(locations_inland))
 grid_occ_count_w_df <- terra::as.data.frame(grid_occ_count_w, xy=TRUE, cells=TRUE)  
@@ -103,11 +104,11 @@ raster_df <- terra::as.data.frame(grid_occ_count, xy=TRUE, cells=TRUE)
 
 
 # Adaptive resolution with quadtree
-qt <- quadtree(grid_occ_count,
-               min_cell_length=4000,
+qt <- quadtree(grid_occ_count_y,
+               min_cell_length=2000,
                max_cell_length=10000,
                split_threshold=30,
-               split_if_any_na=T,
+               split_if_any_na=F,
                split_method = "range")
 
 qt_rast <- as_raster(qt)
@@ -332,7 +333,7 @@ ggsave("../plots/crete_wege_hotspots_map.png", plot=wege_map, device="png")
 # Endemic hotspots
 
 endemic_hotspots_quads <- qt_sf_all |>
-    filter(n_species >= quantile(n_species, 0.95)) 
+    filter(n_species >= quantile(n_species, 0.90)) 
 
 endemic_hotspots <- locations_grid |>
     group_by(CELLCODE) |>
@@ -357,7 +358,7 @@ endemic_hotspots_order <- locations_grid %>%
 crete_quads_sampling_grid <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
 #    geom_tile(qt_rast_df, mapping=aes(x=x, y=y, fill=lyr.1)) + 
-    geom_sf(endemic_hotspots_quads, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    geom_sf(endemic_hotspots_quads, mapping=aes(fill=n_species), alpha=0.8, size=0.1, na.rm = FALSE)+
     scale_fill_gradientn(colours = c("grey80", "#D55E00")) +
     labs(fill = "Quadtrees hotspots")+
     new_scale_fill() +
