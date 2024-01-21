@@ -95,6 +95,9 @@ values(crete_manual_grid_w) <- 0
 locations_eea <- locations_eea |> distinct(sbspcsn,long, lat, geometry) 
 grid_occ_count <- rasterize(locations_eea, crete_manual_grid, fun='count')
 #locations_inland$grid_occ <- extract(crete_manual_grid_w, locations_inland,cellnumbers=F, ID=F)
+grid_occ_count_w <- project(grid_occ_count, crs(locations_inland))
+grid_occ_count_w_df <- terra::as.data.frame(grid_occ_count_w, xy=TRUE, cells=TRUE)  
+
 
 raster_df <- terra::as.data.frame(grid_occ_count, xy=TRUE, cells=TRUE)
 
@@ -108,7 +111,8 @@ qt <- quadtree(grid_occ_count,
                split_method = "range")
 
 qt_rast <- as_raster(qt)
-qt_rast_df <- terra::as.data.frame(qt_rast, xy=TRUE, cells=TRUE) 
+qt_rast_w <- project(qt_rast, crs(locations_inland))
+qt_rast_df <- terra::as.data.frame(qt_rast_w, xy=TRUE, cells=TRUE) 
 qt_sf <- st_as_sf(as.polygons(qt_rast, values=T, aggregate=F))
 
 qt_sf_sp <- qt_sf |>
@@ -138,27 +142,6 @@ plot(vect(grid_10km),
 dev.off()
 
 
-crete_quads_sampling_grid <- ggplot() +
-    geom_sf(crete_eea, mapping=aes()) +
-    geom_tile(qt_rast_df, mapping=aes(x=x, y=y, fill=lyr.1)) + 
-    scale_fill_gradientn(colours = c("grey80", "#D55E00")) +
-    labs(fill = "Quadtrees")+
-    new_scale_fill() +
-    geom_tile(raster_df,mapping=aes(x=x, y=y, fill=count)) +
-    scale_fill_gradientn(colours = c("grey70", "purple")) +
-    labs(fill = "1km grid",y = "Group") +
-    geom_sf(locations_eea, mapping=aes(),color="red", size=0.01)+
-#    geom_sf(locations_1_grid, mapping=aes(fill=n_occurrences), alpha=0.3,size=0.02)+
-    ggtitle("Adaptive resolution")+
-    theme_bw()
-
-ggsave("../plots/crete_quads_sampling_grid.png",
-       plot=crete_quads_sampling_grid,
-       width=30,
-       height=30,
-       dpi=300,
-       unit="cm",
-       device="png")
 
 ### quads and biodiversity
 qt_sf_all <- qt_sf_sp |>
@@ -273,14 +256,14 @@ ggsave("../plots/crete_quads_orders_map.png",
 
 ## Locations grid and quads
 
-locations_grid_q <- locations_grid |> 
+crete_grid10_q <- crete_grid10 |> 
     distinct(CELLCODE,geometry) |>
     mutate(grid_area=units::set_units(st_area(geometry),km^2)) |>
     st_intersection(qt_sf_all) |>
     mutate(ovelap_area=units::set_units(st_area(geometry),km^2)) |>
     group_by(CELLCODE) |> 
     summarise(ovelap_area=sum(ovelap_area)) |>
-    filter(ovelap_area>50)
+    filter(ovelap_area>units::set_units(50,km^2))
 
 # WEGE
 ## first create the input sf object of the species
@@ -348,10 +331,14 @@ ggsave("../plots/crete_wege_hotspots_map.png", plot=wege_map, device="png")
 
 # Endemic hotspots
 
-endemic_hotspots <- locations_grid %>%
-    group_by(CELLCODE) %>%
-    summarise(n_species=n()) %>%
-    filter(n_species >= quantile(n_species, 0.90))
+endemic_hotspots_quads <- qt_sf_all |>
+    filter(n_species >= quantile(n_species, 0.95)) 
+
+endemic_hotspots <- locations_grid |>
+    group_by(CELLCODE) |>
+    summarise(n_species=n()) |>
+    filter(n_species >= quantile(n_species, 0.90)) |>
+    filter(CELLCODE %in% as.character(crete_grid10_q$CELLCODE))
 
 st_write(endemic_hotspots,
          "../results/endemic_hotspots/endemic_hotspots.shp", 
@@ -367,6 +354,32 @@ endemic_hotspots_order <- locations_grid %>%
     filter(n_species >= quant90)
 
 
+crete_quads_sampling_grid <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+#    geom_tile(qt_rast_df, mapping=aes(x=x, y=y, fill=lyr.1)) + 
+    geom_sf(endemic_hotspots_quads, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    scale_fill_gradientn(colours = c("grey80", "#D55E00")) +
+    labs(fill = "Quadtrees hotspots")+
+    new_scale_fill() +
+    geom_tile(grid_occ_count_w_df,mapping=aes(x=x, y=y, fill=count)) +
+    scale_fill_gradientn(colours = c("grey70", "purple")) +
+    labs(fill = "1km grid",y = "Group") +
+    geom_sf(locations_inland, mapping=aes(),color="red", size=0.01)+
+    new_scale_fill() +
+    geom_sf(endemic_hotspots, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    scale_fill_gradientn(colours = c("yellow", "red")) +
+    labs(fill = "hotspots",y = "Group") +
+#    geom_sf(locations_1_grid, mapping=aes(fill=n_occurrences), alpha=0.3,size=0.02)+
+    ggtitle("Adaptive resolution")+
+    theme_bw()
+
+ggsave("../plots/crete_quads_sampling_grid.png",
+       plot=crete_quads_sampling_grid,
+       width=30,
+       height=30,
+       dpi=300,
+       unit="cm",
+       device="png")
 ## threatspots
 
 threatspots <- locations_grid %>%
