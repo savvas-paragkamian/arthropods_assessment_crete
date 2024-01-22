@@ -20,7 +20,8 @@ library(ggnewscale)
 library(sf)
 library(terra)
 library(quadtree)
-library(WEGE) 
+library(WEGE)
+library(vegan)
 library(units)
 source("functions.R")
 
@@ -29,6 +30,17 @@ source("functions.R")
 g_base <- g_base()
 endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t") 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
+
+## grids
+grid_1km_o <- st_read("../data/Greece_shapefile/gr_1km.shp")
+crete_1km <- st_read("../data/Greece_shapefile/gr_1km.shp") |>
+    st_transform(., crs="WGS84") |>
+    st_join(crete_shp, left=F)
+
+grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") 
+
+### Crete EEA crs
+crete_eea <- crete_shp |> st_transform(crs(grid_1km_o))
 
 ## Locations
 locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
@@ -41,6 +53,14 @@ locations_grid <- st_read("../results/locations_grid/locations_grid.shp") |>
     rename("families"="familis")
 locations_spatial <- st_read("../results/locations_spatial/locations_spatial.shp")
 
+### locations modifications
+locations_inland <- st_join(locations_shp, crete_shp, left=F)
+locations_inland <- locations_inland |> distinct(sbspcsn,long, lat, geometry)
+sampling_intensity <- locations_inland |>
+    group_by(geometry) |>
+    summarise(n_occurrences=n())
+
+locations_eea <- locations_inland |> st_transform(crs(grid_1km_o)) 
 ## Natura2000
 
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
@@ -53,18 +73,8 @@ natura_crete_land <- st_intersection(natura_crete, crete_shp)
 
 natura_crete_land_sci <- natura_crete_land |> filter(SITETYPE=="B")
 
-########################## Grids 1, 4, 8, 10 sq.km  ########################
-## grid 1km
-grid_1km_o <- st_read("../data/Greece_shapefile/gr_1km.shp")
-crete_eea <- crete_shp |> st_transform(crs(grid_1km_o))
-crete_1km <- st_read("../data/Greece_shapefile/gr_1km.shp") |>
-    st_transform(., crs="WGS84") |>
-    st_join(crete_shp, left=F)
-#crete_bbox_polygon <- st_as_sf(st_as_sfc(st_bbox(crete_eea)))
-#crete_grid1 <- st_crop(grid_1km, crete_bbox_polygon)
-
+########################## Grids 1, 4, 8, 10 sq.km  #########################
 ## grid 10km
-grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp") 
 grid_10km_w <- grid_10km |> st_transform(., crs="WGS84")
 crete_grid10 <- st_join(grid_10km_w, crete_shp, left=F)
 
@@ -82,13 +92,7 @@ locations_10_grid <- st_join(crete_grid10, locations_inland, left=F) |>
 
 ### pearson correlation of sampling effort and species
 cor(locations_10_grid$n_species, locations_10_grid$n_samples)
-### locations modifications
-locations_inland <- st_join(locations_shp, crete_shp, left=F)
-locations_inland <- locations_inland |> distinct(sbspcsn,long, lat, geometry)
-sampling_intensity <- locations_inland |>
-    group_by(geometry) |>
-    summarise(n_occurrences=n())
-locations_eea <- locations_inland |> st_transform(crs(grid_1km_o)) 
+
 ### 1km over shp
 
 locations_1_grid_samples <- st_join(crete_1km, locations_inland, left=F) |>
@@ -203,7 +207,6 @@ values(crete_manual_grid_w) <- 0
 
 grid_occ_count_w <- rasterize(locations_inland, crete_manual_grid_w, fun='count')
 grid_occ_count_w_df <- terra::as.data.frame(grid_occ_count_w, xy=TRUE, cells=TRUE)  
-
 
 ######################### Adaptive resolution with quadtree ######################
 qt_sampling <- quadtree(grid_sampling_count_y,
@@ -395,15 +398,75 @@ crete_grid10_q <- crete_grid10 |>
     summarise(ovelap_area=sum(ovelap_area)) |>
     filter(ovelap_area>units::set_units(50,km^2))
 
-############################ Endemic hotspots ###############################
+######################## Species Richness Estimation ########################
 
+#community_m_points <- locations_inland |>
+#    st_drop_geometry() |>
+#    as_tibble() |>
+#    mutate(coords=paste0(lat,"_",long,sep="")) |>
+#    distinct(sbspcsn,coords) |>
+#    mutate(presense=1) |>
+#    pivot_wider(names_from=sbspcsn, values_from=presense, values_fill = 0) |>
+#    as.matrix()
+
+community_m_1km <- st_join(crete_1km, locations_inland, left=F) |>
+    group_by(sbspcsn,CELLCODE) |>
+    summarise(presense=n(), .groups="keep") |>
+    st_drop_geometry() |>
+    ungroup() |>
+    pivot_wider(names_from=sbspcsn, values_from=presense, values_fill = 0) |>
+    as.matrix()
+
+community_m_4km <- locations_grid_4_base |>
+    group_by(sbspcsn,CELLCODE) |>
+    summarise(presense=n(), .groups="keep") |>
+    st_drop_geometry() |>
+    ungroup() |>
+    pivot_wider(names_from=sbspcsn, values_from=presense, values_fill = 0) |>
+    as.matrix()
+
+community_m <- community_m_4km
+community_matrix <- community_m[,-1]
+community_matrix <- apply(community_matrix, 2, as.numeric)
+rownames(community_matrix) <- community_m[,1]
+
+S <- specnumber(community_matrix) # observed number of species
+sp2 <- specaccum(community_matrix, "random")
+
+pool <- poolaccum(community_matrix)
+summary(pool, display = "chao")
+plot(pool)
+
+#rarecurve(community_matrix, step = 20, sample = raremax, col = "blue", cex =      0.6,main = "rarecurve() on subset of data")
+
+
+bray <- vegdist(community_matrix,
+                method="bray")
+
+png(file="../plots/clustering_bray_hclust_samples.png",
+    width = 50,
+    height = 30,
+    res=300,
+    units = "cm",
+    bg="white")
+plot(hclust(bray))
+dev.off()
+
+
+#nmds <- vegan::metaMDS(community_matrix,
+#                       k=2,
+#                       distance = "bray",
+#                       trymax=100)
+
+#plot(nmds)
+############################ Endemic hotspots ###############################
 endemic_hotspots_quads <- qt_sf_all |>
     filter(n_species >= quantile(n_species, 0.95)) 
 
 endemic_hotspots_1km <- locations_1_grid |>
     filter(n_species >= quantile(n_species, 0.95)) 
 
-endemic_hotspots_4km <- locations_grid_4 |>
+endemic_hotspots_4km <- locations_4_grid |>
     filter(n_species >= quantile(n_species, 0.95)) 
 
 endemic_hotspots_8km <- locations_8_grid |>
@@ -420,13 +483,6 @@ st_write(endemic_hotspots,
          append=F,
          delete_layer=T,
          delete_dsn = TRUE) 
-
-endemic_hotspots_order <- locations_grid %>% 
-    group_by(CELLCODE, Order) %>%
-    summarise(n_species=n(), .groups="drop") %>%
-    group_by(Order) %>%
-    mutate(quant90= quantile(n_species, 0.90)) %>%
-    filter(n_species >= quant90)
 
 crete_quads_sampling_grid <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
@@ -471,6 +527,22 @@ ggsave("../plots/crete_multiple_grids_hotspots.png",
        dpi = 600, 
        unit="cm",
        device="png")
+
+
+endemic_hotspots_order <- locations_grid %>% 
+    group_by(CELLCODE, Order) %>%
+    summarise(n_species=n(), .groups="drop") %>%
+    group_by(Order) %>%
+    mutate(quant90= quantile(n_species, 0.90)) %>%
+    filter(n_species >= quant90)
+
+endemic_hotspots_order_s <- endemic_hotspots_order |>
+    group_by(CELLCODE) |>
+    summarise(orders=n(), n_species=sum(n_species)) |>
+    arrange(desc(orders)) |>
+    filter(orders >= quantile(orders, 0.9)) 
+
+
 ## threatspots
 
 threatspots <- locations_grid %>%
@@ -544,6 +616,19 @@ ggsave("../plots/crete-hotspots_order.png",
        plot=g_e_order, 
        height = 20, 
        width = 50, 
+       units="cm",
+       device="png")
+
+g_e_order_c <- g_base +
+    geom_sf(endemic_hotspots_order_s, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    ggtitle("Endemic hotspots of orders max overlap") +
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
+
+ggsave("../plots/crete-hotspots_combine_orders.png",
+       plot=g_e_order_c,
+       height = 20, 
+       width = 40,
+       dpi = 600, 
        units="cm",
        device="png")
 
@@ -729,6 +814,5 @@ wege_map <- g_base +
     theme_bw()
 
 ggsave("../plots/crete_wege_hotspots_map.png", plot=wege_map, device="png")
-
 
 
