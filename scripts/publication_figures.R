@@ -47,6 +47,8 @@ natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
 natura_crete_land <- st_intersection(natura_crete, crete_shp)
 
+locations_inland <- st_join(locations_shp, crete_shp, left=F)
+locations_10_grid <- sf::st_read("../results/locations_10_grid/locations_10_grid.shp")
 # raster DEM hangling
 dem_crete <- raster("../data/dem_crete/dem_crete.tif")
 dem_crete_pixel <- as(dem_crete, "SpatialPixelsDataFrame")
@@ -62,7 +64,6 @@ threatspots <- st_read("../results/threatspots/threatspots.shp")
 threatspots_lt <- threatspots %>% 
     filter(pc_thrt>= quantile(pc_thrt,0.90))
 
-locations_inland <- st_join(locations_shp, crete_shp, left=F)
 # IUCN
 redlist_orders <- read_delim("../results/redlist_threatened.tsv", delim="\t")
 
@@ -85,11 +86,11 @@ crete_base <- ggplot() +
                         labels = c(100, 800, 1500, 2400))+
     geom_sf(natura_crete_land_sci,
             mapping=aes(colour="Natura2000 HSD"),
-            linewidth=0.4,
+            linewidth=0.5,
             alpha=1,
             fill=NA,
             show.legend=T) +
-    scale_colour_manual(values = c("Natura2000 HSD" = "#56B4E9"),
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
                         guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
                         name="")+
     new_scale_color()+
@@ -104,7 +105,7 @@ crete_base <- ggplot() +
                nudge_x = 0.05,
                nudge_y=0.05,
                label.padding = unit(0.1, "lines"))+ 
-    scale_colour_manual(values = c("NHMC" = "#009E73", 
+    scale_colour_manual(values = c("NHMC" = "#8C9D3A", 
                                    "Bibliography" = "#999999"),
                         guide = guide_legend(override.aes = list(size= c(3,3),linetype = c("blank", "blank"))),
                         name = "Sampling") +
@@ -181,15 +182,78 @@ ggsave("../figures/Fig1-small.png",
 
 # Figure 2
 ## fig2a
+
+crete_sampling <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
+            alpha=1,
+            fill=NA,
+            show.legend=T) +
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
+    new_scale_fill() +
+    geom_sf(locations_10_grid, mapping=aes(fill=n_samples),
+            alpha=0.6,
+            colour="transparent",
+            na.rm = FALSE,
+            show.legend=T) +
+    scale_fill_gradient(low="gainsboro",
+                        high="#8C9D3A",
+                        guide = "colourbar")+
+    geom_sf(crete_peaks,
+            mapping=aes(),
+            colour="#D55E00",
+            size=1,
+            alpha=1,
+            show.legend=F) +
+    geom_label(data = crete_peaks, 
+               mapping=aes(x = X, y = Y, label = name),
+               size = 1.5,
+               nudge_x = 0.05,
+               nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
+    coord_sf(crs="WGS84") +
+    guides(fill = guide_colourbar(ticks = FALSE,
+                                  label = TRUE,
+                                  title="sampling intensity",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank())
+
+ggsave("../figures/Fig2a.tiff", 
+       plot=crete_sampling, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig2a.png", 
+       plot=crete_sampling, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+## fig2b
 crete_hotspot <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
-            mapping=aes(fill="Natura2000 HSD"),
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
             alpha=1,
-            colour="transparent",
+            fill=NA,
             show.legend=T) +
-    scale_fill_manual(values = c("Natura2000 HSD" = "#56B4E9"),
-                      guide = guide_legend(title=""))+
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
     new_scale_fill() +
     geom_sf(endemic_hotspots, mapping=aes(fill=n_species),
             alpha=0.6,
@@ -223,7 +287,7 @@ crete_hotspot <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-ggsave("../figures/Fig2a.tiff", 
+ggsave("../figures/Fig2b.tiff", 
        plot=crete_hotspot, 
        height = 10, 
        width = 20,
@@ -231,7 +295,7 @@ ggsave("../figures/Fig2a.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig2a.png", 
+ggsave("../figures/Fig2b.png", 
        plot=crete_hotspot, 
        height = 10, 
        width = 20,
@@ -239,17 +303,18 @@ ggsave("../figures/Fig2a.png",
        units="cm",
        device="png")
 
-## fig2b
+## fig2c
 crete_threat <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
-            mapping=aes(fill="Natura2000 HSD"),
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
             alpha=1,
-            colour="transparent",
+            fill=NA,
             show.legend=T) +
-    scale_fill_manual(values = c("Natura2000 HSD" = "#56B4E9"), 
-                      guide = guide_legend(title=""))+
-    new_scale_fill() +
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
     geom_sf(threatspots_lt, mapping=aes(fill=pc_thrt),
             alpha=0.6,
             colour="transparent",
@@ -285,7 +350,7 @@ crete_threat <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-ggsave("../figures/Fig2b.tiff", 
+ggsave("../figures/Fig2c.tiff", 
        plot=crete_threat, 
        height = 10, 
        width = 20,
@@ -293,7 +358,7 @@ ggsave("../figures/Fig2b.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig2b.png", 
+ggsave("../figures/Fig2c.png", 
        plot=crete_threat, 
        height = 10, 
        width = 20,
@@ -301,7 +366,7 @@ ggsave("../figures/Fig2b.png",
        units="cm",
        device="png")
 
-## fig2c
+## fig2d
 species_10_natura <- endemic_species %>%
     mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) %>%
     mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
@@ -323,11 +388,14 @@ table(species_10_natura$Order)
 crete_aoo <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
-            mapping=aes(fill="Natura2000 HSD"),
-            colour="transparent",
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
+            alpha=1,
+            fill=NA,
             show.legend=T) +
-    scale_fill_manual(values = c("Natura2000 HSD" = "#56B4E9"),
-                      guide = guide_legend(title = ""))+
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
     new_scale_fill() +
     geom_sf(species_10_natura_l, mapping=aes(fill=n_species),
             alpha=0.6,
@@ -364,7 +432,7 @@ crete_aoo <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-ggsave("../figures/Fig2c.tiff",
+ggsave("../figures/Fig2d.tiff",
        plot=crete_aoo,
        height = 10,
        width = 20,
@@ -372,7 +440,7 @@ ggsave("../figures/Fig2c.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig2c.png",
+ggsave("../figures/Fig2d.png",
        plot=crete_aoo,
        height = 10,
        width = 20,
@@ -380,7 +448,7 @@ ggsave("../figures/Fig2c.png",
        units="cm",
        device="png")
 
-## fig2d
+## crete corine fig
 
 crete_corine <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
@@ -390,11 +458,14 @@ crete_corine <- ggplot() +
             colour="transparent",
             show.legend=T) +
     geom_sf(natura_crete_land_sci,
-            mapping=aes(color="Natura2000 HSD"),
-            linewidth=0.6,
-            fill=NA,
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
             alpha=1,
+            fill=NA,
             show.legend=T) +
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
     geom_sf(crete_peaks,
             mapping=aes(),
             color = "#D55E00",
@@ -412,7 +483,7 @@ crete_corine <- ggplot() +
                                  "Water bodies" = "#0072B2",
                                  "Natura2000 HSD"=NA),
                       guide = "legend") +
-    scale_colour_manual(values = c("Natura2000 HSD" = "#56B4E9"),
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
                         guide = "legend") +
     guides(fill = guide_legend(override.aes = list(color = "transparent", alpha=1) ),
            colour = guide_legend(override.aes = list(alpha=1, fill="transparent") ) )+
@@ -426,7 +497,7 @@ crete_corine <- ggplot() +
           legend.key.size = unit(6, "mm"), 
           legend.text=element_text(size=8))
 
-ggsave("../figures/Fig2d.tiff", 
+ggsave("../figures/Fig_corine.tiff", 
        plot=crete_corine, 
        height = 10, 
        width = 20,
@@ -434,7 +505,7 @@ ggsave("../figures/Fig2d.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig2d.png", 
+ggsave("../figures/Fig_corine.png", 
        plot=crete_corine, 
        height = 10, 
        width = 20,
@@ -443,7 +514,7 @@ ggsave("../figures/Fig2d.png",
        device="png")
 
 
-fig2 <- ggarrange(crete_hotspot,crete_threat,crete_aoo,crete_corine,
+fig2 <- ggarrange(crete_sampling, crete_hotspot,crete_threat,crete_aoo,
           labels = c("A", "B", "C", "D"),
           align = "hv",
           widths = c(1,1,1,0.6),
