@@ -304,6 +304,8 @@ ggsave("../figures/Fig2b.png",
        device="png")
 
 ## fig2c
+wege_results <- st_read("../results/wege_results/wege_results.shp")
+
 crete_threat <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
@@ -315,7 +317,7 @@ crete_threat <- ggplot() +
     scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
                         guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
                         name="")+
-    geom_sf(threatspots_lt, mapping=aes(fill=pc_thrt),
+    geom_sf(wege_results, mapping=aes(fill=wege),
             alpha=0.6,
             colour="transparent",
             size=0.1,
@@ -323,8 +325,8 @@ crete_threat <- ggplot() +
             show.legend=T) +
     scale_fill_gradient(low="#E69F00",
                         high="#CC79A7",
-                        breaks = c(25,30,35,40,45,50),
-                        labels = c(25,30,35,40,45,50),
+                        #breaks = c(25,30,35,40,45,50),
+                        #labels = c(25,30,35,40,45,50),
                         guide = "colourbar")+
     geom_sf(crete_peaks,
             mapping=aes(),
@@ -340,7 +342,7 @@ crete_threat <- ggplot() +
     coord_sf(crs="WGS84") +
     guides(fill = guide_colourbar(ticks = FALSE,
                                   label = TRUE,
-                                  title="# threatened",
+                                  title="WEGE index\nfor threatened",
                                   title.vjust = 0.8,
                                   order = 1))+
     theme_bw()+

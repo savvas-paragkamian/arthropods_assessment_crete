@@ -781,31 +781,6 @@ ggsave("../plots/hotspots_10_overlap_natura_order.png",
 # WEGE
 ## first create the input sf object of the species
 
-# WEGE with EOO
-#occurrences <- locations_inland |>
-#    rename(subspeciesname=sbspcsn)
-
-#species <- occurrences %>% st_drop_geometry() %>%
-#    dplyr::select(subspeciesname) %>% 
-#    distinct() %>%
-#    pull()
-#
-### range as EOO, extend of occurrence
-#range_list <- list()
-#for(s in seq_along(species)){
-#
-#    n_occurrences <- occurrences %>%
-#        filter(subspeciesname==species[s])
-#
-#    if (nrow(n_occurrences) > 2) {
-#
-#        species_convex <- st_convex_hull(st_union(n_occurrences))
-#        range_list[[s]] <- st_sf(geom=species_convex, ID=species[s])
-#    }
-#}
-#
-#input <- do.call(rbind, range_list)
-
 occurrences <- occurrences_1_grid |>
     rename(subspeciesname=sbspcsn)|>
     mutate(ID=subspeciesname)
@@ -832,7 +807,14 @@ for (c in seq_along(cellcodes)){
 
 wege_results <- do.call(rbind, wege_l)
 
-wege_results_f <- wege_results |> filter(wege>3)
+wege_results_f <- wege_results |> 
+    filter(wege >= quantile(wege, 0.90)) 
+
+st_write(wege_results_f,
+         "../results/wege_results/wege_results.shp", 
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
 
 wege_map <- g_base +
     geom_sf(wege_results_f, mapping=aes(fill=wege)) + 
