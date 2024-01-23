@@ -90,6 +90,11 @@ locations_10_grid <- st_join(crete_grid10, locations_inland, left=F) |>
     mutate(area=st_area(geometry)) |>
     left_join(st_drop_geometry(locations_10_grid_samples))
 
+st_write(locations_10_grid,
+         "../results/locations_10_grid/locations_10_grid.shp", 
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
 ### pearson correlation of sampling effort and species
 cor(locations_10_grid$n_species, locations_10_grid$n_samples)
 
@@ -461,15 +466,19 @@ dev.off()
 #plot(nmds)
 ############################ Endemic hotspots ###############################
 endemic_hotspots_quads <- qt_sf_all |>
+    ungroup() |>
     filter(n_species >= quantile(n_species, 0.95)) 
 
 endemic_hotspots_1km <- locations_1_grid |>
+    ungroup() |>
     filter(n_species >= quantile(n_species, 0.95)) 
 
 endemic_hotspots_4km <- locations_4_grid |>
+    ungroup() |>
     filter(n_species >= quantile(n_species, 0.95)) 
 
 endemic_hotspots_8km <- locations_8_grid |>
+    ungroup() |>
     filter(n_species >= quantile(n_species, 0.92)) 
 
 endemic_hotspots <- locations_grid |>
@@ -520,7 +529,7 @@ crete_quads_sampling_grid <- ggplot() +
           legend.box.background = element_blank())
 
 
-ggsave("../plots/crete_multiple_grids_hotspots.png",
+ggsave("../figures/figS4_crete_multiple_grids_hotspots.png",
        plot=crete_quads_sampling_grid,
        height = 20, 
        width = 40,
@@ -596,6 +605,11 @@ threatspots_order_lt <- threatspots_order %>%
     mutate(quant90 = quantile(paca_threat,0.90)) %>%
     filter(paca_threat>=quant90)
 
+threatspost_order_s <- threatspots_order_lt |>
+    group_by(CELLCODE) |>
+    summarise(orders=n(), paca_threat=sum(paca_threat)) |>
+    arrange(desc(orders)) |>
+    filter(orders >= quantile(orders, 0.9)) 
 ## Crete with endemic hotspots
 ##
 
@@ -612,7 +626,7 @@ g_e_order <- g_base +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
     facet_wrap(vars(Order), ncol=4, scales = "fixed")
 
-ggsave("../plots/crete-hotspots_order.png", 
+ggsave("../figures/figS5_crete-hotspots_order.png", 
        plot=g_e_order, 
        height = 20, 
        width = 50, 
@@ -624,7 +638,7 @@ g_e_order_c <- g_base +
     ggtitle("Endemic hotspots of orders max overlap") +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
 
-ggsave("../plots/crete-hotspots_combine_orders.png",
+ggsave("../figures/figS6_hotspots_of_orders.png",
        plot=g_e_order_c,
        height = 20, 
        width = 40,
@@ -649,13 +663,25 @@ g_t_order <- g_base +
     scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
     facet_wrap(vars(Order), ncol=4, scales = "fixed")
 
-ggsave("../plots/crete-threatspots_order.png", 
+ggsave("../figures/figS7_crete-threatspots_order.png", 
        plot=g_t_order, 
        height = 20, 
        width = 50, 
        units="cm",
        device="png")
 
+g_t_order_c <- g_base +
+    geom_sf(threatspost_order_s, mapping=aes(fill=paca_threat), alpha=0.3, size=0.1, na.rm = FALSE)+
+    ggtitle("Threatspots of orders max overlap") +
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
+
+ggsave("../figures/figS8_threatspots_of_orders.png",
+       plot=g_t_order_c,
+       height = 20, 
+       width = 40,
+       dpi = 600, 
+       units="cm",
+       device="png")
 ## Overlap
 
 ### Hotspots and threatspots
