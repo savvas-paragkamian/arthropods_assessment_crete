@@ -215,7 +215,7 @@ grid_occ_count_w_df <- terra::as.data.frame(grid_occ_count_w, xy=TRUE, cells=TRU
 
 ######################### Adaptive resolution with quadtree ######################
 qt_sampling <- quadtree(grid_sampling_count_y,
-               min_cell_length=2000,
+               min_cell_length=1000,
                max_cell_length=10000,
                split_threshold=4,
                split_if_any_na=F,
@@ -303,7 +303,7 @@ crete_quads_endemics_map <- ggplot() +
             alpha=0.8,
             colour="transparent",
             na.rm = F,
-            show.legend=F) +
+            show.legend=T) +
     scale_fill_gradient(low="#f0e442",
                         high="#d55e00",
                         guide = "colourbar")+
@@ -475,11 +475,11 @@ endemic_hotspots_1km <- locations_1_grid |>
 
 endemic_hotspots_4km <- locations_4_grid |>
     ungroup() |>
-    filter(n_species >= quantile(n_species, 0.95)) 
+    filter(n_species >= quantile(n_species, 0.90)) 
 
 endemic_hotspots_8km <- locations_8_grid |>
     ungroup() |>
-    filter(n_species >= quantile(n_species, 0.92)) 
+    filter(n_species >= quantile(n_species, 0.90)) 
 
 endemic_hotspots <- locations_grid |>
     group_by(CELLCODE) |>
@@ -495,24 +495,23 @@ st_write(endemic_hotspots,
 
 crete_quads_sampling_grid <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
-    geom_sf(locations_1_grid, mapping=aes(fill=n_species), linewidth=0.01, alpha=0.3,size=0.02)+
-    scale_fill_gradientn(colours = c("grey70", "purple")) +
-    labs(fill = "1 sq. km grid\noccurrences") +
-    new_scale_fill() +
-    geom_sf(endemic_hotspots_quads, mapping=aes(fill=n_species), alpha=0.8, size=0.1, na.rm = FALSE)+
-    scale_fill_gradientn(colours = c("grey80", "#D55E00")) +
-    labs(fill = "Quadtrees hotspots")+
-    new_scale_fill() +
-    geom_sf(locations_inland, mapping=aes(),color="red", size=0.01)+
-    new_scale_fill() +
     geom_sf(endemic_hotspots, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
     scale_fill_gradientn(colours = c("yellow", "red")) +
     labs(fill = "10 sq. km hotspots") +
     new_scale_fill() +
-    geom_sf(endemic_hotspots_1km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    scale_fill_gradientn(colours = c("brown", "black")) +
-    labs(fill = "1 sq. km hotspots") +
-    new_scale_fill() +
+#    geom_sf(locations_1_grid, mapping=aes(fill=n_species), linewidth=0.01, alpha=0.3,size=0.02)+
+#    scale_fill_gradientn(colours = c("grey70", "purple")) +
+#    labs(fill = "1 sq. km grid\noccurrences") +
+#    new_scale_fill() +
+#    geom_sf(endemic_hotspots_quads, mapping=aes(fill=n_species), alpha=0.8, size=0.1, na.rm = FALSE)+
+#    scale_fill_gradientn(colours = c("grey80", "#D55E00")) +
+#    labs(fill = "Quadtrees hotspots")+
+#    new_scale_fill() +
+    geom_sf(locations_inland, mapping=aes(),color="red", size=0.01)+
+#    geom_sf(endemic_hotspots_1km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+#    scale_fill_gradientn(colours = c("brown", "black")) +
+#    labs(fill = "1 sq. km hotspots") +
+#    new_scale_fill() +
     geom_sf(endemic_hotspots_4km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
     scale_fill_gradientn(colours = c("cornsilk1", "cyan4")) +
     labs(fill = "4 sq. km hotspots") +
@@ -610,6 +609,27 @@ threatspost_order_s <- threatspots_order_lt |>
     summarise(orders=n(), paca_threat=sum(paca_threat)) |>
     arrange(desc(orders)) |>
     filter(orders >= quantile(orders, 0.9)) 
+
+############### Treatened species distribution #############
+
+treatened_dist_quad <- qt_sf_sp |>
+    distinct(sbspcsn, geometry, threatened) |> 
+    mutate(threatened_t=if_else(threatened==TRUE, 1, 0)) |>
+    mutate(threatened_f=if_else(threatened==TRUE, 0, 1)) |>
+    group_by(geometry) |>
+    summarise(treatened=sum(threatened_t),
+              not_threatened=sum(threatened_f),
+              total=n()) |> 
+    mutate(proportion=treatened/total) |>
+    filter(total >= quantile(total, 0.5),
+           proportion >= quantile(proportion,0.5))
+
+st_write(treatened_dist_quad,
+         "../results/treatened_dist_quad/treatened_dist_quad.shp",
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
+
 ## Crete with endemic hotspots
 ##
 
