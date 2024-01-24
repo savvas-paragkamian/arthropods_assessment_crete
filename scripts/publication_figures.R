@@ -668,7 +668,7 @@ fig3b <- ggplot()+
                           na.value="white",
                           guide = "colorbar")+
       guides(fill = guide_colorbar(ticks = FALSE,
-                                   title="# WEGE\nthreat-spots",
+                                   title="# WEGE\nKBAs",
                                    label.vjust = 0.8,
                                    title.vjust = 0.8))+
       xlab("") +
@@ -831,40 +831,5 @@ ggsave("../figures/figS2.png",
        width = 23, 
        units="cm")
 
-## Supplementary Figure box plot
-
-
-##################### create CELLCOD metadata #######################
-threatspots_df <- st_drop_geometry(wege_results) %>% mutate(threatspot="threatspot") 
-endemic_hotspots_df <- st_drop_geometry(endemic_hotspots) %>%
-    mutate(hotspot="hotspot") %>%
-    dplyr::select(-n_species)
-
-locations_grid_d <- locations_grid %>% distinct(CELLCOD,geometry)
-eea_10_crete_metadata <- st_intersection(locations_grid_d, clc_crete_shp)
-
-eea_10_crete_metadata_d <- eea_10_crete_metadata %>%
-    mutate(area = st_area(geometry)) %>%
-    group_by(LABEL2, CELLCOD) %>%
-    summarise(area_sum=sum(area), .groups="keep") %>%
-    st_drop_geometry() %>% units::drop_units() %>%
-    pivot_wider(id_cols="CELLCOD", names_from="LABEL2", values_from="area_sum", values_fill=0)
-
-grid_stats <- locations_grid %>%
-    st_drop_geometry() %>%
-    group_by(CELLCOD) %>%
-    summarise(n_species=n()) %>%
-    left_join(endemic_hotspots_df, by=c("CELLCOD"="CELLCODE")) %>%
-    left_join(threatspots_df, by=c("CELLCOD"="CELLCOD")) %>%
-    left_join(eea_10_crete_metadata_d)
-
-grid_stats_t <- grid_stats %>%
-    mutate_at(c('hotspot','threatspot'), ~replace_na(.,"no")) %>%
-    mutate_at(c('LT','PT','pc_thrt','wege'), ~replace_na(.,0))
-
-grid_stats_long <- grid_stats_t %>%
-    pivot_longer(!c(CELLCOD,hotspot,threatspot),
-                 names_to="variables",
-                 values_to="values")
 
 
