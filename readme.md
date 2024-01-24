@@ -26,7 +26,9 @@ requires the following packages:
 -- tidyverse
 -- sf
 -- terra
+-- quadtree
 -- ConR
+-- WEGE
 
 # for visualisation
 
@@ -39,14 +41,14 @@ requires the following packages:
 
 ```
 
-## Scripts
+## Workflow and Scripts
 
 First the script `species_assessment.R` is executed. It is the main
-script that calculates the IUCN AOO and EOO and PACA metrics. Then the 
-`spatial_analysis.R` script finds all the overlaps between the species metrics
-and spatial data. Based on the results of hese 2 scripts the script 
-`hotspot_assessment.R` generates the hotspots and threatspots of the
-endemic arthropods of Crete. Subsequently, the `species_assessment_statistict.Rmd`
+script that calculates the IUCN AOO and EOO and PACA metrics. Based on the
+results scripts the script `hotspot_assessment.R` generates the hotspots,
+threatspots and Key Biodiversity Areas of the endemic arthropods of Crete.
+Then the `spatial_analysis.R` script finds all the overlaps between the species metrics
+and spatial data. Subsequently, the `species_assessment_statistict.Rmd`
 R markdown file generates a report based on these results. The `functions.R` is a 
 collection of functions required in all scripts.
 
