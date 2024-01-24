@@ -54,7 +54,6 @@ dem_crete <- raster("../data/dem_crete/dem_crete.tif")
 dem_crete_pixel <- as(dem_crete, "SpatialPixelsDataFrame")
 dem_crete_df <- as.data.frame(dem_crete_pixel) %>% filter(dem_crete>0)
 
-
 # split the SPA SCI
 
 natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
@@ -624,14 +623,14 @@ ggsave("../figures/fig3aa.png",
        device = "png",
        dpi = 300)
 
-# Overlap of threatspots
-threatspots_o <- locations_grid %>% 
-    filter(CELLCOD %in% threatspots_lt$CELLCOD) %>%
+# Overlap of WEGE threatspots
+wege_results_o <- locations_grid %>% 
+    filter(CELLCOD %in% wege_results$CELLCOD) %>%
     distinct(CELLCOD, Order)
 
-heatmaps_threatspots <- heatmaps(threatspots_o) 
+heatmaps_wege_threatspots <- heatmaps(wege_results_o) 
 
-heatmap_sort <- heatmaps_threatspots[[1]] %>%
+heatmap_sort <- heatmaps_wege_threatspots[[1]] %>%
     mutate(from=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", from)) %>%
     mutate(to=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)",to))
 
@@ -660,17 +659,18 @@ fig3b <- ggplot()+
       geom_text(data=order_cell_long_t,
                 aes(x=from, y=to, label=count),
                 size=4) +
+      scale_y_discrete(limits = rev)+
       scale_fill_gradient(low="gray87",
                           high="#0072B2",
-                          limits=c(1, max(order_cell_long$count)),
+                          breaks=waiver(),
+                          n.breaks=4,
+                          limits=c(1, max(order_cell_long$count)+1),
                           na.value="white",
-                          guide = guide_legend(override.aes = list(alpha=1),
-                                                ticks = FALSE,
-                                                label = TRUE,
-                                                title="# threat-spots",
-                                                title.vjust = 0.8,
-                                                order = 1))+
-      scale_y_discrete(limits = rev)+
+                          guide = "colorbar")+
+      guides(fill = guide_colorbar(ticks = FALSE,
+                                   title="# WEGE\nthreat-spots",
+                                   label.vjust = 0.8,
+                                   title.vjust = 0.8))+
       xlab("") +
       ylab("")+
       theme_bw()+
@@ -835,7 +835,7 @@ ggsave("../figures/figS2.png",
 
 
 ##################### create CELLCOD metadata #######################
-threatspots_df <- st_drop_geometry(threatspots) %>% mutate(threatspot="threatspot") 
+threatspots_df <- st_drop_geometry(wege_results) %>% mutate(threatspot="threatspot") 
 endemic_hotspots_df <- st_drop_geometry(endemic_hotspots) %>%
     mutate(hotspot="hotspot") %>%
     dplyr::select(-n_species)
@@ -855,45 +855,16 @@ grid_stats <- locations_grid %>%
     group_by(CELLCOD) %>%
     summarise(n_species=n()) %>%
     left_join(endemic_hotspots_df, by=c("CELLCOD"="CELLCODE")) %>%
-    left_join(threatspots_df) %>%
+    left_join(threatspots_df, by=c("CELLCOD"="CELLCOD")) %>%
     left_join(eea_10_crete_metadata_d)
 
-grid_stats_t <-grid_stats %>%
+grid_stats_t <- grid_stats %>%
     mutate_at(c('hotspot','threatspot'), ~replace_na(.,"no")) %>%
-    mutate_at(c('LT','PT','pc_thrt'), ~replace_na(.,0))
+    mutate_at(c('LT','PT','pc_thrt','wege'), ~replace_na(.,0))
 
-grid_label2_boxplot <- ggplot()+
-    geom_boxplot(grid_stats_long_label2,
-                 mapping=aes(x= variables, y=values),
-                 outlier.size = 0) +
-#    geom_point(locations_grid_d, 
-#               mapping=aes(x=group, y=n_species),
-#               position=position_jitterdodge(0.3)) + 
-    scale_y_continuous(name = "Area in m2",
-                       labels = scales::comma) + 
-#    scale_shape_manual(values = c(2,1,3),
-#                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
-#                       name="Quantity")+
-#    scale_color_manual(values=c("gray15", "gray45", "gray65"),
-#                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
-#                       name="Quantity")+
-#    scale_fill_manual(values=c("gray15", "gray45", "gray65"),
-#                       labels=c("AOO in sq. km","EOO in sq. km", "# locations"),
-#                       name="Quantity")+
-    theme_bw()+
-    theme(panel.grid = element_blank(),
-          axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
-          axis.text = element_text(size=10), 
-          axis.title.x=element_blank(),
-          axis.title.y=element_text(face="bold", size=13),
-          legend.position = c(0.88, 0.1)) +
-    facet_wrap(~ hotspot)
-
-ggsave("../figures/fig_grid_labal2_boxplot.png", 
-       plot=grid_label2_boxplot, 
-       device="png", 
-       height = 20, 
-       width = 23, 
-       units="cm")
+grid_stats_long <- grid_stats_t %>%
+    pivot_longer(!c(CELLCOD,hotspot,threatspot),
+                 names_to="variables",
+                 values_to="values")
 
 
