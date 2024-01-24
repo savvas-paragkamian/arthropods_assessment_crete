@@ -305,7 +305,7 @@ g_base <- function(){
 
     g_base <- ggplot() +
         geom_sf(crete_shp, mapping=aes()) +
-        geom_sf(natura_crete_land_sci, mapping=aes(),color="orange", alpha=0.2, size=0.1) +
+        geom_sf(natura_crete_land_sci, mapping=aes(),color="#4BA591", alpha=0.2, size=0.1) +
         coord_sf(crs="WGS84") +
         theme_bw()
 

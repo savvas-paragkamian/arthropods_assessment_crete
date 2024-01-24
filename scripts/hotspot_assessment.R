@@ -484,7 +484,6 @@ sampling_intensity_o_10km <- rbind(locations_10_grid_samples_all,locations_10_gr
 g_sampling_order <- g_base +
     geom_sf(sampling_intensity_o_10km,
             mapping=aes(fill=n_samples), alpha=0.3, size=0.1, na.rm = FALSE) +
-    ggtitle("Sampling intensity")+
     scale_fill_gradientn(colours = terrain.colors(10)) +
     facet_wrap(vars(Order), ncol=2, scales = "fixed")
 
@@ -552,7 +551,6 @@ crete_quads_sampling_grid <- ggplot() +
     geom_sf(endemic_hotspots_8km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
     scale_fill_gradientn(colours = c("deepskyblue", "dodgerblue4"), guide = guide_colorbar(order = 2)) +
     labs(fill = "8 sq. km hotspots") +
-    ggtitle("Multiple grid sizes of hotspots")+
     theme_bw()+
     theme(axis.title=element_blank(),
           axis.text=element_text(colour="black"),
@@ -582,6 +580,38 @@ endemic_hotspots_order_s <- endemic_hotspots_order |>
     arrange(desc(orders)) |>
     filter(orders >= quantile(orders, 0.9)) 
 
+###################### Figures of endemicity hotspots ########################
+
+g_e <- g_base +
+    geom_sf(endemic_hotspots, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
+
+ggsave("../plots/crete-hotspots.png", plot=g_e, device="png")
+
+g_e_order <- g_base +
+    geom_sf(endemic_hotspots_order, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE) +
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
+    facet_wrap(vars(Order), ncol=2, scales = "fixed")
+
+ggsave("../figures/figS5_crete-hotspots_order.png", 
+       plot=g_e_order, 
+       height = 50, 
+       width = 40, 
+       dpi= 300,
+       units="cm",
+       device="png")
+
+g_e_order_c <- g_base +
+    geom_sf(endemic_hotspots_order_s, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
+
+ggsave("../figures/figS6_hotspots_of_orders.png",
+       plot=g_e_order_c,
+       height = 20, 
+       width = 40,
+       dpi = 600, 
+       units="cm",
+       device="png")
 ############################  hotspots grid overlap #########################
 area_calc <- function(x) {sum(st_area(x))}
 
@@ -599,7 +629,7 @@ write.table(as.data.frame(hotspots_in_area),
             "../results/hotspots_grids_area_intesection.tsv",
             sep="\t")
 
-## threatspots
+############################### threatspots #############################
 
 threatspots <- locations_grid %>%
     dplyr::select(CELLCODE,subspeciesname) %>%
@@ -658,63 +688,6 @@ threatspost_order_s <- threatspots_order_lt |>
     arrange(desc(orders)) |>
     filter(orders >= quantile(orders, 0.9)) 
 
-############### Treatened species distribution #############
-
-treatened_dist_quad <- qt_sf_sp |>
-    distinct(sbspcsn, geometry, threatened) |> 
-    mutate(threatened_t=if_else(threatened==TRUE, 1, 0)) |>
-    mutate(threatened_f=if_else(threatened==TRUE, 0, 1)) |>
-    group_by(geometry) |>
-    summarise(treatened=sum(threatened_t),
-              not_threatened=sum(threatened_f),
-              total=n()) |> 
-    mutate(proportion=treatened/total) |>
-    filter(total >= quantile(total, 0.5),
-           proportion >= quantile(proportion,0.5))
-
-st_write(treatened_dist_quad,
-         "../results/treatened_dist_quad/treatened_dist_quad.shp",
-         append=F,
-         delete_layer=T,
-         delete_dsn = TRUE) 
-
-## Crete with endemic hotspots
-##
-
-g_e <- g_base +
-    geom_sf(endemic_hotspots, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    ggtitle("Endemic hotspots") +
-    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
-
-ggsave("../plots/crete-hotspots.png", plot=g_e, device="png")
-
-g_e_order <- g_base +
-    geom_sf(endemic_hotspots_order, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE) +
-    ggtitle("Endemic hotspots")+
-    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
-    facet_wrap(vars(Order), ncol=2, scales = "fixed")
-
-ggsave("../figures/figS5_crete-hotspots_order.png", 
-       plot=g_e_order, 
-       height = 50, 
-       width = 40, 
-       dpi= 300,
-       units="cm",
-       device="png")
-
-g_e_order_c <- g_base +
-    geom_sf(endemic_hotspots_order_s, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    ggtitle("Endemic hotspots of orders max overlap") +
-    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
-
-ggsave("../figures/figS6_hotspots_of_orders.png",
-       plot=g_e_order_c,
-       height = 20, 
-       width = 40,
-       dpi = 600, 
-       units="cm",
-       device="png")
-
 ## Crete with threatspots
 ##
 g_t <- g_base +
@@ -744,110 +717,37 @@ g_t_order_c <- g_base +
     ggtitle("Threatspots of orders max overlap") +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
 
-ggsave("../figures/figS7_threatspots_of_orders.png",
+ggsave("../figures/figS8_threatspots_of_orders.png",
        plot=g_t_order_c,
        height = 20, 
        width = 40,
        dpi = 600, 
        units="cm",
        device="png")
-## Overlap
 
-### Hotspots and threatspots
-intersection_spots <- endemic_hotspots %>%
-    st_drop_geometry() %>%
-    inner_join(.,threatspots_lt, by=c("CELLCODE"="CELLCODE")) %>%
-    st_as_sf()
+######################## Threatened species distribution #######################
 
-g_e_t <- g_base +
-    geom_sf(intersection_spots, mapping=aes(fill="red"), alpha=0.3, size=0.1, na.rm = TRUE) +
-    ggtitle("Endemic hotspots and threatspots")+
-#    scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
-    theme_bw()
+treatened_dist_quad <- qt_sf_sp |>
+    distinct(sbspcsn, geometry, threatened) |> 
+    mutate(threatened_t=if_else(threatened==TRUE, 1, 0)) |>
+    mutate(threatened_f=if_else(threatened==TRUE, 0, 1)) |>
+    group_by(geometry) |>
+    summarise(treatened=sum(threatened_t),
+              not_threatened=sum(threatened_f),
+              total=n()) |> 
+    mutate(proportion=treatened/total) |>
+    filter(total >= quantile(total, 0.5),
+           proportion >= quantile(proportion,0.5))
 
-ggsave("../plots/crete-hotspots-threatspots.png", plot=g_e_t, device="png")
-
-### With natura
-
-endemic_hotspots_natura <- st_intersection(endemic_hotspots, natura_crete_land_sci) |>
-    mutate(natura_area=units::set_units(st_area(geometry),km^2)) |>
-    group_by(CELLCODE) |>
-    summarise(natura_area=sum(natura_area)) |>
-    mutate(natura="yes")
-
-locations_grid_yes <- endemic_hotspots |>
-    distinct(CELLCODE,geometry) |>
-    left_join(st_drop_geometry(endemic_hotspots_natura), by=c("CELLCODE"="CELLCODE")) |>
-    mutate(classification="hotspot") 
+st_write(treatened_dist_quad,
+         "../results/treatened_dist_quad/treatened_dist_quad.shp",
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
 
 
-locations_grid_natura <- locations_grid |>
-    distinct(CELLCODE,geometry) |>
-    filter(!c(CELLCODE %in% endemic_hotspots$CELLCODE)) |> 
-    mutate(classification="no hotspot") |>
-    st_intersection(natura_crete_land_sci) |>
-    mutate(natura_area=units::set_units(st_area(geometry),km^2)) |>
-    group_by(CELLCODE) |>
-    summarise(natura_area=sum(natura_area)) |>
-    mutate(natura="yes")
 
-
-locations_grid_no <- locations_grid |>
-    distinct(CELLCODE,geometry) |>
-    left_join(st_drop_geometry(locations_grid_natura), by=c("CELLCODE"="CELLCODE")) |>
-    mutate(classification="no hotspot") 
-
-locations_all_classification <- rbind(locations_grid_no, locations_grid_yes) |>
-    replace_na(list(natura="no", natura_area=units::set_units(0,km^2)))
-
-
-chisq.test(locations_all_classification$natura,locations_all_classification$classification)
-table(locations_all_classification$natura,locations_all_classification$classification)
-
-sum(units::set_units(st_area(endemic_hotspots),km^2))
-sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
-
-threatspots_natura <- st_intersection(threatspots_lt, natura_crete_land_sci)
-sum(units::set_units(st_area(threatspots_lt),km^2))
-sum(units::set_units(st_area(threatspots_natura),km^2))
-
-### The threatened species that have AOO < 10% overlap with Natura2000.
-
-species_10_natura <- endemic_species %>%
-    filter(aoo_natura_percent<0.1 & threatened==T)
-
-species_10_natura_l <- locations_grid %>%
-    filter(subspeciesname %in% species_10_natura$subspeciesname) %>%
-    group_by(CELLCODE) %>%
-    summarise(n_species=n()) %>%
-    filter(n_species>2)
-
-species_10_natura_l_o <- locations_grid %>%
-    filter(subspeciesname %in% species_10_natura$subspeciesname) %>%
-    group_by(CELLCODE, Order) %>%
-    summarise(n_species=n(), .groups="drop")
-
-g_n_e <- g_base +
-    geom_sf(species_10_natura_l, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    ggtitle("Hotspots of AOO<10% overlap with Natura2000") +
-    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
-
-ggsave("../plots/hotspots_10_overlap_natura.png", plot=g_n_e, device="png")
-
-g_e_order <- g_base +
-    geom_sf(species_10_natura_l_o, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    ggtitle("Hotspots of AOO<10% overlap with Natura2000") +
-    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
-    facet_wrap(vars(Order), ncol=3, scales = "fixed")
-
-ggsave("../plots/hotspots_10_overlap_natura_order.png", 
-       plot=g_e_order, 
-       height = 20, 
-       width = 50, 
-       units="cm",
-       device="png")
-
-# WEGE
+############################## WEGE #################################
 ## first create the input sf object of the species
 
 occurrences <- occurrences_1_grid |>
@@ -894,3 +794,110 @@ wege_map <- g_base +
 ggsave("../plots/crete_wege_hotspots_map.png", plot=wege_map, device="png")
 
 
+############################# Overlaps ##################################
+
+### Hotspots and WEGE threatspots
+intersection_spots <- endemic_hotspots %>%
+    st_drop_geometry() %>%
+    inner_join(.,wege_results_f, by=c("CELLCODE"="CELLCODE")) %>%
+    st_as_sf()
+
+g_e_t <- g_base +
+    geom_sf(intersection_spots, mapping=aes(fill="red"),
+            alpha=0.3,
+            size=0.1,
+            na.rm = TRUE,
+            legend=F) +
+    ggtitle("Endemic hotspots and WEGE threatspots")+
+#    scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
+    theme_bw()
+
+ggsave("../plots/crete-hotspots-threatspots.png", plot=g_e_t, device="png")
+
+### With natura
+
+endemic_hotspots_natura <- st_intersection(endemic_hotspots, natura_crete_land_sci) |>
+    mutate(natura_area=units::set_units(st_area(geometry),km^2)) |>
+    group_by(CELLCODE) |>
+    summarise(natura_area=sum(natura_area)) |>
+    mutate(natura="yes")
+
+locations_grid_yes <- endemic_hotspots |>
+    distinct(CELLCODE,geometry) |>
+    left_join(st_drop_geometry(endemic_hotspots_natura), by=c("CELLCODE"="CELLCODE")) |>
+    mutate(classification="hotspot") 
+
+locations_grid_natura <- locations_grid |>
+    distinct(CELLCODE,geometry) |>
+    filter(!c(CELLCODE %in% endemic_hotspots$CELLCODE)) |> 
+    mutate(classification="no hotspot") |>
+    st_intersection(natura_crete_land_sci) |>
+    mutate(natura_area=units::set_units(st_area(geometry),km^2)) |>
+    group_by(CELLCODE) |>
+    summarise(natura_area=sum(natura_area)) |>
+    mutate(natura="yes")
+
+
+locations_grid_no <- locations_grid |>
+    distinct(CELLCODE,geometry) |>
+    left_join(st_drop_geometry(locations_grid_natura), by=c("CELLCODE"="CELLCODE")) |>
+    mutate(classification="no hotspot") 
+
+locations_all_classification <- rbind(locations_grid_no, locations_grid_yes) |>
+    replace_na(list(natura="no", natura_area=units::set_units(0,km^2)))
+
+
+chisq.test(locations_all_classification$natura,locations_all_classification$classification)
+table(locations_all_classification$natura,locations_all_classification$classification)
+
+sum(units::set_units(st_area(endemic_hotspots),km^2))
+sum(units::set_units(st_area(endemic_hotspots_natura),km^2))
+
+### WEGE KBAs
+
+locations_all_classification_w <- locations_all_classification |>
+    left_join(st_drop_geometry(wege_results_f),by=c("CELLCODE"="CELLCODE")) |>
+    mutate(classification_threat = if_else(is.na(wege),"no kba", "kba"))
+
+chisq.test(locations_all_classification_w$natura,locations_all_classification_w$classification_threat)
+table(locations_all_classification_w$natura,locations_all_classification_w$classification_threat)
+
+threatspots_natura <- st_intersection(wege_results_f, natura_crete_land_sci)
+sum(units::set_units(st_area(threatspots_lt),km^2))
+sum(units::set_units(st_area(threatspots_natura),km^2))
+
+### The threatened species that have AOO < 10% overlap with Natura2000.
+
+species_10_natura <- endemic_species %>%
+    filter(aoo_natura_percent<0.1 & threatened==T)
+
+species_10_natura_l <- locations_grid %>%
+    filter(subspeciesname %in% species_10_natura$subspeciesname) %>%
+    group_by(CELLCODE) %>%
+    summarise(n_species=n()) %>%
+    filter(n_species>2)
+
+species_10_natura_l_o <- locations_grid %>%
+    filter(subspeciesname %in% species_10_natura$subspeciesname) %>%
+    group_by(CELLCODE, Order) %>%
+    summarise(n_species=n(), .groups="drop")
+
+g_n_e <- g_base +
+    geom_sf(species_10_natura_l, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    ggtitle("Hotspots of AOO<10% overlap with Natura2000") +
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
+
+ggsave("../plots/hotspots_10_overlap_natura.png", plot=g_n_e, device="png")
+
+g_e_order <- g_base +
+    geom_sf(species_10_natura_l_o, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    ggtitle("Hotspots of AOO<10% overlap with Natura2000") +
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
+    facet_wrap(vars(Order), ncol=3, scales = "fixed")
+
+ggsave("../plots/hotspots_10_overlap_natura_order.png", 
+       plot=g_e_order, 
+       height = 20, 
+       width = 50, 
+       units="cm",
+       device="png")
