@@ -95,7 +95,7 @@ st_write(locations_10_grid,
          append=F,
          delete_layer=T,
          delete_dsn = TRUE) 
-### pearson correlation of sampling effort and species
+### pearson correlation of sampling intensity and species
 cor(locations_10_grid$n_species, locations_10_grid$n_samples)
 
 ### 1km over shp
@@ -152,7 +152,7 @@ locations_8_grid <- locations_grid_8_base |>
     mutate(area=st_area(geometry)) |>
     left_join(st_drop_geometry(locations_8_grid_samples))
 
-### pearson correlation of sampling effort and species
+### pearson correlation of sampling intensity and species
 cor(locations_8_grid$n_species, locations_8_grid$n_samples)
 
 ### 4km over raster
@@ -185,7 +185,7 @@ locations_4_grid <- locations_grid_4_base |>
     mutate(area=st_area(geometry)) |>
     left_join(st_drop_geometry(locations_4_grid_samples))
 
-### pearson correlation of sampling effort and species
+### pearson correlation of sampling intensity and species
 cor(locations_4_grid$n_species, locations_4_grid$n_samples)
 
 ### 1km over raster
@@ -289,7 +289,8 @@ qt_sf_all <- qt_sf_sp |>
 
 qt_sf_order <- qt_sf_sp |> 
     group_by(geometry, Order) |> 
-    summarise(n_species=n(), .groups="keep")
+    summarise(n_species=n(), .groups="keep") |>
+    ungroup()
 
 qt_sf_n_order <- qt_sf_sp |> 
     distinct(geometry, Order) |> 
@@ -350,13 +351,13 @@ crete_quads_endemics_orders_map <- ggplot() +
           legend.title = element_text(size=8),
           legend.position = "bottom",
           legend.box.background = element_blank()) +
-    facet_grid(Order ~ .)
+    facet_wrap(vars(Order), ncol=2, scales = "fixed")
 
 ggsave("../plots/crete_quads_endemics_orders_map.png",
        plot=crete_quads_endemics_orders_map, 
-       height = 60, 
-       width = 20,
-       dpi = 600, 
+       height = 50, 
+       width = 35,
+       dpi = 300, 
        units="cm",
        device="png")
 
@@ -464,14 +465,46 @@ dev.off()
 #                       trymax=100)
 
 #plot(nmds)
+
+############################ sampling intensity ##############################
+locations_10_grid_samples_all <- locations_10_grid_samples |>
+    mutate(Order="All") |>
+    distinct() 
+
+locations_10_grid_samples_o <- st_join(crete_grid10, locations_inland, left=F) |>
+    left_join(endemic_species, by=c("sbspcsn"="subspeciesname")) |> 
+    distinct(geometry,CELLCODE, long, lat, Order) |>
+    group_by(geometry, CELLCODE,Order) |>
+    summarise(n_samples=n(),.groups="keep") |>
+    distinct() |>
+    ungroup() 
+
+sampling_intensity_o_10km <- rbind(locations_10_grid_samples_all,locations_10_grid_samples_o)
+
+g_sampling_order <- g_base +
+    geom_sf(sampling_intensity_o_10km,
+            mapping=aes(fill=n_samples), alpha=0.3, size=0.1, na.rm = FALSE) +
+    ggtitle("Sampling intensity")+
+    scale_fill_gradientn(colours = terrain.colors(10)) +
+    facet_wrap(vars(Order), ncol=2, scales = "fixed")
+
+ggsave("../figures/figS3_crete_sampling_intensity_order.png", 
+       plot=g_sampling_order, 
+       height = 50, 
+       width = 40, 
+       dpi= 300,
+       units="cm",
+       device="png")
+
+
 ############################ Endemic hotspots ###############################
 endemic_hotspots_quads <- qt_sf_all |>
     ungroup() |>
-    filter(n_species >= quantile(n_species, 0.95)) 
+    filter(n_species >= quantile(n_species, 0.90)) 
 
 endemic_hotspots_1km <- locations_1_grid |>
     ungroup() |>
-    filter(n_species >= quantile(n_species, 0.95)) 
+    filter(n_species >= quantile(n_species, 0.90)) 
 
 endemic_hotspots_4km <- locations_4_grid |>
     ungroup() |>
@@ -496,7 +529,7 @@ st_write(endemic_hotspots,
 crete_quads_sampling_grid <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(endemic_hotspots, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    scale_fill_gradientn(colours = c("yellow", "red")) +
+    scale_fill_gradientn(colours = c("yellow", "red"),guide = guide_colorbar(order = 3)) +
     labs(fill = "10 sq. km hotspots") +
     new_scale_fill() +
 #    geom_sf(locations_1_grid, mapping=aes(fill=n_species), linewidth=0.01, alpha=0.3,size=0.02)+
@@ -513,11 +546,11 @@ crete_quads_sampling_grid <- ggplot() +
 #    labs(fill = "1 sq. km hotspots") +
 #    new_scale_fill() +
     geom_sf(endemic_hotspots_4km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    scale_fill_gradientn(colours = c("cornsilk1", "cyan4")) +
+    scale_fill_gradientn(colours = c("cornsilk3", "cyan4"), guide = guide_colorbar(order = 1)) +
     labs(fill = "4 sq. km hotspots") +
     new_scale_fill() +
     geom_sf(endemic_hotspots_8km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    scale_fill_gradientn(colours = c("deepskyblue", "dodgerblue4")) +
+    scale_fill_gradientn(colours = c("deepskyblue", "dodgerblue4"), guide = guide_colorbar(order = 2)) +
     labs(fill = "8 sq. km hotspots") +
     ggtitle("Multiple grid sizes of hotspots")+
     theme_bw()+
@@ -527,11 +560,10 @@ crete_quads_sampling_grid <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-
-ggsave("../figures/figS4_crete_multiple_grids_hotspots.png",
+ggsave("../figures/figs4_crete_multiple_grids_hotspots.png",
        plot=crete_quads_sampling_grid,
-       height = 20, 
-       width = 40,
+       height = 10, 
+       width = 20,
        dpi = 600, 
        unit="cm",
        device="png")
@@ -550,6 +582,22 @@ endemic_hotspots_order_s <- endemic_hotspots_order |>
     arrange(desc(orders)) |>
     filter(orders >= quantile(orders, 0.9)) 
 
+############################  hotspots grid overlap #########################
+area_calc <- function(x) {sum(st_area(x))}
+
+area_in_calc <- function(x,y) {sum(st_area(st_intersection(st_make_valid(x),st_make_valid(y))))}
+
+hotspots <- tibble::lst(endemic_hotspots,
+                        endemic_hotspots_1km,
+                        endemic_hotspots_4km,
+                        endemic_hotspots_8km,
+                        endemic_hotspots_quads)
+
+hotspots_in_area <- sapply(hotspots, function(x) sapply(hotspots,function(y) area_in_calc(x,y)))
+
+write.table(as.data.frame(hotspots_in_area),
+            "../results/hotspots_grids_area_intesection.tsv",
+            sep="\t")
 
 ## threatspots
 
@@ -644,12 +692,13 @@ g_e_order <- g_base +
     geom_sf(endemic_hotspots_order, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE) +
     ggtitle("Endemic hotspots")+
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
-    facet_wrap(vars(Order), ncol=4, scales = "fixed")
+    facet_wrap(vars(Order), ncol=2, scales = "fixed")
 
 ggsave("../figures/figS5_crete-hotspots_order.png", 
        plot=g_e_order, 
-       height = 20, 
-       width = 50, 
+       height = 50, 
+       width = 40, 
+       dpi= 300,
        units="cm",
        device="png")
 
@@ -695,7 +744,7 @@ g_t_order_c <- g_base +
     ggtitle("Threatspots of orders max overlap") +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
 
-ggsave("../figures/figS8_threatspots_of_orders.png",
+ggsave("../figures/figS7_threatspots_of_orders.png",
        plot=g_t_order_c,
        height = 20, 
        width = 40,
@@ -821,14 +870,15 @@ for (c in seq_along(cellcodes)){
     target_area <- crete_grid10 |> filter(CELLCODE==cellcodes[c])
     temp <- get_wege(target_area,input,species = 'binomial',category = 'category')
     if (!is.null(temp)){
-        wege_l[[c]] <- st_sf(st_as_sfc(target_area), wege=temp, CELLCODE=c)
+        wege_l[[c]] <- st_sf(st_as_sfc(target_area), wege=temp, CELLCODE=cellcodes[c])
     }
 }
 
 wege_results <- do.call(rbind, wege_l)
 
 wege_results_f <- wege_results |> 
-    filter(wege >= quantile(wege, 0.90)) 
+    filter(wege >= quantile(wege, 0.90)) |>
+    left_join(st_drop_geometry(threatspots))
 
 st_write(wege_results_f,
          "../results/wege_results/wege_results.shp", 
