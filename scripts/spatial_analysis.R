@@ -302,8 +302,8 @@ hilda_1998_2018_df <- terra::as.data.frame(hilda_1998_2018, xy=TRUE, cells=TRUE)
 #    left_join(hilda_cat, by=c("hilda_id"="hilda_id"))
 
 hilda_sum <- zonal(cellSize(hilda_1998_2018), hilda_1998_2018, "sum") |> 
-    mutate(area_m2=units::set_units(area,m^2)) |>
-    mutate(area=units::set_units(area/10^6, km^2)) 
+    mutate(crete_m2=units::set_units(area,m^2)) |>
+    mutate(crete=units::set_units(area/10^6, km^2)) 
 
 hilda_sum <- hilda_sum |>
     mutate(hilda_id_transition=hilda_sum[,1]) |>
@@ -316,13 +316,66 @@ write_delim(hilda_sum, "../results/hilda_1998_2018.tsv", delim="\t")
 natura_crete_land_hilda <- terra::mask(hilda_1998_2018, natura_crete_land)
 
 natura_crete_land_hilda_sum <- zonal(cellSize(natura_crete_land_hilda), natura_crete_land_hilda, "sum") |> 
-    mutate(area_m2=units::set_units(area,m^2)) |>
-    mutate(area=units::set_units(area/10^6, km^2)) |>
+    mutate(natura2000_m2=units::set_units(area,m^2)) |>
+    mutate(natura2000=units::set_units(area/10^6, km^2)) |>
     rename(hilda_id_transition=lyr.1) |>
     filter(hilda_id_transition>0) |>
-    left_join(hilda_id_names, by=c("hilda_id_transition"="hilda_id"))
+    left_join(hilda_id_names, by=c("hilda_id_transition"="hilda_id")) |>
+    dplyr::select(-c(hilda_id_transition, area))
 
 write_delim(natura_crete_land_hilda_sum, "../results/natura_crete_land_hilda_sum.tsv", delim="\t")
+
+## Endemicity hotspots and hilda
+
+endemic_hotspots_hilda <- terra::mask(hilda_1998_2018, endemic_hotspots)
+
+endemic_hotspots_hilda_sum <- zonal(cellSize(endemic_hotspots_hilda), endemic_hotspots_hilda, "sum") |> 
+    mutate(hotspots_m2=units::set_units(area,m^2)) |>
+    mutate(hotspots=units::set_units(area/10^6, km^2)) |>
+    rename(hilda_id_transition=lyr.1) |>
+    filter(hilda_id_transition>0) |>
+    left_join(hilda_id_names, by=c("hilda_id_transition"="hilda_id"))|>
+    dplyr::select(-c(hilda_id_transition, area))
+
+write_delim(endemic_hotspots_hilda_sum, "../results/endemic_hotspots_hilda_sum.tsv", delim="\t")
+
+## WEGE KBAs and hilda
+
+wege_kba_hilda <- terra::mask(hilda_1998_2018, wege_results)
+
+wege_kba_hilda_sum <- zonal(cellSize(wege_kba_hilda), wege_kba_hilda, "sum") |> 
+    mutate(wege_kba_m2=units::set_units(area,m^2)) |>
+    mutate(wege_kba=units::set_units(area/10^6, km^2)) |>
+    rename(hilda_id_transition=lyr.1) |>
+    filter(hilda_id_transition>0) |>
+    left_join(hilda_id_names, by=c("hilda_id_transition"="hilda_id")) |>
+    dplyr::select(-c(hilda_id_transition, area))
+
+write_delim(wege_kba_hilda_sum, "../results/wege_kba_hilda_sum.tsv", delim="\t")
+
+## Threatspots and hilda
+threatspots_hilda <- terra::mask(hilda_1998_2018, threatspots_lt)
+
+threatspots_hilda_sum <- zonal(cellSize(threatspots_hilda), threatspots_hilda, "sum") |> 
+    mutate(threatspots_m2=units::set_units(area,m^2)) |>
+    mutate(threatspots=units::set_units(area/10^6, km^2)) |>
+    rename(hilda_id_transition=lyr.1) |>
+    filter(hilda_id_transition>0) |>
+    left_join(hilda_id_names, by=c("hilda_id_transition"="hilda_id")) |>
+    dplyr::select(-c(hilda_id_transition, area))
+
+write_delim(threatspots_hilda_sum, "../results/threatspots_hilda_sum.tsv", delim="\t")
+
+### all together
+###
+hilda_trans <- hilda_sum |>
+    left_join(natura_crete_land_hilda_sum, by=c("hilda_name"="hilda_name")) |>
+    left_join(endemic_hotspots_hilda_sum, by=c("hilda_name"="hilda_name")) |>
+    left_join(wege_kba_hilda_sum, by=c("hilda_name"="hilda_name")) |>
+    left_join(threatspots_hilda_sum, by=c("hilda_name"="hilda_name")) |>
+    mutate_if(is.numeric, round, 0)
+
+write_delim(hilda_trans, "../results/hilda_summary_transitions.tsv", delim="\t")
 
 # Export of locations shapefile with all the spatial metadata
 st_write(locations_shp,
@@ -335,6 +388,9 @@ st_write(locations_shp,
 st_write(locations_shp,
          "../results/locations_spatial/locations_spatial.csv",
          append=TRUE)
+
+
+
 
 ##################### create CELLCOD metadata #######################
 threatspots_df <- st_drop_geometry(wege_results) %>% mutate(threatspot="threatspot") 
