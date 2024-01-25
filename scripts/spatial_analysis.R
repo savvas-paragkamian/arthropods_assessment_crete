@@ -29,12 +29,14 @@ locations_shp <- locations_shp |>
     mutate(long = unlist(map(locations_shp$geometry,1)),
            lat = unlist(map(locations_shp$geometry,2)))
 crete_shp <- sf::st_read("../data/crete/crete.shp")
+locations_inland <- st_join(locations_shp, crete_shp, left=F)
 endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t")
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
 threatspots <- st_read("../results/threatspots/threatspots.shp")
 threatspots_lt <- threatspots |> 
     filter(pc_thrt>= quantile(pc_thrt,0.90))
 
+wege_results <- st_read("../results/wege_results/wege_results.shp")
 natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
 
@@ -94,7 +96,8 @@ locations_shp <- st_join(locations_shp, clc_crete_shp, left=T)
 list_sf <- list(natura2000 = natura_crete_land_sci,
                 wildlife = wdpa_crete_wildlife,
                 hotspots = endemic_hotspots,
-                threatspots = threatspots_lt)
+                threatspots = threatspots_lt,
+                wege_kba = wege_results)
 
 clabels <- c("LABEL1", "LABEL2", "LABEL3")
 
@@ -333,3 +336,35 @@ st_write(locations_shp,
          "../results/locations_spatial/locations_spatial.csv",
          append=TRUE)
 
+##################### create CELLCOD metadata #######################
+threatspots_df <- st_drop_geometry(wege_results) %>% mutate(threatspot="threatspot") 
+endemic_hotspots_df <- st_drop_geometry(endemic_hotspots) %>%
+    mutate(hotspot="hotspot") %>%
+    dplyr::select(-n_species)
+
+locations_grid_d <- locations_grid %>% distinct(CELLCOD,geometry)
+eea_10_crete_metadata <- st_intersection(locations_grid_d, clc_crete_shp)
+
+eea_10_crete_metadata_d <- eea_10_crete_metadata %>%
+    mutate(area = st_area(geometry)) %>%
+    group_by(LABEL2, CELLCOD) %>%
+    summarise(area_sum=sum(area), .groups="keep") %>%
+    st_drop_geometry() %>% units::drop_units() %>%
+    pivot_wider(id_cols="CELLCOD", names_from="LABEL2", values_from="area_sum", values_fill=0)
+
+grid_stats <- locations_grid %>%
+    st_drop_geometry() %>%
+    group_by(CELLCOD) %>%
+    summarise(n_species=n()) %>%
+    left_join(endemic_hotspots_df, by=c("CELLCOD"="CELLCODE")) %>%
+    left_join(threatspots_df, by=c("CELLCOD"="CELLCOD")) %>%
+    left_join(eea_10_crete_metadata_d)
+
+grid_stats_t <- grid_stats %>%
+    mutate_at(c('hotspot','threatspot'), ~replace_na(.,"no")) %>%
+    mutate_at(c('LT','PT','pc_thrt','wege'), ~replace_na(.,0))
+
+grid_stats_long <- grid_stats_t %>%
+    pivot_longer(!c(CELLCOD,hotspot,threatspot),
+                 names_to="variables",
+                 values_to="values")
