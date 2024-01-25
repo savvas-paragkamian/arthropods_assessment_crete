@@ -703,12 +703,13 @@ g_t_order <- g_base +
     geom_sf(threatspots_order_lt, mapping=aes(fill=paca_threat), alpha=0.3, size=0.1, na.rm = TRUE) +
     ggtitle("threatspots")+
     scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
-    facet_wrap(vars(Order), ncol=4, scales = "fixed")
+    facet_wrap(vars(Order), ncol=2, scales = "fixed")
 
 ggsave("../figures/figS7_crete-threatspots_order.png", 
        plot=g_t_order, 
-       height = 20, 
-       width = 50, 
+       height =45, 
+       width = 35, 
+       dpi= 300,
        units="cm",
        device="png")
 
