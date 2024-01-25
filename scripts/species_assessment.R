@@ -26,32 +26,43 @@ source("functions.R")
 
 # Load Data
 ## Endemic species occurrences in Crete
-arthropods_kriti_endemic <- readxl::read_excel("../data/endemic-arthropods-crete.xlsx") %>% 
-    filter(Order!="Opiliones") %>% 
-    dplyr::select(-Ergasia)
+arthropods_kriti_endemic <- readxl::read_excel("../data/endemic-arthropods-crete.xlsx") |>
+    filter(Order!="Opiliones") 
 
-species_wo_coords <- arthropods_kriti_endemic[which(is.na(arthropods_kriti_endemic$latD)),]
+## Crete
+crete_shp <- sf::st_read("../data/crete/crete.shp")
 
 ## Sanity check on coordinates
+species_wo_coords <- arthropods_kriti_endemic |> filter(is.na(latD))
 print(paste0("there are ", nrow(species_wo_coords)," rows without coordinates"))
 
-arthropods_occurrences <- arthropods_kriti_endemic %>% 
-    dplyr::select(subspeciesname,latD, logD, Order, families) %>% 
-    filter(latD<38, logD<30) %>%
-    na.omit()
+write_delim(species_wo_coords, "../data/species_wo_coords.tsv", delim="\t")
 
-arthropods_occurrences |> dplyr::select(-c(families,Order)) |> write_delim("../results/arthropods_occurrences.tsv",delim="\t")
+locations_out <- st_difference(arthropods_occurrences, crete_shp)
 
-out_of_crete <- arthropods_kriti_endemic[which(!(arthropods_kriti_endemic$subspeciesname %in% arthropods_occurrences$subspeciesname)),]
+print(paste0("these occurrences are in the sea or out of bounds", nrow(locations_out)))
+#species_out_of_crete <- st_filter(arthropods_occurrences, st_union(crete_shp), .predicate=st_disjoint) 
 
-locations_shp <- st_as_sf(arthropods_occurrences,
-                          coords=c("logD", "latD"),
-                          remove=TRUE,
-                          crs="WGS84")
+write_delim(st_drop_geometry(locations_out), "../data/species_out_of_crete.tsv", delim="\t")
 
-st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.shp", layer_options = "ENCODING=UTF-8" , append=FALSE, delete_layer=T)
+arthropods_occurrences <- arthropods_kriti_endemic |>
+    dplyr::select(-Ergasia) |>
+    distinct(subspeciesname,latD,logD,families,Order) |>
+    na.omit(latD,logD) |>
+    mutate(latD=round(latD,4),logD=round(logD,4)) |>
+    st_as_sf(coords=c("logD", "latD"), remove=F, crs="WGS84")
 
-st_write(locations_shp, "../data/arthropods_occurrences/arthropods_occurrences.csv",
+
+locations_shp <- st_join(arthropods_occurrences, crete_shp, left=F) 
+
+st_write(locations_shp,
+         "../data/arthropods_occurrences/arthropods_occurrences.shp",
+         layer_options = "ENCODING=UTF-8" ,
+         append=FALSE,
+         delete_layer=T)
+
+st_write(locations_shp,
+         "../data/arthropods_occurrences/arthropods_occurrences.csv",
          layer_options = "ENCODING=UTF-8", 
          append=FALSE, 
          delete_layer=T, 
@@ -75,10 +86,6 @@ locations_source <- readxl::read_excel("../data/Data-ENDEMICS.xlsx",
     na.omit()
 
 write_delim(locations_source, "../data/locations_source.tsv", delim="\t", col_names=T)
-
-## Crete Spatial data
-
-crete_shp <- sf::st_read("../data/crete/crete.shp")
 
 ### Natura2000
 
@@ -107,10 +114,7 @@ crete_polygon <- st_cast(crete_shp, "POLYGON") %>%
 # some occurrences fall in the sea and others are on the peripheral
 # islands of Crete.
 
-locations_inland <- st_join(locations_shp, crete_shp, left=F)
-locations_out <- st_difference(locations_shp, crete_shp)
-
-print(paste0("these occurrences are in the sea", nrow(locations_out)))
+locations_inland <- locations_shp
 # return the coordinates to a dataframe format
 
 locations_inland_df <- locations_inland %>%
