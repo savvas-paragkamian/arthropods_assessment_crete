@@ -65,6 +65,8 @@ dem_crete_df <- as.data.frame(dem_crete_pixel) %>% filter(dem_crete>0)
 natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
 ## Hotspots and threatspots
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
+endemic_hotspots_4km <- st_read("../results/endemic_hotspots/endemic_hotspots_4km.shp")
+endemic_hotspots_8km <- st_read("../results/endemic_hotspots/endemic_hotspots_8km.shp")
 threatspots <- st_read("../results/threatspots/threatspots.shp")
 threatspots_lt <- threatspots %>% 
     filter(pc_thrt>= quantile(pc_thrt,0.90))
@@ -351,7 +353,7 @@ crete_threat <- ggplot() +
     guides(colour="none",
            fill = guide_colourbar(ticks = FALSE,
                                   label = TRUE,
-                                  title="WEGE index\nfor threatened",
+                                  title="WEGE index\nfor KBAs",
                                   title.vjust = 0.8,
                                   order = 1))+
     theme_bw()+
@@ -378,88 +380,51 @@ ggsave("../figures/Fig2c.png",
        device="png")
 
 ## fig2d
-species_10_natura <- endemic_species %>%
-    mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) %>%
-    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
-    filter(aoo_natura_relative<0.1 & threatened==T)
 
-species_10_natura_l <- locations_grid %>%
-    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
-    group_by(CELLCOD) %>%
-    summarise(n_species=n()) %>%
-    filter(n_species>2, CELLCOD!="10kmE570N150")
-species_10_natura_l_o <- locations_grid %>%
-    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
-    group_by(CELLCOD, Order) %>%
-    summarise(n_species=n(), .groups="drop")
-
-table(species_10_natura$Order)
-
-
-crete_aoo <- ggplot() +
+crete_sampling_grid <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
-    geom_sf(natura_crete_land_sci,
-            mapping=aes(colour="Natura2000 HSD"),
-            linewidth=0.5,
-            alpha=1,
-            fill=NA,
-            show.legend=F) +
-    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
-                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
-                        name="")+
+    geom_sf(endemic_hotspots, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    scale_fill_gradientn(colours = c("yellow", "red"),guide = guide_colorbar(order = 3)) +
+    labs(fill = "10 sq. km\nhotspots") +
     new_scale_fill() +
-    geom_sf(species_10_natura_l, mapping=aes(fill=n_species),
-            alpha=0.6,
-            colour="transparent",
-            size=0.1,
-            na.rm = FALSE,
-            show.legend=T) +
-    scale_fill_gradient(low="#999999",
-                        high="#E69F00",
-                        guide="colourbar")+
-    geom_sf(crete_peaks,
-            mapping=aes(),
-            colour="#D55E00",
-            size=1,
-            alpha=1,
-            show.legend=F) +
-    geom_label(data = crete_peaks,
-               mapping=aes(x = X, y = Y, label = name),
-               size = 1.5,
-               nudge_x = 0.05,
-               nudge_y=0.05, label.padding = unit(0.1, "lines"))+
-    coord_sf(crs="WGS84") +
-    guides(colour="none",
-           fill = guide_colourbar(ticks = FALSE,
-                                  label = TRUE,
-                                  title="# taxa\n(AOO < 10% in N2K)",
-                                  title.vjust = 0.8,
-                                  order = 1))+
+#    geom_sf(locations_1_grid, mapping=aes(fill=n_species), linewidth=0.01, alpha=0.3,size=0.02)+
+#    scale_fill_gradientn(colours = c("grey70", "purple")) +
+#    labs(fill = "1 sq. km grid\noccurrences") +
+#    new_scale_fill() +
+#    geom_sf(endemic_hotspots_quads, mapping=aes(fill=n_species), alpha=0.8, size=0.1, na.rm = FALSE)+
+#    scale_fill_gradientn(colours = c("grey80", "#D55E00")) +
+#    labs(fill = "Quadtrees hotspots")+
+#    new_scale_fill() +
+    geom_sf(locations_inland, mapping=aes(),color="red", size=0.01)+
+#    geom_sf(endemic_hotspots_1km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+#    scale_fill_gradientn(colours = c("brown", "black")) +
+#    labs(fill = "1 sq. km hotspots") +
+#    new_scale_fill() +
+    geom_sf(endemic_hotspots_4km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    scale_fill_gradientn(colours = c("cornsilk3", "cyan4"), guide = guide_colorbar(order = 1)) +
+    labs(fill = "4 sq. km\nhotspots") +
+    new_scale_fill() +
+    geom_sf(endemic_hotspots_8km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
+    scale_fill_gradientn(colours = c("deepskyblue", "dodgerblue4"), guide = guide_colorbar(order = 2)) +
+    labs(fill = "8 sq. km\nhotspots") +
     theme_bw()+
     theme(axis.title=element_blank(),
           axis.text=element_text(colour="black"),
           legend.title = element_text(size=8),
           legend.position = "bottom",
-          legend.box.background = element_blank())
+          legend.box.background = element_blank(),
+          legend.key.size = unit(3, "mm"), 
+          legend.text=element_text(size=7))
 
-ggsave("../figures/Fig2d.tiff",
-       plot=crete_aoo,
-       height = 10,
+ggsave("../figures/figs4_crete_multiple_grids_hotspots.png",
+       plot=crete_sampling_grid,
+       height = 10, 
        width = 20,
-       dpi = 600,
-       units="cm",
-       device="tiff")
-
-ggsave("../figures/Fig2d.png",
-       plot=crete_aoo,
-       height = 10,
-       width = 20,
-       dpi = 600,
-       units="cm",
+       dpi = 600, 
+       unit="cm",
        device="png")
 
-
-fig2 <- ggarrange(crete_hotspot, crete_dist_threat, crete_threat,crete_aoo,
+fig2 <- ggarrange(crete_hotspot, crete_dist_threat, crete_threat,crete_sampling_grid,
           labels = c("A", "B", "C", "D"),
           align = "hv",
           widths = c(1,1,1,0.6),
@@ -708,15 +673,15 @@ crete_corine <- ggplot() +
             show.legend=T) +
     scale_fill_manual(values = colors_clc_label2_v,
                       guide = "legend") +
-    new_scale_fill()+
-    geom_sf(natura_crete_land_sci,
-            mapping=aes(colour="Natura2000 HSD"),
-            linewidth=0.5,
-            alpha=1,
-            fill=NA,
-            show.legend=T) +
-    scale_colour_manual(values = c("Natura2000 HSD" = "darkgoldenrod2"),
-                        guide = "legend") +
+#    new_scale_fill()+
+#    geom_sf(natura_crete_land_sci,
+#            mapping=aes(colour="Natura2000 HSD"),
+#            linewidth=0.5,
+#            alpha=1,
+#            fill=NA,
+#            show.legend=T) +
+#    scale_colour_manual(values = c("Natura2000 HSD" = "darkgoldenrod2"),
+#                        guide = "legend") +
 #    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
 #                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
 #                        name="")+
@@ -741,45 +706,46 @@ crete_corine <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank(),
           legend.key.size = unit(3, "mm"), 
-          legend.text=element_text(size=4.5))
+          legend.text=element_text(size=6))
 
 ggsave("../figures/Fig4a_corine.tiff", 
        plot=crete_corine, 
-       height = 10, 
-       width = 20,
+       height = 20, 
+       width = 40,
        dpi = 600, 
        units="cm",
        device="tiff")
 
 ggsave("../figures/Fig4a_corine.png", 
        plot=crete_corine, 
-       height = 10, 
-       width = 20,
+       height = 20, 
+       width = 40,
        dpi = 600, 
        units="cm",
        device="png")
 
-hilda_colors <- c("pasture/rangeland (stable)" = "#9ACD32",  # Olive Green
-                   "water" = "#4169E1",  # Royal Blue
-                   "urban (stable)" = "#A9A9A9",  # Dark Gray
-                   "cropland (stable)" = "#DAA520",  # Goldenrod
-                   "pasture/rangeland to cropland" = "#9ACD32",  # Olive Green
-                   "pasture/rangeland to unmanaged grass/shrubland" = "#9ACD32",  # Olive Green
-                   "pasture/rangeland to urban" = "#9ACD32",  # Olive Green
-                   "cropland to pasture/rangeland" = "#DAA520",  # Goldenrod
-                   "cropland to forest" = "#DAA520",  # Goldenrod
-                   "forest (stable)" = "#006400",  # Dark Green
-                   "cropland to urban" = "#DAA520",  # Goldenrod
-                   "pasture/rangeland to forest" = "#9ACD32",  # Olive Green
-                   "unmanaged grass/shrubland (stable)" = "#8B4513",  # Saddle Brown
-                   "cropland to unmanaged grass/shrubland" = "#DAA520",  # Goldenrod
-                   "cropland to sparse/no vegetation" = "#DAA520",  # Goldenrod
-                   "pasture/rangeland to sparse/no vegetation" = "#9ACD32",  # Olive Green
-                   "sparse/no vegetation (stable)" = "#D3D3D3",  # Light Gray
-                   "forest to pasture/rangeland" = "#006400",  # Dark Green
-                   "forest to unmanaged grass/shrubland" = "#006400")  # Dark Green
+hilda_colors <- c("pasture/rangeland (stable)" = "#F4C430",  # Gold
+                   "water" = "#87CEEB",  # Sky Blue
+                   "urban (stable)" = "#808080",  # Gray
+                   "cropland (stable)" = "#228B22",  # Forest Green
+                   "pasture/rangeland to cropland" = "#FFD700",  # Yellow
+                   "pasture/rangeland to unmanaged grass/shrubland" = "#CD853F",  # Peru
+                   "pasture/rangeland to urban" = "#4682B4",  # Steel Blue
+                   "cropland to pasture/rangeland" = "#20B2AA",  # Light Sea Green
+                   "cropland to forest" = "#FF6347",  # Tomato
+                   "forest (stable)" = "#556B2F",  # Dark Olive Green
+                   "cropland to urban" = "#B0E0E6",  # Powder Blue
+                   "pasture/rangeland to forest" = "#32CD32",  # Lime Green
+                   "unmanaged grass/shrubland (stable)" = "#A0522D",  # Sienna
+                   "cropland to unmanaged grass/shrubland" = "#800080",  # Purple
+                   "cropland to sparse/no vegetation" = "#8A2BE2",  # Blue Violet
+                   "pasture/rangeland to sparse/no vegetation" = "#00FA9A",  # Medium Spring Green
+                   "sparse/no vegetation (stable)" = "#F0FFFF",  # Azure
+                   "forest to pasture/rangeland" = "#6B8E23",  # Olive Drab
+                   "forest to unmanaged grass/shrubland" = "#9932CC")  # Dark Orchid
 
 crete_hilda_g <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
     geom_sf(hilda_1998_2018,
             mapping=aes(fill=hilda_name),
             alpha=1,
@@ -787,15 +753,6 @@ crete_hilda_g <- ggplot() +
             show.legend=T) +
     scale_fill_manual(values = hilda_colors,
                       guide = "legend") +
-    new_scale_fill()+
-    geom_sf(natura_crete_land_sci,
-            mapping=aes(colour="Natura2000 HSD"),
-            linewidth=0.5,
-            alpha=1,
-            fill=NA,
-            show.legend=T) +
-    scale_colour_manual(values = c("Natura2000 HSD" = "darkgoldenrod2"),
-                        guide = "legend") +
     guides(fill = guide_legend(override.aes = list(color = "transparent", alpha=1) ),
            colour = guide_legend(override.aes = list(alpha=1, fill="transparent") ) )+
     coord_sf(crs="WGS84") +
@@ -806,7 +763,7 @@ crete_hilda_g <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank(),
           legend.key.size = unit(3, "mm"), 
-          legend.text=element_text(size=4.5))
+          legend.text=element_text(size=6))
 
 ggsave("../figures/Fig4b_hilda.tiff", 
        plot=crete_hilda_g, 
@@ -834,32 +791,32 @@ fig4 <- ggarrange(crete_corine, crete_hilda_g,
 
 ggsave("../figures/Fig4.tiff", 
        plot=fig4, 
-       height = 40, 
-       width = 24,
+       height = 20, 
+       width = 23,
        dpi = 600, 
        units="cm",
        device="tiff")
 
 ggsave("../figures/Fig4.png", 
        plot=fig4, 
-       height = 40, 
-       width = 24,
+       height = 20, 
+       width = 23,
        dpi = 600, 
        units="cm",
        device="png")
 
 ggsave("../figures/Fig4.pdf", 
        plot=fig4, 
-       height = 40, 
-       width = 24,
+       height = 20, 
+       width = 23,
        dpi = 600, 
        units="cm",
        device="pdf")
 
 ggsave("../figures/Fig4-small.png", 
        plot=fig4, 
-       height = 40, 
-       width = 24,
+       height = 20, 
+       width = 23,
        dpi = 300, 
        units="cm",
        device="png")
@@ -954,5 +911,86 @@ ggsave("../figures/figS2.png",
        width = 23, 
        units="cm")
 
+
+## figS4 
+species_10_natura <- endemic_species %>%
+    mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) %>%
+    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
+    filter(aoo_natura_relative<0.1 & threatened==T)
+
+species_10_natura_l <- locations_grid %>%
+    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
+    group_by(CELLCOD) %>%
+    summarise(n_species=n()) %>%
+    filter(n_species>2, CELLCOD!="10kmE570N150")
+species_10_natura_l_o <- locations_grid %>%
+    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
+    group_by(CELLCOD, Order) %>%
+    summarise(n_species=n(), .groups="drop")
+
+table(species_10_natura$Order)
+
+
+crete_aoo <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
+            alpha=1,
+            fill=NA,
+            show.legend=F) +
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
+    new_scale_fill() +
+    geom_sf(species_10_natura_l, mapping=aes(fill=n_species),
+            alpha=0.6,
+            colour="transparent",
+            size=0.1,
+            na.rm = FALSE,
+            show.legend=T) +
+    scale_fill_gradient(low="#999999",
+                        high="#E69F00",
+                        guide="colourbar")+
+    geom_sf(crete_peaks,
+            mapping=aes(),
+            colour="#D55E00",
+            size=1,
+            alpha=1,
+            show.legend=F) +
+    geom_label(data = crete_peaks,
+               mapping=aes(x = X, y = Y, label = name),
+               size = 1.5,
+               nudge_x = 0.05,
+               nudge_y=0.05, label.padding = unit(0.1, "lines"))+
+    coord_sf(crs="WGS84") +
+    guides(colour="none",
+           fill = guide_colourbar(ticks = FALSE,
+                                  label = TRUE,
+                                  title="# taxa\n(AOO < 10% in N2K)",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank())
+
+ggsave("../figures/FigS4.tiff",
+       plot=crete_aoo,
+       height = 10,
+       width = 20,
+       dpi = 600,
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/FigS4.png",
+       plot=crete_aoo,
+       height = 10,
+       width = 20,
+       dpi = 600,
+       units="cm",
+       device="png")
 
 
