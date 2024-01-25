@@ -288,6 +288,14 @@ hilda_2018_o <- app(hilda_2018, fun=function(i) i %% 10)
 
 hilda_1998_2018 <- hilda_1998_o + hilda_2018_o
 
+hilda_1998_2018_sf <- st_as_sf(as.polygons(hilda_1998_2018,aggregate=F,values=T)) 
+
+st_write(hilda_1998_2018_sf,
+         "../results/hilda_1998_2018/hilda_1998_2018.shp", 
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
+
 hilda_transition <- terra::extract(hilda_1998_2018, locations_shp, cellnumbers=F, ID=F)
 colnames(hilda_transition) <- c("hilda_transition")
 
