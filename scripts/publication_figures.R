@@ -49,6 +49,12 @@ natura_crete_land <- st_intersection(natura_crete, crete_shp)
 
 locations_inland <- st_join(locations_shp, crete_shp, left=F)
 locations_10_grid <- sf::st_read("../results/locations_10_grid/locations_10_grid.shp")
+
+hilda_id_names <- read_delim("../data/hildap_GLOB-v1.0_lulc-states_crete/hilda_transitions_names.tsv", delim="\t")
+
+hilda_1998_2018 <- st_read("../results/hilda_1998_2018/hilda_1998_2018.shp") |>
+    filter(lyr_1>0) |>
+    left_join(hilda_id_names, by=c("lyr_1"="hilda_id"))
 # raster DEM hangling
 dem_crete <- raster("../data/dem_crete/dem_crete.tif")
 dem_crete_pixel <- as(dem_crete, "SpatialPixelsDataFrame")
@@ -452,71 +458,6 @@ ggsave("../figures/Fig2d.png",
        units="cm",
        device="png")
 
-## crete corine fig
-
-crete_corine <- ggplot() +
-    geom_sf(crete_shp, mapping=aes()) +
-    geom_sf(clc_crete_shp,
-            mapping=aes(fill=LABEL1),
-            alpha=1,
-            colour="transparent",
-            show.legend=T) +
-    geom_sf(natura_crete_land_sci,
-            mapping=aes(colour="Natura2000 HSD"),
-            linewidth=0.5,
-            alpha=1,
-            fill=NA,
-            show.legend=T) +
-    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
-                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
-                        name="")+
-    geom_sf(crete_peaks,
-            mapping=aes(),
-            color = "#D55E00",
-            size=1,
-            alpha=1,
-            show.legend=F) +
-    geom_label(data = crete_peaks, 
-               mapping=aes(x = X, y = Y, label = name),
-               size = 1.5,
-               nudge_x = 0.05,
-               nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
-    scale_fill_manual(values = c("Artificial surfaces"="#000000",
-                                 "Agricultural areas"="#E69F00",
-                                 "Forest and semi natural areas" = "#009E73",
-                                 "Water bodies" = "#0072B2",
-                                 "Natura2000 HSD"=NA),
-                      guide = "legend") +
-    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
-                        guide = "legend") +
-    guides(fill = guide_legend(override.aes = list(color = "transparent", alpha=1) ),
-           colour = guide_legend(override.aes = list(alpha=1, fill="transparent") ) )+
-    coord_sf(crs="WGS84") +
-    theme_bw()+
-    theme(axis.title=element_blank(),
-          axis.text=element_text(colour="black"),
-          legend.title = element_blank(),
-          legend.position = "bottom",
-          legend.box.background = element_blank(),
-          legend.key.size = unit(6, "mm"), 
-          legend.text=element_text(size=8))
-
-ggsave("../figures/Fig_corine.tiff", 
-       plot=crete_corine, 
-       height = 10, 
-       width = 20,
-       dpi = 600, 
-       units="cm",
-       device="tiff")
-
-ggsave("../figures/Fig_corine.png", 
-       plot=crete_corine, 
-       height = 10, 
-       width = 20,
-       dpi = 600, 
-       units="cm",
-       device="png")
-
 
 fig2 <- ggarrange(crete_hotspot, crete_dist_threat, crete_threat,crete_aoo,
           labels = c("A", "B", "C", "D"),
@@ -742,6 +683,188 @@ ggsave("../figures/Fig3-small.png",
        dpi = 300, 
        units="cm",
        device="png")
+
+#Fig 4 crete corine fig
+
+colors_clc_label2_v <- c("Artificial, non-agricultural vegetated areas"="#000000",
+"Open spaces with little or no vegetation"="#A77300",
+"Pastures"="#98BA6A",
+"Mine, dump and construction sites"="#46B0D3",
+"Forests"="#07A07D",
+"Scrub and/or herbaceous vegetation associations"="#98CA53",
+"Urban fabric" ="#A4A869",
+"Inland waters"="#1370A1",
+"Permanent crops"="#AE6120",
+"Industrial, commercial and transport units"="#D06C5B",
+"Heterogeneous agricultural areas"="#BE81A3",
+"Arable land"="#999999")
+
+crete_corine <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(clc_crete_shp,
+            mapping=aes(fill=LABEL2),
+            alpha=1,
+            colour="transparent",
+            show.legend=T) +
+    scale_fill_manual(values = colors_clc_label2_v,
+                      guide = "legend") +
+    new_scale_fill()+
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
+            alpha=1,
+            fill=NA,
+            show.legend=T) +
+    scale_colour_manual(values = c("Natura2000 HSD" = "darkgoldenrod2"),
+                        guide = "legend") +
+#    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+#                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+#                        name="")+
+#    geom_sf(crete_peaks,
+#            mapping=aes(),
+#            color = "#D55E00",
+#            size=1,
+#            alpha=1,
+#            show.legend=F) +
+#    geom_label(data = crete_peaks, 
+#               mapping=aes(x = X, y = Y, label = name),
+#               size = 1.5,
+#               nudge_x = 0.05,
+#               nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
+    guides(fill = guide_legend(override.aes = list(color = "transparent", alpha=1) ),
+           colour = guide_legend(override.aes = list(alpha=1, fill="transparent") ) )+
+    coord_sf(crs="WGS84") +
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_blank(),
+          legend.position = "bottom",
+          legend.box.background = element_blank(),
+          legend.key.size = unit(3, "mm"), 
+          legend.text=element_text(size=4.5))
+
+ggsave("../figures/Fig4a_corine.tiff", 
+       plot=crete_corine, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig4a_corine.png", 
+       plot=crete_corine, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+hilda_colors <- c("pasture/rangeland (stable)" = "#9ACD32",  # Olive Green
+                   "water" = "#4169E1",  # Royal Blue
+                   "urban (stable)" = "#A9A9A9",  # Dark Gray
+                   "cropland (stable)" = "#DAA520",  # Goldenrod
+                   "pasture/rangeland to cropland" = "#9ACD32",  # Olive Green
+                   "pasture/rangeland to unmanaged grass/shrubland" = "#9ACD32",  # Olive Green
+                   "pasture/rangeland to urban" = "#9ACD32",  # Olive Green
+                   "cropland to pasture/rangeland" = "#DAA520",  # Goldenrod
+                   "cropland to forest" = "#DAA520",  # Goldenrod
+                   "forest (stable)" = "#006400",  # Dark Green
+                   "cropland to urban" = "#DAA520",  # Goldenrod
+                   "pasture/rangeland to forest" = "#9ACD32",  # Olive Green
+                   "unmanaged grass/shrubland (stable)" = "#8B4513",  # Saddle Brown
+                   "cropland to unmanaged grass/shrubland" = "#DAA520",  # Goldenrod
+                   "cropland to sparse/no vegetation" = "#DAA520",  # Goldenrod
+                   "pasture/rangeland to sparse/no vegetation" = "#9ACD32",  # Olive Green
+                   "sparse/no vegetation (stable)" = "#D3D3D3",  # Light Gray
+                   "forest to pasture/rangeland" = "#006400",  # Dark Green
+                   "forest to unmanaged grass/shrubland" = "#006400")  # Dark Green
+
+crete_hilda_g <- ggplot() +
+    geom_sf(hilda_1998_2018,
+            mapping=aes(fill=hilda_name),
+            alpha=1,
+            colour="transparent",
+            show.legend=T) +
+    scale_fill_manual(values = hilda_colors,
+                      guide = "legend") +
+    new_scale_fill()+
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
+            alpha=1,
+            fill=NA,
+            show.legend=T) +
+    scale_colour_manual(values = c("Natura2000 HSD" = "darkgoldenrod2"),
+                        guide = "legend") +
+    guides(fill = guide_legend(override.aes = list(color = "transparent", alpha=1) ),
+           colour = guide_legend(override.aes = list(alpha=1, fill="transparent") ) )+
+    coord_sf(crs="WGS84") +
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_blank(),
+          legend.position = "bottom",
+          legend.box.background = element_blank(),
+          legend.key.size = unit(3, "mm"), 
+          legend.text=element_text(size=4.5))
+
+ggsave("../figures/Fig4b_hilda.tiff", 
+       plot=crete_hilda_g, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig4b_hilda.png", 
+       plot=crete_hilda_g, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+fig4 <- ggarrange(crete_corine, crete_hilda_g,
+          labels = c("A", "B"),
+          align = "hv",
+          widths = c(1,1),
+          ncol = 1,
+          nrow = 2,
+          font.label=list(color="black",size=22)) + bgcolor("white")
+
+ggsave("../figures/Fig4.tiff", 
+       plot=fig4, 
+       height = 40, 
+       width = 24,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig4.png", 
+       plot=fig4, 
+       height = 40, 
+       width = 24,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+ggsave("../figures/Fig4.pdf", 
+       plot=fig4, 
+       height = 40, 
+       width = 24,
+       dpi = 600, 
+       units="cm",
+       device="pdf")
+
+ggsave("../figures/Fig4-small.png", 
+       plot=fig4, 
+       height = 40, 
+       width = 24,
+       dpi = 300, 
+       units="cm",
+       device="png")
+
+
 
 ## Supplementary Figure 1
 orders <- unique(endemic_species$Order)
