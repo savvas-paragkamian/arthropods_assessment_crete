@@ -509,9 +509,21 @@ endemic_hotspots_4km <- locations_4_grid |>
     ungroup() |>
     filter(n_species >= quantile(n_species, 0.90)) 
 
+st_write(endemic_hotspots_4km,
+         "../results/endemic_hotspots/endemic_hotspots_4km.shp", 
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
+
 endemic_hotspots_8km <- locations_8_grid |>
     ungroup() |>
     filter(n_species >= quantile(n_species, 0.90)) 
+
+st_write(endemic_hotspots_8km,
+         "../results/endemic_hotspots/endemic_hotspots_8km.shp", 
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
 
 endemic_hotspots <- locations_grid |>
     group_by(CELLCODE) |>
@@ -558,7 +570,7 @@ crete_quads_sampling_grid <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-ggsave("../figures/figs4_crete_multiple_grids_hotspots.png",
+ggsave("../plot/crete_multiple_grids_hotspots.png",
        plot=crete_quads_sampling_grid,
        height = 10, 
        width = 20,
