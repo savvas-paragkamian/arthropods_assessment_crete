@@ -30,7 +30,12 @@ source("functions.R")
 g_base <- g_base()
 endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t") 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
+supplementary_material_1 <- readxl::read_excel("../data/Supplementary-material-1.xlsx", sheet="arthropods_occurrences")
 
+arthropods_occurrences <- st_as_sf(supplementary_material_1,
+                                   coords=c("decimalLongitude","decimalLatitude"),
+                                   remove=F,
+                                   crs="WGS84")
 ## grids
 grid_1km_o <- st_read("../data/Greece_shapefile/gr_1km.shp")
 crete_1km <- st_read("../data/Greece_shapefile/gr_1km.shp") |>
@@ -43,22 +48,17 @@ grid_10km <- sf::st_read(dsn="../data/Greece_shapefile/gr_10km.shp")
 crete_eea <- crete_shp |> st_transform(crs(grid_1km_o))
 
 ## Locations
-locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
-locations_shp <- locations_shp |>
-    mutate(long = unlist(map(locations_shp$geometry,1)),
-           lat = unlist(map(locations_shp$geometry,2)))
+
+## Occurrences
+locations_inland <- arthropods_occurrences |> 
+    dplyr::select(-bibliographicCitation) |>
+    distinct()
+
 locations_grid <- st_read("../results/locations_grid/locations_grid.shp") |>
     rename("CELLCODE"="CELLCOD") |>
-    rename("subspeciesname"="sbspcsn") |>
-    rename("families"="familis")
-locations_spatial <- st_read("../results/locations_spatial/locations_spatial.shp")
+    rename("scientificName"="scntfcN")
 
 ### locations modifications
-locations_inland <- st_join(locations_shp, crete_shp, left=F)
-locations_inland <- locations_inland |> distinct(sbspcsn,long, lat, geometry)
-sampling_intensity <- locations_inland |>
-    group_by(geometry) |>
-    summarise(n_occurrences=n())
 
 locations_eea <- locations_inland |> st_transform(crs(grid_1km_o)) 
 ## Natura2000
@@ -79,34 +79,29 @@ grid_10km_w <- grid_10km |> st_transform(., crs="WGS84")
 crete_grid10 <- st_join(grid_10km_w, crete_shp, left=F)
 
 locations_10_grid_samples <- st_join(crete_grid10, locations_inland, left=F) |>
-    distinct(geometry,CELLCODE, long, lat) |>
+    distinct(geometry,CELLCODE, decimalLatitude, decimalLongitude) |>
     group_by(geometry,CELLCODE) |>
     summarise(n_samples=n(),.groups="keep")
 
 locations_10_grid <- st_join(crete_grid10, locations_inland, left=F) |>
-    dplyr::distinct(CELLCODE, sbspcsn, geometry) |>
+    dplyr::distinct(CELLCODE, scientificName, geometry) |>
     group_by(CELLCODE, geometry) |>
     summarise(n_species=n(), .groups="keep") |>
     mutate(area=st_area(geometry)) |>
     left_join(st_drop_geometry(locations_10_grid_samples))
 
-st_write(locations_10_grid,
-         "../results/locations_10_grid/locations_10_grid.shp", 
-         append=F,
-         delete_layer=T,
-         delete_dsn = TRUE) 
 ### pearson correlation of sampling intensity and species
 cor(locations_10_grid$n_species, locations_10_grid$n_samples)
 
 ### 1km over shp
 
 locations_1_grid_samples <- st_join(crete_1km, locations_inland, left=F) |>
-    distinct(geometry,CELLCODE, long, lat) |>
+    distinct(geometry,CELLCODE, decimalLatitude, decimalLongitude) |>
     group_by(geometry,CELLCODE) |>
     summarise(n_samples=n(),.groups="keep")
 
 locations_1_grid <- st_join(crete_1km, locations_inland, left=F) |>
-    dplyr::distinct(CELLCODE, sbspcsn, geometry) |>
+    dplyr::distinct(CELLCODE, scientificName, geometry) |>
     group_by(CELLCODE, geometry) |>
     summarise(n_species=n(), .groups="keep") |>
     mutate(area=st_area(geometry)) |>
@@ -117,8 +112,8 @@ cor(locations_1_grid$n_species, locations_1_grid$n_samples)
 
 ### occurrences of each species, species distribution
 occurrences_1_grid <- st_join(crete_1km, locations_inland, left=F) |>
-    dplyr::distinct(CELLCODE, sbspcsn, geometry) |>
-    group_by(sbspcsn) |>
+    dplyr::distinct(CELLCODE, scientificName, geometry) |>
+    group_by(scientificName) |>
     summarise(geometry=st_union(geometry)) |>
     mutate(area=st_area(geometry))
 
@@ -141,12 +136,12 @@ locations_grid_8_base <- locations_grid_8_base |>
     st_join(locations_inland, left=F)
 
 locations_8_grid_samples <- locations_grid_8_base |>
-    distinct(geometry, long, lat, CELLCODE) |>
+    distinct(geometry, decimalLatitude, decimalLongitude, CELLCODE) |>
     group_by(geometry, CELLCODE) |>
     summarise(n_samples=n(),.groups="keep")
 
 locations_8_grid <- locations_grid_8_base |>
-    dplyr::distinct(sbspcsn, geometry, CELLCODE) |>
+    dplyr::distinct(scientificName, geometry, CELLCODE) |>
     group_by(geometry, CELLCODE) |>
     summarise(n_species=n(), .groups="keep") |>
     mutate(area=st_area(geometry)) |>
@@ -174,12 +169,12 @@ locations_grid_4_base <- locations_grid_4_base |>
     st_join(locations_inland, left=F)
 
 locations_4_grid_samples <- locations_grid_4_base |>
-    distinct(geometry, long, lat, CELLCODE) |>
+    distinct(geometry, decimalLongitude, decimalLatitude, CELLCODE) |>
     group_by(geometry, CELLCODE) |>
     summarise(n_samples=n(),.groups="keep")
 
 locations_4_grid <- locations_grid_4_base |>
-    dplyr::distinct(sbspcsn, geometry, CELLCODE) |>
+    dplyr::distinct(scientificName, geometry, CELLCODE) |>
     group_by(geometry, CELLCODE) |>
     summarise(n_species=n(), .groups="keep") |>
     mutate(area=st_area(geometry)) |>
@@ -199,7 +194,6 @@ crete_manual_grid <- rast(ncol=311,
 
 values(crete_manual_grid) <- 0
 
-locations_eea <- locations_eea |> distinct(sbspcsn,long, lat, geometry) 
 locations_eea_sampling <- locations_eea |> distinct(geometry) 
 grid_occ_count <- rasterize(locations_eea, crete_manual_grid, fun='count')
 grid_sampling_count <- rasterize(locations_eea_sampling, crete_manual_grid, fun='count')
@@ -257,10 +251,10 @@ qt_sf <- qt_df |>
 qt_sf_sp <- qt_sf |>
     st_transform(crs(locations_inland)) |> 
     st_join(locations_inland, left=F) |>
-    distinct(sbspcsn,geometry) |>
+    distinct(scientificName,geometry) |>
     group_by(geometry) |>
     mutate(n_species=n()) |>
-    left_join(endemic_species, by=c("sbspcsn"="subspeciesname"))
+    left_join(endemic_species, by=c("scientificName"="scientificName"))
 
 ### quadstrees plots
 png(file="../plots/quadtree_crete.png",
@@ -288,12 +282,12 @@ qt_sf_all <- qt_sf_sp |>
     mutate(Order="All")
 
 qt_sf_order <- qt_sf_sp |> 
-    group_by(geometry, Order) |> 
+    group_by(geometry, order) |> 
     summarise(n_species=n(), .groups="keep") |>
     ungroup()
 
 qt_sf_n_order <- qt_sf_sp |> 
-    distinct(geometry, Order) |> 
+    distinct(geometry, order) |> 
     group_by(geometry) |> 
     summarise(n_orders=n())
 
@@ -351,7 +345,7 @@ crete_quads_endemics_orders_map <- ggplot() +
           legend.title = element_text(size=8),
           legend.position = "bottom",
           legend.box.background = element_blank()) +
-    facet_wrap(vars(Order), ncol=2, scales = "fixed")
+    facet_wrap(vars(order), ncol=2, scales = "fixed")
 
 ggsave("../plots/crete_quads_endemics_orders_map.png",
        plot=crete_quads_endemics_orders_map, 
@@ -416,19 +410,19 @@ crete_grid10_q <- crete_grid10 |>
 #    as.matrix()
 
 community_m_1km <- st_join(crete_1km, locations_inland, left=F) |>
-    group_by(sbspcsn,CELLCODE) |>
+    group_by(scientificName,CELLCODE) |>
     summarise(presense=n(), .groups="keep") |>
     st_drop_geometry() |>
     ungroup() |>
-    pivot_wider(names_from=sbspcsn, values_from=presense, values_fill = 0) |>
+    pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
     as.matrix()
 
 community_m_4km <- locations_grid_4_base |>
-    group_by(sbspcsn,CELLCODE) |>
+    group_by(scientificName,CELLCODE) |>
     summarise(presense=n(), .groups="keep") |>
     st_drop_geometry() |>
     ungroup() |>
-    pivot_wider(names_from=sbspcsn, values_from=presense, values_fill = 0) |>
+    pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
     as.matrix()
 
 community_m <- community_m_4km
@@ -441,8 +435,15 @@ sp2 <- specaccum(community_matrix, "random")
 
 pool <- poolaccum(community_matrix)
 summary(pool, display = "chao")
-plot(pool)
 
+png(file="../plots/poolaccum.png",
+    width = 40,
+    height = 20,
+    res=300,
+    units = "cm",
+    bg="white")
+plot(pool)
+dev.off()
 #rarecurve(community_matrix, step = 20, sample = raremax, col = "blue", cex =      0.6,main = "rarecurve() on subset of data")
 
 
@@ -468,13 +469,14 @@ dev.off()
 
 ############################ sampling intensity ##############################
 locations_10_grid_samples_all <- locations_10_grid_samples |>
-    mutate(Order="All") |>
+    mutate(order="All") |>
     distinct() 
 
 locations_10_grid_samples_o <- st_join(crete_grid10, locations_inland, left=F) |>
-    left_join(endemic_species, by=c("sbspcsn"="subspeciesname")) |> 
-    distinct(geometry,CELLCODE, long, lat, Order) |>
-    group_by(geometry, CELLCODE,Order) |>
+    distinct(geometry,CELLCODE, decimalLatitude, decimalLongitude, scientificName) |>
+    left_join(endemic_species, by=c("scientificName"="scientificName")) |> 
+    distinct(geometry,CELLCODE, decimalLatitude, decimalLongitude, order) |>
+    group_by(geometry, CELLCODE,order) |>
     summarise(n_samples=n(),.groups="keep") |>
     distinct() |>
     ungroup() 
@@ -485,7 +487,7 @@ g_sampling_order <- g_base +
     geom_sf(sampling_intensity_o_10km,
             mapping=aes(fill=n_samples), alpha=0.3, size=0.1, na.rm = FALSE) +
     scale_fill_gradientn(colours = terrain.colors(10)) +
-    facet_wrap(vars(Order), ncol=2, scales = "fixed")
+    facet_wrap(vars(order), ncol=2, scales = "fixed")
 
 ggsave("../figures/figS3_crete_sampling_intensity_order.png", 
        plot=g_sampling_order, 
@@ -580,9 +582,9 @@ ggsave("../plot/crete_multiple_grids_hotspots.png",
 
 
 endemic_hotspots_order <- locations_grid %>% 
-    group_by(CELLCODE, Order) %>%
+    group_by(CELLCODE, order) %>%
     summarise(n_species=n(), .groups="drop") %>%
-    group_by(Order) %>%
+    group_by(order) %>%
     mutate(quant90= quantile(n_species, 0.90)) %>%
     filter(n_species >= quant90)
 
@@ -603,7 +605,7 @@ ggsave("../plots/crete-hotspots.png", plot=g_e, device="png")
 g_e_order <- g_base +
     geom_sf(endemic_hotspots_order, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE) +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
-    facet_wrap(vars(Order), ncol=2, scales = "fixed")
+    facet_wrap(vars(order), ncol=2, scales = "fixed")
 
 ggsave("../figures/figS5_crete-hotspots_order.png", 
        plot=g_e_order, 
@@ -644,18 +646,18 @@ write.table(as.data.frame(hotspots_in_area),
 ############################### threatspots #############################
 
 threatspots <- locations_grid %>%
-    dplyr::select(CELLCODE,subspeciesname) %>%
-    left_join(endemic_species, by=c("subspeciesname"="subspeciesname")) %>%
+    dplyr::select(CELLCODE,scientificName) %>%
+    left_join(endemic_species, by=c("scientificName"="scientificName")) %>%
     st_drop_geometry() %>% # geometry must be dropped to run pivot wider
     dplyr::group_by(CELLCODE, paca) %>%
     dplyr::summarise(n_species = dplyr::n(), .groups = "drop") %>%
     tidyr::pivot_wider(names_from = paca, values_from=n_species, values_fill=0)
 
 threatspots_order <- locations_grid %>%
-    dplyr::select(CELLCODE,subspeciesname) %>%
-    left_join(endemic_species, by=c("subspeciesname"="subspeciesname")) %>%
+    dplyr::select(CELLCODE,scientificName) %>%
+    left_join(endemic_species, by=c("scientificName"="scientificName")) %>%
     st_drop_geometry() %>% # geometry must be dropped to run pivot wider
-    dplyr::group_by(CELLCODE, paca, Order) %>%
+    dplyr::group_by(CELLCODE, paca, order) %>%
     dplyr::summarise(n_species = dplyr::n(), .groups = "drop") %>%
     tidyr::pivot_wider(names_from = paca, values_from=n_species, values_fill=0)
 # override the dataframe threatspots with a new one to include the 
@@ -685,12 +687,12 @@ threatspots_order <- locations_grid %>%
     distinct() %>%
     inner_join(threatspots_order, by=c("CELLCODE"="CELLCODE")) %>%
     mutate(LT.PT_pro=LT/PT) %>%
-    dplyr::select(LT,PT, CELLCODE, Order) %>%
+    dplyr::select(LT,PT, CELLCODE, order) %>%
     mutate(paca_threat=LT+PT) %>%
     filter(paca_threat>0)
 
 threatspots_order_lt <- threatspots_order %>% 
-    group_by(Order) %>%
+    group_by(order) %>%
     mutate(quant90 = quantile(paca_threat,0.90)) %>%
     filter(paca_threat>=quant90)
 
@@ -715,7 +717,7 @@ g_t_order <- g_base +
     geom_sf(threatspots_order_lt, mapping=aes(fill=paca_threat), alpha=0.3, size=0.1, na.rm = TRUE) +
     ggtitle("threatspots")+
     scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
-    facet_wrap(vars(Order), ncol=2, scales = "fixed")
+    facet_wrap(vars(order), ncol=2, scales = "fixed")
 
 ggsave("../figures/figS7_crete-threatspots_order.png", 
        plot=g_t_order, 
@@ -741,7 +743,7 @@ ggsave("../figures/figS8_threatspots_of_orders.png",
 ######################## Threatened species distribution #######################
 
 treatened_dist_quad <- qt_sf_sp |>
-    distinct(sbspcsn, geometry, threatened) |> 
+    distinct(scientificName, geometry, threatened) |> 
     mutate(threatened_t=if_else(threatened==TRUE, 1, 0)) |>
     mutate(threatened_f=if_else(threatened==TRUE, 0, 1)) |>
     group_by(geometry) |>
@@ -764,12 +766,11 @@ st_write(treatened_dist_quad,
 ## first create the input sf object of the species
 
 occurrences <- occurrences_1_grid |>
-    rename(subspeciesname=sbspcsn)|>
-    mutate(ID=subspeciesname)
+    mutate(ID=scientificName)
 
 input <- occurrences |>
     mutate(binomial=ID) |>
-    left_join(endemic_species, by=c("ID"="subspeciesname")) |>
+    left_join(endemic_species, by=c("ID"="scientificName")) |>
     mutate(category=gsub("NT/","",iucn))
 
 ## for each cellgrid calculate the WEGE
@@ -885,14 +886,14 @@ species_10_natura <- endemic_species %>%
     filter(aoo_natura_percent<0.1 & threatened==T)
 
 species_10_natura_l <- locations_grid %>%
-    filter(subspeciesname %in% species_10_natura$subspeciesname) %>%
+    filter(scientificName %in% species_10_natura$scientificName) %>%
     group_by(CELLCODE) %>%
     summarise(n_species=n()) %>%
     filter(n_species>2)
 
 species_10_natura_l_o <- locations_grid %>%
-    filter(subspeciesname %in% species_10_natura$subspeciesname) %>%
-    group_by(CELLCODE, Order) %>%
+    filter(scientificName %in% species_10_natura$scientificName) %>%
+    group_by(CELLCODE, order) %>%
     summarise(n_species=n(), .groups="drop")
 
 g_n_e <- g_base +
@@ -906,7 +907,7 @@ g_e_order <- g_base +
     geom_sf(species_10_natura_l_o, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
     ggtitle("Hotspots of AOO<10% overlap with Natura2000") +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
-    facet_wrap(vars(Order), ncol=3, scales = "fixed")
+    facet_wrap(vars(order), ncol=3, scales = "fixed")
 
 ggsave("../plots/hotspots_10_overlap_natura_order.png", 
        plot=g_e_order, 
