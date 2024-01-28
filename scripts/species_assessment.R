@@ -25,67 +25,29 @@ library(ConR)
 source("functions.R")
 
 # Load Data
-## Endemic species occurrences in Crete
-arthropods_kriti_endemic <- readxl::read_excel("../data/endemic-arthropods-crete.xlsx") |>
-    filter(Order!="Opiliones") 
-
 ## Crete
-crete_shp <- sf::st_read("../data/crete/crete.shp")
+crete_shp <- sf::st_read("../data/crete/crete.shp") |> dplyr::select(-PER)
+## Endemic species occurrences in Crete
+supplementary_material_1 <- readxl::read_excel("../data/Supplementary-material-1.xlsx", sheet="arthropods_occurrences")
+
+arthropods_occurrences <- st_as_sf(supplementary_material_1,
+                                   coords=c("decimalLongitude","decimalLatitude"),
+                                   remove=F,
+                                   crs="WGS84")
 
 ## Sanity check on coordinates
-species_wo_coords <- arthropods_kriti_endemic |> filter(is.na(latD))
-print(paste0("there are ", nrow(species_wo_coords)," rows without coordinates"))
-
-write_delim(species_wo_coords, "../data/species_wo_coords.tsv", delim="\t")
 
 locations_out <- st_difference(arthropods_occurrences, crete_shp)
 
-print(paste0("these occurrences are in the sea or out of bounds", nrow(locations_out)))
-#species_out_of_crete <- st_filter(arthropods_occurrences, st_union(crete_shp), .predicate=st_disjoint) 
+print(paste0("these occurrences are in the sea or out of bounds=", nrow(locations_out)))
 
-write_delim(st_drop_geometry(locations_out), "../data/species_out_of_crete.tsv", delim="\t")
-
-arthropods_occurrences <- arthropods_kriti_endemic |>
-    dplyr::select(-Ergasia) |>
-    distinct(subspeciesname,latD,logD,families,Order) |>
-    na.omit(latD,logD) |>
-    mutate(latD=round(latD,4),logD=round(logD,4)) |>
-    st_as_sf(coords=c("logD", "latD"), remove=F, crs="WGS84")
-
-
-locations_shp <- st_join(arthropods_occurrences, crete_shp, left=F) 
-
-st_write(locations_shp,
-         "../data/arthropods_occurrences/arthropods_occurrences.shp",
-         layer_options = "ENCODING=UTF-8" ,
-         append=FALSE,
-         delete_layer=T)
-
-st_write(locations_shp,
-         "../data/arthropods_occurrences/arthropods_occurrences.csv",
-         layer_options = "ENCODING=UTF-8", 
-         append=FALSE, 
-         delete_layer=T, 
-         delete_dsn = TRUE)
 ## Source of the occurrences, NHMC collection and Bibliography
+locations_source <- st_join(arthropods_occurrences, crete_shp, left=F) 
 
-locations_source <- readxl::read_excel("../data/Data-ENDEMICS.xlsx", 
-                                     col_types = c("text",
-                                                   "text",
-                                                   "text",
-                                                   "text",
-                                                   "text",
-                                                   "numeric",
-                                                   "numeric",
-                                                   "date",
-                                                   "text")) %>% 
-    filter(Order!="Opiliones") %>%
-    mutate(source=if_else(is.na(Ergasia),"Bibliography","NHMC")) %>% 
-    distinct(source, latD, logD) %>%
-    filter(latD<38, logD<30) %>%
-    na.omit()
-
-write_delim(locations_source, "../data/locations_source.tsv", delim="\t", col_names=T)
+## Occurrences
+locations_inland <- locations_source |> 
+    dplyr::select(-bibliographicCitation) |>
+    distinct()
 
 ### Natura2000
 
@@ -110,18 +72,13 @@ crete_polygon <- st_cast(crete_shp, "POLYGON") %>%
     mutate(area_m2=as.numeric(st_area(.))) %>%
     filter(area_m2==max(area_m2))
 
-# There is a difference in the points of the following objects
-# some occurrences fall in the sea and others are on the peripheral
-# islands of Crete.
-
-locations_inland <- locations_shp
 # return the coordinates to a dataframe format
 
 locations_inland_df <- locations_inland %>%
     mutate(ddlon = unlist(map(locations_inland$geometry,1)),
            ddlat = unlist(map(locations_inland$geometry,2))) %>%
     st_drop_geometry() %>% 
-    dplyr::rename(tax=subspeciesname) %>%
+    dplyr::rename(tax=scientificName) %>%
     dplyr::select(ddlat, ddlon, tax)
 
 ## EEA reference grid
@@ -138,32 +95,19 @@ crete_grid10 <- st_join(grid_10km, crete_shp, left=F)
 
 ### Sites to locations. Each 10km grid is a location of a species
 locations_grid <- st_join(crete_grid10, locations_inland, left=TRUE) %>%
-    dplyr::select(CELLCODE, subspeciesname, Order, families) %>% 
+    dplyr::select(CELLCODE, scientificName, order, family) %>% 
     distinct() %>%
     na.omit() %>%
-    group_by(subspeciesname) %>%
+    group_by(scientificName) %>%
     mutate(n_locations=n()) %>% 
     ungroup()
 
 st_write(locations_grid,
          "../results/locations_grid/locations_grid.shp", 
+         layer_options = "ENCODING=UTF-8",
          append=FALSE, 
          delete_layer=T, 
          delete_dsn = TRUE)
-
-## Here is Crete with all the sampling points
-##
-g_base <- g_base()
-
-g <- g_base +
-    geom_sf(locations_inland, mapping=aes(),color="blue", size=0.1, alpha=0.2) +
-    geom_sf(locations_out, mapping=aes(),color="red", size=0.1, alpha=0.2) +
-#    geom_sf(crete_grid10m, mapping=aes(),color="red", alpha=0.2, size=0.1) +
-#    geom_sf(gr, mapping=aes(),color="orange", alpha=0.2, size=0.1) +
-    coord_sf(crs="WGS84") +
-    theme_bw()
-
-ggsave("../plots/crete-occurrences.png", plot=g, device="png")
 
 # Processing
 
@@ -199,9 +143,9 @@ AOO_endemic <- AOO.computing(locations_inland_df,Cell_size_AOO = 2, nbe.rep.rast
 # in AOO.computing when export_shp is T a list is returned.
 
 if (is.list(AOO_endemic)) {
-    AOO_endemic_df <- data.frame(AOO= AOO_endemic[[1]]) %>% rownames_to_column(var="subspeciesname")
+    AOO_endemic_df <- data.frame(AOO= AOO_endemic[[1]]) %>% rownames_to_column(var="scientificName")
 } else {
-    AOO_endemic_df <- tibble(subspeciesname=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
+    AOO_endemic_df <- tibble(scientificName=names(AOO_endemic),AOO=AOO_endemic, row.names=NULL)
 }
 
 # This function returns a tibble with the calculations as well a figure for each species.
@@ -227,13 +171,13 @@ write_delim(aoo_overlap_wildlife, "../results/aoo_overlap_natura_sci.tsv", delim
 
 endemic_species <- locations_grid %>% 
     st_drop_geometry() %>%
-    distinct(subspeciesname,Order,families,n_locations) %>% 
+    distinct(scientificName,order,family,n_locations) %>% 
     ungroup() %>%
-    left_join(eoo_results, by=c("subspeciesname"="subspeciesname")) %>%
-    left_join(eoo_natura, by=c("subspeciesname"="subspeciesname")) %>%
-    left_join(eoo_wildlife, by=c("subspeciesname"="subspeciesname")) %>%
-    left_join(aoo_overlap_natura_sci, by=c("subspeciesname"="species")) %>%
-    left_join(aoo_overlap_wildlife, by=c("subspeciesname"="species")) %>%
+    left_join(eoo_results, by=c("scientificName"="scientificName")) %>%
+    left_join(eoo_natura, by=c("scientificName"="scientificName")) %>%
+    left_join(eoo_wildlife, by=c("scientificName"="scientificName")) %>%
+    left_join(aoo_overlap_natura_sci, by=c("scientificName"="species")) %>%
+    left_join(aoo_overlap_wildlife, by=c("scientificName"="species")) %>%
     mutate(potentially_VU=if_else(n_locations<=10 & (eoo<20000 | aoo<2000),TRUE,FALSE)) %>%
     mutate(potentially_EN=if_else(n_locations<=5 & (eoo<5000 | aoo<500),TRUE,FALSE)) %>%
     mutate(potentially_CR=if_else(n_locations==1 & (if_else(is.na(eoo),0,eoo)<100 | aoo<10),TRUE,FALSE)) %>%

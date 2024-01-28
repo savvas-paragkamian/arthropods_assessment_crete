@@ -171,7 +171,7 @@ eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefi
 # the location shapefile, the polygon and a TRUE/FALSE value to 
 # export or not to plot
     species <- occurrences %>% st_drop_geometry() %>%
-        dplyr::select(subspeciesname) %>% 
+        dplyr::select(scientificName) %>% 
         distinct() %>%
         pull()
 
@@ -180,7 +180,7 @@ eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefi
     for(s in seq_along(species)){
 
         n_occurrences <- occurrences %>%
-            filter(subspeciesname==species[s])
+            filter(scientificName==species[s])
 
         calculations[[s]] <- eoo_single(n_occurrences,baseline_map, overlap_area, plots, prefix)
         
@@ -188,7 +188,7 @@ eoo_calculation <- function(occurrences,baseline_map, overlap_area, plots, prefi
 
     eoo_overlap_name <- paste0("eoo_",prefix)
     calculations_df <- convert_ll_df(calculations) %>% as_tibble() 
-    colnames(calculations_df) <- c("subspeciesname", "n_sites", "eoo", "eoo_overlap")
+    colnames(calculations_df) <- c("scientificName", "n_sites", "eoo", "eoo_overlap")
 
     calculations_df$n_sites <- as.numeric(calculations_df$n_sites)
     calculations_df$eoo <- as.numeric(calculations_df$eoo)
@@ -203,7 +203,7 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
     prefix <- as.character(prefix)
     rows <- nrow(taxon_occurrences)
     species <- taxon_occurrences %>% st_drop_geometry() %>%
-        dplyr::select(subspeciesname) %>% 
+        dplyr::select(scientificName) %>% 
         distinct() %>%
         pull()
 
@@ -275,7 +275,7 @@ eoo_single <- function(taxon_occurrences,baseline_map, overlap_area, plots, pref
 g_species <- function(occurrences,convex, baseline_map){
     
 #    convex <- st_convex_hull(st_union(occurrences))
-    name <- unique(as.character(occurrences$subspeciesname))
+    name <- unique(as.character(occurrences$scientificName))
     name_ <- gsub(" ", "_", name)
 
     g <- ggplot() +
