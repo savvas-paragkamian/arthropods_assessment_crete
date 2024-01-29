@@ -1,9 +1,9 @@
 #!/usr/bin/Rscript
 
-## Script name: spacial_analysis.R
+## Script name: spatial_analysis.R
 ##
 ## Purpose of script: Spatial analysis using data from the Copernicus system
-## for elevation, habitats and corine land cover and land use change.
+## for elevation, habitats and corine land cover and land use change (HILDA+).
 ## Main output is an enriched locations file which is exported for further analysis.
 ##
 ## How to run:
@@ -24,12 +24,19 @@ source("functions.R")
 
 # Load data
 g_base <- g_base()
-locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
-locations_shp <- locations_shp |>
-    mutate(long = unlist(map(locations_shp$geometry,1)),
-           lat = unlist(map(locations_shp$geometry,2)))
+supplementary_material_1 <- readxl::read_excel("../data/Supplementary-material-1.xlsx", sheet="arthropods_occurrences")
+
+arthropods_occurrences <- st_as_sf(supplementary_material_1,
+                                   coords=c("decimalLongitude","decimalLatitude"),
+                                   remove=F,
+                                   crs="WGS84")
+## Occurrences
+locations_shp <- arthropods_occurrences |> 
+    dplyr::select(-bibliographicCitation) |>
+    distinct()
+
 crete_shp <- sf::st_read("../data/crete/crete.shp")
-locations_inland <- st_join(locations_shp, crete_shp, left=F)
+
 endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t")
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
 threatspots <- st_read("../results/threatspots/threatspots.shp")
@@ -393,42 +400,44 @@ st_write(locations_shp,
          delete_dsn = TRUE,
          append=TRUE)
 
-st_write(locations_shp,
-         "../results/locations_spatial/locations_spatial.csv",
-         append=TRUE)
-
-
-
+write_delim(st_drop_geometry(locations_shp),
+         "../results/locations_spatial/locations_spatial.tsv",
+         delim="\t")
 
 ##################### create CELLCOD metadata #######################
-threatspots_df <- st_drop_geometry(wege_results) %>% mutate(threatspot="threatspot") 
-endemic_hotspots_df <- st_drop_geometry(endemic_hotspots) %>%
-    mutate(hotspot="hotspot") %>%
+
+locations_grid <- st_read("../results/locations_grid/locations_grid.shp") |>
+    rename("CELLCODE"="CELLCOD") |>
+    rename("scientificName"="scntfcN")
+
+threatspots_df <- st_drop_geometry(wege_results) |> mutate(threatspot="threatspot") 
+endemic_hotspots_df <- st_drop_geometry(endemic_hotspots) |>
+    mutate(hotspot="hotspot") |>
     dplyr::select(-n_species)
 
-locations_grid_d <- locations_grid %>% distinct(CELLCOD,geometry)
+locations_grid_d <- locations_grid |> distinct(CELLCODE,geometry)
 eea_10_crete_metadata <- st_intersection(locations_grid_d, clc_crete_shp)
 
-eea_10_crete_metadata_d <- eea_10_crete_metadata %>%
-    mutate(area = st_area(geometry)) %>%
-    group_by(LABEL2, CELLCOD) %>%
-    summarise(area_sum=sum(area), .groups="keep") %>%
-    st_drop_geometry() %>% units::drop_units() %>%
-    pivot_wider(id_cols="CELLCOD", names_from="LABEL2", values_from="area_sum", values_fill=0)
+eea_10_crete_metadata_d <- eea_10_crete_metadata |>
+    mutate(area = st_area(geometry)) |>
+    group_by(LABEL2, CELLCODE) |>
+    summarise(area_sum=sum(area), .groups="keep") |>
+    st_drop_geometry() |> units::drop_units() |>
+    pivot_wider(id_cols="CELLCODE", names_from="LABEL2", values_from="area_sum", values_fill=0)
 
-grid_stats <- locations_grid %>%
-    st_drop_geometry() %>%
-    group_by(CELLCOD) %>%
-    summarise(n_species=n()) %>%
-    left_join(endemic_hotspots_df, by=c("CELLCOD"="CELLCODE")) %>%
-    left_join(threatspots_df, by=c("CELLCOD"="CELLCOD")) %>%
+grid_stats <- locations_grid |>
+    st_drop_geometry() |>
+    group_by(CELLCODE) |>
+    summarise(n_species=n()) |>
+    left_join(endemic_hotspots_df, by=c("CELLCODE"="CELLCODE")) |>
+    left_join(threatspots_df, by=c("CELLCODE"="CELLCOD")) |>
     left_join(eea_10_crete_metadata_d)
 
-grid_stats_t <- grid_stats %>%
-    mutate_at(c('hotspot','threatspot'), ~replace_na(.,"no")) %>%
+grid_stats_t <- grid_stats |>
+    mutate_at(c('hotspot','threatspot'), ~replace_na(.,"no")) |>
     mutate_at(c('LT','PT','pc_thrt','wege'), ~replace_na(.,0))
 
-grid_stats_long <- grid_stats_t %>%
-    pivot_longer(!c(CELLCOD,hotspot,threatspot),
+grid_stats_long <- grid_stats_t |>
+    pivot_longer(!c(CELLCODE,hotspot,threatspot),
                  names_to="variables",
                  values_to="values")
