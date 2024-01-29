@@ -28,16 +28,24 @@ source("functions.R")
 g_base <- g_base()
 
 # load data
-locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
-locations_source <- read_delim("../data/locations_source.tsv", delim="\t", col_names=T) %>%
-        st_as_sf(coords=c("logD","latD"),
-             remove=F,
-             crs="WGS84")
+supplementary_material_1 <- readxl::read_excel("../data/Supplementary-material-1.xlsx", sheet="arthropods_occurrences")
+
+arthropods_occurrences <- st_as_sf(supplementary_material_1,
+                                   coords=c("decimalLongitude","decimalLatitude"),
+                                   remove=F,
+                                   crs="WGS84")
+
+locations_source <- arthropods_occurrences |> 
+    mutate(source=ifelse(bibliographicCitation=="NHMC Arthropods collection", "NHMC", "Bibliography"))
+
+locations_inland <- locations_source |> 
+    dplyr::select(-bibliographicCitation) |>
+    distinct()
 
 locations_spatial <- sf::st_read("../results/locations_spatial/locations_spatial.shp")
 locations_grid <- sf::st_read("../results/locations_grid/locations_grid.shp") 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
-crete_peaks <- read_delim("../data/crete_mountain_peaks.csv", delim=";", col_names=T) %>% 
+crete_peaks <- read_delim("../data/crete_mountain_peaks.csv", delim=";", col_names=T) |> 
     st_as_sf(coords=c("X", "Y"),
              remove=F,
              crs="WGS84")
@@ -47,9 +55,6 @@ natura_crete <- sf::st_read("../data/natura2000/natura2000_crete.shp")
 wdpa_crete <- sf::st_read("../data/wdpa_crete/wdpa_crete.shp")
 natura_crete_land <- st_intersection(natura_crete, crete_shp)
 
-locations_inland <- st_join(locations_shp, crete_shp, left=F)
-locations_10_grid <- sf::st_read("../results/locations_10_grid/locations_10_grid.shp")
-
 hilda_id_names <- read_delim("../data/hildap_GLOB-v1.0_lulc-states_crete/hilda_transitions_names.tsv", delim="\t")
 
 hilda_1998_2018 <- st_read("../results/hilda_1998_2018/hilda_1998_2018.shp") |>
@@ -58,17 +63,17 @@ hilda_1998_2018 <- st_read("../results/hilda_1998_2018/hilda_1998_2018.shp") |>
 # raster DEM hangling
 dem_crete <- raster("../data/dem_crete/dem_crete.tif")
 dem_crete_pixel <- as(dem_crete, "SpatialPixelsDataFrame")
-dem_crete_df <- as.data.frame(dem_crete_pixel) %>% filter(dem_crete>0)
+dem_crete_df <- as.data.frame(dem_crete_pixel) |> filter(dem_crete>0)
 
 # split the SPA SCI
 
-natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
+natura_crete_land_sci <- natura_crete_land |> filter(SITETYPE=="B")
 ## Hotspots and threatspots
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
 endemic_hotspots_4km <- st_read("../results/endemic_hotspots/endemic_hotspots_4km.shp")
 endemic_hotspots_8km <- st_read("../results/endemic_hotspots/endemic_hotspots_8km.shp")
 threatspots <- st_read("../results/threatspots/threatspots.shp")
-threatspots_lt <- threatspots %>% 
+threatspots_lt <- threatspots |> 
     filter(pc_thrt>= quantile(pc_thrt,0.90))
 wege_results <- st_read("../results/wege_results/wege_results.shp")
 
@@ -104,7 +109,7 @@ crete_base <- ggplot() +
                         name="")+
     new_scale_color()+
     geom_point(locations_source,
-            mapping=aes(x=logD, y=latD, color=source, shape=source),
+            mapping=aes(x=decimalLongitude, y=decimalLatitude, color=source, shape=source),
             size=1.8,
             alpha=0.8,
             show.legend=T) +
@@ -468,21 +473,21 @@ ggsave("../figures/Fig2-small.png",
 #figure 3
 
 #fig3a
-aoo_dist <- endemic_species %>%
-    pivot_longer(cols=c(aoo,eoo,n_locations)) %>%
-    dplyr::select(subspeciesname, Order, name, value) %>%
-    filter(value>0) %>%
-    mutate(Order=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", Order))
+aoo_dist <- endemic_species |>
+    pivot_longer(cols=c(aoo,eoo,n_locations)) |>
+    dplyr::select(scientificName, order, name, value) |>
+    filter(value>0) |>
+    mutate(order=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", order))
 
 
 fig3a <- ggplot() +
     geom_boxplot(aoo_dist,
-                 mapping=aes(x=Order, y=value,color=name),
+                 mapping=aes(x=order, y=value,color=name),
                  outlier.size = 0) +
     geom_point(aoo_dist, 
-               mapping=aes(x=Order, y=value, color=name, shape=name),
+               mapping=aes(x=order, y=value, color=name, shape=name),
                position=position_jitterdodge(0.3)) + 
-    geom_vline(xintercept = seq(0.5, length(aoo_dist$Order), by = 1), 
+    geom_vline(xintercept = seq(0.5, length(aoo_dist$order), by = 1), 
                color="gray", 
                linewidth=.5,
                alpha=.5) + # # set vertical lines between x groups
@@ -515,9 +520,9 @@ ggsave("../figures/fig3a.png",
 
 #fig3b
 # Overlap of hotspots
-endemic_hotspots_o <- locations_grid %>% 
-    filter(CELLCOD %in% endemic_hotspots$CELLCODE) %>%
-    distinct(CELLCOD, Order)
+endemic_hotspots_o <- locations_grid |> 
+    filter(CELLCOD %in% endemic_hotspots$CELLCODE) |>
+    distinct(CELLCOD, order)
 
 heatmaps_hotspots <- heatmaps(endemic_hotspots_o)
 
@@ -530,24 +535,24 @@ ggsave("../figures/fig3aa.png",
        dpi = 300)
 
 # Overlap of WEGE threatspots
-wege_results_o <- locations_grid %>% 
-    filter(CELLCOD %in% wege_results$CELLCOD) %>%
-    distinct(CELLCOD, Order)
+wege_results_o <- locations_grid |> 
+    filter(CELLCOD %in% wege_results$CELLCOD) |>
+    distinct(CELLCOD, order)
 
 heatmaps_wege_threatspots <- heatmaps(wege_results_o) 
 
-heatmap_sort <- heatmaps_wege_threatspots[[1]] %>%
-    mutate(from=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", from)) %>%
+heatmap_sort <- heatmaps_wege_threatspots[[1]] |>
+    mutate(from=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", from)) |>
     mutate(to=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)",to))
 
 
-order_cell_long <- heatmap_sort %>%
+order_cell_long <- heatmap_sort |>
     mutate(count=if_else(from==to,0,count))
 
-order_cell_long_t <- order_cell_long %>%
+order_cell_long_t <- order_cell_long |>
     filter(count!=0)
 
-diagonal <- heatmap_sort %>%
+diagonal <- heatmap_sort |>
     filter(from==to)
 
 
@@ -824,13 +829,13 @@ ggsave("../figures/Fig4-small.png",
 
 
 ## Supplementary Figure 1
-orders <- unique(endemic_species$Order)
+orders <- unique(endemic_species$order)
 
-redlist_threatened <- redlist_orders %>%
-    group_by(Order, source) %>%
-    mutate(total=sum(n), proportion = round(n/total,digits=2)) %>%
-    ungroup() %>%
-    filter(Order %in% orders)
+redlist_threatened <- redlist_orders |>
+    group_by(order, source) |>
+    mutate(total=sum(n), proportion = round(n/total,digits=2)) |>
+    ungroup() |>
+    filter(order %in% orders)
 
 redlist_threatened$source <- factor(redlist_threatened$source,
                                     levels=c("endemic_crete_redlist",
@@ -846,10 +851,10 @@ redlist_threatened$label <- factor(redlist_threatened$source,
 
 figS1 <- ggplot() +
     geom_col(redlist_threatened,
-             mapping=aes(x=Order, y=n, fill=threatened),
+             mapping=aes(x=order, y=n, fill=threatened),
              position = position_stack()) +
     geom_text_repel(data=redlist_threatened,
-              aes(x=Order,y=n, group=threatened,
+              aes(x=order,y=n, group=threatened,
                   label = paste(n," (",proportion,")", sep="")),
               size=3,
               position = position_stack(vjust = .6),
@@ -879,19 +884,19 @@ ggsave("../figures/figS1.png",
 
 ## Supplementary Figure 2
 
-order_aoo <- endemic_species %>%
-    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
-    group_by(Order) %>%
-    mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative)) %>%
-    mutate(Order=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", Order))
+order_aoo <- endemic_species |>
+    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) |>
+    group_by(order) |>
+    mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative)) |>
+    mutate(order=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", order))
 
 figS2 <- ggplot() +
     geom_boxplot(order_aoo,
-                 mapping=aes(x=Order, y=aoo_natura_relative),
+                 mapping=aes(x=order, y=aoo_natura_relative),
                  outlier.size = 0) +
     geom_jitter(order_aoo, 
-               mapping=aes(x=Order, y=aoo_natura_relative)) + 
-    geom_vline(xintercept = seq(0.5, length(order_aoo$Order), by = 1), 
+               mapping=aes(x=order, y=aoo_natura_relative)) + 
+    geom_vline(xintercept = seq(0.5, length(order_aoo$order), by = 1), 
                color="gray", 
                linewidth=.5, 
                alpha=.5) + # # set vertical lines between x groups
@@ -913,22 +918,22 @@ ggsave("../figures/figS2.png",
 
 
 ## figS4 
-species_10_natura <- endemic_species %>%
-    mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) %>%
-    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) %>%
+species_10_natura <- endemic_species |>
+    mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) |>
+    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) |>
     filter(aoo_natura_relative<0.1 & threatened==T)
 
-species_10_natura_l <- locations_grid %>%
-    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
-    group_by(CELLCOD) %>%
-    summarise(n_species=n()) %>%
+species_10_natura_l <- locations_grid |>
+    filter(scntfcN %in% species_10_natura$scientificName) |>
+    group_by(CELLCOD) |>
+    summarise(n_species=n()) |>
     filter(n_species>2, CELLCOD!="10kmE570N150")
-species_10_natura_l_o <- locations_grid %>%
-    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
-    group_by(CELLCOD, Order) %>%
+species_10_natura_l_o <- locations_grid |>
+    filter(scntfcN %in% species_10_natura$scientificName) |>
+    group_by(CELLCOD, order) |>
     summarise(n_species=n(), .groups="drop")
 
-table(species_10_natura$Order)
+table(species_10_natura$order)
 
 
 crete_aoo <- ggplot() +
@@ -992,5 +997,4 @@ ggsave("../figures/FigS4.png",
        dpi = 600,
        units="cm",
        device="png")
-
 
