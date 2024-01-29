@@ -19,90 +19,86 @@ library(units)
 library(vegan)
 
 
-locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
-locations_spatial <- sf::st_read("../results/locations_spatial/locations_spatial.shp")
-locations_grid <- sf::st_read("../results/locations_grid/locations_grid.shp") 
-crete_shp <- sf::st_read("../data/crete/crete.shp")
+# Load the PACA assessment
 endemic_species <- read_delim("../results/endemic_species_assessment.tsv", delim="\t")
-
-
 
 # IUCN dataset from website
 
 greek_redlist_a <- read_delim("../data/greece-redlist/assessments.csv", delim=",")
-greek_redlist_t <- read_delim("../data/greece-redlist/taxonomy.csv", delim=",") %>%
-    dplyr::select(-scientificName)
+greek_redlist_t <- read_delim("../data/greece-redlist/taxonomy.csv", delim=",") 
 
 greek_redlist <- greek_redlist_a %>%
+    dplyr::select(-scientificName) %>%
     left_join(greek_redlist_t, by=c("internalTaxonId"="internalTaxonId")) %>%
     mutate(threatened=if_else(redlistCategory %in% c("Critically Endangered","Endangered","Vulnerable"), TRUE, FALSE)) %>%
     group_by(orderName, threatened) %>%
-    summarise(n=n()) %>%
+    summarise(n=n(), .groups="keep") %>%
     mutate(source="greek_redlist")
 
 endemic_greek_redlist_a <- read_delim("../data/endemic-greek-redlist/assessments.csv", delim=",")
-endemic_greek_redlist_t <- read_delim("../data/endemic-greek-redlist/taxonomy.csv", delim=",") %>%
-    dplyr::select(-scientificName)
+endemic_greek_redlist_t <- read_delim("../data/endemic-greek-redlist/taxonomy.csv", delim=",") 
 
 endemic_greek_redlist <- endemic_greek_redlist_a %>%
+    dplyr::select(-scientificName) %>%
     left_join(endemic_greek_redlist_t, by=c("internalTaxonId"="internalTaxonId")) %>%
     mutate(threatened=if_else(redlistCategory %in% c("Critically Endangered","Endangered","Vulnerable"), TRUE, FALSE)) %>%
     group_by(orderName, threatened) %>%
-    summarise(n=n()) %>%
+    summarise(n=n(), .groups="keep") %>%
     mutate(source="endemic_greek_redlist")
 
 
 endemic_crete_redlist_s <- endemic_species %>% 
-    left_join(greek_redlist_a, by=c("subspeciesname"="scientificName")) %>%
-    dplyr::select(subspeciesname,paca,iucn,redlistCategory) %>%
+    left_join(greek_redlist_a, by=c("scientificName"="scientificName")) %>%
+    dplyr::select(scientificName,paca,iucn,redlistCategory) %>%
     na.omit()
 
 write_delim(endemic_crete_redlist_s, "../results/endemic_crete_redlist.tsv", delim="\t")
 
 endemic_crete_redlist <- greek_redlist_a %>% 
-    filter(scientificName %in% endemic_species$subspeciesname) %>%
+    filter(scientificName %in% endemic_species$scientificName) %>%
     left_join(greek_redlist_t, by=c("internalTaxonId"="internalTaxonId")) %>%
     mutate(threatened=if_else(redlistCategory %in% c("Critically Endangered","Endangered","Vulnerable"), TRUE, FALSE)) %>%
     group_by(orderName, threatened) %>%
-    summarise(n=n()) %>%
+    summarise(n=n(), .groups="keep") %>%
     mutate(source="endemic_crete_redlist")
 
-
 endemic_europe_redlist_a <- read_delim("../data/endemic-europe-redlist/assessments.csv", delim=",")
-endemic_europe_redlist_t <- read_delim("../data/endemic-europe-redlist/taxonomy.csv", delim=",") %>%
-    dplyr::select(-scientificName)
+endemic_europe_redlist_t <- read_delim("../data/endemic-europe-redlist/taxonomy.csv", delim=",") 
 
 endemic_europe_redlist <- endemic_europe_redlist_a %>%
+    dplyr::select(-scientificName) %>%
     left_join(endemic_europe_redlist_t, by=c("internalTaxonId"="internalTaxonId")) %>%
     mutate(threatened=if_else(redlistCategory %in% c("Critically Endangered","Endangered","Vulnerable"), TRUE, FALSE)) %>%
     group_by(orderName, threatened) %>%
-    summarise(n=n()) %>%
+    summarise(n=n(), .groups="keep") %>%
     mutate(source="endemic_europe_redlist")
 
 world_redlist_a <- read_delim("../data/world-redlist/assessments.csv", delim=",")
-world_redlist_t <- read_delim("../data/world-redlist/taxonomy.csv", delim=",") %>%
-    dplyr::select(-scientificName)
+world_redlist_t <- read_delim("../data/world-redlist/taxonomy.csv", delim=",") 
 
 world_redlist <- world_redlist_a %>%
+    dplyr::select(-scientificName) %>%
     left_join(world_redlist_t, by=c("internalTaxonId"="internalTaxonId")) %>%
     mutate(threatened=if_else(redlistCategory %in% c("Critically Endangered","Endangered","Vulnerable"), TRUE, FALSE)) %>%
     group_by(orderName, threatened) %>%
-    summarise(n=n()) %>%
+    summarise(n=n(), .groups="keep") %>%
     mutate(source="world_redlist")
 
 redlist_threatened <- rbind(endemic_crete_redlist,endemic_greek_redlist, endemic_europe_redlist, world_redlist) %>%
-    rename(Order=orderName) %>% 
-    mutate(Order=paste(substr(Order, 1, 1),substr(tolower(Order), 2, nchar(Order)),sep=""))
+    rename(order=orderName) %>% 
+    mutate(order=paste(substr(order, 1, 1),substr(tolower(order), 2, nchar(order)),sep=""))
 
 write_delim(redlist_threatened, "../results/redlist_threatened.tsv", delim="\t")
 
-# clean the subspecies column because it has null value and dates.
-iucn_arthropods_species <- iucn_arthropods %>% mutate(subspeciesname=if_else(grepl("^[[:digit:]]", subspecies) | subspecies %in% c("<NULL>","<Null>") | is.na(subspecies),sci_name, paste(sci_name,subspecies))) %>%
-                            distinct(sci_name,subspeciesname)
+# IUCN all arthropods
+iucn_arthropods_species <- rbind(endemic_europe_redlist_t, world_redlist_t, endemic_greek_redlist_t) |> 
+    filter(phylumName=="ARTHROPODA")
 
-write_delim(iucn_arthropods_species, "../results/iucn_arthropods_species", delim="\t")
-iucn_arthropods_species_u <- unique(iucn_arthropods_species$sci_name)
+write_delim(iucn_arthropods_species, "../results/iucn_arthropods_species.tsv", delim="\t")
 
+iucn_arthropods_species_u <- unique(iucn_arthropods_species$scientificName)
+
+## GBIF retrieve data for all arthropod species that have been assessed in IUCN
 gbif_iucn <- get_gbifid(iucn_arthropods_species_u,ask=F)
 
 iucn_arthropods_species_gbif <- data.frame(sci_name=iucn_arthropods_species_u, gbifid=gbif_iucn)
