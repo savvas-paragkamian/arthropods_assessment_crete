@@ -45,10 +45,11 @@ requires the following packages:
 
 First the script `species_assessment.R` is executed. It is the main
 script that calculates the IUCN AOO and EOO and PACA metrics. Based on the
-results scripts the script `hotspot_assessment.R` generates the hotspots,
+results the script `hotspot_assessment.R` generates the hotspots,
 threatspots and Key Biodiversity Areas of the endemic arthropods of Crete.
 Then the `spatial_analysis.R` script finds all the overlaps between the species metrics
-and spatial data. Subsequently, the `species_assessment_statistict.Rmd`
+and spatial data, i.e Natura2000, Corine Land Cover and HILDA+.
+Subsequently, the `species_assessment_statistict.Rmd`
 R markdown file generates a report based on these results. The `functions.R` is a 
 collection of functions required in all scripts.
 
@@ -69,6 +70,7 @@ All figures use the color-blind friendly palette Okabe-Ito.
 Occurrences of endemic arthropod species in the island of Crete were 
 compiled by Natural History Museaum of Crete. The data were cureted
 from the literature and from Natural History Museaum of Crete specimens.
+They are available as `Supplementary-material-1.xlsx`.
 
 ## Spatial data
 
