@@ -64,17 +64,17 @@ spatial_area_summary <- function(spatial_area,attribute){
 heatmaps <- function(locations_grid){
     
     locations_grid_o <- locations_grid %>%
-        distinct(CELLCOD, Order) %>%
-        arrange(Order)
+        distinct(CELLCOD, order) %>%
+        arrange(order)
     
     order_cell_m <- locations_grid_o %>%
         st_drop_geometry() %>%
         mutate(exist=1) %>%
-        pivot_wider(id_cols=Order, 
+        pivot_wider(id_cols=order, 
                     names_from = CELLCOD, 
                     values_from= exist,
                     values_fill = 0) %>%
-        column_to_rownames(var="Order") %>%
+        column_to_rownames(var="order") %>%
         as.matrix()
     
     # create the heatmap matrix through matrix multiplication
