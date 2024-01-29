@@ -25,7 +25,16 @@ g_base <- g_base()
 ```
 
 ```{r, warning=FALSE, message=FALSE, echo=T, results='hide'}
-locations_shp <- sf::st_read("../data/arthropods_occurrences/arthropods_occurrences.shp")
+supplementary_material_1 <- readxl::read_excel("../data/Supplementary-material-1.xlsx", sheet="arthropods_occurrences")
+
+arthropods_occurrences <- st_as_sf(supplementary_material_1,
+                                   coords=c("decimalLongitude","decimalLatitude"),
+                                   remove=F,
+                                   crs="WGS84")
+
+locations_shp <- arthropods_occurrences |> 
+    dplyr::select(-bibliographicCitation) |>
+    distinct()
 locations_spatial <- sf::st_read("../results/locations_spatial/locations_spatial.shp")
 locations_grid <- sf::st_read("../results/locations_grid/locations_grid.shp") 
 crete_shp <- sf::st_read("../data/crete/crete.shp")
@@ -37,9 +46,9 @@ natura_crete_land <- st_intersection(natura_crete, crete_shp)
 
 # split the SPA SCI
 
-natura_crete_land_sci <- natura_crete_land %>% filter(SITETYPE=="B")
+natura_crete_land_sci <- natura_crete_land |> filter(SITETYPE=="B")
 
-wildlife <- wdpa_crete %>% filter(DESIG_ENG=="Wildlife Refugee")
+wildlife <- wdpa_crete |> filter(DESIG_ENG=="Wildlife Refugee")
 
 ## Hotspots and threatspots
 endemic_hotspots <- st_read("../results/endemic_hotspots/endemic_hotspots.shp")
@@ -52,7 +61,7 @@ species that belong to `r length(unique(locations_shp$Order))` orders.
 
 The unique locations are:
 ```{r}
-st_coordinates(locations_shp) %>% as.data.frame() %>% distinct() %>% nrow()
+st_coordinates(locations_shp) |> as.data.frame() |> distinct() |> nrow()
 
 ```
 
@@ -64,9 +73,9 @@ wdpa_crete$area <- units::set_units(st_area(wdpa_crete),km^2)
 wdpa_crete_all <- data.frame(name="total protected", 
                              area=sum(wdpa_crete$area))
 
-wdpa_crete_combine <- st_union(wdpa_crete) %>%
-    st_make_valid() %>%
-    st_as_sf() %>% 
+wdpa_crete_combine <- st_union(wdpa_crete) |>
+    st_make_valid() |>
+    st_as_sf() |> 
     filter(st_geometry_type(.) %in% c("MULTIPOLYGON"))
 
 wdpa_crete_combine_area <- data.frame(name="total protected (no overlap)",
@@ -74,13 +83,13 @@ wdpa_crete_combine_area <- data.frame(name="total protected (no overlap)",
 crete_area <- data.frame(name="crete",
                          area=sum(units::set_units(st_area(crete_shp), km^2)))
 
-protected_area <- wdpa_crete %>% 
-    group_by(DESIG_ENG) %>%
-    summarise(area=sum(area)) %>%
-    st_drop_geometry() %>%
-    dplyr::rename("name"="DESIG_ENG") %>%
-    bind_rows(crete_area,wdpa_crete_all, wdpa_crete_combine_area) %>%
-    arrange(area) %>%
+protected_area <- wdpa_crete |> 
+    group_by(DESIG_ENG) |>
+    summarise(area=sum(area)) |>
+    st_drop_geometry() |>
+    dplyr::rename("name"="DESIG_ENG") |>
+    bind_rows(crete_area,wdpa_crete_all, wdpa_crete_combine_area) |>
+    arrange(area) |>
     mutate(area=round(area,2))
 
 knitr::kable(protected_area, "latex")
@@ -116,21 +125,21 @@ paca_color <- setNames(c("brown1","#FEFE08","forestgreen"),
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-endemic_species_p <- endemic_species %>% 
-    group_by(paca) %>%
-    summarise(n_species=n(), .groups="drop") %>%
-#    rename("category"="paca") %>%
-    mutate(method="paca") %>%
+endemic_species_p <- endemic_species |> 
+    group_by(paca) |>
+    summarise(n_species=n(), .groups="drop") |>
+#    rename("category"="paca") |>
+    mutate(method="paca") |>
     mutate(proportion = round(n_species/sum(n_species),digits=2))
 
 
-endemic_species_i <- endemic_species %>% 
-    group_by(iucn) %>%
-    summarise(n_species=n(), .groups="drop") %>%
-#    rename("category"="iucn") %>%
-    mutate(method = "iucn") %>%
+endemic_species_i <- endemic_species |> 
+    group_by(iucn) |>
+    summarise(n_species=n(), .groups="drop") |>
+#    rename("category"="iucn") |>
+    mutate(method = "iucn") |>
     mutate(proportion = round(n_species/sum(n_species), digits=2))
-#%>%
+#|>
 #    bind_rows(endemic_species_p)
 
 g_paca <- ggplot() +
@@ -191,15 +200,15 @@ g_paca_p
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-endemic_species_s_i <- endemic_species %>% 
-    group_by(iucn, Order) %>%
-    summarise(n_species=n(), .groups="drop") %>%
-    group_by(Order) %>%
+endemic_species_s_i <- endemic_species |> 
+    group_by(iucn, order) |>
+    summarise(n_species=n(), .groups="drop") |>
+    group_by(order) |>
     mutate(proportion = round(n_species/sum(n_species), digits=2))
 
 g_iucn_o <- ggplot() +
     geom_col(data=endemic_species_s_i, 
-             aes(x=n_species,y=Order, fill=iucn), 
+             aes(x=n_species,y=order, fill=iucn), 
              width=0.5, show.legend=T)+
     scale_fill_manual("IUCN", values=iucn_color) +
     theme_bw()
@@ -214,9 +223,9 @@ g_iucn_o
 
 g_iucn_o_p <- ggplot() +
     geom_col(data=endemic_species_s_i, 
-             aes(x=proportion,y=Order, fill=iucn), 
+             aes(x=proportion,y=order, fill=iucn), 
              width=0.5, show.legend=T)+
-    geom_text(data=endemic_species_s_i, aes(x=proportion,y=Order, fill=iucn, 
+    geom_text(data=endemic_species_s_i, aes(x=proportion,y=order, fill=iucn, 
                                           label = paste(proportion," (",n_species,")", sep="")),
               size=3,
               position = position_stack(vjust = .5)) +
@@ -235,15 +244,15 @@ g_iucn_o_p
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-endemic_species_s_o <- endemic_species %>% 
-    group_by(paca, Order) %>%
-    summarise(n_species=n(), .groups="drop") %>%
-    mutate(paca = gsub("FALSE", "PNT",paca)) %>%
-    group_by(Order) %>%
+endemic_species_s_o <- endemic_species |> 
+    group_by(paca, order) |>
+    summarise(n_species=n(), .groups="drop") |>
+    mutate(paca = gsub("FALSE", "PNT",paca)) |>
+    group_by(order) |>
     mutate(proportion = round(n_species/sum(n_species), digits=2))
 
 g_paca_o <- ggplot() +
-    geom_col(data=endemic_species_s_o, aes(x=n_species,y=Order, fill=paca), 
+    geom_col(data=endemic_species_s_o, aes(x=n_species,y=order, fill=paca), 
              width=0.5, show.legend=T)+
     scale_fill_manual("PACA", values=paca_color) +
     theme_bw()
@@ -257,9 +266,9 @@ ggsave("../plots/bar_chart_paca_order.png",
 g_paca_o
 
 g_paca_o_p <- ggplot() +
-    geom_col(data=endemic_species_s_o, aes(x=proportion,y=Order, fill=paca), 
+    geom_col(data=endemic_species_s_o, aes(x=proportion,y=order, fill=paca), 
              width=0.5, show.legend=T)+
-    geom_text(data=endemic_species_s_o, aes(x=proportion,y=Order, fill=paca, 
+    geom_text(data=endemic_species_s_o, aes(x=proportion,y=order, fill=paca, 
                                           label = paste(proportion," (",n_species,")", sep="")),
               size=3,
               position = position_stack(vjust = .5)) +
@@ -281,14 +290,14 @@ IUCN categories of the families of coleoptera
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-endemic_species_coleoptera <- endemic_species %>% 
-    filter(Order=="Coleoptera") %>%
-    group_by(iucn, families) %>%
+endemic_species_coleoptera <- endemic_species |> 
+    filter(order=="Coleoptera") |>
+    group_by(iucn, family) |>
     summarise(n_species=n(), .groups="drop")
 
 g_iucn_c <- ggplot() +
     geom_col(data=endemic_species_coleoptera, 
-             aes(x=n_species,y=families, fill=iucn), 
+             aes(x=n_species,y=family, fill=iucn), 
              width=0.5, show.legend=T)+
     scale_fill_manual("IUCN", values=iucn_color) +
     theme_bw()
@@ -307,14 +316,14 @@ PACA categories of the families of coleoptera
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-endemic_species_coleoptera_p <- endemic_species %>% 
-    filter(Order=="Coleoptera") %>%
-    group_by(paca, families) %>%
+endemic_species_coleoptera_p <- endemic_species |> 
+    filter(order=="Coleoptera") |>
+    group_by(paca, family) |>
     summarise(n_species=n(), .groups="drop")
 
 g_iucn_c_p <- ggplot() +
     geom_col(data=endemic_species_coleoptera_p, 
-             aes(x=n_species,y=families, fill=paca), 
+             aes(x=n_species,y=family, fill=paca), 
              width=0.5, show.legend=T)+
     scale_fill_manual("PACA", values=paca_color) +
     theme_bw()
@@ -354,12 +363,12 @@ of the endemic species.
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-threatspots_lt <- threatspots %>% 
+threatspots_lt <- threatspots |> 
     filter(pc_thrt>= quantile(pc_thrt,0.90))
 
-intersection_spots <- endemic_hotspots %>%
-    st_drop_geometry() %>%
-    inner_join(.,threatspots_lt, by=c("CELLCODE"="CELLCOD")) %>%
+intersection_spots <- endemic_hotspots |>
+    st_drop_geometry() |>
+    inner_join(.,threatspots_lt, by=c("CELLCODE"="CELLCOD")) |>
     st_as_sf()
 
 g_e_t <- g_base +
@@ -410,22 +419,22 @@ The threatened species that have AOO < 10% overlap with Natura2000.
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-species_10_natura <- endemic_species %>%
-    mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) %>%
+species_10_natura <- endemic_species |>
+    mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) |>
     filter(aoo_natura_percent<0.1 & threatened==T)
 
-species_10_natura_l <- locations_grid %>%
-    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
-    group_by(CELLCOD) %>%
-    summarise(n_species=n()) %>%
+species_10_natura_l <- locations_grid |>
+    filter(scntfcN %in% species_10_natura$subspeciesname) |>
+    group_by(CELLCOD) |>
+    summarise(n_species=n()) |>
     filter(n_species>2)
 
-species_10_natura_l_o <- locations_grid %>%
-    filter(sbspcsn %in% species_10_natura$subspeciesname) %>%
-    group_by(CELLCOD, Order) %>%
+species_10_natura_l_o <- locations_grid |>
+    filter(scntfcN %in% species_10_natura$subspeciesname) |>
+    group_by(CELLCOD, order) |>
     summarise(n_species=n(), .groups="drop")
 
-table(species_10_natura$Order)
+table(species_10_natura$order)
 ```
 
 
@@ -476,9 +485,9 @@ ggsave("../plots/order_location_heatmap.png",
        dpi = 300)
 
 # Overlap of hotspots
-endemic_hotspots_o <- locations_grid %>% 
-    filter(CELLCOD %in% endemic_hotspots$CELLCODE) %>%
-    distinct(CELLCOD, Order)
+endemic_hotspots_o <- locations_grid |> 
+    filter(CELLCOD %in% endemic_hotspots$CELLCODE) |>
+    distinct(CELLCOD, order)
 
 heatmaps_hotspots <- heatmaps(endemic_hotspots_o)
 
@@ -491,9 +500,9 @@ ggsave("../plots/order_hotspot_heatmap.png",
        dpi = 300)
 
 # Overlap of threatspots
-threatspots_o <- locations_grid %>% 
-    filter(CELLCOD %in% threatspots_lt$CELLCOD) %>%
-    distinct(CELLCOD, Order)
+threatspots_o <- locations_grid |> 
+    filter(CELLCOD %in% threatspots_lt$CELLCOD) |>
+    distinct(CELLCOD, order)
 
 heatmaps_threatspots <- heatmaps(threatspots_o)
 
@@ -538,7 +547,7 @@ g_e_o_order <- ggplot() +
     geom_point(endemic_species,mapping = aes(x=aoo, y=eoo, color=iucn)) +
     scale_color_manual("IUCN", values=iucn_color) +
     theme_bw() +
-    facet_wrap(vars(Order), ncol=4, scales = "free")
+    facet_wrap(vars(order), ncol=4, scales = "free")
 
 ggsave("../plots/aoo-eoo_order.png", 
        plot=g_e_o_order, 
@@ -557,8 +566,8 @@ with Natura2000 and wildlife refugees.
 
 ```{r, , warning=FALSE, message=FALSE, echo=T}
 
-endemic_species_eoo <- endemic_species %>%
-    dplyr::select(subspeciesname, eoo, eoo_natura,eoo_wildlife) %>%
+endemic_species_eoo <- endemic_species |>
+    dplyr::select(scientificName, eoo, eoo_natura,eoo_wildlife) |>
     pivot_longer(cols=c(eoo,eoo_natura, eoo_wildlife), 
                  names_to="eoo",
                  values_to="area")
@@ -579,8 +588,8 @@ tapply(endemic_species_eoo$area, endemic_species_eoo$eoo, summary)
 Examine the differences of EOO area per Order.
 
 ```{r, , warning=FALSE, message=FALSE, echo=T}
-endemic_species_eoo_o <- endemic_species %>%
-    dplyr::select(subspeciesname,Order, eoo, eoo_natura,eoo_wildlife) %>%
+endemic_species_eoo_o <- endemic_species |>
+    dplyr::select(scientificName,order, eoo, eoo_natura,eoo_wildlife) |>
     pivot_longer(cols=c(eoo,eoo_natura, eoo_wildlife), 
                  names_to="eoo",
                  values_to="area")
@@ -591,7 +600,7 @@ g_eoo_b_o <- ggplot() +
                  outlier.colour = "red",
                  outlier.shape = 1) +
     theme_bw() +
-    facet_wrap(vars(Order), ncol=4, scales = "fixed")
+    facet_wrap(vars(order), ncol=4, scales = "fixed")
 
 ggsave("../plots/eoo_dist_boxplot_o.png", 
        plot=g_eoo_b_o, 
@@ -610,8 +619,8 @@ with Natura2000 and wildlife refugees.
 
 ```{r, , warning=FALSE, message=FALSE, echo=T}
 
-endemic_species_aoo <- endemic_species %>%
-    dplyr::select(subspeciesname, aoo, aoo_natura,aoo_wildlife) %>%
+endemic_species_aoo <- endemic_species |>
+    dplyr::select(scientificName, aoo, aoo_natura,aoo_wildlife) |>
     pivot_longer(cols=c(aoo,aoo_natura, aoo_wildlife), 
                  names_to="aoo",
                  values_to="area")
@@ -632,8 +641,8 @@ tapply(endemic_species_aoo$area, endemic_species_aoo$aoo, summary)
 Examine the differences of AOO area per Order.
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
-endemic_species_aoo_o <- endemic_species %>%
-    dplyr::select(subspeciesname, Order, aoo, aoo_natura,aoo_wildlife) %>%
+endemic_species_aoo_o <- endemic_species |>
+    dplyr::select(scientificName, order, aoo, aoo_natura,aoo_wildlife) |>
     pivot_longer(cols=c(aoo,aoo_natura, aoo_wildlife), 
                  names_to="aoo",
                  values_to="area")
@@ -644,7 +653,7 @@ g_aoo_b_o <- ggplot() +
                  outlier.colour = "red",
                  outlier.shape = 1) +
     theme_bw() +
-    facet_wrap(vars(Order), ncol=4, scales = "fixed")
+    facet_wrap(vars(order), ncol=4, scales = "fixed")
 
 ggsave("../plots/aoo_dist_boxplot_o.png", 
        plot=g_aoo_b_o, 
@@ -656,7 +665,7 @@ ggsave("../plots/aoo_dist_boxplot_o.png",
 ```
 ```{r}
 
-p <- ggplot(endemic_species, mapping=aes(x=Order, y=aoo)) +
+p <- ggplot(endemic_species, mapping=aes(x=order, y=aoo)) +
     geom_jitter(position=position_jitter(0.2))
 
 ggsave("../plots/aoo_dist_stripplot-o.png", 
@@ -674,29 +683,28 @@ p
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
 
-locations_spatial_d <- locations_spatial %>% 
-    st_drop_geometry() %>%
-    dplyr::select(-Order) %>%
-    left_join(endemic_species, by=c("sbspcsn"="subspeciesname")) %>%
-    mutate(elevation_bin=cut(elevation, 
+locations_spatial_d <- locations_spatial |> 
+    st_drop_geometry() |>
+    dplyr::select(-order) |>
+    left_join(endemic_species, by=c("scntfcN"="scientificName")) |>
+    mutate(elevation_bin=cut(elevatn, 
                              breaks=seq.int(from=0, to=2500, by=400),
                              dig.lab = 5 ))
 
-
-locations_spatial_d_b <- locations_spatial_d %>%
-    distinct(sbspcsn, elevation_bin) %>%
-    group_by(elevation_bin) %>%
+locations_spatial_d_b <- locations_spatial_d |>
+    distinct(scntfcN, elevation_bin) |>
+    group_by(elevation_bin) |>
     summarise(n_species=n())
 
 
-locations_spatial_d_b_i <- locations_spatial_d %>%
-    distinct(sbspcsn, elevation_bin, iucn) %>%
-    group_by(elevation_bin, iucn) %>%
+locations_spatial_d_b_i <- locations_spatial_d |>
+    distinct(scntfcN, elevation_bin, iucn) |>
+    group_by(elevation_bin, iucn) |>
     summarise(n_species=n(), .groups="drop")
 
-locations_spatial_d_b_o <- locations_spatial_d %>%
-    distinct(sbspcsn, elevation_bin, iucn, Order) %>%
-    group_by(elevation_bin, iucn, Order) %>%
+locations_spatial_d_b_o <- locations_spatial_d |>
+    distinct(scntfcN, elevation_bin, iucn, order) |>
+    group_by(elevation_bin, iucn, order) |>
     summarise(n_species=n(), .groups="drop")
 
 ```
@@ -719,7 +727,7 @@ g_humb_o <- ggplot() +
              mapping=aes(x=n_species, y= elevation_bin, fill=iucn)) + 
     theme_bw() +
     scale_fill_manual("IUCN", values=iucn_color) +
-    facet_wrap(vars(Order), ncol=4, scales = "free")
+    facet_wrap(vars(order), ncol=4, scales = "free")
 
 ggsave("../plots/elevation_humb_o.png", 
        plot=g_humb_o, 
@@ -735,7 +743,7 @@ ggsave("../plots/elevation_humb_o.png",
 
 g_elev <- ggplot() +
     geom_boxplot(locations_spatial_d, 
-                 mapping = aes(x=iucn, y=elevation), 
+                 mapping = aes(x=iucn, y=elevatn), 
                  outlier.colour = "red",
                  outlier.shape = 1) +
     theme_bw()
@@ -752,20 +760,20 @@ g_elev
 
 
 ```{r, warning=FALSE, message=FALSE, echo=T}
-clc_crete_label1 <- read_delim("../results/clc_crete_LABEL1.tsv", delim="\t") %>% 
+clc_crete_label1 <- read_delim("../results/clc_crete_LABEL1.tsv", delim="\t") |> 
     mutate(across(where(is.numeric), ~ round(.x,digits=2)))
 
 knitr::kable(clc_crete_label1, "latex")
 
-clc_crete_label2 <- read_delim("../results/clc_crete_LABEL2.tsv", delim="\t") %>% 
+clc_crete_label2 <- read_delim("../results/clc_crete_LABEL2.tsv", delim="\t") |> 
     mutate(across(where(is.numeric), ~ round(.x,digits=2)))
 
 knitr::kable(clc_crete_label2, "latex")
 
-clc_crete_label3 <- read_delim("../results/clc_crete_LABEL3.tsv", delim="\t") %>% 
+clc_crete_label3 <- read_delim("../results/clc_crete_LABEL3.tsv", delim="\t") |> 
     mutate(across(where(is.numeric), ~ round(.x,digits=2)))
 
-kbl(clc_crete_label3) %>% kable_styling(latex_options = "scale_down")
+kbl(clc_crete_label3) |> kable_styling(latex_options = "scale_down")
 ```
 
 # Summary
@@ -773,61 +781,59 @@ kbl(clc_crete_label3) %>% kable_styling(latex_options = "scale_down")
 A summary table of each order.
 
 ```{r}
-order_taxa <- endemic_species %>% 
-    group_by(Order) %>%
+order_taxa <- endemic_species |> 
+    group_by(order) |>
     summarise(taxa=n())
 
-order_sites <- locations_shp %>%
-    mutate(lon=st_coordinates(locations_shp)[,1],
-           lat=st_coordinates(locations_shp)[,2]) %>%
-    distinct(Order,lon,lat) %>%
-    group_by(Order) %>%
+order_sites <- locations_shp |>
+    distinct(order,decimalLatitude,decimalLongitude) |>
+    group_by(order) |>
     summarise(sites=n())
 
-order_occ <- locations_shp %>%
-    group_by(Order) %>%
-    summarise(occurrences=n()) %>%
+order_occ <- locations_shp |>
+    group_by(order) |>
+    summarise(occurrences=n()) |>
     st_drop_geometry()
 
-order_locations <- locations_grid %>% 
-    distinct(CELLCOD, Order) %>% 
-    group_by(Order) %>%
+order_locations <- locations_grid |> 
+    distinct(CELLCOD, order) |> 
+    group_by(order) |>
     summarise(locations=n())
 
-order_iucn <- endemic_species_s_i %>% 
+order_iucn <- endemic_species_s_i |> 
     pivot_wider(names_from=iucn,
                 values_from=c(n_species,proportion),
-                id_cols=Order) %>% 
-    group_by(Order) %>%
-    rowwise() %>%
+                id_cols=order) |> 
+    group_by(order) |>
+    rowwise() |>
     mutate(threatened=sum(n_species_EN,n_species_VU,n_species_CR,na.rm=TRUE),
             proportion_threatened=threatened/sum(n_species_EN,n_species_VU,n_species_CR,`n_species_NT/LC`, na.rm=TRUE))
 
-order_paca <- endemic_species_s_o %>% 
+order_paca <- endemic_species_s_o |> 
     pivot_wider(names_from=paca,
                 values_from=c(n_species,proportion),
-                id_cols=Order)
+                id_cols=order)
 
 order_total_l <- list(order_taxa,order_sites,order_occ,order_locations,order_iucn,order_paca)
 
-order_total <- order_total_l %>% reduce(full_join, by="Order")
+order_total <- order_total_l |> reduce(full_join, by="order")
 
-total_iucn <- endemic_species_i %>% 
+total_iucn <- endemic_species_i |> 
     pivot_wider(names_from=iucn,
-                values_from=c(n_species,proportion)) %>% 
-    dplyr::select(-method) %>%
-    rowwise() %>%
+                values_from=c(n_species,proportion)) |> 
+    dplyr::select(-method) |>
+    rowwise() |>
     mutate(threatened=sum(n_species_EN,n_species_VU,n_species_CR,na.rm=TRUE),
             proportion_threatened=threatened/sum(n_species_EN,n_species_VU,n_species_CR,`n_species_NT/LC`, na.rm=TRUE))
 
-total_paca <- endemic_species_p %>% 
+total_paca <- endemic_species_p |> 
     pivot_wider(names_from=paca,
-                values_from=c(n_species,proportion)) %>%
+                values_from=c(n_species,proportion)) |>
     dplyr::select(-method)
 
 
-total_data <- data.frame(Order="total",
-                         taxa = length(unique(endemic_species$subspeciesname)),
+total_data <- data.frame(order="total",
+                         taxa = length(unique(endemic_species$scientificName)),
                          sites = nrow(unique(st_coordinates(locations_shp))),
                          occurrences = nrow(locations_shp),
                          locations = length(unique(locations_grid$CELLCOD)))
@@ -840,7 +846,7 @@ write_delim(total_summary, "../results/total_summary.tsv", delim="\t")
 
 ```{r}
 
-kbl(total_summary) %>% kable_styling(latex_options = "scale_down")
+kbl(total_summary) |> kable_styling(latex_options = "scale_down")
 ```
 AOO distribution summaries
 
