@@ -140,7 +140,7 @@ crete_base <- ggplot() +
           legend.box.background = element_blank())
 
 
-ggsave("../figures/Fig1c.tiff", 
+ggsave("../figures/Fig2c.tiff", 
        plot=crete_base, 
        height = 10, 
        width = 20,
@@ -148,7 +148,7 @@ ggsave("../figures/Fig1c.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig1c.png", 
+ggsave("../figures/Fig2c.png", 
        plot=crete_base, 
        height = 10, 
        width = 20,
@@ -162,7 +162,7 @@ fig1 <- ggarrange(g_fig1ab,crete_base,
           nrow = 2,
           legend="right") + bgcolor("white")
 
-ggsave("../figures/Fig1.tiff", 
+ggsave("../figures/Fig2.tiff", 
        plot=fig1, 
        height = 20, 
        width = 25,
@@ -170,7 +170,7 @@ ggsave("../figures/Fig1.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig1.png", 
+ggsave("../figures/Fig2.png", 
        plot=fig1, 
        height = 20, 
        width = 25,
@@ -178,7 +178,7 @@ ggsave("../figures/Fig1.png",
        units="cm",
        device="png")
 
-ggsave("../figures/Fig1.pdf", 
+ggsave("../figures/Fig2.pdf", 
        plot=fig1, 
        height = 20, 
        width = 25,
@@ -186,7 +186,7 @@ ggsave("../figures/Fig1.pdf",
        units="cm",
        device="pdf")
 
-ggsave("../figures/Fig1-small.png", 
+ggsave("../figures/Fig2-small.png", 
        plot=fig1, 
        height = 20, 
        width = 25,
@@ -194,8 +194,8 @@ ggsave("../figures/Fig1-small.png",
        units="cm",
        device="png")
 
-# Figure 2
-## fig2a
+# Figure 3
+## crete_hotspot
 
 crete_hotspot <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
@@ -241,7 +241,7 @@ crete_hotspot <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-ggsave("../figures/Fig2a.tiff", 
+ggsave("../figures/Fig_crete_hotspot.tiff", 
        plot=crete_hotspot, 
        height = 10, 
        width = 20,
@@ -249,7 +249,7 @@ ggsave("../figures/Fig2a.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig2a.png", 
+ggsave("../figures/Fig_crete_hotspot.png", 
        plot=crete_hotspot, 
        height = 10, 
        width = 20,
@@ -257,7 +257,7 @@ ggsave("../figures/Fig2a.png",
        units="cm",
        device="png")
 
-## fig2b
+## treatened_dist_quad 
 crete_dist_threat <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(natura_crete_land_sci,
@@ -303,7 +303,7 @@ crete_dist_threat <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-ggsave("../figures/Fig2b.tiff", 
+ggsave("../figures/Fig_crete_dist_threat.tiff", 
        plot=crete_dist_threat, 
        height = 10, 
        width = 20,
@@ -311,7 +311,7 @@ ggsave("../figures/Fig2b.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig2b.png", 
+ggsave("../figures/Fig_crete_dist_threat.png", 
        plot=crete_dist_threat, 
        height = 10, 
        width = 20,
@@ -319,7 +319,7 @@ ggsave("../figures/Fig2b.png",
        units="cm",
        device="png")
 
-## fig2c
+## wege_results
 
 crete_threat <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
@@ -368,7 +368,7 @@ crete_threat <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-ggsave("../figures/Fig2c.tiff", 
+ggsave("../figures/Fig_wege_results.tiff", 
        plot=crete_threat, 
        height = 10, 
        width = 20,
@@ -376,7 +376,7 @@ ggsave("../figures/Fig2c.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig2c.png", 
+ggsave("../figures/Fig_wege_results.png", 
        plot=crete_threat, 
        height = 10, 
        width = 20,
@@ -421,7 +421,7 @@ crete_sampling_grid <- ggplot() +
           legend.key.size = unit(3, "mm"), 
           legend.text=element_text(size=7))
 
-ggsave("../figures/figs4_crete_multiple_grids_hotspots.png",
+ggsave("../figures/figs_crete_multiple_grids_hotspots.png",
        plot=crete_sampling_grid,
        height = 10, 
        width = 20,
@@ -429,7 +429,7 @@ ggsave("../figures/figs4_crete_multiple_grids_hotspots.png",
        unit="cm",
        device="png")
 
-fig2 <- ggarrange(crete_hotspot, crete_dist_threat, crete_threat,crete_sampling_grid,
+fig2 <- ggarrange(crete_sampling_grid, crete_hotspot, crete_dist_threat, crete_threat,
           labels = c("A", "B", "C", "D"),
           align = "hv",
           widths = c(1,1,1,0.6),
@@ -438,7 +438,7 @@ fig2 <- ggarrange(crete_hotspot, crete_dist_threat, crete_threat,crete_sampling_
           font.label=list(color="black",size=22),
           legend="right") + bgcolor("white")
 
-ggsave("../figures/Fig2.tiff", 
+ggsave("../figures/Fig3.tiff", 
        plot=fig2, 
        height = 40, 
        width = 30,
@@ -446,7 +446,7 @@ ggsave("../figures/Fig2.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig2.png", 
+ggsave("../figures/Fig3.png", 
        plot=fig2, 
        height = 40, 
        width = 30,
@@ -454,7 +454,7 @@ ggsave("../figures/Fig2.png",
        units="cm",
        device="png")
 
-ggsave("../figures/Fig2.pdf", 
+ggsave("../figures/Fig3.pdf", 
        plot=fig2, 
        height = 40, 
        width = 30,
@@ -462,7 +462,7 @@ ggsave("../figures/Fig2.pdf",
        units="cm",
        device="pdf")
 
-ggsave("../figures/Fig2-small.png", 
+ggsave("../figures/Fig3-small.png", 
        plot=fig2, 
        height = 40, 
        width = 30,
@@ -470,9 +470,9 @@ ggsave("../figures/Fig2-small.png",
        units="cm",
        device="png")
 
-#figure 3
+#figure 4
 
-#fig3a
+#aoo_dist
 aoo_dist <- endemic_species |>
     pivot_longer(cols=c(aoo,eoo,n_locations)) |>
     dplyr::select(scientificName, order, name, value) |>
@@ -480,7 +480,7 @@ aoo_dist <- endemic_species |>
     mutate(order=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", order))
 
 
-fig3a <- ggplot() +
+fig_aoo_dist <- ggplot() +
     geom_boxplot(aoo_dist,
                  mapping=aes(x=order, y=value,color=name),
                  outlier.size = 0) +
@@ -511,14 +511,14 @@ fig3a <- ggplot() +
           axis.title.y=element_text(face="bold", size=13),
           legend.position = c(0.88, 0.1))
 
-ggsave("../figures/fig3a.png", 
-       plot=fig3a, 
+ggsave("../figures/fig_aoo_dist.png", 
+       plot=fig_aoo_dist, 
        device="png", 
        height = 20, 
        width = 23, 
        units="cm")
 
-#fig3b
+#endemic_hotspots_o
 # Overlap of hotspots
 endemic_hotspots_o <- locations_grid |> 
     filter(CELLCOD %in% endemic_hotspots$CELLCODE) |>
@@ -526,7 +526,7 @@ endemic_hotspots_o <- locations_grid |>
 
 heatmaps_hotspots <- heatmaps(endemic_hotspots_o)
 
-ggsave("../figures/fig3aa.png",
+ggsave("../figures/fig_endemic_hotspots_oa.png",
        plot = heatmaps_hotspots[[2]],
        width = 25,
        height = 25,
@@ -556,7 +556,7 @@ diagonal <- heatmap_sort |>
     filter(from==to)
 
 
-fig3b <- ggplot()+
+WEGE_order_overlap <- ggplot()+
       geom_tile(data=order_cell_long,
                 aes(x=from, y=to,fill=count),
                 color="white",
@@ -597,8 +597,8 @@ fig3b <- ggplot()+
             legend.position = c(.90, .83),
             legend.title=element_text(size=9))
 
-ggsave("../figures/fig3b.png",
-       plot = fig3b,
+ggsave("../figures/fig_WEGE_order_overlap.png",
+       plot = WEGE_order_overlap,
        width = 20,
        height = 20,
        units='cm', 
@@ -614,7 +614,7 @@ ggsave("../figures/fig3b.png",
 #          nrow = 1,
 #          font.label=list(color="black",size=22)) + bgcolor("white")
 
-fig3 <- ggarrange(fig3a, fig3b,
+fig4 <- ggarrange(fig_aoo_dist, WEGE_order_overlap,
           labels = c("A", "B"),
           align = "hv",
           widths = c(1,1),
@@ -622,39 +622,39 @@ fig3 <- ggarrange(fig3a, fig3b,
           nrow = 2,
           font.label=list(color="black",size=22)) + bgcolor("white")
 
-ggsave("../figures/Fig3.tiff", 
-       plot=fig3, 
+ggsave("../figures/Fig4.tiff", 
+       plot=fig4, 
        height = 40, 
        width = 24,
        dpi = 600, 
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig3.png", 
-       plot=fig3, 
+ggsave("../figures/Fig4.png", 
+       plot=fig4, 
        height = 40, 
        width = 24,
        dpi = 600, 
        units="cm",
        device="png")
 
-ggsave("../figures/Fig3.pdf", 
-       plot=fig3, 
+ggsave("../figures/Fig4.pdf", 
+       plot=fig4, 
        height = 40, 
        width = 24,
        dpi = 600, 
        units="cm",
        device="pdf")
 
-ggsave("../figures/Fig3-small.png", 
-       plot=fig3, 
+ggsave("../figures/Fig4-small.png", 
+       plot=fig4, 
        height = 40, 
        width = 24,
        dpi = 300, 
        units="cm",
        device="png")
 
-#Fig 4 crete corine fig
+#Fig 5 crete corine fig
 
 colors_clc_label2_v <- c("Artificial, non-agricultural vegetated areas"="#000000",
 "Open spaces with little or no vegetation"="#A77300",
@@ -713,7 +713,7 @@ crete_corine <- ggplot() +
           legend.key.size = unit(3, "mm"), 
           legend.text=element_text(size=6))
 
-ggsave("../figures/Fig4a_corine.tiff", 
+ggsave("../figures/Fig_corine.tiff", 
        plot=crete_corine, 
        height = 20, 
        width = 40,
@@ -721,7 +721,7 @@ ggsave("../figures/Fig4a_corine.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig4a_corine.png", 
+ggsave("../figures/Fig_corine.png", 
        plot=crete_corine, 
        height = 20, 
        width = 40,
@@ -770,7 +770,7 @@ crete_hilda_g <- ggplot() +
           legend.key.size = unit(3, "mm"), 
           legend.text=element_text(size=6))
 
-ggsave("../figures/Fig4b_hilda.tiff", 
+ggsave("../figures/Fig_hilda.tiff", 
        plot=crete_hilda_g, 
        height = 10, 
        width = 20,
@@ -778,7 +778,7 @@ ggsave("../figures/Fig4b_hilda.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig4b_hilda.png", 
+ggsave("../figures/Fig_hilda.png", 
        plot=crete_hilda_g, 
        height = 10, 
        width = 20,
@@ -786,7 +786,7 @@ ggsave("../figures/Fig4b_hilda.png",
        units="cm",
        device="png")
 
-fig4 <- ggarrange(crete_corine, crete_hilda_g,
+fig5 <- ggarrange(crete_corine, crete_hilda_g,
           labels = c("A", "B"),
           align = "hv",
           widths = c(1,1),
@@ -794,32 +794,32 @@ fig4 <- ggarrange(crete_corine, crete_hilda_g,
           nrow = 2,
           font.label=list(color="black",size=22)) + bgcolor("white")
 
-ggsave("../figures/Fig4.tiff", 
-       plot=fig4, 
+ggsave("../figures/Fig5.tiff", 
+       plot=fig5, 
        height = 20, 
        width = 23,
        dpi = 600, 
        units="cm",
        device="tiff")
 
-ggsave("../figures/Fig4.png", 
-       plot=fig4, 
+ggsave("../figures/Fig5.png", 
+       plot=fig5, 
        height = 20, 
        width = 23,
        dpi = 600, 
        units="cm",
        device="png")
 
-ggsave("../figures/Fig4.pdf", 
-       plot=fig4, 
+ggsave("../figures/Fig5.pdf", 
+       plot=fig5, 
        height = 20, 
        width = 23,
        dpi = 600, 
        units="cm",
        device="pdf")
 
-ggsave("../figures/Fig4-small.png", 
-       plot=fig4, 
+ggsave("../figures/Fig5-small.png", 
+       plot=fig5, 
        height = 20, 
        width = 23,
        dpi = 300, 
