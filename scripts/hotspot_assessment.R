@@ -408,6 +408,13 @@ crete_grid10_q <- crete_grid10 |>
 #    mutate(presense=1) |>
 #    pivot_wider(names_from=sbspcsn, values_from=presense, values_fill = 0) |>
 #    as.matrix()
+community_m_10km <- st_join(crete_grid10, locations_inland, left=F) |>
+    group_by(scientificName,CELLCODE) |>
+    summarise(presense=n(), .groups="keep") |>
+    st_drop_geometry() |>
+    ungroup() |>
+    pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
+    as.matrix()
 
 community_m_1km <- st_join(crete_1km, locations_inland, left=F) |>
     group_by(scientificName,CELLCODE) |>
@@ -425,7 +432,7 @@ community_m_4km <- locations_grid_4_base |>
     pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
     as.matrix()
 
-community_m <- community_m_4km
+community_m <- community_m_10km
 community_matrix <- community_m[,-1]
 community_matrix <- apply(community_matrix, 2, as.numeric)
 rownames(community_matrix) <- community_m[,1]
@@ -572,7 +579,7 @@ crete_quads_sampling_grid <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-ggsave("../plot/crete_multiple_grids_hotspots.png",
+ggsave("../plots/crete_multiple_grids_hotspots.png",
        plot=crete_quads_sampling_grid,
        height = 10, 
        width = 20,
@@ -594,6 +601,24 @@ endemic_hotspots_order_s <- endemic_hotspots_order |>
     arrange(desc(orders)) |>
     filter(orders >= quantile(orders, 0.9)) 
 
+endemic_hotspots_order_c <-  endemic_hotspots_order |>
+    st_drop_geometry() |>
+    dplyr::select(-quant90) |>
+    pivot_wider(values_from=n_species, names_from=order, values_fill=0)
+
+metadata_n <- endemic_hotspots_order_c
+rownames(metadata_n) <- endemic_hotspots_order_c$CELLCODE
+nums <- unlist(lapply(metadata_n, is.numeric), use.names = FALSE)
+metadata_n <- metadata_n[,c(nums)]
+cc <- cor(metadata_n)
+
+cc_sp <- cor(metadata_n, method="spearman")
+
+write.table(cc_sp,
+            "../results/hotspots_sprearman.tsv",
+            sep="\t",
+            row.names=T,
+            col.names=NA)
 ###################### Figures of endemicity hotspots ########################
 
 g_e <- g_base +
