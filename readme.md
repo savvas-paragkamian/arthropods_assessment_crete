@@ -41,7 +41,17 @@ requires the following packages:
 
 ```
 
-## Workflow and Scripts
+## Workflow
+
+![flowchart_FINAL-grey.png](flowchart of the analysis)
+
+The workflow of this study. A. Curation of the literature and the NHMC
+arthropod collection for the endemic arthropod occurrences. B. PACA for the
+preliminary assessment of the arthropods and their distributions in Crete.
+C. Prediction of potential KBAs and endemicity hotspots and
+D. their overlap with Natura2000 and Land Use Change evaluation for human pressures.
+
+## Scripts
 
 First the script `species_assessment.R` is executed. It is the main
 script that calculates the IUCN AOO and EOO and PACA metrics. Based on the
