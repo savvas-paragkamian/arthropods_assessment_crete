@@ -43,7 +43,7 @@ requires the following packages:
 
 ## Workflow
 
-![flowchart_FINAL-grey.png](flowchart of the analysis)
+![flowchart of the analysis](flowchart_FINAL-grey.png)
 
 The workflow of this study. A. Curation of the literature and the NHMC
 arthropod collection for the endemic arthropod occurrences. B. PACA for the
