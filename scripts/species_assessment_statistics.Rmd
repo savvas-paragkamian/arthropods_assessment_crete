@@ -102,9 +102,22 @@ g_wdpa <- g_base +
     geom_sf(wdpa_crete, mapping=aes(fill=DESIG_ENG),alpha=0.5, size=0.1)+
     theme_bw()+
     theme(legend.position="bottom", legend.margin=margin())+
-    guides(fill=guide_legend(nrow=5,byrow=TRUE, title=""))
+    guides(fill=guide_legend(nrow=5,byrow=TRUE, title="")) +
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank(),
+          legend.key.size = unit(3, "mm"), 
+          legend.text=element_text(size=7))
 
-ggsave("../plots/wdpa_protected_aread.png", g_wdpa, device="png")
+ggsave("../plots/wdpa_protected_aread.png",
+       g_wdpa,
+       height = 15, 
+       width = 20,
+       dpi = 600, 
+       unit="cm",
+       device="png")
 
 g_wdpa
 ```
