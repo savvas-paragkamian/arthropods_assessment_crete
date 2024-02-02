@@ -496,7 +496,7 @@ g_sampling_order <- g_base +
     scale_fill_gradientn(colours = terrain.colors(10)) +
     facet_wrap(vars(order), ncol=2, scales = "fixed")
 
-ggsave("../figures/figS3_crete_sampling_intensity_order.png", 
+ggsave("../figures/fig_crete_sampling_intensity_order.png", 
        plot=g_sampling_order, 
        height = 50, 
        width = 40, 
@@ -632,7 +632,7 @@ g_e_order <- g_base +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)+
     facet_wrap(vars(order), ncol=2, scales = "fixed")
 
-ggsave("../figures/figS5_crete-hotspots_order.png", 
+ggsave("../figures/fig_crete-hotspots_order.png", 
        plot=g_e_order, 
        height = 50, 
        width = 40, 
@@ -644,7 +644,7 @@ g_e_order_c <- g_base +
     geom_sf(endemic_hotspots_order_s, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
 
-ggsave("../figures/figS6_hotspots_of_orders.png",
+ggsave("../figures/fig_hotspots_of_orders.png",
        plot=g_e_order_c,
        height = 20, 
        width = 40,
@@ -744,7 +744,7 @@ g_t_order <- g_base +
     scale_fill_gradient(low = "yellow", high = "red", na.value = "transparent")+
     facet_wrap(vars(order), ncol=2, scales = "fixed")
 
-ggsave("../figures/figS7_crete-threatspots_order.png", 
+ggsave("../figures/fig_crete-threatspots_order.png", 
        plot=g_t_order, 
        height =45, 
        width = 35, 
@@ -757,7 +757,7 @@ g_t_order_c <- g_base +
     ggtitle("Threatspots of orders max overlap") +
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA)
 
-ggsave("../figures/figS8_threatspots_of_orders.png",
+ggsave("../figures/fig_threatspots_of_orders.png",
        plot=g_t_order_c,
        height = 20, 
        width = 40,
