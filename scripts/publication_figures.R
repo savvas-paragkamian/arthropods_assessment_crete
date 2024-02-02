@@ -518,138 +518,74 @@ ggsave("../figures/fig_aoo_dist.png",
        width = 23, 
        units="cm")
 
-#endemic_hotspots_o
-# Overlap of hotspots
-endemic_hotspots_o <- locations_grid |> 
-    filter(CELLCOD %in% endemic_hotspots$CELLCODE) |>
-    distinct(CELLCOD, order)
+order_aoo <- endemic_species |>
+    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) |>
+    group_by(order) |>
+    mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative)) |>
+    mutate(order=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", order))
 
-heatmaps_hotspots <- heatmaps(endemic_hotspots_o)
+order_aoo_g <- ggplot() +
+    geom_boxplot(order_aoo,
+                 mapping=aes(x=order, y=aoo_natura_relative),
+                 outlier.size = 0) +
+    geom_jitter(order_aoo, 
+               mapping=aes(x=order, y=aoo_natura_relative)) + 
+    geom_vline(xintercept = seq(0.5, length(order_aoo$order), by = 1), 
+               color="gray", 
+               linewidth=.5, 
+               alpha=.5) + # # set vertical lines between x groups
+    labs(y="Proportion of AOO overlap with N2K")+
+    theme_bw()+
+    theme(panel.grid = element_blank(),
+          axis.text.x = element_text(angle = 90, hjust = 0,face="bold"),
+          axis.text = element_text(size=13), 
+          axis.title.x=element_blank(),
+          axis.title.y=element_text(face="bold"),
+          legend.position = c(0.85, 0.1))
 
-ggsave("../figures/fig_endemic_hotspots_oa.png",
-       plot = heatmaps_hotspots[[2]],
-       width = 25,
-       height = 25,
-       units='cm', 
-       device = "png",
-       dpi = 300)
+ggsave("../figures/fig_order_aoo_g.png", 
+       plot=order_aoo_g, 
+       device="png", 
+       height = 20, 
+       width = 23, 
+       units="cm")
 
-# Overlap of WEGE threatspots
-wege_results_o <- locations_grid |> 
-    filter(CELLCOD %in% wege_results$CELLCOD) |>
-    distinct(CELLCOD, order)
-
-heatmaps_wege_threatspots <- heatmaps(wege_results_o) 
-
-heatmap_sort <- heatmaps_wege_threatspots[[1]] |>
-    mutate(from=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", from)) |>
-    mutate(to=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)",to))
-
-
-order_cell_long <- heatmap_sort |>
-    mutate(count=if_else(from==to,0,count))
-
-order_cell_long_t <- order_cell_long |>
-    filter(count!=0)
-
-diagonal <- heatmap_sort |>
-    filter(from==to)
-
-
-WEGE_order_overlap <- ggplot()+
-      geom_tile(data=order_cell_long,
-                aes(x=from, y=to,fill=count),
-                color="white",
-                alpha=1,
-                show.legend = T)+
-      geom_point(data=diagonal,
-                 aes(x=from, y=to),
-                 colour="lightyellow4",
-                 size=1,
-                 show.legend = F)+
-      geom_text(data=order_cell_long_t,
-                aes(x=from, y=to, label=count),
-                size=4) +
-      scale_y_discrete(limits = rev)+
-      scale_fill_gradient(low="gray87",
-                          high="#0072B2",
-                          breaks=waiver(),
-                          n.breaks=4,
-                          limits=c(1, max(order_cell_long$count)+1),
-                          na.value="white",
-                          guide = "colorbar")+
-      guides(fill = guide_colorbar(ticks = FALSE,
-                                   title="# WEGE\nKBAs",
-                                   label.vjust = 0.8,
-                                   title.vjust = 0.8))+
-      xlab("") +
-      ylab("")+
-      theme_bw()+
-      theme(
-            panel.border=element_blank(),
-            panel.grid.major = element_blank(),
-            panel.grid.minor=element_blank(),
-            axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
-            axis.text.y = element_text(face="bold"),
-            axis.text = element_text(size=13), 
-            axis.title.x=element_blank(),
-            axis.title.y=element_text(face="bold", size=13),
-            legend.position = c(.90, .83),
-            legend.title=element_text(size=9))
-
-ggsave("../figures/fig_WEGE_order_overlap.png",
-       plot = WEGE_order_overlap,
-       width = 20,
-       height = 20,
-       units='cm', 
-       device = "png",
-       dpi = 300)
-
-
-#fig3 <- ggarrange(fig3a, fig3b,
-#          labels = c("A", "B"),
-#          align = "hv",
-#          widths = c(0.8,1),
-#          ncol = 2,
-#          nrow = 1,
-#          font.label=list(color="black",size=22)) + bgcolor("white")
-
-fig4 <- ggarrange(fig_aoo_dist, WEGE_order_overlap,
+fig4 <- ggarrange(fig_aoo_dist, order_aoo_g,
           labels = c("A", "B"),
           align = "hv",
           widths = c(1,1),
-          ncol = 1,
-          nrow = 2,
+          ncol = 2,
+          nrow = 1,
           font.label=list(color="black",size=22)) + bgcolor("white")
 
 ggsave("../figures/Fig4.tiff", 
        plot=fig4, 
-       height = 40, 
-       width = 24,
+       height = 21, 
+       width = 40,
        dpi = 600, 
        units="cm",
        device="tiff")
 
 ggsave("../figures/Fig4.png", 
        plot=fig4, 
-       height = 40, 
-       width = 24,
+       height = 21, 
+       width = 40,
        dpi = 600, 
        units="cm",
        device="png")
 
 ggsave("../figures/Fig4.pdf", 
        plot=fig4, 
-       height = 40, 
-       width = 24,
+       height = 21, 
+       width = 40,
        dpi = 600, 
        units="cm",
        device="pdf")
 
 ggsave("../figures/Fig4-small.png", 
        plot=fig4, 
-       height = 40, 
-       width = 24,
+       height = 21, 
+       width = 40,
        dpi = 300, 
        units="cm",
        device="png")
@@ -882,42 +818,8 @@ ggsave("../figures/figS1.png",
        width = 23, 
        units="cm")
 
-## Supplementary Figure 2
 
-order_aoo <- endemic_species |>
-    mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) |>
-    group_by(order) |>
-    mutate(average=mean(aoo_natura_relative), std=sd(aoo_natura_relative)) |>
-    mutate(order=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", order))
-
-figS2 <- ggplot() +
-    geom_boxplot(order_aoo,
-                 mapping=aes(x=order, y=aoo_natura_relative),
-                 outlier.size = 0) +
-    geom_jitter(order_aoo, 
-               mapping=aes(x=order, y=aoo_natura_relative)) + 
-    geom_vline(xintercept = seq(0.5, length(order_aoo$order), by = 1), 
-               color="gray", 
-               linewidth=.5, 
-               alpha=.5) + # # set vertical lines between x groups
-    labs(y="Proportion of AOO overlap with N2K")+
-    theme_bw()+
-    theme(panel.grid = element_blank(),
-          axis.text.x = element_text(angle = 90, hjust = 0,face="bold"),
-          axis.text = element_text(size=13), 
-          axis.title.x=element_blank(),
-          axis.title.y=element_text(face="bold"),
-          legend.position = c(0.85, 0.1))
-
-ggsave("../figures/figS2.png", 
-       plot=figS2, 
-       device="png", 
-       height = 20, 
-       width = 23, 
-       units="cm")
-
-
-## figS4 
+## fig species with aoo out of natura2000 
 species_10_natura <- endemic_species |>
     mutate(aoo_natura_percent=round(aoo_natura/aoo, digits=4)) |>
     mutate(aoo_natura_relative=round(1-abs(aoo_natura-aoo)/aoo, digits=4)) |>
@@ -982,7 +884,7 @@ crete_aoo <- ggplot() +
           legend.position = "bottom",
           legend.box.background = element_blank())
 
-ggsave("../figures/FigS4.tiff",
+ggsave("../figures/Fig_crete_aoo.tiff",
        plot=crete_aoo,
        height = 10,
        width = 20,
@@ -990,7 +892,7 @@ ggsave("../figures/FigS4.tiff",
        units="cm",
        device="tiff")
 
-ggsave("../figures/FigS4.png",
+ggsave("../figures/Fig_crete_aoo.png",
        plot=crete_aoo,
        height = 10,
        width = 20,
@@ -998,3 +900,185 @@ ggsave("../figures/FigS4.png",
        units="cm",
        device="png")
 
+#endemic_hotspots_o
+# Overlap of hotspots
+endemic_hotspots_o <- locations_grid |> 
+    filter(CELLCOD %in% endemic_hotspots$CELLCODE) |>
+    distinct(CELLCOD, order)
+
+heatmaps_hotspots <- heatmaps(endemic_hotspots_o)
+
+heatmap_sort <- heatmaps_hotspots[[1]] |>
+    mutate(from=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", from)) |>
+    mutate(to=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)",to))
+
+
+order_cell_long <- heatmap_sort |>
+    mutate(count=if_else(from==to,0,count))
+
+order_cell_long_t <- order_cell_long |>
+    filter(count!=0)
+
+diagonal <- heatmap_sort |>
+    filter(from==to)
+
+
+endemic_order_overlap <- ggplot()+
+      geom_tile(data=order_cell_long,
+                aes(x=from, y=to,fill=count),
+                color="white",
+                alpha=1,
+                show.legend = T)+
+      geom_point(data=diagonal,
+                 aes(x=from, y=to),
+                 colour="lightyellow4",
+                 size=1,
+                 show.legend = F)+
+      geom_text(data=order_cell_long_t,
+                aes(x=from, y=to, label=count),
+                size=4) +
+      scale_y_discrete(limits = rev)+
+      scale_fill_gradient(low="gray87",
+                          high="#D55E00",
+                          breaks=waiver(),
+                          n.breaks=4,
+                          limits=c(1, max(order_cell_long$count)+1),
+                          na.value="white",
+                          guide = "colorbar")+
+      guides(fill = guide_colorbar(ticks = FALSE,
+                                   title="# hotspots",
+                                   label.vjust = 0.8,
+                                   title.vjust = 0.8))+
+      xlab("") +
+      ylab("")+
+      theme_bw()+
+      theme(
+            panel.border=element_blank(),
+            panel.grid.major = element_blank(),
+            panel.grid.minor=element_blank(),
+            axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
+            axis.text.y = element_text(face="bold"),
+            axis.text = element_text(size=13), 
+            axis.title.x=element_blank(),
+            axis.title.y=element_text(face="bold", size=13),
+            legend.position = c(.90, .83),
+            legend.title=element_text(size=9))
+
+ggsave("../figures/fig_hotspots_order_overlap.png",
+       plot = endemic_order_overlap,
+       width = 20,
+       height = 20,
+       units='cm', 
+       device = "png",
+       dpi = 300)
+
+# Overlap of WEGE threatspots
+wege_results_o <- locations_grid |> 
+    filter(CELLCOD %in% wege_results$CELLCOD) |>
+    distinct(CELLCOD, order)
+
+heatmaps_wege_threatspots <- heatmaps(wege_results_o) 
+
+heatmap_sort <- heatmaps_wege_threatspots[[1]] |>
+    mutate(from=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)", from)) |>
+    mutate(to=gsub("Lepidoptera", "Lepidoptera\n(Geometrid moths)",to))
+
+
+order_cell_long <- heatmap_sort |>
+    mutate(count=if_else(from==to,0,count))
+
+order_cell_long_t <- order_cell_long |>
+    filter(count!=0)
+
+diagonal <- heatmap_sort |>
+    filter(from==to)
+
+
+WEGE_order_overlap <- ggplot()+
+      geom_tile(data=order_cell_long,
+                aes(x=from, y=to,fill=count),
+                color="white",
+                alpha=1,
+                show.legend = T)+
+      geom_point(data=diagonal,
+                 aes(x=from, y=to),
+                 colour="lightyellow4",
+                 size=1,
+                 show.legend = F)+
+      geom_text(data=order_cell_long_t,
+                aes(x=from, y=to, label=count),
+                size=4) +
+      scale_y_discrete(limits = rev)+
+      scale_fill_gradient(low="gray87",
+                          high="#CC79A7",
+                          breaks=waiver(),
+                          n.breaks=4,
+                          limits=c(1, max(order_cell_long$count)+1),
+                          na.value="white",
+                          guide = "colorbar")+
+      guides(fill = guide_colorbar(ticks = FALSE,
+                                   title="# WEGE\nKBAs",
+                                   label.vjust = 0.8,
+                                   title.vjust = 0.8))+
+      xlab("") +
+      ylab("")+
+      theme_bw()+
+      theme(
+            panel.border=element_blank(),
+            panel.grid.major = element_blank(),
+            panel.grid.minor=element_blank(),
+            axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
+            axis.text.y = element_text(face="bold"),
+            axis.text = element_text(size=13), 
+            axis.title.x=element_blank(),
+            axis.title.y=element_text(face="bold", size=13),
+            legend.position = c(.90, .83),
+            legend.title=element_text(size=9))
+
+ggsave("../figures/fig_WEGE_order_overlap.png",
+       plot = WEGE_order_overlap,
+       width = 20,
+       height = 20,
+       units='cm', 
+       device = "png",
+       dpi = 300)
+
+fig_heatmap <- ggarrange(endemic_order_overlap,WEGE_order_overlap, 
+          labels = c("A", "B"),
+          align = "hv",
+          widths = c(1,1),
+          ncol = 2,
+          nrow = 1,
+          font.label=list(color="black",size=22)) + bgcolor("white")
+
+ggsave("../figures/fig_heatmap.tiff", 
+       plot=fig_heatmap, 
+       height = 20, 
+       width = 40,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/fig_heatmap.png", 
+       plot=fig_heatmap, 
+       height = 20, 
+       width = 40,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+ggsave("../figures/fig_heatmap.pdf", 
+       plot=fig_heatmap, 
+       height = 20, 
+       width = 40,
+       dpi = 600, 
+       units="cm",
+       device="pdf")
+
+ggsave("../figures/Fig_heatmap_small.png", 
+       plot=fig_heatmap, 
+       height = 20, 
+       width = 40,
+       dpi = 300, 
+       units="cm",
+       device="png")
