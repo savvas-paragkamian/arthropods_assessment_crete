@@ -776,6 +776,9 @@ treatened_dist_quad <- qt_sf_sp |>
               not_threatened=sum(threatened_f),
               total=n()) |> 
     mutate(proportion=treatened/total) |>
+    mutate(CELLCODE=seq_along(geometry))
+
+treatened_dist_quad_f <- treatened_dist_quad |>
     filter(total >= quantile(total, 0.5),
            proportion >= quantile(proportion,0.5))
 
@@ -784,7 +787,6 @@ st_write(treatened_dist_quad,
          append=F,
          delete_layer=T,
          delete_dsn = TRUE) 
-
 
 
 ############################## WEGE #################################
@@ -806,7 +808,7 @@ cellcodes <- grid_for_wege[[1]]
 wege_l <- list()
 for (c in seq_along(cellcodes)){
 
-    target_area <- crete_grid10 |> filter(CELLCODE==cellcodes[c])
+    target_area <- grid_for_wege |> filter(CELLCODE==cellcodes[c])
     temp <- get_wege(target_area,input,species = 'binomial',category = 'category')
     if (!is.null(temp)){
         wege_l[[c]] <- st_sf(st_as_sfc(target_area), wege=temp, CELLCODE=cellcodes[c])
@@ -832,7 +834,38 @@ wege_map <- g_base +
 
 ggsave("../plots/crete_wege_hotspots_map.png", plot=wege_map, device="png")
 
+## wege for quads
 
+grid_for_wege <- treatened_dist_quad
+
+cellcodes <- grid_for_wege$CELLCODE
+wege_l <- list()
+for (c in seq_along(cellcodes)){
+
+    target_area <- grid_for_wege |> filter(CELLCODE==cellcodes[c])
+    temp <- get_wege(target_area,input,species = 'binomial',category = 'category')
+    if (!is.null(temp)){
+        wege_l[[c]] <- st_sf(st_as_sfc(target_area), wege=temp, CELLCODE=cellcodes[c])
+    }
+}
+
+wege_results <- do.call(rbind, wege_l)
+
+wege_results_f <- wege_results |> 
+    filter(wege >= quantile(wege, 0.90)) 
+
+st_write(wege_results_f,
+         "../results/wege_results/wege_results_quads.shp", 
+         append=F,
+         delete_layer=T,
+         delete_dsn = TRUE) 
+
+wege_map <- g_base +
+    geom_sf(wege_results_f, mapping=aes(fill=wege)) + 
+    scale_fill_gradient(low = "yellow", high = "red", na.value = NA) +
+    theme_bw()
+
+ggsave("../plots/crete_wege_quads_map.png", plot=wege_map, device="png")
 ############################# Overlaps ##################################
 
 ### Hotspots and WEGE threatspots
