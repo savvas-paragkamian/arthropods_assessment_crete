@@ -76,6 +76,7 @@ threatspots <- st_read("../results/threatspots/threatspots.shp")
 threatspots_lt <- threatspots |> 
     filter(pc_thrt>= quantile(pc_thrt,0.90))
 wege_results <- st_read("../results/wege_results/wege_results.shp")
+wege_results_quads <- st_read("../results/wege_results/wege_results_quads.shp")
 
 treatened_dist_quad <- st_read("../results/treatened_dist_quad/treatened_dist_quad.shp")
 # IUCN
@@ -257,68 +258,6 @@ ggsave("../figures/Fig_crete_hotspot.png",
        units="cm",
        device="png")
 
-## treatened_dist_quad 
-crete_dist_threat <- ggplot() +
-    geom_sf(crete_shp, mapping=aes()) +
-    geom_sf(natura_crete_land_sci,
-            mapping=aes(colour="Natura2000 HSD"),
-            linewidth=0.5,
-            alpha=1,
-            fill=NA,
-            show.legend=F) +
-    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
-                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
-                        name="")+
-    geom_sf(treatened_dist_quad, mapping=aes(fill=proprtn),
-            alpha=0.7,
-            linewidth=0.2,
-            colour="gray70",
-            na.rm = FALSE,
-            show.legend=T) +
-    scale_fill_gradient(low="gainsboro",
-                        high="#8C9D3A",
-                        guide = "colourbar")+
-    geom_sf(crete_peaks,
-            mapping=aes(),
-            colour="#D55E00",
-            size=1,
-            alpha=1,
-            show.legend=F) +
-    geom_label(data = crete_peaks, 
-               mapping=aes(x = X, y = Y, label = name),
-               size = 1.5,
-               nudge_x = 0.05,
-               nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
-    coord_sf(crs="WGS84") +
-    guides(colour="none",
-           fill = guide_colourbar(ticks = FALSE,
-                                  label = TRUE,
-                                  title="Proportion of\nthreatened species",
-                                  title.vjust = 0.8,
-                                  order = 1))+
-    theme_bw()+
-    theme(axis.title=element_blank(),
-          axis.text=element_text(colour="black"),
-          legend.title = element_text(size=8),
-          legend.position = "bottom",
-          legend.box.background = element_blank())
-
-ggsave("../figures/Fig_crete_dist_threat.tiff", 
-       plot=crete_dist_threat, 
-       height = 10, 
-       width = 20,
-       dpi = 600, 
-       units="cm",
-       device="tiff")
-
-ggsave("../figures/Fig_crete_dist_threat.png", 
-       plot=crete_dist_threat, 
-       height = 10, 
-       width = 20,
-       dpi = 600, 
-       units="cm",
-       device="png")
-
 ## wege_results
 
 crete_threat <- ggplot() +
@@ -429,18 +368,18 @@ ggsave("../figures/figs_crete_multiple_grids_hotspots.png",
        unit="cm",
        device="png")
 
-fig2 <- ggarrange(crete_sampling_grid, crete_hotspot, crete_dist_threat, crete_threat,
-          labels = c("A", "B", "C", "D"),
+fig2 <- ggarrange(crete_sampling_grid, crete_hotspot,crete_threat,
+          labels = c("A", "B", "C"),
           align = "hv",
-          widths = c(1,1,1,0.6),
+          widths = c(1,1,1),
           ncol = 1,
-          nrow = 4,
+          nrow = 3,
           font.label=list(color="black",size=22),
           legend="right") + bgcolor("white")
 
 ggsave("../figures/Fig3.tiff", 
        plot=fig2, 
-       height = 40, 
+       height = 30, 
        width = 30,
        dpi = 600, 
        units="cm",
@@ -448,7 +387,7 @@ ggsave("../figures/Fig3.tiff",
 
 ggsave("../figures/Fig3.png", 
        plot=fig2, 
-       height = 40, 
+       height = 30, 
        width = 30,
        dpi = 600, 
        units="cm",
@@ -456,7 +395,7 @@ ggsave("../figures/Fig3.png",
 
 ggsave("../figures/Fig3.pdf", 
        plot=fig2, 
-       height = 40, 
+       height = 30, 
        width = 30,
        dpi = 600, 
        units="cm",
@@ -464,7 +403,7 @@ ggsave("../figures/Fig3.pdf",
 
 ggsave("../figures/Fig3-small.png", 
        plot=fig2, 
-       height = 40, 
+       height = 30, 
        width = 30,
        dpi = 300, 
        units="cm",
@@ -1079,6 +1018,290 @@ ggsave("../figures/Fig_heatmap_small.png",
        plot=fig_heatmap, 
        height = 20, 
        width = 40,
+       dpi = 300, 
+       units="cm",
+       device="png")
+
+## treatened_dist_quad 
+
+treatened_dist_quad_f <- treatened_dist_quad |>
+    filter(total >= quantile(total, 0.5),
+           proprtn >= quantile(proprtn,0.5))
+
+dist_quad_hot <- treatened_dist_quad |>
+    filter(total >= quantile(total, 0.9))
+
+crete_quad_hot <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
+            alpha=1,
+            fill=NA,
+            show.legend=F) +
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
+    geom_sf(dist_quad_hot, mapping=aes(fill=total),
+            alpha=0.7,
+            linewidth=0.2,
+            colour="gray70",
+            na.rm = FALSE,
+            show.legend=T) +
+    scale_fill_gradient(low="#009E73",
+                        high="#F0E442",
+                        guide = "colourbar")+
+#    geom_sf(crete_peaks,
+#            mapping=aes(),
+#            colour="#D55E00",
+#            size=1,
+#            alpha=1,
+#            show.legend=F) +
+#    geom_label(data = crete_peaks, 
+#               mapping=aes(x = X, y = Y, label = name),
+#               size = 1.5,
+#               nudge_x = 0.05,
+#               nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
+    coord_sf(crs="WGS84") +
+    guides(colour="none",
+           fill = guide_colourbar(ticks = FALSE,
+                                  label = TRUE,
+                                  title="# endemics",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank())
+
+ggsave("../figures/Fig_crete_quad_hot.tiff", 
+       plot=crete_quad_hot, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig_crete_quad_hot.png", 
+       plot=crete_quad_hot, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+## crete quad wege
+wege_results_quads_90 <- wege_results_quads |>
+    filter(wege >= quantile(wege, 0.9)) 
+
+crete_quad_wege <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
+            alpha=1,
+            fill=NA,
+            show.legend=F) +
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
+    geom_sf(wege_results_quads_90, mapping=aes(fill=wege),
+            alpha=0.7,
+            linewidth=0.2,
+            colour="gray70",
+            na.rm = FALSE,
+            show.legend=T) +
+    scale_fill_gradient(low="#FFD700",
+                        high="#CC79A7",
+                        #breaks = c(25,30,35,40,45,50),
+                        #labels = c(25,30,35,40,45,50),
+                        guide = "colourbar")+
+    coord_sf(crs="WGS84") +
+    guides(colour="none",
+           fill = guide_colourbar(ticks = FALSE,
+                                  label = TRUE,
+                                  title="WEGE index\n(top 10%)\nfor KBAs",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank())
+
+ggsave("../figures/Fig_crete_quad_wege.tiff", 
+       plot=crete_quad_wege, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig_crete_quad_wege.png", 
+       plot=crete_quad_wege, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+# wege and quads top 20%
+wege_results_quads_80 <- wege_results_quads |>
+    filter(wege >= quantile(wege, 0.8)) 
+
+crete_quad_wege_80 <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
+            alpha=1,
+            fill=NA,
+            show.legend=F) +
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
+    geom_sf(wege_results_quads_80, mapping=aes(fill=wege),
+            alpha=0.7,
+            linewidth=0.2,
+            colour="gray70",
+            na.rm = FALSE,
+            show.legend=T) +
+    scale_fill_gradient(low="#0072B2",
+                        high="#F0E442",
+                        #breaks = c(25,30,35,40,45,50),
+                        #labels = c(25,30,35,40,45,50),
+                        guide = "colourbar")+
+    coord_sf(crs="WGS84") +
+    guides(colour="none",
+           fill = guide_colourbar(ticks = FALSE,
+                                  label = TRUE,
+                                  title="WEGE index\n(top 20%)\nfor KBAs",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank())
+
+ggsave("../figures/Fig_crete_quad_wege_80.tiff", 
+       plot=crete_quad_wege_80, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig_crete_quad_wege_80.png", 
+       plot=crete_quad_wege_80, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+# proportion of threatened 
+crete_dist_threat <- ggplot() +
+    geom_sf(crete_shp, mapping=aes()) +
+    geom_sf(natura_crete_land_sci,
+            mapping=aes(colour="Natura2000 HSD"),
+            linewidth=0.5,
+            alpha=1,
+            fill=NA,
+            show.legend=F) +
+    scale_colour_manual(values = c("Natura2000 HSD" = "#4BA591"),
+                        guide = guide_legend(override.aes = list(linetype="solid",shape = NA)),
+                        name="")+
+    geom_sf(treatened_dist_quad, mapping=aes(fill=proprtn),
+            alpha=0.85,
+            linewidth=0.2,
+            colour="gray70",
+            na.rm = FALSE,
+            show.legend=T) +
+    scale_fill_gradient(low="gainsboro",
+                        high="#8C9D3A",
+                        guide = "colourbar")+
+    geom_sf(crete_peaks,
+            mapping=aes(),
+            colour="#D55E00",
+            size=1,
+            alpha=1,
+            show.legend=F) +
+    geom_label(data = crete_peaks, 
+               mapping=aes(x = X, y = Y, label = name),
+               size = 1.5,
+               nudge_x = 0.05,
+               nudge_y=0.05, label.padding = unit(0.1, "lines"))+ 
+    coord_sf(crs="WGS84") +
+    guides(colour="none",
+           fill = guide_colourbar(ticks = FALSE,
+                                  label = TRUE,
+                                  title="Proportion of\nthreatened species",
+                                  title.vjust = 0.8,
+                                  order = 1))+
+    theme_bw()+
+    theme(axis.title=element_blank(),
+          axis.text=element_text(colour="black"),
+          legend.title = element_text(size=8),
+          legend.position = "bottom",
+          legend.box.background = element_blank())
+
+ggsave("../figures/Fig_crete_dist_threat.tiff", 
+       plot=crete_dist_threat, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig_crete_dist_threat.png", 
+       plot=crete_dist_threat, 
+       height = 10, 
+       width = 20,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+fig_quads <- ggarrange(crete_dist_threat, crete_quad_hot,crete_quad_wege,crete_quad_wege_80,
+          labels = c("A", "B", "C", "D"),
+          align = "hv",
+          widths = c(1,1,1,1),
+          ncol = 1,
+          nrow = 4,
+          font.label=list(color="black",size=22),
+          legend="right") + bgcolor("white")
+
+ggsave("../figures/Fig_quads.tiff", 
+       plot=fig_quads, 
+       height = 40, 
+       width = 30,
+       dpi = 600, 
+       units="cm",
+       device="tiff")
+
+ggsave("../figures/Fig_quads.png", 
+       plot=fig_quads, 
+       height = 40, 
+       width = 30,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+ggsave("../figures/Fig_quads.pdf", 
+       plot=fig_quads, 
+       height = 40, 
+       width = 30,
+       dpi = 600, 
+       units="cm",
+       device="pdf")
+
+ggsave("../figures/Fig_quads-small.png", 
+       plot=fig_quads, 
+       height = 40, 
+       width = 30,
        dpi = 300, 
        units="cm",
        device="png")
