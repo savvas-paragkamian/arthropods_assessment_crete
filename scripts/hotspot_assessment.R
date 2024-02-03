@@ -852,9 +852,9 @@ for (c in seq_along(cellcodes)){
 wege_results <- do.call(rbind, wege_l)
 
 wege_results_f <- wege_results |> 
-    filter(wege >= quantile(wege, 0.90)) 
+    filter(wege >= quantile(wege, 0.9)) 
 
-st_write(wege_results_f,
+st_write(wege_results,
          "../results/wege_results/wege_results_quads.shp", 
          append=F,
          delete_layer=T,
