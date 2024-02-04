@@ -17,6 +17,7 @@
 
 library(tidyverse)
 library(ggnewscale)
+library(ggpubr)
 library(sf)
 library(terra)
 library(quadtree)
@@ -78,6 +79,9 @@ natura_crete_land_sci <- natura_crete_land |> filter(SITETYPE=="B")
 grid_10km_w <- grid_10km |> st_transform(., crs="WGS84")
 crete_grid10 <- st_join(grid_10km_w, crete_shp, left=F)
 
+locations_10_grid_base <- st_join(crete_grid10, locations_inland, left=F) |>
+    distinct(geometry,CELLCODE, decimalLatitude, decimalLongitude, scientificName) 
+
 locations_10_grid_samples <- st_join(crete_grid10, locations_inland, left=F) |>
     distinct(geometry,CELLCODE, decimalLatitude, decimalLongitude) |>
     group_by(geometry,CELLCODE) |>
@@ -94,6 +98,9 @@ locations_10_grid <- st_join(crete_grid10, locations_inland, left=F) |>
 cor(locations_10_grid$n_species, locations_10_grid$n_samples)
 
 ### 1km over shp
+
+locations_1_grid_base <- st_join(crete_1km, locations_inland, left=F) |>
+    distinct(geometry,CELLCODE, decimalLatitude, decimalLongitude, scientificName)
 
 locations_1_grid_samples <- st_join(crete_1km, locations_inland, left=F) |>
     distinct(geometry,CELLCODE, decimalLatitude, decimalLongitude) |>
@@ -247,14 +254,19 @@ qt_sf <- qt_df |>
     dplyr::select(-c(geom)) |>
     st_set_crs(st_crs(locations_eea))
 
+qt_sf_sp_base <- qt_sf |>
+    st_transform(crs(locations_inland)) |> 
+    st_join(locations_inland, left=F) |>
+    distinct(scientificName,geometry,id)
 
 qt_sf_sp <- qt_sf |>
     st_transform(crs(locations_inland)) |> 
     st_join(locations_inland, left=F) |>
-    distinct(scientificName,geometry) |>
-    group_by(geometry) |>
+    distinct(scientificName,geometry,id) |>
+    group_by(geometry,id) |>
     mutate(n_species=n()) |>
     left_join(endemic_species, by=c("scientificName"="scientificName"))
+
 
 ### quadstrees plots
 png(file="../plots/quadtree_crete.png",
@@ -277,9 +289,12 @@ dev.off()
 
 ### quads and biodiversity
 qt_sf_all <- qt_sf_sp |>
-    group_by(geometry) |>
-    summarise(n_species=n()) |>
+    group_by(geometry, id) |>
+    summarise(n_species=n(), .groups="keep") |>
     mutate(Order="All")
+
+print("the summary of quads per size-area")
+table(ceiling(st_area(qt_sf_all)/1000000))
 
 qt_sf_order <- qt_sf_sp |> 
     group_by(geometry, order) |> 
@@ -416,27 +431,11 @@ community_m_10km <- st_join(crete_grid10, locations_inland, left=F) |>
     pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
     as.matrix()
 
-community_m_1km <- st_join(crete_1km, locations_inland, left=F) |>
-    group_by(scientificName,CELLCODE) |>
-    summarise(presense=n(), .groups="keep") |>
-    st_drop_geometry() |>
-    ungroup() |>
-    pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
-    as.matrix()
-
-community_m_4km <- locations_grid_4_base |>
-    group_by(scientificName,CELLCODE) |>
-    summarise(presense=n(), .groups="keep") |>
-    st_drop_geometry() |>
-    ungroup() |>
-    pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
-    as.matrix()
-
+## community analysis
 community_m <- community_m_10km
 community_matrix <- community_m[,-1]
 community_matrix <- apply(community_matrix, 2, as.numeric)
 rownames(community_matrix) <- community_m[,1]
-
 S <- specnumber(community_matrix) # observed number of species
 sp2 <- specaccum(community_matrix, "random")
 
@@ -668,6 +667,277 @@ write.table(as.data.frame(hotspots_in_area),
             "../results/hotspots_grids_area_intesection.tsv",
             sep="\t")
 
+
+
+##### grid size hotspot comparison
+
+endemic_hotspots_10 <- endemic_hotspots |> 
+    st_drop_geometry() |>
+    mutate(grid="10km") |>
+    dplyr::select(grid, n_species)
+
+endemic_hotspots_1 <- endemic_hotspots_1km |> 
+    st_drop_geometry() |>
+    mutate(grid="1km") |>
+    dplyr::select(grid, n_species)
+
+endemic_hotspots_4 <- endemic_hotspots_4km |> 
+    st_drop_geometry() |>
+    mutate(grid="4km") |>
+    dplyr::select(grid, n_species)
+
+endemic_hotspots_8 <- endemic_hotspots_8km |> 
+    st_drop_geometry() |>
+    mutate(grid="8km") |>
+    dplyr::select(grid, n_species)
+
+endemic_hotspots_adaptive_cell <- endemic_hotspots_quads |> 
+    st_drop_geometry() |>
+    mutate(grid="adaptive cell") |>
+    dplyr::select(grid, n_species)
+
+endemic_hotspots_box <- do.call(rbind, list(endemic_hotspots_1, endemic_hotspots_4,endemic_hotspots_8,endemic_hotspots_10,endemic_hotspots_adaptive_cell)) |>
+    mutate(proportion_species=n_species/nrow(endemic_species))
+
+endemic_hotspots_box$grid <- factor(endemic_hotspots_box$grid, levels=c("1km", "4km", "8km", "10km", "adaptive cell"))
+
+fig_endemic_hotspots_box <- ggplot() +
+    geom_boxplot(endemic_hotspots_box,
+                 mapping=aes(x=grid, y=proportion_species),
+                 outlier.size = 0) +
+    geom_point(endemic_hotspots_box, 
+               mapping=aes(x=grid, y=proportion_species, color="gray70"),
+               position=position_jitterdodge(0.3)) + 
+    scale_color_manual(values=c("gray45"),
+                       labels=c(""),
+                       name="")+
+    theme_bw()+
+    scale_y_continuous(breaks = seq(0,0.4,0.05),limits=c(0,0.32),"Proportion of endemics") +
+    theme(panel.grid = element_blank(),
+          axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
+          axis.text = element_text(size=13), 
+          axis.title.x=element_blank(),
+          axis.title.y=element_text(face="bold", size=13),
+          legend.position = c(0.88, 0.1))
+
+ggsave("../figures/fig_endemic_hotspots_box.png", 
+       plot=fig_endemic_hotspots_box, 
+       device="png", 
+       height = 20, 
+       width = 23, 
+       units="cm")
+
+kruskal <- kruskal.test(n_species ~ grid, data = endemic_hotspots_box)
+summary(kruskal)
+
+pairwise.wilcox.test(endemic_hotspots_box$n_species, endemic_hotspots_box$grid,p.adjust.method = "BH")
+
+### the unique number of species of each grid cell size
+endemic_hotspots_species <- locations_10_grid_base |>
+    filter(CELLCODE %in% endemic_hotspots$CELLCODE) |>
+    ungroup() |>
+    st_drop_geometry() |>
+    distinct(scientificName)
+
+endemic_hotspots_1_species <- locations_1_grid_base |>
+    filter(CELLCODE %in% endemic_hotspots_1km$CELLCODE) |>
+    ungroup() |>
+    st_drop_geometry() |>
+    distinct(scientificName)
+
+endemic_hotspots_4_species <- locations_grid_4_base |>
+    filter(CELLCODE %in% endemic_hotspots_4km$CELLCODE) |>
+    ungroup() |>
+    st_drop_geometry() |>
+    distinct(scientificName)
+
+endemic_hotspots_8_species <- locations_grid_8_base |>
+    filter(CELLCODE %in% endemic_hotspots_8km$CELLCODE) |>
+    ungroup() |>
+    st_drop_geometry() |>
+    distinct(scientificName)
+
+endemic_hotspots_quad_species <- qt_sf_sp |>
+    filter(id %in% endemic_hotspots_quads$id) |>
+    ungroup() |>
+    st_drop_geometry() |>
+    distinct(scientificName)
+
+### jaccard similarity of each grid
+
+dist_long <- function(x,method){
+    method <- method
+    df <- as.data.frame(as.matrix(x)) |>
+    rownames_to_column() |>
+    pivot_longer(-rowname,
+                 values_to=method,
+                 names_to="colname")
+
+    return(df)
+}
+community_m_8km <- locations_grid_8_base |>
+    group_by(scientificName,CELLCODE) |>
+    summarise(presense=n(), .groups="keep") |>
+    st_drop_geometry() |>
+    ungroup() |>
+    pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
+    as.matrix()
+
+community_m_1km <- st_join(crete_1km, locations_inland, left=F) |>
+    group_by(scientificName,CELLCODE) |>
+    summarise(presense=n(), .groups="keep") |>
+    st_drop_geometry() |>
+    ungroup() |>
+    pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
+    as.matrix()
+
+community_m_4km <- locations_grid_4_base |>
+    group_by(scientificName,CELLCODE) |>
+    summarise(presense=n(), .groups="keep") |>
+    st_drop_geometry() |>
+    ungroup() |>
+    pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
+    as.matrix()
+
+community_m_quads <- qt_sf_sp |>
+    group_by(scientificName,id) |>
+    summarise(presense=n(), .groups="keep") |>
+    st_drop_geometry() |>
+    ungroup() |>
+    pivot_wider(names_from=scientificName, values_from=presense, values_fill = 0) |>
+    as.matrix()
+## jaccard for 10km
+community_m <- community_m_10km
+community_matrix <- community_m[,-1]
+community_matrix <- apply(community_matrix, 2, as.numeric)
+rownames(community_matrix) <- community_m[,1]
+
+community_matrix_hotspots <- community_matrix[endemic_hotspots$CELLCODE,]
+
+jac_10 <- vegdist(community_matrix_hotspots,
+                method="jaccard")
+
+bray_10 <- vegdist(community_matrix_hotspots,
+                method="bray")
+## transform a wide to long format
+jac_10_df <- dist_long(jac_10, "jaccard") |>
+    filter(jaccard>0) |>
+    mutate(grid="10km")
+## jaccard for 8km
+community_m <- community_m_8km
+community_matrix <- community_m[,-1]
+community_matrix <- apply(community_matrix, 2, as.numeric)
+rownames(community_matrix) <- community_m[,1]
+
+community_matrix_hotspots <- community_matrix[as.character(endemic_hotspots_8km$CELLCODE),]
+
+jac_8 <- vegdist(community_matrix_hotspots,
+                method="jaccard")
+## transform a wide to long format
+jac_8_df <- dist_long(jac_8, "jaccard") |>
+    filter(jaccard>0) |>
+    mutate(grid="8km")
+
+## jaccard for 4km
+community_m <- community_m_4km
+community_matrix <- community_m[,-1]
+community_matrix <- apply(community_matrix, 2, as.numeric)
+rownames(community_matrix) <- community_m[,1]
+
+community_matrix_hotspots <- community_matrix[as.character(endemic_hotspots_4km$CELLCODE),]
+
+jac_4 <- vegdist(community_matrix_hotspots,
+                method="jaccard")
+## transform a wide to long format
+jac_4_df <- dist_long(jac_4, "jaccard") |>
+    filter(jaccard>0) |>
+    mutate(grid="4km")
+
+## jaccard for 1km
+community_m <- community_m_1km
+community_matrix <- community_m[,-1]
+community_matrix <- apply(community_matrix, 2, as.numeric)
+rownames(community_matrix) <- community_m[,1]
+
+community_matrix_hotspots <- community_matrix[as.character(endemic_hotspots_1km$CELLCODE),]
+
+jac_1 <- vegdist(community_matrix_hotspots,
+                method="jaccard")
+## transform a wide to long format
+jac_1_df <- dist_long(jac_1, "jaccard") |>
+    filter(jaccard>0) |>
+    mutate(grid="1km")
+
+## jaccard for quads
+community_m <- community_m_quads
+community_matrix <- community_m[,-1]
+community_matrix <- apply(community_matrix, 2, as.numeric)
+rownames(community_matrix) <- community_m[,1]
+
+community_matrix_hotspots <- community_matrix[as.character(endemic_hotspots_quads$id),]
+
+jac_quads <- vegdist(community_matrix_hotspots,
+                method="jaccard")
+## transform a wide to long format
+jac_quads_df <- dist_long(jac_quads, "jaccard") |>
+    filter(jaccard>0) |>
+    mutate(grid="adaptive cell")
+
+
+## merge and boxplot
+
+jaccard_hotspots_box <- do.call(rbind, list(jac_1_df,jac_4_df, jac_8_df,jac_10_df,jac_quads_df)) 
+
+jaccard_hotspots_box$grid <- factor(jaccard_hotspots_box$grid, levels=c("1km", "4km", "8km", "10km", "adaptive cell"))
+
+fig_jaccard_hotspots_box <- ggplot() +
+    geom_boxplot(jaccard_hotspots_box,
+                 mapping=aes(x=grid, y=jaccard),
+                 outlier.size = 0) +
+    scale_color_manual(values=c("gray45"),
+                       labels=c(""),
+                       name="")+
+    theme_bw()+
+    scale_y_continuous(breaks = seq(0,1,0.1),limits=c(0,1),"Jaccard similarity") +
+    theme(panel.grid = element_blank(),
+          axis.text.x = element_text(face="bold",angle = 90, hjust = 0),
+          axis.text = element_text(size=13), 
+          axis.title.x=element_blank(),
+          axis.title.y=element_text(face="bold", size=13),
+          legend.position = c(0.88, 0.1))
+
+ggsave("../figures/fig_jaccard_hotspots_box.png", 
+       plot=fig_jaccard_hotspots_box, 
+       device="png", 
+       height = 20, 
+       width = 23, 
+       units="cm")
+
+fig_grid_stat <- ggarrange(fig_endemic_hotspots_box,fig_jaccard_hotspots_box, 
+          labels = c("A", "B"),
+          align = "hv",
+          widths = c(1,1),
+          ncol = 2,
+          nrow = 1,
+          font.label=list(color="black",size=22)) + bgcolor("white")
+
+
+ggsave("../figures/fig_grid_stat.png", 
+       plot=fig_grid_stat, 
+       height = 20, 
+       width = 40,
+       dpi = 600, 
+       units="cm",
+       device="png")
+
+ggsave("../figures/fig_grid_stat_small.png", 
+       plot=fig_grid_stat, 
+       height = 20, 
+       width = 40,
+       dpi = 300, 
+       units="cm",
+       device="png")
+
 ############################### threatspots #############################
 
 threatspots <- locations_grid %>%
@@ -836,7 +1106,8 @@ ggsave("../plots/crete_wege_hotspots_map.png", plot=wege_map, device="png")
 
 ## wege for quads
 
-grid_for_wege <- treatened_dist_quad
+grid_for_wege <- treatened_dist_quad |>
+    mutate(CELLCODE=as.character(CELLCODE))
 
 cellcodes <- grid_for_wege$CELLCODE
 wege_l <- list()
@@ -849,19 +1120,19 @@ for (c in seq_along(cellcodes)){
     }
 }
 
-wege_results <- do.call(rbind, wege_l)
+wege_results_q <- do.call(rbind, wege_l)
 
-wege_results_f <- wege_results |> 
+wege_results_q_f <- wege_results_q |> 
     filter(wege >= quantile(wege, 0.9)) 
 
-st_write(wege_results,
+st_write(wege_results_q,
          "../results/wege_results/wege_results_quads.shp", 
          append=F,
          delete_layer=T,
          delete_dsn = TRUE) 
 
 wege_map <- g_base +
-    geom_sf(wege_results_f, mapping=aes(fill=wege)) + 
+    geom_sf(wege_results_q_f, mapping=aes(fill=wege)) + 
     scale_fill_gradient(low = "yellow", high = "red", na.value = NA) +
     theme_bw()
 
