@@ -137,7 +137,7 @@ crete_base <- ggplot() +
     theme(axis.title=element_blank(),
           axis.text=element_text(colour="black"),
           legend.title = element_text(size=8),
-          legend.position = "bottom",
+          legend.position = "right",
           legend.box.background = element_blank())
 
 
@@ -160,6 +160,7 @@ ggsave("../figures/Fig2c.png",
 ## Combine
 fig1 <- ggarrange(g_fig1ab,crete_base,
 #          align = "hv",
+          ncol = 1,
           nrow = 2,
           legend="right") + bgcolor("white")
 
@@ -194,7 +195,6 @@ ggsave("../figures/Fig2-small.png",
        dpi = 300, 
        units="cm",
        device="png")
-
 # Figure 3
 ## crete_hotspot
 
@@ -239,7 +239,7 @@ crete_hotspot <- ggplot() +
     theme(axis.title=element_blank(),
           axis.text=element_text(colour="black"),
           legend.title = element_text(size=8),
-          legend.position = "bottom",
+          legend.position = "right",
           legend.box.background = element_blank())
 
 ggsave("../figures/Fig_crete_hotspot.tiff", 
@@ -304,7 +304,7 @@ crete_threat <- ggplot() +
     theme(axis.title=element_blank(),
           axis.text=element_text(colour="black"),
           legend.title = element_text(size=8),
-          legend.position = "bottom",
+          legend.position = "right",
           legend.box.background = element_blank())
 
 ggsave("../figures/Fig_wege_results.tiff", 
@@ -328,7 +328,7 @@ ggsave("../figures/Fig_wege_results.png",
 crete_sampling_grid <- ggplot() +
     geom_sf(crete_shp, mapping=aes()) +
     geom_sf(endemic_hotspots, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    scale_fill_gradientn(colours = c("yellow", "red"),guide = guide_colorbar(order = 3)) +
+    scale_fill_gradientn(colours = c("#F0E442", "#D55E00"),guide = guide_colorbar(order = 3)) +
     labs(fill = "10 sq. km\nhotspots") +
     new_scale_fill() +
 #    geom_sf(locations_1_grid, mapping=aes(fill=n_species), linewidth=0.01, alpha=0.3,size=0.02)+
@@ -345,7 +345,7 @@ crete_sampling_grid <- ggplot() +
 #    labs(fill = "1 sq. km hotspots") +
 #    new_scale_fill() +
     geom_sf(endemic_hotspots_4km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
-    scale_fill_gradientn(colours = c("cornsilk3", "cyan4"), guide = guide_colorbar(order = 1)) +
+    scale_fill_gradientn(colours = c("#000000", "#D55E00"), guide = guide_colorbar(order = 1)) +
     labs(fill = "4 sq. km\nhotspots") +
     new_scale_fill() +
     geom_sf(endemic_hotspots_8km, mapping=aes(fill=n_species), alpha=0.3, size=0.1, na.rm = FALSE)+
@@ -354,11 +354,14 @@ crete_sampling_grid <- ggplot() +
     theme_bw()+
     theme(axis.title=element_blank(),
           axis.text=element_text(colour="black"),
+          plot.background = element_rect(fill = "white",
+                                         colour = "white"),
           legend.title = element_text(size=8),
-          legend.position = "bottom",
+          legend.position = "right",
           legend.box.background = element_blank(),
           legend.key.size = unit(3, "mm"), 
-          legend.text=element_text(size=7))
+          legend.text=element_text(size=7)) +
+    rremove("grid")
 
 ggsave("../figures/figs_crete_multiple_grids_hotspots.png",
        plot=crete_sampling_grid,
@@ -368,17 +371,18 @@ ggsave("../figures/figs_crete_multiple_grids_hotspots.png",
        unit="cm",
        device="png")
 
-fig2 <- ggarrange(crete_sampling_grid, crete_hotspot,crete_threat,
+fig3 <- ggarrange(crete_sampling_grid, crete_hotspot,crete_threat,
           labels = c("A", "B", "C"),
           align = "hv",
-          widths = c(1,1,1),
+          #widths = c(0.9,0.9,0.9),
           ncol = 1,
           nrow = 3,
           font.label=list(color="black",size=22),
-          legend="right") + bgcolor("white")
+          legend="right") + bgcolor("white") + rremove("grid") +
+    theme(panel.border = element_blank())
 
 ggsave("../figures/Fig3.tiff", 
-       plot=fig2, 
+       plot=fig3, 
        height = 30, 
        width = 30,
        dpi = 600, 
@@ -386,7 +390,7 @@ ggsave("../figures/Fig3.tiff",
        device="tiff")
 
 ggsave("../figures/Fig3.png", 
-       plot=fig2, 
+       plot=fig3, 
        height = 30, 
        width = 30,
        dpi = 600, 
@@ -394,7 +398,7 @@ ggsave("../figures/Fig3.png",
        device="png")
 
 ggsave("../figures/Fig3.pdf", 
-       plot=fig2, 
+       plot=fig3, 
        height = 30, 
        width = 30,
        dpi = 600, 
@@ -402,11 +406,12 @@ ggsave("../figures/Fig3.pdf",
        device="pdf")
 
 ggsave("../figures/Fig3-small.png", 
-       plot=fig2, 
-       height = 30, 
-       width = 30,
+       plot=fig3, 
+       height = 28, 
+       width = 28,
        dpi = 300, 
        units="cm",
+       bg=NULL,
        device="png")
 
 #figure 4
