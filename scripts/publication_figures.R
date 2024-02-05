@@ -195,6 +195,7 @@ ggsave("../figures/Fig2-small.png",
        dpi = 300, 
        units="cm",
        device="png")
+
 # Figure 3
 ## crete_hotspot
 
@@ -237,10 +238,18 @@ crete_hotspot <- ggplot() +
                                   order = 1))+
     theme_bw()+
     theme(axis.title=element_blank(),
-          axis.text=element_text(colour="black"),
+          #panel.border = element_blank(),
+          panel.grid.major = element_blank(), #remove major gridlines
+          panel.grid.minor = element_blank(), #remove minor gridlines
+          line = element_blank(),
+          axis.text=element_blank(),
+          plot.background = element_rect(fill = "white",
+                                         colour = "white"),
           legend.title = element_text(size=8),
           legend.position = "right",
-          legend.box.background = element_blank())
+          legend.box.background = element_blank(),
+          legend.key.size = unit(3, "mm"), 
+          legend.text=element_text(size=7)) 
 
 ggsave("../figures/Fig_crete_hotspot.tiff", 
        plot=crete_hotspot, 
@@ -302,10 +311,18 @@ crete_threat <- ggplot() +
                                   order = 1))+
     theme_bw()+
     theme(axis.title=element_blank(),
-          axis.text=element_text(colour="black"),
+    #      panel.border = element_blank(),
+          panel.grid.major = element_blank(), #remove major gridlines
+          panel.grid.minor = element_blank(), #remove minor gridlines
+          line = element_blank(),
+          axis.text=element_blank(),
+          plot.background = element_rect(fill = "white",
+                                         colour = "white"),
           legend.title = element_text(size=8),
           legend.position = "right",
-          legend.box.background = element_blank())
+          legend.box.background = element_blank(),
+          legend.key.size = unit(3, "mm"), 
+          legend.text=element_text(size=7)) 
 
 ggsave("../figures/Fig_wege_results.tiff", 
        plot=crete_threat, 
@@ -353,15 +370,18 @@ crete_sampling_grid <- ggplot() +
     labs(fill = "8 sq. km\nhotspots") +
     theme_bw()+
     theme(axis.title=element_blank(),
-          axis.text=element_text(colour="black"),
+    #      panel.border = element_blank(),
+          panel.grid.major = element_blank(), #remove major gridlines
+          panel.grid.minor = element_blank(), #remove minor gridlines
+          line = element_blank(),
+          axis.text=element_blank(),
           plot.background = element_rect(fill = "white",
                                          colour = "white"),
           legend.title = element_text(size=8),
           legend.position = "right",
           legend.box.background = element_blank(),
           legend.key.size = unit(3, "mm"), 
-          legend.text=element_text(size=7)) +
-    rremove("grid")
+          legend.text=element_text(size=7)) 
 
 ggsave("../figures/figs_crete_multiple_grids_hotspots.png",
        plot=crete_sampling_grid,
@@ -586,12 +606,18 @@ crete_corine <- ggplot() +
     coord_sf(crs="WGS84") +
     theme_bw()+
     theme(axis.title=element_blank(),
-          axis.text=element_text(colour="black"),
+    #      panel.border = element_blank(),
+          panel.grid.major = element_blank(), #remove major gridlines
+          panel.grid.minor = element_blank(), #remove minor gridlines
+          line = element_blank(),
+          axis.text=element_blank(),
+          plot.background = element_rect(fill = "white",
+                                         colour = "white"),
           legend.title = element_blank(),
           legend.position = "bottom",
           legend.box.background = element_blank(),
           legend.key.size = unit(3, "mm"), 
-          legend.text=element_text(size=6))
+          legend.text=element_text(size=7)) 
 
 ggsave("../figures/Fig_corine.tiff", 
        plot=crete_corine, 
@@ -643,12 +669,18 @@ crete_hilda_g <- ggplot() +
     coord_sf(crs="WGS84") +
     theme_bw()+
     theme(axis.title=element_blank(),
-          axis.text=element_text(colour="black"),
+    #      panel.border = element_blank(),
+          panel.grid.major = element_blank(), #remove major gridlines
+          panel.grid.minor = element_blank(), #remove minor gridlines
+          line = element_blank(),
+          axis.text=element_blank(),
+          plot.background = element_rect(fill = "white",
+                                         colour = "white"),
           legend.title = element_blank(),
           legend.position = "bottom",
           legend.box.background = element_blank(),
           legend.key.size = unit(3, "mm"), 
-          legend.text=element_text(size=6))
+          legend.text=element_text(size=7)) 
 
 ggsave("../figures/Fig_hilda.tiff", 
        plot=crete_hilda_g, 
