@@ -1,0 +1,38 @@
+hilda_id	hilda_name
+11	urban (stable)
+12	urban to cropland
+13	urban to pasture/rangeland
+14	urban to forest
+15	urban to unmanaged grass/shrubland
+16	urban to sparse/no vegetation
+21	cropland to urban
+22	cropland (stable)
+23	cropland to pasture/rangeland
+24	cropland to forest
+25	cropland to unmanaged grass/shrubland
+26	cropland to sparse/no vegetation
+31	pasture/rangeland to urban
+32	pasture/rangeland to cropland
+33	pasture/rangeland (stable)
+34	pasture/rangeland to forest
+35	pasture/rangeland to unmanaged grass/shrubland
+36	pasture/rangeland to sparse/no vegetation
+41	forest to urban
+42	forest to cropland
+43	forest to pasture/rangeland
+44	forest (stable)
+45	forest to unmanaged grass/shrubland
+46	forest to sparse/no vegetation
+51	"unmana	ged grass/shrubland to urban"
+52	"unmana	ged grass/shrubland to cropland"
+53	"unmana	ged grass/shrubland to pasture/rangeland"
+54	"unmana	ged grass/shrubland to forest"
+55	"unmana	ged grass/shrubland (stable)"
+56	"unmana	ged grass/shrubland to sparse/no vegetation"
+61	sparse/no vegetation to urban
+62	sparse/no vegetation to cropland
+63	sparse/no vegetation to pasture/rangeland
+64	sparse/no vegetation to forest
+65	sparse/no vegetation to unmanaged grass/shrubland
+66	sparse/no vegetation (stable)
+77	water
