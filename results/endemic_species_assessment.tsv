@@ -1,4 +1,4 @@
-subspeciesname	Order	families	n_locations	n_sites	eoo	eoo_overlap	eoo_natura	eoo_wildlife	aoo	aoo_natura	aoo_wildlife	potentially_VU	potentially_EN	potentially_CR	paca	iucn	threatened	aoo_natura_percent
+scientificName	order	family	n_locations	n_sites	eoo	eoo_overlap	eoo_natura	eoo_wildlife	aoo	aoo_natura	aoo_wildlife	potentially_VU	potentially_EN	potentially_CR	paca	iucn	threatened	aoo_natura_percent
 Blaps cretensis	Coleoptera	Tenebrionidae	17	34	5762.15605335928	4834.44057575979	1620.87606129596	358.553443730641	92.4355015066298	60.9313407081236	20.0544405940585	FALSE	FALSE	FALSE	LNT	NT/LC	FALSE	0.65918
 Calathus oertzeni jeanne	Coleoptera	Carabidae	17	135	4718.91780986944	4168.88692221302	1333.99630465989	302.852255574748	144.467608536509	118.471522315838	21.1251966630265	FALSE	FALSE	FALSE	LNT	NT/LC	FALSE	0.82006
 Carabus banoni	Coleoptera	Carabidae	63	407	14226.0492082031	8023.80935333498	2210.44252681348	560.445301352638	612.080709707049	297.181073434495	75.4343539462712	FALSE	FALSE	FALSE	LNT	NT/LC	FALSE	0.48553
